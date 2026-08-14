@@ -416,7 +416,7 @@ export function PromptBox({
       <div className={cn(slots.actions(), "gap-[var(--space-x4)]")}>
         <div className={slots.actionCluster()}>{attachButton}{mentionButton}</div>
         <motion.div layout={reduce ? false : "position"} transition={promptTransition}
-          className={voice === "mic" ? "mr-auto" : "ml-auto"}>
+          className="ml-auto">
           {modelSelect}
         </motion.div>
         <motion.div layout={reduce ? false : "position"} transition={promptTransition} className={cn(slots.actionCluster(), "justify-end")}>

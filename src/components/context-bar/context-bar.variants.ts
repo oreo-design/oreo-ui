@@ -37,7 +37,7 @@ export const contextBar = tv({
     status: {
       default: {},
       avatar: {},
-      progress: {},
+      progress: { leadingIcon: "text-[var(--color-text-primary)]" },
       loading: { leadingIcon: "text-[var(--color-text-waiting)]" },
       waiting: { leadingIcon: "text-[var(--color-text-waiting)]" },
       done: {

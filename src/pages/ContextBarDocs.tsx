@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DocsPage, type DocsNav } from "@/docs/DocsPage";
+import { DocsPage, type DocsNav, type SpringProps } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
 import { Icon } from "@/components/icon";
@@ -48,9 +48,14 @@ function ClaudeSelect() {
   return <PromptBoxModelSelect icon={<img src={claudeLogo} alt="" />} label="Claude" />;
 }
 
+/** The composer configuration every Figma example on this page is drawn with. */
+const COMPOSER = { running: true, inset: true, voice: "mic" } as const;
+
 const POSITION_CODE = `// Header — dock the bar above the box
 <PromptBox
   running
+  inset
+  voice="mic"
   header={
     <ContextBar position="header">
       <ContextBarLabel status="default">Select projects</ContextBarLabel>
@@ -61,16 +66,22 @@ const POSITION_CODE = `// Header — dock the bar above the box
 // Footer — dock it below
 <PromptBox
   running
+  inset
+  voice="mic"
   footer={
     <ContextBar position="footer">
-      <ContextBarLabel status="avatar" muted leading={<Agents />}>
-        3 agents ready
-      </ContextBarLabel>
+      <ContextBarLabel status="default">Select projects</ContextBarLabel>
     </ContextBar>
   }
 />`;
 
-const PROGRESS_CODE = `<ContextBar position="header">
+const PROGRESS_CODE = `// In progress — the count alone
+<ContextBar position="header">
+  <ContextBarLabel status="progress">2/4 tasks in progress</ContextBarLabel>
+</ContextBar>
+
+// Folded / Detail — the same collapsible, closed or open
+<ContextBar position="header">
   <ContextBarTasks summary="2/4 tasks in progress" defaultOpen>
     <ContextBarLabel status="done">Build core logics</ContextBarLabel>
     <ContextBarLabel status="loading">Build image canvas</ContextBarLabel>
@@ -100,39 +111,65 @@ const QUEUE_CODE = `<ContextBar position="header">
   ))}
 </ContextBar>`;
 
-const QUEUE_TASKS = [
-  "Build structure",
-  "Build core logics",
-  "Build image canvas",
-  "Build toolbar and adjustment panels",
-  "Build main page integrating all components",
-];
+const QUEUE_TASKS = ["build main page integrating all components", "build core logic", "adjust to dark mode"];
 
-function ProgressDemo() {
-  const [open, setOpen] = useState(true);
+const TASK_ROWS = (
+  <>
+    <ContextBarLabel status="done">Build core logics</ContextBarLabel>
+    <ContextBarLabel status="loading">Build image canvas</ContextBarLabel>
+    <ContextBarLabel status="waiting">Build toolbar and adjustment panels</ContextBarLabel>
+  </>
+);
+
+/** One composer per Figma progress example: count only, folded, unfolded. */
+function ProgressDemo({ spring }: { spring: SpringProps }) {
+  const [folded, setFolded] = useState(false);
+  const [detail, setDetail] = useState(true);
   return (
-    <PromptBox
-      running
-      header={
-        <ContextBar position="header">
-          <ContextBarTasks summary="2/4 tasks in progress" open={open} onOpenChange={setOpen}>
-            <ContextBarLabel status="done">Build core logics</ContextBarLabel>
-            <ContextBarLabel status="loading">Build image canvas</ContextBarLabel>
-            <ContextBarLabel status="waiting">Build toolbar and adjustment panels</ContextBarLabel>
-          </ContextBarTasks>
-        </ContextBar>
-      }
-      modelSelect={<ClaudeSelect />}
-    />
+    <div className="flex w-full flex-col items-start gap-6">
+      <PromptBox
+        {...COMPOSER}
+        header={
+          <ContextBar position="header">
+            <ContextBarLabel status="progress">2/4 tasks in progress</ContextBarLabel>
+          </ContextBar>
+        }
+        modelSelect={<ClaudeSelect />}
+        {...spring}
+      />
+      <PromptBox
+        {...COMPOSER}
+        header={
+          <ContextBar position="header">
+            <ContextBarTasks summary="2/4 tasks in progress" open={folded} onOpenChange={setFolded}>
+              {TASK_ROWS}
+            </ContextBarTasks>
+          </ContextBar>
+        }
+        modelSelect={<ClaudeSelect />}
+        {...spring}
+      />
+      <PromptBox
+        {...COMPOSER}
+        header={
+          <ContextBar position="header">
+            <ContextBarTasks summary="2/4 tasks in progress" open={detail} onOpenChange={setDetail}>
+              {TASK_ROWS}
+            </ContextBarTasks>
+          </ContextBar>
+        }
+        modelSelect={<ClaudeSelect />}
+        {...spring}
+      />
+    </div>
   );
 }
 
-function UpgradeDemo() {
+function UpgradeDemo({ spring }: { spring: SpringProps }) {
   const [visible, setVisible] = useState(true);
   return (
     <PromptBox
-      running
-      inset
+      {...COMPOSER}
       header={
         visible ? (
           <ContextBar position="header">
@@ -151,6 +188,7 @@ function UpgradeDemo() {
         ) : undefined
       }
       modelSelect={<ClaudeSelect />}
+      {...spring}
     />
   );
 }
@@ -183,7 +221,7 @@ export function ContextBarDocs({ nav }: { nav: DocsNav }) {
               preview={
                 <div className="flex w-full flex-col items-start gap-6">
                   <PromptBox
-                    running
+                    {...COMPOSER}
                     header={
                       <ContextBar position="header">
                         <ContextBarLabel status="default">Select projects</ContextBarLabel>
@@ -193,12 +231,10 @@ export function ContextBarDocs({ nav }: { nav: DocsNav }) {
                     {...spring}
                   />
                   <PromptBox
-                    running
+                    {...COMPOSER}
                     footer={
                       <ContextBar position="footer">
-                        <ContextBarLabel status="avatar" muted leading={<Agents />}>
-                          3 agents ready
-                        </ContextBarLabel>
+                        <ContextBarLabel status="default">Select projects</ContextBarLabel>
                       </ContextBar>
                     }
                     modelSelect={<ClaudeSelect />}
@@ -212,29 +248,29 @@ export function ContextBarDocs({ nav }: { nav: DocsNav }) {
           <Section
             id="progress"
             title="Progress"
-            description="Task count while agents run. The chevron folds the detail; rows show done (struck through), loading (spinner), and waiting (dashed circle)."
+            description="Shows the current task count and lets people keep talking while background tasks run. The count can stand alone, or a chevron can fold the per-task detail away."
           >
-            <PreviewTabs code={PROGRESS_CODE} preview={<ProgressDemo />} />
+            <PreviewTabs code={PROGRESS_CODE} preview={<ProgressDemo spring={spring} />} />
           </Section>
 
           <Section
             id="upgrade"
             title="Upgrade"
-            description="A contextual nudge above the input — quiet text action plus dismiss. This one is inset, so the bar indents 12px."
+            description="Contextual add-ons above the main input — an upgrade nudge here, with a quiet text action plus dismiss."
           >
-            <PreviewTabs code={UPGRADE_CODE} preview={<UpgradeDemo />} />
+            <PreviewTabs code={UPGRADE_CODE} preview={<UpgradeDemo spring={spring} />} />
           </Section>
 
           <Section
             id="queue"
             title="Queue"
-            description="Queued tasks with a drag handle, a Steer action to redirect the agent, and per-row remove."
+            description="Queued prompts with a drag handle, a Steer action to redirect the agent, and per-row remove."
           >
             <PreviewTabs
               code={QUEUE_CODE}
               preview={
                 <PromptBox
-                  running
+                  {...COMPOSER}
                   header={
                     <ContextBar position="header">
                       {QUEUE_TASKS.map((task) => (
@@ -254,27 +290,24 @@ export function ContextBarDocs({ nav }: { nav: DocsNav }) {
           <Section
             id="status-labels"
             title="Status labels"
-            description="The row vocabulary on its own: default, avatar, progress, folded/expanded tasks, done, loading, and waiting."
+            description="The whole row vocabulary on its own — default, avatar, progress, folded and expanded tasks, done, loading, waiting, and a queued row."
           >
             <PreviewTabs
               code={`<ContextBarLabel status="loading">Build image canvas</ContextBarLabel>`}
               preview={
                 <div className="flex w-full max-w-[600px] flex-col gap-4">
-                  <ContextBarLabel status="default" onSteer={() => {}} onRemove={() => {}} onMore={() => {}}>
-                    Select projects
-                  </ContextBarLabel>
-                  <ContextBarLabel status="avatar" leading={<Agents />} onSteer={() => {}} onRemove={() => {}} onMore={() => {}}>
+                  <ContextBarLabel status="default">Select projects</ContextBarLabel>
+                  <ContextBarLabel status="avatar" muted leading={<Agents />} onMore={() => {}}>
                     3 agents ready
                   </ContextBarLabel>
                   <ContextBarLabel status="progress">2/4 tasks in progress</ContextBarLabel>
-                  <ContextBarTasks summary="2/4 tasks in progress">
-                    <ContextBarLabel status="done">Build core logics</ContextBarLabel>
-                    <ContextBarLabel status="loading">Build image canvas</ContextBarLabel>
-                    <ContextBarLabel status="waiting">Build toolbar and adjustment panels</ContextBarLabel>
+                  <ContextBarTasks summary="2/4 tasks in progress">{TASK_ROWS}</ContextBarTasks>
+                  <ContextBarTasks summary="2/4 tasks in progress" defaultOpen>
+                    {TASK_ROWS}
                   </ContextBarTasks>
-                  <ContextBarLabel status="done">Build core logics</ContextBarLabel>
-                  <ContextBarLabel status="loading">Build image canvas</ContextBarLabel>
-                  <ContextBarLabel status="waiting">Build toolbar and adjustment panels</ContextBarLabel>
+                  <ContextBarLabel status="queue" onSteer={() => {}} onRemove={() => {}} onMore={() => {}}>
+                    build main page integrating all components
+                  </ContextBarLabel>
                 </div>
               }
             />
