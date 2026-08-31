@@ -13,6 +13,7 @@ import { AvatarDocs } from "@/pages/AvatarDocs";
 import { BoardPage } from "@/pages/BoardPage";
 import { SettingsLab } from "@/pages/settings-lab/SettingsLab";
 import { SettingsPage } from "@/pages/SettingsPage";
+import { StreamPage } from "@/pages/StreamPage";
 import { CodeBlockDocs } from "@/pages/CodeBlockDocs";
 import { ResponseDocs } from "@/pages/ResponseDocs";
 import { StreamingTextDocs } from "@/pages/StreamingTextDocs";
@@ -73,6 +74,7 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "prompt-box": PromptBoxDocs,
   "keyword-tag": KeywordTagDocs,
   "context-bar": ContextBarDocs,
+  "inbox-stream": StreamPage,
   "onboarding-board": BoardPage,
   settings: SettingsPage,
   "settings-lab": SettingsLab,

@@ -169,6 +169,11 @@ export const PAGE_META = {
     description:
       "A status surface that docks onto the Prompt Box — project context, background task count, upgrade nudges or a steerable task queue.",
   },
+  "inbox-stream": {
+    title: "Inbox Stream",
+    description:
+      "A feed pattern of dismissable cards in urgency tiers: generic card shells, filter chips, skeletons, and a three-layer enter/exit choreography.",
+  },
   "onboarding-board": {
     title: "Onboarding Board",
     description:
