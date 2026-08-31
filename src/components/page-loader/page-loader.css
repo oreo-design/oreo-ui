@@ -1,0 +1,367 @@
+/* ----------------------------------------------------------------------------
+ * Page Loader — ambient tiers (medium loop + short glyph) for every story.
+ *
+ * Everything here is CSS animation on transform/opacity (plus SVG stroke
+ * dashes) so the loops run off the main thread and stay smooth while the app
+ * is busy doing the actual loading. The playable tier lives in canvas instead
+ * (it needs input) — see stories/*.tsx.
+ *
+ * Loops are constant motion → linear; one-shot flourishes (ripples, steam,
+ * footprints) decay on the house --ease-out. Colors are never hardcoded:
+ * every SVG references the Oreo tokens directly.
+ * -------------------------------------------------------------------------- */
+
+/* CSS transforms on SVG children rotate/scale around their own box. Classes
+ * that need a different origin (legs, tails, the orbit rotor) override it. */
+.oreo-loader-stage svg [class*="oreo-ld-"] {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+/* --- Snake ---------------------------------------------------------------- */
+
+/* The snake is a dash of stroke chasing itself around the block; pathLength
+ * is normalized to 100 in the markup so the dash math stays in percents. */
+@keyframes oreo-ld-snake-run {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+.oreo-ld-snake-body {
+  stroke-dasharray: 16 84;
+  animation: oreo-ld-snake-run 2.8s linear infinite;
+}
+
+/* Retro food blink — shared by the snake tiers. */
+@keyframes oreo-ld-pulse {
+  from {
+    transform: scale(0.82);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+.oreo-ld-food {
+  animation: oreo-ld-pulse 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes oreo-ld-ring {
+  from {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+.oreo-ld-ring {
+  animation: oreo-ld-ring 1.8s var(--ease-out) infinite;
+}
+
+/* --- Breakout ------------------------------------------------------------- */
+
+/* DVD-screensaver kinematics: x and y ping-pong on different periods, so the
+ * ball traces a whole family of diagonals. The paddle shares the x animation
+ * (same duration, same phase), which keeps it forever under the ball. */
+@keyframes oreo-ld-bx {
+  to {
+    transform: translateX(var(--ld-bx, 96px));
+  }
+}
+@keyframes oreo-ld-by {
+  to {
+    transform: translateY(var(--ld-by, 40px));
+  }
+}
+.oreo-ld-ball-x,
+.oreo-ld-paddle {
+  animation: oreo-ld-bx 1.4s linear infinite alternate;
+}
+.oreo-ld-ball-y {
+  animation: oreo-ld-by 0.9s linear infinite alternate;
+}
+
+/* Bouncing-ball glyph: gravity means ease-in on the way down, squash at the
+ * floor, ease-out back up. The shadow breathes on the same clock. */
+@keyframes oreo-ld-bounce {
+  0% {
+    transform: translateY(0) scale(1, 1);
+    animation-timing-function: cubic-bezier(0.45, 0, 0.85, 0.65);
+  }
+  44% {
+    transform: translateY(15px) scale(1, 1);
+    animation-timing-function: linear;
+  }
+  52% {
+    transform: translateY(17px) scale(1.22, 0.72);
+    animation-timing-function: cubic-bezier(0.15, 0.35, 0.55, 1);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+.oreo-ld-bounce {
+  transform-origin: 50% 100%;
+  animation: oreo-ld-bounce 0.85s infinite;
+}
+@keyframes oreo-ld-bshadow {
+  0% {
+    transform: scale(0.55);
+    opacity: 0.12;
+    animation-timing-function: cubic-bezier(0.45, 0, 0.85, 0.65);
+  }
+  48% {
+    transform: scale(1);
+    opacity: 0.28;
+    animation-timing-function: cubic-bezier(0.15, 0.35, 0.55, 1);
+  }
+  100% {
+    transform: scale(0.55);
+    opacity: 0.12;
+  }
+}
+.oreo-ld-bshadow {
+  animation: oreo-ld-bshadow 0.85s infinite;
+}
+
+/* --- Runner --------------------------------------------------------------- */
+
+/* Ground scroll: one full dash period (6+8) per half cycle keeps it seamless. */
+@keyframes oreo-ld-ground {
+  to {
+    stroke-dashoffset: 28;
+  }
+}
+.oreo-ld-ground {
+  stroke-dasharray: 6 8;
+  animation: oreo-ld-ground 0.5s linear infinite;
+}
+
+@keyframes oreo-ld-bob {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2px);
+  }
+}
+.oreo-ld-bob {
+  animation: oreo-ld-bob 0.36s ease-in-out infinite alternate;
+}
+
+@keyframes oreo-ld-leg {
+  from {
+    transform: rotate(-26deg);
+  }
+  to {
+    transform: rotate(26deg);
+  }
+}
+.oreo-ld-leg {
+  transform-origin: 50% 0%;
+  animation: oreo-ld-leg 0.36s ease-in-out infinite alternate;
+}
+/* One full negative iteration = the opposite phase of the stride. */
+.oreo-ld-leg-b {
+  animation-delay: -0.36s;
+}
+
+@keyframes oreo-ld-print {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  12% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  55% {
+    opacity: 0.9;
+  }
+  85%,
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+.oreo-ld-print {
+  animation: oreo-ld-print 1.3s var(--ease-out) infinite;
+}
+.oreo-ld-print-b {
+  animation-delay: 0.65s;
+}
+
+/* --- Fishing -------------------------------------------------------------- */
+
+@keyframes oreo-ld-bobber {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+.oreo-ld-bobber {
+  animation: oreo-ld-bobber 1.7s ease-in-out infinite alternate;
+}
+
+@keyframes oreo-ld-ripple {
+  from {
+    transform: scale(0.35);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1.15);
+    opacity: 0;
+  }
+}
+.oreo-ld-ripple {
+  animation: oreo-ld-ripple 1.7s var(--ease-out) infinite;
+}
+.oreo-ld-ripple-b {
+  animation-delay: 0.85s;
+}
+
+@keyframes oreo-ld-sway {
+  from {
+    transform: translateX(calc(var(--ld-amp, 12px) * -1));
+  }
+  to {
+    transform: translateX(var(--ld-amp, 12px));
+  }
+}
+.oreo-ld-sway {
+  animation: oreo-ld-sway 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes oreo-ld-tail {
+  from {
+    transform: rotate(-22deg);
+  }
+  to {
+    transform: rotate(22deg);
+  }
+}
+.oreo-ld-tail {
+  transform-origin: 0% 50%;
+  animation: oreo-ld-tail 0.38s ease-in-out infinite alternate;
+}
+
+@keyframes oreo-ld-bubble {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+}
+.oreo-ld-bubble {
+  animation: oreo-ld-bubble 1.8s linear infinite;
+}
+.oreo-ld-bubble-b {
+  animation-delay: 0.9s;
+}
+
+/* --- Orbit ---------------------------------------------------------------- */
+
+/* The rotor spins around the viewBox center (where the planet sits), not its
+ * own bbox — hence view-box. */
+.oreo-loader-stage svg .oreo-ld-orbit {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: oreo-ld-orbit 3.4s linear infinite;
+}
+@keyframes oreo-ld-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes oreo-ld-twinkle {
+  from {
+    opacity: 0.35;
+    transform: scale(0.75);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.oreo-ld-twinkle {
+  animation: oreo-ld-twinkle 0.95s ease-in-out infinite alternate;
+}
+.oreo-ld-twinkle-b {
+  animation-delay: -0.4s;
+}
+.oreo-ld-twinkle-c {
+  animation-delay: -0.75s;
+}
+
+/* --- Kitchen -------------------------------------------------------------- */
+
+@keyframes oreo-ld-lid {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(-1.5px) rotate(1.5deg);
+  }
+}
+.oreo-ld-lid {
+  animation: oreo-ld-lid 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes oreo-ld-steam {
+  0% {
+    transform: translateY(2px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+}
+.oreo-ld-steam {
+  animation: oreo-ld-steam 1.9s linear infinite;
+}
+.oreo-ld-steam-b {
+  animation-delay: -0.63s;
+}
+.oreo-ld-steam-c {
+  animation-delay: -1.26s;
+}
+
+/* --- Reduced motion ------------------------------------------------------- */
+
+/* Ambient loops go still; the stage keeps a slow opacity breath so the
+ * loader still reads as "in progress". (The class name deliberately doesn't
+ * match the oreo-ld- selector below.) The playable tier only moves after the
+ * user starts playing, which is its own opt-in. */
+@keyframes oreo-ld-calm {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [class*="oreo-ld-"] {
+    animation: none !important;
+  }
+  .oreo-loader-stage {
+    animation: oreo-ld-calm 2.4s ease-in-out infinite;
+  }
+}

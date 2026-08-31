@@ -65,6 +65,7 @@ const NAV: Group[] = [
       { label: "Review Components", page: "review-components" },
       { label: "Thread List", page: "thread-list" },
       { label: "Assistant Modal", page: "assistant-modal" },
+      { label: "Page Loader", page: "page-loader" },
     ],
   },
   {

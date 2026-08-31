@@ -134,6 +134,11 @@ export const PAGE_META = {
     description:
       "The floating chat launcher: a bottom-corner button whose glyph blur-swaps to a caret, with the panel springing up from that corner.",
   },
+  "page-loader": {
+    title: "Page Loader",
+    description:
+      "Story-driven page loading sized to the wait: one metaphor at three scales — a glyph loop under 5s, an ambient scene to 30s, and a playable minigame beyond.",
+  },
   "code-diff": {
     title: "Code Diff",
     description:

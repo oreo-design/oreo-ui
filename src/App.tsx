@@ -28,6 +28,7 @@ import { AttachmentDocs } from "@/pages/AttachmentDocs";
 import { BranchPickerDocs } from "@/pages/BranchPickerDocs";
 import { ThreadListDocs } from "@/pages/ThreadListDocs";
 import { AssistantModalDocs } from "@/pages/AssistantModalDocs";
+import { PageLoaderDocs } from "@/pages/PageLoaderDocs";
 import { CodeDiffDocs } from "@/pages/CodeDiffDocs";
 import { TerminalDocs } from "@/pages/TerminalDocs";
 import { WebSearchDocs } from "@/pages/WebSearchDocs";
@@ -67,6 +68,7 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "branch-picker": BranchPickerDocs,
   "thread-list": ThreadListDocs,
   "assistant-modal": AssistantModalDocs,
+  "page-loader": PageLoaderDocs,
   "code-diff": CodeDiffDocs,
   terminal: TerminalDocs,
   "web-search": WebSearchDocs,
