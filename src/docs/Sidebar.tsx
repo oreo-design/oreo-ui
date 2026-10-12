@@ -20,6 +20,7 @@ const NAV: Group[] = [
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
       { label: "Menu", page: "menu" },
+      { label: "Kanban", page: "kanban" },
       { label: "Select", soon: true },
       { label: "Dialog", soon: true },
     ],
