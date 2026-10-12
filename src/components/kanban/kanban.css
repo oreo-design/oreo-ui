@@ -1,0 +1,17 @@
+.oreo-kanban { --kanban-columns: 4; }
+.oreo-kanban-grid { display: grid; grid-template-columns: repeat(var(--kanban-columns), minmax(15rem, 1fr)); gap: .75rem; }
+.oreo-kanban-card { transition: border-color 150ms ease, box-shadow 150ms ease; }
+.oreo-kanban-card:active { cursor: grabbing; }
+.oreo-kanban-action { border-radius: var(--radius-control); outline: none; transition: background-color 150ms ease, color 150ms ease, transform 100ms var(--ease-out); }
+.oreo-kanban-action:active { transform: scale(.97); }
+.oreo-kanban-action:focus-visible { outline: 2px solid var(--color-status-progress); outline-offset: 2px; }
+@media (hover: hover) and (pointer: fine) {
+  .oreo-kanban-card:hover { border-color: var(--color-border-default); }
+  .oreo-kanban-action:hover { background: var(--color-state-hover); color: var(--color-text-primary); }
+  .oreo-kanban-menu { opacity: 0; }
+  .oreo-kanban-card:hover .oreo-kanban-menu, .oreo-kanban-card:focus-within .oreo-kanban-menu { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .oreo-kanban-action:active { transform: none; }
+  .oreo-kanban-card, .oreo-kanban-action { transition: none; }
+}

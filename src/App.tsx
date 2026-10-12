@@ -1,4 +1,5 @@
 import { useEffect, useState, type ComponentType } from "react";
+import { KanbanDocs } from "@/pages/KanbanDocs";
 import { ButtonDocs } from "@/pages/ButtonDocs";
 import { IconButtonDocs } from "@/pages/IconButtonDocs";
 import { ShortcutDocs } from "@/pages/ShortcutDocs";
@@ -34,6 +35,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  kanban: KanbanDocs,
   button: ButtonDocs,
   "icon-button": IconButtonDocs,
   shortcut: ShortcutDocs,
