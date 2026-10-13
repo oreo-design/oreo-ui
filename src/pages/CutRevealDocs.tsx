@@ -34,7 +34,7 @@ export function CutRevealDocs({ nav }: { nav: DocsNav }) {
 >
   <YourPage />
 </CutReveal>`} /><p className="mt-4 text-sm leading-6 text-text-secondary">Set a new React key to replay. The counter describes the intro timeline, not resource loading. Keep the content’s dimensions stable while the curtain opens. Reduced motion replaces the cutting sequence with a brief fade; Skip reveals the content immediately and moves focus into it.</p></Section>
-      <Section id="api" title="API reference"><div className="overflow-x-auto"><PropsTable rows={PROPS} /></div><p className="mt-4 text-sm leading-6 text-text-secondary">The default surface follows Oreo’s light and dark themes. Override --cut-color and --cut-ink on the component to create a brand skin. The Neutomni example keeps its original red and white art direction in both themes.</p></Section>
+      <Section id="api" title="API reference"><div className="overflow-x-auto" tabIndex={0} role="region" aria-label="Cut Reveal properties"><div className="min-w-2xl"><PropsTable rows={PROPS} /></div></div><p className="mt-4 text-sm leading-6 text-text-secondary">The default surface follows Oreo’s light and dark themes. Override --cut-color and --cut-ink on the component to create a brand skin. The Neutomni example keeps its original red and white art direction in both themes.</p></Section>
       <footer className="border-t border-border-subtle py-8 text-xs leading-6 text-text-secondary">The full example uses Neutomni’s wordmark, project still and hosted showreel for visual reference. These brand assets are separate from the reusable component. Studio links lead to the original site.</footer>
     </>}
   </DocsPage>;
