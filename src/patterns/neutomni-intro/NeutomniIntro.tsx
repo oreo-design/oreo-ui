@@ -1,13 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { CutReveal } from "@/components/cut-reveal";
 import "./neutomni-intro.css";
+import { NeutomniWordmark } from "./NeutomniWordmark";
 
 const SOURCE = "https://neutomni.com/";
 const SHOWREEL = "https://pub-72fbbd6aa7d54a70b04aaa87235f19c9.r2.dev/Scene-2%20(1)%20(1).mp4";
-
-export function NeutomniWordmark({ inverse = false }: { inverse?: boolean }) {
-  return <span className={inverse ? "neutomni-wordmark neutomni-wordmark--inverse" : "neutomni-wordmark"} role="img" aria-label="Neutomni" />;
-}
 
 function StudioClock() {
   const [time, setTime] = useState("");
@@ -25,15 +22,27 @@ function StudioHero({ ready }: { ready: boolean }) {
   const [playing, setPlaying] = useState(false);
   const [failed, setFailed] = useState(false);
   const video = useRef<HTMLVideoElement>(null);
+  const playRequested = useRef(false);
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (ready && !preference.matches) setVideoEnabled(true);
+    // Fetch behind the curtain, but start playback with the revealed hero.
+    if (!preference.matches) setVideoEnabled(true);
     const reduce = () => { if (preference.matches) video.current?.pause(); };
     preference.addEventListener("change", reduce);
     return () => preference.removeEventListener("change", reduce);
-  }, [ready]);
+  }, []);
+  useEffect(() => {
+    if (!ready || !videoEnabled || failed) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches && !playRequested.current) return;
+    let active = true;
+    void video.current?.play().catch(error => {
+      if (active && error.name !== "AbortError") setFailed(true);
+    });
+    return () => { active = false; };
+  }, [ready, videoEnabled, failed]);
   const toggleVideo = () => {
     if (failed || !videoEnabled) {
+      playRequested.current = true;
       setFailed(false);
       setVideoEnabled(true);
     } else if (playing) video.current?.pause();
@@ -53,9 +62,9 @@ function StudioHero({ ready }: { ready: boolean }) {
         <a className="neutomni-email" href="mailto:contact@neutomni.com">contact@neutomni.com</a>
       </div>
     </header>
-    <div className="neutomni-statement"><h1>We build websites for<br className="neutomni-desktop-break" /> people who care<br /><em>as much as we do</em></h1></div>
+    <div className="neutomni-statement"><h1><span>We build websites for</span><span>people who care</span><span><em>as much as we do</em></span></h1></div>
     <div className="neutomni-showreel">
-      {videoEnabled && !failed ? <video ref={video} src={SHOWREEL} poster="/examples/neutomni/project.avif" autoPlay muted loop playsInline onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => { setFailed(true); setPlaying(false); }} aria-label="Neutomni selected project showreel" /> : <img src="/examples/neutomni/project.avif" alt="RSB AC automotive consulting website by Neutomni" width={1200} height={900} />}
+      {videoEnabled && !failed ? <video ref={video} src={SHOWREEL} poster="/examples/neutomni/project.avif" preload="auto" muted loop playsInline onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => { setFailed(true); setPlaying(false); }} aria-label="Neutomni selected project showreel" /> : <img src="/examples/neutomni/project.avif" alt="RSB AC automotive consulting website by Neutomni" width={1200} height={900} />}
       <button onClick={toggleVideo} aria-label={failed ? "Retry showreel" : playing ? "Pause showreel" : "Play showreel"}>{playing ? "Ⅱ" : "▶"}</button>
       {failed && <span className="neutomni-media-fallback">Showreel unavailable · project still</span>}
     </div>
