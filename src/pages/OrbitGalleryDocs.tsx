@@ -1,0 +1,22 @@
+import { DocsPage, type DocsNav } from "@/docs/DocsPage";
+import { Section, CodeBlock, PropsTable } from "@/docs/primitives";
+import { Button } from "@/components/button";
+import { OrbitGallery } from "@/components/orbit-gallery";
+import { orbitGalleryItems } from "@/patterns/orbit-gallery/items";
+
+export function OrbitGalleryDocs({ nav }: { nav: DocsNav }) {
+  return <DocsPage nav={nav} breadcrumb={["Components", "Orbit Gallery"]} toc={[{ id: "intro", label: "Introduction" }, { id: "preview", label: "Preview" }, { id: "usage", label: "Usage" }, { id: "states", label: "Fallback states" }, { id: "api", label: "API reference" }]}>{() => <>
+    <header id="intro" className="pb-8"><p className="mb-3 text-xs uppercase tracking-widest text-text-tertiary">A different point of view</p><h1 className="text-3xl font-semibold tracking-tight">Orbit Gallery</h1><p className="mt-3 max-w-prose text-base leading-7 text-text-secondary">One collection, four perspectives. Scroll or drag to turn a ring of images, then shift its plane without losing your place.</p><div className="mt-5"><Button render={<a href="/orbit-gallery-showcase" />}>Open full gallery ↗</Button></div><p className="mt-4 text-xs leading-6 text-text-tertiary">An independent React recreation of <a href="https://www.pinterest.com/pin/211174979526687/" target="_blank" rel="noreferrer" className="underline underline-offset-4">Awesome Design’s experimental portfolio</a>. Flat, Tilt and Ring follow the video; the Gallery grid, detail viewer, dark mode and keyboard controls extend it. Demo images are small still crops from the reference.</p></header>
+    <Section id="preview" title="Selected works" description="Switch planes, drag horizontally, or scroll over the canvas. Focus the gallery and use ← / → to rotate; Home resets the angle. Select an image to inspect it."><OrbitGallery items={orbitGalleryItems} className="rounded-card-medium border border-border-subtle" /></Section>
+    <Section id="usage" title="Usage" description="Copy components/orbit-gallery with Button and lib/cn, Oreo tokens and the existing motion package. Supply your own images and unique item IDs."><CodeBlock code={'import { OrbitGallery } from "@/components/orbit-gallery";\n\n<OrbitGallery\n  items={[\n    { id: "one", src: "/work-01.jpg", title: "First work" },\n    { id: "two", src: "/work-02.jpg", title: "Second work" },\n  ]}\n  defaultLayout="flat"\n/>\n\n// Optional: own the selection behavior in your application.\n<OrbitGallery items={works} onSelect={work => openProject(work.id)} />'} /><p className="mt-4 text-sm leading-6 text-text-secondary">Reduced motion changes layouts immediately. The gallery never auto-rotates. Wheel gestures are captured only over the orbit; the Gallery grid scrolls normally. Touch supports horizontal dragging and leaves vertical page scrolling available. Escape closes the native detail dialog and restores focus.</p></Section>
+    <Section id="states" title="Fallback states" description="Empty collections and unavailable images stay readable. Changing an image URL retries it."><OrbitGallery items={[]} label="Empty collection" style={{ height: 420 }} /><div className="mt-6"><OrbitGallery defaultLayout="gallery" items={[{ id: "missing", src: "/examples/orbit-gallery/unavailable.png", title: "An upcoming work" }]} label="Unavailable artwork" style={{ height: 480 }} /></div></Section>
+    <Section id="api" title="API reference"><div className="overflow-x-auto"><div className="min-w-2xl"><PropsTable rows={[
+      { prop: "items", type: "OrbitGalleryItem[]", desc: "Unique id, src, title, optional alt and description. Demo artwork is separate from the component." },
+      { prop: "layout / defaultLayout", type: '"flat" | "tilt" | "ring" | "gallery"', def: '"flat"', desc: "Controlled layout or initial uncontrolled layout." },
+      { prop: "onLayoutChange", type: "(layout: OrbitLayout) => void", desc: "Keep a controlled layout in sync when a mode is selected." },
+      { prop: "onSelect", type: "(item: OrbitGalleryItem) => void", desc: "Overrides the built-in detail dialog, for routing or your own project viewer." },
+      { prop: "label", type: "string", def: '"Selected works"', desc: "Visible gallery label and accessible section name." },
+      { prop: "className / style", type: "string / CSSProperties", desc: "Customize the container dimensions. Colors and controls follow Oreo tokens." },
+    ]} /></div></div></Section>
+  </>}</DocsPage>;
+}

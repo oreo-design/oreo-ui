@@ -1,3 +1,5 @@
+import { OrbitGalleryDocs } from "@/pages/OrbitGalleryDocs";
+import { OrbitGalleryShowcasePage } from "@/pages/OrbitGalleryShowcasePage";
 import { FeatureCardsDocs } from "@/pages/FeatureCardsDocs";
 import { FeaturesShowcasePage } from "@/pages/FeaturesShowcasePage";
 import { ProspectingComponentsDocs } from "@/pages/ProspectingComponentsDocs";
@@ -53,6 +55,8 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "orbit-gallery": OrbitGalleryDocs,
+  "orbit-gallery-showcase": OrbitGalleryShowcasePage,
   "feature-cards": FeatureCardsDocs,
   "features-showcase": FeaturesShowcasePage,
   "prospecting-components": ProspectingComponentsDocs,

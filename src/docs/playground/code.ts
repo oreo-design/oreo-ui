@@ -21,7 +21,7 @@ export function playgroundCode(element: ReactNode): string {
     }
     const indent = "  ".repeat(depth);
     const props = Object.entries(node.props).filter(([key, value]) => key !== "children" && value != null && typeof value !== "function").map(([key, value]) => {
-      const name = key === "value" && tag === "PromptBox" ? "defaultValue" : key === "open" ? "defaultOpen" : key === "expanded" && tag === "WebSearch" ? "defaultExpanded" : key;
+      const name = key === "layout" && tag === "OrbitGallery" ? "defaultLayout" : key === "value" && tag === "PromptBox" ? "defaultValue" : key === "open" ? "defaultOpen" : key === "expanded" && tag === "WebSearch" ? "defaultExpanded" : key;
       if (isValidElement(value)) return `${name}={${serialize(value, depth + 1).trim()}}`;
       return value === true ? name : `${name}={${JSON.stringify(value)}}`;
     });
