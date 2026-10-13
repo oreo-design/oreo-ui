@@ -1,0 +1,113 @@
+{
+  "source": "https://x.com/_heyrico/status/2109659622114288121",
+  "image": "https://pbs.twimg.com/media/HUcEPY4aIAEtjro?format=jpg&name=orig",
+  "dimensions": [
+    5160,
+    3300
+  ],
+  "usage": "Reference artwork for the supplied template fixture. Reusable components receive these through existing avatar and brand props; host products should provide their own assets.",
+  "crops": {
+    "avatar-olivia": [
+      626,
+      631,
+      706,
+      711
+    ],
+    "avatar-emma": [
+      626,
+      808,
+      706,
+      888
+    ],
+    "avatar-liam": [
+      626,
+      985,
+      706,
+      1065
+    ],
+    "avatar-ava": [
+      626,
+      1330,
+      706,
+      1410
+    ],
+    "avatar-pink": [
+      626,
+      1507,
+      706,
+      1587
+    ],
+    "avatar-purple": [
+      626,
+      1852,
+      706,
+      1932
+    ],
+    "brand-vercel": [
+      755,
+      691,
+      791,
+      727
+    ],
+    "brand-ramp": [
+      755,
+      868,
+      791,
+      904
+    ],
+    "brand-stripe": [
+      755,
+      1045,
+      791,
+      1081
+    ],
+    "brand-perplexity": [
+      755,
+      1390,
+      791,
+      1426
+    ],
+    "brand-dropbox": [
+      755,
+      1567,
+      791,
+      1603
+    ],
+    "brand-granola": [
+      755,
+      1912,
+      791,
+      1948
+    ],
+    "brand-shopify": [
+      755,
+      2090,
+      791,
+      2126
+    ],
+    "brand-loom": [
+      755,
+      2266,
+      791,
+      2302
+    ],
+    "brand-workspace": [
+      465,
+      366,
+      525,
+      426
+    ],
+    "avatar-profile": [
+      465,
+      2904,
+      519,
+      2958
+    ],
+    "brand-claude": [
+      3429,
+      2409,
+      3465,
+      2445
+    ]
+  }
+}

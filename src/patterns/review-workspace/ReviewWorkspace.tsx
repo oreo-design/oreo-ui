@@ -5,10 +5,10 @@ import { Attachment, AttachmentBar } from "@/components/attachment";
 import { Icon } from "@/components/icon";
 import { Menu, MenuTrigger, MenuPopup, MenuItem } from "@/components/menu";
 import { EmailDraft, FollowUpSummary, ReviewQueue, ReviewNavigation, ReviewWorkspaceShell, SignalStrength, WorkspaceRail, type EmailDraftValue } from "@/components/review-workspace";
-import { reviewGroups, initialDraft } from "./data";
+import { reviewGroups, initialDraft, reviewAssets } from "./data";
 
 /** Local fixture. Wire EmailDraft.onSend to your own reviewed delivery flow. */
-export function ReviewWorkspace({ dark = false, onToggleTheme }: { dark?: boolean; onToggleTheme?: () => void }) {
+export function ReviewWorkspace({ dark = false }: { dark?: boolean }) {
   const [selectedId, setSelectedId] = useState("olivia");
   const [section, setSection] = useState("review");
   const [filter, setFilter] = useState(0);
@@ -47,22 +47,22 @@ export function ReviewWorkspace({ dark = false, onToggleTheme }: { dark?: boolea
   };
   const select = (id: string) => { setSelectedId(id); setDetailOpen(true); };
   return <ReviewWorkspaceShell detailOpen={detailOpen}
-    rail={<WorkspaceRail brand={<span aria-hidden>◐</span>} activeId={section} onSelect={id => { if (["review", "follow-ups", "opportunity", "hiring"].includes(id)) changeView(id, filter); else window.location.assign(`/${id}`); }} items={[
-      { id: "thread-list", label: "Conversation history", icon: "reset" },
-      { id: "review", label: "Review all", icon: "list-checks" },
-      { id: "follow-ups", label: "Follow-ups", icon: "paper-plane" },
+    rail={<WorkspaceRail brand={<img src={reviewAssets.workspace} alt="" />} activeId={section} onSelect={id => { if (["review", "follow-ups", "opportunity", "hiring"].includes(id)) changeView(id, filter); else window.location.assign(`/${id}`); }} items={[
+      { id: "thread-list", label: "Conversation history", icon: "clock-history" },
+      { id: "review", label: "Review all", icon: "scan-text" },
+      { id: "follow-ups", label: "Follow-ups", icon: "book-open" },
       { id: "skills-workspace", label: "Skills workspace", icon: "circle-dashed" },
-      { id: "prompt-box", label: "Assistant composer", icon: "at" },
-      { id: "opportunity", label: "Opportunities", icon: "chart-line", divider: true },
-      { id: "hiring", label: "Hiring signals", icon: "search" },
-      { id: "confirmation", label: "Approvals", icon: "checks", divider: true },
+      { id: "prompt-box", label: "Assistant composer", icon: "assistant" },
+      { id: "opportunity", label: "Opportunities", icon: "chart-bar", divider: true },
+      { id: "hiring", label: "Hiring signals", icon: "users" },
+      { id: "confirmation", label: "Approvals", icon: "chat-check", divider: true },
       { id: "onboarding-board", label: "Planning board", icon: "calendar" },
       { id: "inbox-stream", label: "Inbox stream", icon: "chat" },
       { id: "skill-card", label: "Add skills", icon: "plus", divider: true },
-    ]} footer={<><a href="/review-components" title="Component documentation" aria-label="Component documentation"><Avatar name="James Thompson" size="xs" color="blue" className="!size-5" /></a>{onToggleTheme && <button className="review-rail-button" type="button" onClick={onToggleTheme} title={dark ? "Light theme" : "Dark theme"} aria-label={dark ? "Light theme" : "Dark theme"}><Icon name={dark ? "sun" : "moon"} /></button>}</>} />}
+    ]} footer={<><a href="/review-components" title="Component documentation" aria-label="Component documentation"><Avatar name="James Thompson" src={reviewAssets.profile} size="xs" color="blue" className="!size-5" /></a></>} />}
     queue={<ReviewQueue groups={groups} selectedId={selectedId} onSelect={select} footer={dismissed.size > 0 && hasResults ? <Button type="tertiary" size="sm" tapScale={1} onClick={restoreDismissed}>Restore dismissed ({dismissed.size})</Button> : undefined} actions={<>
-      <Menu><MenuTrigger aria-label="Filter contacts" title="Filter contacts" className="review-rail-button !size-8"><Icon name="sliders" size="sm" /></MenuTrigger><MenuPopup className={dark ? "theme-dark" : undefined}><MenuItem selected={filter === 0} onClick={() => changeView(section, 0)}>All signals</MenuItem>{([3, 2, 1] as const).map(n => <MenuItem key={n} selected={filter === n} onClick={() => changeView(section, n)}>{n === 3 ? "Strong" : n === 2 ? "Medium" : "Early"} signals</MenuItem>)}</MenuPopup></Menu>
-      <Menu><MenuTrigger aria-label="Sort contacts" title="Sort contacts" className="review-rail-button !size-8"><Icon name="arrow-down" size="sm" /></MenuTrigger><MenuPopup className={dark ? "theme-dark" : undefined}>{[["default", "Recommended"], ["name", "Name"], ["company", "Company"]].map(([value, label]) => <MenuItem key={value} selected={sort === value} onClick={() => setSort(value)}>{label}</MenuItem>)}</MenuPopup></Menu>
+      <Menu><MenuTrigger aria-label="Filter contacts" title="Filter contacts" className="review-rail-button !size-8"><Icon name="filter" size="sm" /></MenuTrigger><MenuPopup className={dark ? "theme-dark" : undefined}><MenuItem selected={filter === 0} onClick={() => changeView(section, 0)}>All signals</MenuItem>{([3, 2, 1] as const).map(n => <MenuItem key={n} selected={filter === n} onClick={() => changeView(section, n)}>{n === 3 ? "Strong" : n === 2 ? "Medium" : "Early"} signals</MenuItem>)}</MenuPopup></Menu>
+      <Menu><MenuTrigger aria-label="Sort contacts" title="Sort contacts" className="review-rail-button !size-8"><Icon name="sort-descending" size="sm" /></MenuTrigger><MenuPopup className={dark ? "theme-dark" : undefined}>{[["default", "Recommended"], ["name", "Name"], ["company", "Company"]].map(([value, label]) => <MenuItem key={value} selected={sort === value} onClick={() => setSort(value)}>{label}</MenuItem>)}</MenuPopup></Menu>
     </>} empty={<><p>No contacts match this view.</p><Button className="mt-4" type="secondary" onClick={dismissed.size ? restoreDismissed : () => changeView(section, 0)} tapScale={1}>{dismissed.size ? "Restore dismissed" : "Clear filter"}</Button></>} />}
     header={hasResults ? <><IconButton aria-label="Back to review list" icon={<Icon name="chevron-left" />} className="review-back" type="tertiary" onClick={() => setDetailOpen(false)} tapScale={1} /><h2>{contact.name}</h2><span className="review-company"><span className="review-company-mark" data-color={contact.companyColor} aria-hidden>{contact.companyMark ?? contact.company.slice(0, 1)}</span>{contact.company}</span><SignalStrength value={contact.strength} /><ReviewNavigation previousDisabled={selectedIndex <= 0} nextDisabled={selectedIndex >= visibleContacts.length - 1} onPrevious={() => { const previous = visibleContacts[selectedIndex - 1]; if (previous) select(previous.id); }} onNext={() => { const next = visibleContacts[selectedIndex + 1]; if (next) select(next.id); }} onDismiss={dismiss} /></> : <h2>Review</h2>}>
       <input ref={fileInput} type="file" multiple hidden aria-label="Choose draft attachments" onChange={event => {
@@ -77,7 +77,7 @@ export function ReviewWorkspace({ dark = false, onToggleTheme }: { dark?: boolea
       }} />
       {hasResults ? <>
       <FollowUpSummary title={group.label}>Following {contact.name.split(" ")[0]}’s demo last week, there are still some open questions about implementation timing and the security review. This message recaps the next steps and proposes a follow-up</FollowUpSummary>
-      <EmailDraft from={{ name: "James Thompson", email: "thompson@ace.com", color: "blue", brand: <span className="review-company-mark review-workspace-brand">◐</span> }} to={{ name: contact.name, email: `${contact.name.split(" ")[0].toLowerCase()}@${contact.company.toLowerCase()}.com`, color: contact.color, brand: <span className="review-company-mark" data-color={contact.companyColor}>{contact.companyMark ?? contact.company.slice(0, 1)}</span> }} value={draft}
+      <EmailDraft from={{ name: "James Thompson", avatarSrc: reviewAssets.sender, email: "thompson@ace.com", color: "blue", brand: <span className="review-company-mark review-workspace-brand"><img src={reviewAssets.workspace} alt="" /></span> }} to={{ name: contact.name, avatarSrc: contact.avatarSrc, email: `${contact.name.split(" ")[0].toLowerCase()}@${contact.company.toLowerCase()}.com`, color: contact.color, brand: <span className="review-company-mark" data-color={contact.companyColor}>{contact.companyMark ?? contact.company.slice(0, 1)}</span> }} value={draft}
         onChange={value => { setDrafts(prev => ({ ...prev, [selectedId]: value })); setStatuses(prev => { const next = { ...prev }; delete next[selectedId]; return next; }); }}
         onSend={() => setStatuses(prev => ({ ...prev, [selectedId]: draft.subject.trim() && draft.body.trim() ? "sent" : "error" }))}
         onAttach={() => { attachmentTarget.current = selectedId; fileInput.current?.click(); }}
@@ -86,6 +86,7 @@ export function ReviewWorkspace({ dark = false, onToggleTheme }: { dark?: boolea
           setStatuses(current => { const next = { ...current }; delete next[selectedId]; return next; });
           setAnnouncement(`${file.name} removed.`);
         }} />)}</AttachmentBar> : undefined}
+        modelMark={!models[selectedId] || models[selectedId].startsWith("Claude") ? <img src={reviewAssets.claude} alt="" className="review-model-mark" /> : undefined}
         model={models[selectedId] ?? "Claude Opus 5.5"} onModelChange={model => setModels(prev => ({ ...prev, [selectedId]: model }))}
         error={statuses[selectedId] === "error" ? "Add a subject and message before sending." : undefined}
         status={statuses[selectedId] === "sent" ? "Demo complete — no email was sent." : undefined} />
