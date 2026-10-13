@@ -1,9 +1,10 @@
-import { useEffect, useId, useRef, type ReactNode } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, type ReactNode } from "react";
 import { Avatar, type AvatarColor } from "@/components/avatar";
 import { Button, IconButton } from "@/components/button";
 import { Icon, type IconName } from "@/components/icon";
 import { cn } from "@/lib/cn";
 import "./review-workspace.css";
+import claudeMark from "@/components/prompt-box/assets/claude-color.svg";
 
 export type SignalLevel = 1 | 2 | 3;
 export function SignalStrength({ value, label = "Signal strength" }: { value: SignalLevel; label?: string }) {
@@ -25,11 +26,11 @@ export function WorkspaceRail({ items, activeId, onSelect, brand, footer }: {
   </nav>;
 }
 
-export type ReviewContact = { id: string; name: string; company: string; companyMark?: ReactNode; avatarSrc?: string; color?: AvatarColor; strength: SignalLevel };
+export type ReviewContact = { id: string; name: string; company: string; companyColor?: "mint" | "brown" | "purple" | "blue"; companyMark?: ReactNode; avatarSrc?: string; color?: AvatarColor; strength: SignalLevel };
 export function ContactRow({ contact, selected, onSelect }: { contact: ReviewContact; selected?: boolean; onSelect: (id: string) => void }) {
   return <button type="button" className="review-contact" aria-pressed={Boolean(selected)} onClick={() => onSelect(contact.id)}>
     <span aria-hidden="true"><Avatar name={contact.name} src={contact.avatarSrc} color={contact.color ?? "orange"} size="sm" /></span>
-    <span className="review-contact-copy"><span>{contact.name}</span><span className="review-company"><span className="review-company-mark" aria-hidden>{contact.companyMark ?? contact.company.slice(0, 1)}</span>{contact.company}</span></span>
+    <span className="review-contact-copy"><span>{contact.name}</span><span className="review-company"><span className="review-company-mark" data-color={contact.companyColor} aria-hidden>{contact.companyMark ?? contact.company.slice(0, 1)}</span>{contact.company}</span></span>
     <SignalStrength value={contact.strength} />
   </button>;
 }
@@ -49,7 +50,7 @@ export function ReviewQueue({ title = "Review", groups, selectedId, onSelect, ac
 }
 
 export function FollowUpSummary({ title = "Follow-ups", action = "Send email", children }: { title?: string; action?: string; children: ReactNode }) {
-  return <section className="review-summary" aria-label="Suggested action"><header><Icon name="plane" /><h3>{title}</h3><span>{action}</span></header><div>{children}</div></section>;
+  return <section className="review-summary" aria-label="Suggested action"><header><Icon name="paper-plane" /><h3>{title}</h3><span>{action}</span></header><div>{children}</div></section>;
 }
 
 /** Navigation follows the host's filtered/sorted queue, without wrapping. */
@@ -74,26 +75,44 @@ export function EmailDraftToolbar({ onSend, onAttach, model, onModelChange, disa
   return <div className="review-email-footer">
     {onAttach && <IconButton aria-label="Attach files" title="Attach files" type="secondary" size="sm" shape="rectangle" tapScale={1} disabled={disabled} onClick={onAttach} icon={<Icon name="paperclip" size="sm" />} />}
     <div className="review-email-send-actions">
-      {model && <label className="review-model"><Icon name="sparkle" size="sm" /><span className="sr-only">Draft model</span><select aria-label="Draft model" value={model} onChange={e => onModelChange?.(e.target.value)} disabled={!onModelChange || disabled}>{[...new Set([model, "Claude Opus 5.5", "GPT", "Gemini"])].map(option => <option key={option}>{option}</option>)}</select></label>}
-      <Button disabled={disabled} onClick={onSend} trailingIcon={<Icon name="plane" size="sm" />} tapScale={1}>Send</Button>
+      {model && <label className="review-model">{model.startsWith("Claude") ? <img src={claudeMark} alt="" className="review-model-mark" /> : <Icon name="sparkle" size="sm" />}<span className="sr-only">Draft model</span><select aria-label="Draft model" value={model} onChange={e => onModelChange?.(e.target.value)} disabled={!onModelChange || disabled}>{[...new Set([model, "Claude Opus 5.5", "GPT", "Gemini"])].map(option => <option key={option}>{option}</option>)}</select></label>}
+      <Button size="sm" disabled={disabled} onClick={onSend} trailingIcon={<Icon name="paper-plane" size="sm" />} tapScale={1}>Send</Button>
     </div>
   </div>;
 }
 
 export type EmailDraftValue = { subject: string; body: string };
-export type DraftPerson = { name: string; email: string; color?: AvatarColor; avatarSrc?: string };
+export type DraftPerson = { name: string; email: string; color?: AvatarColor; avatarSrc?: string; brand?: ReactNode };
 export function EmailDraft({ from, to, value, onChange, onSend, model, onModelChange, disabled = false, status, error, onAttach, attachments }: {
   from: DraftPerson; to: DraftPerson; value: EmailDraftValue; onChange: (value: EmailDraftValue) => void;
   onSend: () => void; model?: string; onModelChange?: (model: string) => void; disabled?: boolean; status?: ReactNode; error?: string; onAttach?: () => void; attachments?: ReactNode;
 }) {
   const id = useId();
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+  useLayoutEffect(() => {
+    const message = messageRef.current;
+    if (!message) return;
+    const resize = () => {
+      message.style.height = "auto";
+      message.style.height = `${message.scrollHeight}px`;
+    };
+    resize();
+    let previousWidth = -1;
+    const observer = new ResizeObserver(([entry]) => {
+      if (entry.contentRect.width === previousWidth) return;
+      previousWidth = entry.contentRect.width;
+      resize();
+    });
+    observer.observe(message);
+    return () => observer.disconnect();
+  }, [value.body]);
   return <section className="review-email" aria-label={`Email draft for ${to.name}`}>
-    <dl>{([['From', from], ['To', to]] as const).map(([label, person]) => <div className="review-address" key={label}><dt>{label}</dt><dd><Avatar size="xs" name={person.name} src={person.avatarSrc} color={person.color ?? "orange"} /><span>{person.email}</span></dd></div>)}</dl>
+    <dl>{([['From', from], ['To', to]] as const).map(([label, person]) => <div className="review-address" key={label}><dt>{label}</dt><dd><Avatar size="xs" name={person.name} src={person.avatarSrc} color={person.color ?? "orange"} /><span>{person.email}</span>{person.brand && <span className="review-address-brand" aria-hidden>{person.brand}</span>}</dd></div>)}</dl>
     <div className="review-email-content">
       <label className="sr-only" htmlFor={`${id}-subject`}>Email subject</label>
       <input id={`${id}-subject`} className="review-subject" value={value.subject} onChange={e => onChange({ ...value, subject: e.target.value })} disabled={disabled} />
       <label className="sr-only" htmlFor={`${id}-body`}>Email message</label>
-      <textarea id={`${id}-body`} className="review-message" value={value.body} onChange={e => onChange({ ...value, body: e.target.value })} disabled={disabled} aria-invalid={Boolean(error)} aria-describedby={error ? `${id}-error` : undefined} />
+      <textarea ref={messageRef} id={`${id}-body`} className="review-message" value={value.body} onChange={e => onChange({ ...value, body: e.target.value })} disabled={disabled} aria-invalid={Boolean(error)} aria-describedby={error ? `${id}-error` : undefined} />
       {error && <p id={`${id}-error`} role="alert" className="review-error">{error}</p>}
       {attachments && <div className="review-email-attachments">{attachments}</div>}
       <EmailDraftToolbar onSend={onSend} onAttach={onAttach} model={model} onModelChange={onModelChange} disabled={disabled} />

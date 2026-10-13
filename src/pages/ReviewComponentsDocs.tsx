@@ -47,10 +47,10 @@ export function ReviewComponentsDocs({ nav }: { nav: DocsNav }) {
     <Section id="api" title="API reference" description="All nine components are exported from the same entry point. No services or additional dependencies are required."><div className="overflow-x-auto"><PropsTable rows={[
       { prop: "SignalStrength", type: "value: 1 | 2 | 3; label?: string", desc: "Segment count and accessible description." },
       { prop: "WorkspaceRail", type: "items; activeId; onSelect; brand?; footer?", desc: "Controlled navigation. Items accept id, label, icon, and optional divider." },
-      { prop: "ContactRow", type: "contact; selected?; onSelect", desc: "Contact accepts id, name, company, strength, avatarSrc?, color?, companyMark?." },
+      { prop: "ContactRow", type: "contact; selected?; onSelect", desc: "Contact accepts id, name, company, strength, avatarSrc?, color?, companyMark?, companyColor?." },
       { prop: "ReviewQueue", type: "groups; selectedId?; onSelect; title?; actions?; empty?; footer?", desc: "Groups contain id, label and contacts. Empty content and a footer slot can offer recovery." },
       { prop: "FollowUpSummary", type: "title?; action?; children", desc: "Non-interactive action label and summary content." },
-      { prop: "EmailDraft", type: "from; to; value; onChange; onSend", desc: "Controlled subject/body. Optional model, onModelChange, disabled, error, status, onAttach and attachments slots. People accept name, email, color?, avatarSrc?." },
+      { prop: "EmailDraft", type: "from; to; value; onChange; onSend", desc: "Controlled subject/body. Optional model, onModelChange, disabled, error, status, onAttach and attachments slots. People accept name, email, color?, avatarSrc?, brand?." },
       { prop: "ReviewNavigation", type: "onPrevious; onNext; onDismiss; previousDisabled?; nextDisabled?; disabled?", desc: "Labelled actions for the host’s filtered and sorted queue. Boundaries disable navigation; no wraparound." },
       { prop: "EmailDraftToolbar", type: "onSend; onAttach?; model?; onModelChange?; disabled?", desc: "Attachment action at the leading edge, model and send at the trailing edge. Supports host-defined model names." },
       { prop: "ReviewWorkspaceShell", type: "rail; queue; header; children; detailOpen?; className?", desc: "Responsive three-column layout with a mobile master-detail state." },
