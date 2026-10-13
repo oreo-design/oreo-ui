@@ -1,3 +1,4 @@
+import { InvoicePreview, UsageSummary } from "@/components/feature-cards";
 import { SkillCard, SkillProviderBadge } from "@/components/skill-card";
 import { searchSources, searchAnswer, webSearchDemo } from "./web-search.demo";
 import { statusIconDemo } from "./status-icon.demo";
@@ -38,6 +39,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
   "skill-card": { SkillCard, SkillProviderBadge },
+  "feature-cards": { InvoicePreview, UsageSummary },
   "status-icon": { StatusIcon },
   button: { Button, IconButton }, icon: { Icon }, chip: { Chip }, tag: { Tag }, shortcut: { Shortcut }, avatar: { Avatar },
   attachment: { Attachment, AttachmentBar }, "prompt-box": { PromptBox, PromptBoxModelSelect }, "keyword-tag": { KeywordTag },
@@ -55,6 +57,13 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "feature-cards": define("Feature Cards", {
+    variant: select(["invoice", "usage"], "invoice"), fade: toggle(),
+    number: text("INV-456789"), amount: text("$284,342.57"), due: text("Due in 15 days"),
+    recipient: text(""), sender: text(""), address: text(""),
+    title: text("Spending Limit"), description: text("New users by First user primary channel group"),
+    running: number(20, 0, 100), swimming: number(20, 0, 100),
+  }, v => <div className="w-full max-w-md">{v.variant === "invoice" ? <InvoicePreview number={v.number} amount={v.amount} due={v.due} recipient={v.recipient || undefined} sender={v.sender || undefined} address={v.address || undefined} fade={v.fade} /> : <UsageSummary title={v.title} description={v.description} fade={v.fade} segments={[{ label: "Running", value: v.running, tone: "purple", detail: "average of 12 minutes" }, { label: "Swimming", value: v.swimming, tone: "blue" }]} />}</div>),
   "skill-card": define("Skill Card", {
     title: text("Pipeline review"), description: text("Reviews every open deal each Monday, flags the ones with no activity in 14 days and suggests your next move.", true),
     provider: text("Attio"), color, icon: select(["circle-dashed", "sparkle", "chart-line", "calendar"], "circle-dashed"), installed: toggle(), pending: toggle(), disabled: toggle(), error: text(""),
