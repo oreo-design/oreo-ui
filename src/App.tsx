@@ -1,3 +1,5 @@
+import { SkillCardDocs } from "@/pages/SkillCardDocs";
+import { SkillsWorkspacePage } from "@/pages/SkillsWorkspacePage";
 import { StatusIconDocs } from "@/pages/StatusIconDocs";
 import { ContextWindowDocs } from "@/pages/ContextWindowDocs";
 import { ReviewWorkspacePage } from "@/pages/ReviewWorkspacePage";
@@ -43,6 +45,8 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "skill-card": SkillCardDocs,
+  "skills-workspace": SkillsWorkspacePage,
   "status-icon": StatusIconDocs,
   "context-window": ContextWindowDocs,
   "review-workspace": ReviewWorkspacePage,

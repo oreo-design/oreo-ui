@@ -30,6 +30,14 @@ A small, copy-paste React component library that reproduces the **Oreo UI** desi
 
 Design tokens are extracted 1:1 from the Oreo UI Figma file; switching theme or radius only changes CSS variables — components are never touched. The palette tones used by Tag and the Avatar "alphabet" type ship with both light and dark skins.
 
+## Skills catalog
+
+Inspired by [@_heyrico’s Skills interface](https://x.com/_heyrico/status/2109682274090545238), `/skill-card` provides a live playground and documentation for seven exports: `SkillCard`, `SkillProviderBadge`, `SkillSearch`, `SkillCatalogTabs`, `SkillSection`, `SkillEmptyState`, and `SkillWorkspaceShell`.
+
+`/skills-workspace` composes them with the existing `WorkspaceRail` into a responsive template. Search across names, descriptions and providers, add/remove skills, and switch between Installed and Discover. Installation is a local demo only and resets on reload. Provider initials replace brand artwork; dark mode and mobile behavior extend the cropped reference.
+
+Copy `src/components/skill-card` with its Oreo dependencies for the primitives, or add `src/patterns/skills-workspace` for the complete fixture. The components use existing theme, palette and radius tokens without new dependencies.
+
 ## Develop
 
 ### Settings design-language experiment

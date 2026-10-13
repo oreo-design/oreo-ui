@@ -1,3 +1,4 @@
+import { SkillCard, SkillProviderBadge } from "@/components/skill-card";
 import { searchSources, searchAnswer, webSearchDemo } from "./web-search.demo";
 import { statusIconDemo } from "./status-icon.demo";
 import { StatusIcon, STATUS_ICON_STATES, STATUS_ICON_PROGRESS } from "@/components/status-icon";
@@ -36,6 +37,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "skill-card": { SkillCard, SkillProviderBadge },
   "status-icon": { StatusIcon },
   button: { Button, IconButton }, icon: { Icon }, chip: { Chip }, tag: { Tag }, shortcut: { Shortcut }, avatar: { Avatar },
   attachment: { Attachment, AttachmentBar }, "prompt-box": { PromptBox, PromptBoxModelSelect }, "keyword-tag": { KeywordTag },
@@ -53,6 +55,10 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "skill-card": define("Skill Card", {
+    title: text("Pipeline review"), description: text("Reviews every open deal each Monday, flags the ones with no activity in 14 days and suggests your next move.", true),
+    provider: text("Attio"), color, icon: select(["circle-dashed", "sparkle", "chart-line", "calendar"], "circle-dashed"), installed: toggle(), pending: toggle(), disabled: toggle(), error: text(""),
+  }, (v, set) => <SkillCard title={v.title} description={v.description} provider={{ name: v.provider, color: v.color }} icon={v.icon} installed={v.installed} pending={v.pending} disabled={v.disabled} error={v.error} onInstalledChange={next => set("installed", next)} className="w-full max-w-md" />),
   "status-icon": {
     ...define("Status Icon", { status: select(STATUS_ICON_STATES, "todo"), progress: select(STATUS_ICON_PROGRESS, "half"), size: select(["sm", "md", "lg", "xl"], "xl"), monochrome: toggle(), animated: toggle(true), "aria-label": text("Task status") }, v => <StatusIcon {...v} />),
     demo: statusIconDemo,
