@@ -1,0 +1,44 @@
+.oreo-search-card, .oreo-search-trigger, .oreo-search-citation {
+  outline: none;
+  transition: background-color 150ms, box-shadow 150ms, transform 200ms var(--ease-out);
+}
+.oreo-search-card:focus-visible, .oreo-search-trigger:focus-visible, .oreo-search-citation:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}
+.oreo-search-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.oreo-search { container-type: inline-size; }
+@container (min-width: 30rem) { .oreo-search-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.oreo-search-stack-plate { transition: transform 200ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .oreo-search-card:hover { transform: translateY(-2px); background: var(--color-bg-surface); box-shadow: var(--shadow-default); }
+  .oreo-search-trigger:hover, .oreo-search-citation:hover { background: var(--color-state-press); }
+  .oreo-search-stack:hover .oreo-search-stack-plate { transition-delay: 150ms; }
+  .oreo-search-stack:hover .oreo-search-stack-item:nth-child(2) .oreo-search-stack-plate { transform: translateX(4px); }
+  .oreo-search-stack:hover .oreo-search-stack-item:nth-child(3) .oreo-search-stack-plate { transform: translateX(8px); }
+  .oreo-search-stack:hover .oreo-search-stack-item:nth-child(4) .oreo-search-stack-plate { transform: translateX(12px); }
+}
+.oreo-search-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, var(--color-state-press), transparent);
+  animation: oreo-search-sweep 1.6s linear infinite;
+}
+@keyframes oreo-search-sweep { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+.oreo-search-preview {
+  transform-origin: var(--transform-origin);
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out), filter 200ms var(--ease-out);
+}
+.oreo-search-preview[data-starting-style], .oreo-search-preview[data-ending-style] {
+  opacity: 0;
+  transform: translateY(4px) scale(.97);
+  filter: blur(4px);
+}
+.oreo-search-caret { animation: oreo-caret 1s step-end infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .oreo-search-card, .oreo-search-trigger, .oreo-search-citation, .oreo-search-stack-plate { transition: background-color 150ms; transform: none !important; }
+  .oreo-search-skeleton::after, .oreo-search-caret { animation: none; }
+  .oreo-search-preview { transition: opacity 150ms; }
+  .oreo-search-preview[data-starting-style], .oreo-search-preview[data-ending-style] { transform: none; filter: none; }
+}

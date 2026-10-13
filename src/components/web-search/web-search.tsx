@@ -1,11 +1,12 @@
 import * as React from "react";
+import { WebSearchCards, type WebSearchCardsProps } from "./search-cards";
 import { motion } from "motion/react";
 import { cn } from "@/lib/cn";
 import { easeOut, useHidden } from "@/lib/motion";
 import { Icon } from "@/components/icon";
 import { ActivityLabel } from "@/components/activity-label";
 
-export type WebSearchProps = {
+export type WebSearchListProps = {
   query: string;
   /** True while results stream in — shimmers the status line. */
   searching?: boolean;
@@ -23,7 +24,15 @@ export type WebSearchProps = {
  * result list that fades in row by row. For the generic collapsed variant,
  * use Tool Call instead.
  */
-export function WebSearch({ query, searching = false, summary, children, className }: WebSearchProps) {
+export type WebSearchProps = WebSearchListProps | WebSearchCardsProps;
+
+/** Pass sources for the interactive card mode; children preserve the original list API. */
+export function WebSearch(props: WebSearchProps) {
+  if ("sources" in props) return <WebSearchCards {...props} />;
+  return <WebSearchList {...props} />;
+}
+
+function WebSearchList({ query, searching = false, summary, children, className }: WebSearchListProps) {
   return (
     <div className={cn("flex w-full flex-col gap-2.5", className)}>
       <span className="inline-flex w-fit max-w-full items-center gap-1.5 rounded-[var(--radius-capsule)] bg-[var(--color-state-hover)] px-3.5 py-2 text-[12px] text-[var(--color-text-primary)]">
