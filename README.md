@@ -31,6 +31,12 @@ Design tokens are extracted 1:1 from the Oreo UI Figma file; switching theme or 
 
 ## Develop
 
+### Settings design-language experiment
+
+`/settings-lab` compares content changes, composition and deliberate extensions of the original Settings pattern. The reusable implementation, lineage contract and checks are documented in [the experiment guide](docs/settings-language/README.md), with evidence in [the results](docs/settings-language/RESULTS.md).
+
+Run `pnpm settings:verify` to compare against the pinned original and exercise the lab. It starts its own local servers on available ports and closes them when done.
+
 Requires Node 18+ and pnpm.
 
 ```bash

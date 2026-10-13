@@ -18,9 +18,16 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "context-window": { title: "Context Window", description: "Inspect token usage by category, remove context files and compact conversations on Oreo’s token-driven surface." },
+  "review-workspace": { title: "Review Workspace", description: "A three-column UI template for contact signals, follow-ups and editable email drafts." },
+  "review-components": { title: "Review Components", description: "Composable workspace rail, contact queue, signal strength, follow-up summary, email draft and review shell." },
   kanban: {
     title: "Kanban",
     description: "An interactive Kanban board with sortable cards, assignee swimlanes, soft work-in-progress limits and interruptible motion.",
+  },
+  "gradient-mask": {
+    title: "Gradient Mask",
+    description: "An eased CSS opacity mask for images and decorative content, with four directions, configurable fade ranges, and a live linear-versus-eased comparison.",
   },
   button: {
     title: "Button",
@@ -166,6 +173,10 @@ export const PAGE_META = {
     title: "Onboarding Board",
     description:
       "A starter checklist pattern: drag cards between columns, edit titles and notes inline, and add tasks — all persisted to the browser.",
+  },
+  "settings-lab": {
+    title: "Settings Pattern Lab",
+    description: "Preserving design craft through content changes, composition and deliberate extensions.",
   },
   settings: {
     title: "Settings",

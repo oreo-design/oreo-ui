@@ -20,6 +20,7 @@ const NAV: Group[] = [
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
       { label: "Menu", page: "menu" },
+      { label: "Gradient Mask", page: "gradient-mask" },
       { label: "Kanban", page: "kanban" },
       { label: "Select", soon: true },
       { label: "Dialog", soon: true },
@@ -45,6 +46,7 @@ const NAV: Group[] = [
       { label: "Prompt Box", page: "prompt-box" },
       { label: "Keyword Tag", page: "keyword-tag" },
       { label: "Context Bar", page: "context-bar" },
+      { label: "Context Window", page: "context-window" },
       { label: "Tool Call", page: "tool-call" },
       { label: "Reasoning", page: "reasoning" },
       { label: "Plan", page: "plan" },
@@ -60,15 +62,21 @@ const NAV: Group[] = [
     // App chrome around the conversation.
     title: "Shell",
     items: [
+      { label: "Review Components", page: "review-components" },
       { label: "Thread List", page: "thread-list" },
       { label: "Assistant Modal", page: "assistant-modal" },
     ],
+  },
+  {
+    title: "Templates",
+    items: [{ label: "Review Workspace", page: "review-workspace" }],
   },
   {
     title: "Patterns",
     items: [
       { label: "Onboarding Board", page: "onboarding-board" },
       { label: "Settings", page: "settings" },
+      { label: "Pattern Lab", page: "settings-lab" },
     ],
   },
 ];

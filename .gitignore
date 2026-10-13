@@ -30,3 +30,6 @@ pnpm-debug.log*
 .env.*
 !.env.example
 .vercel
+
+# Reproducible Settings lab evidence
+artifacts/

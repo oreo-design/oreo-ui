@@ -2,6 +2,7 @@ import * as React from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 import { easeOut } from "@/lib/motion";
+import { RowShell, RowLabel } from "./row-primitives";
 import { Button } from "@/components/button";
 import { Icon } from "@/components/icon";
 
@@ -11,42 +12,6 @@ import { Icon } from "@/components/icon";
  * one shape. Hairlines sit on the rows and vanish on the last one; the card's
  * own padding is what turns them into inset dividers.
  * -------------------------------------------------------------------------- */
-
-function RowShell({ children, className }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div
-      className={cn(
-        "flex items-center justify-between gap-6 border-b-[0.5px] border-[var(--settings-hairline)] py-4 last:border-b-0",
-        className,
-      )}
-    >
-      {children}
-    </div>
-  );
-}
-
-function RowLabel({
-  title,
-  description,
-  strong,
-}: {
-  title: React.ReactNode;
-  description?: React.ReactNode;
-  strong?: boolean;
-}) {
-  return (
-    <div className="min-w-0">
-      <div className={cn(strong ? "text-[15px] font-semibold leading-5" : "text-[13px] font-medium leading-[18px]")}>
-        {title}
-      </div>
-      {description && (
-        <div className="max-w-[52ch] text-[13px] leading-5 tracking-[0.01em] text-[var(--color-text-secondary)]">
-          {description}
-        </div>
-      )}
-    </div>
-  );
-}
 
 /** The workhorse: title + description on the left, any control on the right. */
 export function SettingsRow({

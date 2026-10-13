@@ -1,0 +1,33 @@
+/* Scoped to the derivative; never target the original rows or global tokens.
+ * 32rem is a content-container breakpoint: two columns need room for 52ch
+ * prose + an action group. It is not tied to the browser/device width.
+ */
+.settings-adaptive-row {
+  container: setting / inline-size;
+  display: block;
+}
+.settings-adaptive-row__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem 1.5rem;
+}
+.settings-adaptive-row__identity { display: flex; align-items: flex-start; gap: 1rem; min-width: 0; }
+.settings-adaptive-row__identity > :last-child { overflow-wrap: anywhere; }
+.settings-adaptive-row__media { display: flex; flex: 0 0 2rem; align-items: center; justify-content: center; margin-top: var(--space-x1); }
+.settings-adaptive-row__control { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; min-width: 0; }
+.settings-adaptive-row__control > * { max-width: 100%; }
+.settings-adaptive-row__control button { white-space: normal; height: auto; min-height: 1.75rem; text-align: start; overflow-wrap: anywhere; }
+.settings-adaptive-row__body[data-media] > .settings-adaptive-row__control,
+.settings-adaptive-row__body[data-media] > .settings-adaptive-row__detail { margin-inline-start: 3rem; }
+.settings-adaptive-row__detail { min-width: 0; font-size: 13px; line-height: 1.25rem; color: var(--color-text-secondary); overflow-wrap: anywhere; }
+@container setting (min-width: 32rem) {
+  .settings-adaptive-row__body { grid-template-columns: minmax(0, 1fr) fit-content(50%); }
+  .settings-adaptive-row__control { justify-content: flex-end; align-self: center; }
+  .settings-adaptive-row__body[data-media] > .settings-adaptive-row__control { margin-inline-start: 0; }
+  .settings-adaptive-row__detail { grid-column: 1 / -1; }
+}
+
+/* One shared grid cell measures all labels; state changes do not resize it. */
+.settings-stable-label { display: inline-grid; align-items: center; }
+.settings-stable-label > span { grid-area: 1 / 1; }
+.settings-stable-label > [aria-hidden="true"] { visibility: hidden; }
