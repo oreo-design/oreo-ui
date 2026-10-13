@@ -1,3 +1,4 @@
+import { searchSources, searchAnswer, webSearchDemo } from "./web-search.demo";
 import { statusIconDemo } from "./status-icon.demo";
 import { StatusIcon, STATUS_ICON_STATES, STATUS_ICON_PROGRESS } from "@/components/status-icon";
 import { promptBoxDemo } from "./prompt-box.demo";
@@ -16,7 +17,7 @@ import { Reasoning } from "@/components/reasoning";
 import { Plan, PlanStep } from "@/components/plan";
 import { Sources, Source } from "@/components/sources";
 import { Confirmation } from "@/components/confirmation";
-import { WebSearch, WebSearchResult } from "@/components/web-search";
+import { WebSearch, WebSearchResult, WebSearchAnswer, WebSearchCitation, WebSearchSourceCard, WebSearchSourceStack } from "@/components/web-search";
 import { CodeDiff } from "@/components/code-diff";
 import { Terminal } from "@/components/terminal";
 import { Subagent } from "@/components/subagents";
@@ -39,7 +40,7 @@ export const componentModules = {
   button: { Button, IconButton }, icon: { Icon }, chip: { Chip }, tag: { Tag }, shortcut: { Shortcut }, avatar: { Avatar },
   attachment: { Attachment, AttachmentBar }, "prompt-box": { PromptBox, PromptBoxModelSelect }, "keyword-tag": { KeywordTag },
   "context-bar": { ContextBar, ContextBarLabel }, "tool-call": { ToolCall, ToolCallRow }, reasoning: { Reasoning }, plan: { Plan, PlanStep },
-  sources: { Sources, Source }, confirmation: { Confirmation }, "web-search": { WebSearch, WebSearchResult }, "code-diff": { CodeDiff },
+  sources: { Sources, Source }, confirmation: { Confirmation }, "web-search": { WebSearch, WebSearchResult, WebSearchAnswer, WebSearchCitation, WebSearchSourceCard, WebSearchSourceStack }, "code-diff": { CodeDiff },
   terminal: { Terminal }, subagents: { Subagent }, "thread-list": { ThreadList, ThreadListItem }, "assistant-modal": { AssistantModal },
   message: { Message, MessageContent }, conversation: { Conversation, ConversationContent, ConversationScrollButton }, response: { Response },
   "code-block": { CodeBlock }, "streaming-text": { StreamingText }, "branch-picker": { BranchPicker }, menu: { Menu, MenuTrigger, MenuPopup, MenuItem },
@@ -106,8 +107,23 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     <Sources label={v.label} open={v.open} onOpenChange={open => set("open", open)}><Source title={v.title} domain={v.domain} href="https://react.dev/" /></Sources>),
   confirmation: define("Confirmation", { title: text("Apply these changes?"), description: text("Update the selected component in this local preview.", true), state: select(["pending", "approved", "denied"], "pending"), danger: toggle(), approveLabel: text("Approve"), denyLabel: text("Deny") }, (v, set) =>
     <Confirmation {...v} onApprove={() => set("state", "approved")} onDeny={() => set("state", "denied")} />),
-  "web-search": define("Web Search", { query: text("Accessible component patterns"), searching: toggle(), summary: text("Read 1 source"), title: { ...text("Accessible interfaces"), group: "Result" } }, v =>
-    <WebSearch query={v.query} searching={v.searching} summary={v.summary}><WebSearchResult domain="w3.org" title={v.title} href="https://www.w3.org/WAI/" /></WebSearch>),
+  "web-search": {
+    ...define("Web Search", {
+      variant: select(["cards", "list"], "cards"), query: text("spring animations react"),
+      searching: toggle(), sourceCount: number(6, 0, 6), open: toggle(true), expanded: toggle(),
+      answer: toggle(true), error: toggle(),
+    }, (v, set) => <div className="w-full space-y-6 rounded-card-medium bg-bg-base p-4 sm:p-6">
+      {v.variant === "cards" ? <WebSearch query={v.query} sources={searchSources.slice(0, v.sourceCount)} searching={v.searching}
+        open={v.open} onOpenChange={next => set("open", next)} expanded={v.expanded} onExpandedChange={next => set("expanded", next)}
+        error={v.error ? "Search could not finish. Please try again." : undefined} onRetry={() => { set("error", false); set("searching", true); }} />
+        : <WebSearch query={v.query} searching={v.searching} summary={`Read ${v.sourceCount} sources`}>
+          {searchSources.slice(0, v.sourceCount).map(source => <WebSearchResult key={source.id} domain={source.name ?? source.id} title={source.title} href={source.url} />)}
+        </WebSearch>}
+      {v.answer && v.sourceCount > 0 && <WebSearchAnswer parts={searchAnswer.filter(part => searchSources.slice(0, v.sourceCount).some(source => source.id === part.source?.id))}
+        play={!v.searching && !v.error} replayKey={String(v.searching)} />}
+    </div>),
+    demo: webSearchDemo,
+  },
   "code-diff": define("Code Diff", { title: text("button.tsx"), before: { ...text('<Button>Submit</Button>', true), label: "Removed line" }, after: { ...text('<Button type="primary">Continue</Button>', true), label: "Added line" } }, v =>
     <CodeDiff title={v.title} lines={[...v.before.split("\n").map(content => ({ type: "remove" as const, content })), ...v.after.split("\n").map(content => ({ type: "add" as const, content }))]} />),
   terminal: define("Terminal", { command: text("pnpm build"), running: toggle(), exitCode: number(0, 0, 255), children: { ...text("Build complete.", true), label: "Output" } }, v => <Terminal {...v}>{v.children}</Terminal>),
