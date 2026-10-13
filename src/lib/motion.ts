@@ -15,6 +15,9 @@ export const easeOut = [0.23, 1, 0.32, 1] as const;
 /** Press feedback. Buttons expose `bounce`/`duration` so docs can tune it live. */
 export const pressSpring = { type: "spring", bounce: 0.4, duration: 0.3 } as const;
 
+/** iOS-like curve for size changes. Mirrors `--ease-drawer`. */
+export const easeDrawer = [0.32, 0.72, 0, 1] as const;
+
 /**
  * The hidden keyframe an element enters from and exits to.
  *

@@ -51,12 +51,22 @@ export function ContextBarIconButton({ icon, className, ...rest }: ContextBarIco
   );
 }
 
-/** The kit's 3-dot "in progress" step indicator (16px box). */
+/**
+ * The kit's 3-dot "in progress" step indicator (16px box). Only the leading dot
+ * is inked; the two ahead of it sit at the waiting tone, so the glyph reads as
+ * "one of three" rather than a dimmed ellipsis.
+ */
 function StepDots({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 16 16" aria-hidden className={className}>
       {[3.33, 8, 12.67].map((x, i) => (
-        <circle key={i} cx={x} cy="8" r="1.33" fill="currentColor" opacity={i === 0 ? 1 : 0.45} />
+        <circle
+          key={i}
+          cx={x}
+          cy="8"
+          r="1.33"
+          fill={i === 0 ? "currentColor" : "var(--color-text-waiting)"}
+        />
       ))}
     </svg>
   );

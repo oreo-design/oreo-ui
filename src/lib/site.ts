@@ -18,9 +18,17 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "status-icon": { title: "Status Icon", description: "Rounded task status icons with distinct outlines, progress fills and completion marks, built on Oreo’s tokens." },
+  "context-window": { title: "Context Window", description: "Inspect token usage by category, remove context files and compact conversations on Oreo’s token-driven surface." },
+  "review-workspace": { title: "Review Workspace", description: "A three-column UI template for contact signals, follow-ups and editable email drafts." },
+  "review-components": { title: "Review Components", description: "Composable workspace rail, contact queue, signal strength, follow-up summary, email draft and review shell." },
   kanban: {
     title: "Kanban",
     description: "An interactive Kanban board with sortable cards, assignee swimlanes, soft work-in-progress limits and interruptible motion.",
+  },
+  "gradient-mask": {
+    title: "Gradient Mask",
+    description: "An eased CSS opacity mask for images and decorative content, with four directions, configurable fade ranges, and a live linear-versus-eased comparison.",
   },
   button: {
     title: "Button",
@@ -127,6 +135,11 @@ export const PAGE_META = {
     description:
       "The floating chat launcher: a bottom-corner button whose glyph blur-swaps to a caret, with the panel springing up from that corner.",
   },
+  "page-loader": {
+    title: "Page Loader",
+    description:
+      "Story-driven page loading sized to the wait: one metaphor at three scales — a glyph loop under 5s, an ambient scene to 30s, and a playable minigame beyond.",
+  },
   "code-diff": {
     title: "Code Diff",
     description:
@@ -162,10 +175,19 @@ export const PAGE_META = {
     description:
       "A status surface that docks onto the Prompt Box — project context, background task count, upgrade nudges or a steerable task queue.",
   },
+  "inbox-stream": {
+    title: "Inbox Stream",
+    description:
+      "A feed pattern of dismissable cards in urgency tiers: generic card shells, filter chips, skeletons, and a three-layer enter/exit choreography.",
+  },
   "onboarding-board": {
     title: "Onboarding Board",
     description:
       "A starter checklist pattern: drag cards between columns, edit titles and notes inline, and add tasks — all persisted to the browser.",
+  },
+  "settings-lab": {
+    title: "Settings Pattern Lab",
+    description: "Preserving design craft through content changes, composition and deliberate extensions.",
   },
   settings: {
     title: "Settings",

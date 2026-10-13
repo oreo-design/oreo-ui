@@ -1,6 +1,9 @@
 import { useState, type CSSProperties } from "react";
 import { DocsLayout } from "./DocsLayout";
 import { CustomizePanel } from "./CustomizePanel";
+import { ComponentPlayground } from "./playground/ComponentPlayground";
+import { playgrounds } from "./playground/registry";
+import { Button } from "@/components/button";
 import type { TocItem } from "./OnThisPage";
 import { ICON_WEIGHTS, IconLibraryProvider, type IconLibrary, type IconWeight } from "@/components/icon";
 
@@ -27,6 +30,17 @@ export function DocsPage({
   nav: DocsNav;
   children: (controls: DocsControls) => React.ReactNode;
 }) {
+  const spec = playgrounds[nav.active];
+  const [view, setView] = useState<"playground" | "docs">(() => window.location.hash || new URLSearchParams(window.location.search).get("view") === "docs" ? "docs" : "playground");
+  const changeView = (next: "playground" | "docs") => {
+    setView(next);
+    const url = new URL(window.location.href);
+    url.hash = "";
+    if (next === "docs") url.searchParams.set("view", "docs");
+    else url.searchParams.delete("view");
+    window.history.replaceState(null, "", url);
+    window.scrollTo({ top: 0 });
+  };
   const [dark, setDark] = useState(false);
   const [radius, setRadius] = useState(8);
   const [bounce, setBounce] = useState(0.4);
@@ -47,10 +61,14 @@ export function DocsPage({
   };
   const wrapStyle = { ["--radius-control" as string]: `${radius}px` } as CSSProperties;
 
+  const appearance = { dark, setDark, radius, setRadius, bounce, setBounce, duration, setDuration, tapScale, setTapScale, library, setLibrary, weight: effectiveWeight, setWeight };
+
   return (
     <IconLibraryProvider library={library}>
       <div className={dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"} style={wrapStyle}>
+        {spec && view === "playground" ? <ComponentPlayground spec={spec} nav={nav} breadcrumb={breadcrumb} appearance={appearance} onDocumentation={() => changeView("docs")} /> : <>
         <DocsLayout toc={toc} breadcrumb={breadcrumb} nav={nav}>
+          {spec && <div className="mb-6"><Button type="secondary" size="sm" onClick={() => changeView("playground")}>Open playground</Button></div>}
           {children(controls)}
         </DocsLayout>
 
@@ -70,6 +88,7 @@ export function DocsPage({
           weight={effectiveWeight}
           setWeight={setWeight}
         />
+        </>}
       </div>
     </IconLibraryProvider>
   );

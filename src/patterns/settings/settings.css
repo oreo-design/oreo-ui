@@ -58,3 +58,14 @@
     border-radius: calc(var(--squircle-radius, 0) * 1.25);
   }
 }
+
+/* Same drawer surface and house curve; Base UI owns focus and dismissal. */
+.settings-navigation-dialog { transition: transform .45s var(--ease-drawer); }
+.settings-navigation-dialog[data-starting-style],
+.settings-navigation-dialog[data-ending-style] { transform: translateX(-100%); }
+.settings-navigation-dialog[data-ending-style] { transition-duration: .3s; }
+@media (prefers-reduced-motion: reduce) {
+  .settings-navigation-dialog { transition: opacity .15s var(--ease-out); }
+  .settings-navigation-dialog[data-starting-style],
+  .settings-navigation-dialog[data-ending-style] { transform: none; opacity: 0; }
+}

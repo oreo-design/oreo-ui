@@ -23,6 +23,7 @@ A small, copy-paste React component library that reproduces the **Oreo UI** desi
 - **Shortcut** — keyboard key-caps (`⌘ ⇧ ⌥ ^`) rendered from tokens, with modifier glyph mapping and a `combine` mode for merged combos. Semantic `<kbd>`.
 - **Avatar** — circular avatar that infers its type from props (photo / gradient agent / brand logo / initials / empty), with four sizes and an overlapping `AvatarGroup` (`+N` overflow).
 - **Switch** — the boolean control for settings rows: Base UI state on the Oreo track/thumb surface, with a slight overshoot on the thumb.
+- **Page Loader** — story-driven page loading sized to the wait: six storylines (snake / breakout / runner / fishing / orbit / kitchen), each at three tiers — a glyph loop under 5s, a CSS ambient scene to 30s, and a playable canvas minigame beyond, with `tierForEstimate` mapping an estimate to a tier.
 - **Settings pattern** — a configurable settings-page framework (`/settings`): three appearance axes (background hierarchy · card style · nav icons) expressed through a local `--settings-*` variable layer, a full row vocabulary (setting / link-out / stat / meter / entity picker / editor / callout), a filtering nav rail that collapses into a drawer, and a six-page showcase with a floating axis switcher.
 - **Icon** — thin adapter over [Phosphor](https://phosphoricons.com) that drives size/color via tokens and `currentColor`.
 - **Docs app** — three-column layout (component nav · content · on-this-page scrollspy) with Preview/Code tabs, an API table, and a floating **"Make them yours"** panel that drives theme, radius, and the press spring live across every preview.
@@ -30,6 +31,12 @@ A small, copy-paste React component library that reproduces the **Oreo UI** desi
 Design tokens are extracted 1:1 from the Oreo UI Figma file; switching theme or radius only changes CSS variables — components are never touched. The palette tones used by Tag and the Avatar "alphabet" type ship with both light and dark skins.
 
 ## Develop
+
+### Settings design-language experiment
+
+`/settings-lab` compares content changes, composition and deliberate extensions of the original Settings pattern. The reusable implementation, lineage contract and checks are documented in [the experiment guide](docs/settings-language/README.md), with evidence in [the results](docs/settings-language/RESULTS.md).
+
+Run `pnpm settings:verify` to compare against the pinned original and exercise the lab. It starts its own local servers on available ports and closes them when done.
 
 Requires Node 18+ and pnpm.
 

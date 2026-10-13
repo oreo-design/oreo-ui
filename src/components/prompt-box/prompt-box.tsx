@@ -1,7 +1,8 @@
 import * as React from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
-import { pressSpring } from "@/lib/motion";
+import { easeOut } from "@/lib/motion";
+import { PromptReveal, PromptSwap, PromptPresenceContent, promptTransition } from "./prompt-box.motion";
 import { Icon } from "@/components/icon";
 import { IconButton } from "@/components/button";
 import { Shortcut } from "@/components/shortcut";
@@ -58,7 +59,12 @@ export function PromptBoxModelSelect({
         {icon != null && (
           <span className="grid size-4 place-items-center overflow-hidden [&_img]:size-3 [&_svg]:size-3">{icon}</span>
         )}
-        <span className="whitespace-nowrap">{label}</span>
+        <span className="relative inline-grid">
+          <AnimatePresence initial={false}>
+            <motion.span key={typeof label === "string" ? label : "label"} className="col-start-1 row-start-1 whitespace-nowrap"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={promptTransition}>{label}</motion.span>
+          </AnimatePresence>
+        </span>
       </span>
       <Icon name="chevron-down" weight="bold" className="size-[10px] text-[var(--color-text-secondary)]" />
     </button>
@@ -170,36 +176,70 @@ export function PromptBox({
   className,
   ...rest
 }: PromptBoxProps) {
+  const reduce = useReducedMotion();
+  const layoutId = React.useId();
+  const [textHeight, setTextHeight] = React.useState(60);
   const [internal, setInternal] = React.useState(defaultValue ?? "");
   const text = value ?? internal;
   const canSend = text.trim().length > 0;
 
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
-  const tagsRef = React.useRef<HTMLDivElement>(null);
+  const [tagsElement, setTagsElement] = React.useState<HTMLDivElement | null>(null);
   const [indent, setIndent] = React.useState(0);
 
-  // Auto-grow the textarea with its content (min 60px, the Figma input height).
+  // Measure at the destination indent, then let Motion interpolate the height.
+  // Restore the live style before paint; the textarea itself is never remounted.
+  const measureText = React.useCallback(() => {
+    const el = textareaRef.current;
+    if (!el) return;
+    const previousHeight = el.style.height;
+    const previousIndent = el.style.textIndent;
+    el.style.height = "0px";
+    el.style.textIndent = `${indent}px`;
+    const height = Math.max(el.scrollHeight, 60);
+    el.style.height = previousHeight;
+    el.style.textIndent = previousIndent;
+    setTextHeight(height);
+  }, [indent]);
+  React.useLayoutEffect(measureText, [text, measureText]);
   React.useLayoutEffect(() => {
     const el = textareaRef.current;
     if (!el) return;
-    el.style.height = "0px";
-    el.style.height = `${Math.max(el.scrollHeight, 60)}px`;
+    let width = el.clientWidth;
+    const observer = new ResizeObserver(() => {
+      if (el.clientWidth !== width) { width = el.clientWidth; measureText(); }
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [measureText]);
+
+  // A programmatic replacement fades in; ordinary typing stays immediate.
+  const previousText = React.useRef(text);
+  React.useLayoutEffect(() => {
+    const previous = previousText.current;
+    previousText.current = text;
+    if (!text || text === previous || document.activeElement === textareaRef.current ||
+      (text.startsWith(previous) && text.length - previous.length <= 2)) return;
+    const animation = textareaRef.current?.animate([{ opacity: 0 }, { opacity: 1 }], {
+      duration: 200, easing: `cubic-bezier(${easeOut.join(",")})`,
+    });
+    return () => animation?.cancel();
   }, [text]);
 
   // Keyword tags sit inline at the head of the first line: measure the tag
   // row and indent the textarea's first line by exactly that much.
   React.useLayoutEffect(() => {
-    const el = tagsRef.current;
-    if (!el) {
+    const el = tagsElement;
+    if (tags == null || !el) {
       setIndent(0);
       return undefined;
     }
-    const measure = () => setIndent(Math.ceil(el.getBoundingClientRect().width) + 8);
+    const measure = () => setIndent(el.offsetWidth + 8);
     measure();
     const observer = new ResizeObserver(measure);
     observer.observe(el);
     return () => observer.disconnect();
-  }, [tags]);
+  }, [tags, tagsElement]);
 
   const setText = (next: string) => {
     if (value === undefined) setInternal(next);
@@ -268,7 +308,7 @@ export function PromptBox({
       type="button"
       aria-label="Stop"
       onClick={onStop}
-      whileTap={{ scale: tapScale }}
+      whileTap={reduce ? undefined : { scale: tapScale }}
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "grid size-8 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
@@ -284,7 +324,7 @@ export function PromptBox({
       type="button"
       aria-label="Start voice input"
       onClick={onVoiceToggle}
-      whileTap={{ scale: tapScale }}
+      whileTap={reduce ? undefined : { scale: tapScale }}
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "grid size-8 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
@@ -300,7 +340,7 @@ export function PromptBox({
     <motion.button
       type="button"
       onClick={onVoiceToggle}
-      whileTap={{ scale: tapScale }}
+      whileTap={reduce ? undefined : { scale: tapScale }}
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "flex h-8 items-center gap-[var(--space-x4)] rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
@@ -337,16 +377,20 @@ export function PromptBox({
   const voicePrimary = voiceStatus === "inputting" ? stopPill : voiceStatus === "thinking" ? thinkingPill : waveButton;
 
   const card = (
-    <div className={cn(slots.card(), header == null && footer == null ? className : undefined)} {...(header == null && footer == null ? rest : {})}>
-      <div className={slots.content()}>
-        {attachments}
+    <div className={slots.card()}>
+      <div className={cn(slots.content(), "gap-0")}>
+        <PromptReveal>{attachments != null && <div className="pb-[var(--space-x4)]">{attachments}</div>}</PromptReveal>
         <div className={slots.inputWrap()}>
-          {tags != null && (
-            <div ref={tagsRef} className={slots.tags()}>
-              {tags}
-            </div>
-          )}
-          <textarea
+          <AnimatePresence initial={false}>
+            {tags != null && <motion.div key="tags" ref={setTagsElement} className={cn(slots.tags(), "[&_span]:transition-colors [&_span]:duration-200")}
+              initial={{ opacity: 0, transform: reduce ? "scale(1)" : "scale(0.95)" }}
+              animate={{ opacity: 1, transform: "scale(1)" }}
+              exit={{ opacity: 0, transform: reduce ? "scale(1)" : "scale(0.95)" }}
+              transition={promptTransition} style={{ transformOrigin: "left center" }}>
+              <PromptPresenceContent>{tags}</PromptPresenceContent>
+            </motion.div>}
+          </AnimatePresence>
+          <motion.textarea
             ref={textareaRef}
             value={text}
             rows={1}
@@ -359,46 +403,42 @@ export function PromptBox({
             }}
             placeholder=""
             aria-label="Prompt"
-            className={slots.textarea()}
-            style={{ textIndent: indent > 0 ? indent : undefined }}
+            className={cn(slots.textarea(), "overflow-hidden")}
+            initial={false}
+            animate={{ height: textHeight, textIndent: `${indent}px` }}
+            transition={reduce ? { duration: 0 } : promptTransition}
           />
-          {text === "" && <div className={slots.placeholder()}>{placeholder ?? defaultPlaceholder}</div>}
+          <AnimatePresence initial={false}>
+            {text === "" && <motion.div key="placeholder" className={cn(slots.placeholder(), "right-0 overflow-hidden")} initial={{ opacity: 0 }} animate={{ opacity: 1, left: indent }} exit={{ opacity: 0 }} transition={reduce ? { opacity: promptTransition, left: { duration: 0 } } : promptTransition}>{placeholder ?? defaultPlaceholder}</motion.div>}
+          </AnimatePresence>
         </div>
       </div>
-      <div className={slots.actions()}>
-        <div className={slots.actionCluster()}>
-          {attachButton}
-          {mentionButton}
-          {voice === "mic" && modelSelect}
-        </div>
-        <div className={cn(slots.actionCluster(), "justify-end")}>
-          {voice !== "mic" && modelSelect}
-          {voice === "wave" ? (
-            voicePrimary
-          ) : voice === "mic" ? (
-            <>
-              {micButton}
-              {running ? stopButton : sendButton}
-            </>
-          ) : running ? (
-            stopButton
-          ) : (
-            sendButton
-          )}
-        </div>
+      <div className={cn(slots.actions(), "gap-[var(--space-x4)]")}>
+        <div className={slots.actionCluster()}>{attachButton}{mentionButton}</div>
+        <motion.div layout={reduce ? false : "position"} transition={promptTransition}
+          className="ml-auto">
+          {modelSelect}
+        </motion.div>
+        <motion.div layout={reduce ? false : "position"} transition={promptTransition} className={cn(slots.actionCluster(), "justify-end")}>
+          <AnimatePresence initial={false} mode="popLayout">
+            {voice === "mic" && <motion.div key="mic" layout={reduce ? false : "position"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={promptTransition}>{micButton}</motion.div>}
+          </AnimatePresence>
+          <PromptSwap state={voice === "wave" ? `voice-${voiceStatus}` : running ? "running" : "send"}>
+            {voice === "wave" ? voicePrimary : running ? stopButton : sendButton}
+          </PromptSwap>
+        </motion.div>
       </div>
     </div>
   );
 
-  if (header == null && footer == null) return card;
-
-  const stackSlots = promptBox({ inset });
   return (
-    <div className={cn(stackSlots.stack(), className)} {...rest}>
-      {header != null && <div className={stackSlots.headerSlot()}>{header}</div>}
-      {card}
-      {footer != null && <div className={stackSlots.footerSlot()}>{footer}</div>}
-    </div>
+    <LayoutGroup id={layoutId}>
+      <div className={cn(slots.stack(), className)} {...rest}>
+        <PromptReveal edge="header">{header != null && <div className={cn("transition-[padding] duration-200 ease-[var(--ease-out)] motion-reduce:transition-none", inset && "px-[var(--space-x6)]")}>{header}</div>}</PromptReveal>
+        {card}
+        <PromptReveal edge="footer">{footer != null && <div className={cn("transition-[padding] duration-200 ease-[var(--ease-out)] motion-reduce:transition-none", inset && "px-[var(--space-x6)]")}>{footer}</div>}</PromptReveal>
+      </div>
+    </LayoutGroup>
   );
 }
 

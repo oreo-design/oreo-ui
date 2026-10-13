@@ -35,6 +35,7 @@ export function SettingsNav({
         <Icon name="search" size="sm" weight="light" className="shrink-0 text-[var(--color-text-tertiary)]" />
         <input
           type="search"
+          aria-label="Search settings"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search settings…"

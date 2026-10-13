@@ -1,13 +1,20 @@
+import { StatusIconDocs } from "@/pages/StatusIconDocs";
+import { ContextWindowDocs } from "@/pages/ContextWindowDocs";
+import { ReviewWorkspacePage } from "@/pages/ReviewWorkspacePage";
+import { ReviewComponentsDocs } from "@/pages/ReviewComponentsDocs";
 import { useEffect, useState, type ComponentType } from "react";
 import { KanbanDocs } from "@/pages/KanbanDocs";
 import { ButtonDocs } from "@/pages/ButtonDocs";
+import { GradientMaskDocs } from "@/pages/GradientMaskDocs";
 import { IconButtonDocs } from "@/pages/IconButtonDocs";
 import { ShortcutDocs } from "@/pages/ShortcutDocs";
 import { ChipDocs } from "@/pages/ChipDocs";
 import { TagDocs } from "@/pages/TagDocs";
 import { AvatarDocs } from "@/pages/AvatarDocs";
 import { BoardPage } from "@/pages/BoardPage";
+import { SettingsLab } from "@/pages/settings-lab/SettingsLab";
 import { SettingsPage } from "@/pages/SettingsPage";
+import { StreamPage } from "@/pages/StreamPage";
 import { CodeBlockDocs } from "@/pages/CodeBlockDocs";
 import { ResponseDocs } from "@/pages/ResponseDocs";
 import { StreamingTextDocs } from "@/pages/StreamingTextDocs";
@@ -22,6 +29,7 @@ import { AttachmentDocs } from "@/pages/AttachmentDocs";
 import { BranchPickerDocs } from "@/pages/BranchPickerDocs";
 import { ThreadListDocs } from "@/pages/ThreadListDocs";
 import { AssistantModalDocs } from "@/pages/AssistantModalDocs";
+import { PageLoaderDocs } from "@/pages/PageLoaderDocs";
 import { CodeDiffDocs } from "@/pages/CodeDiffDocs";
 import { TerminalDocs } from "@/pages/TerminalDocs";
 import { WebSearchDocs } from "@/pages/WebSearchDocs";
@@ -35,8 +43,13 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "status-icon": StatusIconDocs,
+  "context-window": ContextWindowDocs,
+  "review-workspace": ReviewWorkspacePage,
+  "review-components": ReviewComponentsDocs,
   kanban: KanbanDocs,
   button: ButtonDocs,
+  "gradient-mask": GradientMaskDocs,
   "icon-button": IconButtonDocs,
   shortcut: ShortcutDocs,
   chip: ChipDocs,
@@ -57,6 +70,7 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "branch-picker": BranchPickerDocs,
   "thread-list": ThreadListDocs,
   "assistant-modal": AssistantModalDocs,
+  "page-loader": PageLoaderDocs,
   "code-diff": CodeDiffDocs,
   terminal: TerminalDocs,
   "web-search": WebSearchDocs,
@@ -64,8 +78,10 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "prompt-box": PromptBoxDocs,
   "keyword-tag": KeywordTagDocs,
   "context-bar": ContextBarDocs,
+  "inbox-stream": StreamPage,
   "onboarding-board": BoardPage,
   settings: SettingsPage,
+  "settings-lab": SettingsLab,
 };
 
 type Route = { page: PageSlug; home: boolean };
