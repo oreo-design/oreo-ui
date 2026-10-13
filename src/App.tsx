@@ -1,3 +1,5 @@
+import { FeatureCardsDocs } from "@/pages/FeatureCardsDocs";
+import { FeaturesShowcasePage } from "@/pages/FeaturesShowcasePage";
 import { SkillCardDocs } from "@/pages/SkillCardDocs";
 import { SkillsWorkspacePage } from "@/pages/SkillsWorkspacePage";
 import { StatusIconDocs } from "@/pages/StatusIconDocs";
@@ -45,6 +47,8 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "feature-cards": FeatureCardsDocs,
+  "features-showcase": FeaturesShowcasePage,
   "skill-card": SkillCardDocs,
   "skills-workspace": SkillsWorkspacePage,
   "status-icon": StatusIconDocs,

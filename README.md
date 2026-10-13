@@ -100,3 +100,9 @@ Each component folder is self-contained — `*.tsx` + `*.variants.ts` + `index.t
 ## Component pattern
 
 Each component = **Base UI behavior** + **`tv()` variants** + **`cn()` merge** + **token-driven theme**. Interactive states use Tailwind `data-[*]` variants tied to Base UI's data attributes; press animation is an optional Motion spring exposed as props (`bounce`, `duration`, `tapScale`).
+
+## Feature cards and Features showcase
+
+Inspired by [Tailark’s Features 4](https://x.com/TailarkUI/status/2109456782389321994), `/feature-cards` adds six composable exports: `LayeredCard`, `InvoicePreview`, `SegmentedUsage`, `UsageSummary`, `FeaturePanel`, and `FeatureItem`. The playground edits invoice fields, usage values and the optional fade; documentation includes composition code and empty/at-capacity examples.
+
+`/features-showcase` composes these into the complete two-column marketing section with four supporting benefits. It uses one column below 1024px, supports Oreo light/dark tokens, and reuses `GradientMask`. All data is illustrative; it does not create invoices or connect to analytics. The source crops are attributed, with independently implemented code and Oreo marks. Copy `src/components/feature-cards` and its imports, then `src/patterns/features-showcase` for the complete section.
