@@ -18,6 +18,8 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "orbit-gallery": { title: "Orbit Gallery", description: "A scrollable and draggable image orbit with Flat, Tilt, Ring and Gallery layouts, responsive controls and reduced-motion support." },
+  "orbit-gallery-showcase": { title: "Orbit Gallery Showcase", description: "An experimental portfolio gallery with floating artwork and smoothly changing spatial layouts." },
   "feature-cards": { title: "Feature Cards", description: "Layered cards, invoice previews, segmented usage meters and feature panels for product storytelling." },
   "features-showcase": { title: "Features Showcase", description: "A spacious two-column features template with layered invoice and usage cards and four supporting benefits." },
   "prospecting-components": { title: "Prospecting Components", description: "Composable prospect metrics, buying signals, segmented scores, recommendations and activity timelines." },

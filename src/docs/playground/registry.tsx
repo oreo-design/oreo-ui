@@ -1,3 +1,5 @@
+import { OrbitGallery, ORBIT_LAYOUTS } from "@/components/orbit-gallery";
+import { orbitGalleryItems } from "@/patterns/orbit-gallery/items";
 import { InvoicePreview, UsageSummary } from "@/components/feature-cards";
 import { ProspectMetric, ScoreMeter, BuyingSignal, ProspectAction, SIGNAL_TYPES } from "@/components/prospecting";
 import { ActivityCard, BudgetMeter } from "@/components/activity";
@@ -41,6 +43,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "orbit-gallery": { OrbitGallery },
   prospecting: { ProspectMetric, ScoreMeter, BuyingSignal, ProspectAction },
   activity: { ActivityCard, BudgetMeter },
   "cut-reveal": { CutReveal },
@@ -63,6 +66,7 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "orbit-gallery": define("Orbit Gallery", { layout: select(ORBIT_LAYOUTS, "flat"), label: text("Selected works"), empty: toggle() }, (v, set) => <OrbitGallery items={v.empty ? [] : orbitGalleryItems} layout={v.layout} label={v.label} onLayoutChange={value => set("layout", value)} className="w-full" style={{ height: 560 }} />),
   "feature-cards": define("Feature Cards", {
     variant: select(["invoice", "usage"], "invoice"), fade: toggle(),
     number: text("INV-456789"), amount: text("$284,342.57"), due: text("Due in 15 days"),

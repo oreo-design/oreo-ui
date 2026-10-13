@@ -110,3 +110,9 @@ Each component = **Base UI behavior** + **`tv()` variants** + **`cn()` merge** +
 Inspired by [Tailark’s Features 4](https://x.com/TailarkUI/status/2109456782389321994), `/feature-cards` adds six composable exports: `LayeredCard`, `InvoicePreview`, `SegmentedUsage`, `UsageSummary`, `FeaturePanel`, and `FeatureItem`. The playground edits invoice fields, usage values and the optional fade; documentation includes composition code and empty/at-capacity examples.
 
 `/features-showcase` composes these into the complete two-column marketing section with four supporting benefits. It uses one column below 1024px, supports Oreo light/dark tokens, and reuses `GradientMask`. All data is illustrative; it does not create invoices or connect to analytics. The source crops are attributed, with independently implemented code and Oreo marks. Copy `src/components/feature-cards` and its imports, then `src/patterns/features-showcase` for the complete section.
+
+## Orbit Gallery
+
+`/orbit-gallery` adds a reusable `OrbitGallery` with Flat, Tilt, Ring and Gallery layouts, wheel/drag rotation, keyboard controls, a native detail viewer and empty/image-failure states. It reuses the Oreo playground, code export and theme tokens. `/orbit-gallery-showcase` opens the complete portfolio study.
+
+Inspired by [Awesome Design’s video](https://www.pinterest.com/pin/211174979526687/). The first three layouts follow the reference; the Gallery grid and detail viewer are extensions. Demo artwork consists of attributed low-resolution video stills under `public/examples/orbit-gallery`; replace it with your own images. Copy `src/components/orbit-gallery` with its imports and provide unique item IDs. Motion is interruptible, keyboard actions are immediate, and reduced motion removes spatial interpolation.

@@ -23,6 +23,7 @@ const NAV: Group[] = [
       { label: "Menu", page: "menu" },
       { label: "Gradient Mask", page: "gradient-mask" },
       { label: "Cut Reveal", page: "cut-reveal" },
+      { label: "Orbit Gallery", page: "orbit-gallery" },
       { label: "Kanban", page: "kanban" },
       { label: "Skill Card", page: "skill-card" },
       { label: "Feature Cards", page: "feature-cards" },
@@ -76,7 +77,7 @@ const NAV: Group[] = [
   },
   {
     title: "Templates",
-    items: [{ label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
+    items: [{ label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
   },
   {
     title: "Patterns",
