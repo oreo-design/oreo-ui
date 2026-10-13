@@ -16,12 +16,9 @@
     "src/components/chip/chip.tsx": "ea74ea84286ee518b8b6a06601625378048b4860fa7bedc32a9945f614fcafd1",
     "src/components/chip/chip.variants.ts": "415e63bbf3b136cbac58e243482b48be61db24af418d9b948f5a173074a03174",
     "src/components/chip/index.ts": "3b21959448eafaf59edb3fe995e3d8ffb395fc55bb4a42e7e2fae31af09499c2",
-    "src/components/icon/glyphs.lucide.ts": "d328ad7d9fb88a1a8029fd5cd736bff3328707e1f8bae5e522e9686d1e8f1ec2",
-    "src/components/icon/glyphs.phosphor.ts": "99ea2bc7b118df833ed049e0fd7aa6635cbe0ccd5d0ecd36cd561f0e29c728ed",
     "src/components/icon/icon.tsx": "b539cdbcb9db8bc03a427be802a2291af4a09f8f1553c4c0fa47bf0bea95b6be",
     "src/components/icon/index.ts": "5cf760ee28d17d6256a21889dbbeb55b21e4c794a108eafba5da65cbd9f77543",
     "src/components/icon/library.tsx": "a346c808129cbc01ebbaee65e677e3a8cb79c00909f0bad15d6bbfeb3bafd2dc",
-    "src/components/icon/names.ts": "61a88b5989ca2d22ef78edd4235419a858e3f13ff4276545334473f96b748112",
     "src/components/icon/types.ts": "de06b44c933b68d048fed6e7858f7fc594a5044d22b0be18291f909a5557beb5",
     "src/components/menu/index.ts": "4ab74e5d52ebb3043b094fddb09ef6221a1b2f001c96f67cf3e710a05fb0f609",
     "src/components/menu/menu.tsx": "11f41efda75d9c51b6fc7b78f429fcae836ec90a1992db03fea494ed90567f0a",
@@ -37,7 +34,6 @@
     "src/components/tag/tag.variants.ts": "8e3c27ba085c58beb461fa81cb88435498a82e928ca27b502f222038a65a99a4",
     "src/index.css": "1a4258cb687fcc48bda6ba9242bb34aeadf613b801aec27615612ecb92be3f52",
     "src/lib/cn.ts": "fea2cfffcfe270aa813314a0691cab49d03c41c5d0be960aa52a7f8443a0925b",
-    "src/lib/motion.ts": "ed9c6fbbfbc6a30c8cbc373c45d540a63f236b8aaa2cc55f9f2b709a1f1f75cf",
     "src/lib/palette.ts": "c5bc70151a69d2a34ffbb810e7ccf51d545737a6c638e80d1142605f02060da1",
     "src/lib/tv.ts": "eaa2f5711420126226bf48c5fa971133e10c8cb9b7d60a0d90cb336c597dbbb5",
     "src/patterns/settings/SettingsSection.tsx": "2d4d8322512bf60de05d63aa5502221f21c154d8ece12d4a47f17faf27a41dc7",
@@ -90,6 +86,30 @@
       "path": "src/patterns/settings/language/SettingsGroup.tsx",
       "sha256": "75b4d6cf0b5034615b088fe65db115d6cb362328893c8c667440538b05e9661b",
       "decision": "2026-09-14 user correction: small group labels cannot have descriptions. Expose label/actions/children only, forbid description in the type and drop unsupported runtime props. Reuse original section spacing and card-aware alignment; keep original Settings unchanged as reference. Before/after evidence: artifacts/settings-label-boundary-2026-09-14."
+    },
+    {
+      "path": "src/components/icon/glyphs.lucide.ts",
+      "sha256": "0c885a077601711922a76f6d0bb133eaa7a0edc651f43d26f7cabc83a2315744",
+      "baselineSha256": "d328ad7d9fb88a1a8029fd5cd736bff3328707e1f8bae5e522e9686d1e8f1ec2",
+      "decision": "Integration of completed Inbox Stream commit 6ff4894: additive icon vocabulary / easeDrawer export only. Existing glyph mappings and motion values are unchanged. Re-run the original Settings visual and behavioral comparison."
+    },
+    {
+      "path": "src/components/icon/glyphs.phosphor.ts",
+      "sha256": "4f3e96f41def92d20a38dd9dc4a82898c915e05c531c545643ba4aeea57b23cb",
+      "baselineSha256": "99ea2bc7b118df833ed049e0fd7aa6635cbe0ccd5d0ecd36cd561f0e29c728ed",
+      "decision": "Integration of completed Inbox Stream commit 6ff4894: additive icon vocabulary / easeDrawer export only. Existing glyph mappings and motion values are unchanged. Re-run the original Settings visual and behavioral comparison."
+    },
+    {
+      "path": "src/components/icon/names.ts",
+      "sha256": "ed7d03c82897ee3edf950bf43bb6bd84a1879d9b3dfd456261755b29d76c4c3d",
+      "baselineSha256": "61a88b5989ca2d22ef78edd4235419a858e3f13ff4276545334473f96b748112",
+      "decision": "Integration of completed Inbox Stream commit 6ff4894: additive icon vocabulary / easeDrawer export only. Existing glyph mappings and motion values are unchanged. Re-run the original Settings visual and behavioral comparison."
+    },
+    {
+      "path": "src/lib/motion.ts",
+      "sha256": "31a6bf24c433d1fc66f8ec34826924caac87b4b3defd5b7604f1178d459ed9c7",
+      "baselineSha256": "ed9c6fbbfbc6a30c8cbc373c45d540a63f236b8aaa2cc55f9f2b709a1f1f75cf",
+      "decision": "Integration of completed Inbox Stream commit 6ff4894: additive icon vocabulary / easeDrawer export only. Existing glyph mappings and motion values are unchanged. Re-run the original Settings visual and behavioral comparison."
     }
   ],
   "compositionDirectories": [

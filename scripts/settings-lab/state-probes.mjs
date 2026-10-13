@@ -7,6 +7,8 @@ await mkdir(out, { recursive: true });
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
 page.setDefaultTimeout(5000);
+// Cold Vite startup may exceed interaction timeouts in a fresh checkout.
+page.setDefaultNavigationTimeout(60_000);
 const report = { expanded: [], exportRecovery: false, darkPopup: false };
 try {
   for (const width of [320, 390]) for (const dark of [false, true]) for (const card of ["outline", "surface", "divider"]) {

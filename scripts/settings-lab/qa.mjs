@@ -8,6 +8,8 @@ await mkdir(out, { recursive: true });
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1120 }, reducedMotion: "reduce" });
 page.setDefaultTimeout(5000);
+// Cold Vite startup may exceed interaction timeouts in a fresh checkout.
+page.setDefaultNavigationTimeout(60_000);
 const report = { generatedAt: new Date().toISOString(), matrix: [], comparison: [], mutations: [], interactions: [], failures: [], pageErrors: [] };
 page.on("pageerror", e => report.pageErrors.push(e.message));
 async function check(name, run) {
