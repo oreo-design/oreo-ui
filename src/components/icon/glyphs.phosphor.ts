@@ -1,4 +1,15 @@
 import {
+  Scan,
+  Cursor,
+  BookOpen,
+  ChartBar,
+  Users,
+  Chats,
+  SortDescending,
+  FunnelSimple,
+  ClockCounterClockwise,
+  CircleHalfTilt,
+
   Airplane,
   ArrowBendDownRight,
   ArrowCounterClockwise,
@@ -62,6 +73,16 @@ import type { IconName } from "./names";
 
 /** Phosphor's answer for every name in the Oreo vocabulary. */
 export const phosphorGlyphs: Record<IconName, IconGlyph> = {
+  "scan-text": Scan,
+  "cursor": Cursor,
+  "book-open": BookOpen,
+  "chart-bar": ChartBar,
+  "users": Users,
+  "chat-check": Chats,
+  "sort-descending": SortDescending,
+  "filter": FunnelSimple,
+  "clock-history": ClockCounterClockwise,
+  "assistant": CircleHalfTilt,
   "align-left": TextAlignLeft,
   "apple-logo": AppleLogo,
   "arrow-down": ArrowDown,

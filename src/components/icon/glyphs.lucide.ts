@@ -1,4 +1,13 @@
 import {
+  ScanText,
+  MousePointer2,
+  BookOpen,
+  ChartNoAxesColumn,
+  Users,
+  MessagesSquare,
+  ListFilter,
+  History,
+
   AlignLeft,
   ArrowDown,
   ArrowUp,
@@ -64,6 +73,16 @@ import type { IconName } from "./names";
 
 /** Lucide's answer for every name in the Oreo vocabulary. */
 export const lucideGlyphs: Record<IconName, IconGlyph> = {
+  "scan-text": ScanText,
+  "cursor": MousePointer2,
+  "book-open": BookOpen,
+  "chart-bar": ChartNoAxesColumn,
+  "users": Users,
+  "chat-check": MessagesSquare,
+  "sort-descending": ListFilter,
+  "filter": ListFilter,
+  "clock-history": History,
+  "assistant": CircleDashed,
   "align-left": AlignLeft,
   "apple-logo": AppleLogo,
   "arrow-down": ArrowDown,

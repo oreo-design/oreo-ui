@@ -12,6 +12,17 @@
  */
 export const ICON_NAMES = [
   "align-left",
+  "scan-text",
+  "cursor",
+  "book-open",
+  "chart-bar",
+  "users",
+  "chat-check",
+  "sort-descending",
+  "filter",
+  "clock-history",
+  "assistant",
+
   "apple-logo",
   "arrow-down",
   "arrow-out",
