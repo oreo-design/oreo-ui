@@ -1,3 +1,5 @@
+import { statusIconDemo } from "./status-icon.demo";
+import { StatusIcon, STATUS_ICON_STATES, STATUS_ICON_PROGRESS } from "@/components/status-icon";
 import { promptBoxDemo } from "./prompt-box.demo";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -33,6 +35,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "status-icon": { StatusIcon },
   button: { Button, IconButton }, icon: { Icon }, chip: { Chip }, tag: { Tag }, shortcut: { Shortcut }, avatar: { Avatar },
   attachment: { Attachment, AttachmentBar }, "prompt-box": { PromptBox, PromptBoxModelSelect }, "keyword-tag": { KeywordTag },
   "context-bar": { ContextBar, ContextBarLabel }, "tool-call": { ToolCall, ToolCallRow }, reasoning: { Reasoning }, plan: { Plan, PlanStep },
@@ -49,6 +52,10 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "status-icon": {
+    ...define("Status Icon", { status: select(STATUS_ICON_STATES, "todo"), progress: select(STATUS_ICON_PROGRESS, "half"), size: select(["sm", "md", "lg", "xl"], "xl"), monochrome: toggle(), animated: toggle(true), "aria-label": text("Task status") }, v => <StatusIcon {...v} />),
+    demo: statusIconDemo,
+  },
   button: define("Button", { children: { ...text("Continue"), label: "Label" }, type: emphasis, size: sizes, danger: toggle(), disabled: toggle(), leadingIcon: toggle(true), trailingIcon: toggle(), ...spring }, (v) =>
     <Button type={v.type} size={v.size} danger={v.danger} disabled={v.disabled} leadingIcon={v.leadingIcon ? <Icon name="sparkle" /> : undefined} trailingIcon={v.trailingIcon ? <Icon name="chevron-right" /> : undefined} bounce={v.bounce} duration={v.duration} tapScale={v.tapScale}>{v.children}</Button>),
   "icon-button": define("Icon Button", { type: emphasis, size: sizes, shape: select(["rounded", "rectangle"], "rounded"), floating: toggle(), danger: toggle(), disabled: toggle(), ...spring }, v =>

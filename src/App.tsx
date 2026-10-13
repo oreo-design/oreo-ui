@@ -1,3 +1,4 @@
+import { StatusIconDocs } from "@/pages/StatusIconDocs";
 import { ContextWindowDocs } from "@/pages/ContextWindowDocs";
 import { ReviewWorkspacePage } from "@/pages/ReviewWorkspacePage";
 import { ReviewComponentsDocs } from "@/pages/ReviewComponentsDocs";
@@ -42,6 +43,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "status-icon": StatusIconDocs,
   "context-window": ContextWindowDocs,
   "review-workspace": ReviewWorkspacePage,
   "review-components": ReviewComponentsDocs,

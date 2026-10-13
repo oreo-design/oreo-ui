@@ -15,6 +15,7 @@ const NAV: Group[] = [
     items: [
       { label: "Button", page: "button" },
       { label: "Icon Button", page: "icon-button" },
+      { label: "Status Icon", page: "status-icon" },
       { label: "Chip", page: "chip" },
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
