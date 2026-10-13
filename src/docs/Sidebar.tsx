@@ -23,6 +23,7 @@ const NAV: Group[] = [
       { label: "Menu", page: "menu" },
       { label: "Gradient Mask", page: "gradient-mask" },
       { label: "Kanban", page: "kanban" },
+      { label: "Skill Card", page: "skill-card" },
       { label: "Select", soon: true },
       { label: "Dialog", soon: true },
     ],
@@ -71,7 +72,7 @@ const NAV: Group[] = [
   },
   {
     title: "Templates",
-    items: [{ label: "Review Workspace", page: "review-workspace" }],
+    items: [{ label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
   },
   {
     title: "Patterns",
