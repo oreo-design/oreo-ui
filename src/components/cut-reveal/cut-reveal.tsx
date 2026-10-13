@@ -6,7 +6,7 @@ export type CutRevealProps = {
   children: ReactNode;
   /** Decorative artwork shown on the upper sheet. Keep it non-interactive. */
   wordmark: ReactNode;
-  /** Total presentation time in milliseconds, clamped to 1–12 seconds. */
+  /** Curtain timeline in milliseconds, clamped to 1–12 seconds. */
   duration?: number;
   skipLabel?: string;
   className?: string;
@@ -22,13 +22,23 @@ function Scissors() {
   </svg>;
 }
 
+function RollingCounter() {
+  return <span className="cut-reveal__counter">
+    {[1, 10, 20].map((steps, column) => <span className="cut-reveal__digit-window" key={column}>
+      <span className="cut-reveal__digit-strip" style={{ "--digit-travel": `${-steps}em` } as CSSProperties}>
+        {Array.from({ length: steps + 1 }, (_, i) => <span key={i}>{column === 2 ? i % 2 * 5 : i % 10}</span>)}
+      </span>
+    </span>)}
+  </span>;
+}
+
 /** A decorative opening sequence, not a network-loading indicator.
  * Remount with a new key to replay. Children stay mounted through the reveal.
  */
 export function CutReveal({ children, wordmark, duration = 5200, skipLabel = "Skip intro", className, style, onReveal }: CutRevealProps) {
   const [revealed, setRevealed] = useState(false);
+  const [skipped, setSkipped] = useState(false);
   const content = useRef<HTMLDivElement>(null);
-  const counter = useRef<HTMLSpanElement>(null);
   const complete = useRef(false);
   const onRevealRef = useRef(onReveal);
   onRevealRef.current = onReveal;
@@ -37,6 +47,7 @@ export function CutReveal({ children, wordmark, duration = 5200, skipLabel = "Sk
   const finish = (focus = false) => {
     if (complete.current) return;
     complete.current = true;
+    setSkipped(focus);
     setRevealed(true);
     onRevealRef.current?.();
     if (focus) requestAnimationFrame(() => content.current?.focus({ preventScroll: true }));
@@ -45,35 +56,27 @@ export function CutReveal({ children, wordmark, duration = 5200, skipLabel = "Sk
   useEffect(() => {
     if (revealed) return;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let frame = 0;
     let timeout = 0;
-    const start = performance.now();
     const done = () => {
       if (complete.current) return;
       complete.current = true;
       setRevealed(true);
       onRevealRef.current?.();
     };
-    const tick = (now: number) => {
-      if (counter.current) counter.current.textContent = String(Math.min(100, Math.floor((now - start) / (total * 0.62) * 100))).padStart(3, "0");
-      frame = requestAnimationFrame(tick);
-    };
     const updatePreference = () => { if (preference.matches) done(); };
     if (preference.matches) timeout = window.setTimeout(done, 120);
     else {
-      frame = requestAnimationFrame(tick);
       // The timer also completes in a background tab where animation events may pause.
       timeout = window.setTimeout(done, total);
     }
     preference.addEventListener("change", updatePreference);
     return () => {
-      cancelAnimationFrame(frame);
       clearTimeout(timeout);
       preference.removeEventListener("change", updatePreference);
     };
   }, [revealed, total]);
 
-  return <div className={cn("cut-reveal", className)} data-revealed={revealed} style={{ ...style, "--cut-duration": `${total}ms` } as CSSProperties}>
+  return <div className={cn("cut-reveal", className)} data-revealed={revealed} data-skipped={skipped} style={{ ...style, "--cut-duration": `${total}ms` } as CSSProperties}>
     <div ref={content} className="cut-reveal__content" inert={!revealed} tabIndex={-1}>{children}</div>
     {!revealed && <>
       <div className="cut-reveal__curtain" aria-hidden="true">
@@ -84,7 +87,7 @@ export function CutReveal({ children, wordmark, duration = 5200, skipLabel = "Sk
         <div className="cut-reveal__seam">
           <div className="cut-reveal__dashes" />
           <div className="cut-reveal__cut" />
-          <span ref={counter} className="cut-reveal__counter">000</span>
+          <RollingCounter />
           <span className="cut-reveal__instruction">Cut along line <b>▸▸▸</b></span>
           <div className="cut-reveal__scissors-track"><span className="cut-reveal__scissors"><Scissors /></span></div>
         </div>

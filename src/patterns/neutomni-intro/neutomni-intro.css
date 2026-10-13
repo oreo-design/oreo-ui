@@ -1,22 +1,25 @@
-/* Reference-only brand skin. This red is Neutomni's identity, not Oreo's
+/* Original hosted fonts are scoped to this branded reference fixture. */
+@font-face { font-family: "Neutomni Sans"; src: url("https://cdn.prod.website-files.com/696f937263525fd559c6ea5f/69708959fef5e934c74b2781_Vazirmatn-VariableFont_wght.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "Neutomni Editorial"; src: url("https://cdn.prod.website-files.com/696f937263525fd559c6ea5f/69d6543004152005279a44f2_PPEditorialNew-Italic.woff2") format("woff2"); font-style: italic; font-weight: 400; font-display: swap; }
+/* Reference-only brand skin. This red is sampled from the supplied video, not Oreo's
    semantic error color; keeping it scoped avoids changing library tokens. */
-.neutomni-intro { --neutomni-red: #cf1230; --cut-color: var(--neutomni-red); --cut-ink: var(--color-code-fg); color: var(--neutomni-red); background: var(--color-code-fg); }
-.neutomni-wordmark { display: block; width: 100%; aspect-ratio: 6; background: currentColor; mask: url("/examples/neutomni/wordmark.png") center / contain no-repeat; -webkit-mask: url("/examples/neutomni/wordmark.png") center / contain no-repeat; }
+.neutomni-intro { --neutomni-red: #b80229; --cut-color: var(--neutomni-red); --cut-ink: var(--color-white, #fff); font-family: "Neutomni Sans", Arial, sans-serif; color: var(--neutomni-red); background: var(--cut-ink); }
+.neutomni-wordmark { display: block; width: 100%; height: auto; overflow: hidden; }
 .neutomni-wordmark--inverse { color: var(--cut-ink); }
-.neutomni-hero { position: relative; min-height: 680px; aspect-ratio: 1.48; padding: 1.5%; overflow: hidden; background: var(--color-code-fg); }
-.neutomni-nav { display: grid; grid-template-columns: 1fr 1fr auto; gap: 16px; margin-top: 12px; font-size: clamp(9px, .9vw, 14px); }
+.neutomni-hero { position: relative; aspect-ratio: 1.48; padding: 1.5%; overflow: hidden; background: var(--cut-ink); }
+.neutomni-nav { display: grid; grid-template-columns: 50% 1fr auto; gap: 16px; margin-top: -1%; font-size: clamp(7px, .9cqw, 14px); }
 .neutomni-nav p { margin: 0; }
 .neutomni-nav nav { display: flex; gap: 10px; }
-.neutomni-email { font-family: Georgia, serif; font-style: italic; }
+.neutomni-email { font-family: "Neutomni Editorial", Georgia, serif; font-style: italic; }
 .neutomni-intro a:focus-visible, .neutomni-showreel button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
-.neutomni-statement { margin: 10.5% 0 0 50%; }
-.neutomni-statement h1 { margin: 0; font-size: clamp(24px, 3.05vw, 52px); font-weight: 400; line-height: 1.06; letter-spacing: -.05em; }
-.neutomni-statement em { font-family: Georgia, "Times New Roman", serif; font-size: 1.1em; letter-spacing: -.065em; }
-.neutomni-showreel { position: relative; width: 42%; margin: 8.5% auto 0; aspect-ratio: 1.8; overflow: hidden; background: var(--color-code-bg); }
+.neutomni-statement { margin: 12.5% 0 0 50%; }
+.neutomni-statement h1 { margin: 0; font-size: clamp(24px, 3.9cqw, 56px); font-weight: 400; line-height: 1.06; letter-spacing: -.14cqw; }
+.neutomni-statement em { font-family: "Neutomni Editorial", Georgia, "Times New Roman", serif; font-size: 1.1em; letter-spacing: -.065em; }
+.neutomni-showreel { position: relative; width: 41.25%; margin: 8.4% auto 0; aspect-ratio: 1.8; overflow: hidden; background: var(--color-code-bg); }
 .neutomni-showreel > img, .neutomni-showreel > video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .neutomni-showreel button { position: absolute; bottom: 12px; right: 12px; width: 32px; height: 32px; border-radius: 50%; color: var(--color-code-fg); background: var(--color-code-bg); cursor: pointer; font-size: 12px; }
 .neutomni-media-fallback { position: absolute; left: 8px; bottom: 8px; background: var(--color-code-bg); color: var(--color-code-fg); font-size: 10px; padding: 4px; }
-.neutomni-footer { position: absolute; inset: auto 1.5% 16px; display: flex; justify-content: space-between; align-items: end; font: clamp(9px, .9vw, 12px)/1.5 monospace; text-transform: uppercase; }
+.neutomni-footer { position: absolute; inset: auto 1.5% 1.5%; display: flex; justify-content: space-between; align-items: end; font: clamp(7px, .9cqw, 12px)/1.5 monospace; text-transform: uppercase; }
 @media (hover: hover) and (pointer: fine) { .neutomni-nav a:hover { text-decoration: underline; text-underline-offset: 3px; } }
 @media (max-width: 700px) {
   .neutomni-hero { min-height: 640px; aspect-ratio: auto; padding: 16px; }
@@ -29,3 +32,35 @@
   .neutomni-footer { inset-inline: 16px; }
   .neutomni-intro .cut-reveal__wordmark { margin: 16px; }
 }
+
+/* Source choreography: center-out logo paths, then line-by-line hero entry.
+   These measured reference timings intentionally override Oreo's UI easing. */
+.neutomni-intro .cut-reveal__wordmark { animation: none; }
+.neutomni-wordmark--inverse path { animation: neutomni-letter calc(var(--cut-second) * 2) var(--cut-out-quad) calc(var(--cut-second) * var(--letter-delay)) both; }
+.neutomni-wordmark--inverse path:nth-child(1), .neutomni-wordmark--inverse path:nth-child(10) { --letter-delay: .45; }
+.neutomni-wordmark--inverse path:nth-child(2), .neutomni-wordmark--inverse path:nth-child(9) { --letter-delay: .3375; }
+.neutomni-wordmark--inverse path:nth-child(3), .neutomni-wordmark--inverse path:nth-child(8) { --letter-delay: .225; }
+.neutomni-wordmark--inverse path:nth-child(4), .neutomni-wordmark--inverse path:nth-child(7) { --letter-delay: .1125; }
+.neutomni-wordmark--inverse path:nth-child(5), .neutomni-wordmark--inverse path:nth-child(6) { --letter-delay: 0; }
+.neutomni-statement h1 > span { display: block; animation: neutomni-line calc(var(--cut-second) * .6) var(--cut-out-quad) calc(var(--cut-second) * 4.8) both; }
+.neutomni-statement h1 > span:nth-child(2) { animation-delay: calc(var(--cut-second) * 4.9); }
+.neutomni-statement h1 > span:nth-child(3) { animation-delay: calc(var(--cut-second) * 5); }
+.neutomni-nav { animation: neutomni-nav calc(var(--cut-second) * .3) var(--cut-out-quad) calc(var(--cut-second) * 4.6) both; }
+.neutomni-showreel { animation: neutomni-reel calc(var(--cut-second) * .8) var(--cut-out-quad) calc(var(--cut-second) * 5.1) both; transform-origin: 50% 100%; }
+.neutomni-footer { animation: neutomni-nav calc(var(--cut-second) * .6) var(--cut-out-quad) calc(var(--cut-second) * 5.6) both; }
+/* Keep the original composition, while allowing keyboard users to skip. */
+.neutomni-intro .cut-reveal__skip { opacity: 0; }
+.neutomni-intro .cut-reveal__skip:focus-visible { opacity: 1; }
+/* Skip immediately finishes child entry too; natural completion keeps its stagger. */
+.neutomni-intro[data-skipped="true"] .neutomni-hero * { animation: none; }
+@keyframes neutomni-letter { from { transform: translateY(-300px); } to { transform: translateY(0); } }
+@keyframes neutomni-line { from { opacity: 0; filter: blur(10px); transform: translateY(15px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
+@keyframes neutomni-nav { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes neutomni-reel { from { transform: translateY(145%) scale(0); } to { transform: translateY(0) scale(1); } }
+@media (prefers-reduced-motion: reduce) { .neutomni-intro .cut-reveal__curtain *, .neutomni-intro .neutomni-hero * { animation: none; } }
+
+.neutomni-intro .cut-reveal__scissors { background: currentColor; mask: url("/examples/neutomni/scissors.png") center / contain no-repeat; }
+.neutomni-intro .cut-reveal__scissors svg { visibility: hidden; }
+@media (hover: hover) and (pointer: fine) { .neutomni-intro:hover .cut-reveal__skip { opacity: 1; } }
+
+@media (hover: none) { .neutomni-intro .cut-reveal__skip { opacity: 1; } }

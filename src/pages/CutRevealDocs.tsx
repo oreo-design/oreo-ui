@@ -7,7 +7,7 @@ import { Section, CodeBlock, PropsTable, type PropRow } from "@/docs/primitives"
 const PROPS: PropRow[] = [
   { prop: "wordmark", type: "ReactNode", desc: "Non-interactive artwork on the upper curtain." },
   { prop: "children", type: "ReactNode", desc: "The content revealed by the opening. Remains mounted and inert until revealed." },
-  { prop: "duration", type: "number", def: "5200", desc: "Presentation length in milliseconds, clamped to 1000–12000. Not actual loading progress." },
+  { prop: "duration", type: "number", def: "5200", desc: "Curtain timeline in milliseconds, clamped to 1000–12000. Not actual loading progress." },
   { prop: "skipLabel", type: "string", def: '"Skip intro"', desc: "Accessible label for the skip button." },
   { prop: "onReveal", type: "() => void", desc: "Called once when the intro ends or is skipped." },
   { prop: "className / style", type: "string / CSSProperties", desc: "Size the container and customize --cut-color / --cut-ink." },
