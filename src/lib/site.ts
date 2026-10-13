@@ -22,6 +22,8 @@ export const PAGE_META = {
   "features-showcase": { title: "Features Showcase", description: "A spacious two-column features template with layered invoice and usage cards and four supporting benefits." },
   "prospecting-components": { title: "Prospecting Components", description: "Composable prospect metrics, buying signals, segmented scores, recommendations and activity timelines." },
   "prospecting-dashboard": { title: "Prospecting Dashboard", description: "An interactive sales intelligence template with prospect discovery, saved contacts, filtering and CSV export." },
+  "activity-components": { title: "Activity Components", description: "Composable usage charts, forecast lines, budget meters, request logs, spend leaderboards and audit timelines." },
+  "activity-workspace": { title: "Activity Workspace", description: "A complete workspace activity template bringing usage, forecasts, billing, budgets and request logs together." },
   "skill-card": { title: "Skill Card", description: "Composable skill cards, provider identities, catalog tabs, search, empty states and a responsive workspace shell." },
   "skills-workspace": { title: "Skills Workspace", description: "A complete Skills discovery template with grouped cards, search and an interactive installed collection." },
   "status-icon": { title: "Status Icon", description: "Rounded task status icons with distinct outlines, progress fills and completion marks, built on Oreo’s tokens." },
