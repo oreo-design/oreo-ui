@@ -30,6 +30,12 @@ A small, copy-paste React component library that reproduces the **Oreo UI** desi
 
 Design tokens are extracted 1:1 from the Oreo UI Figma file; switching theme or radius only changes CSS variables — components are never touched. The palette tones used by Tag and the Avatar "alphabet" type ship with both light and dark skins.
 
+## Review workspace
+
+Inspired by [@_heyrico’s agentic interface](https://x.com/_heyrico/status/2109659622114288121), `/review-components` documents nine reusable parts: `WorkspaceRail`, `SignalStrength`, `ContactRow`, `ReviewQueue`, `FollowUpSummary`, `EmailDraft`, `ReviewNavigation`, `EmailDraftToolbar`, and `ReviewWorkspaceShell`.
+
+`/review-workspace` composes them into the complete template: grouped contact signals, editable drafts, attachments, model selection, queue navigation, dismiss/restore, filtering and sorting. Demo state is local and resets on reload; no files upload and no emails send. See [the component map and integration notes](src/patterns/review-workspace/README.md).
+
 ## Skills catalog
 
 Inspired by [@_heyrico’s Skills interface](https://x.com/_heyrico/status/2109682274090545238), `/skill-card` provides a live playground and documentation for seven exports: `SkillCard`, `SkillProviderBadge`, `SkillSearch`, `SkillCatalogTabs`, `SkillSection`, `SkillEmptyState`, and `SkillWorkspaceShell`.

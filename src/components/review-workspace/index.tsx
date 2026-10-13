@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, type ReactNode } from "react";
 import { Avatar, type AvatarColor } from "@/components/avatar";
-import { Button } from "@/components/button";
+import { Button, IconButton } from "@/components/button";
 import { Icon, type IconName } from "@/components/icon";
 import { cn } from "@/lib/cn";
 import "./review-workspace.css";
@@ -35,8 +35,8 @@ export function ContactRow({ contact, selected, onSelect }: { contact: ReviewCon
 }
 
 export type ReviewGroup = { id: string; label: string; contacts: ReviewContact[] };
-export function ReviewQueue({ title = "Review", groups, selectedId, onSelect, actions, empty }: {
-  title?: string; groups: ReviewGroup[]; selectedId?: string; onSelect: (id: string) => void; actions?: ReactNode; empty?: ReactNode;
+export function ReviewQueue({ title = "Review", groups, selectedId, onSelect, actions, empty, footer }: {
+  title?: string; groups: ReviewGroup[]; selectedId?: string; onSelect: (id: string) => void; actions?: ReactNode; empty?: ReactNode; footer?: ReactNode;
 }) {
   const headingId = useId();
   return <section className="review-queue" aria-labelledby={headingId}>
@@ -44,6 +44,7 @@ export function ReviewQueue({ title = "Review", groups, selectedId, onSelect, ac
     <div className="review-queue-body">{groups.some(g => g.contacts.length) ? groups.filter(g => g.contacts.length).map(group => <section className="review-group" key={group.id} aria-label={group.label}>
       <h3>{group.label}</h3><div>{group.contacts.map(contact => <ContactRow key={contact.id} contact={contact} selected={contact.id === selectedId} onSelect={onSelect} />)}</div>
     </section>) : <div className="review-empty">{empty ?? "No contacts to review."}</div>}</div>
+    {footer && <footer className="border-t border-border-subtle p-3">{footer}</footer>}
   </section>;
 }
 
@@ -51,11 +52,39 @@ export function FollowUpSummary({ title = "Follow-ups", action = "Send email", c
   return <section className="review-summary" aria-label="Suggested action"><header><Icon name="plane" /><h3>{title}</h3><span>{action}</span></header><div>{children}</div></section>;
 }
 
+/** Navigation follows the host's filtered/sorted queue, without wrapping. */
+export function ReviewNavigation({ onPrevious, onNext, onDismiss, previousDisabled = false, nextDisabled = false, disabled = false }: {
+  onPrevious: () => void; onNext: () => void; onDismiss: () => void;
+  previousDisabled?: boolean; nextDisabled?: boolean; disabled?: boolean;
+}) {
+  return <div className="review-navigation" role="group" aria-label="Review actions">
+    <IconButton aria-label="Previous contact" title="Previous contact" type="secondary" size="sm" shape="rectangle" tapScale={1} disabled={disabled || previousDisabled} onClick={onPrevious} icon={<Icon name="chevron-up" size="sm" />} />
+    <IconButton aria-label="Next contact" title="Next contact" type="secondary" size="sm" shape="rectangle" tapScale={1} disabled={disabled || nextDisabled} onClick={onNext} icon={<Icon name="chevron-down" size="sm" />} />
+    <Button type="secondary" size="sm" tapScale={1} disabled={disabled} onClick={onDismiss}>Dismiss</Button>
+  </div>;
+}
+
+export type EmailDraftToolbarProps = {
+  onSend: () => void; onAttach?: () => void; model?: string;
+  onModelChange?: (model: string) => void; disabled?: boolean;
+};
+
+/** Reusable composer actions. Picking files and sending remain host-owned. */
+export function EmailDraftToolbar({ onSend, onAttach, model, onModelChange, disabled = false }: EmailDraftToolbarProps) {
+  return <div className="review-email-footer">
+    {onAttach && <IconButton aria-label="Attach files" title="Attach files" type="secondary" size="sm" shape="rectangle" tapScale={1} disabled={disabled} onClick={onAttach} icon={<Icon name="paperclip" size="sm" />} />}
+    <div className="review-email-send-actions">
+      {model && <label className="review-model"><Icon name="sparkle" size="sm" /><span className="sr-only">Draft model</span><select aria-label="Draft model" value={model} onChange={e => onModelChange?.(e.target.value)} disabled={!onModelChange || disabled}>{[...new Set([model, "Claude Opus 5.5", "GPT", "Gemini"])].map(option => <option key={option}>{option}</option>)}</select></label>}
+      <Button disabled={disabled} onClick={onSend} trailingIcon={<Icon name="plane" size="sm" />} tapScale={1}>Send</Button>
+    </div>
+  </div>;
+}
+
 export type EmailDraftValue = { subject: string; body: string };
 export type DraftPerson = { name: string; email: string; color?: AvatarColor; avatarSrc?: string };
-export function EmailDraft({ from, to, value, onChange, onSend, model, onModelChange, disabled = false, status, error }: {
+export function EmailDraft({ from, to, value, onChange, onSend, model, onModelChange, disabled = false, status, error, onAttach, attachments }: {
   from: DraftPerson; to: DraftPerson; value: EmailDraftValue; onChange: (value: EmailDraftValue) => void;
-  onSend: () => void; model?: string; onModelChange?: (model: string) => void; disabled?: boolean; status?: ReactNode; error?: string;
+  onSend: () => void; model?: string; onModelChange?: (model: string) => void; disabled?: boolean; status?: ReactNode; error?: string; onAttach?: () => void; attachments?: ReactNode;
 }) {
   const id = useId();
   return <section className="review-email" aria-label={`Email draft for ${to.name}`}>
@@ -66,9 +95,9 @@ export function EmailDraft({ from, to, value, onChange, onSend, model, onModelCh
       <label className="sr-only" htmlFor={`${id}-body`}>Email message</label>
       <textarea id={`${id}-body`} className="review-message" value={value.body} onChange={e => onChange({ ...value, body: e.target.value })} disabled={disabled} aria-invalid={Boolean(error)} aria-describedby={error ? `${id}-error` : undefined} />
       {error && <p id={`${id}-error`} role="alert" className="review-error">{error}</p>}
-      <div className="review-email-footer"><Button disabled={disabled} onClick={onSend} trailingIcon={<Icon name="plane" size="sm" />} tapScale={1}>Send</Button>
-        {model && <label className="review-model"><Icon name="sparkle" size="sm" /><span className="sr-only">Draft model</span><select aria-label="Draft model" value={model} onChange={e => onModelChange?.(e.target.value)} disabled={!onModelChange || disabled}><option>Claude Opus 5.5</option><option>GPT</option><option>Gemini</option></select></label>}
-      </div><div className="review-send-status" role="status">{status}</div>
+      {attachments && <div className="review-email-attachments">{attachments}</div>}
+      <EmailDraftToolbar onSend={onSend} onAttach={onAttach} model={model} onModelChange={onModelChange} disabled={disabled} />
+      <div className="review-send-status" role="status">{status}</div>
     </div>
   </section>;
 }
