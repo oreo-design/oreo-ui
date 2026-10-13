@@ -2,6 +2,8 @@ import { FeatureCardsDocs } from "@/pages/FeatureCardsDocs";
 import { FeaturesShowcasePage } from "@/pages/FeaturesShowcasePage";
 import { ProspectingComponentsDocs } from "@/pages/ProspectingComponentsDocs";
 import { ProspectingDashboardPage } from "@/pages/ProspectingDashboardPage";
+import { ActivityComponentsDocs } from "@/pages/ActivityComponentsDocs";
+import { ActivityWorkspacePage } from "@/pages/ActivityWorkspacePage";
 import { SkillCardDocs } from "@/pages/SkillCardDocs";
 import { SkillsWorkspacePage } from "@/pages/SkillsWorkspacePage";
 import { StatusIconDocs } from "@/pages/StatusIconDocs";
@@ -53,6 +55,8 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "features-showcase": FeaturesShowcasePage,
   "prospecting-components": ProspectingComponentsDocs,
   "prospecting-dashboard": ProspectingDashboardPage,
+  "activity-components": ActivityComponentsDocs,
+  "activity-workspace": ActivityWorkspacePage,
   "skill-card": SkillCardDocs,
   "skills-workspace": SkillsWorkspacePage,
   "status-icon": StatusIconDocs,

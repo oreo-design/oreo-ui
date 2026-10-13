@@ -1,5 +1,6 @@
 import { InvoicePreview, UsageSummary } from "@/components/feature-cards";
 import { ProspectMetric, ScoreMeter, BuyingSignal, ProspectAction, SIGNAL_TYPES } from "@/components/prospecting";
+import { ActivityCard, BudgetMeter } from "@/components/activity";
 import { SkillCard, SkillProviderBadge } from "@/components/skill-card";
 import { searchSources, searchAnswer, webSearchDemo } from "./web-search.demo";
 import { statusIconDemo } from "./status-icon.demo";
@@ -40,6 +41,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
   prospecting: { ProspectMetric, ScoreMeter, BuyingSignal, ProspectAction },
+  activity: { ActivityCard, BudgetMeter },
   "skill-card": { SkillCard, SkillProviderBadge },
   "feature-cards": { InvoicePreview, UsageSummary },
   "status-icon": { StatusIcon },
@@ -71,6 +73,7 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     label: text("Prospects discovered"), value: text("1,284"), change: text("+18%"), description: text("vs. 1,088 prior 7 days"),
     trend: select(["up", "down"], "up"), score: number(92, 0, 100), signal: select(SIGNAL_TYPES, "funding"), signalText: text("Raised $40M Series B"), disabled: toggle(),
   }, v => v.preview === "score" ? <ScoreMeter value={v.score} /> : v.preview === "signal" ? <BuyingSignal type={v.signal}>{v.signalText}</BuyingSignal> : v.preview === "action" ? <ProspectAction disabled={v.disabled} /> : <ProspectMetric label={v.label} value={v.value} change={v.change} description={v.description} trend={v.trend} className="w-full max-w-md rounded-card-medium border border-border-subtle" />), source: "prospecting" },
+  "activity-components": { source: "activity", ...define("Activity", { title: text("Billing"), description: text("Invoiced monthly"), used: number(6516.17, 0, 20000, .01), limit: number(10000, 0, 20000, 100), label: text("Workspace limit") }, v => <ActivityCard title={v.title} description={v.description} className="w-full max-w-sm"><BudgetMeter used={v.used} limit={v.limit} label={v.label} /></ActivityCard>) },
   "skill-card": define("Skill Card", {
     title: text("Pipeline review"), description: text("Reviews every open deal each Monday, flags the ones with no activity in 14 days and suggests your next move.", true),
     provider: text("Attio"), color, icon: select(["circle-dashed", "sparkle", "chart-line", "calendar"], "circle-dashed"), installed: toggle(), pending: toggle(), disabled: toggle(), error: text(""),

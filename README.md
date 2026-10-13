@@ -44,6 +44,10 @@ Inspired by [@_heyrico’s Skills interface](https://x.com/_heyrico/status/21096
 
 Copy `src/components/skill-card` with its Oreo dependencies for the primitives, or add `src/patterns/skills-workspace` for the complete fixture. The components use existing theme, palette and radius tokens without new dependencies.
 
+## Activity workspace
+
+[Activity components](/activity-components) and the [Activity template](/activity-workspace) bring usage, forecasts, budget meters, spend rankings, request logs and audit events into one workspace. Eight reusable exports live in `src/components/activity`; the local-state demo lives in `src/patterns/activity-workspace`. The template extends [Ludvig Rask’s reference](https://x.com/ludvigrask_/status/2109657592800694706) with light/dark themes, responsive layouts, period selection, request filters and budget editing. All data is illustrative; edits reset on reload.
+
 ## Develop
 
 ### Settings design-language experiment
