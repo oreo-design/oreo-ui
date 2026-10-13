@@ -4,7 +4,7 @@
 /* Reference-only brand skin. This red is sampled from the supplied video, not Oreo's
    semantic error color; keeping it scoped avoids changing library tokens. */
 .neutomni-intro { --neutomni-red: #b80229; --cut-color: var(--neutomni-red); --cut-ink: var(--color-white, #fff); font-family: "Neutomni Sans", Arial, sans-serif; color: var(--neutomni-red); background: var(--cut-ink); }
-.neutomni-wordmark { display: block; width: 100%; height: auto; overflow: visible; }
+.neutomni-wordmark { display: block; width: 100%; height: auto; overflow: hidden; }
 .neutomni-wordmark--inverse { color: var(--cut-ink); }
 .neutomni-hero { position: relative; aspect-ratio: 1.48; padding: 1.5%; overflow: hidden; background: var(--cut-ink); }
 .neutomni-nav { display: grid; grid-template-columns: 50% 1fr auto; gap: 16px; margin-top: -1%; font-size: clamp(7px, .9cqw, 14px); }
