@@ -14,11 +14,19 @@ try {
   for (const width of [320, 390]) for (const dark of [false, true]) for (const card of ["outline", "surface", "divider"]) {
     await page.setViewportSize({ width, height: 844 });
     await page.goto(`${url}/settings-lab?stress${dark ? "&dark" : ""}`);
+    await page.getByLabel("Card style", { exact: true }).waitFor({ timeout: 60_000 });
+    await page.evaluate(async () => { await document.fonts.load('13px "Inter Variable"'); await document.fonts.ready; });
     await page.getByLabel("Card style", { exact: true }).selectOption(card);
     const row = page.locator('[data-service="github"]');
     await row.getByRole("button", { name: "Manage", exact: true }).click();
     await row.getByRole("button", { name: "Disconnect…", exact: true }).click();
     await page.waitForFunction(() => document.activeElement?.hasAttribute("data-confirm-keep"));
+    // Focus, font layout and the scroller must settle before comparing bounds.
+    await page.waitForFunction(() => {
+      const actions = document.querySelector('[data-service="github"] [data-confirm-actions]');
+      const panel = document.querySelector(".oreo-settings main");
+      return actions && panel && actions.getBoundingClientRect().bottom <= panel.getBoundingClientRect().bottom + 1;
+    });
     const actions = await row.locator("[data-confirm-actions]").boundingBox();
     const panel = await page.locator(".oreo-settings main").boundingBox();
     assert(actions.y + actions.height <= panel.y + panel.height + 1, "Confirmation actions were not revealed inside Settings");
@@ -52,6 +60,10 @@ try {
   });
   assert.equal(await page.getByRole("menu").evaluate(el => getComputedStyle(el).backgroundColor), expected);
   report.darkPopup = true;
+} catch (error) {
+  await page.screenshot({ path: `${out}/state-probe-failure.png`, fullPage: true }).catch(() => {});
+  report.failure = { message: error.message, url: page.url(), text: await page.locator("body").innerText().catch(() => "") };
+  throw error;
 } finally {
   await browser.close();
   await writeFile(`${out}/state-probes.json`, JSON.stringify(report, null, 2) + "\n");
