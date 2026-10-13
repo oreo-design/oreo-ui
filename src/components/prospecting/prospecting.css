@@ -1,0 +1,31 @@
+.prospect-metric { min-width: 0; padding: 1.5rem; background: var(--color-bg-base); }
+.prospect-bars { display: flex; flex-shrink: 0; align-items: flex-end; gap: .25rem; width: 3.5rem; height: 2.25rem; }
+.prospect-bars > span { flex: 1; min-width: 0; border-radius: var(--radius-capsule); background: var(--color-text-disabled); }
+.prospect-bars > span:last-child { background: var(--color-status-progress); }
+.prospect-score { display: inline-flex; align-items: center; gap: .625rem; }
+.prospect-score-segment { width: .25rem; height: 1.125rem; border-radius: var(--radius-capsule); background: var(--color-state-press); }
+.prospect-score-segment[data-filled="true"] { background: var(--color-palette-orange-text); }
+.prospect-score[data-qualified="true"] .prospect-score-segment[data-filled="true"] { background: var(--color-status-success); }
+.prospect-action { background: linear-gradient(180deg, color-mix(in srgb, var(--color-status-progress) 80%, var(--color-code-fg)), var(--color-status-progress)); color: var(--color-code-fg); box-shadow: inset 0 1px 1px color-mix(in srgb, var(--color-code-fg) 35%, transparent), 0 4px 8px color-mix(in srgb, var(--color-status-progress) 18%, transparent); }
+.prospect-action:disabled { background: var(--color-state-press); color: var(--color-text-disabled); box-shadow: none; }
+.prospect-panel { min-width: 0; padding: .25rem; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card-medium); background: var(--color-bg-elevated); box-shadow: var(--shadow-default); }
+.prospect-panel-icon { display: grid; place-items: center; flex-shrink: 0; width: 2.5rem; height: 2.5rem; border-radius: var(--radius-card-small); background: linear-gradient(160deg, color-mix(in srgb, var(--color-status-progress) 70%, var(--color-code-fg)), var(--color-status-progress)); color: var(--color-code-fg); box-shadow: inset 0 1px 2px color-mix(in srgb, var(--color-code-fg) 40%, transparent), var(--shadow-active); }
+.prospect-panel-icon[data-tone="mint"] { background: linear-gradient(160deg, color-mix(in srgb, var(--color-status-success) 65%, var(--color-code-fg)), var(--color-status-success)); }
+.prospect-panel-content { overflow: hidden; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card-small); background: var(--color-bg-base); }
+.prospect-table { width: 100%; border-collapse: collapse; text-align: left; white-space: nowrap; }
+.prospect-table th, .prospect-table td { padding: 1rem; }
+.prospect-table thead { color: var(--color-text-secondary); font-size: .75rem; }
+.prospect-table thead th { font-weight: 400; }
+.prospect-table tbody tr { border-top: 1px solid var(--color-border-subtle); }
+.prospect-table tbody tr:hover { background: var(--color-state-hover); }
+.prospect-table td:last-child { padding-left: 0; padding-right: .75rem; }
+.prospect-timeline { padding: 1.25rem; }
+.prospect-timeline li { position: relative; display: flex; gap: .875rem; }
+.prospect-timeline li:not(:last-child)::before { content: ""; position: absolute; left: .9375rem; top: 2rem; bottom: .25rem; width: 1px; background: var(--color-border-subtle); }
+.prospect-timeline li:last-child > div { padding-bottom: 0; }
+.prospect-timeline-icon { z-index: 1; display: grid; place-items: center; width: 2rem; height: 2rem; flex-shrink: 0; border-radius: var(--radius-capsule); border: 1px solid var(--color-border-subtle); background: var(--color-bg-base); }
+.prospect-dashboard :is(button, a, input, select):focus-visible { outline: 2px solid var(--color-status-progress); outline-offset: 3px; }
+
+/* Palette text assumes a palette fill; standalone positive labels need their own dark contrast. */
+.prospect-positive { color: var(--color-palette-mint-text); }
+.theme-dark .prospect-positive { color: var(--color-status-success); }

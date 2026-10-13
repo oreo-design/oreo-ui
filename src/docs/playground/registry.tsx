@@ -1,4 +1,5 @@
 import { InvoicePreview, UsageSummary } from "@/components/feature-cards";
+import { ProspectMetric, ScoreMeter, BuyingSignal, ProspectAction, SIGNAL_TYPES } from "@/components/prospecting";
 import { SkillCard, SkillProviderBadge } from "@/components/skill-card";
 import { searchSources, searchAnswer, webSearchDemo } from "./web-search.demo";
 import { statusIconDemo } from "./status-icon.demo";
@@ -38,6 +39,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  prospecting: { ProspectMetric, ScoreMeter, BuyingSignal, ProspectAction },
   "skill-card": { SkillCard, SkillProviderBadge },
   "feature-cards": { InvoicePreview, UsageSummary },
   "status-icon": { StatusIcon },
@@ -64,6 +66,11 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     title: text("Spending Limit"), description: text("New users by First user primary channel group"),
     running: number(20, 0, 100), swimming: number(20, 0, 100),
   }, v => <div className="w-full max-w-md">{v.variant === "invoice" ? <InvoicePreview number={v.number} amount={v.amount} due={v.due} recipient={v.recipient || undefined} sender={v.sender || undefined} address={v.address || undefined} fade={v.fade} /> : <UsageSummary title={v.title} description={v.description} fade={v.fade} segments={[{ label: "Running", value: v.running, tone: "purple", detail: "average of 12 minutes" }, { label: "Swimming", value: v.swimming, tone: "blue" }]} />}</div>),
+  "prospecting-components": { ...define("Prospecting", {
+    preview: select(["metric", "score", "signal", "action"], "metric"),
+    label: text("Prospects discovered"), value: text("1,284"), change: text("+18%"), description: text("vs. 1,088 prior 7 days"),
+    trend: select(["up", "down"], "up"), score: number(92, 0, 100), signal: select(SIGNAL_TYPES, "funding"), signalText: text("Raised $40M Series B"), disabled: toggle(),
+  }, v => v.preview === "score" ? <ScoreMeter value={v.score} /> : v.preview === "signal" ? <BuyingSignal type={v.signal}>{v.signalText}</BuyingSignal> : v.preview === "action" ? <ProspectAction disabled={v.disabled} /> : <ProspectMetric label={v.label} value={v.value} change={v.change} description={v.description} trend={v.trend} className="w-full max-w-md rounded-card-medium border border-border-subtle" />), source: "prospecting" },
   "skill-card": define("Skill Card", {
     title: text("Pipeline review"), description: text("Reviews every open deal each Monday, flags the ones with no activity in 14 days and suggests your next move.", true),
     provider: text("Attio"), color, icon: select(["circle-dashed", "sparkle", "chart-line", "calendar"], "circle-dashed"), installed: toggle(), pending: toggle(), disabled: toggle(), error: text(""),
