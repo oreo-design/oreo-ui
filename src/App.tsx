@@ -1,5 +1,7 @@
 import { FeatureCardsDocs } from "@/pages/FeatureCardsDocs";
 import { FeaturesShowcasePage } from "@/pages/FeaturesShowcasePage";
+import { ProspectingComponentsDocs } from "@/pages/ProspectingComponentsDocs";
+import { ProspectingDashboardPage } from "@/pages/ProspectingDashboardPage";
 import { SkillCardDocs } from "@/pages/SkillCardDocs";
 import { SkillsWorkspacePage } from "@/pages/SkillsWorkspacePage";
 import { StatusIconDocs } from "@/pages/StatusIconDocs";
@@ -49,6 +51,8 @@ import { applyRouteMeta } from "@/lib/head";
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "feature-cards": FeatureCardsDocs,
   "features-showcase": FeaturesShowcasePage,
+  "prospecting-components": ProspectingComponentsDocs,
+  "prospecting-dashboard": ProspectingDashboardPage,
   "skill-card": SkillCardDocs,
   "skills-workspace": SkillsWorkspacePage,
   "status-icon": StatusIconDocs,

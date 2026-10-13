@@ -25,6 +25,7 @@ const NAV: Group[] = [
       { label: "Kanban", page: "kanban" },
       { label: "Skill Card", page: "skill-card" },
       { label: "Feature Cards", page: "feature-cards" },
+      { label: "Prospecting", page: "prospecting-components" },
       { label: "Select", soon: true },
       { label: "Dialog", soon: true },
     ],
@@ -73,7 +74,7 @@ const NAV: Group[] = [
   },
   {
     title: "Templates",
-    items: [{ label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
+    items: [{ label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
   },
   {
     title: "Patterns",
