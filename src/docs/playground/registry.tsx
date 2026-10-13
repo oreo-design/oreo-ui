@@ -1,6 +1,7 @@
 import { InvoicePreview, UsageSummary } from "@/components/feature-cards";
 import { ProspectMetric, ScoreMeter, BuyingSignal, ProspectAction, SIGNAL_TYPES } from "@/components/prospecting";
 import { ActivityCard, BudgetMeter } from "@/components/activity";
+import { CutReveal } from "@/components/cut-reveal";
 import { SkillCard, SkillProviderBadge } from "@/components/skill-card";
 import { searchSources, searchAnswer, webSearchDemo } from "./web-search.demo";
 import { statusIconDemo } from "./status-icon.demo";
@@ -42,6 +43,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 export const componentModules = {
   prospecting: { ProspectMetric, ScoreMeter, BuyingSignal, ProspectAction },
   activity: { ActivityCard, BudgetMeter },
+  "cut-reveal": { CutReveal },
   "skill-card": { SkillCard, SkillProviderBadge },
   "feature-cards": { InvoicePreview, UsageSummary },
   "status-icon": { StatusIcon },
@@ -74,6 +76,7 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     trend: select(["up", "down"], "up"), score: number(92, 0, 100), signal: select(SIGNAL_TYPES, "funding"), signalText: text("Raised $40M Series B"), disabled: toggle(),
   }, v => v.preview === "score" ? <ScoreMeter value={v.score} /> : v.preview === "signal" ? <BuyingSignal type={v.signal}>{v.signalText}</BuyingSignal> : v.preview === "action" ? <ProspectAction disabled={v.disabled} /> : <ProspectMetric label={v.label} value={v.value} change={v.change} description={v.description} trend={v.trend} className="w-full max-w-md rounded-card-medium border border-border-subtle" />), source: "prospecting" },
   "activity-components": { source: "activity", ...define("Activity", { title: text("Billing"), description: text("Invoiced monthly"), used: number(6516.17, 0, 20000, .01), limit: number(10000, 0, 20000, 100), label: text("Workspace limit") }, v => <ActivityCard title={v.title} description={v.description} className="w-full max-w-sm"><BudgetMeter used={v.used} limit={v.limit} label={v.label} /></ActivityCard>) },
+  "cut-reveal": define("Cut Reveal", { duration: number(5200, 1000, 12000, 200), label: text("OREO®"), skipLabel: text("Skip intro") }, v => <CutReveal key={`${v.duration}-${v.label}-${v.skipLabel}`} duration={v.duration} skipLabel={v.skipLabel} wordmark={<div className="text-[clamp(48px,9vw,120px)] font-semibold leading-none tracking-tighter">{v.label}</div>} className="w-full max-w-3xl rounded-card-medium"><div className="flex min-h-96 flex-col items-center justify-center gap-4 bg-bg-surface p-6 text-center"><p className="text-xs uppercase tracking-widest text-text-secondary">Made to be yours</p><h2 className="text-4xl font-medium tracking-tight">Good things inside.</h2><a href="/neutomni-intro" className="text-sm underline underline-offset-4">Open Neutomni demo ↗</a></div></CutReveal>),
   "skill-card": define("Skill Card", {
     title: text("Pipeline review"), description: text("Reviews every open deal each Monday, flags the ones with no activity in 14 days and suggests your next move.", true),
     provider: text("Attio"), color, icon: select(["circle-dashed", "sparkle", "chart-line", "calendar"], "circle-dashed"), installed: toggle(), pending: toggle(), disabled: toggle(), error: text(""),
