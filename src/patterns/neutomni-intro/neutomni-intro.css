@@ -1,0 +1,31 @@
+/* Reference-only brand skin. This red is Neutomni's identity, not Oreo's
+   semantic error color; keeping it scoped avoids changing library tokens. */
+.neutomni-intro { --neutomni-red: #cf1230; --cut-color: var(--neutomni-red); --cut-ink: var(--color-code-fg); color: var(--neutomni-red); background: var(--color-code-fg); }
+.neutomni-wordmark { display: block; width: 100%; aspect-ratio: 6; background: currentColor; mask: url("/examples/neutomni/wordmark.png") center / contain no-repeat; -webkit-mask: url("/examples/neutomni/wordmark.png") center / contain no-repeat; }
+.neutomni-wordmark--inverse { color: var(--cut-ink); }
+.neutomni-hero { position: relative; min-height: 680px; aspect-ratio: 1.48; padding: 1.5%; overflow: hidden; background: var(--color-code-fg); }
+.neutomni-nav { display: grid; grid-template-columns: 1fr 1fr auto; gap: 16px; margin-top: 12px; font-size: clamp(9px, .9vw, 14px); }
+.neutomni-nav p { margin: 0; }
+.neutomni-nav nav { display: flex; gap: 10px; }
+.neutomni-email { font-family: Georgia, serif; font-style: italic; }
+.neutomni-intro a:focus-visible, .neutomni-showreel button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.neutomni-statement { margin: 10.5% 0 0 50%; }
+.neutomni-statement h1 { margin: 0; font-size: clamp(24px, 3.05vw, 52px); font-weight: 400; line-height: 1.06; letter-spacing: -.05em; }
+.neutomni-statement em { font-family: Georgia, "Times New Roman", serif; font-size: 1.1em; letter-spacing: -.065em; }
+.neutomni-showreel { position: relative; width: 42%; margin: 8.5% auto 0; aspect-ratio: 1.8; overflow: hidden; background: var(--color-code-bg); }
+.neutomni-showreel > img, .neutomni-showreel > video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.neutomni-showreel button { position: absolute; bottom: 12px; right: 12px; width: 32px; height: 32px; border-radius: 50%; color: var(--color-code-fg); background: var(--color-code-bg); cursor: pointer; font-size: 12px; }
+.neutomni-media-fallback { position: absolute; left: 8px; bottom: 8px; background: var(--color-code-bg); color: var(--color-code-fg); font-size: 10px; padding: 4px; }
+.neutomni-footer { position: absolute; inset: auto 1.5% 16px; display: flex; justify-content: space-between; align-items: end; font: clamp(9px, .9vw, 12px)/1.5 monospace; text-transform: uppercase; }
+@media (hover: hover) and (pointer: fine) { .neutomni-nav a:hover { text-decoration: underline; text-underline-offset: 3px; } }
+@media (max-width: 700px) {
+  .neutomni-hero { min-height: 640px; aspect-ratio: auto; padding: 16px; }
+  .neutomni-nav { grid-template-columns: 1fr; gap: 12px; font-size: 11px; }
+  .neutomni-nav nav { gap: 16px; flex-wrap: wrap; }
+  .neutomni-email { display: none; }
+  .neutomni-statement { margin: 72px 0 0 12%; }
+  .neutomni-statement h1 { font-size: clamp(26px, 6vw, 40px); }
+  .neutomni-showreel { width: 80%; margin-top: 64px; }
+  .neutomni-footer { inset-inline: 16px; }
+  .neutomni-intro .cut-reveal__wordmark { margin: 16px; }
+}

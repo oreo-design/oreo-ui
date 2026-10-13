@@ -1,0 +1,51 @@
+.cut-reveal {
+  --cut-color: var(--color-bg-inverse);
+  --cut-ink: var(--color-text-on-inverse);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.cut-reveal__content { outline: none; }
+.cut-reveal__curtain { position: absolute; inset: 0; z-index: 2; color: var(--cut-ink); pointer-events: none; }
+.cut-reveal__sheet { position: absolute; inset-inline: 0; background: var(--cut-color); animation-duration: var(--cut-duration); animation-fill-mode: both; animation-timing-function: linear; }
+.cut-reveal__sheet--top { top: 0; height: 60%; animation-name: cut-sheet-top; }
+.cut-reveal__sheet--bottom { bottom: 0; height: 40%; animation-name: cut-sheet-bottom; }
+.cut-reveal__wordmark { margin: 1.5% 1.5% 0; overflow: hidden; animation: cut-wordmark var(--cut-duration) linear both; }
+.cut-reveal__wordmark > * { display: block; width: 100%; }
+.cut-reveal__seam { position: absolute; inset-inline: 0; top: 60%; height: 1px; animation: cut-seam var(--cut-duration) linear both; }
+.cut-reveal__dashes { position: absolute; inset: 0; border-top: 1px dashed currentColor; opacity: .65; }
+.cut-reveal__cut { height: 1px; background: currentColor; transform-origin: left; animation: cut-line var(--cut-duration) linear both; }
+.cut-reveal__counter, .cut-reveal__instruction { position: absolute; bottom: 12px; font-family: monospace; font-size: clamp(9px, 1vw, 12px); text-transform: uppercase; }
+.cut-reveal__counter { left: 1.5%; font-variant-numeric: tabular-nums; letter-spacing: .2em; }
+.cut-reveal__instruction { right: 1.5%; }
+.cut-reveal__instruction b { margin-left: 24px; letter-spacing: 2px; }
+.cut-reveal__scissors-track { position: absolute; inset: 0 32px 0 0; animation: cut-scissors var(--cut-duration) linear both; }
+.cut-reveal__scissors { position: absolute; top: -30px; width: 36px; height: 30px; }
+.cut-reveal__scissors svg { width: 100%; height: 100%; stroke: currentColor; stroke-width: 1.75; }
+.cut-reveal__blade { transform-origin: 19px 15px; animation: cut-snip 320ms ease-in-out infinite alternate; }
+.cut-reveal__blade--lower { animation-direction: alternate-reverse; }
+.cut-reveal__shapes { display: flex; justify-content: center; align-items: center; gap: 12px; position: absolute; inset: auto 0 8%; animation: cut-shapes var(--cut-duration) linear both; }
+.cut-reveal__shapes i { width: 9px; height: 9px; background: currentColor; }
+.cut-reveal__shapes i:nth-child(1) { transform: rotate(45deg); }
+.cut-reveal__shapes i:nth-child(2) { clip-path: polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%); }
+.cut-reveal__shapes i:nth-child(3) { clip-path: polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%); }
+.cut-reveal__shapes i:nth-child(4) { border-radius: 50%; }
+.cut-reveal__shapes i:nth-child(5) { clip-path: polygon(50% 0,65% 15%,85% 15%,85% 35%,100% 50%,85% 65%,85% 85%,65% 85%,50% 100%,35% 85%,15% 85%,15% 65%,0 50%,15% 35%,15% 15%,35% 15%); }
+.cut-reveal__skip { position: absolute; z-index: 3; bottom: 16px; right: 16px; background: var(--cut-color); color: var(--cut-ink); border: 1px solid currentColor; border-radius: var(--radius-capsule); padding: 8px 12px; font-size: 11px; cursor: pointer; }
+.cut-reveal__skip:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+/* Deliberately long, one-time marketing choreography. The sheet motion uses
+   the same strong ease-out as Oreo's --ease-out token; cutting stays linear. */
+@keyframes cut-wordmark { 0%, 4% { clip-path: inset(100% 0 0); transform: translateY(12%); } 28%, 100% { clip-path: inset(0); transform: translateY(0); } }
+@keyframes cut-line { 0% { transform: scaleX(0); } 62%,100% { transform: scaleX(1); } }
+@keyframes cut-scissors { 0% { transform: translateX(0); } 62%,100% { transform: translateX(100%); } }
+@keyframes cut-seam { 0%,62% { opacity: 1; } 66%,100% { opacity: 0; } }
+@keyframes cut-sheet-top { 0%,65% { transform: translateY(0); } 65% { animation-timing-function: var(--ease-out); } 100% { transform: translateY(-101%); } }
+@keyframes cut-sheet-bottom { 0%,65% { transform: translateY(0); } 65% { animation-timing-function: var(--ease-out); } 100% { transform: translateY(101%); } }
+@keyframes cut-shapes { 0%,12% { opacity: 0; transform: translateX(-5%); } 28%,100% { opacity: 1; transform: translateX(0); } }
+@keyframes cut-snip { from { transform: rotate(-8deg); } to { transform: rotate(8deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .cut-reveal__curtain { animation: cut-gentle 120ms linear both; }
+  .cut-reveal__curtain * { animation: none; }
+  .cut-reveal__seam, .cut-reveal__shapes { display: none; }
+  @keyframes cut-gentle { to { opacity: 0; } }
+}

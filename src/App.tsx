@@ -4,6 +4,8 @@ import { ProspectingComponentsDocs } from "@/pages/ProspectingComponentsDocs";
 import { ProspectingDashboardPage } from "@/pages/ProspectingDashboardPage";
 import { ActivityComponentsDocs } from "@/pages/ActivityComponentsDocs";
 import { ActivityWorkspacePage } from "@/pages/ActivityWorkspacePage";
+import { CutRevealDocs } from "@/pages/CutRevealDocs";
+import { NeutomniIntroPage } from "@/pages/NeutomniIntroPage";
 import { SkillCardDocs } from "@/pages/SkillCardDocs";
 import { SkillsWorkspacePage } from "@/pages/SkillsWorkspacePage";
 import { StatusIconDocs } from "@/pages/StatusIconDocs";
@@ -57,6 +59,8 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "prospecting-dashboard": ProspectingDashboardPage,
   "activity-components": ActivityComponentsDocs,
   "activity-workspace": ActivityWorkspacePage,
+  "cut-reveal": CutRevealDocs,
+  "neutomni-intro": NeutomniIntroPage,
   "skill-card": SkillCardDocs,
   "skills-workspace": SkillsWorkspacePage,
   "status-icon": StatusIconDocs,
