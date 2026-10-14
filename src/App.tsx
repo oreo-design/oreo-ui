@@ -3,6 +3,8 @@ import { ProjectChatDocs } from "@/pages/ProjectChatDocs";
 import { MusicWorkspacePage } from "@/pages/MusicWorkspacePage";
 import { KnowledgeComponentsDocs } from "@/pages/KnowledgeComponentsDocs";
 import { KnowledgeBasePage } from "@/pages/KnowledgeBasePage";
+import { ConnectionComponentsDocs } from "@/pages/ConnectionComponentsDocs";
+import { ConnectionsWorkspacePage } from "@/pages/ConnectionsWorkspacePage";
 import { OrbitGalleryDocs } from "@/pages/OrbitGalleryDocs";
 import { OrbitGalleryShowcasePage } from "@/pages/OrbitGalleryShowcasePage";
 import { FeatureCardsDocs } from "@/pages/FeatureCardsDocs";
@@ -65,6 +67,8 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "music-workspace": MusicWorkspacePage,
   "knowledge-components": KnowledgeComponentsDocs,
   "knowledge-base": KnowledgeBasePage,
+  "connection-components": ConnectionComponentsDocs,
+  "connections-workspace": ConnectionsWorkspacePage,
   "orbit-gallery": OrbitGalleryDocs,
   "orbit-gallery-showcase": OrbitGalleryShowcasePage,
   "feature-cards": FeatureCardsDocs,
