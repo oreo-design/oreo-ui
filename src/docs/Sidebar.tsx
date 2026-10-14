@@ -22,6 +22,7 @@ const NAV: Group[] = [
       { label: "Avatar", page: "avatar" },
       { label: "Menu", page: "menu" },
       { label: "Inline Quick Menu", page: "inline-quick-menu" },
+      { label: "Inline Confirm", page: "inline-confirm" },
       { label: "Gradient Mask", page: "gradient-mask" },
       { label: "Cut Reveal", page: "cut-reveal" },
       { label: "Orbit Gallery", page: "orbit-gallery" },

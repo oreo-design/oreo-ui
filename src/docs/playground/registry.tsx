@@ -1,3 +1,4 @@
+import { InlineConfirm } from "@/components/inline-confirm";
 import { InlineQuickMenu } from "@/components/inline-quick-menu";
 import { FolderCard, FolderArtwork, FOLDER_TONES } from "@/components/knowledge-base";
 import { ConnectionGroup, ConnectionRow, ConnectionSetup, ProjectIdentity } from "@/components/connections";
@@ -46,6 +47,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "inline-confirm": { InlineConfirm },
   "inline-quick-menu": { InlineQuickMenu },
   "knowledge-base": { FolderCard, FolderArtwork },
   connections: { ConnectionGroup, ConnectionRow, ConnectionSetup, ProjectIdentity },
@@ -72,6 +74,16 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "inline-confirm": define("Inline Confirm", {
+    label: text("Delete project"), question: text("Delete project?"), confirmLabel: text("Delete"), cancelLabel: text("Cancel"),
+    pendingLabel: text("Deleting"), successLabel: text("Deleted"), disabled: toggle(), simulateError: toggle(),
+  }, v => <div className="flex min-h-80 w-full items-center justify-center rounded-card-medium border border-border-subtle bg-bg-base p-5"><div className="flex w-full max-w-xl flex-wrap items-center gap-5">
+    <span className="flex items-center gap-2 text-sm font-medium"><span className="text-text-secondary"><Icon name="folder" /></span>Northwind redesign</span>
+    <InlineConfirm label={v.label} question={v.question} confirmLabel={v.confirmLabel} cancelLabel={v.cancelLabel} pendingLabel={v.pendingLabel} successLabel={v.successLabel} disabled={v.disabled} onConfirm={async () => {
+      await new Promise(resolve => setTimeout(resolve, 1200));
+      if (v.simulateError) throw new Error("Demo failure");
+    }} />
+  </div></div>),
   "inline-quick-menu": define("Inline Quick Menu", { value: select(["private", "public"], "private"), open: toggle(), label: text("Visibility"), disabled: toggle() }, (v, set) => <div className="flex min-h-80 w-full items-center justify-center rounded-card-medium border border-border-subtle bg-bg-base"><InlineQuickMenu {...v} onValueChange={value => { if (value === "private" || value === "public") set("value", value); }} onOpenChange={open => set("open", open)} /></div>),
   "knowledge-components": { ...define("Folder Card", { tone: select(FOLDER_TONES, "violet"), title: text("Onboarding"), description: text("2 files · 2 subfolders"), updated: text("Updated 2h"), selected: toggle(true), disabled: toggle(), members: toggle(true) }, (v, set) => <FolderCard tone={v.tone} title={v.title} description={v.description} updated={v.updated || undefined} selected={v.selected} disabled={v.disabled} members={v.members ? [{ name: "Maya", color: "purple" }, { name: "Alex", color: "mint" }] : []} onClick={() => set("selected", !v.selected)} className="max-w-xs" />), source: "knowledge-base" },
   "connection-components": define("Connections", { direction: select(["readers", "sources"], "readers"), open: toggle(true), project: text("vercel-site"), connectedProject: text("browser-api") }, (v, set) => {
