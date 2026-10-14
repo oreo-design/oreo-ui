@@ -1,6 +1,8 @@
 import { InlineQuickMenuDocs } from "@/pages/InlineQuickMenuDocs";
 import { ProjectChatDocs } from "@/pages/ProjectChatDocs";
 import { MusicWorkspacePage } from "@/pages/MusicWorkspacePage";
+import { KnowledgeComponentsDocs } from "@/pages/KnowledgeComponentsDocs";
+import { KnowledgeBasePage } from "@/pages/KnowledgeBasePage";
 import { OrbitGalleryDocs } from "@/pages/OrbitGalleryDocs";
 import { OrbitGalleryShowcasePage } from "@/pages/OrbitGalleryShowcasePage";
 import { FeatureCardsDocs } from "@/pages/FeatureCardsDocs";
@@ -61,6 +63,8 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "inline-quick-menu": InlineQuickMenuDocs,
   "project-chat": ProjectChatDocs,
   "music-workspace": MusicWorkspacePage,
+  "knowledge-components": KnowledgeComponentsDocs,
+  "knowledge-base": KnowledgeBasePage,
   "orbit-gallery": OrbitGalleryDocs,
   "orbit-gallery-showcase": OrbitGalleryShowcasePage,
   "feature-cards": FeatureCardsDocs,

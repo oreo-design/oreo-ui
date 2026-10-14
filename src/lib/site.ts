@@ -21,6 +21,8 @@ export const PAGE_META = {
   "inline-quick-menu": { title: "Inline Quick Menu", description: "A capsule trigger with an anchored horizontal choice menu, instant keyboard navigation and theme-aware styling." },
   "project-chat": { title: "Project Chat", description: "Composable collaborator presence, project channels, audio clips, messages and a resilient composer." },
   "music-workspace": { title: "Music Workspace", description: "A music project workspace with contextual collaboration, audio feedback and per-project conversations." },
+  "knowledge-components": { title: "Knowledge Base Components", description: "Layered folder artwork, selectable cards, nested navigation, workspace search and a sortable file table." },
+  "knowledge-base": { title: "Knowledge Base", description: "A complete knowledge workspace template with tactile folders, nested browsing, scoped search and file previews." },
   "orbit-gallery": { title: "Orbit Gallery", description: "A scrollable and draggable image orbit with Flat, Tilt, Ring and Gallery layouts, responsive controls and reduced-motion support." },
   "orbit-gallery-showcase": { title: "Orbit Gallery Showcase", description: "An experimental portfolio gallery with floating artwork and smoothly changing spatial layouts." },
   "feature-cards": { title: "Feature Cards", description: "Layered cards, invoice previews, segmented usage meters and feature panels for product storytelling." },

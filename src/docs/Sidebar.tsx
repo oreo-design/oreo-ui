@@ -28,6 +28,7 @@ const NAV: Group[] = [
       { label: "Kanban", page: "kanban" },
       { label: "Skill Card", page: "skill-card" },
       { label: "Feature Cards", page: "feature-cards" },
+      { label: "Knowledge Base", page: "knowledge-components" },
       { label: "Prospecting", page: "prospecting-components" },
       { label: "Activity", page: "activity-components" },
       { label: "Select", soon: true },
@@ -79,7 +80,7 @@ const NAV: Group[] = [
   },
   {
     title: "Templates",
-    items: [{ label: "Music Workspace", page: "music-workspace" }, { label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
+    items: [{ label: "Knowledge Base", page: "knowledge-base" }, { label: "Music Workspace", page: "music-workspace" }, { label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
   },
   {
     title: "Patterns",

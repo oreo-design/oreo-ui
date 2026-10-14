@@ -1,4 +1,5 @@
 import { InlineQuickMenu } from "@/components/inline-quick-menu";
+import { FolderCard, FolderArtwork, FOLDER_TONES } from "@/components/knowledge-base";
 import { OrbitGallery, ORBIT_LAYOUTS } from "@/components/orbit-gallery";
 import { orbitGalleryItems } from "@/patterns/orbit-gallery/items";
 import { InvoicePreview, UsageSummary } from "@/components/feature-cards";
@@ -45,6 +46,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
   "inline-quick-menu": { InlineQuickMenu },
+  "knowledge-base": { FolderCard, FolderArtwork },
   "orbit-gallery": { OrbitGallery },
   prospecting: { ProspectMetric, ScoreMeter, BuyingSignal, ProspectAction },
   activity: { ActivityCard, BudgetMeter },
@@ -69,6 +71,7 @@ const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
   "inline-quick-menu": define("Inline Quick Menu", { value: select(["private", "public"], "private"), open: toggle(), label: text("Visibility"), disabled: toggle() }, (v, set) => <div className="flex min-h-80 w-full items-center justify-center rounded-card-medium border border-border-subtle bg-bg-base"><InlineQuickMenu {...v} onValueChange={value => { if (value === "private" || value === "public") set("value", value); }} onOpenChange={open => set("open", open)} /></div>),
+  "knowledge-components": { ...define("Folder Card", { tone: select(FOLDER_TONES, "violet"), title: text("Onboarding"), description: text("2 files · 2 subfolders"), updated: text("Updated 2h"), selected: toggle(true), disabled: toggle(), members: toggle(true) }, (v, set) => <FolderCard tone={v.tone} title={v.title} description={v.description} updated={v.updated || undefined} selected={v.selected} disabled={v.disabled} members={v.members ? [{ name: "Maya", color: "purple" }, { name: "Alex", color: "mint" }] : []} onClick={() => set("selected", !v.selected)} className="max-w-xs" />), source: "knowledge-base" },
   "orbit-gallery": define("Orbit Gallery", { layout: select(ORBIT_LAYOUTS, "flat"), label: text("Selected works"), empty: toggle() }, (v, set) => <OrbitGallery items={v.empty ? [] : orbitGalleryItems} layout={v.layout} label={v.label} onLayoutChange={value => set("layout", value)} className="w-full" style={{ height: 560 }} />),
   "feature-cards": define("Feature Cards", {
     variant: select(["invoice", "usage"], "invoice"), fade: toggle(),

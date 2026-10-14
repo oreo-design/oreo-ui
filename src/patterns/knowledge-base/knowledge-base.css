@@ -1,0 +1,122 @@
+.kb-shell {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  min-height: 52rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: 1.5rem;
+  background: var(--color-bg-base);
+  overflow: hidden;
+  box-shadow: var(--shadow-default);
+}
+.kb-sidebar {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-elevated);
+  border-right: 1px solid var(--color-border-subtle);
+  padding: 1.5rem 0.75rem;
+}
+.kb-main {
+  min-width: 0;
+}
+.kb-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+}
+.kb-content {
+  padding: 2rem;
+}
+.kb-folder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.kb-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-control);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+.kb-mobile-bar {
+  display: none;
+}
+.kb-shell button:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .kb-nav-link:hover {
+    background: var(--color-state-hover);
+    color: var(--color-text-primary);
+  }
+}
+@media (max-width: 1100px) {
+  .kb-shell {
+    grid-template-columns: 15rem minmax(0, 1fr);
+  }
+  .kb-content {
+    padding: 1.5rem;
+  }
+  .kb-folder-grid {
+    gap: 0.25rem;
+  }
+  .kb-folder-grid .kb-folder-card {
+    padding: 0.75rem 0.25rem 1rem;
+  }
+  .kb-folder-grid .kb-updated {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .kb-shell {
+    display: block;
+    min-height: 0;
+  }
+  .kb-mobile-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+  .kb-sidebar {
+    display: none;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+  .kb-sidebar[data-open="true"] {
+    display: flex;
+  }
+  .kb-breadcrumb {
+    min-height: 4rem;
+    padding: 1rem 1.5rem;
+  }
+}
+@media (max-width: 639px) {
+  .kb-content {
+    padding: 1.25rem;
+  }
+  .kb-folder-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .kb-folder-grid .kb-folder-card {
+    padding: 1rem 1.5rem 1.5rem;
+  }
+  .kb-folder-grid .kb-updated {
+    display: inline;
+  }
+  .kb-folder-visual {
+    max-width: 16rem;
+  }
+}
