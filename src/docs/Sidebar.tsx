@@ -38,6 +38,7 @@ const NAV: Group[] = [
     // Conversation output — the chat transcript itself (taxonomy after assistant-ui).
     title: "Chat",
     items: [
+      { label: "Project Chat", page: "project-chat" },
       { label: "Message", page: "message" },
       { label: "Conversation", page: "conversation" },
       { label: "Response", page: "response" },
@@ -78,7 +79,7 @@ const NAV: Group[] = [
   },
   {
     title: "Templates",
-    items: [{ label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
+    items: [{ label: "Music Workspace", page: "music-workspace" }, { label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
   },
   {
     title: "Patterns",

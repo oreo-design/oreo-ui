@@ -1,0 +1,34 @@
+.pc-panel {
+  width: 24rem;
+  max-width: 100%;
+}
+.pc-transcript {
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+.pc-channels {
+  scrollbar-width: thin;
+}
+.pc-message .pc-bubble {
+  max-width: 100%;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.pc-message {
+  font-size: inherit;
+}
+.pc-audio {
+  width: 100%;
+}
+.pc-audio:has(.pc-seek:focus-visible) {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+.pc-panel button:focus-visible,
+.pc-panel textarea:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+.pc-panel button:active:not(:disabled) {
+  opacity: 0.75;
+}
