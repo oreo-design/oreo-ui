@@ -5,7 +5,7 @@ import type { Demo, DemoFrame } from "./demo";
 export function promptBoxDemo(reducedMotion: boolean): Demo {
   const prompt = "Help me turn this design brief into a working prototype.";
   const frames: DemoFrame[] = [
-    { at: 0, label: "Ready", values: { value: "", running: false, attachments: false, keywords: false, voice: "mic", voiceStatus: "idle" } },
+    { at: 0, label: "Ready", values: { dictation: false, value: "", running: false, attachments: false, keywords: false, voice: "mic", voiceStatus: "idle" } },
   ];
   if (reducedMotion) frames.push({ at: 800, label: "Prompt", values: { value: prompt } });
   else for (let i = 1; i <= prompt.length; i++) frames.push({ at: 800 + i * 40, label: "Typing", values: { value: prompt.slice(0, i) } });

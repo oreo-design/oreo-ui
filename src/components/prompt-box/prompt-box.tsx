@@ -122,6 +122,10 @@ export type PromptBoxProps = {
   /** Fired on send button press or Enter (without Shift). */
   onSubmit?: (value: string) => void;
   onStop?: () => void;
+  /** Prevent sending while external input is being finalized. */
+  submitDisabled?: boolean;
+  /** Keep a structured/generated prompt selectable without allowing text edits. */
+  readOnly?: boolean;
   onAttach?: () => void;
   onMention?: () => void;
   /** Attachment row above the text — usually an `<AttachmentBar>`. */
@@ -159,6 +163,8 @@ export function PromptBox({
   running = false,
   onSubmit,
   onStop,
+  submitDisabled = false,
+  readOnly = false,
   onAttach,
   onMention,
   attachments,
@@ -181,7 +187,7 @@ export function PromptBox({
   const [textHeight, setTextHeight] = React.useState(60);
   const [internal, setInternal] = React.useState(defaultValue ?? "");
   const text = value ?? internal;
-  const canSend = text.trim().length > 0;
+  const canSend = text.trim().length > 0 && !submitDisabled;
 
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
   const [tagsElement, setTagsElement] = React.useState<HTMLDivElement | null>(null);
@@ -394,6 +400,7 @@ export function PromptBox({
             ref={textareaRef}
             value={text}
             rows={1}
+            readOnly={readOnly}
             onChange={(event) => setText(event.target.value)}
             onKeyDown={(event) => {
               if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {
