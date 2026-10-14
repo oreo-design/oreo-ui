@@ -99,11 +99,11 @@ function ChannelThread({
             ))}
           </ChatBubble>
         ))}
-        <div ref={end} />
       </div>
       <div className="sticky bottom-0 bg-bg-base pt-2">
         <CollaborationComposer onSend={send} />
       </div>
+      <div ref={end} />
     </>
   );
 }
