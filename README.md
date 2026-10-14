@@ -125,3 +125,12 @@ Inspired by [Awesome Design’s video](https://www.pinterest.com/pin/21117497952
 Inspired by [Brad / @designflyio’s project chat](https://x.com/designflyio/status/2110182813714805096), `/project-chat` documents seven exports: `CollaboratorPresence`, `ProjectChannels`, `ChatBubble`, `AudioClip`, `TypingPresence`, `CollaborationComposer`, and `ProjectChatPanel`. They reuse Oreo avatars, message primitives, buttons, icons, and theme tokens.
 
 `/music-workspace` places the chat beside a searchable music project table. It includes per-song drafts and messages, local attachments, native audio playback with timestamp seeking, minimize/reopen, dark mode and a stacked mobile layout. Demo data resets on reload; no files upload and no messages leave the browser. The original synthesized audio fixture is unrelated to the reference artist’s music, and the waveform is illustrative. See [the component map](src/patterns/music-workspace/README.md).
+
+
+## Knowledge Base
+
+Inspired by [David’s Folders UI](https://x.com/david_visuals_/status/2109652303129252256), `/knowledge-components` adds six reusable exports: `FolderArtwork`, `FolderCard`, `FolderTree`, `WorkspaceSwitcher`, `KnowledgeSearch`, and `KnowledgeFileTable`. The live playground edits folder tone, text, members, selection and disabled state, and exports the current JSX.
+
+`/knowledge-base` composes the complete responsive template with nested folder browsing, folder-scoped search (⌘/Ctrl K), sortable file names, accessible file-summary dialogs and two switchable workspaces. Counts reflect local fixtures; state resets on reload. SVG artwork is independently drawn and uses scoped Tailwind palette variables, while surfaces, controls and typography reuse Oreo tokens. Dark mode and mobile layouts extend the static light reference. Home and Integrations are local views; AI and analytics services are outside this example.
+
+Copy `src/components/knowledge-base` with its imports, then `src/patterns/knowledge-base` for the template. Reuses Oreo Avatar, AvatarGroup, Menu, Icon, Button and Base UI Dialog with no new application dependencies.
