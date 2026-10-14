@@ -138,3 +138,9 @@ Copy `src/components/knowledge-base` with its imports, then `src/patterns/knowle
 ## Connections workspace
 
 [Connection components](/connection-components) and the [Connections template](/connections-workspace) translate [Rauno Freiberg’s inline form demo](https://x.com/raunofreiberg/status/2109991552215031963) into six reusable exports: `ProjectIdentity`, `ConnectionGroup`, `ConnectionRow`, `InlineProjectPicker`, `ConnectionSetup`, and `NewConnectionButton`. Search and select projects in place; new connections reveal setup instructions directly beneath the row. Base UI handles keyboard selection, dismissal and disclosure semantics. The complete local-state template includes both permission directions, duplicate filtering, disconnect, reset, light/dark themes and responsive layouts. No Vercel permissions are changed. See [the source breakdown](src/patterns/connections-workspace/README.md).
+
+## Inline Confirm
+
+`/inline-confirm` recreates [Elia’s inline destructive action, shared by Ali Bey](https://x.com/alibey_10/status/2109948796088295538). The neutral capsule expands into a question, Cancel and Delete; confirmation contracts into progress and a persistent success result. An async rejection keeps an inline error and retry. Escape and Cancel restore focus, leaving the group dismisses it, and keyboard/reduced-motion modes remove spatial transitions.
+
+Includes an editable playground, generated JSX and API documentation with local success/failure examples. Copy `src/components/inline-confirm` with its Oreo Button, Icon, cn, motion and theme-token imports; no new dependencies. Supply `onConfirm` and resolve only after the real operation succeeds. Gallery examples do not delete projects; exported starter code requires you to connect the action.

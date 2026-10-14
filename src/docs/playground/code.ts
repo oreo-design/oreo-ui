@@ -25,6 +25,8 @@ export function playgroundCode(element: ReactNode): string {
       if (isValidElement(value)) return `${name}={${serialize(value, depth + 1).trim()}}`;
       return value === true ? name : `${name}={${JSON.stringify(value)}}`;
     });
+    // Required destructive handlers must never export a successful no-op.
+    if (tag === "InlineConfirm") props.push('onConfirm={async () => { throw new Error("Connect your action before using InlineConfirm"); }}');
     const opening = `${indent}<${tag}${props.length ? "\n" + props.map(prop => `${indent}  ${prop}`).join("\n") + "\n" + indent : ""}`;
     const children = serialize(node.props.children as ReactNode, depth + 1);
     if (!children) return tag ? `${opening} />` : "<></>";
