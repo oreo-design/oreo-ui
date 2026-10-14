@@ -16,7 +16,7 @@ import { Tag } from "@/components/tag";
 import { Shortcut } from "@/components/shortcut";
 import { Avatar } from "@/components/avatar";
 import { Attachment, AttachmentBar } from "@/components/attachment";
-import { PromptBox, PromptBoxModelSelect } from "@/components/prompt-box";
+import { PromptBox, PromptBoxModelSelect, PromptBoxDictation } from "@/components/prompt-box";
 import { KeywordTag } from "@/components/keyword-tag";
 import { ContextBar, ContextBarLabel } from "@/components/context-bar";
 import { ToolCall, ToolCallRow } from "@/components/tool-call";
@@ -51,7 +51,7 @@ export const componentModules = {
   "feature-cards": { InvoicePreview, UsageSummary },
   "status-icon": { StatusIcon },
   button: { Button, IconButton }, icon: { Icon }, chip: { Chip }, tag: { Tag }, shortcut: { Shortcut }, avatar: { Avatar },
-  attachment: { Attachment, AttachmentBar }, "prompt-box": { PromptBox, PromptBoxModelSelect }, "keyword-tag": { KeywordTag },
+  attachment: { Attachment, AttachmentBar }, "prompt-box": { PromptBox, PromptBoxModelSelect, PromptBoxDictation }, "keyword-tag": { KeywordTag },
   "context-bar": { ContextBar, ContextBarLabel }, "tool-call": { ToolCall, ToolCallRow }, reasoning: { Reasoning }, plan: { Plan, PlanStep },
   sources: { Sources, Source }, confirmation: { Confirmation }, "web-search": { WebSearch, WebSearchResult, WebSearchAnswer, WebSearchCitation, WebSearchSourceCard, WebSearchSourceStack }, "code-diff": { CodeDiff },
   terminal: { Terminal }, subagents: { Subagent }, "thread-list": { ThreadList, ThreadListItem }, "assistant-modal": { AssistantModal },
@@ -102,6 +102,12 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
   avatar: define("Avatar", { name: text("Alex Morgan"), size: select(["xs", "sm", "md", "lg"], "md"), color: select([...PALETTE, "black", "white"], "default"), agent: select(["none", "nova", "void", "jade", "bloom", "silk", "flare"], "none") }, v =>
     <Avatar {...v} agent={v.agent === "none" ? undefined : v.agent} />),
   "prompt-box": define("Prompt Box", {
+    dictation: { ...toggle(), label: "Dictation & action review", description: "Switch to the structured dictation composer. The documentation includes a timed sample.", group: "Voice" },
+    dictationStatus: { ...select(["idle", "listening", "processing", "ready", "error"], "ready"), label: "Dictation status", group: "Action review" },
+    dictationTranscript: { ...text("And remember which palette I picked last…"), label: "Partial transcript", group: "Action review" },
+    shortcutAction: { ...toggle(true), label: "Palette shortcut", group: "Action review" },
+    memoryAction: { ...toggle(true), label: "Remember palette", group: "Action review" },
+    motionAction: { ...toggle(true), label: "Smooth transition", group: "Action review" },
     value: { ...text("", true), label: "Prompt", group: "Prompt Box" },
     placeholder: { ...text("Start by typing…"), group: "Prompt Box" },
     running: { ...toggle(), group: "Prompt Box" },
@@ -115,7 +121,23 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     voiceStatus: { ...select(["idle", "inputting", "thinking"], "idle"), label: "Status", group: "Voice" },
     model: { ...select(["Claude", "ChatGPT", "Gemini"], "Claude"), label: "Model", group: "Model select" },
     ...spring,
-  }, (v, set) => <PromptBox
+  }, (v, set) => v.dictation ? <PromptBoxDictation
+    draft={{ text: v.value, actions: [
+      ...(v.shortcutAction ? [{ id: "shortcutAction", label: "Palette shortcut", text: "Add a keyboard shortcut to cycle through the color palettes." }] : []),
+      ...(v.memoryAction ? [{ id: "memoryAction", label: "Remember palette", text: "Remember the last selected palette between sessions." }] : []),
+      ...(v.motionAction ? [{ id: "motionAction", label: "Smooth transition", text: "Animate the transition when switching palettes." }] : []),
+    ] }}
+    onDraftChange={draft => {
+      set("value", draft.text);
+      for (const key of ["shortcutAction", "memoryAction", "motionAction"] as const) set(key, draft.actions.some(action => action.id === key));
+    }}
+    status={v.dictationStatus} transcript={v.dictationTranscript}
+    onStart={() => set("dictationStatus", "listening")} onFinish={() => set("dictationStatus", "ready")}
+    onCancel={() => set("dictationStatus", "idle")} onRetry={() => set("dictationStatus", "listening")}
+    onSubmit={() => set("running", true)} running={v.running} onStop={() => set("running", false)}
+    modelSelect={<PromptBoxModelSelect label={v.model} />} inset={v.inset}
+    bounce={v.bounce} duration={v.duration} tapScale={v.tapScale}
+  /> : <PromptBox
     value={v.value} onValueChange={value => set("value", value)} placeholder={v.placeholder} running={v.running}
     onSubmit={() => set("running", true)} onStop={() => set("running", false)} onAttach={() => set("attachments", !v.attachments)} onMention={() => set("keywords", !v.keywords)}
     attachments={v.attachments ? <AttachmentBar><Attachment type="pdf" label="Design brief.pdf" onRemove={() => set("attachments", false)} /></AttachmentBar> : undefined}

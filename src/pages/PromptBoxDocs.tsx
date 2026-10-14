@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from "react";
+import { PromptBoxDictationDemo } from "@/docs/playground/PromptBoxDictationDemo";
 import { AnimatePresence, motion } from "motion/react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -23,6 +24,7 @@ const TOC: TocItem[] = [
   { id: "attachments", label: "Attachments" },
   { id: "keyword-tags", label: "Keyword tags" },
   { id: "voice", label: "Voice input" },
+  { id: "dictation", label: "Dictation & actions" },
   { id: "model-select", label: "Model select" },
   { id: "add-ons", label: "Add-ons" },
   { id: "api", label: "API Reference" },
@@ -33,6 +35,7 @@ const PROPS: PropRow[] = [
   { prop: "onValueChange", type: "(value: string) => void", desc: "Fires on every keystroke." },
   { prop: "onSubmit", type: "(value: string) => void", desc: "Send button or Enter (without Shift)." },
   { prop: "running", type: "boolean", def: "false", desc: "Streaming state — the send button becomes a stop square and the empty hint reads “Continue asking...”." },
+  { prop: "submitDisabled / readOnly", type: "boolean", def: "false", desc: "Block submission while a provider finalizes input; keep generated text selectable during action review." },
   { prop: "onStop", type: "() => void", desc: "Stop button press while running." },
   { prop: "placeholder", type: "ReactNode", desc: "Empty-state hint. Defaults to the “press / for commands” row." },
   { prop: "attachments", type: "ReactNode", desc: "Row above the text — usually an <AttachmentBar>." },
@@ -271,6 +274,23 @@ const ADDONS_CODE = `<div className="flex w-full flex-col gap-[var(--space-x4)]"
   <PromptBox … />
 </div>`;
 
+const DICTATION_CODE = `import { PromptBoxDictation } from "@/components/prompt-box";
+
+<PromptBoxDictation
+  draft={draft} // { text: "", actions: [{ id, label, text }] }
+  onDraftChange={setDraft}
+  status={status}
+  transcript={partialTranscript}
+  onStart={startRecognition}
+  onFinish={finalizeRecognition}
+  onCancel={cancelRecognition}
+  onRetry={retryRecognition}
+  onSubmit={({ prompt, actions }) => send(prompt, actions)}
+/>
+
+// PromptBoxActions is also exported for your own composer.
+// composePromptDraft(draft) produces the same reviewed text.`;
+
 export function PromptBoxDocs({ nav }: { nav: DocsNav }) {
   return (
     <DocsPage toc={TOC} breadcrumb={["Agent", "Prompt Box"]} nav={nav}>
@@ -368,6 +388,19 @@ export function PromptBoxDocs({ nav }: { nav: DocsNav }) {
                 </div>
               }
             />
+          </Section>
+
+          <Section id="dictation" title="Dictation & actions" description="Turn a spoken idea into a reviewable prompt. Actions arrive in the docked bar; remove one to remove its instruction from the prompt, or edit everything as text. Listening and processing prevent premature submission.">
+            <PreviewTabs code={DICTATION_CODE} preview={<PromptBoxDictationDemo />} />
+            <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">The component handles presentation and draft review. Supply a speech provider and action extractor in your app. Use stable action IDs, remember removed IDs while streaming, cancel in-flight work when a session ends, and ignore late results from older sessions. Cancel and Keep draft retain accepted actions; Reset sample clears the fixture.</p>
+            <PropsTable rows={[
+              { prop: "draft / onDraftChange", type: "PromptBoxDraft / (draft) => void", desc: "Controlled text plus actions: { id, label, text }. Only retained actions enter the composed prompt." },
+              { prop: "status", type: "idle | listening | processing | ready | error", desc: "Provider lifecycle. Error blocks submission until retry or Keep draft." },
+              { prop: "transcript", type: "string", desc: "Interim speech caption, shown while listening; never submitted automatically." },
+              { prop: "onStart / onFinish / onCancel / onRetry", type: "() => void", desc: "Host callbacks. Stop finalizes recognition; cancel should abort pending provider work." },
+              { prop: "onSubmit", type: "({ prompt, actions }) => void", desc: "Composed text and a snapshot of the reviewed actions. Caller owns clearing and delivery." },
+              { prop: "error", type: "string", desc: "Recoverable provider error with retry and Keep draft actions." },
+            ]} />
           </Section>
 
           <Section

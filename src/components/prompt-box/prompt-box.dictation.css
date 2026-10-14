@@ -1,0 +1,18 @@
+/* Semantic colors follow the host theme; no artwork or external orb dependency. */
+.oreo-dictation-orb {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-capsule);
+  background: radial-gradient(circle at 30% 25%, var(--color-bg-base), var(--color-text-tertiary) 45%, var(--color-text-primary));
+}
+.oreo-dictation-orb-active {
+  animation: oreo-dictation-breathe 1.8s ease-in-out infinite alternate;
+}
+@keyframes oreo-dictation-breathe {
+  from { transform: scale(.8) rotate(-20deg); opacity: .65; }
+  to { transform: scale(1) rotate(20deg); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .oreo-dictation-orb-active { animation: none; }
+}
