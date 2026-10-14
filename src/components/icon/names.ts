@@ -54,6 +54,7 @@ export const ICON_NAMES = [
   "grip-vertical",
   "keyboard",
   "list",
+  "lock",
   "hash",
   "list-checks",
   "mic",

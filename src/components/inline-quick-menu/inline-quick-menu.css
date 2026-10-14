@@ -1,0 +1,54 @@
+.oreo-quick-trigger {
+  transition: background-color 150ms ease;
+}
+.oreo-quick-trigger[data-popup-open] {
+  background-color: var(--color-state-press);
+}
+.oreo-quick-chevron {
+  display: flex;
+  transition: transform 200ms var(--ease-out);
+}
+.oreo-quick-trigger[data-popup-open] .oreo-quick-chevron {
+  transform: rotate(-180deg);
+}
+.oreo-quick-popup {
+  max-width: var(--available-width);
+  transform-origin: var(--transform-origin);
+  /* The reference softens this tiny surface as it appears. Keep the blur
+     local and brief; no full-page filter or permanent compositor layer. */
+  filter: blur(0);
+  transition: transform 240ms var(--ease-out), opacity 180ms var(--ease-out), filter 180ms var(--ease-out);
+}
+.oreo-quick-popup[data-starting-style],
+.oreo-quick-popup[data-ending-style] {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(6px) scale(.94);
+}
+.oreo-quick-popup[data-ending-style] {
+  transition-duration: 140ms;
+}
+.oreo-quick-popup[data-side="bottom"][data-starting-style],
+.oreo-quick-popup[data-side="bottom"][data-ending-style] {
+  transform: translateY(-6px) scale(.94);
+}
+.oreo-quick-arrow {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--color-bg-elevated);
+  transform: rotate(45deg);
+}
+.oreo-quick-arrow[data-side="top"] { bottom: -8px; }
+.oreo-quick-arrow[data-side="bottom"] { top: -8px; }
+@media (hover: hover) and (pointer: fine) {
+  .oreo-quick-trigger:not(:disabled):hover { background-color: var(--color-state-press); }
+}
+.oreo-inline-quick-menu[data-keyboard] .oreo-quick-popup,
+.oreo-inline-quick-menu[data-keyboard] .oreo-quick-chevron { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .oreo-quick-chevron { transition: none; }
+  .oreo-quick-popup { transition: opacity 100ms var(--ease-out); filter: none; }
+  .oreo-quick-popup[data-side][data-starting-style],
+  .oreo-quick-popup[data-side][data-ending-style] { transform: none; filter: none; }
+}

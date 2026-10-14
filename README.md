@@ -116,3 +116,7 @@ Inspired by [Tailark’s Features 4](https://x.com/TailarkUI/status/210945678238
 `/orbit-gallery` adds a reusable `OrbitGallery` with Flat, Tilt, Ring and Gallery layouts, wheel/drag rotation, keyboard controls, a native detail viewer and empty/image-failure states. It reuses the Oreo playground, code export and theme tokens. `/orbit-gallery-showcase` opens the complete portfolio study.
 
 Inspired by [Awesome Design’s video](https://www.pinterest.com/pin/211174979526687/). The first three layouts follow the reference; the Gallery grid and detail viewer are extensions. Demo artwork consists of attributed low-resolution video stills under `public/examples/orbit-gallery`; replace it with your own images. Copy `src/components/orbit-gallery` with its imports and provide unique item IDs. Motion is interruptible, keyboard actions are immediate, and reduced motion removes spatial interpolation.
+
+## Inline Quick Menu
+
+`/inline-quick-menu` recreates [Nitish Khagwal’s inline quick menu](https://x.com/nitishkmrk/status/2110258300495245505): a Private / Public capsule, horizontal anchored choices, a connecting pointer and a turning chevron. Includes a live playground, generated JSX and API documentation. `InlineQuickMenu` supports custom options, controlled or uncontrolled state, disabled choices, horizontal keyboard navigation and reduced motion. Copy `src/components/inline-quick-menu` with Oreo’s Icon, cn and theme tokens; no new dependencies. Selection is local UI state, with persistence left to the consumer.

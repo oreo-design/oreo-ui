@@ -1,4 +1,5 @@
 import {
+  Lock,
   Scan,
   Cursor,
   BookOpen,
@@ -112,6 +113,7 @@ export const phosphorGlyphs: Record<IconName, IconGlyph> = {
   gear: Gear,
   "github-logo": GithubLogo,
   globe: Globe,
+  lock: Lock,
   "grip-vertical": DotsSixVertical,
   keyboard: Keyboard,
   list: List,
