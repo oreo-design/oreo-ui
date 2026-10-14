@@ -1,4 +1,5 @@
 import {
+  Lock,
   ScanText,
   MousePointer2,
   BookOpen,
@@ -112,6 +113,7 @@ export const lucideGlyphs: Record<IconName, IconGlyph> = {
   gear: Settings,
   "github-logo": GithubLogo,
   globe: Globe,
+  lock: Lock,
   "grip-vertical": GripVertical,
   keyboard: Keyboard,
   list: MenuIcon,

@@ -1,3 +1,4 @@
+import { InlineQuickMenuDocs } from "@/pages/InlineQuickMenuDocs";
 import { OrbitGalleryDocs } from "@/pages/OrbitGalleryDocs";
 import { OrbitGalleryShowcasePage } from "@/pages/OrbitGalleryShowcasePage";
 import { FeatureCardsDocs } from "@/pages/FeatureCardsDocs";
@@ -55,6 +56,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "inline-quick-menu": InlineQuickMenuDocs,
   "orbit-gallery": OrbitGalleryDocs,
   "orbit-gallery-showcase": OrbitGalleryShowcasePage,
   "feature-cards": FeatureCardsDocs,
