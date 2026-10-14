@@ -1,0 +1,29 @@
+/* A measured 200ms disclosure is the deliberate height-animation exception:
+   surrounding connections must move with the panel, without scaling code text. */
+.connection-panel {
+  height: var(--collapsible-panel-height);
+  overflow: hidden;
+  opacity: 1;
+  transition: height 200ms var(--ease-out), opacity 200ms var(--ease-out);
+}
+.connection-panel[data-starting-style], .connection-panel[data-ending-style] { height: 0; opacity: 0; }
+.connection-trigger { cursor: pointer; }
+.connection-trigger[data-panel-open] { background: var(--color-state-press); }
+.connection-chevron { opacity: 0; transform: rotate(0deg); transition: transform 160ms var(--ease-out), opacity 160ms var(--ease-out); }
+.connection-trigger[data-panel-open] .connection-chevron { opacity: 1; transform: rotate(-90deg); }
+.connection-trigger:focus-visible .connection-chevron { opacity: 1; }
+.connection-picker { transition: transform 160ms var(--ease-out), opacity 160ms var(--ease-out); }
+.connection-picker[data-starting-style], .connection-picker[data-ending-style] { opacity: 0; transform: scale(.97); }
+@media (hover: hover) and (pointer: fine) {
+  .connection-trigger:hover { background: var(--color-state-hover); }
+  .connection-trigger:hover .connection-chevron { opacity: 1; }
+}
+@media (hover: none) { .connection-chevron { opacity: 1; } }
+.connection-row[data-instant] .connection-panel, .connection-row[data-instant] .connection-chevron,
+.connection-picker[data-instant] { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .connection-panel { transition: opacity 120ms var(--ease-out); }
+  .connection-chevron { transition: opacity 120ms var(--ease-out); }
+  .connection-picker { transition: opacity 120ms var(--ease-out); }
+  .connection-picker[data-starting-style], .connection-picker[data-ending-style] { transform: none; }
+}

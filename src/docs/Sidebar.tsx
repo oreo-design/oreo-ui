@@ -31,6 +31,7 @@ const NAV: Group[] = [
       { label: "Knowledge Base", page: "knowledge-components" },
       { label: "Prospecting", page: "prospecting-components" },
       { label: "Activity", page: "activity-components" },
+      { label: "Connections", page: "connection-components" },
       { label: "Select", soon: true },
       { label: "Dialog", soon: true },
     ],
@@ -80,7 +81,7 @@ const NAV: Group[] = [
   },
   {
     title: "Templates",
-    items: [{ label: "Knowledge Base", page: "knowledge-base" }, { label: "Music Workspace", page: "music-workspace" }, { label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
+    items: [{ label: "Connections", page: "connections-workspace" }, { label: "Knowledge Base", page: "knowledge-base" }, { label: "Music Workspace", page: "music-workspace" }, { label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
   },
   {
     title: "Patterns",
