@@ -1,4 +1,6 @@
 import { InlineQuickMenuDocs } from "@/pages/InlineQuickMenuDocs";
+import { ProjectChatDocs } from "@/pages/ProjectChatDocs";
+import { MusicWorkspacePage } from "@/pages/MusicWorkspacePage";
 import { OrbitGalleryDocs } from "@/pages/OrbitGalleryDocs";
 import { OrbitGalleryShowcasePage } from "@/pages/OrbitGalleryShowcasePage";
 import { FeatureCardsDocs } from "@/pages/FeatureCardsDocs";
@@ -57,6 +59,8 @@ import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "inline-quick-menu": InlineQuickMenuDocs,
+  "project-chat": ProjectChatDocs,
+  "music-workspace": MusicWorkspacePage,
   "orbit-gallery": OrbitGalleryDocs,
   "orbit-gallery-showcase": OrbitGalleryShowcasePage,
   "feature-cards": FeatureCardsDocs,

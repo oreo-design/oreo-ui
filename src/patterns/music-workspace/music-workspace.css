@@ -1,0 +1,44 @@
+/* Layout dimensions are composition constraints; all surfaces use Oreo tokens. */
+.music-stage {
+  min-height: 50rem;
+}
+.music-table {
+  min-width: 56rem;
+}
+.music-table td,
+.music-table th {
+  padding-right: 1rem;
+}
+.music-chat-dock {
+  position: absolute;
+  right: 1.5rem;
+  top: 13rem;
+  z-index: 1;
+}
+.music-chat {
+  max-height: 36rem;
+}
+.music-chat .pc-transcript {
+  padding: 0;
+}
+.music-workspace button:focus-visible,
+.music-workspace input:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+@media (max-width: 767px) {
+  .music-stage {
+    min-height: auto;
+  }
+  .music-chat-dock {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  .music-chat {
+    max-height: 38rem;
+  }
+}

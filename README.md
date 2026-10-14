@@ -120,3 +120,8 @@ Inspired by [Awesome Design’s video](https://www.pinterest.com/pin/21117497952
 ## Inline Quick Menu
 
 `/inline-quick-menu` recreates [Nitish Khagwal’s inline quick menu](https://x.com/nitishkmrk/status/2110258300495245505): a Private / Public capsule, horizontal anchored choices, a connecting pointer and a turning chevron. Includes a live playground, generated JSX and API documentation. `InlineQuickMenu` supports custom options, controlled or uncontrolled state, disabled choices, horizontal keyboard navigation and reduced motion. Copy `src/components/inline-quick-menu` with Oreo’s Icon, cn and theme tokens; no new dependencies. Selection is local UI state, with persistence left to the consumer.
+## Project chat and Music Workspace
+
+Inspired by [Brad / @designflyio’s project chat](https://x.com/designflyio/status/2110182813714805096), `/project-chat` documents seven exports: `CollaboratorPresence`, `ProjectChannels`, `ChatBubble`, `AudioClip`, `TypingPresence`, `CollaborationComposer`, and `ProjectChatPanel`. They reuse Oreo avatars, message primitives, buttons, icons, and theme tokens.
+
+`/music-workspace` places the chat beside a searchable music project table. It includes per-song drafts and messages, local attachments, native audio playback with timestamp seeking, minimize/reopen, dark mode and a stacked mobile layout. Demo data resets on reload; no files upload and no messages leave the browser. The original synthesized audio fixture is unrelated to the reference artist’s music, and the waveform is illustrative. See [the component map](src/patterns/music-workspace/README.md).
