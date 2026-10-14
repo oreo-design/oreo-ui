@@ -122,7 +122,7 @@ export function PromptBoxDictation({ draft, onDraftChange, status, transcript, e
     </div>
     {status === "listening" && transcript && <p className="text-sm leading-6 text-[var(--color-text-secondary)]"><span className="font-medium">Hearing: </span>{transcript}</p>}
     {status === "error" && <div role="alert" className="flex flex-wrap items-center gap-3 rounded-[var(--radius-control)] bg-[var(--color-bg-elevated)] p-3 text-sm">
-      <p className="min-w-0 flex-1">{error ?? "Dictation stopped. Your draft is safe."}</p>
+      <p className="min-w-0 flex-1 basis-full break-words sm:basis-auto">{error ?? "Dictation stopped. Your draft is safe."}</p>
       {onRetry && <button type="button" className={quietButton} onClick={onRetry}>Try again</button>}
       <button type="button" className={quietButton} onClick={onCancel}>Keep draft</button>
     </div>}
