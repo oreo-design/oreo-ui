@@ -1,4 +1,7 @@
 import {
+  Hand,
+  Columns,
+  Info,
   TextAlignCenter,
   TextAlignRight,
   TextB,
@@ -85,6 +88,10 @@ import type { IconName } from "./names";
 
 /** Phosphor's answer for every name in the Oreo vocabulary. */
 export const phosphorGlyphs: Record<IconName, IconGlyph> = {
+  "hand": Hand,
+  "columns": Columns,
+  "info": Info,
+
   "align-center": TextAlignCenter,
   "align-right": TextAlignRight,
   "text-bold": TextB,

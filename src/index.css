@@ -40,6 +40,9 @@
   --color-border-default: #0000001f;
   --color-border-subtle: #00000017;
 
+  /* Stable foreground for saturated accents in either theme. */
+  --color-text-on-accent: #ffffff;
+
   /* status */
   --color-status-error: #dc3e42;
   --color-status-success: #12a594;

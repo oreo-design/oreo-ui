@@ -1,0 +1,152 @@
+.canvas-studio-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.canvas-board {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-base);
+}
+.canvas-board-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+}
+.canvas-tool-dock {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1rem 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+.canvas-viewport {
+  height: 36rem;
+  position: relative;
+  overflow: hidden;
+  outline-offset: -3px;
+  background-color: var(--color-bg-elevated);
+  background-image: radial-gradient(
+    var(--color-border-default) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+.canvas-viewport[data-mode="pan"] {
+  cursor: grab;
+  touch-action: none;
+}
+.canvas-viewport[data-mode="pan"]:active {
+  cursor: grabbing;
+}
+.canvas-viewport[data-mode="pan"] .canvas-world {
+  pointer-events: none;
+}
+.canvas-world {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+.canvas-viewport > .agent-workspace-state {
+  height: 100%;
+}
+.canvas-board-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border-subtle);
+  padding: 0.75rem 1.25rem;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+.canvas-dialog {
+  width: min(30rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  margin: auto;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-overlay);
+}
+.canvas-dialog::backdrop {
+  background: var(--color-overlay-strong);
+}
+.canvas-field {
+  display: block;
+  font-size: 0.875rem;
+}
+.canvas-field input,
+.canvas-field textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  resize: vertical;
+  max-height: 20rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+.canvas-studio :is(button, a, input, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+@media (max-width: 900px) {
+  .canvas-viewport {
+    height: 30rem;
+  }
+  .canvas-studio-header {
+    padding: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .canvas-studio main {
+    padding: 1.5rem 0.75rem;
+  }
+  .canvas-studio-header {
+    align-items: start;
+  }
+  .canvas-studio-header > a {
+    max-width: 14rem;
+    font-size: 0.875rem;
+  }
+  .canvas-board-bar {
+    padding: 1rem;
+  }
+  .canvas-tool-dock {
+    padding: 0.5rem 0.5rem 1.25rem;
+  }
+  .canvas-viewport {
+    height: 25rem;
+  }
+  .canvas-board-footer {
+    align-items: start;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.canvas-content-link {
+  max-width: 100%;
+  white-space: normal;
+  height: auto;
+  min-height: 2rem;
+  padding-block: 0.375rem;
+  text-align: left;
+}
+.canvas-content-link > span {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
