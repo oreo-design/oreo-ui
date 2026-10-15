@@ -1,0 +1,47 @@
+Console output (before error):
+[log] STATE mobile list         - region "Inbox workspace":
+            - heading "Inbox 5"
+            - region "Notifications":
+                - region:
+                  - heading "Today 4"
+                - region:
+                  - heading "Yesterday 3"
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[error] Failed to load resource: the server responded with a status of 403 (Forbidden)',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://localhost:5211/studio-inbox color: rgb(120, 120, 120) color: inherit {o: http://localhost:5211/studio-inbox, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792046393906} /_vercel/insights/view'
+]
+[log] Element: html
+Box: x=0 y=0 w=390 h=1437
+Children: 4  Text length: 290713
+Scroll Y: size=1437 client=844 overflowing=true top=0
+Scroll X: size=390 client=390 overflowing=false left=0
+Styles: width=390px overflow-x=visible
+[log] STATE mobile detail         - region "Inbox workspace":
+            - heading "Inbox 4"
+              - region "On My Mind discussion":
+                  - heading "On My Mind"
+[log] []
+[log] FOCUS On My Mind
+[log] STATE mobile playing
+[log] []
+[log] STATE back         - region "Inbox workspace":
+            - heading "Inbox 4"
+            - region "Notifications":
+                - region:
+                  - heading "Today 4"
+                - region:
+                  - heading "Yesterday 3"
+[log] []
+[log] FOCUS Inbox 4
+[log] STATE reopened paused         - region "Inbox workspace":
+            - heading "Inbox 4"
+              - region "On My Mind discussion":
+                  - heading "On My Mind"
+[log] []
+
+
+Error executing code: Code execution timed out after 60000ms

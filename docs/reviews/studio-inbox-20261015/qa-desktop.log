@@ -1,0 +1,115 @@
+Console output:
+[log] STATE fresh             - heading "Inbox 5"
+                - text: "notifications"
+                - heading "Today 4"
+                - heading "Yesterday 3"
+                  - heading "On My Mind"
+[log] [
+  '[debug] [vite] hot updated: /src/patterns/studio-inbox/studio-inbox.css',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[error] Failed to load resource: the server responded with a status of 403 (Forbidden)',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://localhost:5211/studio-inbox color: rgb(120, 120, 120) color: inherit {o: http://localhost:5211/studio-inbox, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792046225158} /_vercel/insights/view'
+]
+[log] STATE seek
+[log] []
+[log] STATE playing
+[log] []
+[log] STATE paused
+[log] []
+[log] STATE reacted
+[log] []
+[log] STATE draft
+[log] []
+[log] STATE approval selected -            - heading "Inbox 5"
++            - heading "Inbox 4"
+-                  - heading "On My Mind"
++                  - heading "So Long"
+[log] []
+[log] STATE approved                    - heading "So Long"
++                    - role=button[name="Master approved"i]
++              - text: "Master approved in this local demo."
+[log] []
+[log] STATE return draft -            - heading "Inbox 4"
++            - heading "Inbox 3"
+                 - text: "notifications"
+                 - heading "Today 4"
+-                  - heading "So Long"
++                  - heading "On My Mind"
+-                    - role=button[name="Master approved"i]
+[log] []
+[log] STATE sent
+[log] []
+[log] STATE archive                  - text: "notifications"
+-                - heading "Today 4"
++                - heading "Today 3"
+-                  - heading "On My Mind"
++                  - heading "So Long"
++                    - role=button[name="Master approved"i]
+-              - text: "Master approved in this local demo."
++              - text: "Notification archived."
+[log] []
+[log] STATE undo                  - text: "notifications"
+-                - heading "Today 3"
++                - heading "Today 4"
+-                  - heading "So Long"
++                  - heading "On My Mind"
+-                    - role=button[name="Master approved"i]
+-              - text: "Notification archived."
++              - text: "Notification restored."
+[log] []
+[log] STATE mentions -                - text: "notifications"
+-                - heading "Today 4"
+-                - heading "Yesterday 3"
++                  - text: "notifications"
++                  - heading "Today 1"
+                   - heading "On My Mind"
+[log] []
+[log] STATE empty                    - text: "notifications"
+-                  - heading "Today 1"
++                  - heading "All quiet here"
++                    - text: "No notifications match these filters."
+                   - heading "On My Mind"
+[log] []
+[log] STATE clear -                  - text: "notifications"
+-                  - heading "All quiet here"
+-                    - text: "No notifications match these filters."
++                - text: "notifications"
++                - heading "Today 4"
++                - heading "Yesterday 3"
+                   - heading "On My Mind"
+[log] []
+[log] STATE unread -                - text: "notifications"
+-                - heading "Today 4"
+-                - heading "Yesterday 3"
++                  - text: "notifications"
++                  - heading "Today 2"
++                  - heading "Yesterday 1"
+                   - heading "On My Mind"
+[log] []
+[log] STATE all read -            - heading "Inbox 3"
++            - heading "Inbox 0"
+                   - text: "notifications"
+-                  - heading "Today 2"
+-                  - heading "Yesterday 1"
++                  - heading "All quiet here"
++                    - text: "No notifications match these filters."
+                   - heading "On My Mind"
+-              - text: "Notification restored."
++              - text: "All notifications marked as read."
+[log] []
+[log] STATE recovered -                  - text: "notifications"
+-                  - heading "All quiet here"
+-                    - text: "No notifications match these filters."
++                - text: "notifications"
++                - heading "Today 4"
++                - heading "Yesterday 3"
+                   - heading "On My Mind"
+[log] []
+[log] STATE light
+[log] []
+[log] PASS desktop filtering, seek/play/pause, reactions, project drafts, replies, approval, archive/undo, read state, empty recovery

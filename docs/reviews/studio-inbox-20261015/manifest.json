@@ -1,0 +1,177 @@
+{
+  "reference": "https://x.com/designflyio/status/2110486258640372119",
+  "baseline": "6c4ac7d6985858fa4db0aaeb87c2dbe1c23c9ba1",
+  "implementation": "344988b3297b95a130cd84ab87adc0968ec62f72",
+  "environment": "Local fixtures; Playwriter 45 managed Chromium and 39 Chrome; localhost:5211; recovered mobile baseline localhost:5210; English",
+  "recording": "Blocked by extension activeTab permission",
+  "captures": [
+    {
+      "file": "after-all-read.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "784ba15a4fd24e3fc5a31abf70a20de60a1948a4f0a978108b7c988d2388c658",
+      "capturedAt": "2026-10-15T06:37:08.324183+00:00"
+    },
+    {
+      "file": "after-approved.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "f5a8b7bd4f02d0f03c180819769b4b89a73d1a9d83aa87a34c481047e7ffe243",
+      "capturedAt": "2026-10-15T06:37:06.740793+00:00"
+    },
+    {
+      "file": "after-dark-final.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "e834e7844aae6a61e745c89313c76fc0f0f7e905a52484dd891678b2181a8d7c",
+      "capturedAt": "2026-10-15T06:37:05.528848+00:00"
+    },
+    {
+      "file": "after-dark-initial.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b8d65712980550204e35a5290b1b255295b0e20b1b769fa320a8e793e31eb4c9",
+      "capturedAt": "2026-10-15T06:35:24.703264+00:00"
+    },
+    {
+      "file": "after-dark-reviewed.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "e834e7844aae6a61e745c89313c76fc0f0f7e905a52484dd891678b2181a8d7c",
+      "capturedAt": "2026-10-15T06:48:01.232096+00:00"
+    },
+    {
+      "file": "after-docs.png",
+      "width": 2544,
+      "height": 3422,
+      "sha256": "60e871e714f5844804ba1b5adf12ddc24f12320ab7b2e862c245e614b5e693f9",
+      "capturedAt": "2026-10-15T06:43:18.486406+00:00"
+    },
+    {
+      "file": "after-empty-final.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "dbcc63bc19f25d4e3b9684080c22c24e3ce23f71811f77d655880b6fa6124673",
+      "capturedAt": "2026-10-15T06:46:57.664928+00:00"
+    },
+    {
+      "file": "after-empty.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "8122d1dbff3e201d7f3241c392f651538b6d231a639ffa2e09a067925454784c",
+      "capturedAt": "2026-10-15T06:37:07.765969+00:00"
+    },
+    {
+      "file": "after-light-final.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "daef589b900109666bb4ff65f7db5c42e91b047a530ef40e18ec430c14f81231",
+      "capturedAt": "2026-10-15T06:37:08.707745+00:00"
+    },
+    {
+      "file": "after-light-reviewed.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "dcd72aeb61a127d8bdaf5b73e94be992c22ef4b289a6da4e2c51bc8364789085",
+      "capturedAt": "2026-10-15T06:48:01.572526+00:00"
+    },
+    {
+      "file": "after-mobile-detail.png",
+      "width": 390,
+      "height": 948,
+      "sha256": "c5c005ee96a6bd690fdfedc732adc1b178fcfaed28c39b0df5dc9fcb95ced4bf",
+      "capturedAt": "2026-10-15T06:39:54.905592+00:00"
+    },
+    {
+      "file": "after-mobile-filter.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "1c86264e8ddd84687d67728fd4a7fc65dbd33079f56e06a5f4f7c80fbf357116",
+      "capturedAt": "2026-10-15T06:46:33.426364+00:00"
+    },
+    {
+      "file": "after-mobile-light.png",
+      "width": 390,
+      "height": 1437,
+      "sha256": "d159c5ef6acd6ca6eb1887e36274424dfc97de1b6960c72231a2776c93955d85",
+      "capturedAt": "2026-10-15T06:45:42.490311+00:00"
+    },
+    {
+      "file": "after-mobile-list.png",
+      "width": 390,
+      "height": 1437,
+      "sha256": "13d1160c60f2b5f4b6620af1a7b09033e173534d6f22ed0f3925a3aa564a34c9",
+      "capturedAt": "2026-10-15T06:39:54.664120+00:00"
+    },
+    {
+      "file": "after-playground.png",
+      "width": 2544,
+      "height": 1624,
+      "sha256": "2661393cbca841412e54b4b2102c45a3ffcdc3a874ba70e94a9368ed0fc101d4",
+      "capturedAt": "2026-10-15T06:42:53.342445+00:00"
+    },
+    {
+      "file": "after-reply.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b3910925d461557c82a6efdececd714d3c548fdc04c892599acf4e7e400fb554",
+      "capturedAt": "2026-10-15T06:37:07.133734+00:00"
+    },
+    {
+      "file": "after-tablet.png",
+      "width": 1000,
+      "height": 900,
+      "sha256": "072296e2eb47f1375bbf32c97d51825f2f06c49ce25517218e771d9b27975a49",
+      "capturedAt": "2026-10-15T06:44:23.300618+00:00"
+    },
+    {
+      "file": "before-entry.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "45e97ecb2146cc0bf801d7756e9636b194ddd4c4952c67482e77abd415403214",
+      "capturedAt": "2026-10-15T06:30:11.574014+00:00"
+    },
+    {
+      "file": "before-mobile-entry.png",
+      "width": 390,
+      "height": 1593,
+      "sha256": "678465295613755d80952ff3e0a56b894b47a974fed04efcb28ce36dcb1d752e",
+      "capturedAt": "2026-10-15T06:44:22.608956+00:00"
+    },
+    {
+      "file": "peer-music-empty.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "ade866dc09799bbde7c6725d670b0c4a9b2f2a879360bc55e12de003c522492f",
+      "capturedAt": "2026-10-15T06:47:31.540160+00:00"
+    },
+    {
+      "file": "peer-music.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "0ee5fad2096126005635d32d001e35c5ceb9de182db43e70b008f56b1d7757b6",
+      "capturedAt": "2026-10-15T06:30:35.694798+00:00"
+    },
+    {
+      "file": "reference-expanded.png",
+      "width": 2544,
+      "height": 1624,
+      "sha256": "f0615b9deaa6509b7b388b9e828d625a94f9f21a57b424064e73c42c81847527",
+      "capturedAt": "2026-10-15T06:29:21.105700+00:00"
+    },
+    {
+      "file": "reference-image.png",
+      "width": 1280,
+      "height": 1024,
+      "sha256": "6da3586e65719211459e220ce24a8a3205a39e3303bd00455257d02902614735",
+      "capturedAt": "2026-10-15T06:44:59.734436+00:00"
+    },
+    {
+      "file": "reference-post.png",
+      "width": 2544,
+      "height": 1624,
+      "sha256": "b942a5a7d18ed4eddef990d2da189fbd7f95c77df9059e33a35e962945065d7e",
+      "capturedAt": "2026-10-15T06:29:21.099699+00:00"
+    }
+  ]
+}
