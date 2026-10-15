@@ -1,3 +1,5 @@
+import { ProjectBoardDocs } from "@/pages/ProjectBoardDocs";
+import { ProjectBoardPage } from "@/pages/ProjectBoardPage";
 import { WorkspaceAccessDocs } from "@/pages/WorkspaceAccessDocs";
 import { AccessWorkspacePage } from "@/pages/AccessWorkspacePage";
 import { ClientDocs } from "@/pages/ClientDocs";
@@ -127,6 +129,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "project-create-card": ProjectBoardDocs, "project-board-overview": ProjectBoardDocs, "project-board": ProjectBoardPage,
   "workspace-setup": WorkspaceAccessDocs, "tool-access-row": WorkspaceAccessDocs, "member-access-table": WorkspaceAccessDocs, "workspace-invitation": WorkspaceAccessDocs, "access-workspace": AccessWorkspacePage,
   "client-summary": ClientDocs, "client-contact-strip": ClientDocs, "client-finance-summary": ClientDocs, "client-workspace": ClientWorkspacePage,
   "routing-policy": ModelRoutingDocs, "routing-flow": ModelRoutingDocs, "route-metrics": ModelRoutingDocs, "model-router": ModelRouterPage,

@@ -242,3 +242,7 @@ Inspired by [Nizam’s callback board](https://x.com/nizamdesign/status/21102794
 ### Access Workspace
 
 `/access-workspace` is a shared-tool workspace inspired by [Marcel Kargul’s UniOps study](https://kargul.studio/work/uniops). It includes Dashboard, Tools, Team, Sessions, Audit and Settings, plus invitation previews. Four reusable components have docs and playgrounds: WorkspaceSetup, ToolAccessRow, MemberAccessTable and WorkspaceInvitation. Local invitations, access grants and sessions share one dataset; reload resets it. No external app, credential, email or authorization service is connected.
+
+### Project Board
+
+`/project-board` turns [Navneet’s project dashboard reference](https://x.com/sterlynavneet/status/2110264347595583949) into Overview, Board and Grid views backed by one local project dataset. ProjectCreateCard and ProjectBoardOverview have component docs and playgrounds. Existing ProjectSummary and KanbanBoard remain the owners of project progress and drag behavior. Create/edit, search, priority/category filtering, archive/undo and owner swimlanes are local fixtures that reset on reload.

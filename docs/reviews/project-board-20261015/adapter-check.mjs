@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import { BOARD_PROJECTS, asKanban, applyBoardChanges } from '../../../src/patterns/project-board/data.ts';
+const visible = BOARD_PROJECTS.filter(p => p.category === 'Apps');
+const hidden = BOARD_PROJECTS.filter(p => p.category !== 'Apps');
+const cards = visible.map(asKanban).reverse();
+cards[0] = {...cards[0], columnId:'done',assigneeId:'jules'};
+const result = applyBoardChanges(BOARD_PROJECTS,visible.map(p=>p.id),cards,'Apps');
+assert.equal(result.length,7);
+assert.deepEqual(result.filter(p=>p.category!=='Apps'),hidden);
+assert.deepEqual(result.filter(p=>p.category==='Apps').map(p=>p.id),cards.map(p=>p.id));
+assert.equal(result.find(p=>p.id===cards[0].id).completed,visible.find(p=>p.id===cards[0].id).total);
+assert.equal(result.find(p=>p.id===cards[0].id).assigneeId,'jules');
+const added=applyBoardChanges(BOARD_PROJECTS,visible.map(p=>p.id),[...cards,{id:'new',title:'New project',columnId:'todo'}],'Apps');
+assert.equal(added.length,8);
+assert.equal(added.at(-1).category,'Apps');
+assert.equal(added.at(-1).assigneeId,'');
+console.log('PASS: filtered updates preserve hidden records, visible order, completed tasks, owner changes and contextual inline creation.');

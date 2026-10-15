@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "project-create-card": {title:"Project Create Card",description:"An illustrated project creation entry with restrained hover feedback."},
+  "project-board-overview": {title:"Project Board Overview",description:"Four project stages composed with shared project summaries."},
+  "project-board": {title:"Project Board",description:"A complete local project workspace with overview, draggable board and grid views."},
   "workspace-setup": {title:"Workspace Setup",description:"A compact, actionable workspace onboarding checklist."},
   "tool-access-row": {title:"Tool Access Row",description:"Shared-tool identity, status and actions."},
   "member-access-table": {title:"Member Access Table",description:"Workspace member identity and tool assignments."},
