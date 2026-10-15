@@ -79,6 +79,9 @@
   outline: 2px solid var(--color-status-progress);
   outline-offset: 2px;
 }
+.experiment-workspace .ew-search input:focus-visible {
+  outline: none;
+}
 .ew-filter {
   display: grid;
   gap: 0.5rem;

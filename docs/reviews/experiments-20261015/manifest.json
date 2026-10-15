@@ -41,7 +41,7 @@
     "docs/reviews/experiments-20261015/after-draft-error.png": "72a2c999e68de544ff1d62fe4e2774458039c9db2e97e9caeee3b79f29d49e13",
     "docs/reviews/experiments-20261015/oreo-charles-reference-3.png": "6c7b98317c7d96ce6d336c0a26544cb133dcd876f82645c139ce0393cfc50d94",
     "docs/reviews/experiments-20261015/build-fixed.log": "bf4d7c1ecd12af3a32cfffa7ae59eb0b95f2ac733513426d083a6ce2bbf23184",
-    "docs/reviews/experiments-20261015/browser-checks.jsonl": "b09dbdc0cc347055474d38bc9fce091483db183d50b5314e23be3672dc72403e",
+    "docs/reviews/experiments-20261015/browser-checks.jsonl": "ee918b905a1b437ee1a8512850f35b2ac90a24fd3a83bb1334b07d9950b6a820",
     "docs/reviews/experiments-20261015/after-data-table.png": "c39802cb052f4fc309445f508ea24954fd3c8785d64121f6498d46d3c8a277a3",
     "docs/reviews/experiments-20261015/after-desktop-final.png": "ea15c66df824c88a04d653a0517f7cc6c94efedd4ac19c7c50ea07aeea9b712f",
     "docs/reviews/experiments-20261015/after-changelog.png": "511de5d5616f0580264982824b76bcc7c97149d0754dc9e9cf4d0e905cf0744d",
@@ -63,7 +63,7 @@
     "src/components/experiment/experiment.css": "0295052228acd7911c8deea91d37aeb2ef964044dd1df130ba18c324c85d520a",
     "src/patterns/experiment-workspace/index.tsx": "1712518514ec48501b306cc63a76cec4e66514704674eb95e547d96caae49cd2",
     "src/patterns/experiment-workspace/data.ts": "5cfbd0dbebc237879f789c5003ad22960f7bef5753592deff5f69529c2d743b2",
-    "src/patterns/experiment-workspace/experiment-workspace.css": "9aba2648e82117bc49203bb4e42e0eb68b3a9e694f9d65a9cfd2b4df5bf1e2e8",
+    "src/patterns/experiment-workspace/experiment-workspace.css": "cdeb2cb87146fee93d9a4ee3cc9c759c4be006f63e32499c2879a79b95d5a98a",
     "src/pages/ExperimentDocs.tsx": "3b2820aea656b782801fff3d9e45602db59eea040052c56f51082eb129a71243",
     "src/pages/ExperimentWorkspacePage.tsx": "8e113012e47b99870928beeb876a757197acf2cab052a53b36cb10e42a73e3df",
     "src/App.tsx": "d47a92b40b6c726b751710e40bf506494193a377216891b1130d65e5dc338488",
@@ -71,7 +71,8 @@
     "src/docs/Sidebar.tsx": "560c31e9a3d1deebf3bcacc19326d428dbf1dfda4e367e474f283898a78d9aa6",
     "src/docs/playground/registry.tsx": "f4ce6844c80dd5885e91c9f90e0fd4a7bb5f1435006e79e1446c5eb03072b8be",
     "src/patterns/changelog/data.ts": "7158d32b9fec80e16c428b15807dabfa9db551a9fa2ed955a5ab03cf09a86621",
-    "README.md": "976a851797ed4344998417e779e67c886c3bc78a1387d0ee960f06ee9a9ba972"
+    "README.md": "976a851797ed4344998417e779e67c886c3bc78a1387d0ee960f06ee9a9ba972",
+    "docs/reviews/experiments-20261015/after-search-empty-final.png": "5311efdd508307aa68f9c4507db68cb2f4993c26f01caf083594e1419e026a32"
   },
   "implementationCommit": "ed0a9af",
   "pullRequest": 59
