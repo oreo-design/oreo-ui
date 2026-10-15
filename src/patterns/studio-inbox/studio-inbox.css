@@ -355,3 +355,9 @@
     margin-left: 0;
   }
 }
+
+.si-results:has(> .agent-workspace-state),
+.si-detail:has(> .agent-workspace-state) {
+  display: grid;
+  place-items: center;
+}

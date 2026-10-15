@@ -44,7 +44,7 @@ export function InboxNotification({
         className={cn("si-unread", item.unread && "si-is-unread")}
         aria-hidden
       />
-      <Avatar name={item.author} size="sm" color="brown" />
+      <Avatar aria-hidden name={item.author} size="sm" color="brown" />
       <span className="min-w-0 flex-1 text-left">
         <span className="flex items-baseline gap-2">
           <span className="min-w-0 flex-1 truncate">
