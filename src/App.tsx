@@ -1,3 +1,5 @@
+import { EdgeMonitorDocs } from "@/pages/EdgeMonitorDocs";
+import { EdgeObservatoryPage } from "@/pages/EdgeObservatoryPage";
 import { SwitchDocs } from "@/pages/SwitchDocs";
 import { PreferenceStudioPage } from "@/pages/PreferenceStudioPage";
 import { ToggleComposerDocs } from "@/pages/ToggleComposerDocs";
@@ -84,6 +86,8 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "edge-monitor": EdgeMonitorDocs,
+  "edge-observatory": EdgeObservatoryPage,
   switch: SwitchDocs,
   "preference-studio": PreferenceStudioPage,
   "toggle-composer": ToggleComposerDocs,
