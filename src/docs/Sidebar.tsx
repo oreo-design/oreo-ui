@@ -55,6 +55,7 @@ const NAV: Group[] = [
     // Agentic semantics — what the assistant is doing, not just saying.
     title: "Agent",
     items: [
+      { label: "Automation", page: "automation-components" },
       { label: "Prompt Box", page: "prompt-box" },
       { label: "Keyword Tag", page: "keyword-tag" },
       { label: "Context Bar", page: "context-bar" },
@@ -82,7 +83,7 @@ const NAV: Group[] = [
   },
   {
     title: "Templates",
-    items: [{ label: "Connections", page: "connections-workspace" }, { label: "Knowledge Base", page: "knowledge-base" }, { label: "Music Workspace", page: "music-workspace" }, { label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
+    items: [{ label: "Automation Studio", page: "automation-studio" }, { label: "Connections", page: "connections-workspace" }, { label: "Knowledge Base", page: "knowledge-base" }, { label: "Music Workspace", page: "music-workspace" }, { label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
   },
   {
     title: "Patterns",

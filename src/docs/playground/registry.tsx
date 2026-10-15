@@ -1,3 +1,4 @@
+import { AgentResultCard } from "@/components/automation";
 import { InlineConfirm } from "@/components/inline-confirm";
 import { InlineQuickMenu } from "@/components/inline-quick-menu";
 import { FolderCard, FolderArtwork, FOLDER_TONES } from "@/components/knowledge-base";
@@ -47,6 +48,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  automation: { AgentResultCard },
   "inline-confirm": { InlineConfirm },
   "inline-quick-menu": { InlineQuickMenu },
   "knowledge-base": { FolderCard, FolderArtwork },
@@ -74,6 +76,7 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "automation-components": { ...define("Agent Result", { title: text("Selected account and ad sets"), status: select(["ready", "running", "error"], "ready"), open: toggle(false), details: text("Oreo Store · Weekend essentials · $200 daily budget") }, (v, set) => <div className="w-full max-w-xl"><AgentResultCard title={v.title} status={v.status} open={v.open} onOpenChange={open => set("open", open)}>{v.details}</AgentResultCard></div>), source: "automation" },
   "inline-confirm": define("Inline Confirm", {
     label: text("Delete project"), question: text("Delete project?"), confirmLabel: text("Delete"), cancelLabel: text("Cancel"),
     pendingLabel: text("Deleting"), successLabel: text("Deleted"), disabled: toggle(), simulateError: toggle(),
