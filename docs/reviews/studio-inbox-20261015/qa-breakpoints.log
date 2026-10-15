@@ -1,0 +1,37 @@
+Console output:
+[log] URL: http://localhost:5211/studio-inbox
+      - banner:
+        - role=link[name="Oreo UI / Template
+[log] Element: html
+Box: x=0 y=-12 w=760 h=1409
+Children: 4  Text length: 290704
+Scroll Y: size=1409 client=900 overflowing=true top=12
+Scroll X: size=760 client=760 overflowing=false left=0
+Styles: width=760px overflow-x=visible
+[log] URL: http://localhost:5211/studio-inbox
+      - banner:
+        - role=link[name="Oreo UI / Template
+[log] Element: html
+Box: x=0 y=-12 w=761 h=900
+Children: 4  Text length: 290704
+Scroll Y: size=915 client=900 overflowing=true top=12
+Scroll X: size=761 client=761 overflowing=false left=0
+Styles: width=761px overflow-x=visible
+[log] URL: http://localhost:5211/studio-inbox
+No changes since last snapshot. Use showDiffSinceLastCall: f
+[log] Element: html
+Box: x=0 y=-12 w=1100 h=900
+Children: 4  Text length: 290704
+Scroll Y: size=915 client=900 overflowing=true top=12
+Scroll X: size=1100 client=1100 overflowing=false left=0
+Styles: width=1100px overflow-x=visible
+[log] URL: http://localhost:5211/studio-inbox
+--- snapshot (previous)
++++ snapshot (current)
+@@ -74,6 +74,
+[log] Element: html
+Box: x=0 y=-12 w=1101 h=900
+Children: 4  Text length: 290704
+Scroll Y: size=931 client=900 overflowing=true top=12
+Scroll X: size=1101 client=1101 overflowing=false left=0
+Styles: width=1101px overflow-x=visible
