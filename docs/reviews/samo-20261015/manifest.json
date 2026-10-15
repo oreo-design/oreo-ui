@@ -1,0 +1,241 @@
+{
+  "baseline": "ae25227202641f5252ed199eb37692c0e9e61027",
+  "implementation_commit": "fed15f9c83028b0366a75adb341c4afe75ca67c5",
+  "date": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "origin": "http://localhost:5187",
+  "browser": "Chrome via Playwriter session 39",
+  "locale": "English UI",
+  "account": "local fixture, no account or backend",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      900,
+      1000
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "reference": "https://x.com/samosemudiamhe/status/2110304795869524372",
+  "media": [
+    {
+      "file": "after-approved-final.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "c9f38e8ba332b270dd1bd23c1e049fdef678225a2d689f1986a86e15aaafe750",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-approved.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "a5a27f0bc3792b2b4f9c88e79b2c5e19b5b361878f8ada01dbdfc0661dd07799",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-dark-narrow.png",
+      "pixels": [
+        390,
+        2414
+      ],
+      "sha256": "2bd6be5c98c32268ebd5dc15c0acf1a6eee1fc560d2bc4ababeb7fa154130ef1",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-dark-wide-final.png",
+      "pixels": [
+        1440,
+        1139
+      ],
+      "sha256": "e3d05a56b6abe75ee5bd4de3ac54f2180b7cb62cc97563fb0b85993181914b92",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-dark-wide.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "d736d6c08169e55da2d144654e3d9e21ee9e830c3eaf535dae5507295dd17aed",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-empty.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "2297aadea0039714c5e48169f9ff4495fe0c02263e8b441f1035e4689348bdfd",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-files.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "03efc311d5211f925f639974302f19b15951b6f98b827e8c3d90c530ae48834f",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-light-medium.png",
+      "pixels": [
+        900,
+        1527
+      ],
+      "sha256": "f004f2233fc81dfbed12c2722df2b294d33dc6f8df1583c6d59baca1a4dd65b1",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-light-narrow.png",
+      "pixels": [
+        390,
+        2414
+      ],
+      "sha256": "41152788a51b8a5bb8e79985560b847a60d2170ccd3101e2d46a21b8e3448423",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-light-wide.png",
+      "pixels": [
+        1440,
+        1139
+      ],
+      "sha256": "18c6e6a61bac3635fb5dc38aab6e8bd9e21185d577b706cc14de332ce01490db",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-photo.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "87b09e37fd9cf7331055a174a8514dca2ae5bb0a18be4bf086625837858b99c4",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-upload-error.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "73442d12295cf68e07582e95394b4f92eacd185ac58741e0dea1ea14a2b2e1a7",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "after-upload-recovery.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "974b6f62cec065ebc1195e6a511a5392319fa23c05452b05d43388187567237b",
+      "status": "historical-interaction-or-superseded"
+    },
+    {
+      "file": "before-entry.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "bd83d2fb6cce9601ad507b5958bf8542e7a104e79a5305f8c18f5a895783c75f",
+      "status": "baseline"
+    },
+    {
+      "file": "before-knowledge.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "2620f7d0592179c37f7fb82a32dabaf2dcef5b99762e387fe980a365bf809d94",
+      "status": "baseline"
+    },
+    {
+      "file": "final-dark-medium.png",
+      "pixels": [
+        900,
+        1693
+      ],
+      "sha256": "689b893e43eb12c814e4300dbaa2daff45ea38e03185d7f80a5948c590722920",
+      "status": "final"
+    },
+    {
+      "file": "final-dark-narrow.png",
+      "pixels": [
+        390,
+        2414
+      ],
+      "sha256": "217cbb6dd984e25929038d0a9a76144fded92dc6c36002e706a1afc7f3ec6a1c",
+      "status": "final"
+    },
+    {
+      "file": "final-dark-wide.png",
+      "pixels": [
+        1440,
+        1139
+      ],
+      "sha256": "c4a0a4c15ac1637a17ea69f5d35246bb06bac29007087c0c39c5459516369701",
+      "status": "final"
+    },
+    {
+      "file": "final-docs.png",
+      "pixels": [
+        1440,
+        3218
+      ],
+      "sha256": "3a690777fcdf0a5d12b065373c4d57bfd648846470a3235571eb86073438c520",
+      "status": "final"
+    },
+    {
+      "file": "final-light-medium.png",
+      "pixels": [
+        900,
+        1693
+      ],
+      "sha256": "aa6257df5c401a0d27b48937e47fe068d028681140a718cd0984105bf1c74513",
+      "status": "final"
+    },
+    {
+      "file": "final-light-narrow.png",
+      "pixels": [
+        390,
+        2414
+      ],
+      "sha256": "4e118bdc5d563661828a7377748ecf7d32c46107db53440ed421889e25409787",
+      "status": "final"
+    },
+    {
+      "file": "final-light-wide.png",
+      "pixels": [
+        1440,
+        1139
+      ],
+      "sha256": "632ee08a6d672ffbc6498fe60a09aa5205d687db7b005d64db164aa1aaf9134f",
+      "status": "final"
+    },
+    {
+      "file": "final-playground.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "008af15de2c49ff121cfdca184eade5964ff7dccc9897bd05e18e81007d56854",
+      "status": "final"
+    }
+  ],
+  "recording_gap": "Chrome activeTab capture permission missing. Click the Playwriter extension icon on the task-owned localhost:5187 tab to enable a follow-up recording.",
+  "rebased_implementation_commit": "ea74fe901833b4290c63289a67c0fb9403c8b81a",
+  "integration_base": "8a4af26"
+}

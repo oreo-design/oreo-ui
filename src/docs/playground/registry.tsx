@@ -1,4 +1,5 @@
 import { AgentResultCard } from "@/components/automation";
+import { DocumentStorage } from "@/components/document-activity";
 import { InlineConfirm } from "@/components/inline-confirm";
 import { InlineQuickMenu } from "@/components/inline-quick-menu";
 import { FolderCard, FolderArtwork, FOLDER_TONES } from "@/components/knowledge-base";
@@ -49,6 +50,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
   automation: { AgentResultCard },
+  "document-activity": { DocumentStorage },
   "inline-confirm": { InlineConfirm },
   "inline-quick-menu": { InlineQuickMenu },
   "knowledge-base": { FolderCard, FolderArtwork },
@@ -77,6 +79,7 @@ const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
   "automation-components": { ...define("Agent Result", { title: text("Selected account and ad sets"), status: select(["ready", "running", "error"], "ready"), open: toggle(false), details: text("Oreo Store · Weekend essentials · $200 daily budget") }, (v, set) => <div className="w-full max-w-xl"><AgentResultCard title={v.title} status={v.status} open={v.open} onOpenChange={open => set("open", open)}>{v.details}</AgentResultCard></div>), source: "automation" },
+  "document-activity": define("Document Storage", { capacity: number(20, 0, 100), photos: number(7.2, 0, 100, .1), documents: number(3.8, 0, 100, .1), video: number(1.8, 0, 100, .1) }, v => <div className="w-full max-w-sm"><DocumentStorage capacity={v.capacity} segments={[{label:"Photos",value:v.photos,tone:"photos"},{label:"Documents",value:v.documents,tone:"documents"},{label:"Video",value:v.video,tone:"video"}]} /></div>),
   "inline-confirm": define("Inline Confirm", {
     label: text("Delete project"), question: text("Delete project?"), confirmLabel: text("Delete"), cancelLabel: text("Cancel"),
     pendingLabel: text("Deleting"), successLabel: text("Deleted"), disabled: toggle(), simulateError: toggle(),

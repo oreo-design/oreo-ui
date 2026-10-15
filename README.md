@@ -148,3 +148,11 @@ Copy `src/components/knowledge-base` with its imports, then `src/patterns/knowle
 `/inline-confirm` recreates [Elia’s inline destructive action, shared by Ali Bey](https://x.com/alibey_10/status/2109948796088295538). The neutral capsule expands into a question, Cancel and Delete; confirmation contracts into progress and a persistent success result. An async rejection keeps an inline error and retry. Escape and Cancel restore focus, leaving the group dismisses it, and keyboard/reduced-motion modes remove spatial transitions.
 
 Includes an editable playground, generated JSX and API documentation with local success/failure examples. Copy `src/components/inline-confirm` with its Oreo Button, Icon, cn, motion and theme-token imports; no new dependencies. Supply `onConfirm` and resolve only after the real operation succeeds. Gallery examples do not delete projects; exported starter code requires you to connect the action.
+
+### Document activity and workspace
+
+- `/document-activity`: storage playground, timeline and access-request examples, composition and API documentation.
+- `/document-workspace`: property document template with Files / Activity views, folder and date filtering, search, photo previews, local file records and reversible access decisions.
+- Source: `src/components/document-activity` and `src/patterns/document-workspace`.
+- Design reference: [csakani / Sakani UI](https://x.com/samosemudiamhe/status/2110304795869524372). Independent implementation using Oreo primitives; all interactions are local fixtures, with no backend connection.
+- Visual evidence: [task review](docs/reviews/samo-20261015/REVIEW.md).

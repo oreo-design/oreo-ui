@@ -1,5 +1,7 @@
 import { AutomationComponentsDocs } from "@/pages/AutomationComponentsDocs";
 import { AutomationStudioPage } from "@/pages/AutomationStudioPage";
+import { DocumentActivityDocs } from "@/pages/DocumentActivityDocs";
+import { DocumentWorkspacePage } from "@/pages/DocumentWorkspacePage";
 import { InlineConfirmDocs } from "@/pages/InlineConfirmDocs";
 import { InlineQuickMenuDocs } from "@/pages/InlineQuickMenuDocs";
 import { ProjectChatDocs } from "@/pages/ProjectChatDocs";
@@ -67,6 +69,8 @@ import { applyRouteMeta } from "@/lib/head";
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "automation-components": AutomationComponentsDocs,
   "automation-studio": AutomationStudioPage,
+  "document-activity": DocumentActivityDocs,
+  "document-workspace": DocumentWorkspacePage,
   "inline-confirm": InlineConfirmDocs,
   "inline-quick-menu": InlineQuickMenuDocs,
   "project-chat": ProjectChatDocs,
