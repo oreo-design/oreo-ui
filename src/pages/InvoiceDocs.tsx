@@ -31,7 +31,7 @@ const docs: Record<
       {
         prop: "invoices",
         type: "Invoice[]",
-        desc: "id, client, description, dueDate (YYYY-MM-DD), amountCents (positive safe integer), status (draft/pending/paid/cancelled), optional gradient avatar and notes. All amounts are EUR.",
+        desc: "id, client, description, dueDate (YYYY-MM-DD), amountCents (positive safe integer), status (draft/pending/paid/cancelled), optional gradient avatar and notes. Amounts use the currency prop (EUR by default).",
       },
       {
         prop: "asOf",
@@ -47,6 +47,11 @@ const docs: Record<
         prop: "onAction",
         type: "(invoice, action, trigger) => void",
         desc: "open, paid, duplicate or delete. The component emits callbacks; the host owns data changes and confirmation. Trigger is supplied for dialog return focus.",
+      },
+      {
+        prop: "currency / clientLabel",
+        type: '"EUR" | "USD" / string',
+        desc: "Defaults EUR / Client. Currency formats every row and the table caption; clientLabel names the contact column without changing its sort key.",
       },
       {
         prop: "compact",

@@ -22,6 +22,9 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Client Summary", page: "client-summary" },
+      { label: "Client Contact Strip", page: "client-contact-strip" },
+      { label: "Client Finance Summary", page: "client-finance-summary" },
       { label: "Routing Policy", page: "routing-policy" },
       { label: "Routing Flow", page: "routing-flow" },
       { label: "Route Metrics", page: "route-metrics" },
@@ -137,6 +140,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      { label: "Client Workspace", page: "client-workspace" },
       { label: "Model Router", page: "model-router" },
       { label: "Callback Workspace", page: "callback-workspace" },
       { label: "Thinking Workspace", page: "thinking-workspace" },

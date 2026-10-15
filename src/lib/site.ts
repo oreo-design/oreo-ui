@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "client-summary": {title:"Client Summary",description:"Company identity, project counts and paid revenue."},
+  "client-contact-strip": {title:"Client Contact Strip",description:"Responsive company contact details."},
+  "client-finance-summary": {title:"Client Finance Summary",description:"Derived client invoice and payment totals."},
+  "client-workspace": {title:"Client Workspace",description:"A complete local client template with invoices, projects, contacts, documents and notes."},
   "routing-policy": { title:"Routing Policy", description:"Controlled cost, balanced and quality policy selection." },
   "routing-flow": { title:"Routing Flow", description:"An accessible model-routing flow with optional simulated packet motion." },
   "route-metrics": { title:"Route Metrics", description:"Compact model allocation, latency, cost and error metrics." },

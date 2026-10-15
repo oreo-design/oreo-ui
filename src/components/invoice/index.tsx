@@ -44,10 +44,10 @@ export function invoiceStatus(invoice: Invoice, asOf: string): InvoiceStatus {
     ? "overdue"
     : invoice.status;
 }
-export function invoiceMoney(cents: number) {
-  return new Intl.NumberFormat("en-IE", {
+export function invoiceMoney(cents: number, currency: "EUR" | "USD" = "EUR") {
+  return new Intl.NumberFormat(currency === "USD" ? "en-US" : "en-IE", {
     style: "currency",
-    currency: "EUR",
+    currency,
   }).format(cents / 100);
 }
 export function invoiceDate(date: string) {
@@ -174,6 +174,8 @@ export function InvoiceTable({
   onSortChange,
   onAction,
   compact = false,
+  currency = "EUR",
+  clientLabel = "Client",
   onClearFilters,
 }: {
   invoices: Invoice[];
@@ -186,6 +188,8 @@ export function InvoiceTable({
     trigger: HTMLElement | null,
   ) => void;
   compact?: boolean;
+  currency?: "EUR" | "USD";
+  clientLabel?: string;
   onClearFilters?: () => void;
 }) {
   const [host, setHost] = useState<HTMLDivElement | null>(null);
@@ -209,7 +213,7 @@ export function InvoiceTable({
         >
           <table className="invoice-table" data-compact={compact || undefined}>
             <caption id={id} className="sr-only">
-              Invoices in EUR. Overdue status is calculated as of {asOf}.
+              Invoices in {currency}. Overdue status is calculated as of {asOf}.
             </caption>
             <thead>
               <tr>
@@ -238,7 +242,7 @@ export function InvoiceTable({
                         })
                       }
                     >
-                      {column.label}
+                      {column.key === "client" ? clientLabel : column.label}
                       <Icon
                         name={
                           sort.key === column.key
@@ -298,7 +302,7 @@ export function InvoiceTable({
                     </span>
                   </td>
                   <td data-column="amountCents">
-                    {invoiceMoney(invoice.amountCents)}
+                    {invoiceMoney(invoice.amountCents, currency)}
                   </td>
                   <td>
                     <InvoiceActions
