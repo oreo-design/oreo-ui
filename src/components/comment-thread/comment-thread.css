@@ -1,0 +1,37 @@
+.ct-thread {
+  overflow-wrap: anywhere;
+}
+.ct-thread:focus-visible,
+.ct-summary:focus-visible {
+  outline: 2px solid var(--color-text-secondary);
+  outline-offset: 3px;
+}
+.ct-comment + .ct-comment {
+  border-top: 1px solid var(--color-border-subtle);
+}
+.ct-input:focus-visible {
+  border-radius: var(--radius-control);
+  outline: 2px solid var(--color-border-default);
+  outline-offset: 3px;
+}
+/* A semantic palette pair stays readable on both Oreo skins. */
+.ct-status {
+  color: var(--color-palette-mint-text);
+  background: var(--color-palette-mint-bg);
+  border-radius: var(--radius-control-tiny);
+  padding: 2px 4px;
+}
+.ct-menu.ct-no-motion {
+  transition: none;
+}
+@media (max-width: 480px) {
+  .ct-comment {
+    padding: 12px;
+  }
+  .ct-comment header {
+    flex-wrap: wrap;
+  }
+  .ct-summary {
+    padding-inline: 12px;
+  }
+}
