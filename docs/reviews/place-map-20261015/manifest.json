@@ -8,7 +8,8 @@
     "src/patterns/place-explorer/data.ts": "5f23b546823ded05e699d3f5f17ca79e21d1dcc3bf929ca52f4f4842f0ef8392",
     "src/patterns/place-explorer/place-explorer.css": "ed2af17fb6dbe79491214e1c12b5c1a4ea86362feae9172c887b0c8fdde64070",
     "src/pages/PlaceMapDocs.tsx": "6df79cd9d68dcb9af48b649f902d2174df67c641acd14326093b9d30bbcad710",
-    "src/pages/PlaceExplorerPage.tsx": "af74815db1160acbb7cac62c29eda3d8fbb40bcba20d3466df87d2e5ec6b3acf"
+    "src/pages/PlaceExplorerPage.tsx": "af74815db1160acbb7cac62c29eda3d8fbb40bcba20d3466df87d2e5ec6b3acf",
+    "src/patterns/changelog/data.ts": "6842da5becfbade7142e49b393ca9b7b9045249ddb3bc19d3c809d6eac432219"
   },
   "environment": {
     "url": "http://localhost:5222",
@@ -64,6 +65,9 @@
     "reference-02.png": "91463400580208b5f27a59a75ec9b0c3553a708e8714955a11121c61bf7fb254",
     "changelog-before-entry.png": "f1a7d863e39eeaed677edab4923d83b487b384616d1716554759d4f97422e54f",
     "style-menu.png": "975d4e6c16ef84fdf4a8e21ead9e2b80a9db7bd76eda4173c062cba3270c6cd9",
-    "search-wifi.png": "be721c5d1092f9a8d7ac1df926024567d6c85534730ce38423838d837565cf6e"
-  }
+    "search-wifi.png": "be721c5d1092f9a8d7ac1df926024567d6c85534730ce38423838d837565cf6e",
+    "changelog-after-entry.png": "c7011a083d05713cffbbe4e1c6f123b173c957ddb9f59a5bfaf30d7d5dda6146"
+  },
+  "product_source_revision": "3b01fa85030527be740e26b4ef80b5fd44e0b421",
+  "pull_request": "https://github.com/oreo-design/oreo-ui/pull/48"
 }

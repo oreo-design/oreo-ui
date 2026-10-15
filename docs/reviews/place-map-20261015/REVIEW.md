@@ -5,7 +5,7 @@ Reference: [pitus_ / Generative UI #1 — Map](https://x.com/pitus_/status/21104
 ## Scope and revisions
 
 - Baseline: `2dd797b01a6481ae64debb9907d1cc601d5b9802` (main).
-- Branch: `codex/place-explorer-20261015`. Source hashes and capture environment are in [manifest.json](manifest.json); the final evidence commit identifies its parent source revision there.
+- Branch: `codex/place-explorer-20261015`. Final product source: `3b01fa8`. Source hashes and capture environment are in [manifest.json](manifest.json). PR: [#48](https://github.com/oreo-design/oreo-ui/pull/48).
 - Local fixture preview: http://localhost:5222/place-explorer. Browser: Chromium through Playwriter session 55; English; local sample data; light and dark. Desktop 1440×1000, mobile 390×844, tablet 768×1024. Full-page captures preserve document height beyond the viewport.
 - Primary dirty checkout and other tasks were left untouched. No production deployment or live navigation/service integration is claimed.
 
@@ -34,7 +34,7 @@ Original geography and venue illustration are reconstructed in SVG, not screensh
 | Save and real clipboard copy | No prior equivalent | [After](after-copy.png) | Saved state and successful browser clipboard feedback. |
 | Selection, menu, palette, pager, save/copy motion | No pre-change map interaction exists | [Recording](interaction.mp4), [original frames/timestamps](interaction-original.json.xz) | Actual UI actions; 1440×1000, 29.8-second MP4 encoded at 30fps from variable-rate browser frames. Encoding rate is not a performance claim. Contact sheet inspected. |
 | Existing same-role menu | [Peer](peer-menu.png) | Picker in recording | Opened real Inline Quick Menu and used Escape; reused shared owner, no global consistency claim. |
-| Website changelog entry | [Before top](changelog-before.png), [Before list](changelog-before-entry.png) | Pending final entry capture | Existing release-entry list receives this template. |
+| Website changelog entry | [Before top](changelog-before.png), [Before list](changelog-before-entry.png) | [After list](changelog-after-entry.png) | Existing release-entry list receives this template; actual links point to /place-explorer and PR #48. |
 
 Superseded diagnostic originals are retained: `initial-desktop.png` (earlier bubble treatment), `initial-mobile.png` (palette overlapped a marker), `mobile-dark.png` (overbright inherited palette), `dark-corrected.png` (before final marker edge alignment). `style-menu.png` and `mobile-menu.png` capture transient opening frames; the recording is the settled interaction reference. Desktop/mobile final screenshots predate deletion of the route fade; their settled rendering is unchanged. The recording covers the final immediate route behavior.
 
