@@ -1,0 +1,12 @@
+{
+  "frameCount": 23,
+  "sourceDuration": 3.720280885696411,
+  "lastFrameHold": 1,
+  "minimumFrameDuration": 0.008,
+  "capture": "Playwriter CDP screencast",
+  "scenario": "Create invoice, validation error, recovery and save",
+  "viewport": [
+    1440,
+    1000
+  ]
+}

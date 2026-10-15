@@ -1,0 +1,1 @@
+PASS: fixture totals; draft exclusion; empty data; paid transition; no upcoming payment; USD/EUR formatting; due-today pending; stable tie-break; sorting preserves input.

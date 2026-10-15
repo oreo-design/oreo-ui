@@ -1,0 +1,563 @@
+{
+  "baseline": "6570e7c83117f6024642cb053e3bafbb1f56aa72",
+  "implementation": "55db33848b42e3ea1df8be500d85d6ef8d3728df",
+  "reference": "https://x.com/Tanjim38/status/2110407786957795338",
+  "preview": "http://localhost:5230/client-workspace",
+  "environment": "Chromium via Playwriter session 63; local React fixture; en; dark/light",
+  "review": "REVIEW.md",
+  "history": "Final acceptance captures identified by REVIEW.md; earlier originals retained with known superseded formatting.",
+  "files": [
+    {
+      "file": "after-activity.png",
+      "sha256": "95b67b7c1c7b86d67a58c59c65f7680a2f88c318611a507d466154b54da33d40",
+      "bytes": 100400,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-changelog.png",
+      "sha256": "3601f930cdbca26aa8db9773fd38bfc4a4c1edc84d20d3038702eaa8e8aaee5e",
+      "bytes": 125330,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-contact-component-final.png",
+      "sha256": "ee96977fce0c6a4d37a13b806d7b59e8ce82160f3dc6eb66d5d8b71d0440ecb2",
+      "bytes": 101968,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-contact-docs.png",
+      "sha256": "24b0130ecbae6d63042ea1994a7dc9304c62e48f3740018f0675a258ba109116",
+      "bytes": 100857,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-contacts.png",
+      "sha256": "4257dd8f1489f34ac7b36483b2a88177fc5c4588d28c4fd2ff07dd5d18bb9625",
+      "bytes": 104865,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-created.png",
+      "sha256": "5d112cf2dcef42bc9125362241b41ffbc4b53571f06e756a91b9e7b04a56837e",
+      "bytes": 125042,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-delete-danger-final.png",
+      "sha256": "1a2ac74144a68397845d58bdc65333f250943591184e9d09536cceb86a2760a9",
+      "bytes": 114697,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-desktop-dark-complete.png",
+      "sha256": "49154b9656615c4fd1a2c3fe97039391577355dbca33579aa9fc30754e6b6eba",
+      "bytes": 171299,
+      "pixels": [
+        1440,
+        1316
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-desktop-dark-final.png",
+      "sha256": "06231c09747bdcad078f839527aaa13dfc31e8d509b8eb34cafae16067f8699f",
+      "bytes": 123381,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-documents.png",
+      "sha256": "e9d24cd8d4e16ab797022b8fc40cc8972aa9e481f8cd0b25fa6d0a516c6a61c8",
+      "bytes": 97883,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-empty.png",
+      "sha256": "05bafeea46ad10648f550e20c64115d866ab5ad498ca6ac57e2315f841ec8a3c",
+      "bytes": 114867,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-filter-and-sort.png",
+      "sha256": "78865062eb89bb267999e5012b8dd23b736c4f2eee611e5f1316c4e78ab70254",
+      "bytes": 129756,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-final-complete.png",
+      "sha256": "49154b9656615c4fd1a2c3fe97039391577355dbca33579aa9fc30754e6b6eba",
+      "bytes": 171299,
+      "pixels": [
+        1440,
+        1316
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-final-delete-confirmation.png",
+      "sha256": "5f8a006b5b90f7d3398a88f64c77d9c2bd20238350d4948014dba484871f1efd",
+      "bytes": 137262,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-final-desktop-dark.png",
+      "sha256": "06231c09747bdcad078f839527aaa13dfc31e8d509b8eb34cafae16067f8699f",
+      "bytes": 123381,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-final-desktop-light.png",
+      "sha256": "d55ff140f79958ffa1ec0c3a4c94396236aab14c0eaf004ead608f94b9b4275f",
+      "bytes": 122906,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-final-empty.png",
+      "sha256": "b3d8d34ef2a748ef5bc8c30551b144f5f38bfe00ac8b888f3296896405eb2384",
+      "bytes": 108033,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-final-medium-light.png",
+      "sha256": "cc0985f208e60f4f4b75d0d8e44db90697d574ebc8950e7eb7087046752f95d4",
+      "bytes": 78548,
+      "pixels": [
+        768,
+        1024
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-final-mobile-dark-full.png",
+      "sha256": "c3a3524ce6cfe3f3f0d98941c173eafc1e23cb7be63bc252bb77b4f082869a7f",
+      "bytes": 100456,
+      "pixels": [
+        390,
+        1819
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-final-mobile-dialog.png",
+      "sha256": "21793056edd10ef23ed6b73f7a8a4e69978a37728d7020f4733b94d29403b930",
+      "bytes": 31389,
+      "pixels": [
+        390,
+        844
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-final-mobile-light-full.png",
+      "sha256": "6ec5114f3687da8a5088cf4ad9aa4ec644d81c507e1ae10b1d02e228501fc796",
+      "bytes": 100289,
+      "pixels": [
+        390,
+        1819
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-final-mobile-light.png",
+      "sha256": "4368f1077311764a8691280e0adf616b219f7a1c14c6404681a6f8c1c2d52f2a",
+      "bytes": 45529,
+      "pixels": [
+        390,
+        844
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-finance-api.png",
+      "sha256": "8e5c1a75d71221e680ff48d7657aa4c3cab7b6e7104ab0f2a9907574f0e019da",
+      "bytes": 154653,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-finance-component-final.png",
+      "sha256": "01b5b78d52a5da6c5defc17277a880b1aaf03f23dfa9c86b0370ef52e75862c0",
+      "bytes": 105574,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-finance-docs.png",
+      "sha256": "322e09f3494a2e9fe0e861cf54a466f88dbee81973be00557acece4f98993431",
+      "bytes": 102366,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-finance-empty.png",
+      "sha256": "acb214088243a1b8146ec0dc4b8a28c7c71875a23d21462ce47ed3c7734f214d",
+      "bytes": 97762,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-financial-dark-desktop.png",
+      "sha256": "f87531a9839b7c0e854b561ffdea1e6e218c2c93f007cae74c558cda4574de70",
+      "bytes": 125447,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-financial-light-desktop.png",
+      "sha256": "3428de063e9c67e2a208900d532621e6b15427666c1895f96f3cf1d65730d340",
+      "bytes": 124958,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-invalid-amount.png",
+      "sha256": "7fbbde96b78ed25b940b051cfee3cf2867e2bc9b1d51e8884bade18affe85cfc",
+      "bytes": 140242,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-invoice-peer.png",
+      "sha256": "4bc83a48dca5ce565d24f17bcf26699f0e50a2afd2b8ac15722f245892a6ca7f",
+      "bytes": 154572,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-medium-dark.png",
+      "sha256": "2b7d750a23ba29022a0ba98746917643239178ef9a69c471f45e8e16d34a1c66",
+      "bytes": 80792,
+      "pixels": [
+        768,
+        1024
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-medium-light.png",
+      "sha256": "373a42e3a07f4cb08fe039a337af22138c80d0270bb0cd5ac932df0492566bfc",
+      "bytes": 80488,
+      "pixels": [
+        768,
+        1024
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-dark-complete.png",
+      "sha256": "9da1399cae8fbc83d53f03ee49943d1bf117d1914eef37b90c860490bfa3f692",
+      "bytes": 101811,
+      "pixels": [
+        390,
+        1824
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-dark-final.png",
+      "sha256": "69f43f357578382bcc39c7e9babaabb7b448b75cb7959b72c1c04c39c1990ca8",
+      "bytes": 45588,
+      "pixels": [
+        390,
+        844
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-dark-full-final.png",
+      "sha256": "3c3821a082d6ba4298a365afbb926b3dba0336442a671e863072f7e9400f53de",
+      "bytes": 103983,
+      "pixels": [
+        390,
+        1872
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-dark-full.png",
+      "sha256": "1bcded57290938aaafeb422fa8f97d229123077897ea71e10dafb425bb4b8b2d",
+      "bytes": 103981,
+      "pixels": [
+        390,
+        1872
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "sha256": "45048b1b6a42bce0e208a65eb30ee6751a3d4748835252d9a1e8541ee9bd4121",
+      "bytes": 46143,
+      "pixels": [
+        390,
+        844
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-editor-error.png",
+      "sha256": "0ab2bf5357aea1d89556fb01d4b40de3b17e2abe517ee2bb2a5dcebef0cc7500",
+      "bytes": 28913,
+      "pixels": [
+        390,
+        844
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-editor-top.png",
+      "sha256": "2f6af9499f58406bb2f14c89f7b846bce7427cf63e1e36b1ef8897b1be84d2a3",
+      "bytes": 31375,
+      "pixels": [
+        390,
+        844
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-light-complete.png",
+      "sha256": "8fbff4f2056731ae2e7a9cd314ec32f8b9555622679477aeb4395dd844a7e755",
+      "bytes": 102116,
+      "pixels": [
+        390,
+        1824
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-light-final.png",
+      "sha256": "4639ea43572a20047e011a4f790ec0178d256e8045aa5a4a47d2847158e99caf",
+      "bytes": 45772,
+      "pixels": [
+        390,
+        844
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-light-full.png",
+      "sha256": "c855ca860425e34799946ce2435920622493c67c9fd53d6c31ee8cbe1f62ee23",
+      "bytes": 103757,
+      "pixels": [
+        390,
+        1872
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-light.png",
+      "sha256": "f4fe7da308a0a961494df4a14e09d4093f07732737a120044db9d45c6e9accb7",
+      "bytes": 45787,
+      "pixels": [
+        390,
+        844
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-mobile-table-end.png",
+      "sha256": "1a914df84c8b5fac7f1476b0a23614a6b74c2fb9353dfb1832676c22695175a2",
+      "bytes": 51745,
+      "pixels": [
+        390,
+        844
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-notes.png",
+      "sha256": "808d7f8f6b63cf9a83203abe6bd98d756bdf735b397a07cdfa2a317c0a0126e8",
+      "bytes": 103807,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-paid-and-undo.png",
+      "sha256": "225a3e76dea5ce1b04ba56eabcb2ec1218746da1cd67fb1bdb0bed6b9461607f",
+      "bytes": 152701,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-projects.png",
+      "sha256": "0e95cfb0fa00b97c252da5dc4b074dfc100aeee71007e75a45f84b89694f3100",
+      "bytes": 118696,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-row-menu.png",
+      "sha256": "77369c1bd3673718e3200146b3356163967e792dd0055a87632dbad73656c92e",
+      "bytes": 157603,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-summary-docs.png",
+      "sha256": "98b2d9dc58dc708088dd13dd60c545bf041377f09954671a3081daec3b95ce92",
+      "bytes": 101156,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "after-validation-error.png",
+      "sha256": "9203592760306d9769b08fe70b755bf2cea8414f575be1baf6635d5ad93d8ef7",
+      "bytes": 121666,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "capture"
+    },
+    {
+      "file": "before-changelog.png",
+      "sha256": "dd857dab64bd30bfae5b03caabc4c237362cbc92b91d5193fc8768e0db53a315",
+      "bytes": 123583,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "baseline"
+    },
+    {
+      "file": "before-entry.png",
+      "sha256": "de7d2ddcd8183c6a778a215ff7bc9276a22d02d81d5d759441a1ad24b0d10059",
+      "bytes": 92485,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "baseline"
+    },
+    {
+      "file": "before-invoice-peer.png",
+      "sha256": "4bc83a48dca5ce565d24f17bcf26699f0e50a2afd2b8ac15722f245892a6ca7f",
+      "bytes": 154572,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "baseline"
+    },
+    {
+      "file": "client-invoice-flow.mp4",
+      "sha256": "e68239e20f50c274e036fff2d8b90dceb9e72b4ec64424bd1e4594f9f948be33",
+      "bytes": 218023,
+      "role": "capture"
+    },
+    {
+      "file": "recording-original.json.xz",
+      "sha256": "382f237c716ccf07f3a824bf252ed5fde8259e6da1c7360d2b7fc81a22037018",
+      "bytes": 537524,
+      "role": "capture"
+    },
+    {
+      "file": "reference.png",
+      "sha256": "c83918f1359de399e92fae05d4b66330ff1a48dc442fbc4b2eedd281899c4eb2",
+      "bytes": 316406,
+      "pixels": [
+        1440,
+        1000
+      ],
+      "role": "reference"
+    }
+  ]
+}

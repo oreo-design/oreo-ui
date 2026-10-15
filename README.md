@@ -234,3 +234,7 @@ Inspired by [Nizam’s callback board](https://x.com/nizamdesign/status/21102794
 ## Model Router
 
 `/model-router` combines Routing Policy, Routing Flow and Route Metrics into a local routing panel inspired by Maxim Kuznetsov. It includes independent environment drafts, cost projections, fallback validation/testing and apply/undo. Metrics are fixtures; no model calls or infrastructure deployment occur. Component docs and playgrounds are available at `/routing-policy`, `/routing-flow` and `/route-metrics`.
+
+### Client Workspace
+
+`/client-workspace` adapts [Tanjim’s client detail reference](https://x.com/Tanjim38/status/2110407786957795338) into a responsive light/dark local CRM template. Client Summary, Client Contact Strip and Client Finance Summary are reusable from `src/components/client`; each has docs and a live playground. Six client sections include editable USD invoices, projects, downloadable sample documents, contacts, activity and notes. Totals derive from the fixtures, with an explicit January 16, 2026 snapshot. The shared InvoiceTable adds optional currency and contact-column labeling; its default EUR behavior is unchanged. Local changes reset on reload.

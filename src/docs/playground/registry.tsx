@@ -1,3 +1,5 @@
+import { ClientSummary, ClientContactStrip, ClientFinanceSummary } from "@/components/client";
+import { CLIENT, CLIENT_INVOICES, CLIENT_DATE } from "@/patterns/client-workspace/data";
 import { RoutingPolicyControl, RoutingFlow, RouteMetrics } from "@/components/model-routing";
 import { routesFor } from "@/patterns/model-router/data";
 import { CallbackPriority, CallbackCard, CallbackBoard } from "@/components/callback";
@@ -98,6 +100,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  client: { ClientSummary, ClientContactStrip, ClientFinanceSummary },
   "model-routing": { RoutingPolicyControl, RoutingFlow, RouteMetrics },
   callback: { CallbackPriority, CallbackCard, CallbackBoard },
   "thinking-state": { ThinkingState, ThinkingTimeline },
@@ -156,6 +159,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "client-summary": {...define("Client Summary",{name:text("Acme Corporation"),active:toggle(true)},v=><div className="w-full p-4"><ClientSummary client={{...CLIENT,...v}} projectCount={6} activeProjects={3} revenueCents={7970000}/></div>),source:"client"},
+  "client-contact-strip": {...define("Client Contact Strip",{location:text(CLIENT.location),email:text(CLIENT.email)},v=><div className="w-full p-4"><ClientContactStrip client={{...CLIENT,...v}}/></div>),source:"client"},
+  "client-finance-summary": {...define("Client Finance Summary",{empty:toggle(false),currency:select(["USD","EUR"],"USD")},v=><div className="w-full p-4"><ClientFinanceSummary invoices={v.empty?[]:CLIENT_INVOICES} asOf={CLIENT_DATE} currency={v.currency}/></div>),source:"client"},
   "routing-policy": { ...define("Routing Policy", {value:select(["cost","balanced","quality"],"balanced"),disabled:toggle(false)},(v,set)=><RoutingPolicyControl {...v} onChange={value=>set("value",value)}/>),source:"model-routing" },
   "routing-flow": { ...define("Routing Flow", {policy:select(["cost","balanced","quality"],"balanced"),active:toggle(true),empty:toggle(false),selected:text("")},(v,set)=><div className="w-full max-w-xl rounded-2xl bg-bg-elevated p-5"><RoutingFlow routes={v.empty?[]:routesFor(v.policy,333)} active={v.active} selected={v.selected} onSelect={id=>set("selected",v.selected===id?"":id)}/></div>),source:"model-routing" },
   "route-metrics": { ...define("Route Metrics", {policy:select(["cost","balanced","quality"],"balanced"),empty:toggle(false),selected:text("")},(v,set)=><div className="w-full max-w-2xl rounded-2xl bg-bg-elevated p-5"><RouteMetrics routes={v.empty?[]:routesFor(v.policy,333)} selected={v.selected} onSelect={id=>set("selected",v.selected===id?"":id)}/></div>),source:"model-routing" },
