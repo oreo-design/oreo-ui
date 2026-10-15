@@ -1,3 +1,5 @@
+import { ToggleComposerDocs } from "@/pages/ToggleComposerDocs";
+import { ComposerStudioPage } from "@/pages/ComposerStudioPage";
 import { CanvasToolbarDocs } from "@/pages/CanvasToolbarDocs";
 import { CanvasStudioPage } from "@/pages/CanvasStudioPage";
 import { TextToolbarDocs } from "@/pages/TextToolbarDocs";
@@ -80,6 +82,8 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "toggle-composer": ToggleComposerDocs,
+  "composer-studio": ComposerStudioPage,
   "canvas-toolbar": CanvasToolbarDocs,
   "canvas-studio": CanvasStudioPage,
   "text-toolbar": TextToolbarDocs,

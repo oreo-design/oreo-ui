@@ -1,0 +1,129 @@
+.toggle-composer {
+  width: 100%;
+  color: var(--color-text-primary);
+}
+.composer-mode {
+  position: relative;
+  display: flex;
+  padding: 0.25rem;
+  margin: 0 0 0.5rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-elevated);
+  min-width: 0;
+}
+.composer-mode-indicator {
+  position: absolute;
+  inset: 0.25rem auto 0.25rem 0.25rem;
+  width: calc(50% - 0.25rem);
+  background: var(--color-bg-base);
+  border-radius: var(--radius-control);
+  box-shadow: 0 1px 3px var(--color-border-subtle);
+}
+.composer-mode[data-pointer="true"] .composer-mode-indicator {
+  /* A shared element moves between two existing positions. */
+  transition: transform 180ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+.composer-mode-option {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: var(--radius-control);
+}
+.composer-mode-option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.composer-mode-option:has(:focus-visible) {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+.composer-mode-option:has(:disabled) {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.composer-shell {
+  padding: 0.375rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-elevated);
+  box-shadow: var(--shadow-overlay);
+}
+.composer-fields,
+.composer-writing {
+  background: var(--color-bg-base);
+  border-radius: var(--radius-control);
+  overflow: hidden;
+}
+.composer-fields {
+  margin-bottom: 0.375rem;
+}
+.toggle-composer input:not([type="radio"]),
+.toggle-composer textarea {
+  display: block;
+  width: 100%;
+  padding: 0.875rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  outline-offset: -3px;
+}
+.toggle-composer textarea {
+  resize: vertical;
+  min-height: 3rem;
+  max-height: 28rem;
+}
+.toggle-composer input::placeholder,
+.toggle-composer textarea::placeholder {
+  color: var(--color-text-secondary);
+}
+.composer-fields input {
+  border-bottom: 1px solid var(--color-border-subtle) !important;
+}
+.composer-bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-top: 1px solid var(--color-border-subtle);
+  padding: 0.5rem;
+}
+.composer-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.125rem;
+}
+.composer-shell > button {
+  margin-top: 0.375rem;
+}
+.toggle-composer[data-surface="frosted"] .composer-mode,
+.toggle-composer[data-surface="frosted"] .composer-shell {
+  background: color-mix(in srgb, var(--color-bg-elevated) 82%, transparent);
+  backdrop-filter: blur(24px);
+}
+.toggle-composer[data-surface="frosted"] .composer-fields,
+.toggle-composer[data-surface="frosted"] .composer-writing {
+  background: color-mix(in srgb, var(--color-bg-base) 55%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .composer-mode[data-pointer="true"] .composer-mode-indicator {
+    transition: none;
+  }
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .toggle-composer[data-surface="frosted"] .composer-mode,
+  .toggle-composer[data-surface="frosted"] .composer-shell {
+    background: var(--color-bg-elevated);
+  }
+}

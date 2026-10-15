@@ -180,3 +180,5 @@ Inspired by [shawn.’s text toolbar concept](https://x.com/zzzzshawn/status/211
 Inspired by [rico’s navigation concept](https://x.com/_heyrico/status/2110408550845702320), `/canvas-toolbar` adds a floating toolbar, zoom menu, mode control, add menu and canvas block. `/canvas-studio` demonstrates pan/zoom, local note/task/link editing, grid arrangement, undo and a labeled local suggestion. It reuses Oreo controls, menus, icon adapters and empty-state patterns.
 
 [Visual and interaction review](docs/reviews/rico-20261015/REVIEW.md).
+
+- **Toggle Composer / Composer Studio** — Quick and Long post modes, solid/frosted surfaces, selection formatting, live preview and session drafts. [Reference](https://x.com/gregmwashington/status/2110188748994675112).
