@@ -1,4 +1,7 @@
 import {
+  Hand,
+  Columns3,
+  Info,
   AlignCenter,
   AlignRight,
   Bold,
@@ -85,6 +88,10 @@ import type { IconName } from "./names";
 
 /** Lucide's answer for every name in the Oreo vocabulary. */
 export const lucideGlyphs: Record<IconName, IconGlyph> = {
+  "hand": Hand,
+  "columns": Columns3,
+  "info": Info,
+
   "align-center": AlignCenter,
   "align-right": AlignRight,
   "text-bold": Bold,

@@ -1,0 +1,356 @@
+{
+  "baseline": "0c2141eed6618a46eb9aa41ba7e316eac7c5e293",
+  "implementation": "c769f2addbc812995c643b82c2ab37e6256dfbed",
+  "environment": "Chrome/macOS, Playwriter 39, localhost:5207, English, local sample",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      900,
+      1000
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "files": [
+    {
+      "file": "after-board-limit.png",
+      "sha256": "5676cf4046cc45720f387de0c2d233fdf50fe1dfeeaca2ac3d41c6a8ca2f2616",
+      "bytes": 82807,
+      "capturedOrLoggedAt": "2026-10-15T05:15:46.922009+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "historical iteration (see REVIEW)"
+    },
+    {
+      "file": "after-drag-mode.png",
+      "sha256": "51ff4c5d568ba831921a89be460f437301e7e39ebad632cd1ffc6c7b96c187d4",
+      "bytes": 109233,
+      "capturedOrLoggedAt": "2026-10-15T05:14:51.093999+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "historical iteration (see REVIEW)"
+    },
+    {
+      "file": "after-empty.png",
+      "sha256": "93c5a1756a6eac3d996f1dc6c0f839d129cc731b1d85dabf68ebe98ce351e419",
+      "bytes": 55270,
+      "capturedOrLoggedAt": "2026-10-15T05:15:45.125101+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "historical iteration (see REVIEW)"
+    },
+    {
+      "file": "after-initial-wide.png",
+      "sha256": "131d6e5d90475e1fb324948f749494b2357087348ed0cc808a7e45be22eebc18",
+      "bytes": 125579,
+      "capturedOrLoggedAt": "2026-10-15T05:14:07.071282+00:00",
+      "pixels": [
+        1440,
+        1214
+      ],
+      "status": "historical iteration (see REVIEW)"
+    },
+    {
+      "file": "after-link-error.png",
+      "sha256": "0ed8bd91eed8c9d2074f965be3d88eb3247b55e2408faa0a781383ea57911cce",
+      "bytes": 94320,
+      "capturedOrLoggedAt": "2026-10-15T05:14:52.993565+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "historical iteration (see REVIEW)"
+    },
+    {
+      "file": "after-local-suggestion.png",
+      "sha256": "3a0272ecafa3125ca7eef087740ca623ff7966cf0bb9ac23b726441482ed9258",
+      "bytes": 83101,
+      "capturedOrLoggedAt": "2026-10-15T05:14:53.597613+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "historical iteration (see REVIEW)"
+    },
+    {
+      "file": "after-organized.png",
+      "sha256": "6b5c61cc19fb897912e235dd4da1692da80333ac09d4bf478934a7e9d0f02cd3",
+      "bytes": 106055,
+      "capturedOrLoggedAt": "2026-10-15T05:14:51.574580+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "historical iteration (see REVIEW)"
+    },
+    {
+      "file": "after-title-error.png",
+      "sha256": "a1820f25aa29e4426eab825bf21669831cd4945e8569a1a9f7c84c913a995215",
+      "bytes": 84639,
+      "capturedOrLoggedAt": "2026-10-15T05:14:51.951989+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "historical iteration (see REVIEW)"
+    },
+    {
+      "file": "after-zoom-menu.png",
+      "sha256": "bc97750359597b7d21da4e222138646dfd33ac5f6a11c50d94cb886e8b608be1",
+      "bytes": 115185,
+      "capturedOrLoggedAt": "2026-10-15T05:14:50.750319+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "historical iteration (see REVIEW)"
+    },
+    {
+      "file": "before-entry.png",
+      "sha256": "3b01b61a348e01a8411113b1df3ecaaa00cb7b3bbee856b519203f98ef3075b9",
+      "bytes": 86739,
+      "capturedOrLoggedAt": "2026-10-15T05:09:46.240551+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "baseline"
+    },
+    {
+      "file": "before-toolbar-peer.png",
+      "sha256": "cbb100d8827aea2674caab8de1fe5858b02e22637210a6823cc603030cde0e78",
+      "bytes": 118629,
+      "capturedOrLoggedAt": "2026-10-15T05:09:56.439484+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "baseline"
+    },
+    {
+      "file": "build.log",
+      "sha256": "d2d70e5fcf6bd455955264b5613ca363fdfb804b9a614e752952f144ede4ce12",
+      "bytes": 31170,
+      "capturedOrLoggedAt": "2026-10-15T05:21:01.597107+00:00",
+      "status": "retained evidence"
+    },
+    {
+      "file": "docs-checks.log",
+      "sha256": "6a87d0fa699641c034561dfab6e188b7478f76b93aae4623d7872ed8a5b6114d",
+      "bytes": 378,
+      "capturedOrLoggedAt": "2026-10-15T05:21:01.595500+00:00",
+      "status": "retained evidence"
+    },
+    {
+      "file": "edge-checks.log",
+      "sha256": "3c018d6f3cfd3fbdd731e586d3ddc7739c1fcfe72d3525debe218c340ac3b559",
+      "bytes": 1134,
+      "capturedOrLoggedAt": "2026-10-15T05:21:01.594174+00:00",
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-dark-menu.png",
+      "sha256": "3158341215914e9aec982f79dd333857e12cc11db24b3492df71e729a89bfd00",
+      "bytes": 121557,
+      "capturedOrLoggedAt": "2026-10-15T05:16:43.817402+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-dark-mobile.png",
+      "sha256": "31f5a709db55cea1eb6a8a4e4d95f29b58f2c17dad5d85671587af11fbfb36af",
+      "bytes": 74002,
+      "capturedOrLoggedAt": "2026-10-15T05:16:44.188517+00:00",
+      "pixels": [
+        390,
+        1320
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-dark-tablet.png",
+      "sha256": "57d106eefe6e6f5543a73079824b36992bac001e990b203f04cbd94b55fad57a",
+      "bytes": 106843,
+      "capturedOrLoggedAt": "2026-10-15T05:16:44.019954+00:00",
+      "pixels": [
+        900,
+        1111
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-dark-wide.png",
+      "sha256": "35bf8aee46f440602e0acaad6136d21c9f794a53031bd2a0ae91c326fd5847b8",
+      "bytes": 126711,
+      "capturedOrLoggedAt": "2026-10-15T05:16:43.646549+00:00",
+      "pixels": [
+        1440,
+        1215
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-delivery-wide.png",
+      "sha256": "b2914eff0c7c1f9bb5c134f89f738f6fb762bb7db26aaf3339b4087c04e1be23",
+      "bytes": 125622,
+      "capturedOrLoggedAt": "2026-10-15T05:19:17.819409+00:00",
+      "pixels": [
+        1440,
+        1215
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-documentation.png",
+      "sha256": "d9d80dfb10bdc42411781b80d30dcde1953b556cadf6f513810da0d3df9010d0",
+      "bytes": 287973,
+      "capturedOrLoggedAt": "2026-10-15T05:18:48.857392+00:00",
+      "pixels": [
+        1440,
+        2332
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-light-mobile.png",
+      "sha256": "a558b8edb2dcd7dde1d3806c4ee607320b0afa07b9eb5059f2e1afe18329ce96",
+      "bytes": 72630,
+      "capturedOrLoggedAt": "2026-10-15T05:18:21.360883+00:00",
+      "pixels": [
+        390,
+        1320
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-light-wide.png",
+      "sha256": "28c827c91e8d666f852d9f9d0d5cd36b40714c297870c0b22ed9dcdbb7956796",
+      "bytes": 125919,
+      "capturedOrLoggedAt": "2026-10-15T05:15:51.732254+00:00",
+      "pixels": [
+        1440,
+        1214
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-mobile-add-menu.png",
+      "sha256": "d9d5650a47ced7bb0865791fb6a3eeb0db2bec323de256c019cbaf67e54c6897",
+      "bytes": 52474,
+      "capturedOrLoggedAt": "2026-10-15T05:16:44.402745+00:00",
+      "pixels": [
+        390,
+        844
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-mobile-editor.png",
+      "sha256": "7f2ad247f25f92a2f3833aff6cbb58e80a3e1e3f70ee5519b5ce6e4cb35fc1e1",
+      "bytes": 41550,
+      "capturedOrLoggedAt": "2026-10-15T05:16:44.590601+00:00",
+      "pixels": [
+        390,
+        844
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-mobile-long-title.png",
+      "sha256": "b5b757163ada8cfbec536bdf943e14902d35546305e582ee585b4135ef42a850",
+      "bytes": 76792,
+      "capturedOrLoggedAt": "2026-10-15T05:16:44.846977+00:00",
+      "pixels": [
+        390,
+        1350
+      ],
+      "status": "historical iteration (see REVIEW)"
+    },
+    {
+      "file": "final-new-block-spacing.png",
+      "sha256": "2640bceacd2ce81c8980e983baf6a13c50b496c65b6867e79d5978be4092bc36",
+      "bytes": 114562,
+      "capturedOrLoggedAt": "2026-10-15T05:19:12.768730+00:00",
+      "pixels": [
+        1440,
+        1215
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-playground-dark-lucide.png",
+      "sha256": "948c5ae2f72f8fa2ea1d515cc1dd8f0f07362a0550ab1dfce5eefbda0d1d7c84",
+      "bytes": 93022,
+      "capturedOrLoggedAt": "2026-10-15T05:18:44.896008+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-playground-disabled.png",
+      "sha256": "b5ef6ff97ea243c2ee9e3b4eb65bb2f2e67362eb316fc2f92fbca0904300a8b4",
+      "bytes": 89141,
+      "capturedOrLoggedAt": "2026-10-15T05:18:45.162194+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-reviewed-wide.png",
+      "sha256": "61d5bf04f0b461abd4981166668a7873effef4bdbbbdccb16c644640d8f4d5a2",
+      "bytes": 125623,
+      "capturedOrLoggedAt": "2026-10-15T05:16:43.455571+00:00",
+      "pixels": [
+        1440,
+        1215
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "interaction-checks.log",
+      "sha256": "7c1a547e7bd4f7015f892182fa13d2cb7843f2937a6801215fcb49674ddd5ab3",
+      "bytes": 1331,
+      "capturedOrLoggedAt": "2026-10-15T05:21:01.593536+00:00",
+      "status": "retained evidence"
+    },
+    {
+      "file": "placement-and-recording-checks.log",
+      "sha256": "bf4fd9ac106fed3cfe88d172e5369ac0369b3d0b0dd3f191d3eebdadbc2b29b7",
+      "bytes": 866,
+      "capturedOrLoggedAt": "2026-10-15T05:21:01.596116+00:00",
+      "status": "retained evidence"
+    },
+    {
+      "file": "reference.jpg",
+      "sha256": "2619b14f0d0aaa48b9ec1db9538d062faf269c64ec46031f5bfdb2a66ac0d57e",
+      "bytes": 188964,
+      "capturedOrLoggedAt": "2026-10-15T05:08:52.113889+00:00",
+      "status": "reference"
+    },
+    {
+      "file": "responsive-checks.log",
+      "sha256": "8aba95ddbf88a2f527f826394d39b896d6e51918cb11df5e240cf03867c8133c",
+      "bytes": 1820,
+      "capturedOrLoggedAt": "2026-10-15T05:21:01.594718+00:00",
+      "status": "retained evidence"
+    }
+  ]
+}

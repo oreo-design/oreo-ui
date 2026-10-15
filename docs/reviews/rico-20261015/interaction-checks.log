@@ -1,0 +1,48 @@
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+Console output:
+[log] entry
+[log] zoom menu
+[log] zoom 150
+[log] Element: div.canvas-world
+Box: x=11 y=266 w=0 h=0
+Children: 5  Text length: 380
+Scroll Y: size=542 client=0 overflowing=true top=0
+Scroll X: size=946 client=0 overflowing=true left=0
+Styles: transform=matrix(1.5, 0, 0, 1.5, -90.5, -118.5)
+[log] fit
+[log] pan
+[log] pointer pan
+[log] Element: div.canvas-world
+Box: x=381 y=469 w=0 h=0
+Children: 5  Text length: 380
+Scroll Y: size=542 client=0 overflowing=true top=0
+Scroll X: size=946 client=0 overflowing=true left=0
+Styles: transform=matrix(0.95, 0, 0, 0.95, 279.65, 85.55)
+Visibility: pointer-events=none
+[log] home fit
+[log] keyboard pan
+[log] keyboard cursor
+[log] organize
+[log] undo organize
+[log] add menu
+[log] new note
+[log] empty validation
+[log] note saved
+[log] edit from accessible list
+[log] remove
+[log] undo remove
+[log] add link
+[log] link dialog
+[log] unsafe link
+[log] valid link
+[log] edit link
+[log] escape
+[log] task
+[log] completed
+[log] local assistant
+[log] suggestion
+[log] information
+[log] dismiss
+[log] reset
+[log] undo reset
+[log] PASS zoom, pointer/keyboard pan, modes, organize/undo, add/edit/delete/undo, validation, safe link, task status, local suggestion, dialog focus and reversible reset.

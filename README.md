@@ -174,3 +174,9 @@ Inspired by [Noman’s multi-select dropdown](https://x.com/noman_huge/status/21
 Inspired by [shawn.’s text toolbar concept](https://x.com/zzzzshawn/status/2110512054851526682), `/text-toolbar` adds `TextToolbar`, `ColorOrb`, `FontSizeStepper`, `TextAlignmentControl` and `FontFamilyPicker`, plus a typed format model and style mapper. The original spectrum illustration opens an accessible named-color menu; all controls reuse Oreo primitives and both icon libraries.
 
 `/writing-studio` demonstrates selectable text blocks, local editing and formatting, undo/redo, reversible reset, validated links, plain-text mentions and text transforms. It formats whole blocks, not arbitrary rich-text selections. Copy exports plain text; no document is uploaded, and reload resets the draft. See the [component map](src/patterns/writing-studio/README.md) and [visual review](docs/reviews/shawn-20261015/REVIEW.md).
+
+### Canvas Toolbar & Canvas Studio
+
+Inspired by [rico’s navigation concept](https://x.com/_heyrico/status/2110408550845702320), `/canvas-toolbar` adds a floating toolbar, zoom menu, mode control, add menu and canvas block. `/canvas-studio` demonstrates pan/zoom, local note/task/link editing, grid arrangement, undo and a labeled local suggestion. It reuses Oreo controls, menus, icon adapters and empty-state patterns.
+
+[Visual and interaction review](docs/reviews/rico-20261015/REVIEW.md).

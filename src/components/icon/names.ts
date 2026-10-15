@@ -11,6 +11,9 @@
  * every library has an answer for the new name.
  */
 export const ICON_NAMES = [
+  "hand",
+  "columns",
+  "info",
   "align-center",
   "align-right",
   "text-bold",

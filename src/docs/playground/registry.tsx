@@ -1,3 +1,4 @@
+import { CanvasToolbar, type CanvasMode } from "@/components/canvas-toolbar";
 import { TextToolbar, DEFAULT_TEXT_FORMAT, type TextColor, type TextFont, type TextAlignment } from "@/components/text-toolbar";
 import { MultiSelectMenu } from "@/components/multi-select-menu";
 import { meetingCategories } from "@/patterns/meeting-planner/data";
@@ -56,6 +57,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "canvas-toolbar": { CanvasToolbar },
   "text-toolbar": { TextToolbar },
   "multi-select-menu": { MultiSelectMenu },
   automation: { AgentResultCard },
@@ -90,6 +92,7 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "canvas-toolbar": define("Canvas Toolbar", { zoom: number(95,10,200,5), mode: select(["pan","select"],"select"), disabled: toggle() }, (v,set) => <CanvasToolbar zoom={v.zoom} onZoomChange={zoom=>set("zoom",zoom)} mode={v.mode as CanvasMode} onModeChange={mode=>set("mode",mode)} disabled={v.disabled} onFit={()=>set("zoom",95)} />),
   "text-toolbar": define("Text Toolbar", { bold: toggle(), italic: toggle(), underline: toggle(), strikethrough: toggle(), code: toggle(), highlight: toggle(), color: select(["ink","mint","pink","blue","purple","orange","brown"],"ink"), font: select(["sans","serif","hand","mono"],"hand"), size: number(22,12,72,1), align: select(["left","center","right"],"center"), disabled: toggle() }, (v,set) => <TextToolbar disabled={v.disabled} value={{...DEFAULT_TEXT_FORMAT,...v,color:v.color as TextColor,font:v.font as TextFont,align:v.align as TextAlignment}} onValueChange={value=>{for(const key of Object.keys(DEFAULT_TEXT_FORMAT) as (keyof typeof DEFAULT_TEXT_FORMAT)[]) set(key,value[key]);}} />),
   "meeting-components": { ...define("Multi-select Menu", { label: text("Event category"), heading: text("Meeting category"), disabled: toggle(), empty: toggle(), selected: text("review,brainstorm,interview") }, (v,set) => <div className="w-full max-w-sm rounded-card-medium border border-border-subtle bg-bg-base p-3"><MultiSelectMenu label={v.label} heading={v.heading} disabled={v.disabled} options={v.empty ? [] : meetingCategories} value={v.selected.split(",").map(id=>id.trim()).filter(Boolean)} onValueChange={value=>set("selected",value.join(","))} /></div>), source: "multi-select-menu" },
   "automation-components": { ...define("Agent Result", { title: text("Selected account and ad sets"), status: select(["ready", "running", "error"], "ready"), open: toggle(false), details: text("Oreo Store · Weekend essentials · $200 daily budget") }, (v, set) => <div className="w-full max-w-xl"><AgentResultCard title={v.title} status={v.status} open={v.open} onOpenChange={open => set("open", open)}>{v.details}</AgentResultCard></div>), source: "automation" },
