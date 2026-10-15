@@ -9,6 +9,7 @@ import {
   MenuPopup,
   MenuItem,
   MenuSwitchItem,
+  MenuCheckboxItem,
   MenuSeparator,
   MenuSubmenu,
   MenuSubmenuTrigger,
@@ -29,8 +30,9 @@ const TOC: TocItem[] = [
 const PROPS: PropRow[] = [
   { prop: "Menu", type: "open · defaultOpen · onOpenChange · modal", desc: "Root. Pairs a MenuTrigger with a MenuPopup." },
   { prop: "MenuTrigger", type: "render", desc: "The opening element — pass your own button via the render prop." },
-  { prop: "MenuPopup", type: 'side · align · sideOffset', def: '"bottom" · "start" · 4', desc: "Portal + positioner + the styled surface." },
+  { prop: "MenuPopup", type: 'side · align · sideOffset · container · collisionAvoidance', def: '"bottom" · "start" · 4', desc: "Portal + positioner + the styled surface. Optional container preserves nested theme tokens; collisionAvoidance enables perpendicular fallback." },
   { prop: "MenuItem", type: "icon · selected · shortcut · trailing · disabled", desc: "One row. selected shows the trailing check; shortcut renders key caps." },
+  { prop: "MenuCheckboxItem", type: "checked · defaultChecked · onCheckedChange · icon · disabled", desc: "Leading checkbox for independent selections. Stays open after toggling with Base UI keyboard navigation." },
   { prop: "MenuSwitchItem", type: "checked · defaultChecked · onCheckedChange", desc: "Row with a trailing toggle; clicking flips it without closing." },
   { prop: "MenuSubmenu", type: "MenuSubmenuTrigger + MenuPopup", desc: "Nested menu — the trigger row always shows the chevron." },
   { prop: "MenuSeparator", type: "—", desc: "Hairline between row groups." },
@@ -94,6 +96,7 @@ const ROWS_CODE = `<MenuPopup>
   <MenuSwitchItem icon={<Icon name="search" />} defaultChecked>
     Web search
   </MenuSwitchItem>
+  <MenuCheckboxItem icon={<Icon name="star" />} defaultChecked>Project review</MenuCheckboxItem>
   <MenuSeparator />
   <MenuItem shortcut={["cmd", "shift", "Q"]}>Log out</MenuItem>
   <MenuItem disabled>API</MenuItem>
@@ -172,6 +175,7 @@ export function MenuDocs({ nav }: { nav: DocsNav }) {
                     <MenuSwitchItem icon={<Icon name="search" />} defaultChecked>
                       Web search
                     </MenuSwitchItem>
+                <MenuCheckboxItem icon={<Icon name="star" />} defaultChecked>Project review</MenuCheckboxItem>
                     <MenuSeparator />
                     <MenuItem shortcut={["cmd", "T"]}>New Team</MenuItem>
                     <MenuItem shortcut={["cmd", "shift", "Q"]}>Log out</MenuItem>

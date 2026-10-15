@@ -4,6 +4,7 @@ export {
   MenuPopup,
   MenuItem,
   MenuSwitchItem,
+  MenuCheckboxItem,
   MenuSeparator,
   MenuSubmenu,
   MenuSubmenuTrigger,
@@ -12,6 +13,7 @@ export {
   type MenuPopupProps,
   type MenuItemProps,
   type MenuSwitchItemProps,
+  type MenuCheckboxItemProps,
   type MenuSubmenuProps,
   type MenuSubmenuTriggerProps,
 } from "./menu";

@@ -40,6 +40,9 @@ export function MenuTrigger(props: MenuTriggerProps) {
 }
 
 export type MenuPopupProps = {
+  collisionAvoidance?: React.ComponentPropsWithoutRef<typeof BaseMenu.Positioner>["collisionAvoidance"];
+  /** Optional local portal host to preserve nested theme tokens. */
+  container?: React.ComponentPropsWithoutRef<typeof BaseMenu.Portal>["container"];
   /** Which side of the anchor to open on. */
   side?: "top" | "bottom" | "left" | "right";
   /** Alignment along the anchor. */
@@ -51,10 +54,10 @@ export type MenuPopupProps = {
 };
 
 /** The floating surface: portal + positioner + the styled popup card. */
-export function MenuPopup({ side = "bottom", align = "start", sideOffset = 4, className, children }: MenuPopupProps) {
+export function MenuPopup({ container, collisionAvoidance, side = "bottom", align = "start", sideOffset = 4, className, children }: MenuPopupProps) {
   return (
-    <BaseMenu.Portal>
-      <BaseMenu.Positioner side={side} align={align} sideOffset={sideOffset} className="z-50 outline-none">
+    <BaseMenu.Portal container={container}>
+      <BaseMenu.Positioner collisionAvoidance={collisionAvoidance} positionMethod={container ? "fixed" : "absolute"} side={side} align={align} sideOffset={sideOffset} className="z-50 outline-none">
         <BaseMenu.Popup className={cn(slots.popup(), className)}>{children}</BaseMenu.Popup>
       </BaseMenu.Positioner>
     </BaseMenu.Portal>
@@ -125,6 +128,46 @@ export function MenuSwitchItem({
       {icon != null && <span className={slots.itemIcon()}>{icon}</span>}
       <span className={slots.itemLabel()}>{children}</span>
       <span aria-hidden className="toggle" data-on={isChecked ? "true" : "false"} />
+    </BaseMenu.CheckboxItem>
+  );
+}
+
+export type MenuCheckboxItemProps = MenuSwitchItemProps;
+
+/** Leading checkbox for independent selections. Keyboard behavior belongs to Base UI. */
+export function MenuCheckboxItem({
+  icon,
+  checked,
+  defaultChecked,
+  onCheckedChange,
+  className,
+  children,
+  ...rest
+}: MenuCheckboxItemProps) {
+  const [internal, setInternal] = React.useState(defaultChecked ?? false);
+  const isChecked = checked ?? internal;
+  return (
+    <BaseMenu.CheckboxItem
+      {...rest}
+      checked={isChecked}
+      onCheckedChange={(next) => {
+        setInternal(next);
+        onCheckedChange?.(next);
+      }}
+      closeOnClick={false}
+      className={cn(slots.item(), "gap-3", className)}
+    >
+      <span
+        aria-hidden
+        className={cn(
+          "grid size-4 shrink-0 place-items-center rounded-control-tiny border border-border-default",
+          isChecked && "border-status-success bg-status-success text-bg-base",
+        )}
+      >
+        {isChecked && <Icon name="check" className="size-3" weight="bold" />}
+      </span>
+      {icon != null && <span className={slots.itemIcon()}>{icon}</span>}
+      <span className={slots.itemLabel()}>{children}</span>
     </BaseMenu.CheckboxItem>
   );
 }

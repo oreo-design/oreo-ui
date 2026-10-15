@@ -1,3 +1,5 @@
+import { MeetingComponentsDocs } from "@/pages/MeetingComponentsDocs";
+import { MeetingPlannerPage } from "@/pages/MeetingPlannerPage";
 import { AutomationComponentsDocs } from "@/pages/AutomationComponentsDocs";
 import { AutomationStudioPage } from "@/pages/AutomationStudioPage";
 import { DocumentActivityDocs } from "@/pages/DocumentActivityDocs";
@@ -74,6 +76,8 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "meeting-components": MeetingComponentsDocs,
+  "meeting-planner": MeetingPlannerPage,
   "automation-components": AutomationComponentsDocs,
   "automation-studio": AutomationStudioPage,
   "document-activity": DocumentActivityDocs,

@@ -162,3 +162,9 @@ Includes an editable playground, generated JSX and API documentation with local 
 ### Subscription
 
 `/subscription-components` contains a live product-card playground, composition examples and the accessible dialog API. `/subscription` is the complete workspace template. Two independently moving decorative planes retain static captions, use Oreo theme tokens, and remain still on touch or reduced motion. The template uses fictional data and creates no account, subscription or payment. Source reference: [Hamza A. / Benji Taylor](https://x.com/HamzaInstantly/status/2110392051074511159).
+
+### Meeting components and planner
+
+Inspired by [Noman’s multi-select dropdown](https://x.com/noman_huge/status/2110294792034996359), `/meeting-components` adds an editable picker playground and documentation for `MultiSelectMenu`, `MeetingCard`, `MeetingResponse`, `RescheduleSuggestions` and `AttendeeCalendars`. The shared `MenuCheckboxItem` extends Oreo’s Base UI menu with a leading checkbox and persistent multi-selection.
+
+`/meeting-planner` composes the components into a responsive calendar template: category management, attendee availability, RSVP, edit and reschedule confirmation, search, delete/undo and light/dark themes. Data is local and resets on reload; availability is illustrative and Join is a service placeholder. Copy `src/components/meeting`, `src/components/multi-select-menu` and their Oreo imports, then `src/patterns/meeting-planner` for the template. No new dependencies. See the [visual review](docs/reviews/noman-20261015/REVIEW.md).
