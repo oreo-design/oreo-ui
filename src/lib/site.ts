@@ -20,6 +20,8 @@ export type PageMeta = { title: string; description: string };
 export const PAGE_META = {
   "automation-components": { title: "Automation Components", description: "Composable agent workspace navigation, panels, run summaries, result disclosures and Build/Canvas workflow views." },
   "automation-studio": { title: "Automation Studio", description: "A three-panel agent workspace template with an inspectable automation draft, local demo runs and responsive layouts." },
+  "document-activity": { title: "Document Activity", description: "Composable document timelines, attachments, access approvals, member activity and storage insights." },
+  "document-workspace": { title: "Document Workspace", description: "A property document template with scoped search, activity filters, file previews and local approval flows." },
   "inline-confirm": { title: "Inline Confirm", description: "An in-place destructive action that unfolds into Cancel and Confirm, with asynchronous progress, success and retry." },
   "inline-quick-menu": { title: "Inline Quick Menu", description: "A capsule trigger with an anchored horizontal choice menu, instant keyboard navigation and theme-aware styling." },
   "project-chat": { title: "Project Chat", description: "Composable collaborator presence, project channels, audio clips, messages and a resilient composer." },
