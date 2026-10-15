@@ -16,7 +16,7 @@ Original map, truck and camera SVG illustrations replace reference photos/map ti
 
 - Baseline: `3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6` (fresh `origin/main`). Primary checkout's unrelated WIP preserved.
 - Task branch: `codex/operations-20261015`, isolated sibling worktree.
-- Final reviewed revision and merge result: recorded in PR delivery readback; implementation snapshots precede documentation-only finalization.
+- Component/template implementation revision: `4e7c58dbadb906f2661e4b796db8b26a4b9d64cb`. Final head adds Changelog and review metadata; exact head and merged revision are in the delivery readback.
 - Local preview: `http://localhost:5234`; Chromium via Playwriter session 65; English; local fixtures; default dark or explicitly toggled light.
 - Desktop 1440×1000, medium 900×900, mobile 390×844; screenshot scale CSS; full-page captures can exceed viewport height. Reference images captured in a separate 2400×1524 browser tab.
 - The folder retains its October 15 intake date; delivery occurs October 16 in Asia/Shanghai.
@@ -74,10 +74,10 @@ No new animation or timing transition is added. Frequent monitoring, text edits 
 
 ## Verification and limits
 
-- `npm run build`: passes TypeScript and Vite production build; existing large-chunk warning remains (`build.log`).
+- `npm run build`: passes TypeScript and Vite production build; existing large-chunk warning remains (`build-final.log`; earlier build retained in `build.log`).
 - `domain-checks.txt`: defaults, malformed/non-object JSON, missing fields, numeric range/integer boundaries, completed/idle route semantics, timeline current-step bounds and unique incident IDs passed.
 - Browser interaction observations: `browser-observations.jsonl` and `docs-observations.jsonl`. Initial fleet logs include stale Vite connection errors while site registration restarted the server. Subsequent fresh route loads and interactions were clean; those earlier logs are preserved rather than erased. One getByLabel exact lookup timed out; confirmed accessible combobox names and used role-based locators successfully.
 - `pipeline-interaction.mp4`: 1440×1000, 15.64 seconds, real browser config open → invalid save → cancel → valid checks. 185 original screencast frames retained in `pipeline-interaction-frames.json.xz`; encoded at original timestamps without speeding up. Native extension recording has an activeTab permission limitation in this session; capture used Playwriter's local CDP session. No separate browser runner or remote service. Decoded original frame and dimensions inspected.
 - Evidence covers local fixture UI, not real accounts, geographic correctness, backend operations, notifications, camera feeds or production deployment. Source images contain no motion; no matching pre-change template interaction existed. Mobile missing-route baseline and a full theme×viewport×state cross-product are explicit coverage gaps; they do not block the authorized merge.
 
-Delivery: prepared for exact-head PR review and merge to main; final remote status is read back after merging.
+Delivery: [PR #60](https://github.com/oreo-design/oreo-ui/pull/60), authorized main integration after focused validation. Exact source head is matched at merge; final remote result is read back afterward.
