@@ -22,6 +22,9 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Command Search", page: "command-search" },
+      { label: "Workspace Metric", page: "workspace-metric" },
+      { label: "Deployment Row", page: "deployment-row" },
       { label: "Invoice Status Badge", page: "invoice-status-badge" },
       { label: "Invoice Table", page: "invoice-table" },
       { label: "Invoice Totals", page: "invoice-totals" },
@@ -126,6 +129,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      { label: "Command Dashboard", page: "command-dashboard" },
       { label: "Invoice Workspace", page: "invoice-workspace" },
       { label: "Analytics Assistant", page: "analytics-assistant" },
       { label: "Agent Hub", page: "agent-hub" },

@@ -218,3 +218,7 @@ Browse selected main-branch updates at `/changelog`, with date anchors, search/t
 ### Invoice Workspace
 
 `InvoiceStatusBadge`, `InvoiceTable` and `InvoiceTotals` compose `/invoice-workspace`: status-sorted list, compact list, board and overview; search, multi-status filtering, creation/editing, mark-as-paid, draft duplication, confirmed deletion/undo and CSV export. EUR amounts are stored in cents; overdue status uses an explicit sample date. Shared Tag, Avatar, Menu, Button and Base UI Dialog retain Oreo conventions. Docs/playgrounds: `/invoice-status-badge`, `/invoice-table`, `/invoice-totals`. Local fixture only; no invoices, emails or payments are sent.
+
+### Command Dashboard
+
+Inspired by [Efferd’s command search](https://x.com/efferdco/status/2110449789066490250), `/command-search`, `/workspace-metric` and `/deployment-row` expose three reusable components. `/command-dashboard` composes a complete local developer workspace: grouped F / Cmd+K search, keyboard navigation, seven pages, project drafts, failed-build recovery and settings. It reuses Base UI Combobox, Oreo Shortcut, Icon, Tag, Avatar and empty states. All data is illustrative; no deployments or external connections occur, and changes reset on reload.

@@ -1,0 +1,217 @@
+.oreo-command-search {
+  position: relative;
+  width: 13rem;
+  max-width: 100%;
+  color: var(--color-text-primary);
+}
+.command-anchor {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control-large);
+  background: var(--color-bg-elevated);
+  padding: 0 0.75rem;
+}
+.command-anchor > svg {
+  flex: none;
+  color: var(--color-text-tertiary);
+}
+.command-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.875rem;
+}
+.oreo-command-search .command-trigger:focus-visible {
+  outline: none;
+}
+.command-input {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 0.875rem;
+}
+.command-input::placeholder {
+  color: var(--color-text-tertiary);
+}
+.command-anchor:focus-within {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}
+.command-escape {
+  cursor: pointer;
+  flex: none;
+}
+.command-positioner {
+  z-index: 60;
+  outline: none;
+}
+.command-popup {
+  width: 23rem;
+  max-width: min(var(--available-width), calc(100vw - 1.5rem));
+  max-height: min(var(--available-height), 32rem);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium);
+  box-shadow: var(--shadow-default);
+  color: var(--color-text-primary);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+.command-list {
+  overflow: auto;
+  overscroll-behavior: contain;
+  min-height: 0;
+  padding: 0.5rem;
+}
+.command-group-label {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  padding: 0.75rem 0.625rem 0.375rem;
+}
+.command-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  font-size: 0.875rem;
+  outline: none;
+}
+.command-option > span:first-child {
+  display: flex;
+  color: var(--color-text-secondary);
+}
+.command-option[data-highlighted] {
+  background: var(--color-state-press);
+}
+.command-option[data-disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.command-unavailable {
+  margin-left: auto;
+  font-size: 0.625rem;
+}
+.command-hint {
+  display: flex;
+  gap: 1rem;
+  padding: 0.625rem 1rem;
+  border-top: 1px solid var(--color-border-subtle);
+  font-size: 0.625rem;
+  color: var(--color-text-tertiary);
+  flex: none;
+  background: var(--color-bg-surface);
+}
+.command-hint > span {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.workspace-metric {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  padding: 1.25rem;
+  background: var(--color-bg-surface);
+  min-width: 0;
+}
+.workspace-metric > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+}
+.workspace-metric strong {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.0625rem;
+  font-variant-numeric: tabular-nums;
+}
+.workspace-metric p {
+  color: var(--color-text-tertiary);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+.deployment-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-subtle);
+  cursor: pointer;
+}
+.deployment-row:last-child {
+  border: 0;
+}
+.deployment-mark {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: none;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  color: var(--color-text-secondary);
+}
+.deployment-name {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 0.375rem;
+}
+.deployment-name strong {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.deployment-name > span,
+.deployment-row time {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+}
+.deployment-row > svg {
+  color: var(--color-text-tertiary);
+  flex: none;
+}
+.deployment-row:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: -2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .deployment-row:hover {
+    background: var(--color-bg-elevated);
+  }
+}
+@media (max-width: 600px) {
+  .deployment-row {
+    gap: 0.625rem;
+    padding: 1rem;
+  }
+  .deployment-row time {
+    display: none;
+  }
+  .command-input {
+    font-size: 1rem;
+  }
+}
+/* Command search and keyboard navigation deliberately have no open/close or selection animation. */

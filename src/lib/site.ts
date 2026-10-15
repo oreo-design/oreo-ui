@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "command-search": { title:"Command Search", description:"Grouped workspace command search with keyboard navigation and real host actions." },
+  "workspace-metric": { title:"Workspace Metric", description:"Quiet metric cards with explicit values, units and supporting context." },
+  "deployment-row": { title:"Deployment Row", description:"Actionable project build records with clear ready and failed states." },
+  "command-dashboard": { title:"Command Dashboard", description:"A developer workspace with working command search, local project drafts and build recovery." },
   "invoice-status-badge": { title:"Invoice Status Badge", description:"Payment state labels using the shared Oreo Tag palette." },
   "invoice-table": { title:"Invoice Table", description:"Sortable invoice rows with customer avatars and accessible actions." },
   "invoice-totals": { title:"Invoice Totals", description:"Outstanding, overdue, paid and draft totals from one invoice dataset." },

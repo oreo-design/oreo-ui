@@ -1,3 +1,5 @@
+import { CommandSearch, WorkspaceMetric, DeploymentRow } from "@/components/command-search";
+import { DEPLOYMENTS } from "@/patterns/command-dashboard/data";
 import { InvoiceStatusBadge, InvoiceTable, InvoiceTotals, INVOICE_STATUSES, type InvoiceSortKey } from "@/components/invoice";
 import { INITIAL_INVOICES, INVOICE_TODAY } from "@/patterns/invoice-workspace/data";
 import { AskAnalytics, InsightSources, type AnalyticsRequest } from "@/components/ask-analytics";
@@ -90,6 +92,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "command-search": { CommandSearch, WorkspaceMetric, DeploymentRow },
   "invoice": { InvoiceStatusBadge, InvoiceTable, InvoiceTotals },
   "ask-analytics": { AskAnalytics, InsightSources },
   "agent-hub": { HubSearchHero, AgentCategoryGrid, IntegrationTile },
@@ -144,6 +147,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "command-search": { ...define("Command Search", { empty:toggle(false), disabled:toggle(false), selected:text("") }, (v,set)=><div className="w-full max-w-sm"><CommandSearch groups={v.empty?[]:[{label:"Platform",items:[{id:"overview",label:"Overview",icon:"columns"},{id:"deployments",label:"Deployments",keywords:"build release",icon:"plane",disabled:v.disabled}]},{label:"Actions",items:[{id:"theme",label:"Switch theme",icon:"moon"}]}]} onSelect={command=>set("selected",command.label)}/><p className="mt-4 text-xs text-text-secondary" role="status">{v.selected?`Selected: ${v.selected}`:"Choose an action to see the host callback. Global shortcuts are off in this preview."}</p></div>), source:"command-search" },
+  "workspace-metric": { ...define("Workspace Metric", {label:text("Requests"),value:text("181.2k"),detail:text("Across the last 7 days")},v=><div className="w-full max-w-sm"><WorkspaceMetric {...v} icon={<Icon name="chart-bar"/>}/></div>),source:"command-search" },
+  "deployment-row": { ...define("Deployment Row", {status:select(["ready","failed"],"ready"),opened:toggle(false)},(v,set)=><div className="w-full"><DeploymentRow deployment={{...DEPLOYMENTS[0],status:v.status}} onOpen={()=>set("opened",true)}/><p className="mt-4 text-xs text-text-secondary" role="status">{v.opened?"Host callback: open dpl-1042":"Activate the row to emit an open callback."}</p></div>),source:"command-search" },
   "invoice-status-badge": { ...define("Invoice Status Badge",{status:select(INVOICE_STATUSES,"pending")},v=><InvoiceStatusBadge status={v.status}/>),source:"invoice" },
   "invoice-table": { ...define("Invoice Table",{compact:toggle(false),empty:toggle(false),sortKey:select(["dueDate","id","status","description","client","amountCents"],"status"),direction:select(["asc","desc"],"asc"),action:text("")},(v,set)=><div className="w-full"><InvoiceTable invoices={v.empty?[]:INITIAL_INVOICES.slice(0,9)} asOf={INVOICE_TODAY} sort={{key:v.sortKey as InvoiceSortKey,direction:v.direction}} onSortChange={sort=>{set("sortKey",sort.key);set("direction",sort.direction);}} compact={v.compact} onAction={(invoice,action)=>set("action",`${invoice.id}: ${action}`)} onClearFilters={()=>set("empty",false)}/><p className="mt-4 text-xs text-text-secondary" role="status">{v.action?`Host callback: ${v.action}`:"Actions emit callbacks in this isolated preview. Open the template to edit invoices."}</p></div>),source:"invoice" },
   "invoice-totals": { ...define("Invoice Totals",{empty:toggle(false)},v=><div className="w-full"><InvoiceTotals invoices={v.empty?[]:INITIAL_INVOICES} asOf={INVOICE_TODAY}/></div>),source:"invoice" },
