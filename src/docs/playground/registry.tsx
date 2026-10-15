@@ -1,3 +1,5 @@
+import { AgentConnectCard, QuotaUsage, AgentClientPicker } from "@/components/agent-connect";
+import { AGENT_CLIENTS, AGENT_MARKS } from "@/patterns/agent-connections/data";
 import { BalanceChart, AllocationBar, SpendingGauge, PaymentCard } from "@/components/finance";
 import { PERIODS, SAVINGS, SPENDING } from "@/patterns/finance-workspace/data";
 import { PresenceStack, PresenceBadge } from "@/components/presence";
@@ -80,6 +82,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "agent-connect": { AgentConnectCard, QuotaUsage, AgentClientPicker },
   finance: { BalanceChart, AllocationBar, SpendingGauge, PaymentCard },
   presence: { PresenceStack, PresenceBadge },
   "release-entry": { ReleaseEntry }, "upgrade-prompt": { UpgradePrompt },
@@ -129,6 +132,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "agent-connect-card": { ...define("Agent Connect Card", { title:text("Your workspace, in your AI."), description:text("Connect your favorite tools with Oreo MCP."), actionLabel:text("Set up agents") }, v=><div className="w-full max-w-xs"><AgentConnectCard {...v} marks={AGENT_MARKS} onAction={()=>{window.location.href="/agent-connections";}}/></div>), source:"agent-connect" },
+  "quota-usage": { ...define("Quota Usage", { label:text("Automations this month"), used:number(54,0,120000,1), limit:number(3000,0,100000,1) }, v=><QuotaUsage {...v}/>), source:"agent-connect" },
+  "agent-client-picker": { ...define("Agent Client Picker", { value:select(["desktop","editor","terminal","custom"],"desktop"), empty:toggle(false), disableCustom:toggle(false) }, (v,set)=><div className="w-full max-w-xl"><AgentClientPicker clients={v.empty?[]:AGENT_CLIENTS.map(c=>({...c,disabled:c.id==="custom"&&v.disableCustom}))} value={v.value} onValueChange={value=>{if(value==="desktop"||value==="editor"||value==="terminal"||value==="custom") set("value",value);}}/></div>), source:"agent-connect" },
   "balance-chart": { ...define("Balance Chart", { period:select(["week","month"],"month"), empty:toggle(false) }, v=><div className="w-full max-w-3xl"><BalanceChart points={v.empty?[]:PERIODS[v.period].points}/></div>), source:"finance" },
   "allocation-bar": { ...define("Allocation Bar", { count:number(4,0,4,1) }, v=><div className="w-full max-w-md"><AllocationBar items={SAVINGS.slice(0,v.count)}/></div>), source:"finance" },
   "spending-gauge": { ...define("Spending Gauge", { limit:number(2000,0,5000,100), empty:toggle(false) }, v=><div className="w-full max-w-sm"><SpendingGauge items={v.empty?[]:SPENDING} limit={v.limit}/></div>), source:"finance" },
@@ -142,7 +148,7 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
   "email-signature": define("Email Signature", { name:text(SAMPLE_SIGNATURE.name), role:text(SAMPLE_SIGNATURE.role), email:text(SAMPLE_SIGNATURE.email), phone:text(""), website:text("example.com"), company:text("Oreo Studio") }, v=><div className="w-full max-w-md rounded-card-medium border border-border-subtle bg-bg-elevated p-6"><EmailSignature data={v}/></div>),
   "project-summary": define("Project Summary", { title:text("Website redesign"), description:text("A clearer story, from first visit to first customer."), completed:number(3,0,18,1), total:number(12,0,18,1), status:select(["On track","At risk","Planning"],"On track"), due:text("Oct 30") }, v=><div className="w-full max-w-md"><ProjectSummary {...v} people={[{name:"Alex Morgan",color:"purple"},{name:"Sam Chen",color:"pink"},{name:"Jules Carter",color:"blue"},{name:"Maya Wilson",color:"mint"}]}/></div>),
   "task-row": define("Task Row", { title:text("Finalize navigation"), status:select(["backlog","todo","progress","review","done"],"progress"), priority:select(["Low","Medium","High"],"High"), overdue:toggle(), disabled:toggle() }, (v,set)=><div className="w-full rounded-card-medium border border-border-subtle"><TaskRow {...v} id="WEB-102" project="Website redesign" due="Today" person={{name:"Alex Morgan",color:"purple"}} onOpen={()=>window.location.assign("/project-workspace")} onComplete={done=>set("status",done?"done":"todo")}/></div>),
-  "tree-stepper": define("Tree Stepper", { value: select(getTreeSteps(REVIEW_TREE).map(s=>s.node.id),"suspicious"), disabled: toggle(), empty: toggle(), attention: toggle() }, (v,set)=><div className="w-full max-w-sm rounded-card-medium border border-border-subtle bg-bg-base p-4"><TreeStepper nodes={v.empty?[]:REVIEW_TREE} value={v.value} onValueChange={value=>set("value",value)} completed={["devices","ownership","overview"]} attention={v.attention?["overview"]:[]} disabled={v.disabled}/></div>),
+  "tree-stepper": define("Tree Stepper", { value: select(getTreeSteps(REVIEW_TREE).map(s=>s.node.id),"suspicious"), disabled: toggle(), empty: toggle(), attention: toggle() }, (v,set)=><div className="w-full max-w-sm rounded-card-medium border border-border-subtle bg-bg-base p-4"><TreeStepper nodes={v.empty?[]:REVIEW_TREE} value={v.value} onValueChange={value=>{if(value==="desktop"||value==="editor"||value==="terminal"||value==="custom") set("value",value);}} completed={["devices","ownership","overview"]} attention={v.attention?["overview"]:[]} disabled={v.disabled}/></div>),
   "step-progress": define("Step Progress", { completed:number(3,0,18,1), total:number(18,0,18,1), label:text("Review progress") }, v=><div className="w-full max-w-sm"><StepProgress {...v}/></div>),
   "timeframe-selector": define("Timeframe Selector", { value: select(["1h","4h","24h","3d","1w"],"24h"), disabled: toggle() }, (v,set) => <TimeframeSelector {...v} onValueChange={value=>set("value",value as typeof v.value)} />),
   "inline-search-select": define("Inline Search Select", { value: select(["eth","btc","bnb","sol","avax"],"eth"), disabled: toggle(), loading: toggle(), error: toggle() }, (v,set) => <div className="w-48"><InlineSearchSelect options={SAMPLE_ASSETS} label="Token" value={v.value} disabled={v.disabled} loading={v.loading} error={v.error?"The sample catalog is unavailable.":undefined} onRetry={()=>set("error",false)} onValueChange={value=>set("value",value as typeof v.value)} /></div>),

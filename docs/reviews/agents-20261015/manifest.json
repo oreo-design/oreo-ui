@@ -1,0 +1,430 @@
+{
+  "baseline": "1307a3acc921144d7ea376515e7ed84bec9bb424",
+  "sourceRevision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+  "reference": "https://x.com/Priyank/status/2110430943270052172",
+  "preview": "http://localhost:5220/agent-connections",
+  "baselinePreview": "http://localhost:5221",
+  "browser": "Chromium via Playwriter session 53",
+  "locale": "en-US",
+  "data": "Local fixture; no network connection, credentials or persistence",
+  "viewports": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "tablet": [
+      768,
+      1024
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "edges": [
+      [
+        851,
+        1000
+      ],
+      [
+        1201,
+        1000
+      ]
+    ]
+  },
+  "theme": "light unless filename contains dark; reference original theme",
+  "files": [
+    {
+      "file": "access-error.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:22:50.721651+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "d9f45fdcebd75cbdc6454b4e5de4394eb5e10381f0a396c4dcf667597adea72a",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "before-desktop.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:15:57.388043+00:00",
+      "revision": "1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "3b2adb608acd2b94ac5920003e767e5f8a731638ac8210d136f1a81e7715464d",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "before-mobile.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "capturedAt": "2026-10-15T10:15:57.444896+00:00",
+      "revision": "1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "72d98eb9da23ec7542f71f55e05e4557002838efae581cf09212c4e890484c0f",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "breakpoint-1201.png",
+      "pixels": [
+        1201,
+        1462
+      ],
+      "capturedAt": "2026-10-15T10:32:15.013915+00:00",
+      "revision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+      "sha256": "f39f85e375cd0ebc24511ec7b0c3767686345f65759bfb19546fe47d21b58ee5",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "breakpoint-851.png",
+      "pixels": [
+        851,
+        1858
+      ],
+      "capturedAt": "2026-10-15T10:32:14.888880+00:00",
+      "revision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+      "sha256": "44835f10f3873743993e334e021c5c84446e933f5dbed16abea3cd513572905d",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "card-playground.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:24:49.704244+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "dda614b8ac1d28256d56a985a4a8bc288eb2c61c33c50fca5b9974ac8c82b4af",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "changelog-after-entry.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:33:30.482574+00:00",
+      "revision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+      "sha256": "f1a7d863e39eeaed677edab4923d83b487b384616d1716554759d4f97422e54f",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "changelog-after.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:30:39.471283+00:00",
+      "revision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+      "sha256": "cf7609d5b1ab008fbf3a54060182b3e2280ddaed1653d22cf5438e8edf6ddbcb",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "changelog-before-entry.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:33:30.406660+00:00",
+      "revision": "1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "ec1715a256677ea4e332a6e74a04775362a9f4a977bfbcfbd3c03b3d3be834ce",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "changelog-before.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:27:15.720722+00:00",
+      "revision": "1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "8021ba8af56dcc21a85eb1aeed0402562cf2cca6ea0c9ba80c869afbfa2bb20e",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "client-docs.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:25:55.651061+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "ed1ff80f9ef77c3d999e849276e4bb530b180167cf92088630962a05cb276eba",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "client-empty.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:25:54.642529+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "cb795857377b848decb1751afab86d6da74fd9a12c3275824339625b3787ba9f",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "client-playground.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:25:37.141717+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "84c322b0afcbcd27ab92934acb3332b000c6ce775a56903ef9a363d3570194d1",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "configuration.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:23:06.460087+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "c96152e6eebdcd4612384ed331a3617f0e8e559db3b097bf7d7103aeaf229759",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "connected.png",
+      "pixels": [
+        1440,
+        1438
+      ],
+      "capturedAt": "2026-10-15T10:22:51.013209+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "657a5c7a23d5da4322b946e2b6061e6de1c4dc46f67b791302a53d90586c4646",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "desktop-dark.png",
+      "pixels": [
+        1440,
+        1406
+      ],
+      "capturedAt": "2026-10-15T10:23:47.591285+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "9328fa2ce5ce7deaa1007c8cca33251f06708712dd7e7515be08c99ee08cfaa4",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "desktop-entry.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:22:34.929343+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "8c1eeac5e655e0c5052edb95a84b7addadc4a54006b83bd919540b1b25c9089f",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "final-dark.png",
+      "pixels": [
+        1440,
+        1406
+      ],
+      "capturedAt": "2026-10-15T10:31:16.986175+00:00",
+      "revision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+      "sha256": "727fd14aeb17ffb6e3663f371a384f3c653ebd6453399e783d18d0dd324ba675",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "final-desktop.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:31:16.618644+00:00",
+      "revision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+      "sha256": "8c1eeac5e655e0c5052edb95a84b7addadc4a54006b83bd919540b1b25c9089f",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "final-full.png",
+      "pixels": [
+        1440,
+        1406
+      ],
+      "capturedAt": "2026-10-15T10:31:16.743829+00:00",
+      "revision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+      "sha256": "5cc1da0406766145afc65c97698e30703e720a99a96b9973409b0df4093ff047",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "final-mobile-dark.png",
+      "pixels": [
+        390,
+        2674
+      ],
+      "capturedAt": "2026-10-15T10:31:29.216945+00:00",
+      "revision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+      "sha256": "23874bbc399ed96d68a36961b823b3cd988de2d0b47fbf26506c0821a72b51fc",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "final-mobile.png",
+      "pixels": [
+        390,
+        2674
+      ],
+      "capturedAt": "2026-10-15T10:31:29.408638+00:00",
+      "revision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+      "sha256": "68c84f13ae9a56202a2a8d6a378a70dad3676fcfae9b038c7a10b26962dc7b62",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "final-tablet-dark.png",
+      "pixels": [
+        768,
+        2140
+      ],
+      "capturedAt": "2026-10-15T10:31:29.122692+00:00",
+      "revision": "9972ed45b9e04bfef99950eaf14b1972234d00b9",
+      "sha256": "26692c635e2cd7a0a7e11b4d9f30616630fd1b25d5a0e72d7c338dc23409eeff",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "initial-desktop.png",
+      "pixels": [
+        1440,
+        1406
+      ],
+      "capturedAt": "2026-10-15T10:21:43.898181+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "4c759011823d16bb50d2b27181a85d92b27479e8a0ec2ff3508582fb244f2800",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "mobile-dark.png",
+      "pixels": [
+        390,
+        2674
+      ],
+      "capturedAt": "2026-10-15T10:23:47.461690+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "3ece18b7470a4880672ea6971467c55a78433ccd267391cfe57d9303fb1c376a",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "mobile.png",
+      "pixels": [
+        390,
+        2674
+      ],
+      "capturedAt": "2026-10-15T10:23:21.395181+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "8e3edb45d7900256fdb43d6279887a8bead81628b31f7889c7051a18c3259b8f",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "peer-connections.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:16:07.667624+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "6d33cf68eb4912332320f24e4b803d289f0d60b7aba6071d8afe5bd21c6a2c4f",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "quota-no-limit.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:25:27.630635+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "131be6b478bee262c7dd3b68160840a791474bb8ab55c0a312c103c516dd08c4",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "quota-over-limit.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:25:27.392179+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "1105de96f0a533bb66bbfcc95956cd37ba89f78294401c32d7327698595cc07f",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "recording-contact.png",
+      "pixels": [
+        1440,
+        999
+      ],
+      "capturedAt": "2026-10-15T10:33:31.802650+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "7272e0db878140a5e6272ef43fa6033bc20c22ccbb98a87e5700973eb4b74651",
+      "kind": "contact sheet of recorded browser frames"
+    },
+    {
+      "file": "reference.png",
+      "pixels": [
+        2400,
+        1524
+      ],
+      "capturedAt": "2026-10-15T10:15:31.087543+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "cee4037848e7096013f1af5bf3835f177f2ac2bbf4a623272b690d40e06ef205",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "search-empty.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "capturedAt": "2026-10-15T10:22:38.936565+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "e12701d7c42f1e8b602ad3fd4787959edb808b500bef3207dfb3a7db91d95791",
+      "kind": "browser screenshot"
+    },
+    {
+      "file": "tablet.png",
+      "pixels": [
+        768,
+        2140
+      ],
+      "capturedAt": "2026-10-15T10:23:21.310274+00:00",
+      "revision": "working tree based on 1307a3acc921144d7ea376515e7ed84bec9bb424",
+      "sha256": "b1d2edae8e1a04e6591336a17bc77d84813ea08dd849ecb9f821a095ad11e3aa",
+      "kind": "browser screenshot"
+    }
+  ],
+  "recording": {
+    "file": "interactions.mp4",
+    "pixels": [
+      1440,
+      1000
+    ],
+    "durationSeconds": 8.8,
+    "encodedFps": 30,
+    "capture": "Playwriter CDP screencast, variable render frames held to original timestamps; not a native 30fps capture",
+    "originals": "recording-originals.json.xz",
+    "sourceRevision": "ebefdcbb0270e949dc7951910519b8a59454685d (same template source as final)",
+    "originalFrameCount": 98,
+    "originalDurationSeconds": 47.024281,
+    "retainedRangesSeconds": [
+      [
+        13.5,
+        17
+      ],
+      [
+        36.5,
+        40
+      ],
+      [
+        46,
+        47.8
+      ]
+    ],
+    "tailHoldSeconds": 0.8,
+    "baseline": "No corresponding route/sidebar on baseline; actual missing-route screenshots retained"
+  }
+}

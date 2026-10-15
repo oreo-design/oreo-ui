@@ -198,3 +198,7 @@ Browse selected main-branch updates at `/changelog`, with date anchors, search/t
 ### Finance Workspace
 
 `/finance-workspace` combines a multi-series BalanceChart, AllocationBar, SpendingGauge and masked PaymentCard with existing Oreo metrics, cards, controls and empty states. The full local template includes period selection, savings goals, editable budgets, card freezing, demo payments and searchable activity. Each new component has its own editable playground and API docs. See `src/patterns/finance-workspace/README.md` for data and integration boundaries.
+
+### Agent Connections
+
+`/agent-connections` composes AgentConnectCard, QuotaUsage and AgentClientPicker into a local MCP setup workspace. Client selection, read-only access changes, config copying and disconnection are interactive fixtures; no server calls or credentials are involved. Each component has its own docs/playground route. Reference: [Priyank](https://x.com/Priyank/status/2110430943270052172).
