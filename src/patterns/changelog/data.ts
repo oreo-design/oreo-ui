@@ -1,0 +1,24 @@
+import type { ChangeKind } from "@/components/release-entry";
+export type Change = { id: string; kind: ChangeKind; title: string; description: string; page: string; pr: number; preview?: "type" | "steps" | "result" };
+export type Release = { date: string; label: string; title: string; description: string; changes: Change[] };
+export const REPOSITORY = "https://github.com/oreo-design/oreo-ui";
+/** Selected main-branch changes. Dates are merge dates in Asia/Shanghai, not package releases. */
+export const releases: Release[] = [
+  { date: "2026-10-15", label: "October 15, 2026", title: "More pieces. More possibilities.", description: "Brand tools, focused workspaces, and the small details that make them work.", changes: [
+    { id:"brand-tools", kind:"Added", title:"Brand Guide", description:"Build a brand kit with reusable colour swatches, a modular type scale, logo downloads and an email signature builder.", page:"brand-guide", pr:43, preview:"type" },
+    { id:"project-workspace", kind:"Added", title:"Project Workspace", description:"Project summaries and task rows, brought together in an editable overview, list and Kanban board.", page:"project-workspace", pr:42 },
+    { id:"security-review", kind:"Added", title:"Tree Stepper & Security Review", description:"A branching checklist with evidence, outcomes and a compact progress indicator that stays in sync with completed checks.", page:"security-review", pr:41, preview:"steps" },
+    { id:"position-studio", kind:"Added", title:"Position Studio", description:"Inline asset search and a compact timeframe selector, composed into an interactive position form.", page:"position-studio", pr:40 },
+    { id:"result-disclosure", kind:"Fixed", title:"Result card disclosure defaults", description:"AgentResultCard accepts defaultOpen for an initially expanded result while retaining controlled open and onOpenChange behavior.", page:"automation-components", pr:29, preview:"result" },
+  ]},
+  { date: "2026-10-14", label: "October 14, 2026", title: "Small actions, considered.", description: "Inline confirmation and connections that keep the next step close.", changes: [
+    { id:"inline-confirm", kind:"Added", title:"Inline Confirm", description:"A compact destructive-action confirmation that keeps the decision beside its trigger.", page:"inline-confirm", pr:26 },
+    { id:"connections", kind:"Added", title:"Connections Workspace", description:"Connection rows, grouped integrations and setup surfaces composed into a complete workspace template.", page:"connections-workspace", pr:24 },
+  ]},
+];
+export function changesMarkdown(data: Release[]) {
+  return "# Oreo UI changelog\n\nSelected updates merged to main. Merge dates use Asia/Shanghai. These are not package releases or deployment announcements.\n\n" + data.map(release => `## ${release.label} — ${release.title}\n\n${release.description}\n\n` + release.changes.map(change => `- **${change.kind}: [${change.title}](https://oreo-ui-preview.vercel.app/${change.page})** — ${change.description} ([PR #${change.pr}](${REPOSITORY}/pull/${change.pr}))`).join("\n")).join("\n\n");
+}
+export function upgradePrompt(data: Release[]) {
+  return `Review these Oreo UI source updates for my project. Inspect the linked PR diffs and the components I actually use. Preserve local customizations and existing behavior. Propose the smallest relevant changes, explain any migration needed, and run focused validation. Do not assume a published package version or that the website has deployed these changes.\n\n${changesMarkdown(data)}`;
+}

@@ -1,3 +1,5 @@
+import { ChangelogPage } from "@/pages/ChangelogPage";
+import { ReleaseEntryDocs, UpgradePromptDocs } from "@/pages/ChangelogComponentsDocs";
 import { BrandGuidePage } from "@/pages/BrandGuidePage";
 import { BrandSwatchDocs, TypeScaleDocs, EmailSignatureDocs } from "@/pages/BrandComponentsDocs";
 import { ProjectSummaryDocs } from "@/pages/ProjectSummaryDocs";
@@ -99,6 +101,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  changelog: ChangelogPage, "release-entry": ReleaseEntryDocs, "upgrade-prompt": UpgradePromptDocs,
   "brand-guide": BrandGuidePage, "brand-swatch": BrandSwatchDocs, "type-scale": TypeScaleDocs, "email-signature": EmailSignatureDocs,
   "project-summary": ProjectSummaryDocs,
   "task-row": TaskRowDocs,
