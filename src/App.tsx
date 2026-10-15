@@ -1,3 +1,5 @@
+import { TextToolbarDocs } from "@/pages/TextToolbarDocs";
+import { WritingStudioPage } from "@/pages/WritingStudioPage";
 import { MeetingComponentsDocs } from "@/pages/MeetingComponentsDocs";
 import { MeetingPlannerPage } from "@/pages/MeetingPlannerPage";
 import { AutomationComponentsDocs } from "@/pages/AutomationComponentsDocs";
@@ -76,6 +78,8 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "text-toolbar": TextToolbarDocs,
+  "writing-studio": WritingStudioPage,
   "meeting-components": MeetingComponentsDocs,
   "meeting-planner": MeetingPlannerPage,
   "automation-components": AutomationComponentsDocs,

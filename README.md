@@ -168,3 +168,9 @@ Includes an editable playground, generated JSX and API documentation with local 
 Inspired by [Noman’s multi-select dropdown](https://x.com/noman_huge/status/2110294792034996359), `/meeting-components` adds an editable picker playground and documentation for `MultiSelectMenu`, `MeetingCard`, `MeetingResponse`, `RescheduleSuggestions` and `AttendeeCalendars`. The shared `MenuCheckboxItem` extends Oreo’s Base UI menu with a leading checkbox and persistent multi-selection.
 
 `/meeting-planner` composes the components into a responsive calendar template: category management, attendee availability, RSVP, edit and reschedule confirmation, search, delete/undo and light/dark themes. Data is local and resets on reload; availability is illustrative and Join is a service placeholder. Copy `src/components/meeting`, `src/components/multi-select-menu` and their Oreo imports, then `src/patterns/meeting-planner` for the template. No new dependencies. See the [visual review](docs/reviews/noman-20261015/REVIEW.md).
+
+### Text Toolbar and Writing Studio
+
+Inspired by [shawn.’s text toolbar concept](https://x.com/zzzzshawn/status/2110512054851526682), `/text-toolbar` adds `TextToolbar`, `ColorOrb`, `FontSizeStepper`, `TextAlignmentControl` and `FontFamilyPicker`, plus a typed format model and style mapper. The original spectrum illustration opens an accessible named-color menu; all controls reuse Oreo primitives and both icon libraries.
+
+`/writing-studio` demonstrates selectable text blocks, local editing and formatting, undo/redo, reversible reset, validated links, plain-text mentions and text transforms. It formats whole blocks, not arbitrary rich-text selections. Copy exports plain text; no document is uploaded, and reload resets the draft. See the [component map](src/patterns/writing-studio/README.md) and [visual review](docs/reviews/shawn-20261015/REVIEW.md).

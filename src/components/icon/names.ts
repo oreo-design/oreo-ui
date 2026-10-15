@@ -11,6 +11,17 @@
  * every library has an answer for the new name.
  */
 export const ICON_NAMES = [
+  "align-center",
+  "align-right",
+  "text-bold",
+  "text-italic",
+  "text-underline",
+  "text-strikethrough",
+  "inline-code",
+  "highlighter",
+  "link",
+  "minus",
+
   "align-left",
   "scan-text",
   "cursor",

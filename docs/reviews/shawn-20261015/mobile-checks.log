@@ -1,0 +1,36 @@
+Console output:
+[log] light mobile
+[log] Element: body
+Box: x=0 y=0 w=390 h=1867
+Children: 9  Text length: 1126
+Scroll Y: size=1867 client=1867 overflowing=false top=0
+Scroll X: size=390 client=390 overflowing=false left=0
+Styles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1
+[log] mobile dialog
+[log] dismiss dialog
+[log] mobile colors
+[log] Element: div.min-w-[180px]
+Box: x=5 y=103 w=192 h=296
+Children: 8  Text length: 42
+Scroll Y: size=296 client=296 overflowing=false top=0
+Scroll X: size=192 client=192 overflowing=false left=0
+Styles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1
+[log] close colors
+[log] copy
+[log] MAKE IT YOURS
+
+Opening
+Pull quote
+Closing
+Edit pull quote
+Plain text
+34 / 2000
+
+Document text copied.
+
+One block, one style
+
+Controls format the whole selected block. Use the editor above to change its words. Mentions are plain text; text actions run locally.
+
+Explore the components
+[log] PASS responsive captures, theme menus, keyboard Escape focus, native dialog dismissal.

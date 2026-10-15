@@ -1,4 +1,15 @@
 import {
+  AlignCenter,
+  AlignRight,
+  Bold,
+  Italic,
+  Underline,
+  Strikethrough,
+  Code,
+  Highlighter,
+  Link,
+  Minus,
+
   Lock,
   ScanText,
   MousePointer2,
@@ -74,6 +85,17 @@ import type { IconName } from "./names";
 
 /** Lucide's answer for every name in the Oreo vocabulary. */
 export const lucideGlyphs: Record<IconName, IconGlyph> = {
+  "align-center": AlignCenter,
+  "align-right": AlignRight,
+  "text-bold": Bold,
+  "text-italic": Italic,
+  "text-underline": Underline,
+  "text-strikethrough": Strikethrough,
+  "inline-code": Code,
+  "highlighter": Highlighter,
+  "link": Link,
+  "minus": Minus,
+
   "scan-text": ScanText,
   "cursor": MousePointer2,
   "book-open": BookOpen,
