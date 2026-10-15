@@ -1,0 +1,168 @@
+.callback-priority,
+.callback-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.callback-priority[data-critical] {
+  background: color-mix(in srgb, var(--color-status-error) 10%, transparent);
+  color: var(--color-status-error);
+}
+.callback-bars {
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+  height: 0.75rem;
+}
+.callback-bars i {
+  width: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  opacity: 0.2;
+  height: 25%;
+}
+.callback-bars i:nth-child(2) {
+  height: 50%;
+}
+.callback-bars i:nth-child(3) {
+  height: 75%;
+}
+.callback-bars i:nth-child(4) {
+  height: 100%;
+}
+.callback-bars i[data-filled] {
+  opacity: 1;
+}
+.callback-card {
+  display: block;
+  width: 100%;
+  padding: 1.125rem;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  min-width: 0;
+}
+.callback-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-bottom: 1rem;
+}
+.callback-card strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+.callback-card-description {
+  display: block;
+  color: var(--color-text-tertiary);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  margin-top: 0.25rem;
+  overflow-wrap: anywhere;
+}
+.callback-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.callback-card-footer > span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.callback-card-footer b {
+  margin-left: auto;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+.callback-branch {
+  display: inline-block;
+  font-size: 0.625rem;
+  color: var(--color-text-tertiary);
+  margin-top: 0.5rem;
+}
+.callback-board {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+}
+.callback-column {
+  flex: 1;
+  min-width: 16rem;
+  background: var(--color-bg-elevated);
+  padding: 0.75rem;
+  border-radius: 1.5rem;
+}
+.callback-column > header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.5rem 0.875rem;
+  min-height: 3rem;
+}
+.callback-column h3 {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+.callback-column > header > span {
+  display: grid;
+  place-items: center;
+  min-width: 1.5rem;
+  padding: 0 0.375rem;
+  height: 1.5rem;
+  background: var(--color-bg-base);
+  border-radius: 999px;
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+}
+.callback-column > header > button {
+  margin-left: auto;
+}
+.callback-column-content {
+  display: grid;
+  gap: 0.75rem;
+}
+.callback-column .agent-workspace-state {
+  padding: 2rem 0.5rem;
+  min-height: 12rem;
+}
+.callback-column .agent-workspace-state h3 {
+  font-size: 0.8125rem;
+}
+.callback-column .agent-workspace-state p {
+  font-size: 0.75rem;
+}
+.callback-card:focus-visible,
+.callback-board:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .callback-card:hover {
+    border-color: var(--color-border-default);
+    box-shadow: var(--shadow-default);
+  }
+}

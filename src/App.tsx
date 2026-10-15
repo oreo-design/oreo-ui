@@ -1,3 +1,5 @@
+import { CallbackDocs } from "@/pages/CallbackDocs";
+import { CallbackWorkspacePage } from "@/pages/CallbackWorkspacePage";
 import { ThinkingStateDocs } from "@/pages/ThinkingStateDocs";
 import { ThinkingWorkspacePage } from "@/pages/ThinkingWorkspacePage";
 import { CommandSearchDocs } from "@/pages/CommandSearchDocs";
@@ -119,6 +121,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "callback-priority": CallbackDocs, "callback-card": CallbackDocs, "callback-board": CallbackDocs, "callback-workspace": CallbackWorkspacePage,
   "thinking-state": ThinkingStateDocs, "thinking-timeline": ThinkingStateDocs, "thinking-workspace": ThinkingWorkspacePage,
   "command-search": CommandSearchDocs, "workspace-metric": CommandSearchDocs, "deployment-row": CommandSearchDocs, "command-dashboard": CommandDashboardPage,
   "invoice-status-badge": InvoiceDocs, "invoice-table": InvoiceDocs, "invoice-totals": InvoiceDocs, "invoice-workspace": InvoiceWorkspacePage,

@@ -1,3 +1,5 @@
+import { CallbackPriority, CallbackCard, CallbackBoard } from "@/components/callback";
+import { INITIAL_CALLBACKS, PEOPLE as CALLBACK_PEOPLE } from "@/patterns/callback-workspace/data";
 import { ThinkingState, ThinkingTimeline, THINKING_STATES } from "@/components/thinking-state";
 import { STEPS as THINKING_STEPS } from "@/patterns/thinking-workspace/data";
 import { CommandSearch, WorkspaceMetric, DeploymentRow } from "@/components/command-search";
@@ -94,6 +96,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  callback: { CallbackPriority, CallbackCard, CallbackBoard },
   "thinking-state": { ThinkingState, ThinkingTimeline },
   "command-search": { CommandSearch, WorkspaceMetric, DeploymentRow },
   "invoice": { InvoiceStatusBadge, InvoiceTable, InvoiceTotals },
@@ -150,6 +153,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "callback-priority": { ...define("Callback Priority", {priority:select(["Low","Medium","High","Critical"],"Critical")},v=><CallbackPriority {...v}/>),source:"callback" },
+  "callback-card": { ...define("Callback Card", {customer:text("Hillside Dental"),priority:select(["Low","Medium","High","Critical"],"Critical"),cost:number(1280,0,10000,10),showBranch:toggle(true)},v=><div className="w-full max-w-sm rounded-3xl bg-bg-elevated p-4"><CallbackCard callback={{...INITIAL_CALLBACKS[4],customer:v.customer,priority:v.priority,cost:v.cost}} person={CALLBACK_PEOPLE[1]} showBranch={v.showBranch} onOpen={()=>{window.location.href="/callback-workspace";}}/></div>),source:"callback" },
+  "callback-board": { ...define("Callback Board", {empty:toggle(false),showBranch:toggle(false)},v=><div className="w-full"><CallbackBoard callbacks={v.empty?[]:INITIAL_CALLBACKS} people={CALLBACK_PEOPLE} showBranch={v.showBranch} onOpen={()=>{window.location.href="/callback-workspace";}}/></div>),source:"callback" },
   "thinking-state": { ...define("Thinking State", {phase:select(THINKING_STATES,"thinking"),active:toggle(true),shape:select(["square","circle"],"square"),tone:select(["neutral","mint","purple","orange"],"mint"),speed:number(1,.5,2,.25),grid:toggle(true),shimmer:toggle(false)},v=><ThinkingState {...v}/>),source:"thinking-state" },
   "thinking-timeline": { ...define("Thinking Timeline", {empty:toggle(false),current:number(2,0,5,1),status:select(["idle","running","paused","complete","error","stopped"],"running"),tone:select(["neutral","mint","purple","orange"],"mint"),shape:select(["square","circle"],"square")},v=><div className="w-full max-w-sm p-6"><ThinkingTimeline steps={v.empty?[]:THINKING_STEPS} current={v.current} status={v.status} tone={v.tone} shape={v.shape}/></div>),source:"thinking-state" },
   "command-search": { ...define("Command Search", { empty:toggle(false), disabled:toggle(false), selected:text("") }, (v,set)=><div className="w-full max-w-sm"><CommandSearch groups={v.empty?[]:[{label:"Platform",items:[{id:"overview",label:"Overview",icon:"columns"},{id:"deployments",label:"Deployments",keywords:"build release",icon:"plane",disabled:v.disabled}]},{label:"Actions",items:[{id:"theme",label:"Switch theme",icon:"moon"}]}]} onSelect={command=>set("selected",command.label)}/><p className="mt-4 text-xs text-text-secondary" role="status">{v.selected?`Selected: ${v.selected}`:"Choose an action to see the host callback. Global shortcuts are off in this preview."}</p></div>), source:"command-search" },

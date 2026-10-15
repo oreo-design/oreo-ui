@@ -226,3 +226,7 @@ Inspired by [Efferd’s command search](https://x.com/efferdco/status/2110449789
 ### Thinking Workspace
 
 Inspired by [Purpose Walker’s Thinking State](https://x.com/purpose_walker/status/2110382989414740308), `/thinking-state` adds six deterministic pixel status patterns with controlled activity, shape, token color, speed, grid and optional shimmer. `/thinking-timeline` composes the indicator with the existing StatusIcon. `/thinking-workspace` is a complete local assistant template with starter briefs, a six-stage run, pause/resume, stop/restart, error recovery and copy/save. It reuses PromptBox, Button, Avatar and AgentWorkspaceState. Responses are prewritten fixtures; no AI service or web search runs.
+
+### Callback Workspace
+
+Inspired by [Nizam’s callback board](https://x.com/nizamdesign/status/2110279441683235256), `/callback-priority`, `/callback-card` and `/callback-board` expose three reusable service components. `/callback-workspace` adds team/mine views, live counts and cost totals, search, branch grouping, board/list layouts, sorting and editable local records with stage changes and archive/undo. It reuses Oreo Avatar, Button, Switch, AgentWorkspaceState and Base UI Dialog. All records are fixtures; no service visits are scheduled or customers contacted.
