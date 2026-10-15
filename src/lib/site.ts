@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "tree-stepper": { title: "Tree Stepper", description: "A hierarchical checklist that opens only the selected branch." },
+  "step-progress": { title: "Step Progress", description: "A compact accessible progress track for completed checks." },
+  "security-review": { title: "Security Review", description: "A local review workspace with branching steps, evidence, outcomes and completion summary." },
   "timeframe-selector": { title: "Timeframe Selector", description: "Compact duration choices that expand and cycle inline." },
   "inline-search-select": { title: "Inline Search Select", description: "A selected value that turns into an anchored search field." },
   "position-studio": { title: "Position Studio", description: "A local practice position form with inline token search and duration selection." },
