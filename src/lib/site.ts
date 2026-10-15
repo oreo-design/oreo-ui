@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "recipient-search": {title:"Recipient Search",description:"Recipient Search: accessible recipient creation and payment-detail UI with host-owned data."},
+  "payment-rail-picker": {title:"Payment Rail Picker",description:"Payment Rail Picker: accessible recipient creation and payment-detail UI with host-owned data."},
+  "recipient-form": {title:"Recipient Form",description:"Recipient Form: accessible recipient creation and payment-detail UI with host-owned data."},
+  "payment-workspace": {title:"Payment Workspace",description:"A five-step local payment draft flow with inline recipient creation, funding selection and review."},
   "revenue-matrix": {title:"Revenue Matrix",description:"Revenue Matrix: reusable sales UI with accessible data and host-owned actions."},
   "pipeline-funnel": {title:"Pipeline Funnel",description:"Pipeline Funnel: reusable sales UI with accessible data and host-owned actions."},
   "deal-stage-badge": {title:"Deal Stage Badge",description:"Deal Stage Badge: reusable sales UI with accessible data and host-owned actions."},

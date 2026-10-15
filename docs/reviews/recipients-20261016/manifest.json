@@ -1,0 +1,350 @@
+{
+  "baseline": "9e51dcaf01fbaf1c11b1660576c27c1ffe92d2a9",
+  "environment": "Chromium / Playwriter session 65, localhost:5236, English, fictional data",
+  "sourceHashes": {
+    "src/components/recipient/index.tsx": "a533321b77e06159257cd15f52a5970d8be551d32140819d89649ddc18ef65c1",
+    "src/components/recipient/recipient.css": "161354c5c01d9ddd81331132054e6b4277f68c2769d26032c4f18079391ad8cc",
+    "src/components/recipient/model.ts": "74d78e5996d83c9d0807aa989f605b874d72855c43f92e8d086bc5910f16dfd1",
+    "src/patterns/payment-workspace/index.tsx": "69f7ed9ec3c592ecdf66acd8f5a361351cf817cff7a6168d0edbaf03e0253f61",
+    "src/patterns/payment-workspace/data.ts": "5f6006366abdb2d8f56fd4645985650daf8054f92c834162e49640fbf34b76fa",
+    "src/patterns/payment-workspace/payment-workspace.css": "100a6e3de9312c6f940cf47bc861e53b1e2a052df58bcd221ad165cce3bbebc5"
+  },
+  "artifacts": [
+    {
+      "file": "REVIEW.md",
+      "bytes": 8331,
+      "sha256": "7b9d290b800fc3ee253eafb53b587802b2c04203ac4937b0ca9c7e8ec7769c0f"
+    },
+    {
+      "file": "amount-error.png",
+      "bytes": 60793,
+      "sha256": "59e981cb33a0d11c31bbbfb347a2362706d8c97cf5456404112e06c37cbe3958",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "before-changelog.png",
+      "bytes": 127962,
+      "sha256": "774413cafa3a25266e27725df60b0d5ced0e597b698eeddcc8fe30046f95e91e",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "before-entry.png",
+      "bytes": 92469,
+      "sha256": "dfe46902cb5b45e55305eb5b856bf1dc6b82e825e17009364c5b6b0fbb5477fc",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "browser-evidence.jsonl",
+      "bytes": 224158,
+      "sha256": "d13d0ab05686bc52cb05941361856d8997d0b63f86923358d11bd9ce193c9254"
+    },
+    {
+      "file": "docs-api.png",
+      "bytes": 147096,
+      "sha256": "5846d4f89e5dcce1a4c88d9affda30c572c1841c3dc6e9546fd1dbdc5e26375e",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "docs-form.png",
+      "bytes": 111372,
+      "sha256": "8122d192b7b5c70b51c3f0359f91d34fe00689f7178af6357f170f59de1feef7",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "docs-rail.png",
+      "bytes": 92236,
+      "sha256": "afeaf7309d9266e67ae0c8d5d46fda9ab4d0163b6e565d0a1ac4614baccdaf28",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "docs-search-empty.png",
+      "bytes": 96001,
+      "sha256": "50d00110d8844adff48c3e8eb81cd1d61ba62b314e9c131b7cb4db7e355ee6d2",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "docs-search.png",
+      "bytes": 103687,
+      "sha256": "5903f51145893a0b086b121dbb6c47b54f2be5eb30fa5fe2ae1ccaffb38d4586",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "final-entry-light.png",
+      "bytes": 60390,
+      "sha256": "416f6c590628ba927045b1aba4dce9608fe7bc0452dc41a81ab5838bf9b73cc7",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "final-form-dark.png",
+      "bytes": 80042,
+      "sha256": "04630e45e967228e6db0dd1a77c5ff6280e5be0041573bd6eed58f144ae7bac0",
+      "dimensions": [
+        1440,
+        1176
+      ]
+    },
+    {
+      "file": "final-form-light.png",
+      "bytes": 74041,
+      "sha256": "aaec0d5fe9e0549e01a6b4dc159ae6b4d1ba9717aa3978386c9cf426b2dce877",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "form-desktop-light.png",
+      "bytes": 49032,
+      "sha256": "d5d4ff0b5431c9e694dcff3c7f893074a742f86618ce7d8e6648e6e920b51455",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "form-errors.png",
+      "bytes": 77038,
+      "sha256": "29da3560ccb4077ab82012aeb22deab6841b7d2c7ed40b022f58a7e5be342469",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "form-validation.png",
+      "bytes": 79591,
+      "sha256": "cc7d404cc194b93d6d49d8a60dae54d16d54c37660b08d741c3260c0b3db1af9",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "initial-desktop-light.png",
+      "bytes": 53252,
+      "sha256": "20e515165a58d2f66113f5fd6e13f1ef7cf615684e33760434a7e44495a91e3c",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "interaction-final-frames.json.xz",
+      "bytes": 384372,
+      "sha256": "2344bffb20f5330942333398f8fa090809c593e4c75a336c346c76e0cd20f870"
+    },
+    {
+      "file": "interaction-frames.json.xz",
+      "bytes": 295064,
+      "sha256": "15fa985d7d224365a20ab707cefe34e187d7cfd547ecefd96123216f86cd188e"
+    },
+    {
+      "file": "mobile-form-dark.png",
+      "bytes": 68655,
+      "sha256": "34101c93bb172cf79f8e1414d1281d0a02de7fecf71409881687d756da0825ed",
+      "dimensions": [
+        390,
+        1702
+      ]
+    },
+    {
+      "file": "mobile-form-light.png",
+      "bytes": 68879,
+      "sha256": "8ec62ad47f3f5c851749a4896b9f200997768236690ffdd7f82acd0798acac37",
+      "dimensions": [
+        390,
+        1702
+      ]
+    },
+    {
+      "file": "model-checks.mjs",
+      "bytes": 2597,
+      "sha256": "6145a01971aa52333cf74664ec55e881e20447eaee9966325af26db22eb3d20e"
+    },
+    {
+      "file": "oreo-recipient-ref-15.png",
+      "bytes": 33325,
+      "sha256": "52ee60a0f433dd99bee12827792c58f2d8542b6147e4a868e51e696b45897523",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "oreo-recipient-ref-20.png",
+      "bytes": 115027,
+      "sha256": "587e495d0adbc7060feb1d4d7676d69e50a1af2ba662a046c1762089162b2646",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "oreo-recipient-ref-3.png",
+      "bytes": 33106,
+      "sha256": "f352d888e14a6879c0282b5372d3a8be404205ee0722680da816cb9b883f1383",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "oreo-recipient-ref-9.png",
+      "bytes": 112234,
+      "sha256": "1c331007fb353c542f045f1563e06fa637a69599724c21d41dfb861f2ba21076",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "oreo-tikhbana-reference.json",
+      "bytes": 6040,
+      "sha256": "30257d70fa287c7f1249354f5586df27ef37bc670df6e8208c81e03e39e8057e"
+    },
+    {
+      "file": "payment-review.png",
+      "bytes": 72904,
+      "sha256": "b4300e44b45545fa96db05be82a7160b94bf647dce5330c6dea5e1ff78b8adbc",
+      "dimensions": [
+        1440,
+        1028
+      ]
+    },
+    {
+      "file": "payment-saved.png",
+      "bytes": 62466,
+      "sha256": "4c69060ceed4a5d413570747d7123134310d4b4b1c4e41687cbf596a7b4dac99",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "peer-review.png",
+      "bytes": 108289,
+      "sha256": "67956bdbd5db5d6112fa39e755cce6948eada84b78d1095c5de4bf04685a42a8",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "recipient-interaction-final.mp4",
+      "bytes": 93711,
+      "sha256": "d595933bf2725e0e0c586fde3438c7bf636002141d0f39ca965f50cd0c5248f7",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 1440,
+            "height": 1000
+          }
+        ],
+        "format": {
+          "duration": "81.000000"
+        }
+      }
+    },
+    {
+      "file": "recipient-interaction.mp4",
+      "bytes": 60020,
+      "sha256": "65d36398ca5b99bf05aefe042f11a1b5a8a7bea30ec6e435e8d10e6ea8f7dd89",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 1440,
+            "height": 1000
+          }
+        ],
+        "format": {
+          "duration": "14.080000"
+        }
+      }
+    },
+    {
+      "file": "saved-recipient.png",
+      "bytes": 72380,
+      "sha256": "566d359eb325299e2f5972a6558b1db47259eb148579bb140699108adfc44cac",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "search-create.png",
+      "bytes": 46193,
+      "sha256": "7e0eaffad0df2798409c89e613cfdde82657399551c978cd60d5aae2746cbe3f",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "search-focus-corrected.png",
+      "bytes": 57297,
+      "sha256": "2e4d0cdbbc98aa0be11353ed294a7bfe4ca474bfa3883a68d2536d1a3336ab53",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "search-focus-final.png",
+      "bytes": 57446,
+      "sha256": "14334617dca30a3d9eae2fe065a84cb5d38732d037c2223c58b418ab4c0ffa42",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "tablet-form-dark.png",
+      "bytes": 72040,
+      "sha256": "6040dce70e92aadc065696a840d2a445c1a75c365354c55d728af804f57ba293",
+      "dimensions": [
+        900,
+        1167
+      ]
+    },
+    {
+      "file": "tablet-form-light.png",
+      "bytes": 72305,
+      "sha256": "bc43db8e014de45ad123034aaf3a02fec3724056bffab74c4eb105ffaa829361",
+      "dimensions": [
+        900,
+        1167
+      ]
+    }
+  ]
+}

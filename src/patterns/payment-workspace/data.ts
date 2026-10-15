@@ -1,0 +1,48 @@
+import { emptyRecipient, type Recipient } from "@/components/recipient";
+export const SAMPLE_RECIPIENTS: Recipient[] = [
+  {
+    ...emptyRecipient("Northstar Studio"),
+    id: "northstar",
+    email: "finance@northstar.example",
+    routing: "000000000",
+    account: "0000123456",
+    bank: "Example Bank",
+    street: "12 Sample Street",
+    city: "New York",
+    postal: "10001",
+  },
+  {
+    ...emptyRecipient(),
+    id: "alex",
+    kind: "individual",
+    firstName: "Alex",
+    lastName: "Morgan",
+    email: "alex@example.com",
+    rail: "sepa",
+    iban: "DE00000000000000000000",
+    bic: "DEMODEFF",
+    bank: "Demo Bank",
+    country: "Germany",
+    street: "8 Example Platz",
+    city: "Berlin",
+    postal: "10115",
+  },
+  {
+    ...emptyRecipient("Forma Labs"),
+    id: "forma",
+    email: "accounts@forma.example",
+    rail: "usdc",
+    network: "Base",
+    wallet: "0x0000000000000000000000000000000000000001",
+    street: "24 Test Avenue",
+    city: "Austin",
+    postal: "78701",
+  },
+];
+export const PAYMENT_STEPS = [
+  { id: "recipient", label: "Recipient" },
+  { id: "method", label: "Payment method" },
+  { id: "amount", label: "Amount" },
+  { id: "details", label: "Details" },
+  { id: "review", label: "Review" },
+];
