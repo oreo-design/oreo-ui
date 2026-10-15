@@ -7,13 +7,14 @@
     "src/components/usage-forecast/model.ts": "f09400bc4cb6577d9286673eeb22f5957cc54c4b8ef7b46ab8a1edc771fbf842",
     "src/patterns/usage-forecast/index.tsx": "f7665e27bce65dbf195baed3271fb793e7513dcaddf7e1090dc12e1db399b895",
     "src/patterns/usage-forecast/data.ts": "03d1afd98716905957b69f1d357af1af39ad7aca45a1ef943cf3ae2dce7ac577",
-    "src/patterns/usage-forecast/workspace.css": "f1c6793ae18d3f8b879612bf21276eaa3b17530154b649f4d8046ca3fe8fbf23"
+    "src/patterns/usage-forecast/workspace.css": "f1c6793ae18d3f8b879612bf21276eaa3b17530154b649f4d8046ca3fe8fbf23",
+    "src/patterns/changelog/data.ts": "61dcea4db000f945fa8ecd931fdb31558ead435c0660efea509790896306004d"
   },
   "artifacts": [
     {
       "file": "REVIEW.md",
-      "bytes": 8674,
-      "sha256": "96f4d1809974d8cb5a1eac26903637847e7485848294af5b125c3344b45eba2a"
+      "bytes": 9184,
+      "sha256": "21fcd789871eaf42c70d2c2f96ed9459ad8c58d476fb246a7f8f5b45ae27ddd7"
     },
     {
       "file": "before-changelog.png",
@@ -35,8 +36,8 @@
     },
     {
       "file": "browser-evidence.jsonl",
-      "bytes": 190930,
-      "sha256": "06f4fdb03ee0015e28cf8d954d8d577511b07ea0d6e6875a8a550f383dda9460"
+      "bytes": 223134,
+      "sha256": "b74afd8b2cf5e851509fdd0b25d96a9260e4289a9e10d6984cf4ddb60fffe278"
     },
     {
       "file": "desktop-dark.png",
@@ -125,6 +126,24 @@
       "sha256": "2a05618fcc5abea3de563a08ca036b0b874dc62eae7c099934902c7c9d286dd4"
     },
     {
+      "file": "final-changelog-entry.png",
+      "bytes": 15683,
+      "sha256": "865e7452c701568e2fb8b61d5e23afab88967cb0366dca145d45aa2c8bfc6a0b",
+      "dimensions": [
+        639,
+        175
+      ]
+    },
+    {
+      "file": "final-changelog.png",
+      "bytes": 126434,
+      "sha256": "8af513577d2b43bf9857aecacf25d19a1e7831eca2ab77bdda628faec6b0c967",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
       "file": "final-desktop-dark.png",
       "bytes": 186783,
       "sha256": "ff929ebf5ac55d46fb77faf520860b01543f653945b949ed62731c8385c593c5",
@@ -152,6 +171,24 @@
       ]
     },
     {
+      "file": "forecast-interaction-clean.mp4",
+      "bytes": 203374,
+      "sha256": "7d40c61e7769d36bac9168b0baf54c85d91dd04e7a184b1433f64c31b26ac11e",
+      "media": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 1440,
+            "height": 1700
+          }
+        ],
+        "format": {
+          "duration": "22.040000"
+        }
+      }
+    },
+    {
       "file": "forecast-interaction.mp4",
       "bytes": 253495,
       "sha256": "94de7cb687759db725f645f10ddcbad385c56ee014a621e7a2a351a5fd9d3b69",
@@ -168,6 +205,11 @@
           "duration": "29.080000"
         }
       }
+    },
+    {
+      "file": "interaction-clean-frames.json.xz",
+      "bytes": 1396720,
+      "sha256": "49f43f78cd304d8d3bb6be85bcebcc8aded52d28b093ac0f33697815964e5106"
     },
     {
       "file": "interaction-frames.json.xz",

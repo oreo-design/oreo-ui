@@ -25,7 +25,7 @@ The new route did not exist at baseline and redirected to the default component 
 | Empty / recovery | Shared AgentWorkspaceState owner | [No matches](empty.png) | Clear filters recovers populated view |
 | Components / invalid | Existing docs shell | [Timeline](docs-timeline.png), [projection](docs-projection.png), [pace](docs-pace.png), [invalid](docs-invalid.png), [API](docs-api.png) | Invalid data shows alert rather than zero-valued chart; toggle recovery exercised |
 | Export | New action | [Actual browser download](exported-risk.csv) | Three filtered at-risk accounts, expected rates and UTC timestamps verified |
-| Changelog | [Before](before-changelog.png) | Final entry added after actual PR assignment | Existing release-entry pattern |
+| Changelog | [Before](before-changelog.png) | [After](final-changelog.png), [entry](final-changelog-entry.png) — PR #63 | Existing release-entry pattern |
 
 ![Before — missing route](before-entry.png)
 ![After — Usage Forecast](final-desktop-dark.png)
@@ -61,3 +61,7 @@ The new route did not exist at baseline and redirected to the default component 
 ## Capture history
 
 `first-desktop-dark.png` is the initial failed render, superseded after the invalid glyph fix. `desktop-dark.png` predates the radius-token fix. `desktop-light.png` and `scenario-paused.png` predate the filtered-scenario stability fix; their layout and observed data remain useful. Final desktop captures and responsive screenshots are the current implementation. Historical originals are preserved.
+
+## Delivery and recording index
+
+PR: https://github.com/oreo-design/oreo-ui/pull/63. The PR records the reviewed source and merge revision. [Clean interaction recording](forecast-interaction-clean.mp4): 1440×1700, 22.04 seconds, original timestamps; reviewed sample frames show pause, restore and table switch without automation overlays. The earlier 29.08-second recording retains the cursor overlay and is superseded for presentation. Both original frame sets are preserved.
