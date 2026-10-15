@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "presence-stack": { title:"Presence Stack", description:"An interactive live roster with avatar overlap, status badges and an accessible people panel." },
+  "presence-badge": { title:"Presence Badge", description:"Accessible online, away and typing marks with optional motion." },
+  "presence-room": { title:"Presence Room", description:"A local collaborative brief with presence, editable content, checklist and discussion." },
   changelog: { title: "Changelog", description: "Selected Oreo UI updates with live previews, source links and upgrade context." },
   "release-entry": { title: "Release Entry", description: "A reusable update entry with source provenance and a live preview slot." },
   "upgrade-prompt": { title: "Upgrade Prompt", description: "Readable, copyable upgrade context with success feedback and manual recovery." },

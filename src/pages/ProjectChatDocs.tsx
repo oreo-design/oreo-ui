@@ -145,8 +145,8 @@ export function ProjectChatDocs({ nav }: { nav: DocsNav }) {
                     },
                     {
                       prop: "TypingPresence",
-                      type: "person?",
-                      desc: "Quiet status text and avatar. Omit person when nobody is typing; no timer pretends to be a real collaborator.",
+                      type: "person?; people?; animate?",
+                      desc: "Quiet single-person text and avatar by default. Optional people supports multiple typers; an empty list hides the row. animate adds reduced-motion-aware typing dots. Presence data stays with the host.",
                     },
                     {
                       prop: "CollaborationComposer",

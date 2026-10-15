@@ -1,3 +1,5 @@
+import { PresenceStack, PresenceBadge } from "@/components/presence";
+import { ROOM_PEOPLE } from "@/patterns/presence-room/data";
 import { ReleaseEntry } from "@/components/release-entry";
 import { UpgradePrompt } from "@/components/upgrade-prompt";
 import { BrandSwatch } from "@/components/brand-swatch";
@@ -76,6 +78,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  presence: { PresenceStack, PresenceBadge },
   "release-entry": { ReleaseEntry }, "upgrade-prompt": { UpgradePrompt },
   "brand-swatch": { BrandSwatch }, "type-scale": { TypeScale }, "email-signature": { EmailSignature },
   "project-summary": { ProjectSummary },
@@ -123,6 +126,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "presence-stack": { ...define("Presence Stack", { count:number(5,0,7,1), max:number(4,1,6,1), animate:toggle(true) }, v=><PresenceStack people={ROOM_PEOPLE.slice(0,v.count)} selfId="you" max={v.max} animate={v.animate} />), source:"presence" },
+  "presence-badge": { ...define("Presence Badge", { status:select(["online","away","typing"],"typing"), animate:toggle(true) }, v=><div className="flex items-center gap-3 text-sm"><PresenceBadge {...v} /><span>{v.status}</span></div>), source:"presence" },
   "release-entry": define("Release Entry", { title:text("Brand Guide"), description:text("A practical toolkit for colours, typography and signatures."), kind:select(["Added","Updated","Fixed","Breaking"],"Added") }, v=><div className="w-full max-w-lg"><ReleaseEntry {...v} href="/brand-guide" sourceHref="https://github.com/oreo-design/oreo-ui/pull/43" sourceLabel="PR #43" /></div>),
   "upgrade-prompt": define("Upgrade Prompt", { prompt:text("Review Oreo UI PR #43 and the components used in my project. Preserve local customizations and propose only relevant changes. https://github.com/oreo-design/oreo-ui/pull/43") }, v=><div className="w-full max-w-lg"><UpgradePrompt {...v} /></div>),
   "brand-swatch": define("Brand Swatch", { name:text("Iris"), hex:select(["#6550b9","#027864","#202020","#ffffff"],"#6550b9"), role:text("Accent colour"), disabled:toggle() }, v=><div className="w-full max-w-xs"><BrandSwatch {...v} onCopy={hex=>navigator.clipboard.writeText(hex).catch(()=>window.prompt("Copy this colour",hex))}/></div>),

@@ -3,6 +3,7 @@ import { Avatar, AvatarGroup } from "@/components/avatar";
 import { IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
 import { Message, MessageContent } from "@/components/message";
+import { PresenceBadge } from "@/components/presence";
 import { cn } from "@/lib/cn";
 import "./project-chat.css";
 
@@ -283,16 +284,16 @@ export function AudioClip({
   );
 }
 
-export function TypingPresence({ person }: { person?: Collaborator }) {
-  return person ? (
-    <div
-      role="status"
-      className="flex items-center gap-3 text-xs text-text-tertiary"
-    >
-      <Avatar name={person.name} src={person.src} size="xs" color="brown" />
-      <span>{person.name} is typing…</span>
-    </div>
-  ) : null;
+/** Single-person callers keep the original static row; multi-person use is opt-in. */
+export function TypingPresence({ person, people, animate = false }: { person?: Collaborator; people?: Collaborator[]; animate?: boolean }) {
+  const active = people ?? (person ? [person] : []);
+  const names = active.map(p => p.name);
+  const label = names.length === 1 ? `${names[0]} is typing…` : names.length === 2 ? `${names.join(" and ")} are typing…` : `${names[0]} and ${names.length - 1} others are typing…`;
+  return active.length ? <div role="status" className="flex items-center gap-3 text-xs text-text-tertiary">
+    {active.length === 1 ? <Avatar name={active[0].name} src={active[0].src} size="xs" color="brown" /> : <AvatarGroup size="xs" max={2}>{active.map(p => <Avatar key={p.id} name={p.name} src={p.src} size="xs" color="brown" />)}</AvatarGroup>}
+    <span>{label}</span>
+    {animate && <PresenceBadge status="typing" decorative />}
+  </div> : null;
 }
 
 export type ChatDraft = { text: string; files: File[] };

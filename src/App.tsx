@@ -1,3 +1,5 @@
+import { PresenceDocs } from "@/pages/PresenceDocs";
+import { PresenceRoomPage } from "@/pages/PresenceRoomPage";
 import { ChangelogPage } from "@/pages/ChangelogPage";
 import { ReleaseEntryDocs, UpgradePromptDocs } from "@/pages/ChangelogComponentsDocs";
 import { BrandGuidePage } from "@/pages/BrandGuidePage";
@@ -101,6 +103,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "presence-stack": PresenceDocs, "presence-badge": PresenceDocs, "presence-room": PresenceRoomPage,
   changelog: ChangelogPage, "release-entry": ReleaseEntryDocs, "upgrade-prompt": UpgradePromptDocs,
   "brand-guide": BrandGuidePage, "brand-swatch": BrandSwatchDocs, "type-scale": TypeScaleDocs, "email-signature": EmailSignatureDocs,
   "project-summary": ProjectSummaryDocs,

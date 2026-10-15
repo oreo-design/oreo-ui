@@ -190,3 +190,7 @@ Inspired by [rico’s navigation concept](https://x.com/_heyrico/status/21104085
 ### Changelog
 
 Browse selected main-branch updates at `/changelog`, with date anchors, search/type filters, real component previews, Markdown download and an agent upgrade prompt. `ReleaseEntry` (`/release-entry`) and `UpgradePrompt` (`/upgrade-prompt`) include editable playgrounds and API docs. The complete template lives in `src/patterns/changelog`; update its curated `data.ts` with verified merges. A merge entry does not assert a package release or website deployment.
+
+### Presence Room
+
+`/presence-room` combines an editable brief, checklist and discussion with a live-presence demo. Reusable `PresenceStack` and `PresenceBadge` live in `src/components/presence` with playgrounds at `/presence-stack` and `/presence-badge`. Existing `TypingPresence` now supports multiple people without changing its single-person default. All room activity is local, including connection failure/retry; no realtime backend is implied.

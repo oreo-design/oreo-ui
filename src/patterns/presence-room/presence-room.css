@@ -1,0 +1,2 @@
+.presence-room-transcript { min-height:20rem; max-height:32rem; flex:1; overflow-y:auto; overscroll-behavior:contain; scrollbar-width:thin; }
+.presence-room textarea:focus-visible,.presence-room input:focus-visible,.presence-room a:focus-visible,.presence-room button:focus-visible,.presence-room-transcript:focus-visible { outline:2px solid var(--color-text-primary); outline-offset:3px; }
