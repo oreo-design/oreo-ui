@@ -779,6 +779,22 @@
       "source_revision": null,
       "capture_utc": "2026-10-15T15:47:13.657853+00:00",
       "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "after-changelog-entries.png",
+      "sha256": "601040497c6be552873bac0ef0fd4da37b87a188548f3f5824bee33c6b698fb5",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": "0c61958c7ef008fe33c049445edc8e7dd096d41c",
+      "capture_utc": "2026-10-15T16:12:46.784847+00:00",
+      "state": "Scrolled to October 16 release; all three PR 60 entries visible."
     }
   ],
   "recording": {

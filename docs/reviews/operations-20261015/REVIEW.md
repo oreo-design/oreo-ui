@@ -35,7 +35,7 @@ Original map, truck and camera SVG illustrations replace reference photos/map ti
 | Pipeline keyboard and history | No prior template states | `after-pipeline-keyboard.png`, browser observations | Base UI arrow navigation activates tabs, matching Edge peer; visible focus. Validation history and empty history checked. |
 | Incidents resolved / empty | No prior template states | `after-incident-resolved.png`, `after-incident-empty.png`, browser observations | Resolve/reopen updates global counts; selected marker/feed stay synchronized; East+Traffic has zero results; clear recovers all. |
 | Component previews / API | Existing Sidebar and docs shell visible in baseline fallback | `after-docs-map.png`, `after-docs-map-empty.png`, `after-docs-api.png`, `after-docs-operations-feed.png`, `after-docs-health-meters.png`, `after-docs-route-timeline.png`, `after-docs-pipeline-file-final.png`, `after-docs-camera-checkpoint.png` | All six standalone routes loaded without current runtime errors; API view and docs↔playground entry checked. |
-| Changelog | `before-changelog.png` | `after-changelog.png` | Three new entries grouped under the local merge date, linked to the actual PR. |
+| Changelog | `before-changelog.png` | `after-changelog.png`, `after-changelog-entries.png` | Three new entries grouped under the local merge date, linked to the actual PR. |
 
 ### Historical / superseded captures
 
