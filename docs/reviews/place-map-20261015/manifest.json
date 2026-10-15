@@ -1,0 +1,73 @@
+{
+  "baseline": "2dd797b01a6481ae64debb9907d1cc601d5b9802",
+  "branch": "codex/place-explorer-20261015",
+  "source_sha256": {
+    "src/components/place-map/index.tsx": "11fc111e433984137caf3b3e95e37e580fe8a6d5280bc410a310f9f35e88cd94",
+    "src/components/place-map/place-map.css": "1b99b73004a571c4788f86d3fa4260fff0530307b44f3b6398ef5cf4fb13b5a9",
+    "src/patterns/place-explorer/index.tsx": "abc99c78c711ca72bcaac2f5c9d6a9849c92d8266076e7fb02ac8d88f5d58205",
+    "src/patterns/place-explorer/data.ts": "5f23b546823ded05e699d3f5f17ca79e21d1dcc3bf929ca52f4f4842f0ef8392",
+    "src/patterns/place-explorer/place-explorer.css": "ed2af17fb6dbe79491214e1c12b5c1a4ea86362feae9172c887b0c8fdde64070",
+    "src/pages/PlaceMapDocs.tsx": "6df79cd9d68dcb9af48b649f902d2174df67c641acd14326093b9d30bbcad710",
+    "src/pages/PlaceExplorerPage.tsx": "af74815db1160acbb7cac62c29eda3d8fbb40bcba20d3466df87d2e5ec6b3acf",
+    "src/patterns/changelog/data.ts": "6842da5becfbade7142e49b393ca9b7b9045249ddb3bc19d3c809d6eac432219"
+  },
+  "environment": {
+    "url": "http://localhost:5222",
+    "browser": "Chromium / Playwriter 55",
+    "fixture": "three local illustrative venues",
+    "viewports": [
+      [
+        1440,
+        1000
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        768,
+        1024
+      ]
+    ],
+    "locale": "en"
+  },
+  "recording": {
+    "width": 1440,
+    "height": 1000,
+    "seconds": 29.8,
+    "encoded_fps": 30,
+    "capture": "variable-rate CDP screencast; original timestamps preserved"
+  },
+  "artifacts": {
+    "before-desktop.png": "fdb490261c1240d0e14a71b28e174091676a332b983301d519c393b2ff5ebdd8",
+    "dark-corrected.png": "59823106c78ad661063b06a868808087d54455e530db93f46f83581d15aa4661",
+    "saved-empty.png": "0a7c964d68efd0e5c493152dd22a5ed924fc7665c03cd6c731d88aae90d34165",
+    "initial-desktop.png": "166598f468e7cef3eddc869b3092a5864ef5743cb43eb15b95ffe54c14ccd2fe",
+    "mobile-menu.png": "db5a3eab54702f29915cb2e0e4bcff09d3cae0f8931ef7b0f4a766b2b1013e90",
+    "after-docs.png": "678c2665d57d5de2d8cd1d9f0af93ca88d76a49e3a9662bcede761ed0efc13ae",
+    "source.json": "fe841969c292369fe36c94a76b90fe86c6db9d3ed82516d3b3c67f8dd8618c75",
+    "after-mobile-dark.png": "e222775aad97ff952f7085a7eb97571b8a9dd66af35a8e97003ec79f9636a787",
+    "interaction.mp4": "93da4b1d0efbb99f46f289542a7e6fb1c4b6595158677500c26716c786610335",
+    "reference-08.png": "327a89472408b4c7d604dab6ff082d774b7e3de6beb335cbb30c46403364ae40",
+    "reference-20.png": "380fb6737a11801f4748954aa3a934d973ab345dc70e91ff2255808be6b286c5",
+    "after-copy.png": "4010a22634c1617cbeff553247a00f44f956c0f89d8b64681304c74869a2eb8b",
+    "interaction-original.json.xz": "ebf53d6b03927013e71c8842014e70a852b1e895120f35e01e13c6fde53c3346",
+    "after-tablet.png": "b03e239d0134aedcc098c7ba936d70fffa0c81e132adba88db215c0376c49a01",
+    "mobile-dark.png": "0342ba87914069377c9315720f9ac42246fad15a10a7af8ae7748cb47cd8c71c",
+    "initial-mobile.png": "c15b582fec2ce8ffede0309a6f30d64156238fff41f721f6db8b6127577db794",
+    "reference-14.png": "1dedaa71bd1498348a32d2674827efad0f54d86ba04fc9309a5e07b26cec10a0",
+    "peer-menu.png": "78808d8ec39d60ca3f71d0bcbe636f328870226dd1ed7e87ca67035af6bc59d5",
+    "after-desktop.png": "b2b84ab5cdff01b0c56eb181b7458d94d2418f4b7b489d532014c07b08fb0711",
+    "search-empty.png": "a308766e1957c1c0e7af1744922005e519d652003a86e63aa39a85552467ffac",
+    "changelog-before.png": "cf7609d5b1ab008fbf3a54060182b3e2280ddaed1653d22cf5438e8edf6ddbcb",
+    "after-mobile.png": "366126f60e462ba33f9a9dea55f181f8efee838d674d7c405baabd7b4bb415bd",
+    "before-mobile.png": "72d98eb9da23ec7542f71f55e05e4557002838efae581cf09212c4e890484c0f",
+    "reference-02.png": "91463400580208b5f27a59a75ec9b0c3553a708e8714955a11121c61bf7fb254",
+    "changelog-before-entry.png": "f1a7d863e39eeaed677edab4923d83b487b384616d1716554759d4f97422e54f",
+    "style-menu.png": "975d4e6c16ef84fdf4a8e21ead9e2b80a9db7bd76eda4173c062cba3270c6cd9",
+    "search-wifi.png": "be721c5d1092f9a8d7ac1df926024567d6c85534730ce38423838d837565cf6e",
+    "changelog-after-entry.png": "c7011a083d05713cffbbe4e1c6f123b173c957ddb9f59a5bfaf30d7d5dda6146"
+  },
+  "product_source_revision": "3b01fa85030527be740e26b4ef80b5fd44e0b421",
+  "pull_request": "https://github.com/oreo-design/oreo-ui/pull/48"
+}

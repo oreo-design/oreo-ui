@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "place-map": { title:"Place Map", description:"An illustrative neighborhood map with accessible markers, selected routes and composable details." },
+  "place-detail-card": { title:"Place Detail Card", description:"A compact venue summary with amenities, rating, navigation and optional copy/save actions." },
+  "map-style-picker": { title:"Map Style Picker", description:"Five labeled map palettes using Oreo Inline Quick Menu behavior." },
+  "place-explorer": { title:"Place Explorer", description:"A local place discovery conversation with an interactive map, filters, saved venues and copyable itineraries." },
   "agent-connect-card": { title: "Agent Connect Card", description: "A compact integration setup card with arced client identities and a focused action." },
   "quota-usage": { title: "Quota Usage", description: "A compact circular quota meter with clear usage, unknown and over-limit states." },
   "agent-client-picker": { title: "Agent Client Picker", description: "A controlled client selector with native radio navigation and provider marks." },

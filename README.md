@@ -202,3 +202,7 @@ Browse selected main-branch updates at `/changelog`, with date anchors, search/t
 ### Agent Connections
 
 `/agent-connections` composes AgentConnectCard, QuotaUsage and AgentClientPicker into a local MCP setup workspace. Client selection, read-only access changes, config copying and disconnection are interactive fixtures; no server calls or credentials are involved. Each component has its own docs/playground route. Reference: [Priyank](https://x.com/Priyank/status/2110430943270052172).
+
+### Place Explorer
+
+`/place-explorer` turns [pitus’ map reference](https://x.com/pitus_/status/2110421626873643338) into PlaceMap, PlaceDetailCard and MapStylePicker, with individual docs/playgrounds. Explore three illustrative venues, change palettes, filter and save places, and copy a sample itinerary. Original SVG geography and thumbnails require no map service or location access. The map is not for navigation.

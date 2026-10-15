@@ -5,6 +5,7 @@ export const REPOSITORY = "https://github.com/oreo-design/oreo-ui";
 /** Selected main-branch changes. Dates are merge dates in Asia/Shanghai, not package releases. */
 export const releases: Release[] = [
   { date: "2026-10-15", label: "October 15, 2026", title: "More pieces. More possibilities.", description: "Brand tools, focused workspaces, and the small details that make them work.", changes: [
+    { id:"place-explorer", kind:"Added", title:"Place Explorer", description:"An illustrative neighborhood map, venue detail card and five-style picker, composed into a local discovery template with filters, saved places and copyable itineraries.", page:"place-explorer", pr:48 },
     { id:"agent-connections", kind:"Added", title:"Agent Connections", description:"An arced setup card, compact quota rings and native client picker, composed into a local MCP workspace with read-only tool access and connection management.", page:"agent-connections", pr:47 },
     { id:"finance-workspace", kind:"Added", title:"Finance Workspace", description:"A multi-series balance chart, savings allocation, spending gauge and masked payment card, composed into an interactive local finance dashboard.", page:"finance-workspace", pr:46 },
     { id:"presence-room", kind:"Added", title:"Presence Room", description:"Live-roster avatars, online and typing badges, and multi-person typing prompts in a local collaborative brief with discussion and connection recovery.", page:"presence-room", pr:45 },
