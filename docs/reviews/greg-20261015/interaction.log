@@ -1,0 +1,33 @@
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+[PAGE ERROR] this.element.parentElement was null
+[PAGE ERROR] this.element.parentElement was null
+[PAGE ERROR] this.element.parentElement was null
+Console output:
+[log] PASS: switching modes retains quick text
+[log] PASS: bold wraps selection
+[log] PASS: formatting restores editor focus
+[log] PASS: preview renders Markdown
+[log] PASS: save creates session draft
+[log] PASS: switching modes retains long fields
+[log] PASS: numbered list formats selected lines
+[log] PASS: empty long draft is rejected
+[log] PASS: saved draft restores mode and content
+[log] PASS: opening draft clears validation error
+[log] PASS: delete removes draft
+[log] PASS: delete preserves editor
+[log] PASS: radio arrow navigation
+[log] Element: span.composer-mode-indicator
+Box: x=433 y=234 w=252 h=37
+Children: 0  Text length: 0
+Scroll Y: size=37 client=37 overflowing=false top=0
+Scroll X: size=252 client=252 overflowing=false left=0
+Styles: transitionDuration=unset transform=matrix(1, 0, 0, 1, 252.141, 0)
+Aria: aria-hidden=true
+[log] PASS: keyboard disables mode motion
+[log] Element: main.composer-studio
+Box: x=0 y=0 w=390 h=1876
+Children: 5  Text length: 970
+Scroll Y: size=1876 client=1876 overflowing=false top=0
+Scroll X: size=390 client=390 overflowing=false left=0
+Styles: width=390px overflowX=unset
+[log] COMPOSER QA COMPLETE

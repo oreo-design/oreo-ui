@@ -1,0 +1,90 @@
+.composer-studio {
+  min-height: 100dvh;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  padding: 0 2rem;
+}
+.composer-studio-header {
+  max-width: 72rem;
+  margin: auto;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border-subtle);
+  gap: 1rem;
+}
+.composer-studio-heading {
+  max-width: 72rem;
+  margin: 3.5rem auto 2.5rem;
+}
+.composer-studio-grid {
+  max-width: 72rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.composer-stage {
+  min-height: 27rem;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-elevated);
+  background-size: cover;
+  background-position: center;
+}
+.composer-stage[data-frosted="true"] {
+  background-image: url("/examples/gradient-mask/kyoto.jpg");
+}
+.composer-preview {
+  min-height: 27rem;
+  padding: 2rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  overflow-wrap: anywhere;
+}
+.composer-drafts {
+  max-width: 72rem;
+  margin: 3rem auto;
+}
+.composer-footer {
+  max-width: 72rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-border-subtle);
+  color: var(--color-text-tertiary);
+  font-size: 0.75rem;
+}
+.composer-studio button[aria-pressed="true"] {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+@media (max-width: 800px) {
+  .composer-studio {
+    padding: 0 1rem;
+  }
+  .composer-studio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .composer-stage {
+    padding: 1rem;
+    min-height: 22rem;
+  }
+  .composer-studio-heading {
+    margin-top: 2rem;
+  }
+  .composer-preview {
+    min-height: 20rem;
+    padding: 1.5rem;
+  }
+  .composer-footer {
+    flex-direction: column;
+  }
+}

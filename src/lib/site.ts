@@ -18,6 +18,8 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "toggle-composer": { title: "Toggle Composer", description: "Quick and long post editors with solid and frosted surfaces, selection formatting and accessible mode switching." },
+  "composer-studio": { title: "Composer Studio", description: "A writing template with live preview, image attachments and session drafts." },
   "canvas-toolbar": { title: "Canvas Toolbar", description: "Floating canvas navigation with zoom, pan, selection, organization and creation controls." },
   "canvas-studio": { title: "Canvas Studio", description: "A local idea board with pan, zoom, block editing, grid arrangement and reversible changes." },
   "text-toolbar": { title: "Text Toolbar", description: "A compact text formatting surface with a spectrum color orb, formatting grid, font size, alignment and family controls." },

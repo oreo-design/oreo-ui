@@ -1,0 +1,131 @@
+{
+  "baseline": "ddd85d939b5071c433d492098140a435638558b2",
+  "implementation": "004f7607b10b96919a056f0270b67c496d26fcc8",
+  "environment": "Local Chrome / Playwriter 39 / localhost:5208 / English / fixture",
+  "desktopViewport": [
+    1440,
+    1000
+  ],
+  "mobileViewport": [
+    390,
+    844
+  ],
+  "captureState": "Continuous working-tree captures before commit; see REVIEW.md for state and revision equivalence limits",
+  "recording": "blocked: current-tab activeTab permission",
+  "files": [
+    {
+      "file": "after-docs.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "caff691f83b6178c8f3ef7f361856610025f7384f6f46a251e18075b01056b5b"
+    },
+    {
+      "file": "after-image-error.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "08e73cb79f35961b24c24febb8f53af171641640e4faa4ca3d630e87b47c47b1"
+    },
+    {
+      "file": "after-keyboard-focus.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "e006b58ebaf6f1115b2b69edcdab507ca534889ebdb9e64c37f8ac4c090b6cdb"
+    },
+    {
+      "file": "after-long-dark.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b403d4e1628c93fe54915b7b81b1cc52b141473b7a4d69e3de151fa6ea6878d6"
+    },
+    {
+      "file": "after-long-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "5b2f0936c0160159482e7a18e2df061237850e297432a43971ffda6175c04ef2"
+    },
+    {
+      "file": "after-mobile-long.png",
+      "width": 390,
+      "height": 1876,
+      "sha256": "cf9e33918f604e6fea497a7ff5130338c39c1aa2588b364927fb8605e29b1fd5"
+    },
+    {
+      "file": "after-mobile-quick.png",
+      "width": 390,
+      "height": 1601,
+      "sha256": "c3d6dea8b5e16a1f74638a814f807a230f77297c51391c8f765bea2088291ee7"
+    },
+    {
+      "file": "after-playground.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "818ce0fa1c1ce08cee2d7bbe5a9bcadaacc3536344b06fd0df465340c1ba5822"
+    },
+    {
+      "file": "after-quick-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "eaa919121d657a9039125d54f288776762ce01b7576460ba270db72b2c051c20"
+    },
+    {
+      "file": "after-saved-image.png",
+      "width": 1440,
+      "height": 1192,
+      "sha256": "49a483f969c684629c0431a46fc580a3d2ce7de568015348c405662e83c27f15"
+    },
+    {
+      "file": "after-solid-dark.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "0be1c4ac26b2611ad85402075ec49c220d5b8d974dc62e7a5c1d1a6062c5661d"
+    },
+    {
+      "file": "after-solid-light.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "1b7ee1dce8f5999c5c6cd1fd44f47eb21d0e05444be41d28bfda7109b28e6ff4"
+    },
+    {
+      "file": "after-validation.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "ce816caa1ee07c38a64274555774db0a72eb6e6c5fc3c1f2a44fa3ef044bb959"
+    },
+    {
+      "file": "before-entry.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "64603bb3503e57604ed96c48a46f0c38fd440d5b458b6011cba4255b1756aa1a"
+    },
+    {
+      "file": "before-prompt-peer.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "82bedc0c594f0ba2263a0497a848db2ed6c91855a40f75a8ab4d964d4c3f7ffd"
+    },
+    {
+      "file": "peer-writing-studio.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "8614ba11a4f604cd6059de5cb5677410ee1e858d8779aa20ee4c92b4ecaa6b90"
+    },
+    {
+      "file": "reference-frame-1.png",
+      "width": 1134,
+      "height": 804,
+      "sha256": "9f160d9d2606177247bcb0b414fa5355b1b5e8cac881341593974ab323a3488c"
+    },
+    {
+      "file": "reference-frame-2.png",
+      "width": 1134,
+      "height": 804,
+      "sha256": "68a89956759a3fa17200b82d39e3ec616b0d336dbd19ae3b79a9ab8498ab611e"
+    },
+    {
+      "file": "reference-frame-3.png",
+      "width": 1134,
+      "height": 804,
+      "sha256": "c985eb5be134d5c110c106556e4f9de167e35fa1debc327f007a6e67bfc31b8c"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+Console output:
+[log] PASS: unsupported file is rejected
+[log] PASS: image appears in composer
+[log] PASS: image appears in preview
+[log] PASS: valid attachment recovers from error
+[log] PASS: remove clears attachment
+[log] PASS: saved snapshot restores image
+[log] REDUCED MOTION: Element: span.composer-mode-indicator
+Box: x=433 y=373 w=252 h=37
+Children: 0  Text length: 0
+Scroll Y: size=37 client=37 overflowing=false top=0
+Scroll X: size=252 client=252 overflowing=false left=0
+Styles: transition-duration=0s transform=matrix(1, 0, 0, 1, 252.141, 0)
+Aria: aria-hidden=true
+[log] KEYBOARD: Element: span.composer-mode-indicator
+Box: x=181 y=373 w=252 h=37
+Children: 0  Text length: 0
+Scroll Y: size=37 client=37 overflowing=false top=0
+Scroll X: size=252 client=252 overflowing=false left=0
+Styles: transition-duration=0s
+Aria: aria-hidden=true
+[log] ERROR LOGS [
+  '[warning] ObjectMultiplex - orphaned data for stream "app-init-liveness"',
+  '[warning] ObjectMultiplex - orphaned data for stream "app-init-liveness"',
+  '[warning] ObjectMultiplex - orphaned data for stream "background-liveness"',
+  '[warning] ObjectMultiplex - orphaned data for stream "background-liveness"',
+  '[error] Failed to load resource: net::ERR_CONNECTION_CLOSED',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[error] Unable to set window.solana, try uninstalling Phantom.',
+  '[error] Unable to set window.phantom.solana, try uninstalling Phantom.',
+  '[error] Failed to load resource: the server responded with a status of 403 (Forbidden)',
+  '[log] =====>>>>:  Detect Risk website detectWebsiteRiskLevel',
+  '[log] initContent执行：1',
+  '[error] Permissions policy violation: unload is not allowed in this document.',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://localhost:5208/composer-studio color: rgb(120, 120, 120) color: inherit {o: http://localhost:5208/composer-studio, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792042444786} /_vercel/insights/view',
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')",
+  '[pageerror] this.element.parentElement was null',
+  '[pageerror] this.element.parentElement was null',
+  '[pageerror] this.element.parentElement was null',
+  '[warning] You have Reduced Motion enabled on your device. Animations may not appear as expected.'
+]
+[log] RECORDING BLOCKER: Error: Failed to start recording: Extension has not been invoked for the current page (see activeTab permission). Chrome pages cannot be captured.. Click the Playwriter extension icon on this tab to enable recording.
+
+For automated recording, start a managed Playwriter browser with the bundled extension loaded:
+
+  playwriter browser start
+
+Or click the Playwriter extension icon on the tab once to grant permission.
+[log] ATTACHMENT QA COMPLETE
