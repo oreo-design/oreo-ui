@@ -22,6 +22,9 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Callback Priority", page: "callback-priority" },
+      { label: "Callback Card", page: "callback-card" },
+      { label: "Callback Board", page: "callback-board" },
       { label: "Command Search", page: "command-search" },
       { label: "Workspace Metric", page: "workspace-metric" },
       { label: "Deployment Row", page: "deployment-row" },
@@ -131,6 +134,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      { label: "Callback Workspace", page: "callback-workspace" },
       { label: "Thinking Workspace", page: "thinking-workspace" },
       { label: "Command Dashboard", page: "command-dashboard" },
       { label: "Invoice Workspace", page: "invoice-workspace" },

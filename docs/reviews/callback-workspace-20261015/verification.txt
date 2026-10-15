@@ -1,0 +1,20 @@
+Environment: local Chromium via Playwriter session 61, localhost:5228, English, fixture date October 6, 2026.
+Baseline: 701d10ec4d9be529fea886178249f3bd8ae51327.
+Build: npm run build (TypeScript and Vite) passed; pre-existing large-chunk advisory remains.
+Browser checks:
+- Default: 12 open callbacks / $5,220 / oldest 12 days / 9 technicians. Column counts 4 / 4 / 4.
+- Hillside Dental moved from review to scheduled; counts changed to 4 / 3 / 5. Cost edited from 1280 to 1280.55; total became $5,220.55.
+- Mine: 3 open / $1,220 / one technician.
+- Repeat failures: 3 open / $2,510.
+- Group by branch: Dallas 5 / Houston 4 / Austin 3. Add within Houston preselects Houston.
+- Created Eastside Workshop in Houston for $225.25: 13 open / $5,445.25. Archive removed it; heading received focus; Undo restored it.
+- Highest cost list order starts Hillside Dental $1,280, ABC Property Group $690, Riverside Clinic $540.
+- Search no-such-customer produced zero records and a centered recovery state; Clear filters restored results.
+- Blank customer/issue and negative cost rejected with explicit alerts. Mobile blank-form validation scrolls and focuses the error.
+- 1440x1000 desktop, 1024x900 medium, 390x844 mobile. Mobile board has its own horizontal scroll; page width stays 390px.
+- Desktop/mobile light and dark inspected. Mobile Filters reveals the existing inline filter panel and closes after selection.
+- Reload resets local data, as the UI states. Fresh reload and final interactions produced no new runtime errors. Historical HMR connection/reset messages during implementation are not claimed absent.
+Limits: fixtures only; no external scheduling, customer communication, persistent account, real device, screen reader, or production verification. No drag behavior is implemented or claimed.
+- All 12 open records archived via their actual detail dialogs; each action removed exactly one visible record. The resulting All caught up state offers New callback, and that action successfully opens the create form. This is distinct from filtered no-results.
+- Component Card, Priority, populated Board, empty Board, and API routes rendered without new errors. Board empty uses the shared centered state.
+- Recording: actual group toggle, detail edit and stage move; original CDP frames preserved. No new layout/entrance animation; shared Switch motion retained.

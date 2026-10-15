@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "callback-priority": { title:"Callback Priority", description:"Compact operational priority badges with readable labels and signal bars." },
+  "callback-card": { title:"Callback Card", description:"A service callback card with priority, reported date, technician and cost." },
+  "callback-board": { title:"Callback Board", description:"Controlled service callback stages with record counts and accessible detail actions." },
+  "callback-workspace": { title:"Callback Workspace", description:"An operational callback board with team views, branch grouping, search and editable local service records." },
   "thinking-state": { title:"Thinking State", description:"Six tiny pixel signals for ongoing assistant activity, with controlled motion and accessible labels." },
   "thinking-timeline": { title:"Thinking Timeline", description:"A controlled operational timeline with running, paused, complete and recoverable error states." },
   "thinking-workspace": { title:"Thinking Workspace", description:"A calm assistant template with a local run sequence, pause, stop, retry and editable pixel signals." },
