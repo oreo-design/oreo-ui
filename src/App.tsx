@@ -6,6 +6,9 @@ import { ConnectionStateDocs } from "@/pages/ConnectionStateDocs";
 import { CalendarSyncPage } from "@/pages/CalendarSyncPage";
 import { CommentThreadDocs } from "@/pages/CommentThreadDocs";
 import { CommentWorkspacePage } from "@/pages/CommentWorkspacePage";
+
+import { SubscriptionComponentsDocs } from "@/pages/SubscriptionComponentsDocs";
+import { SubscriptionPage } from "@/pages/SubscriptionPage";
 import { InlineConfirmDocs } from "@/pages/InlineConfirmDocs";
 import { InlineQuickMenuDocs } from "@/pages/InlineQuickMenuDocs";
 import { ProjectChatDocs } from "@/pages/ProjectChatDocs";
@@ -79,6 +82,9 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "calendar-sync": CalendarSyncPage,
   "comment-thread": CommentThreadDocs,
   "comment-workspace": CommentWorkspacePage,
+
+  "subscription-components": SubscriptionComponentsDocs,
+  subscription: SubscriptionPage,
   "inline-confirm": InlineConfirmDocs,
   "inline-quick-menu": InlineQuickMenuDocs,
   "project-chat": ProjectChatDocs,

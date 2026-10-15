@@ -2,6 +2,8 @@ import { AgentResultCard } from "@/components/automation";
 import { DocumentStorage } from "@/components/document-activity";
 import { CommentThread } from "@/components/comment-thread";
 import { initialThreads as commentThreadFixtures } from "@/patterns/comment-workspace/data";
+
+import { ProductPreview } from "@/components/subscription";
 import { InlineConfirm } from "@/components/inline-confirm";
 import { InlineQuickMenu } from "@/components/inline-quick-menu";
 import { FolderCard, FolderArtwork, FOLDER_TONES } from "@/components/knowledge-base";
@@ -54,6 +56,8 @@ export const componentModules = {
   automation: { AgentResultCard },
   "document-activity": { DocumentStorage },
   "comment-thread": { CommentThread },
+
+  subscription: { ProductPreview },
   "inline-confirm": { InlineConfirm },
   "inline-quick-menu": { InlineQuickMenu },
   "knowledge-base": { FolderCard, FolderArtwork },
@@ -84,6 +88,11 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
   "automation-components": { ...define("Agent Result", { title: text("Selected account and ad sets"), status: select(["ready", "running", "error"], "ready"), open: toggle(false), details: text("Oreo Store · Weekend essentials · $200 daily budget") }, (v, set) => <div className="w-full max-w-xl"><AgentResultCard title={v.title} status={v.status} open={v.open} onOpenChange={open => set("open", open)}>{v.details}</AgentResultCard></div>), source: "automation" },
   "document-activity": define("Document Storage", { capacity: number(20, 0, 100), photos: number(7.2, 0, 100, .1), documents: number(3.8, 0, 100, .1), video: number(1.8, 0, 100, .1) }, v => <div className="w-full max-w-sm"><DocumentStorage capacity={v.capacity} segments={[{label:"Photos",value:v.photos,tone:"photos"},{label:"Documents",value:v.documents,tone:"documents"},{label:"Video",value:v.video,tone:"video"}]} /></div>),
   "comment-thread": define("Comment Thread", { state: select(["open", "resolution", "resolved"], "open"), resolutionId: text("r5") }, (v, set) => <CommentThread key={v.state} thread={{ id: commentThreadFixtures[0].id, comments: commentThreadFixtures[0].comments, resolved: v.state === "resolved", resolutionId: v.state === "open" ? undefined : v.resolutionId }} onChange={thread => { if (thread.resolutionId) set("resolutionId", thread.resolutionId); set("state", thread.resolved ? "resolved" : thread.resolutionId ? "resolution" : "open"); }} className="w-full max-w-xl" />),
+
+  "subscription-components": { ...define("Product Preview", {
+    variant: select(["social", "assistant", "code"], "social"),
+    title: text(""), description: text(""), travel: number(4, 0, 8, 1), motionEnabled: toggle(true),
+  }, v => <ProductPreview variant={v.variant} title={v.title || undefined} description={v.description || undefined} travel={v.travel} motionEnabled={v.motionEnabled} className="w-full max-w-xs" />), source: "subscription" },
   "inline-confirm": define("Inline Confirm", {
     label: text("Delete project"), question: text("Delete project?"), confirmLabel: text("Delete"), cancelLabel: text("Cancel"),
     pendingLabel: text("Deleting"), successLabel: text("Deleted"), disabled: toggle(), simulateError: toggle(),

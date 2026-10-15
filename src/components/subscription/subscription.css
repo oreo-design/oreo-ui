@@ -1,0 +1,53 @@
+/* Illustration geometry is local to the two-plane scene. Surfaces, palette,
+   radii, type and spacing use Oreo tokens; no external artwork is required. */
+.oreo-product-scene {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 1 / 1.08;
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-elevated);
+}
+.oreo-product-back {
+  position: absolute;
+  top: 1rem;
+  left: 3.25rem;
+  width: calc(100% - 2.5rem);
+  height: calc(100% + 1rem);
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small) 0 0 0;
+  background: var(--color-bg-surface);
+  box-shadow: var(--shadow-default);
+}
+.oreo-product-front {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  width: max-content;
+  max-width: calc(100% - 2rem);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small);
+  background: var(--color-bg-surface);
+  box-shadow: var(--shadow-active);
+}
+.oreo-product-landscape {
+  position: relative;
+  height: 10rem;
+  background: linear-gradient(160deg, var(--color-palette-blue-text), var(--color-palette-purple-bg) 62%, var(--color-palette-orange-bg));
+}
+.oreo-product-sun { position: absolute; width: 3rem; height: 3rem; right: 1rem; bottom: 2rem; border-radius: 50%; background: var(--color-palette-orange-bg); }
+.oreo-product-building { position: absolute; width: 2.25rem; height: 8rem; left: 35%; bottom: 0; background: repeating-linear-gradient(90deg, transparent 0 5px, var(--color-border-default) 5px 6px), var(--color-bg-inverse); clip-path: polygon(0 14%, 50% 0, 100% 14%, 100% 100%, 0 100%); }
+.oreo-product-building-small { left: 65%; height: 5rem; width: 1.5rem; opacity: .7; }
+.oreo-subscription-dialog { transition: opacity 250ms var(--ease-out), transform 250ms var(--ease-out); }
+.oreo-subscription-dialog[data-starting-style], .oreo-subscription-dialog[data-ending-style] { opacity: 0; transform: scale(.97); }
+.oreo-subscription-backdrop { transition: opacity 250ms var(--ease-out); }
+.oreo-subscription-backdrop[data-starting-style], .oreo-subscription-backdrop[data-ending-style] { opacity: 0; }
+.oreo-subscription-dialog[data-instant], .oreo-subscription-backdrop[data-instant] { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .oreo-subscription-dialog { transition-property: opacity; }
+  .oreo-subscription-dialog[data-starting-style], .oreo-subscription-dialog[data-ending-style] { transform: none; }
+}
+@media (max-width: 639px) {
+  .oreo-product-scene { max-width: 18rem; margin-inline: auto; aspect-ratio: 1.4; }
+}
