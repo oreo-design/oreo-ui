@@ -4,6 +4,11 @@ export type Release = { date: string; label: string; title: string; description:
 export const REPOSITORY = "https://github.com/oreo-design/oreo-ui";
 /** Selected main-branch changes. Dates are merge dates in Asia/Shanghai, not package releases. */
 export const releases: Release[] = [
+  { date: "2026-10-16", label: "October 16, 2026", title: "A clearer view of operations.", description: "Reusable monitoring components and three complete workspaces for fleet, data and incident operations.", changes: [
+    { id:"fleet-control", kind:"Added", title:"Fleet Control", description:"Selectable vehicle maps, route timelines and operational feeds, composed into a fleet workspace with filtered telemetry and reversible alert acknowledgement.", page:"fleet-control", pr:60 },
+    { id:"pipeline-workspace", kind:"Added", title:"Pipeline Workspace", description:"Annotated source files and segmented health meters, composed into a module workspace with editable JSON configuration, explicit range checks and local validation history.", page:"pipeline-workspace", pr:60 },
+    { id:"incident-monitor", kind:"Added", title:"Incident Monitor", description:"An illustrated incident map and camera checkpoints, composed with district and category filters, synchronized event selection and reversible local resolution.", page:"incident-monitor", pr:60 },
+  ]},
   { date: "2026-10-15", label: "October 15, 2026", title: "More pieces. More possibilities.", description: "Brand tools, focused workspaces, and the small details that make them work.", changes: [
     { id:"experiment-workspace", kind:"Added", title:"Experiment Workspace", description:"Cumulative and daily A/B charts, variant results and decision panels, composed into a workspace with synchronized date inspection, editable drafts, confidence gates and reversible local decisions.", page:"experiment-workspace", pr:59 },
     { id:"project-board", kind:"Added", title:"Project Board", description:"An illustrated project creation card and four-stage overview, composed into a workspace with synchronized board and grid views, filters, editable projects, owner swimlanes and archive recovery.", page:"project-board", pr:58 },

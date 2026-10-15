@@ -18,6 +18,16 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "operations-map": {title:"Operations Map",description:"Operations Map: reusable operations UI with accessible selection and local demo data."},
+  "operations-feed": {title:"Operations Feed",description:"Operations Feed: reusable operations UI with accessible selection and local demo data."},
+  "health-meters": {title:"Health Meters",description:"Health Meters: reusable operations UI with accessible selection and local demo data."},
+  "route-timeline": {title:"Route Timeline",description:"Route Timeline: reusable operations UI with accessible selection and local demo data."},
+  "pipeline-file": {title:"Pipeline File",description:"Pipeline File: reusable operations UI with accessible selection and local demo data."},
+  "camera-checkpoint": {title:"Camera Checkpoint",description:"Camera Checkpoint: reusable operations UI with accessible selection and local demo data."},
+  "fleet-control": {title:"Fleet Control",description:"Fleet Control: reusable operations UI with accessible selection and local demo data."},
+  "pipeline-workspace": {title:"Pipeline Workspace",description:"Pipeline Workspace: reusable operations UI with accessible selection and local demo data."},
+  "incident-monitor": {title:"Incident Monitor",description:"Incident Monitor: reusable operations UI with accessible selection and local demo data."},
+
   "experiment-chart": {title:"Experiment Chart",description:"Cumulative and daily A/B conversion comparisons with accessible date inspection."},
   "variant-results": {title:"Variant Results",description:"A/B variant identity, conversion counts and observed rates."},
   "experiment-decision": {title:"Experiment Decision",description:"Host-owned readiness and reversible experiment decisions."},

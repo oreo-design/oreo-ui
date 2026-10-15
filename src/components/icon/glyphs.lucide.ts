@@ -1,4 +1,5 @@
 import {
+  Truck,
   Hand,
   Columns3,
   Info,
@@ -154,6 +155,7 @@ export const lucideGlyphs: Record<IconName, IconGlyph> = {
   paperclip: Paperclip,
   "paper-plane": Send,
   pencil: Pencil,
+  truck: Truck,
   plane: Plane,
   plug: Plug,
   plus: Plus,

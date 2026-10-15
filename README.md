@@ -250,3 +250,7 @@ Inspired by [Nizam’s callback board](https://x.com/nizamdesign/status/21102794
 ### Experiment Workspace
 
 `/experiment-workspace` is an A/B testing workspace inspired by [Charles Postiaux’s result cards](https://x.com/PostiauxCharles/status/2110321094301479197). ExperimentChart, VariantResults and ExperimentDecision have docs and playgrounds. Two synchronized charts compare cumulative rates and daily gaps, with keyboard inspection and data tables. Draft creation, sample loading, label editing, pause/resume, confidence gates and reversible decisions are local demo interactions. Observed lift uses aggregate counts; confidence is explicitly supplied sample metadata. No statistical engine or live traffic is connected.
+
+### Operations suite
+
+Lumeo Studio reference: [fleet, ML pipeline and incident monitoring](https://x.com/lumeodstudio/status/2110370181365076323). Six reusable components in `src/components/operations`: OperationsMap, OperationsFeed, HealthMeters, RouteTimeline, PipelineFile and CameraCheckpoint. Complete templates: `/fleet-control`, `/pipeline-workspace`, `/incident-monitor`. Local sample data, reversible actions, configuration checks, light/dark themes and responsive layouts. No live geography, camera feed, dispatch, Python execution or persistence.

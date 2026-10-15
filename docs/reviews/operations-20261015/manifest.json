@@ -1,0 +1,817 @@
+{
+  "task": "Lumeo Studio operations suite",
+  "reference": "https://x.com/lumeodstudio/status/2110370181365076323",
+  "baseline_revision": "3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6",
+  "implementation_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+  "pull_request": "https://github.com/oreo-design/oreo-ui/pull/60",
+  "environment": {
+    "browser": "Chromium via Playwriter session 65",
+    "origin": "http://localhost:5234",
+    "locale": "en",
+    "data": "local fixtures only",
+    "screenshot_scale": "css"
+  },
+  "images": [
+    {
+      "file": "after-changelog.png",
+      "sha256": "630b7a367a3057a3a0c534e01c8f332f664fb4b029667c90f991bb0b44a83511",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": "be400de (same product source; commit includes this capture)",
+      "capture_utc": "2026-10-15T16:11:58.280281+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "after-config-checks.png",
+      "sha256": "3e92ae1bffb686383706f9f891f95024ea72c915e960a6d52d99808c221680d3",
+      "pixels": [
+        1440,
+        1075
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:00:20.890371+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-config-error.png",
+      "sha256": "05e4521c8483339ca48cc8ededfbed2858004caad570037ef7c0174b61886198",
+      "pixels": [
+        1440,
+        1075
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:00:20.334725+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-docs-api.png",
+      "sha256": "474fb97f839e460b8ff2b1738ddd55dff82f55c1bd7dec8e707c4d5e3763aa89",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:05:30.679323+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-docs-camera-checkpoint.png",
+      "sha256": "812c5f259a53037cbc2a4d7ff985ec4de5ef2ef6ef8671d4d95eeeae16119d5d",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:05:51.584358+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-docs-health-meters.png",
+      "sha256": "b07da5f1a036aaaf8cc9e50b9e1f59e2b170bd2d0ab87a2a03b5a7a363f1f80f",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:05:39.343911+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-docs-map-empty.png",
+      "sha256": "7e8571c9f834afdefe7c50899196bed780b693822df1e3ef3d9dfc473b609b62",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:05:28.393895+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-docs-map.png",
+      "sha256": "a1810c34f31cebe26c86ddc9fd97c425ed666709dbc448947454f174da753cde",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:04:54.674125+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-docs-operations-feed.png",
+      "sha256": "195891904024cd199123bb61c61afecbe95cc4e8f8d69a3d0c3a41c1a3532755",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:05:35.033772+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-docs-pipeline-file-final.png",
+      "sha256": "9f4b6de863847c17888ede55668a326c41a194bd50d4310dd082606f0c5a29d0",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "capture_utc": "2026-10-15T16:09:57.844150+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "after-docs-pipeline-file.png",
+      "sha256": "0089150759fba47cd632ad25381ea4a0f6fbe3620f4da1e54b9385b7bca1c5b3",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:05:47.961243+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-docs-route-timeline.png",
+      "sha256": "64a2a6ac027cb280e2485ff07789b262529bbc20cb9012cfb99a0c04356a0ed0",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:05:43.330786+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-fleet-completed.png",
+      "sha256": "645f13c14a8c18d269a49302b429de7cdb4717e86c98f485692bec2a4ce8f0cc",
+      "pixels": [
+        1440,
+        1286
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:01:49.460547+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-fleet-dark-final.png",
+      "sha256": "10849295fcb59140cbe2575ea14d9bdc11628d3a33656f8a8f0703c279bb8007",
+      "pixels": [
+        1440,
+        1546
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "capture_utc": "2026-10-15T16:09:29.407660+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "after-fleet-dark.png",
+      "sha256": "b997601a310b5be5f691a8f62c602be6b7dc2a963b1b61718ca2a5a91d45ecbd",
+      "pixels": [
+        1440,
+        1546
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T15:57:01.389441+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-fleet-empty.png",
+      "sha256": "fa6279e0485248f093ab3b3620d1de3008b856eb1aab127f776cfdad6dce923f",
+      "pixels": [
+        1440,
+        1258
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:01:50.111587+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-fleet-light.png",
+      "sha256": "af9874483b75f9eea18a3dd782f5f9428cd53f920813d5f8f40cfda3d14b8a66",
+      "pixels": [
+        1440,
+        1546
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:02:48.666790+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-fleet-medium.png",
+      "sha256": "7da213f2e60816f0790a1edfc06a960a9d8e7b1ccf17a694a3377a0d3457ff42",
+      "pixels": [
+        900,
+        1854
+      ],
+      "viewport": [
+        900,
+        900
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:01:49.116949+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-fleet-mobile-dark.png",
+      "sha256": "0245560df65dd4f3ac694f88864291c984bf3b976dcedcb50f7c1516dbbda9f3",
+      "pixels": [
+        390,
+        2750
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:02:49.062876+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-fleet-mobile-light.png",
+      "sha256": "618a853a0fdd35fdcc8e65f7732906cfd35c132d5e498b7b43f23c9dcb7dbdc3",
+      "pixels": [
+        390,
+        2750
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:02:48.852046+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-incident-empty.png",
+      "sha256": "44381c688d41df23a8d792819540cebb9209557f3faedcbe4b1dad2d42adb811",
+      "pixels": [
+        1440,
+        1448
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:01:04.455219+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-incident-resolved.png",
+      "sha256": "51fd3c89cce747598ac5d1be47eb08a6ed3f057e22e642a5271061001d30eb87",
+      "pixels": [
+        1440,
+        1448
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T15:59:12.762941+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-incidents-dark-final.png",
+      "sha256": "e59013e97c188f0163e0eff001e9ddf47f77b84ba9f3ef5959ecfd326f37a06f",
+      "pixels": [
+        1440,
+        1475
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "capture_utc": "2026-10-15T16:09:33.452179+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "after-incidents-dark.png",
+      "sha256": "318c88a21d0f1be88a3b403acccdaa0d2771122bf0dd1869a57ac430bd77a992",
+      "pixels": [
+        1440,
+        1448
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T15:57:31.224251+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-incidents-light.png",
+      "sha256": "6e393a5b843321185f343334138336178fd4c3a028a643fa62d43b467b28befb",
+      "pixels": [
+        1440,
+        1448
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T15:59:42.857590+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-incidents-medium.png",
+      "sha256": "2e8e3f398c7031dd9b56822e553b5b24f801bd1a1a7e7ae9a850f08402da99d1",
+      "pixels": [
+        900,
+        1363
+      ],
+      "viewport": [
+        900,
+        900
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:01:27.733513+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-incidents-mobile-final.png",
+      "sha256": "59e85cb7e86a8d2a5405c2fb58405b1f5fe750553b8525052b451bbb2cca6fc4",
+      "pixels": [
+        390,
+        2314
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:03:08.173626+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-incidents-mobile-light.png",
+      "sha256": "3611ab4d669934f785337ed044abcba60a21a1da3f551dd970cb2561d095e850",
+      "pixels": [
+        390,
+        2314
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:03:08.370983+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-incidents-mobile.png",
+      "sha256": "17a2d99acaf4680125ff91f8164b9aa5b9570f17115d4a242326a6de112c9f94",
+      "pixels": [
+        390,
+        2389
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:01:04.962585+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-pipeline-dark-final.png",
+      "sha256": "90d2dc34fbd5538d2af667845a813dd82e9b04ed89ab9d987c18f9d134ced0aa",
+      "pixels": [
+        1440,
+        1160
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:03:25.978751+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-pipeline-dark.png",
+      "sha256": "16d555539c91a60a1f55c350aa8e131684857d05d6370d34c9d5d8a43809a52e",
+      "pixels": [
+        1440,
+        1160
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T15:57:11.780865+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-pipeline-delivery.png",
+      "sha256": "a7391e4890884a18b2141ee7bd6917fe578886e990f008247850ffa988a38ea1",
+      "pixels": [
+        1440,
+        1160
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "capture_utc": "2026-10-15T16:09:37.219144+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "after-pipeline-keyboard.png",
+      "sha256": "cc535c1ff65ba9a1a00c87842241077813a32e5f91d928448dcbfef7b6330905",
+      "pixels": [
+        1440,
+        1075
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:06:34.883900+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-pipeline-light.png",
+      "sha256": "7b46865c7dafca4a444ecad3338df7725fb21660a04babf7f06f6778d1220650",
+      "pixels": [
+        1440,
+        1075
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:00:42.055826+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-pipeline-medium.png",
+      "sha256": "dbbfa43ef67f631d8a78571930e1f4fb939cf1b98cae3e89b29d6506c86e8591",
+      "pixels": [
+        900,
+        1160
+      ],
+      "viewport": [
+        900,
+        900
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:03:25.732701+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-pipeline-mobile-dark.png",
+      "sha256": "3e0dea704e13d92ce259f6f0288e388ce2ec0f815147d8291d4a362145521d8b",
+      "pixels": [
+        390,
+        1573
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:03:25.207452+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "after-pipeline-mobile-light.png",
+      "sha256": "a3bec62170fd54d2fb81072b014e2839edd78efd09a6901aea6663410c28bc1c",
+      "pixels": [
+        390,
+        1573
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "phase": "after",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T16:03:25.548399+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
+    },
+    {
+      "file": "before-changelog.png",
+      "sha256": "511de5d5616f0580264982824b76bcc7c97149d0754dc9e9cf4d0e905cf0744d",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "before",
+      "source_revision": "3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6",
+      "capture_utc": "2026-10-15T15:48:31.941440+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "before-edge-observatory.png",
+      "sha256": "df555dc7b8bcbfed838e4d40b72c372da963eb65c6a143cbf500ba217c3c70b6",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "before",
+      "source_revision": "3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6",
+      "capture_utc": "2026-10-15T15:48:35.643598+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "before-fleet-control.png",
+      "sha256": "e0cb7d64f97373c46d3385c9b1c1773a352684f28d0cf70db4691cabefb4e71d",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "before",
+      "source_revision": "3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6",
+      "capture_utc": "2026-10-15T15:47:56.532639+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "before-incident-monitor.png",
+      "sha256": "e0cb7d64f97373c46d3385c9b1c1773a352684f28d0cf70db4691cabefb4e71d",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "before",
+      "source_revision": "3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6",
+      "capture_utc": "2026-10-15T15:48:28.074789+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "before-pipeline-workspace.png",
+      "sha256": "e0cb7d64f97373c46d3385c9b1c1773a352684f28d0cf70db4691cabefb4e71d",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "before",
+      "source_revision": "3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6",
+      "capture_utc": "2026-10-15T15:48:22.942303+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "before-place-explorer.png",
+      "sha256": "9ea7394d3553429f699ae75a6da883c6c71d76ba9565755233cf465fcba99c27",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "before",
+      "source_revision": "3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6",
+      "capture_utc": "2026-10-15T15:48:39.424789+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "oreo-lumeo-1.png",
+      "sha256": "69fb88b5d581b97c94d50d04c618572e8c262a1ed72127ab11827339a6b6e1d7",
+      "pixels": [
+        2400,
+        1524
+      ],
+      "viewport": [
+        2400,
+        1524
+      ],
+      "phase": "reference",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T15:47:13.654929+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "oreo-lumeo-2.png",
+      "sha256": "1d5581a7d3ce5a690f0a93b5841573406d707102c5be3f2123861ac10d5f3a44",
+      "pixels": [
+        2400,
+        1524
+      ],
+      "viewport": [
+        2400,
+        1524
+      ],
+      "phase": "reference",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T15:47:13.655529+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "oreo-lumeo-3.png",
+      "sha256": "bc6d7669a66680bb263352c6f3f1b8e613187700895048991784d501d0853e8f",
+      "pixels": [
+        2400,
+        1524
+      ],
+      "viewport": [
+        2400,
+        1524
+      ],
+      "phase": "reference",
+      "source_revision": null,
+      "capture_utc": "2026-10-15T15:47:13.657853+00:00",
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+    },
+    {
+      "file": "after-changelog-entries.png",
+      "sha256": "601040497c6be552873bac0ef0fd4da37b87a188548f3f5824bee33c6b698fb5",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "viewport": [
+        1440,
+        1000
+      ],
+      "phase": "after",
+      "source_revision": "0c61958c7ef008fe33c049445edc8e7dd096d41c",
+      "capture_utc": "2026-10-15T16:12:46.784847+00:00",
+      "state": "Scrolled to October 16 release; all three PR 60 entries visible."
+    }
+  ],
+  "recording": {
+    "file": "pipeline-interaction.mp4",
+    "dimensions": [
+      1440,
+      1000
+    ],
+    "duration_seconds": 15.64,
+    "frames": 185,
+    "originals": "pipeline-interaction-frames.json.xz",
+    "timing": "original screencast timestamps; no speed change"
+  },
+  "coverage_gaps": [
+    "No pre-existing templates; missing-route fallback is the actual baseline.",
+    "Mobile missing-route baseline not captured; exact baseline revision preserved.",
+    "No live backend, map, camera, Python execution, persistence or production verification."
+  ],
+  "changelog_revision": "PR final head; component/template source unchanged from implementation revision"
+}

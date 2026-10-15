@@ -22,6 +22,12 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Operations Map", page: "operations-map" },
+      { label: "Operations Feed", page: "operations-feed" },
+      { label: "Health Meters", page: "health-meters" },
+      { label: "Route Timeline", page: "route-timeline" },
+      { label: "Pipeline File", page: "pipeline-file" },
+      { label: "Camera Checkpoint", page: "camera-checkpoint" },
       { label: "Experiment Chart", page: "experiment-chart" },
       { label: "Variant Results", page: "variant-results" },
       { label: "Experiment Decision", page: "experiment-decision" },
@@ -149,6 +155,9 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      { label: "Fleet Control", page: "fleet-control" },
+      { label: "Pipeline Workspace", page: "pipeline-workspace" },
+      { label: "Incident Monitor", page: "incident-monitor" },
       { label: "Experiment Workspace", page: "experiment-workspace" },
       { label: "Project Board", page: "project-board" },
       { label: "Access Workspace", page: "access-workspace" },
