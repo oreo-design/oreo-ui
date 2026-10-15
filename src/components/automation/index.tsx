@@ -37,8 +37,8 @@ export type AgentResultState = "ready" | "running" | "error";
 const stateLabel: Record<AgentResultState, string> = { ready: "Ready to review", running: "In progress", error: "Needs attention" };
 
 /** Controlled or uncontrolled disclosure. Status is conveyed by text as well as color. */
-export function AgentResultCard({ title, icon = "folder", status = "ready", open, onOpenChange, children }: { title: string; icon?: IconName; status?: AgentResultState; open?: boolean; onOpenChange?: (open: boolean) => void; children: ReactNode }) {
-  return <Collapsible.Root open={open} onOpenChange={onOpenChange} className="agent-result" data-status={status}>
+export function AgentResultCard({ title, icon = "folder", status = "ready", open, defaultOpen = false, onOpenChange, children }: { title: string; icon?: IconName; status?: AgentResultState; open?: boolean; defaultOpen?: boolean; onOpenChange?: (open: boolean) => void; children: ReactNode }) {
+  return <Collapsible.Root open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange} className="agent-result" data-status={status}>
     <Collapsible.Trigger className="agent-result-trigger"><span className="agent-result-mark"><Icon name={icon} /></span><span className="min-w-0 flex-1 text-left [overflow-wrap:anywhere]">{title}</span><span className="agent-result-dot" aria-label={stateLabel[status]} role="img" /><Icon name="chevron-down" size="sm" className="text-text-tertiary" /></Collapsible.Trigger>
     <Collapsible.Panel className="agent-result-detail"><p className="mb-3 text-xs text-text-secondary">{stateLabel[status]}</p>{children}</Collapsible.Panel>
   </Collapsible.Root>;
