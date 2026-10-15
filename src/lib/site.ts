@@ -18,6 +18,8 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "text-toolbar": { title: "Text Toolbar", description: "A compact text formatting surface with a spectrum color orb, formatting grid, font size, alignment and family controls." },
+  "writing-studio": { title: "Writing Studio", description: "A local writing canvas with block formatting, editing, reversible history, links and plain-text mentions." },
   "meeting-components": { title: "Meeting Components", description: "Multi-select category menus, meeting detail cards, attendee availability, responses and reschedule suggestions." },
   "meeting-planner": { title: "Meeting Planner", description: "A local calendar template with meeting details, multi-select categories, flexible scheduling and reversible actions." },
   "automation-components": { title: "Automation Components", description: "Composable agent workspace navigation, panels, run summaries, result disclosures and Build/Canvas workflow views." },

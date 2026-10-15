@@ -1,4 +1,15 @@
 import {
+  TextAlignCenter,
+  TextAlignRight,
+  TextB,
+  TextItalic,
+  TextUnderline,
+  TextStrikethrough,
+  Code,
+  Highlighter,
+  LinkSimple,
+  Minus,
+
   Lock,
   Scan,
   Cursor,
@@ -74,6 +85,17 @@ import type { IconName } from "./names";
 
 /** Phosphor's answer for every name in the Oreo vocabulary. */
 export const phosphorGlyphs: Record<IconName, IconGlyph> = {
+  "align-center": TextAlignCenter,
+  "align-right": TextAlignRight,
+  "text-bold": TextB,
+  "text-italic": TextItalic,
+  "text-underline": TextUnderline,
+  "text-strikethrough": TextStrikethrough,
+  "inline-code": Code,
+  "highlighter": Highlighter,
+  "link": LinkSimple,
+  "minus": Minus,
+
   "scan-text": Scan,
   "cursor": Cursor,
   "book-open": BookOpen,
