@@ -1,0 +1,195 @@
+{
+  "baseline": "4816f212605fc36fbfa7728c44edcef54b0096d9",
+  "productSource": "aa8c99f9afc3b8b55ee8333d1f347a5738d0a4a6",
+  "environment": {
+    "browser": "Chromium via Playwriter session 64",
+    "url": "http://localhost:5231/access-workspace",
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "locale": "en",
+    "fixture": "2026-10-15"
+  },
+  "files": [
+    {
+      "file": "access-flow-frames.json.xz",
+      "bytes": 554656,
+      "sha256": "58f67360d76077ec2e66cd2352be1affbe72152206c9c2a192830f30c2e418e8"
+    },
+    {
+      "file": "access-flow.mp4",
+      "bytes": 101358,
+      "sha256": "b3f88c6f38783d1409efa7d030f0f3ac7833d525fb573e584b384ec05cc72d4b"
+    },
+    {
+      "file": "after-audit.png",
+      "bytes": 66090,
+      "sha256": "7c6dc95421a4c345f71af294e8ccde391ca4131e8ed7db7f957b7a5d3fd141f7"
+    },
+    {
+      "file": "after-changelog.png",
+      "bytes": 125947,
+      "sha256": "446f46db0f2801d33fe9032235122ffc335cf416b43bc3877c2691cac93ac334"
+    },
+    {
+      "file": "after-component-expired.png",
+      "bytes": 135447,
+      "sha256": "e38af3d16c039be1c02f297b3240601b973c601d6ba0394df2bbcd03de8dc376"
+    },
+    {
+      "file": "after-component-invitation.png",
+      "bytes": 136279,
+      "sha256": "3921882ebeb17bc9cabc3351a5a78258f4671004be17d5b7e7d877e0f293e0ab"
+    },
+    {
+      "file": "after-component-members.png",
+      "bytes": 116621,
+      "sha256": "96837bfcd1fb32aaedbebfab2f4c0517e87e90c563a4ba16e8672fd14ed9e57e"
+    },
+    {
+      "file": "after-dashboard-final.png",
+      "bytes": 118383,
+      "sha256": "2fbc200bd039c5cc6abb9273f5d586b025bdd5328ea05900e4bb751e1efae07a"
+    },
+    {
+      "file": "after-dashboard-initial.png",
+      "bytes": 118911,
+      "sha256": "f7883d0a05c2dafe7fab04c4ba3d447f8a0c9798d948ae9a128a820fefbe261a"
+    },
+    {
+      "file": "after-dashboard.png",
+      "bytes": 118383,
+      "sha256": "2fbc200bd039c5cc6abb9273f5d586b025bdd5328ea05900e4bb751e1efae07a"
+    },
+    {
+      "file": "after-invitation-accepted.png",
+      "bytes": 92156,
+      "sha256": "368e7b72c2f0b1efd7572e711db3461d831eb81781a0132103631397a5fd14e2"
+    },
+    {
+      "file": "after-invitation-dark.png",
+      "bytes": 90490,
+      "sha256": "714784f084ecb970dce9fc7fed29401cdc789a03c95a1546efc5709a3d11d728"
+    },
+    {
+      "file": "after-invitation.png",
+      "bytes": 93173,
+      "sha256": "844af3eb086019a4f3120662a7ec184d39b950192fef45725e24eb32097d145c"
+    },
+    {
+      "file": "after-invite-error.png",
+      "bytes": 113950,
+      "sha256": "5bbf8a01fb12a5df2e41bd70722c8a2c2d7b50efac4ebd7cec6bbfd42b0a2ac5"
+    },
+    {
+      "file": "after-mobile-dashboard.png",
+      "bytes": 98754,
+      "sha256": "2fc40c09614e8992d5ee4f758f06905c42c42a6b2e6cf933e0f1c40b732d151f"
+    },
+    {
+      "file": "after-mobile-invitation.png",
+      "bytes": 58544,
+      "sha256": "61bad972435423c5896b69f93192a2b2a1bd0749c2534a1fade5e11c35db6a7b"
+    },
+    {
+      "file": "after-mobile-invite-editor.png",
+      "bytes": 40432,
+      "sha256": "16fb7957d501334ebcb4c3a7d0a938cd1f454c7d36c4c61a704d8b3f075d3e69"
+    },
+    {
+      "file": "after-mobile-settings.png",
+      "bytes": 53921,
+      "sha256": "bdcf23c705c38010dd90b81eda2fb64bf81fb89e75f09c2af6923d0f9c9deee8"
+    },
+    {
+      "file": "after-mobile-team.png",
+      "bytes": 61297,
+      "sha256": "ec7848b7c8980118790533498081b7083eee901b533a96dd3fc3654f56a387bc"
+    },
+    {
+      "file": "after-session-limit.png",
+      "bytes": 78250,
+      "sha256": "17b5031898a3bde5958b2cd551511181f6960e685ae74267a3cbe4c22a54b153"
+    },
+    {
+      "file": "after-sessions-dark-final.png",
+      "bytes": 70639,
+      "sha256": "e82b43841b1558da808b3228595ada082587382515b1dac1f4bf8bcd01ff1b0b"
+    },
+    {
+      "file": "after-sessions-dark.png",
+      "bytes": 69668,
+      "sha256": "a850b9f249b0d7d4a9e584a81b036301a80ef58ed7ce2edd5934fa8382a60eef"
+    },
+    {
+      "file": "after-sessions-empty.png",
+      "bytes": 63756,
+      "sha256": "5191627af7894ac5fc730e2d83687a6f6183d838f6bb123021a117c01726046d"
+    },
+    {
+      "file": "after-settings-dark.png",
+      "bytes": 85300,
+      "sha256": "b27500418cfd655d19784b339439e580c516f393aa1d0ab7830782d0fa8919f6"
+    },
+    {
+      "file": "after-team-empty.png",
+      "bytes": 72336,
+      "sha256": "dc7ec2656ae575b65c59fced31ea9b4ef22b400d9f6f7939ef6f874de1a80413"
+    },
+    {
+      "file": "after-team.png",
+      "bytes": 102302,
+      "sha256": "9becf68adfbdb9d2dd2717ad0e8f338c867037caf0513ce8ea02059a24646488"
+    },
+    {
+      "file": "after-tools-ready.png",
+      "bytes": 76229,
+      "sha256": "8a08771d3c2240c2cd0b53830ed70150d7dc73746e74317ae2e8d752b59e87c1"
+    },
+    {
+      "file": "after-tools.png",
+      "bytes": 85070,
+      "sha256": "9dbaf7ff126c2d59e438ac6f90025ca4c340196b336a8035681318147555472c"
+    },
+    {
+      "file": "before-changelog.png",
+      "bytes": 125330,
+      "sha256": "3601f930cdbca26aa8db9773fd38bfc4a4c1edc84d20d3038702eaa8e8aaee5e"
+    },
+    {
+      "file": "before-entry.png",
+      "bytes": 93924,
+      "sha256": "76c857c0b213dbe1a6fc329e7e121b49bc36532950d703e07adc5f8d2d7d290f"
+    },
+    {
+      "file": "peer-connections.png",
+      "bytes": 149484,
+      "sha256": "8c1eeac5e655e0c5052edb95a84b7addadc4a54006b83bd919540b1b25c9089f"
+    },
+    {
+      "file": "reference-1.png",
+      "bytes": 305179,
+      "sha256": "979f296519565f493e9155b7af9b98337ff53f3dbca37d4665408dfd1b9d1b14"
+    },
+    {
+      "file": "reference-2.png",
+      "bytes": 190271,
+      "sha256": "7ea364dcb598f923d3ce08c3754097998fa95769089644cac48c43a90e21d782"
+    },
+    {
+      "file": "reference-3.png",
+      "bytes": 258642,
+      "sha256": "8226dd8703eff32c83df1034f8b15e8adb2f49cfd8b181cd165f6361b2818b71"
+    },
+    {
+      "file": "reference-4.png",
+      "bytes": 114522,
+      "sha256": "01527f13eaa7e8f73ec7e1e9220f9133247456722890938293950f89ac397cb3"
+    }
+  ]
+}
