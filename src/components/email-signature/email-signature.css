@@ -1,0 +1,29 @@
+/* Export artefact: intentionally stable white/paper preview in both interface themes. Values match the existing Oreo light tokens. */
+.oreo-email-signature {
+  padding: 1.5rem;
+  background: #ffffff;
+  color: #202020;
+  font:
+    13px/1.6 Arial,
+    sans-serif;
+  overflow-wrap: anywhere;
+  border-radius: var(--radius-control);
+  width: 100%;
+  text-align: left;
+}
+.oreo-email-signature p {
+  color: #646464;
+  margin-bottom: 1rem;
+}
+.oreo-email-signature strong {
+  font-weight: 700;
+}
+.oreo-email-signature span {
+  display: block;
+}
+.oreo-email-signature b {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 1.25rem;
+}

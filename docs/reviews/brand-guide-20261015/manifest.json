@@ -1,0 +1,288 @@
+{
+  "baseline": "619e9dbe2fea1ac857c5fc25c088bc6042acad71",
+  "implementation": "a4c65c8dca437d133befd59de313e5da722ba909",
+  "environment": "Chromium, Playwriter 45, localhost:5215, English, local sample data",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      768,
+      1000
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "files": [
+    {
+      "file": "REVIEW.md",
+      "bytes": 10385,
+      "sha256": "9b307fd5a55891402f5f9ed32f1eb2e942d38b6e22796432f1f85aa3818b4799"
+    },
+    {
+      "file": "after-applications.png",
+      "bytes": 99281,
+      "sha256": "7350db3982ade0b69ff4591a69f74ef453169b8d635ab3676f6d930200e27ab1",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-colours-dark.png",
+      "bytes": 108422,
+      "sha256": "10ef11873f65e59d0418ea64062c06bdb8040446f05a7cd446b338a26c34f5a7",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-entry-clean.png",
+      "bytes": 97755,
+      "sha256": "c0cfccfe891c2e41642edde29832cbc04cea161bb63d4d3ab6d816aec2fa2c99",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-entry-dark.png",
+      "bytes": 101384,
+      "sha256": "6ca33c925cf0dcbc7563561267b9d4615635e5c4f59b5b26c74f5176001514be",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-entry-default.png",
+      "bytes": 104852,
+      "sha256": "8c888c83ab33526e758c15aa70b2cac46cd9e9aa9a71f204a4e43dbf2feac5a9",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-entry-final.png",
+      "bytes": 104805,
+      "sha256": "45da2305e62a20b67a45a19a6cf242ebc6d95f1639767d0f783380cc7622402a",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-entry-light-v2.png",
+      "bytes": 105149,
+      "sha256": "5aa9cbd933b6f086c1e4449ca3331f93a210b959773bbc71347c996cb862f812",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-entry-light.png",
+      "bytes": 6490,
+      "sha256": "6e3c38217a68d0651549bcc3faab486ce6aae1c796325fe61c8dc7fb19aaaeb0",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-full-light.png",
+      "bytes": 418331,
+      "sha256": "fbe2afd51c478fca7ca6faeb78eb83229fe01fa6c5e9b1cab22bcdad55838733",
+      "width": 1440,
+      "height": 5428
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "bytes": 48980,
+      "sha256": "ab1f81ca4f8f4a379c53f72ececa513121c9d8aaa4016b7cc996d70f9c489152",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after-mobile-light.png",
+      "bytes": 49401,
+      "sha256": "54db4198dd2fc91b0eaaa9c09c540b54639d2775f75fb4b316b9c7e280a83cb5",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after-mobile-signature.png",
+      "bytes": 36374,
+      "sha256": "b01a2cdabcbd2138181ceb91e035a602b39abe8d1ef4ea685f08d53c26b3a73c",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after-no-results.png",
+      "bytes": 52532,
+      "sha256": "89b24f615ef2a44992442bbfbe86ae411276a5c7bace4b834a67df50ce331b32",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-signature-dark.png",
+      "bytes": 101949,
+      "sha256": "1c4c84f864cd8336eb7e5aeeb4bf364d8bfd977f60afd08cd210981bf99473b3",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-signature-light-v2.png",
+      "bytes": 101888,
+      "sha256": "20f2c2690b9c2085203baca6fff2e816458e5c63045fb4e6bd90d7260f34c36f",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-signature-light.png",
+      "bytes": 101559,
+      "sha256": "d7ba5fbaf01c1be47f09605bfd7ca56ba2d01445ddee41bb0b7a33234b46681b",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-signature-playground.png",
+      "bytes": 97430,
+      "sha256": "6065dbef04907c07154ee746306c87d563bca5e8b0b406b7ff86cf2bc66a4fb0",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-swatch-playground.png",
+      "bytes": 85006,
+      "sha256": "80667517b74f939e81594b75e7594bc0abff27eb3250718ab4a46fbf6f3dc53a",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-tablet-type.png",
+      "bytes": 103347,
+      "sha256": "f7563dcd33046bcebb57b79604bd605ae283899b2339d84518ec09d09deddef9",
+      "width": 768,
+      "height": 1000
+    },
+    {
+      "file": "after-type-playground.png",
+      "bytes": 122942,
+      "sha256": "1eed5c2706da769c5de3e1055a13ef244983e6122267e51f6f3d9bcb2325160e",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-type-v2.png",
+      "bytes": 119806,
+      "sha256": "f4d415c6684172186f5f64dfe96bea08980cc35be25bac2ea6368ffb89aefa42",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-type.png",
+      "bytes": 135123,
+      "sha256": "0a65a747a4542da18ada0497a7477ce40f7de6ad91ff3b74d553dd21c8d331fb",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "before-entry.png",
+      "bytes": 87300,
+      "sha256": "0a343b3959fbfac12a2265f755fc59644daf2a5446b86ba2a760606f2cc275f5",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "before-mobile.png",
+      "bytes": 24801,
+      "sha256": "2b8aa6c95fdd20a73a9f2dd4b05c76cf035e548ffb9458b2d45a6287fc18216a",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "build.log",
+      "bytes": 31217,
+      "sha256": "46a3ff293e6ffcb12276fce2c18836bd6bee008fbf8d9f5c63681fcb153cc7fe"
+    },
+    {
+      "file": "export-oreo-brand-guide.json",
+      "bytes": 2207,
+      "sha256": "3c9bb41d4605358970240945d680617a64a2f0d021a8ea94cc136439966035d7"
+    },
+    {
+      "file": "export-oreo-signature.html",
+      "bytes": 465,
+      "sha256": "0d49666d93a852e5036d3c4e00923a9dc96b28d691fe973fdde8c5f8a3ace0b3"
+    },
+    {
+      "file": "export-oreo-type-scale.css",
+      "bytes": 193,
+      "sha256": "1265be89b6c060599a1ebf9a0cedd9a5e562a08e13e7da11f19e3e9c3440252b"
+    },
+    {
+      "file": "export-oreo-white.svg",
+      "bytes": 506,
+      "sha256": "6b8837dc26d3948fe484f97d15777e5eca6c4313e5efd44ec29cb02c60fae30c"
+    },
+    {
+      "file": "export-signature-rendered.png",
+      "bytes": 13003,
+      "sha256": "1d3d16e8e9c3cfb9ebdac0ed563d517f171e9efe7dbc920791e8e15cb286d76b",
+      "width": 768,
+      "height": 600
+    },
+    {
+      "file": "interaction-fast-superseded.mp4",
+      "bytes": 148221,
+      "sha256": "c97e2ff32201331511df13abe1ef77f3207806cee33cbea523dee1297d1654ab"
+    },
+    {
+      "file": "interaction.mp4",
+      "bytes": 132562,
+      "sha256": "611051efb2180b9310adaa216cd27f9d1676ef112c07df475413a3c86aaf82c3"
+    },
+    {
+      "file": "motion-fast-originals.zip",
+      "bytes": 1943561,
+      "sha256": "b053caa957faf5d78ed937a2c2ee398c76dc0d734c101338472bbbbbe9687ad7"
+    },
+    {
+      "file": "motion-originals.zip",
+      "bytes": 3587432,
+      "sha256": "f673c48ba483b45ebc19fea3d7e5553d43bf55fe45382782bc963c2ab652b723"
+    },
+    {
+      "file": "peer-project-summary.png",
+      "bytes": 103320,
+      "sha256": "4b561f0aa6b6926906850ec73986e3f89faf724f1e11b789f032d8a076eb7e85",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "peer-tree-stepper-final.png",
+      "bytes": 105727,
+      "sha256": "55c3a3ff532204c4aa55117a97e82ef5fc20800e4db3f3e3242443124baa7c19",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "reference-applications.png",
+      "bytes": 137326,
+      "sha256": "c2ea6b150751d9bfbae5aa930ba5ba73a41ff897ad03980f03a46d2c9ca31be0",
+      "width": 756,
+      "height": 413
+    },
+    {
+      "file": "reference-signature.png",
+      "bytes": 49334,
+      "sha256": "4548119ba690bbf0c1247a01d06a498ce6ba652a11f6cf917ff1213e3c807e58",
+      "width": 756,
+      "height": 413
+    },
+    {
+      "file": "reference-start.png",
+      "bytes": 51029,
+      "sha256": "a9c52d09953f920c141be729a971ea82054c826fc4090039c01f5e3e0ffe8e88",
+      "width": 756,
+      "height": 413
+    },
+    {
+      "file": "reference-type.png",
+      "bytes": 55681,
+      "sha256": "afde573bc877d36a5c54c7a95ce52d9e051c180081fa12a8848b01cdc02c1256",
+      "width": 756,
+      "height": 413
+    }
+  ]
+}
