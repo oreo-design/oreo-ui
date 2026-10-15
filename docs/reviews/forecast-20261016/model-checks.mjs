@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import {DAY,forecastUsage,forecastCSV} from '../../../src/components/usage-forecast/model.ts';
+const now=Date.UTC(2026,9,16,12);let count=0;const check=fn=>{fn();count++};
+const account={id:'demo',name:'Sample',plan:'Test',windowStart:now-10*DAY,resetAt:now+2*DAY,connected:true,observations:[{at:now-3*DAY,used:30},{at:now-2*DAY,used:50},{at:now-DAY,used:70},{at:now,used:90}]};
+let f=forecastUsage(account,now);
+check(()=>assert.equal(f.rate,20));check(()=>assert.equal(f.runsOutAt,now+.5*DAY));check(()=>assert.equal(f.lockedHours,36));check(()=>assert.equal(f.allowed,5));check(()=>assert.equal(f.projected,130));check(()=>assert.equal(f.atRisk,true));
+const paused=forecastUsage(account,now,0);check(()=>assert.equal(paused.runsOutAt,null));check(()=>assert.equal(paused.projected,90));check(()=>assert.equal(paused.atRisk,false));check(()=>assert.equal(paused.used,90));
+check(()=>assert.equal(forecastUsage(account,now,.25).atRisk,false));check(()=>assert.equal(forecastUsage(account,now,.25).runsOutAt,account.resetAt));
+check(()=>assert.equal(forecastUsage({...account,connected:false},now).status,'disconnected'));
+for(const delta of [{observations:[]},{resetAt:now},{resetAt:NaN},{windowStart:now},{observations:[{at:now-DAY,used:60},{at:now,used:50}]},{observations:[{at:now,used:50},{at:now,used:60}]},{observations:[{at:now-3*DAY,used:10},{at:now-2*DAY,used:20}]},{observations:[{at:now-DAY,used:10},{at:now+1,used:20}]},{observations:[{at:now-DAY,used:10},{at:now,used:101}]}])check(()=>assert.equal(forecastUsage({...account,...delta},now).status,'invalid'));
+for(const m of [-1,NaN,Infinity,5])check(()=>assert.equal(forecastUsage(account,now,m).status,'invalid'));
+const exhausted=forecastUsage({...account,observations:[{at:now-DAY,used:90},{at:now,used:100}]},now,0);check(()=>assert.equal(exhausted.atRisk,true));check(()=>assert.equal(exhausted.runsOutAt,now));
+const flat=forecastUsage({...account,observations:[{at:now-DAY,used:40},{at:now,used:40}]},now);check(()=>assert.equal(flat.runsOutAt,null));check(()=>assert.equal(flat.projected,40));
+check(()=>assert.equal(forecastUsage({...account,observations:[{at:now-2*DAY,used:10},{at:now,used:30}]},now).rate,10));
+const csv=forecastCSV([f,forecastUsage({...account,connected:false},now)]);check(()=>assert.equal(csv.split('\r\n').length,3));check(()=>assert.ok(csv.includes('"At risk","90.00","20.00","130.00"')));check(()=>assert.ok(csv.includes('"disconnected","","",""')));
+check(()=>assert.doesNotThrow(()=>forecastCSV([forecastUsage({...account,resetAt:NaN},now)])));
+check(()=>assert.ok(forecastCSV([{...f,account:{...account,name:'=1+1'}}]).includes("'=")));
+console.log(`${count} forecast boundary assertions passed.`);

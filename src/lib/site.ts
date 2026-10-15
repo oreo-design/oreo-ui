@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "forecast-timeline": {title:"Forecast Timeline",description:"Selectable account usage timelines with exhaustion and reset markers."},
+  "usage-projection": {title:"Usage Projection",description:"Observed cumulative usage and constant-pace scenarios through the next reset."},
+  "daily-usage-pace": {title:"Daily Usage Pace",description:"Observed daily usage compared with remaining allowance."},
+  "usage-forecast": {title:"Usage Forecast",description:"A local account capacity workspace with forecast timelines, scenario controls and CSV export."},
   "recipient-search": {title:"Recipient Search",description:"Recipient Search: accessible recipient creation and payment-detail UI with host-owned data."},
   "payment-rail-picker": {title:"Payment Rail Picker",description:"Payment Rail Picker: accessible recipient creation and payment-detail UI with host-owned data."},
   "recipient-form": {title:"Recipient Form",description:"Recipient Form: accessible recipient creation and payment-detail UI with host-owned data."},

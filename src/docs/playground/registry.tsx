@@ -1,3 +1,5 @@
+import { ForecastTimeline, UsageProjection, DailyUsagePace, forecastUsage } from "@/components/usage-forecast";
+import { USAGE_ACCOUNTS, FORECAST_NOW } from "@/patterns/usage-forecast/data";
 import { RecipientSearch, PaymentRailPicker, RecipientForm, recipientName } from "@/components/recipient";
 import { SAMPLE_RECIPIENTS } from "@/patterns/payment-workspace/data";
 import { RevenueMatrix, PipelineFunnel, DealStageBadge, DealTable, salesSummary } from "@/components/sales";
@@ -112,6 +114,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "usage-forecast": { ForecastTimeline, UsageProjection, DailyUsagePace },
   recipient: { RecipientSearch, PaymentRailPicker, RecipientForm },
   sales: { RevenueMatrix, PipelineFunnel, DealStageBadge, DealTable },
   operations: {OperationsMap, OperationsFeed, HealthMeters, RouteTimeline, PipelineFile, CameraCheckpoint},
@@ -177,6 +180,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "forecast-timeline": {...define("Forecast Timeline",{selected:select(USAGE_ACCOUNTS.map(a=>a.id),"claude-pro"),days:number(7,1,14,1),empty:toggle()},(v,set)=><div className="w-full p-6"><ForecastTimeline forecasts={v.empty?[]:USAGE_ACCOUNTS.map(a=>forecastUsage(a,FORECAST_NOW))} selectedId={v.selected} onSelect={id=>set("selected",id)} days={v.days}/></div>),source:"usage-forecast"},
+  "usage-projection": {...define("Usage Projection",{account:select(USAGE_ACCOUNTS.map(a=>a.id),"claude-pro"),multiplier:number(1,0,2,.25),invalid:toggle()},v=><div className="w-full max-w-lg p-6"><UsageProjection forecast={forecastUsage({...USAGE_ACCOUNTS.find(a=>a.id===v.account)!,...(v.invalid?{observations:[]}:{} )},FORECAST_NOW,v.multiplier)}/></div>),source:"usage-forecast"},
+  "daily-usage-pace": {...define("Daily Usage Pace",{account:select(USAGE_ACCOUNTS.map(a=>a.id),"claude-pro")},v=><div className="w-full max-w-lg p-6"><DailyUsagePace forecast={forecastUsage(USAGE_ACCOUNTS.find(a=>a.id===v.account)!,FORECAST_NOW)}/></div>),source:"usage-forecast"},
   "recipient-search": {...define("Recipient Search",{query:text(""),selected:text(""),creation:toggle(true),notice:text("")},(v,set)=><div className="w-full max-w-xl p-6"><RecipientSearch recipients={SAMPLE_RECIPIENTS} query={v.query} onQueryChange={q=>set("query",q)} selectedId={v.selected} onSelect={r=>set("selected",r.id)} onCreate={v.creation?name=>set("notice",`Create requested for ${name||"a new recipient"}. Open the full template to fill the form.`):undefined}/><p role="status" className="mt-4 text-xs text-text-secondary">{v.notice}</p></div>),source:"recipient"},
   "payment-rail-picker": {...define("Payment Rail Picker",{value:select(["ach","swift","sepa","usdc"],"ach"),disabled:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-6"><PaymentRailPicker value={v.value} disabled={v.disabled} onValueChange={r=>set("value",r)}/></div>),source:"recipient"},
   "recipient-form": {...define("Recipient Form",{sample:toggle(true),notice:text("")},(v,set)=><div className="w-full max-w-3xl p-6"><RecipientForm key={String(v.sample)} initialValue={v.sample?SAMPLE_RECIPIENTS[0]:undefined} onSave={r=>set("notice",`Validated ${recipientName(r)}. The host now owns this draft.`)} onCancel={()=>set("notice","Cancel callback received. The playground keeps the form visible.")}/><p role="status" className="mt-4 text-xs text-text-secondary">{v.notice}</p></div>),source:"recipient"},
