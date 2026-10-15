@@ -1,0 +1,45 @@
+.oreo-type-scale {
+  color: var(--color-text-primary);
+  width: 100%;
+  min-width: 0;
+}
+.oreo-type-scale-row {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  align-items: baseline;
+}
+.oreo-type-scale-row strong {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.oreo-type-scale-row small {
+  display: block;
+  font: 0.625rem/1.8 monospace;
+  color: var(--color-text-tertiary);
+}
+.oreo-type-scale-row p {
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+  font-weight: 500;
+}
+.oreo-type-scale-row:nth-last-child(-n + 2) p {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .oreo-type-scale-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .oreo-type-scale-row > div {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+  }
+}

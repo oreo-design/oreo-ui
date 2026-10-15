@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "brand-guide": { title: "Brand Guide", description: "A practical brand kit with logo downloads, colours, typography and a signature builder." },
+  "brand-swatch": { title: "Brand Swatch", description: "A reusable colour specimen with an accessible copy action." },
+  "type-scale": { title: "Type Scale", description: "Preview and export a responsive modular typography scale." },
+  "email-signature": { title: "Email Signature", description: "A portable signature preview with matching escaped HTML export." },
   "project-summary": { title: "Project Summary", description: "Compact project progress, team and delivery metadata." },
   "task-row": { title: "Task Row", description: "Accessible task completion and detail actions with contextual metadata." },
   "project-workspace": { title: "Project Workspace", description: "An interactive project overview, task list and board with editing and progress." },

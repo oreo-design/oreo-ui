@@ -1,3 +1,5 @@
+import { BrandGuidePage } from "@/pages/BrandGuidePage";
+import { BrandSwatchDocs, TypeScaleDocs, EmailSignatureDocs } from "@/pages/BrandComponentsDocs";
 import { ProjectSummaryDocs } from "@/pages/ProjectSummaryDocs";
 import { TaskRowDocs } from "@/pages/TaskRowDocs";
 import { ProjectWorkspacePage } from "@/pages/ProjectWorkspacePage";
@@ -97,6 +99,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "brand-guide": BrandGuidePage, "brand-swatch": BrandSwatchDocs, "type-scale": TypeScaleDocs, "email-signature": EmailSignatureDocs,
   "project-summary": ProjectSummaryDocs,
   "task-row": TaskRowDocs,
   "project-workspace": ProjectWorkspacePage,
