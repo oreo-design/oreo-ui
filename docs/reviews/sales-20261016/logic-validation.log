@@ -1,0 +1,1 @@
+PASS: 22 assertions covering fixture totals, pipeline consistency, stage changes, zero/invalid values, cents, historical periods, CSV quoting/formula neutralization.

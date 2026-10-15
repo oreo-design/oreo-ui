@@ -1,3 +1,5 @@
+import { RevenueMatrix, PipelineFunnel, DealStageBadge, DealTable, salesSummary } from "@/components/sales";
+import { SALES_DEALS, REVENUE_DAYS } from "@/patterns/sales-workspace/data";
 import { OperationsMap, OperationsFeed, HealthMeters, RouteTimeline, PipelineFile, CameraCheckpoint } from "@/components/operations";
 import { VEHICLES, vehicleEvent, vehiclePoint, vehicleStops, HEALTH, MODULES } from "@/patterns/operations-suite/data";
 import { ExperimentChart, VariantResults, ExperimentDecision, summarizeExperiment } from "@/components/experiment";
@@ -108,6 +110,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  sales: { RevenueMatrix, PipelineFunnel, DealStageBadge, DealTable },
   operations: {OperationsMap, OperationsFeed, HealthMeters, RouteTimeline, PipelineFile, CameraCheckpoint},
   experiment: {ExperimentChart, VariantResults, ExperimentDecision},
   "project-board": {ProjectCreateCard, ProjectBoardOverview},
@@ -171,6 +174,10 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "revenue-matrix": {...define("Revenue Matrix",{period:select(["7","14","28"],"28"),state:select(["ready","empty","invalid"],"ready")},v=><div className="w-full max-w-2xl p-6"><RevenueMatrix days={v.state==="empty"?[]:v.state==="invalid"?[{date:"Sep 1",value:-1}]:REVENUE_DAYS.slice(-Number(v.period))}/></div>),source:"sales"},
+  "pipeline-funnel": {...define("Pipeline Funnel",{state:select(["ready","empty","zero"],"ready")},v=><div className="w-full max-w-md p-6"><PipelineFunnel stages={v.state==="empty"?[]:salesSummary(SALES_DEALS).stages.map(s=>({...s,value:v.state==="zero"?0:s.value}))}/></div>),source:"sales"},
+  "deal-stage-badge": {...define("Deal Stage Badge",{stage:select(["New","Contacted","Qualified","Negotiation","Won"],"Negotiation")},v=><DealStageBadge stage={v.stage}/>),source:"sales"},
+  "deal-table": {...define("Deal Table",{empty:toggle(false)},v=><div className="w-full p-4"><DealTable deals={v.empty?[]:SALES_DEALS}/></div>),source:"sales"},
   "operations-map": {...define("Operations Map",{empty:toggle(false),selected:select(["TRK-04","TRK-03","TRK-05","TRK-06","TRK-07"],"TRK-04")},(v,set)=><div className="w-full max-w-2xl p-4"><OperationsMap points={v.empty?[]:VEHICLES.map(vehiclePoint)} selectedId={v.selected} onSelect={id=>set("selected",id as typeof v.selected)}/></div>),source:"operations"},
   "operations-feed": {...define("Operations Feed",{empty:toggle(false)},v=><div className="w-full max-w-md p-4"><OperationsFeed items={v.empty?[]:VEHICLES.map(vehicleEvent)}/></div>),source:"operations"},
   "health-meters": {...define("Health Meters",{schema:number(100,0,100,1)},v=><div className="w-full max-w-md p-6"><HealthMeters readings={HEALTH.map(r=>r.label==="Schema match"?{...r,value:v.schema,status:v.schema===100?"All fields match":"Review schema",tone:v.schema===100?"success":"warning"}:r)}/></div>),source:"operations"},

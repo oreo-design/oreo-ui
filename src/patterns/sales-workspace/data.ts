@@ -1,0 +1,71 @@
+import type { Deal, RevenueDay } from "@/components/sales";
+export const SALES_DEALS: Deal[] = [
+  {
+    id: "d1",
+    lead: "Olivia Carter",
+    company: "Northstar Labs",
+    stage: "New",
+    source: "LinkedIn",
+    value: 25000,
+    nextStep: "Reach out",
+  },
+  {
+    id: "d2",
+    lead: "Daniel Okafor",
+    company: "Vertex Health",
+    stage: "Contacted",
+    source: "Referral",
+    value: 225000,
+    nextStep: "Schedule call",
+  },
+  {
+    id: "d3",
+    lead: "Maya Patel",
+    company: "Atlas Commerce",
+    stage: "Qualified",
+    source: "Website",
+    value: 15000,
+    nextStep: "Send proposal",
+  },
+  {
+    id: "d4",
+    lead: "Ethan Williams",
+    company: "Clearpath Logistics",
+    stage: "Negotiation",
+    source: "Website",
+    value: 293000,
+    nextStep: "Review terms",
+  },
+  {
+    id: "d5",
+    lead: "Sophia Adeyemi",
+    company: "Lumen Finance",
+    stage: "Won",
+    source: "LinkedIn",
+    value: 285000,
+    nextStep: "Begin onboarding",
+  },
+  {
+    id: "d6",
+    lead: "James Morgan",
+    company: "Brightline Systems",
+    stage: "Negotiation",
+    source: "Website",
+    value: 85000,
+    nextStep: "Send revised terms",
+  },
+  {
+    id: "d7",
+    lead: "Omar Khalid",
+    company: "PulsePoint",
+    stage: "Contacted",
+    source: "Referral",
+    value: 67000,
+    nextStep: "Qualification",
+  },
+];
+// Historical bookings are separate from current opportunity values; never generated from edits.
+export const REVENUE_DAYS: RevenueDay[] = [
+  12, 18, 35, 62, 55, 36, 19, 16, 12, 28, 48, 25, 14, 24, 61, 92, 53, 29, 19,
+  33, 65, 37, 21, 18, 44, 32, 17, 12,
+].map((v, i) => ({ date: `Sep ${i + 1}`, value: v * 1000 }));
