@@ -1,3 +1,5 @@
+import { HubSearchHero, AgentCategoryGrid, IntegrationTile } from "@/components/agent-hub";
+import { HUB_CATEGORIES, HUB_AGENTS, HUB_INTEGRATIONS } from "@/patterns/agent-hub/data";
 import { PlaceMap, PlaceDetailCard, MapStylePicker, MAP_STYLES } from "@/components/place-map";
 import { SAMPLE_PLACES } from "@/patterns/place-explorer/data";
 import { AgentConnectCard, QuotaUsage, AgentClientPicker } from "@/components/agent-connect";
@@ -84,6 +86,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "agent-hub": { HubSearchHero, AgentCategoryGrid, IntegrationTile },
   "place-map": { PlaceMap, PlaceDetailCard, MapStylePicker },
   "agent-connect": { AgentConnectCard, QuotaUsage, AgentClientPicker },
   finance: { BalanceChart, AllocationBar, SpendingGauge, PaymentCard },
@@ -135,6 +138,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "hub-search-hero": { ...define("Hub Search Hero", { query:text(""), title:text("Agent hub"), description:text("Discover agents and integrations built for your team.") }, (v,set)=><div className="w-full max-w-4xl"><HubSearchHero value={v.query} onValueChange={query=>set("query",query)} title={v.title} description={v.description}/></div>), source:"agent-hub" },
+  "agent-category-grid": { ...define("Agent Category Grid", { selected:select(["support","sales","marketing","engineering","finance","operations","research","people","other"],"support"), empty:toggle(false) }, (v,set)=><div className="w-full max-w-4xl"><AgentCategoryGrid items={v.empty?[]:HUB_CATEGORIES.map(c=>({...c,count:HUB_AGENTS.filter(a=>a.category===c.id).length}))} selectedId={v.selected} onSelect={id=>set("selected",id as typeof v.selected)}/></div>), source:"agent-hub" },
+  "integration-tile": { ...define("Integration Tile", { connected:toggle(true), agentCount:number(4,0,100), integration:select(["zendesk","slack","intercom","github","notion","hubspot"],"slack") }, (v,set)=><div className="w-full max-w-md"><IntegrationTile integration={HUB_INTEGRATIONS.find(i=>i.id===v.integration)!} connected={v.connected} agentCount={v.agentCount} onOpen={()=>set("connected",!v.connected)}/><p className="mt-3 text-xs text-text-secondary">Click to toggle the demo state.</p></div>), source:"agent-hub" },
   "place-map": { ...define("Place Map", { selected:select(["lakehouse","juniper","northlight"],"lakehouse"), mapStyle:select(MAP_STYLES,"meadow"), empty:toggle(false) }, (v,set)=><div className="w-full max-w-4xl"><PlaceMap places={v.empty?[]:SAMPLE_PLACES} selectedId={v.selected} mapStyle={v.mapStyle} onSelect={id=>{if(id==="lakehouse"||id==="juniper"||id==="northlight")set("selected",id);}} toolbar={<MapStylePicker value={v.mapStyle} onValueChange={style=>set("mapStyle",style)}/>}/></div>), source:"place-map" },
   "place-detail-card": { ...define("Place Detail Card", { place:select(["lakehouse","juniper","northlight"],"lakehouse"), saved:toggle(false) }, (v,set)=><div className="w-full max-w-4xl"><PlaceDetailCard place={SAMPLE_PLACES.find(p=>p.id===v.place)!} index={SAMPLE_PLACES.findIndex(p=>p.id===v.place)} total={3} instant onPrevious={()=>{const i=SAMPLE_PLACES.findIndex(p=>p.id===v.place);set("place",["lakehouse","juniper","northlight"][(i+2)%3] as typeof v.place);}} onNext={()=>{const i=SAMPLE_PLACES.findIndex(p=>p.id===v.place);set("place",["lakehouse","juniper","northlight"][(i+1)%3] as typeof v.place);}} saved={v.saved} onSave={()=>set("saved",!v.saved)}/></div>), source:"place-map" },
   "map-style-picker": { ...define("Map Style Picker", { value:select(MAP_STYLES,"meadow") }, (v,set)=><MapStylePicker value={v.value} onValueChange={value=>set("value",value)}/>), source:"place-map" },

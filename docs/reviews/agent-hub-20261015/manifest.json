@@ -1,0 +1,76 @@
+{
+  "baseline": "0a1a34a4655cb7c644ad9842ddb82529d920cc2c",
+  "branch": "codex/agent-hub-20261015",
+  "environment": {
+    "url": "http://localhost:5223/agent-hub",
+    "browser": "Chromium / Playwriter 56",
+    "locale": "en",
+    "fixture": "11 agents, 9 categories, 6 integrations; local state resets on reload",
+    "viewports": [
+      [
+        1440,
+        1000
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        900,
+        1000
+      ],
+      [
+        800,
+        1000
+      ]
+    ]
+  },
+  "source_sha256": {
+    "src/components/agent-hub/index.tsx": "70cdcdcd35f21bdea8d7f3a21400c199c9f07310231acceeaf6b4245cda762b4",
+    "src/components/agent-hub/agent-hub.css": "0795aee22d016ef767f0a8559ce60609ea1424886182e4dbc5ef0f0cb4dc1e3b",
+    "src/patterns/agent-hub/index.tsx": "24507ddef713084ee971c32a9a1d87f3199e7da376399a97ea8315858ceffd80",
+    "src/patterns/agent-hub/data.ts": "0072c8600c1ef3236aa7f88e7154f2f2e9ca9ebfb27e5a032432bf51427d38d5",
+    "src/patterns/agent-hub/agent-hub.css": "2767a06f8c0059d806b8a79bfcbc969c300e03dbb1b73830b29267f09b9e3a3b",
+    "src/pages/AgentHubPage.tsx": "e6269786b33810a235c769de1fdf70b894dafc98b472e097d5960feb5bd9698a",
+    "src/pages/AgentHubDocs.tsx": "bbf4abefc828f2892cdd0a0108cbe0930571bda831e560f143a3154bb74c9e4a"
+  },
+  "artifacts": {
+    "peer-catalog.png": "fa1d294fb316d97f20d4caef255416eea9f744e392756388cf1fc5e5f8c5008b",
+    "before-desktop.png": "afdaa36f51b626764fbf2526a9a59d5524da9dfd81cc6fddee774c6590b13499",
+    "integration-disconnected.png": "f2608b72d266f2043a0ffa6eba08b1e9ca54fb8a0aebbe19055d11943d6c8039",
+    "create-draft.png": "74194b440fc486885e945eaa4d310587bbf1d8ff37c2b854a2a8f0af385262fb",
+    "initial-desktop.png": "7f1c88daf6bb60dcd7db2de78f84d10897515f2cd475fa66359945e5f05dc16c",
+    "category-playground.png": "cb7837cb72a5eed2ae8047111ef78e545b064f835129ef8a109c351b6a53dc4f",
+    "source.json": "794977447bc07c7868d513aaae12f80c8235fc4ac58d26aa265490879d9e159c",
+    "after-mobile-dark.png": "b49f01b5986a900b157465540262d9f57f56ce1dc604d51b3d1dc8de2b8fdbc0",
+    "breakpoint-800.png": "4868fdd50620a68efb5ea1c6e1f303b03e4f4a5b8e6ed72d997c28647773c01c",
+    "interaction.mp4": "8517ee805af8b9b583324831eea7468cd53a44d89f4c18ff570f0c05c6c67792",
+    "final-mobile-default.png": "cdb3b6fa2fd262f44b2eea2b152baab693f7f97a04e6aaf846877063ab0ef81f",
+    "reference.png": "41c0051f52086595ba1928c0c6cedad178188ecfe5672e86027573b226789a05",
+    "interaction-timing.json": "90c5b982cd124b003d28a0da908fa6c838e5b96c53fb7f0e93285306ac8aa4e3",
+    "mobile-dialog.png": "3513afdf0f8bdad5770cd9e262750caf0a874234c1df7d4b4d1b96fffe32c00c",
+    "final-desktop.png": "893d3dc6b437af050ef0801d2a89d2492fc88a81f2e262f9f9dab7992d3794df",
+    "final-desktop-default.png": "4ff8f699ea03766370e15c1516606237ebd58faef8f1ca4531679d68e548b7be",
+    "agent-detail.png": "16d5141c72209bad3e467a668a2f05bf180895dabeaa14afea66bd930fff14a2",
+    "interaction-original.json.xz": "04f87359dfd2dc4fbca7e83309b983a57a9946f5d0015f640fb0e23cd1a0634e",
+    "after-tablet.png": "2ddb41000a861f0469bd9909f3dab98b24b4ab80a1a6c944458a1b4b0dddd666",
+    "after-dark.png": "3b7e9d86b55c6c48bf5ea5f624c420136f2231d1ada71a2d74f28e57c39c5445",
+    "after-desktop.png": "696a1366214808733927c99680a20b94aa5ba9eadb5d81c8315bd4aa296cfd1b",
+    "search-empty.png": "684b277bca41e49d53ff764a7fade8f5323041842c6cd7c2fe2d7e6423b3fb2e",
+    "changelog-before.png": "c7011a083d05713cffbbe4e1c6f123b173c957ddb9f59a5bfaf30d7d5dda6146",
+    "after-mobile.png": "616bb09f0cc7b50522ea44a8b95e84925d4cf17531811c9df35c4d927ea57461",
+    "before-mobile.png": "72d98eb9da23ec7542f71f55e05e4557002838efae581cf09212c4e890484c0f",
+    "my-agents.png": "49d6ab5a4be4d61b3fa0d80b8c3c981075e439fd30f35d2c11b9308596c8de7c",
+    "search-empty-final.png": "cb21af020c1227d3753aa1b3d13e783dbc82b6efee64ca864ba95de9d25de37f",
+    "final-dark.png": "7e408f089a79971df0f9de5fb74d255b302aa7dbb973899c9da506237fd18498"
+  },
+  "recording": {
+    "width": 1440,
+    "height": 1000,
+    "encoded_seconds": 21.4,
+    "encoded_fps": 30,
+    "original_seconds": 40.43173599243164,
+    "frames": 39,
+    "timing": "variable-rate capture, idle frame holds capped at 2s; full original frames and timestamps retained"
+  }
+}
