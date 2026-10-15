@@ -2,6 +2,7 @@ import * as React from "react";
 import { Switch as BaseSwitch } from "@base-ui-components/react/switch";
 import { cn } from "@/lib/cn";
 import { switchStyles } from "./switch.variants";
+import "./switch.stretch.css";
 
 const slots = switchStyles();
 
@@ -11,32 +12,82 @@ export type SwitchProps = {
   onCheckedChange?: (checked: boolean) => void;
   disabled?: boolean;
   className?: string;
-  /**
-   * Accessible name. Required unless the switch is labelled from outside
-   * (e.g. wrapped in a <label> or referenced by a row's aria-labelledby).
-   */
+  /** Optional liquid thumb travel. The existing default surface is unchanged. */
+  variant?: "default" | "stretch";
+  /** Required unless named with aria-labelledby or Base UI Field.Label. */
   "aria-label"?: string;
 } & Omit<
   React.ComponentPropsWithoutRef<typeof BaseSwitch.Root>,
   "checked" | "defaultChecked" | "onCheckedChange" | "disabled" | "className"
 >;
 
-/**
- * A Base UI switch on the Oreo track/thumb surface. State comes through Base
- * UI's `data-checked` / `data-disabled` attributes, so the variants file owns
- * every visual and this component stays wiring only.
- */
-export function Switch({ checked, defaultChecked, onCheckedChange, disabled, className, ...rest }: SwitchProps) {
+/** Base UI owns state, form integration, disabled behavior and keyboard input. */
+export function Switch({
+  checked,
+  defaultChecked,
+  onCheckedChange,
+  disabled,
+  readOnly,
+  className,
+  variant = "default",
+  onClickCapture,
+  onKeyDownCapture,
+  onBlurCapture,
+  ...rest
+}: SwitchProps) {
+  const [pointer, setPointer] = React.useState(false);
   return (
     <BaseSwitch.Root
       checked={checked}
       defaultChecked={defaultChecked}
-      onCheckedChange={onCheckedChange}
+      onCheckedChange={(next, details) => {
+        // The installed Base UI beta allows a wrapping label to activate its
+        // hidden input even when the root is read-only. Cancel at the state owner.
+        if (readOnly) {
+          details.cancel();
+          return;
+        }
+        // Label activation clicks the hidden native input, outside the visual root.
+        if (
+          variant === "stretch" &&
+          "detail" in details.event &&
+          Number(details.event.detail) > 0
+        )
+          setPointer(true);
+        onCheckedChange?.(next);
+      }}
       disabled={disabled}
-      className={cn(slots.root(), className)}
+      readOnly={readOnly}
+      className={cn(
+        slots.root(),
+        variant === "stretch" && "oreo-switch-stretch",
+        className,
+      )}
       {...rest}
+      data-pointer-motion={pointer ? "true" : "false"}
+      onClickCapture={(event) => {
+        if (variant === "stretch") setPointer(event.detail > 0);
+        onClickCapture?.(event);
+      }}
+      onKeyDownCapture={(event) => {
+        if (variant === "stretch") setPointer(false);
+        onKeyDownCapture?.(event);
+      }}
+      onBlurCapture={(event) => {
+        if (variant === "stretch") setPointer(false);
+        onBlurCapture?.(event);
+      }}
     >
-      <BaseSwitch.Thumb className={slots.thumb()} />
+      {variant === "stretch" ? (
+        <BaseSwitch.Thumb
+          className="oreo-switch-stretch-tail"
+          aria-hidden="true"
+        >
+          <span className="oreo-switch-stretch-head" />
+        </BaseSwitch.Thumb>
+      ) : (
+        <BaseSwitch.Thumb className={slots.thumb()} />
+      )}
     </BaseSwitch.Root>
   );
 }

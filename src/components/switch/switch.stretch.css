@@ -1,0 +1,43 @@
+/* Same 34×20 track / 16px resting thumb as the canonical Switch.
+   Two rounded clips move independently: leading edge first, trailing edge 40ms later.
+   No layout dimensions animate; rapid reversals retarget the current clip positions. */
+.oreo-switch-stretch {
+  transition: none;
+}
+.oreo-switch-stretch-tail,
+.oreo-switch-stretch-head {
+  display: block;
+  position: absolute;
+  inset: 2px;
+  border-radius: var(--radius-capsule);
+  pointer-events: none;
+}
+.oreo-switch-stretch-tail {
+  clip-path: inset(0 0 0 0 round var(--radius-capsule));
+}
+.oreo-switch-stretch-head {
+  inset: 0;
+  background: var(--color-bg-base);
+  clip-path: inset(0 14px 0 0 round var(--radius-capsule));
+}
+.oreo-switch-stretch[data-checked] .oreo-switch-stretch-tail {
+  clip-path: inset(0 0 0 14px round var(--radius-capsule));
+}
+.oreo-switch-stretch[data-checked] .oreo-switch-stretch-head {
+  clip-path: inset(0 0 0 0 round var(--radius-capsule));
+}
+@media (prefers-reduced-motion: no-preference) {
+  .oreo-switch-stretch[data-pointer-motion="true"] .oreo-switch-stretch-tail,
+  .oreo-switch-stretch[data-pointer-motion="true"] .oreo-switch-stretch-head {
+    transition: clip-path 180ms cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  .oreo-switch-stretch[data-pointer-motion="true"]:not([data-checked])
+    .oreo-switch-stretch-head,
+  .oreo-switch-stretch[data-pointer-motion="true"][data-checked]
+    .oreo-switch-stretch-tail {
+    transition-delay: 40ms;
+  }
+}
+.oreo-switch-stretch:dir(rtl) .oreo-switch-stretch-tail {
+  transform: scaleX(-1);
+}
