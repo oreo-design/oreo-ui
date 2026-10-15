@@ -1,3 +1,5 @@
+import { CommandSearchDocs } from "@/pages/CommandSearchDocs";
+import { CommandDashboardPage } from "@/pages/CommandDashboardPage";
 import { InvoiceDocs } from "@/pages/InvoiceDocs";
 import { InvoiceWorkspacePage } from "@/pages/InvoiceWorkspacePage";
 import { AskAnalyticsDocs } from "@/pages/AskAnalyticsDocs";
@@ -115,6 +117,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "command-search": CommandSearchDocs, "workspace-metric": CommandSearchDocs, "deployment-row": CommandSearchDocs, "command-dashboard": CommandDashboardPage,
   "invoice-status-badge": InvoiceDocs, "invoice-table": InvoiceDocs, "invoice-totals": InvoiceDocs, "invoice-workspace": InvoiceWorkspacePage,
   "ask-analytics": AskAnalyticsDocs, "insight-sources": AskAnalyticsDocs, "analytics-assistant": AnalyticsAssistantPage,
   "hub-search-hero": AgentHubDocs, "agent-category-grid": AgentHubDocs, "integration-tile": AgentHubDocs, "agent-hub": AgentHubPage,
