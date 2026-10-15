@@ -1,0 +1,18 @@
+import assert from 'node:assert/strict';
+import { salesSummary, salesMoney, dealsCSV, validAmount } from '../../../src/components/sales/model.ts';
+import { SALES_DEALS, REVENUE_DAYS } from '../../../src/patterns/sales-workspace/data.ts';
+const base=salesSummary(SALES_DEALS);
+assert.equal(base.pipeline,710000); assert.equal(base.won,285000); assert.equal(base.open,6); assert.equal(base.companies,7);
+assert.deepEqual(base.stages.map(s=>s.value),[317000,15000,378000]);
+assert.equal(base.stages.reduce((s,d)=>s+d.value,0),base.pipeline);
+const won=salesSummary(SALES_DEALS.map(d=>d.id==='d1'?{...d,stage:'Won'}:d));
+assert.equal(won.pipeline,685000);assert.equal(won.won,310000);assert.equal(won.open,5);
+assert.equal(salesSummary([]).pipeline,0);assert.equal(salesSummary([]).won,0);
+assert.equal(salesMoney(12345.67),'$12,345.67');assert.equal(salesMoney(NaN),'Unavailable');assert.equal(salesMoney(-1),'Unavailable');
+assert.equal(validAmount(Infinity),false);assert.equal(validAmount(0),true);
+assert.equal(salesSummary([{...SALES_DEALS[0],value:NaN}]).pipeline,0);
+assert.equal(REVENUE_DAYS.reduce((s,d)=>s+d.value,0),937000);
+assert.equal(REVENUE_DAYS.slice(-7).reduce((s,d)=>s+d.value,0),181000);
+const csv=dealsCSV([{...SALES_DEALS[0],lead:'=FORMULA()',company:'A,"B"',nextStep:'Line 1\nLine 2'}]);
+assert.ok(csv.includes('"\'=FORMULA()"'));assert.ok(csv.includes('"A,""B"""'));assert.ok(csv.includes('"Line 1\nLine 2"'));
+console.log('PASS: 22 assertions covering fixture totals, pipeline consistency, stage changes, zero/invalid values, cents, historical periods, CSV quoting/formula neutralization.');

@@ -1,0 +1,422 @@
+{
+  "baseline": "321e716f147cfc318977f544794700092efb4b62",
+  "branch": "codex/sales-20261016",
+  "reference": "https://x.com/Wuraoladesigns/status/2110621316835573992",
+  "environment": {
+    "preview": "http://localhost:5235",
+    "browser": "Chromium via Playwriter session 65",
+    "locale": "English",
+    "data": "local fixtures, reset on reload",
+    "viewports": [
+      "1440x1000",
+      "900x1000",
+      "390x844"
+    ]
+  },
+  "source_sha256": {
+    "src/components/sales/index.tsx": "1f4c8f741f2201c14361ff1f56ce3881579deca3320fbbaadd2927d6858d56e6",
+    "src/components/sales/sales.css": "6194f87b69452c395edc2eaab09ed56f7700fa2f42e02bb4cfb13bbbbe6722e2",
+    "src/components/sales/model.ts": "d60c15dcc0d771f2a563964d159a141b2e3ee214f861ddedbe8862fde379bb27",
+    "src/patterns/sales-workspace/index.tsx": "3a3813ef421fa181164a0ae19635cb85c1bc8ab949ac33877071254dc5236aa3",
+    "src/patterns/sales-workspace/data.ts": "7e2d22c2edb5b4815f58970370b2ae339c1a18b395b77f5b7eb951f77b30ab5b",
+    "src/patterns/sales-workspace/sales-workspace.css": "b3ed1c2532c12e2d38dcf258a2f910b0fa06f336bcc15eac21232e10fe23ea29"
+  },
+  "media": [
+    {
+      "file": "after-desktop-dark-v1.png",
+      "sha256": "f472bfca16db93e20852c829c6ef8cc67766155c211bffff89c293368f2804a8",
+      "bytes": 212800,
+      "dimensions": [
+        1440,
+        1627
+      ]
+    },
+    {
+      "file": "after-desktop-dark.png",
+      "sha256": "4844bf82c7c1098fa47da07c4edb46fea361af017c1de451bd5a6e84053ab064",
+      "bytes": 210644,
+      "dimensions": [
+        1440,
+        1595
+      ]
+    },
+    {
+      "file": "after-desktop-light.png",
+      "sha256": "011b93b0763a1ef1617decb46648b05d0984fa936d53325760f7ebb41b3a8f16",
+      "bytes": 211351,
+      "dimensions": [
+        1440,
+        1595
+      ]
+    },
+    {
+      "file": "after-medium-dark.png",
+      "sha256": "ff89429f6e2595094509eb57093ef211a7e3cb818fc9ec596a1ccb91efae285f",
+      "bytes": 202038,
+      "dimensions": [
+        1020,
+        2172
+      ]
+    },
+    {
+      "file": "after-medium-light.png",
+      "sha256": "b5ff1aa294d96f921316159f5075532ac90971529389bc5676e2a0fc5057b8ae",
+      "bytes": 203586,
+      "dimensions": [
+        1020,
+        2172
+      ]
+    },
+    {
+      "file": "after-mobile-dark-framed.png",
+      "sha256": "7c6a6ca2c91ed0b31da03b4ab79ecb96ace322a2cf5cd4e603091a3798c801fa",
+      "bytes": 46606,
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "after-mobile-dark-full.png",
+      "sha256": "2f1949f2b7cf39abb78f80ef32cece6c5af4d06822fe1dd8b31f6f6d0a510c35",
+      "bytes": 127681,
+      "dimensions": [
+        390,
+        2367
+      ]
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "sha256": "e75c3a77f9635984f1497653b3acda55de3f8c43568874c652f3e6ff80440513",
+      "bytes": 140762,
+      "dimensions": [
+        796,
+        2367
+      ]
+    },
+    {
+      "file": "after-mobile-light-framed.png",
+      "sha256": "fa4817b70a8905b0e8cf4d90b8d9e70df253ea05fb58e5fc3daa12e343d28941",
+      "bytes": 46570,
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "after-mobile-light-full.png",
+      "sha256": "28d6d6085980361136ff9e338b3aec8e49f222d3eadbd224567cbe8439973b22",
+      "bytes": 123483,
+      "dimensions": [
+        390,
+        2367
+      ]
+    },
+    {
+      "file": "after-mobile-light.png",
+      "sha256": "93be2a1c9e978ea3648ceaa0de0d13c75fbc9df15822ef30865c8465ccbf405e",
+      "bytes": 140009,
+      "dimensions": [
+        796,
+        2367
+      ]
+    },
+    {
+      "file": "before-changelog.png",
+      "sha256": "630b7a367a3057a3a0c534e01c8f332f664fb4b029667c90f991bb0b44a83511",
+      "bytes": 126861,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "before-entry.png",
+      "sha256": "d94fddfb4394e7871ebddbfec27a4bdd716ff7940e8079e0479c7e0116410d48",
+      "bytes": 94959,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "created-deal.png",
+      "sha256": "cdb9ca1e39ef696ecafb3ea15025b0314a38b2c21226aad272d69f60c33b2366",
+      "bytes": 221588,
+      "dimensions": [
+        1440,
+        1656
+      ]
+    },
+    {
+      "file": "daily-data.png",
+      "sha256": "1dbc196a2e286bea889e3f148cd38a6b89942064c6add6639d57f2c2fef24aff",
+      "bytes": 176591,
+      "dimensions": [
+        1440,
+        1494
+      ]
+    },
+    {
+      "file": "docs-api.png",
+      "sha256": "e551beeba3927e45b72d0fd41a6314aa540feae1264407f78931ad54da894db3",
+      "bytes": 158070,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "docs-deal-stage-badge.png",
+      "sha256": "566b9da1e757bb1f573fd281a05e95586dcec04ec75a7996c34dd569cac2e56f",
+      "bytes": 84346,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "docs-deal-table.png",
+      "sha256": "0dacefc28c3d71b89b2d7b19d04dbbec13d1ab57266135f760cd9801e9c2c6e4",
+      "bytes": 123035,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "docs-invalid.png",
+      "sha256": "45b1022893fde42b9ef28e44423e38dd8f0e3e3da608610c4964a0be6ff4563d",
+      "bytes": 91876,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "docs-pipeline-funnel.png",
+      "sha256": "a46200dc5a755adc2c5ac4671b891429806cf3197dc1123ae6c418784e4bf763",
+      "bytes": 98905,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "docs-revenue.png",
+      "sha256": "0d2d6120c51d46a9b5226882e31b821765bb8b5f8ac0bdff4d78ff1057ab220f",
+      "bytes": 109080,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "editor-error.png",
+      "sha256": "464f7c75ce2748e80ac53c75af1c25eeb7a6f22b557fb1e7b4af2da25e111d27",
+      "bytes": 142194,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "empty-deals.png",
+      "sha256": "ecdd7827085fc6de7e1dbc39b8aa4f4e41360fabc6e754339cbc57e93e31a43d",
+      "bytes": 166042,
+      "dimensions": [
+        1440,
+        1406
+      ]
+    },
+    {
+      "file": "exported-deals.csv",
+      "sha256": "36900249bdc2af65943df6fa185507ac228f024b2086753642cd51435a46d5fa",
+      "bytes": 240
+    },
+    {
+      "file": "final-desktop-dark.png",
+      "sha256": "6dd2d4921667048ff66f152712ef05a98347303e5a58d61742c7333a92f49534",
+      "bytes": 211481,
+      "dimensions": [
+        1440,
+        1630
+      ]
+    },
+    {
+      "file": "final-desktop-light.png",
+      "sha256": "39aabf6dabdc1ddc61942844e28859980ff4e2caedfae041c4c5ee9f71d69357",
+      "bytes": 212232,
+      "dimensions": [
+        1440,
+        1630
+      ]
+    },
+    {
+      "file": "final-docs-revenue.png",
+      "sha256": "795461951efab6814f89312d4799ff0740e3f4dc2f7b4042acb56330ea7eaae6",
+      "bytes": 103635,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "final-medium-dark.png",
+      "sha256": "08bd1f508986317f344745cad12f0fd85b2733dede7318adf5ed776506bbb46c",
+      "bytes": 201316,
+      "dimensions": [
+        1020,
+        2207
+      ]
+    },
+    {
+      "file": "final-medium-light.png",
+      "sha256": "f868a30c78755d0fb3945b7f38cd2f2eba89317cc8391aa60e5fd82f00a9f45c",
+      "bytes": 203303,
+      "dimensions": [
+        1020,
+        2207
+      ]
+    },
+    {
+      "file": "final-mobile-dark.png",
+      "sha256": "f3227781d38dbeebd6681ff35b6f41abd205d9877f585abde5b3d9331da9b3e9",
+      "bytes": 122266,
+      "dimensions": [
+        390,
+        2402
+      ]
+    },
+    {
+      "file": "final-mobile-light.png",
+      "sha256": "fb529abc3d0b67d686f78c1046dcae8996f2d17ad984b852777a1df348036307",
+      "bytes": 122533,
+      "dimensions": [
+        390,
+        2402
+      ]
+    },
+    {
+      "file": "final-seven-days.png",
+      "sha256": "cb4156382f97e47f97bcb823f78c6e10ed1e4699565393ec4b322b2b3b80b655",
+      "bytes": 139683,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "interaction-clean-frames.json.xz",
+      "sha256": "9178a2532527dc5869d0b827f092e2938a1146ec4e487bdf286c4bd414d17953",
+      "bytes": 838952
+    },
+    {
+      "file": "interaction-clean.mp4",
+      "sha256": "c2859b040d359685e8542c18b8789c83fc598d2f258530f399e998c5ee2a524d",
+      "bytes": 170641
+    },
+    {
+      "file": "interaction-frames.json.xz",
+      "sha256": "4dc2f648b58ff787a898be5e21ee451d1b044291f4800fb263ff3c6fa88d02e0",
+      "bytes": 1039076
+    },
+    {
+      "file": "interaction.mp4",
+      "sha256": "6355f5c81f91bb5b846ea762b453903602f4d8e2d9479def8cdd9055b1dd4bf7",
+      "bytes": 243819
+    },
+    {
+      "file": "mobile-editor.png",
+      "sha256": "024d1f30e40d197498af72c81f6f81c6d122ef57790a82fc845a02e7e7c12621",
+      "bytes": 35791,
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "oreo-wuraola-0.png",
+      "sha256": "e88a7fa17af663f6c5fe71234bdaae1d31e5890cce688029829a428a54491ef5",
+      "bytes": 26268,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "oreo-wuraola-12.png",
+      "sha256": "08e8d16a53dee18606562e589723d50a6347e6a1235f2beefa74323fb69e51f7",
+      "bytes": 222397,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "oreo-wuraola-20.png",
+      "sha256": "c88439d727dd2db8e5673181fdd0190ea968c756f8cdacf5006a1e14816c44f0",
+      "bytes": 192603,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "oreo-wuraola-23.png",
+      "sha256": "4700a9c5cadc7e6ede283aae2d70c25faa960f256404457418f978fecc205df2",
+      "bytes": 391124,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "oreo-wuraola-6.png",
+      "sha256": "018e66508b29ea48f149d9aeb057a24c3448d5591f149538fd00d72cbfbda7ea",
+      "bytes": 76333,
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "file": "peer-empty.png",
+      "sha256": "c0787af9459124e74f86d18f197bc13322b4700dbaff28a97fe2d73bdbee5036",
+      "bytes": 44622,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "peer-invoices.png",
+      "sha256": "4bc83a48dca5ce565d24f17bcf26699f0e50a2afd2b8ac15722f245892a6ca7f",
+      "bytes": 154572,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "reduced-clean-frames.json.xz",
+      "sha256": "3e6b0f13b5f53753bc4162b70f6b83714fb84a47333528425a836b4a3842042a",
+      "bytes": 294356
+    },
+    {
+      "file": "reduced-clean.mp4",
+      "sha256": "117f96d20471cc84600ae7466b3d2af7b3a8c1fdbb949c7974f8651c2f3a93eb",
+      "bytes": 129696
+    },
+    {
+      "file": "reduced-motion-frames.json.xz",
+      "sha256": "1a7b43dba4aef4dbb832c3aa4dddeaf9f62c43995acf34019f03e3b9378c8b85",
+      "bytes": 339156
+    },
+    {
+      "file": "reduced-motion.mp4",
+      "sha256": "4d485d9db3f43e95ad04315367f707c694f440b2f31b75a1b149de4573a3535c",
+      "bytes": 167431
+    }
+  ]
+}

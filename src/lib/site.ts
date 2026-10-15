@@ -18,6 +18,11 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "revenue-matrix": {title:"Revenue Matrix",description:"Revenue Matrix: reusable sales UI with accessible data and host-owned actions."},
+  "pipeline-funnel": {title:"Pipeline Funnel",description:"Pipeline Funnel: reusable sales UI with accessible data and host-owned actions."},
+  "deal-stage-badge": {title:"Deal Stage Badge",description:"Deal Stage Badge: reusable sales UI with accessible data and host-owned actions."},
+  "deal-table": {title:"Deal Table",description:"Deal Table: reusable sales UI with accessible data and host-owned actions."},
+  "sales-workspace": {title:"Sales Workspace",description:"A complete CRM dashboard with revenue pixels, pipeline stages and editable local deals."},
   "operations-map": {title:"Operations Map",description:"Operations Map: reusable operations UI with accessible selection and local demo data."},
   "operations-feed": {title:"Operations Feed",description:"Operations Feed: reusable operations UI with accessible selection and local demo data."},
   "health-meters": {title:"Health Meters",description:"Health Meters: reusable operations UI with accessible selection and local demo data."},
