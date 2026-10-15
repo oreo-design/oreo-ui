@@ -267,9 +267,14 @@
       "height": 1000
     },
     {
+      "file": "qa-export-original.csv.xz",
+      "bytes": 752,
+      "sha256": "09fd2964386b4d2d8229768bd46f22ff988c78f598422c31fab5e3d876ea3cb0"
+    },
+    {
       "file": "qa-export.csv",
-      "bytes": 1673,
-      "sha256": "1579942fc38860b437c93f0614ac177db87f0c8ce85ae2c649ece421d532e21f"
+      "bytes": 1652,
+      "sha256": "20deb1845dcee47d1e0bdbdfcd643ce912f25ee170c24242efbff34dd2ae998d"
     },
     {
       "file": "recording-original.json.xz",

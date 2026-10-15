@@ -53,7 +53,7 @@ Same-role owners inspected: Tag/Avatar/Button/Menu, TaskRow and Project Workspac
 - `git diff --check`: passed.
 - Runtime: list/status filtering; amount ascending sort; search empty/recovery; all four views; sidebar expansion; create/edit validation and recovery; duplication as draft; delete cancellation/removal/undo; filtered mark-paid totals; mobile and dark views.
 - Keyboard: Tab stays in opened detail dialog; Escape closes; focus returns to row action. After deletion/filter removal of that trigger, focus returns to Create invoice.
-- CSV download event occurred. Playwright `saveAs` could not copy the Chromium download artifact, so the actual `~/Downloads/oreo-invoices.csv` was preserved as [qa-export.csv](qa-export.csv). Parsed 21 records; sum €110,899.50; INV-0070 Paid and INV-0096 Draft. Export quotes cells and prefixes leading formula characters in source.
+- CSV download event occurred. Playwright `saveAs` could not copy the Chromium download artifact, so the actual `~/Downloads/oreo-invoices.csv` was preserved byte-for-byte in `qa-export-original.csv.xz`; [qa-export.csv](qa-export.csv) is its LF-normalized readable copy. Parsed 21 records; sum €110,899.50; INV-0070 Paid and INV-0096 Draft. Export quotes cells and prefixes leading formula characters in source.
 - Fresh runtime logs after interaction contained no application error; development HMR logs include expected module invalidation while editing. No production endpoint verified.
 
 ## Motion review
