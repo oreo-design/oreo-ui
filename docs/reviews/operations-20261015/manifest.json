@@ -24,7 +24,7 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": "be400de (same product source; commit includes this capture)",
       "capture_utc": "2026-10-15T16:11:58.280281+00:00",
       "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
     },
@@ -40,9 +40,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:00:20.890371+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-config-error.png",
@@ -56,9 +57,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:00:20.334725+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-docs-api.png",
@@ -72,9 +74,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:05:30.679323+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-docs-camera-checkpoint.png",
@@ -88,9 +91,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:05:51.584358+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-docs-health-meters.png",
@@ -104,9 +108,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:05:39.343911+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-docs-map-empty.png",
@@ -120,9 +125,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:05:28.393895+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-docs-map.png",
@@ -136,9 +142,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:04:54.674125+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-docs-operations-feed.png",
@@ -152,9 +159,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:05:35.033772+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-docs-pipeline-file-final.png",
@@ -184,9 +192,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:05:47.961243+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-docs-route-timeline.png",
@@ -200,9 +209,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:05:43.330786+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-fleet-completed.png",
@@ -216,9 +226,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:01:49.460547+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-fleet-dark-final.png",
@@ -248,9 +259,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T15:57:01.389441+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-fleet-empty.png",
@@ -264,9 +276,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:01:50.111587+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-fleet-light.png",
@@ -280,9 +293,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:02:48.666790+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-fleet-medium.png",
@@ -296,9 +310,10 @@
         900
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:01:49.116949+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-fleet-mobile-dark.png",
@@ -312,9 +327,10 @@
         844
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:02:49.062876+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-fleet-mobile-light.png",
@@ -328,9 +344,10 @@
         844
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:02:48.852046+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-incident-empty.png",
@@ -344,9 +361,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:01:04.455219+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-incident-resolved.png",
@@ -360,9 +378,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T15:59:12.762941+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-incidents-dark-final.png",
@@ -392,9 +411,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T15:57:31.224251+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-incidents-light.png",
@@ -408,9 +428,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T15:59:42.857590+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-incidents-medium.png",
@@ -424,9 +445,10 @@
         900
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:01:27.733513+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-incidents-mobile-final.png",
@@ -440,9 +462,10 @@
         844
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:03:08.173626+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-incidents-mobile-light.png",
@@ -456,9 +479,10 @@
         844
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:03:08.370983+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-incidents-mobile.png",
@@ -472,9 +496,10 @@
         844
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:01:04.962585+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-pipeline-dark-final.png",
@@ -488,9 +513,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:03:25.978751+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-pipeline-dark.png",
@@ -504,9 +530,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T15:57:11.780865+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-pipeline-delivery.png",
@@ -536,9 +563,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:06:34.883900+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-pipeline-light.png",
@@ -552,9 +580,10 @@
         1000
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:00:42.055826+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-pipeline-medium.png",
@@ -568,9 +597,10 @@
         900
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:03:25.732701+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-pipeline-mobile-dark.png",
@@ -584,9 +614,10 @@
         844
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:03:25.207452+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "after-pipeline-mobile-light.png",
@@ -600,9 +631,10 @@
         844
       ],
       "phase": "after",
-      "source_revision": "4e7c58dbadb906f2661e4b796db8b26a4b9d64cb",
+      "source_revision": null,
       "capture_utc": "2026-10-15T16:03:25.548399+00:00",
-      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals."
+      "state_and_limits": "See REVIEW.md and browser-observations.jsonl. Captures with final/delivery suffix supersede earlier rounds without deleting originals.",
+      "source_state": "Uncommitted implementation iteration based on 3e5c1d1ef9d83f40610b70a45a34dccc4ca4b8c6; preserved historical capture, exact intermediate source tree not separately committed. See REVIEW.md for corrections."
     },
     {
       "file": "before-changelog.png",
