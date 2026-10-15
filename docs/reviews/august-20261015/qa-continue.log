@@ -1,0 +1,128 @@
+Console output:
+[log] URL: http://localhost:5210/edge-observatory
++                  - heading "No requests match"
+[log] [
+  '[debug] [vite] invalidate /src/components/edge-monitor/index.tsx: Could not Fast Refresh ("compactNumber" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports',
+  '[debug] [vite] hot updated: /src/components/edge-monitor/index.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/pages/EdgeMonitorDocs.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/patterns/edge-observatory/index.tsx',
+  '[debug] [vite] hot updated: /src/docs/DocsPage.tsx',
+  '[debug] [vite] hot updated: /src/docs/playground/ComponentPlayground.tsx',
+  '[debug] [vite] hot updated: /src/pages/EdgeMonitorDocs.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/patterns/edge-observatory/index.tsx',
+  '[debug] [vite] hot updated: /src/docs/DocsPage.tsx',
+  '[debug] [vite] hot updated: /src/docs/playground/ComponentPlayground.tsx'
+]
+[log] PASS unmatched search has centered empty state
+[log] URL: http://localhost:5210/edge-observatory
+                - heading "storefront-prod"
+            - tabpanel "Logs":
+                  - heading "Request logs"
+[log] []
+[log] PASS empty action restores all requests and filters
+[log] URL: http://localhost:5210/edge-observatory
+                - heading "storefront-prod"
+            - tabpanel "Deployments":
+                  - heading "Deployment history"
+[log] []
+[log] URL: http://localhost:5210/edge-observatory
+  - dialog:
+      - heading "Deployment #4127"
+[log] []
+[log] PASS deployment opens managed dialog
+[log] URL: http://localhost:5210/edge-observatory
+              - heading "storefront-prod"
+          - tabpanel "Deployments":
+                - heading "Deployment history"
+[log] []
+[log] PASS close dismisses detail
+[log] URL: http://localhost:5210/edge-observatory
+  - dialog:
+      - heading "Deployment #4132"
+[log] []
+[log] PASS simulate deploy adds next local release
+[log] URL: http://localhost:5210/edge-observatory
+              - heading "storefront-prod"
+          - tabpanel "Deployments":
+                - heading "Deployment history"
+[log] []
+[log] PASS new deployment appears in history
+[log]               - heading "storefront-prod"
+          - tabpanel "Overview":
+                    - heading "Traffic by region"
+                    - heading "Latency"
+                    - heading "Regions"
+                    - heading "Deployments"
+[log] []
+[log] URL: http://localhost:5210/edge-observatory
+              - heading "storefront-prod"
+          - tabpanel "Regions":
+                  - heading "Global traffic"
+                  - heading "Regional health"
+[log] []
+[log] PASS vertical tab arrows activate next view
+[log]               - heading "storefront-prod"
+          - tabpanel "Overview":
+                    - heading "Traffic by region"
+                    - heading "Latency"
+                    - heading "Regions"
+                    - heading "Deployments"
+[log] []
+[log] URL: http://localhost:5210/edge-observatory
+[log] []
+[log] URL: http://localhost:5210/edge-observatory
+[log] []
+[log] PASS chart scrubber supports keyboard sample inspection
+[log] URL: http://localhost:5210/edge-observatory
+               - heading "storefront-prod"
+[log] []
+[log] URL: http://localhost:5210/edge-observatory
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] MEDIUM Element: div.edge-observatory
+Box: x=0 y=0 w=1000 h=1918
+Children: 2  Text length: 1592
+Scroll Y: size=1918 client=1918 overflowing=false top=0
+Scroll X: size=1000 client=1000 overflowing=false left=0
+Styles: width=1000px
+[log] URL: http://localhost:5210/edge-observatory
+                     - heading "Traffic by region"
+                     - heading "Latency"
+                     - heading "Regions"
+[log] []
+[log] MOBILE Element: div.edge-observatory
+Box: x=0 y=0 w=390 h=2497
+Children: 2  Text length: 1592
+Scroll Y: size=2497 client=2497 overflowing=false top=0
+Scroll X: size=390 client=390 overflowing=false left=0
+Styles: width=390px
+[log] URL: http://localhost:5210/edge-observatory
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] URL: http://localhost:5210/edge-observatory
+              - heading "storefront-prod"
+          - tabpanel "Regions":
+                  - heading "Global traffic"
+                  - heading "Regional health"
+[log] []
+[log] PASS mobile horizontal tab arrows activate next view
+[log] URL: http://localhost:5210/edge-observatory
+[log] []
+[log] PASS reduced-motion selection remains immediate
+[log] URL: http://localhost:5210/edge-observatory
+               - heading "storefront-prod"
+[log] []
+[log]               - heading "storefront-prod"
+          - tabpanel "Overview":
+                    - heading "Traffic by region"
+                    - heading "Latency"
+                    - heading "Regions"
+                    - heading "Deployments"
+[log] []
+[log] ALL TEMPLATE QA PASSED

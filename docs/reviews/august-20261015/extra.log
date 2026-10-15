@@ -1,0 +1,217 @@
+Console output:
+[log]                 - heading "storefront-prod"
+            - tabpanel "Overview":
+                      - heading "Traffic by region"
+                      - heading "Latency"
+                      - heading "Regions"
+                      - heading "Deployments"
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[error] Failed to load resource: the server responded with a status of 403 (Forbidden)',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://localhost:5210/edge-observatory color: rgb(120, 120, 120) color: inherit {o: http://localhost:5210/edge-observatory, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792045140279} /_vercel/insights/view'
+]
+[log] URL: http://localhost:5210/edge-observatory
+          - tabpanel "Overview":
+  - dialog:
+      - heading "Deployment #4132"
+[log] []
+[log] URL: http://localhost:5210/edge-observatory
+[log] []
+[log]               - heading "storefront-prod"
+          - tabpanel "Overview":
+                    - heading "Traffic by region"
+                    - heading "Latency"
+                    - heading "Regions"
+                    - heading "Deployments"
+[log] []
+[log] PASS Escape dismisses release detail
+[log] RESTORED FOCUS Simulate deploy
+[log] URL: http://localhost:5210/edge-observatory
+[log] []
+[log] BOUNDARY 1251 Element: div.edge-observatory
+Box: x=0 y=-17 w=1251 h=1327
+Children: 2  Text length: 1608
+Scroll Y: size=1327 client=1327 overflowing=false top=0
+Scroll X: size=1251 client=1251 overflowing=false left=0
+Styles: width=1251px
+[log] URL: http://localhost:5210/edge-observatory
+[log] []
+[log] BOUNDARY 1250 Element: div.edge-observatory
+Box: x=0 y=-17 w=1250 h=2030
+Children: 2  Text length: 1608
+Scroll Y: size=2030 client=2030 overflowing=false top=0
+Scroll X: size=1250 client=1250 overflowing=false left=0
+Styles: width=1250px
+[log] URL: http://localhost:5210/edge-observatory
+[log] []
+[log] BOUNDARY 851 Element: div.edge-observatory
+Box: x=0 y=-17 w=851 h=1896
+Children: 2  Text length: 1608
+Scroll Y: size=1896 client=1896 overflowing=false top=0
+Scroll X: size=851 client=851 overflowing=false left=0
+Styles: width=851px
+[log] URL: http://localhost:5210/edge-observatory
+[log] []
+[log] BOUNDARY 850 Element: div.edge-observatory
+Box: x=0 y=-17 w=850 h=2180
+Children: 2  Text length: 1608
+Scroll Y: size=2180 client=2180 overflowing=false top=0
+Scroll X: size=850 client=850 overflowing=false left=0
+Styles: width=850px
+[log] URL: http://localhost:5210/edge-observatory
+[log] []
+[log] BOUNDARY 601 Element: div.edge-observatory
+Box: x=0 y=-17 w=601 h=2087
+Children: 2  Text length: 1608
+Scroll Y: size=2087 client=2087 overflowing=false top=0
+Scroll X: size=601 client=601 overflowing=false left=0
+Styles: width=601px
+[log] URL: http://localhost:5210/edge-observatory
+                     - heading "Traffic by region"
+                     - heading "Latency"
+                     - heading "Regions"
+[log] []
+[log] BOUNDARY 600 Element: div.edge-observatory
+Box: x=0 y=-17 w=600 h=2474
+Children: 2  Text length: 1608
+Scroll Y: size=2474 client=2474 overflowing=false top=0
+Scroll X: size=600 client=600 overflowing=false left=0
+Styles: width=600px
+[log] URL: http://localhost:5210/edge-observatory
+              - heading "storefront-prod"
+          - tabpanel "Logs":
+                - heading "Request logs"
+[log] []
+[log] MOBILE LOGS Element: div.edge-observatory
+Box: x=0 y=-17 w=390 h=2819
+Children: 2  Text length: 2001
+Scroll Y: size=2819 client=2819 overflowing=false top=0
+Scroll X: size=390 client=390 overflowing=false left=0
+Styles: width=390px
+[log] TABLE Element: div.edge-table-scroll
+Box: x=17 y=874 w=356 h=1743
+Children: 1  Text length: 1200
+Scroll Y: size=1743 client=1743 overflowing=false top=0
+Scroll X: size=461 client=356 overflowing=true left=0
+Styles: overflow-x=auto
+[log]                   - heading "Traffic by region"
+            - heading:
+            - heading:
+            - heading:
+            - heading:
+                      - cell "Static rows or semantic buttons. The template uses a Base UI dialog for focus and dismissal."
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[error] Failed to load resource: the server responded with a status of 403 (Forbidden)',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://localhost:5210/edge-monitor?view=docs color: rgb(120, 120, 120) color: inherit {o: http://localhost:5210/edge-monitor?view=docs, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792045142489} /_vercel/insights/view'
+]
+[log] URL: http://localhost:5210/edge-monitor
+              - heading "Region Traffic Map"
+                  - heading "Use this component"
+                - heading "Properties"
+[log] []
+[log] PLAYGROUND SNAPSHOT text: "PATTERNS"
+              - list:
+                - listitem:
+                  - role=link[name="Settings"i]
+                - listitem:
+                  - role=link[name="Pattern Lab"i]
+                - listitem:
+                  - role=link[name="Inbox Stream"i]
+                - listitem:
+                  - role=link[name="Onboarding Board"i]
+          - banner:
+              - navigation "Breadcrumb":
+                - text: "Components / Edge Monitor"
+              - heading "Region Traffic Map"
+            - generic "Page view":
+              - text: "Playground"
+              - role=button[name="Documentation"i]
+            - main "Region Traffic Map playground":
+                - generic "Preview view":
+                  - role=button[name="Preview"i]
+                  - role=button[name="Code"i]
+                - role=button[name="Replay"i]
+                - region "Component preview":
+                        - group "Traffic region map":
+                          - role=button[name="San Francisco, sfo1, 34 milliseconds"i]:
+                              - text: "265K"
+                          - role=button[name="Washington, D.C., iad1, 31 milliseconds"i]:
+                              - text: "418K"
+                          - role=button[name="São Paulo, gru1, 42 milliseconds"i]:
+                              - text: "88K"
+                          - role=button[name="London, lhr1, 29 milliseconds"i]:
+                              - text: "232K"
+                          - role=button[name="Frankfurt, fra1, 28 milliseconds"i]:
+                              - text: "312K"
+                          - role=button[name="Mumbai, bom1, 48 milliseconds"i]:
+                              - text: "97K"
+                          - role=button[name="Singapore, sin1, 124 milliseconds, elevated"i]:
+                              - text: "158K"
+                          - role=button[name="Hong Kong, hkg1, 36 milliseconds"i]:
+                              - text: "119K"
+                          - role=button[name="Tokyo, hnd1, 33 milliseconds"i]:
+                              - text: "201K"
+                          - role=button[name="Sydney, syd1, 44 milliseconds"i]:
+                              - text: "62K"
+                        - strong:
+                          - text: "Singapore"
+                        - text: "sin1"
+                        - descriptionlist:
+                            - term "p95 latency"
+                            - definition:
+                              - text: "124"
+                              - text: "ms"
+                            - term "Requests / s"
+                            - definition:
+                              - text: "158K"
+                            - term "5xx errors"
+                            - definition:
+                              - text: "0.36"
+                              - text: "%"
+              - sectionfooter:
+                  - heading "Use this component"
+                  - role=button[name="Copy command"i]
+                - code:
+                  - text: "npx oreo-ui add edge-monitor"
+                - paragraph:
+                  - text: "Or copy"
+                  - code:
+                    - text: "src/components/"
+                    - text: "edge-monitor"
+                    - text: "/*"
+                  - text: "into your project."
+            - complementary "Component properties":
+                - heading "Properties"
+                - role=button[name="Reset"i]
+                - disclosuretriangle "Region Traffic Map"
+                    - labeltext:
+                      - text: "selected"
+                    - combobox "selected" [id="_r_6_"]:
+                      - menulistpopup:
+                        - role=option[name="sfo1"i]
+                        - role=option[name="iad1"i]
+                        - role=option[name="gru1"i]
+                        - role=option[name="lhr1"i]
+                        - role=option[name="fra1"i]
+                        - role=option[name="bom1"i]
+                        - role=option[name="sin1"i]
+                        - role=option[name="hkg1"i]
+                        - role=option[name="hnd1"i]
+                        - role=option[name="syd1"i]
+                    - switch "empty" [id="base-ui-_r_8_"]
+                - disclosuretriangle "Appearance"
+                    - switch "Dark theme" [id="base-ui-_r_b_"]
+                    - labeltext:
+                      - text: "Radius"
+                      - slider "Radius" [id="_r_d_"]
+                      - role=spinbutton[name="Radius value"i]:
+
+
+[Truncated to 10000 characters. Use search to find specific content]

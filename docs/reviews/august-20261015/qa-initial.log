@@ -1,0 +1,81 @@
+Console output (before error):
+[log]                 - heading "storefront-prod"
+            - tabpanel "Overview":
+                      - heading "Traffic by region"
+                      - heading "Latency"
+                      - heading "Regions"
+                      - heading "Deployments"
+[log] [
+  '[debug] [vite] invalidate /src/components/edge-monitor/index.tsx: Could not Fast Refresh ("compactNumber" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports',
+  '[debug] [vite] hot updated: /src/components/edge-monitor/index.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/patterns/edge-observatory/edge-observatory.css',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/edge-monitor/edge-monitor.css',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/pages/EdgeMonitorDocs.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/patterns/edge-observatory/index.tsx',
+  '[debug] [vite] hot updated: /src/docs/DocsPage.tsx',
+  '[debug] [vite] hot updated: /src/docs/playground/ComponentPlayground.tsx',
+  '[debug] [vite] hot updated: /src/pages/EdgeMonitorDocs.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/patterns/edge-observatory/index.tsx',
+  '[debug] [vite] hot updated: /src/docs/DocsPage.tsx',
+  '[debug] [vite] hot updated: /src/docs/playground/ComponentPlayground.tsx',
+  '[debug] [vite] hot updated: /src/components/edge-monitor/index.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/patterns/edge-observatory/edge-observatory.css',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[error] Failed to load resource: the server responded with a status of 403 (Forbidden)',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://localhost:5210/edge-observatory color: rgb(120, 120, 120) color: inherit {o: http://localhost:5210/edge-observatory, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792045021566} /_vercel/insights/view'
+]
+[log] PASS overview initially active
+[log] URL: http://localhost:5210/edge-observatory
+                       - heading "Traffic by region"
+                       - heading "Latency"
+[log] []
+[log] PASS map selection scopes region filter
+[log] PASS map detail follows selected region
+[log] URL: http://localhost:5210/edge-observatory
+                       - heading "Latency"
+[log] []
+[log] PASS period updates aggregate request volume
+[log] URL: http://localhost:5210/edge-observatory
+                - heading "storefront-prod"
+            - tabpanel "Regions":
+                    - heading "Global traffic"
+                    - heading "Regional health"
+[log] []
+[log] URL: http://localhost:5210/edge-observatory
+[log] []
+[log] PASS regional list updates selection
+[log]                 - heading "storefront-prod"
+            - tabpanel "Overview":
+                      - heading "Traffic by region"
+                      - heading "Latency"
+                      - heading "Regions"
+                      - heading "Deployments"
+[log] []
+[log] URL: http://localhost:5210/edge-observatory
+                - heading "storefront-prod"
+            - tabpanel "Logs":
+                  - heading "Request logs"
+[log] []
+[log] PASS incident opens logs
+[log] PASS incident applies error filter
+[log] PASS incident shows three Singapore errors
+
+
+Error executing code: Code execution timed out after 10000ms
