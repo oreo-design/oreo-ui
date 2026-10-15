@@ -1,0 +1,63 @@
+Console output:
+[log] URL: http://localhost:5209/switch?view=docs
+[log] [
+  '[debug] [vite] hot updated: /src/components/switch/switch.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css'
+]
+[log] PASS two rapid pointer activations return to initial state
+[log] URL: http://localhost:5209/switch?view=docs
+                   - switch "Stretch motion" [id="base-ui-_r_1_"]
+                 - status:
+[log] []
+[log] PASS three rapid pointer activations settle in opposite state
+[log] Element: span.oreo-switch-stretch-tail
+Box: x=660 y=474 w=30 h=16
+Children: 1  Text length: 0
+Scroll Y: size=16 client=16 overflowing=false top=0
+Scroll X: size=30 client=30 overflowing=false left=0
+Styles: clip-path=inset(0px 0px 0px 11.942px round 999px) transition-duration=0.18s transition-delay=0.04s
+Visibility: pointer-events=none
+Aria: aria-hidden=true
+[log] URL: http://localhost:5209/switch?view=docs
+[log] []
+[log] PASS read-only external label cannot mutate
+[log] URL: http://localhost:5209/switch?view=docs
+[log] []
+[log] URL: http://localhost:5209/switch?view=docs
+[log] []
+[log] PASS read-only keyboard cannot mutate
+[log] URL: http://localhost:5209/switch?view=docs
+[log] []
+[log] PASS default uncontrolled switch pointer works
+[log] URL: http://localhost:5209/switch?view=docs
+[log] []
+[log] PASS default uncontrolled switch keyboard works
+[log] PASS default retains canonical styling
+[log] URL: http://localhost:5209/settings
+                        - switch "Default permissions" [id="base-ui-_r_3_"]
+                        - switch "Auto-review" [id="base-ui-_r_5_"]
+                        - switch "Full access" [id="base-ui-_r_7_"]
+                        - switch "Show in menu bar" [id="base-ui-_r_f_"]
+                        - switch "Prevent sleep while running" [id="base-ui-_r_h_"]
+              - switch "Nav icons" [id="base-ui-_r_r_"]
+              - switch "Dark theme" [id="base-ui-_r_t_"]
+[log] [
+  '[debug] [vite] hot updated: /src/components/switch/switch.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[error] Failed to load resource: net::ERR_CONNECTION_REFUSED',
+  '[error] Failed to load resource: net::ERR_CONNECTION_REFUSED',
+  '[error] Failed to load resource: net::ERR_CONNECTION_REFUSED',
+  '[error] Failed to load resource: net::ERR_CONNECTION_REFUSED',
+  '[error] Failed to load resource: net::ERR_CONNECTION_REFUSED',
+  '[error] Failed to load resource: net::ERR_CONNECTION_REFUSED',
+  '[error] Failed to load resource: net::ERR_CONNECTION_REFUSED',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[error] Failed to load resource: the server responded with a status of 403 (Forbidden)',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://localhost:5209/settings color: rgb(120, 120, 120) color: inherit {o: http://localhost:5209/settings, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792044123159} /_vercel/insights/view'
+]
+[log] REGRESSION PASSED

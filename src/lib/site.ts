@@ -18,6 +18,8 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  switch: { title: "Switch", description: "An accessible on/off control with optional stretch motion, existing Oreo tokens and native form behavior." },
+  "preference-studio": { title: "Preference Studio", description: "A settings template with immediate appearance, density, people and activity preferences in a live workspace preview." },
   "toggle-composer": { title: "Toggle Composer", description: "Quick and long post editors with solid and frosted surfaces, selection formatting and accessible mode switching." },
   "composer-studio": { title: "Composer Studio", description: "A writing template with live preview, image attachments and session drafts." },
   "canvas-toolbar": { title: "Canvas Toolbar", description: "Floating canvas navigation with zoom, pan, selection, organization and creation controls." },

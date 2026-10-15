@@ -1,0 +1,56 @@
+Console output:
+[log] URL: http://localhost:5209/settings
+                - sectionheader:
+                  - heading "General"
+                  - heading "Permissions"
+                        - text: "Default permissions"
+                        - text: "Oreo can read and edit files in its workspace. It asks before touching anything else."
+                        - switch "Default permissions" [id="base-ui-_r_3_"]
+                        - text: "Auto-review"
+                        - text: "Requests for additional access are reviewed automatically. Auto-review can make mistakes."
+                        - switch "Auto-review" [id="base-ui-_r_5_"]
+                        - text: "Full access"
+                        - text: "Edit any file and run commands without approval. This significantly increases the risk of data loss."
+                        - switch "Full access" [id="base-ui-_r_7_"]
+                  - heading "Others"
+                        - text: "Language"
+                        - text: "Language for the app UI"
+                        - button "Language" [id="base-ui-_r_d_"]:
+                          - text: "Auto detect"
+                        - text: "Show in menu bar"
+                        - text: "Keep Oreo in the menu bar when the main window is closed"
+                        - switch "Show in menu bar" [id="base-ui-_r_f_"]
+                        - text: "Default terminal location"
+                        - text: "Where the terminal shortcut opens new tabs"
+                        - radiogroup "Default terminal location":
+                          - role=radio[name="Bottom"i]
+                          - role=radio[name="Right"i]
+                        - text: "Prevent sleep while running"
+                        - text: "Keep the computer awake while a task is running"
+                        - switch "Prevent sleep while running" [id="base-ui-_r_h_"]
+                        - text: "Speed"
+                        - text: "Choose how quickly Oreo runs"
+                        - button "Speed" [id="base-ui-_r_n_"]:
+                          - text: "Standard"
+                    - role=link[name="Manage account Plans, sessions and security live on the web"i]
+---
+            - text: "CARD STYLE"
+              - role=button[name="Outline"i]
+              - role=button[name="Surface"i]
+              - role=button[name="Divider"i]
+                - text: "Nav icons"
+              - switch "Nav icons" [id="base-ui-_r_r_"]
+                - text: "Dark theme"
+              - switch "Dark theme" [id="base-ui-_r_t_"]
+    - toolbar "Playwriter tools":
+      - role=button[name="Copy Locator"i]:
+        - text: "Copy locator"
+      - role=button[name="Record Skill Record a skill"i]
+      - role=button[name="Start remote control"i]:
+[log] Error: Failed to start recording: Extension has not been invoked for the current page (see activeTab permission). Chrome pages cannot be captured.. Click the Playwriter extension icon on this tab to enable recording.
+
+For automated recording, start a managed Playwriter browser with the bundled extension loaded:
+
+  playwriter browser start
+
+Or click the Playwriter extension icon on the tab once to grant permission.

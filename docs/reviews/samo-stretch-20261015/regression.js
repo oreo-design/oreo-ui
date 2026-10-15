@@ -1,0 +1,16 @@
+const p=state.page;
+const see=async(page=p)=>{console.log((await snapshot({page})).split('\n').filter(x=>/switch|status:|URL:/.test(x)).slice(-15).join('\n'));console.log(await getLatestLogs({page,sinceLastCall:true}));};
+const check=(ok,m)=>{if(!ok)throw Error(m);console.log('PASS '+m)};
+const sw=p.getByRole('switch',{name:'Stretch motion',exact:true});
+const initial=await sw.getAttribute('aria-checked');
+await sw.click({clickCount:2,delay:40});await see();check(await sw.getAttribute('aria-checked')===initial,'two rapid pointer activations return to initial state');
+await sw.click({clickCount:3,delay:40});await see();check(await sw.getAttribute('aria-checked')!==initial,'three rapid pointer activations settle in opposite state');
+console.log(await inspect({locator:sw.locator('.oreo-switch-stretch-tail'),properties:['clip-path','transition-duration','transition-delay']}));
+await p.getByText('Read only',{exact:true}).click();await see();check(await p.getByRole('switch',{name:'Read only',exact:true}).getAttribute('aria-checked')==='true','read-only external label cannot mutate');
+await p.getByRole('switch',{name:'Read only',exact:true}).click();await see();await p.getByRole('switch',{name:'Read only',exact:true}).press('Space');await see();check(await p.getByRole('switch',{name:'Read only',exact:true}).getAttribute('aria-checked')==='true','read-only keyboard cannot mutate');
+const standard=p.getByRole('switch',{name:'Default',exact:true});
+await standard.click();await see();check(await standard.getAttribute('aria-checked')==='true','default uncontrolled switch pointer works');
+await standard.press('Space');await see();check(await standard.getAttribute('aria-checked')==='false','default uncontrolled switch keyboard works');
+check(!(await standard.getAttribute('class')).includes('oreo-switch-stretch'),'default retains canonical styling');
+await state.peer.reload();await see(state.peer);
+console.log('REGRESSION PASSED');

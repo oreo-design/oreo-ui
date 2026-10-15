@@ -1,0 +1,174 @@
+.preference-studio {
+  min-height: 100dvh;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  padding: 0 2rem;
+  --settings-hairline: var(--color-border-subtle);
+}
+.preference-topbar {
+  max-width: 70rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.preference-heading {
+  max-width: 70rem;
+  margin: 3rem auto 2.5rem;
+}
+.preference-grid {
+  max-width: 70rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.preference-controls {
+  display: grid;
+  gap: 1.75rem;
+  min-width: 0;
+}
+.preference-section-title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.preference-section-title svg {
+  width: 1rem;
+  height: 1rem;
+}
+.preference-card {
+  padding: 0 1rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-base);
+}
+.preference-card label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5rem;
+}
+.preference-preview-wrap {
+  min-width: 0;
+}
+.preference-preview {
+  overflow: hidden;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-elevated);
+  box-shadow: var(--shadow-overlay);
+}
+.preference-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-bg-base);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.preference-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-control);
+  background: var(--color-bg-inverse);
+  color: var(--color-text-on-inverse);
+}
+.preference-preview-intro {
+  padding: 2rem 1.5rem 1.25rem;
+}
+.preference-feed {
+  margin: 0 1.25rem 1.25rem;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+}
+.preference-feed-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.preference-feed-item:last-child {
+  border-bottom: 0;
+}
+.preference-person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-capsule);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+.preference-preview[data-compact="true"] .preference-feed-item {
+  padding: 0.75rem 1rem;
+}
+.preference-preview[data-compact="true"] .preference-feed-item h4 {
+  margin-top: 0.375rem;
+}
+.preference-preview[data-compact="true"] .preference-feed-item p {
+  margin-top: 0;
+}
+.preference-preview-footer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--color-border-subtle);
+  color: var(--color-text-tertiary);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.preference-preview-footer svg {
+  flex-shrink: 0;
+}
+.preference-footer {
+  max-width: 70rem;
+  margin: 3rem auto 0;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border-subtle);
+  color: var(--color-text-tertiary);
+  font-size: 0.75rem;
+}
+@media (max-width: 900px) {
+  .preference-grid {
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .preference-studio {
+    padding: 0 1rem;
+  }
+  .preference-grid {
+    grid-template-columns: 1fr;
+  }
+  .preference-heading {
+    margin: 2rem auto;
+  }
+  .preference-footer {
+    flex-direction: column;
+  }
+  .preference-preview-header {
+    padding: 1rem;
+  }
+}

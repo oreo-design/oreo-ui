@@ -182,3 +182,5 @@ Inspired by [rico’s navigation concept](https://x.com/_heyrico/status/21104085
 [Visual and interaction review](docs/reviews/rico-20261015/REVIEW.md).
 
 - **Toggle Composer / Composer Studio** — Quick and Long post modes, solid/frosted surfaces, selection formatting, live preview and session drafts. [Reference](https://x.com/gregmwashington/status/2110188748994675112).
+
+- **Switch / Preference Studio** — opt-in stretch feedback on the existing Switch, plus a responsive settings template with live appearance and activity preferences. [Reference](https://x.com/samosemudiamhe/status/2110425458806235278).

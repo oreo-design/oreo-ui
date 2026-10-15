@@ -1,3 +1,4 @@
+import { Switch } from "@/components/switch";
 import { ToggleComposer, ComposerModeSwitch, ComposerFormattingToolbar, EMPTY_COMPOSER, type ComposerMode } from "@/components/toggle-composer";
 import { CanvasToolbar, type CanvasMode } from "@/components/canvas-toolbar";
 import { TextToolbar, DEFAULT_TEXT_FORMAT, type TextColor, type TextFont, type TextAlignment } from "@/components/text-toolbar";
@@ -58,6 +59,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  switch: { Switch },
   "toggle-composer": { ToggleComposer, ComposerModeSwitch, ComposerFormattingToolbar },
   "canvas-toolbar": { CanvasToolbar },
   "text-toolbar": { TextToolbar },
@@ -94,6 +96,7 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  switch: define("Switch", { checked: toggle(false), variant: select(["default", "stretch"], "stretch"), disabled: toggle(), readOnly: toggle() }, (v,set) => <Switch aria-label="Stretch motion" checked={v.checked} onCheckedChange={checked=>set("checked",checked)} variant={v.variant} disabled={v.disabled} readOnly={v.readOnly} />),
   "toggle-composer": define("Toggle Composer", { mode: select(["quick", "long"], "quick"), surface: select(["solid", "frosted"], "solid"), quick: text("A thought worth sharing."), headline: text("A longer story"), intro: text("Start with a little context."), body: text("Make room for the details."), disabled: toggle() }, (v,set) => <div className="w-full max-w-lg"><ToggleComposer mode={v.mode as ComposerMode} onModeChange={mode=>set("mode",mode)} surface={v.surface} disabled={v.disabled} value={{...EMPTY_COMPOSER,quick:v.quick,headline:v.headline,intro:v.intro,body:v.body}} onValueChange={value=>{for (const key of Object.keys(EMPTY_COMPOSER) as (keyof typeof EMPTY_COMPOSER)[]) set(key,value[key]);}} /></div>),
   "canvas-toolbar": define("Canvas Toolbar", { zoom: number(95,10,200,5), mode: select(["pan","select"],"select"), disabled: toggle() }, (v,set) => <CanvasToolbar zoom={v.zoom} onZoomChange={zoom=>set("zoom",zoom)} mode={v.mode as CanvasMode} onModeChange={mode=>set("mode",mode)} disabled={v.disabled} onFit={()=>set("zoom",95)} />),
   "text-toolbar": define("Text Toolbar", { bold: toggle(), italic: toggle(), underline: toggle(), strikethrough: toggle(), code: toggle(), highlight: toggle(), color: select(["ink","mint","pink","blue","purple","orange","brown"],"ink"), font: select(["sans","serif","hand","mono"],"hand"), size: number(22,12,72,1), align: select(["left","center","right"],"center"), disabled: toggle() }, (v,set) => <TextToolbar disabled={v.disabled} value={{...DEFAULT_TEXT_FORMAT,...v,color:v.color as TextColor,font:v.font as TextFont,align:v.align as TextAlignment}} onValueChange={value=>{for(const key of Object.keys(DEFAULT_TEXT_FORMAT) as (keyof typeof DEFAULT_TEXT_FORMAT)[]) set(key,value[key]);}} />),

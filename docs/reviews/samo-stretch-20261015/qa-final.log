@@ -1,0 +1,196 @@
+Console output:
+[log]               - heading "A good place to begin."
+                  - heading "A small detail, a better day"
+                  - heading "Design review is ready"
+                  - heading "Room for one more idea"
+[log] [
+  '[debug] [vite] hot updated: /src/components/switch/switch.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/pages/SwitchDocs.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/switch/switch.stretch.css',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/switch/switch.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/pages/SwitchDocs.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[error] Failed to load resource: the server responded with a status of 403 (Forbidden)',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://localhost:5209/preference-studio color: rgb(120, 120, 120) color: inherit {o: http://localhost:5209/preference-studio, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792043876575} /_vercel/insights/view'
+]
+[log] PASS: initial feed has three items
+[log] URL: http://localhost:5209/preference-studio
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] PASS: pointer activation applies controlled state
+[log] PASS: compact preference changes preview
+[log] POINTER MOTION Element: span.oreo-switch-stretch-tail
+Box: x=614 y=454 w=30 h=16
+Children: 1  Text length: 0
+Scroll Y: size=16 client=16 overflowing=false top=0
+Scroll X: size=30 client=30 overflowing=false left=0
+Styles: clip-path=inset(0px 0px 0px 0.0259412px round 999px) transition-duration=0.18s transition-delay=0.04s
+Visibility: pointer-events=none
+Aria: aria-hidden=true
+[log] URL: http://localhost:5209/preference-studio
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] PASS: people preference removes avatars
+[log]                - heading "A good place to begin."
+-                  - heading "A small detail, a better day"
+                   - heading "Design review is ready"
+-                  - heading "Room for one more idea"
+[log] []
+[log] PASS: messages filter keeps project update
+[log]                    - heading "Oreo Studio"
+               - heading "A good place to begin."
+-                  - heading "Design review is ready"
++              - heading "A little quiet."
+[log] []
+[log] PASS: quiet mode shows centered recovery
+[log]                    - heading "Oreo Studio"
+               - heading "A good place to begin."
+-              - heading "A little quiet."
++                  - heading "Design review is ready"
+[log] []
+[log] PASS: resume preserves category choices
+[log] URL: http://localhost:5209/preference-studio
+               - heading "A good place to begin."
+-                  - heading "Design review is ready"
++              - heading "Nothing in your feed."
+[log] []
+[log] PASS: all filters off shows distinct empty state
+[log] -              - heading "Nothing in your feed."
++                  - heading "A small detail, a better day"
++                  - heading "Design review is ready"
++                  - heading "Room for one more idea"
+[log] []
+[log] PASS: empty action restores activity
+[log] URL: http://localhost:5209/preference-studio
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] PASS: dark appearance applies
+[log] URL: http://localhost:5209/preference-studio
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] URL: http://localhost:5209/preference-studio
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] PASS: Space activates switch
+[log] KEYBOARD MOTION Element: span.oreo-switch-stretch-tail
+Box: x=614 y=454 w=30 h=16
+Children: 1  Text length: 0
+Scroll Y: size=16 client=16 overflowing=false top=0
+Scroll X: size=30 client=30 overflowing=false left=0
+Styles: transition-duration=0s transition-delay=0s
+Visibility: pointer-events=none
+Aria: aria-hidden=true
+[log] PASS: keyboard disables stretch motion
+[log] URL: http://localhost:5209/preference-studio
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] REDUCED MOTION Element: span.oreo-switch-stretch-tail
+Box: x=614 y=531 w=30 h=16
+Children: 1  Text length: 0
+Scroll Y: size=16 client=16 overflowing=false top=0
+Scroll X: size=30 client=30 overflowing=false left=0
+Styles: transition-duration=0s transition-delay=0s
+Visibility: pointer-events=none
+Aria: aria-hidden=true
+[log] URL: http://localhost:5209/preference-studio
+           - status:
+             - heading "Your workspace"
+[log] []
+[log] PASS: reset restores appearance and density
+[log] URL: http://localhost:5209/preference-studio
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] MEDIUM Element: main.preference-studio
+Box: x=0 y=0 w=900 h=1354
+Children: 4  Text length: 1248
+Scroll Y: size=1354 client=1354 overflowing=false top=0
+Scroll X: size=900 client=900 overflowing=false left=0
+Styles: width=900px
+[log] URL: http://localhost:5209/preference-studio
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] MOBILE Element: main.preference-studio
+Box: x=0 y=0 w=390 h=2177
+Children: 4  Text length: 1248
+Scroll Y: size=2177 client=2177 overflowing=false top=0
+Scroll X: size=390 client=390 overflowing=false left=0
+Styles: width=390px
+[log] URL: http://localhost:5209/preference-studio
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] ABOVE BREAKPOINT Element: main.preference-studio
+Box: x=0 y=0 w=701 h=1442
+Children: 4  Text length: 1248
+Scroll Y: size=1442 client=1442 overflowing=false top=0
+Scroll X: size=701 client=701 overflowing=false left=0
+Styles: width=701px
+[log] URL: http://localhost:5209/preference-studio
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] AT BREAKPOINT Element: main.preference-studio
+Box: x=0 y=0 w=700 h=2047
+Children: 4  Text length: 1248
+Scroll Y: size=2047 client=2047 overflowing=false top=0
+Scroll X: size=700 client=700 overflowing=false left=0
+Styles: width=700px
+[log]                 - status:
+            - heading:
+            - heading:
+            - heading:
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[error] Failed to load resource: the server responded with a status of 403 (Forbidden)',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://localhost:5209/switch?view=docs color: rgb(120, 120, 120) color: inherit {o: http://localhost:5209/switch?view=docs, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792043879477} /_vercel/insights/view'
+]
+[log] PASS: disabled off cannot change
+[log] PASS: disabled on cannot change
+[log] URL: http://localhost:5209/switch?view=docs
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] PASS: read-only value remains checked
+[log] URL: http://localhost:5209/switch?view=docs
+                 - status:
+             - heading:
+[log] []
+[log] PASS: visible label activates switch
+[log] LABEL MOTION Element: span.oreo-switch-stretch-tail
+Box: x=660 y=474 w=30 h=16
+Children: 1  Text length: 0
+Scroll Y: size=16 client=16 overflowing=false top=0
+Scroll X: size=30 client=30 overflowing=false left=0
+Styles: transition-duration=0.18s transition-delay=0.04s
+Visibility: pointer-events=none
+Aria: aria-hidden=true
+[log] URL: http://localhost:5209/switch?view=docs
+No changes since last snapshot. Use showDiffSinceLastCall: false to see full content.
+[log] []
+[log] RTL Element: span.oreo-switch-stretch-tail
+Box: x=552 y=961 w=30 h=16
+Children: 1  Text length: 0
+Scroll Y: size=16 client=16 overflowing=false top=0
+Scroll X: size=30 client=30 overflowing=false left=0
+Styles: transform=matrix(-1, 0, 0, 1, 0, 0) clip-path=inset(0px 0px 0px 0.21317px round 999px)
+Visibility: pointer-events=none
+Aria: aria-hidden=true
+[log] URL: http://localhost:5209/switch
+              - heading "Switch"
+                  - heading "Use this component"
+                - heading "Properties"
+[log] []
+[log] ALL STRETCH QA PASSED
