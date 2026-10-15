@@ -1,0 +1,8 @@
+
+> oreo-ui@0.0.0 build
+> tsc -b && vite build
+
+src/docs/playground/registry.tsx(171,66): error TS2345: Argument of type 'string' is not assignable to parameter of type 'readonly string[]'.
+src/docs/playground/registry.tsx(171,211): error TS2322: Type 'string' is not assignable to type '"cumulative" | "daily" | undefined'.
+src/docs/playground/registry.tsx(173,73): error TS2345: Argument of type 'string' is not assignable to parameter of type 'readonly string[]'.
+src/docs/playground/registry.tsx(173,206): error TS2322: Type 'string' is not assignable to type '"ready" | "collecting" | "decided"'.

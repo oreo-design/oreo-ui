@@ -1,3 +1,5 @@
+import { ExperimentChart, VariantResults, ExperimentDecision, summarizeExperiment } from "@/components/experiment";
+import { SAMPLE_DAYS } from "@/patterns/experiment-workspace/data";
 import { ProjectCreateCard, ProjectBoardOverview } from "@/components/project-board";
 import { BOARD_PROJECTS, BOARD_PEOPLE } from "@/patterns/project-board/data";
 import { WorkspaceSetup, ToolAccessRow, MemberAccessTable, WorkspaceInvitation } from "@/components/workspace-access";
@@ -104,6 +106,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  experiment: {ExperimentChart, VariantResults, ExperimentDecision},
   "project-board": {ProjectCreateCard, ProjectBoardOverview},
   "workspace-access": {WorkspaceSetup, ToolAccessRow, MemberAccessTable, WorkspaceInvitation},
   client: { ClientSummary, ClientContactStrip, ClientFinanceSummary },
@@ -165,6 +168,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "experiment-chart": {...define("Experiment Chart",{mode:select(["cumulative","daily"],"cumulative"),empty:toggle(false)},v=><div className="w-full max-w-xl p-6"><ExperimentChart days={v.empty?[]:SAMPLE_DAYS} mode={v.mode}/></div>),source:"experiment"},
+  "variant-results": {...define("Variant Results",{a:text("Design that ships."),b:text("Interfaces people get at a glance."),empty:toggle(false)},v=><div className="w-full max-w-xl p-6"><VariantResults a={v.empty?{visitors:0,conversions:0}:summarizeExperiment(SAMPLE_DAYS).a} b={v.empty?{visitors:0,conversions:0}:summarizeExperiment(SAMPLE_DAYS).b} labels={[v.a,v.b]}/></div>),source:"experiment"},
+  "experiment-decision": {...define("Experiment Decision",{state:select(["ready","collecting","decided"],"ready"),confidence:number(96,0,100,1)},v=><div className="w-full max-w-lg p-6"><ExperimentDecision state={v.state} confidence={v.confidence}/></div>),source:"experiment"},
   "project-create-card": {...define("Project Create Card",{title:text("A little room for your next idea."),animated:toggle(true),action:toggle(true)},v=><div className="w-full max-w-xs p-4"><ProjectCreateCard title={v.title} animated={v.animated} onCreate={v.action?()=>{window.location.href="/project-board";}:undefined}/></div>),source:"project-board"},
   "project-board-overview": {...define("Project Board Overview",{empty:toggle(false),showCreate:toggle(true)},v=><div className="w-full min-w-0 p-4"><ProjectBoardOverview projects={v.empty?[]:BOARD_PROJECTS} people={BOARD_PEOPLE} showCreate={v.showCreate}/></div>),source:"project-board"},
   "workspace-setup": {...define("Workspace Setup",{complete:toggle(false),empty:toggle(false)},v=><div className="w-full p-6"><WorkspaceSetup steps={v.empty?[]:SETUP_STEPS.map(s=>({...s,complete:v.complete||s.complete}))}/></div>),source:"workspace-access"},

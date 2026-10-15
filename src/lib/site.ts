@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "experiment-chart": {title:"Experiment Chart",description:"Cumulative and daily A/B conversion comparisons with accessible date inspection."},
+  "variant-results": {title:"Variant Results",description:"A/B variant identity, conversion counts and observed rates."},
+  "experiment-decision": {title:"Experiment Decision",description:"Host-owned readiness and reversible experiment decisions."},
+  "experiment-workspace": {title:"Experiment Workspace",description:"An A/B testing workspace with synchronized charts, editable drafts and local decision review."},
   "project-create-card": {title:"Project Create Card",description:"An illustrated project creation entry with restrained hover feedback."},
   "project-board-overview": {title:"Project Board Overview",description:"Four project stages composed with shared project summaries."},
   "project-board": {title:"Project Board",description:"A complete local project workspace with overview, draggable board and grid views."},

@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {summarizeExperiment,conversionRate,meetsExperimentGate} from '../../../src/components/experiment/stats.ts';
+import {SAMPLE_DAYS,EXPERIMENTS} from '../../../src/patterns/experiment-workspace/data.ts';
+const s=summarizeExperiment(SAMPLE_DAYS);
+assert.deepEqual(s.a,{visitors:6120,conversions:251});
+assert.deepEqual(s.b,{visitors:6080,conversions:289});
+assert.equal(s.lift.toFixed(1),'15.9'); assert.equal(s.points.toFixed(2),'0.65'); assert.equal(s.wins,13);assert.equal(s.comparable,14);
+const weighted=summarizeExperiment([{date:'1',a:{visitors:10,conversions:1},b:{visitors:10,conversions:2}},{date:'2',a:{visitors:990,conversions:9},b:{visitors:990,conversions:18}}]);
+assert.equal(weighted.ar,1);assert.equal(weighted.br,2);assert.equal(weighted.lift,100);
+assert.equal(conversionRate({visitors:0,conversions:0}),null);
+assert.equal(summarizeExperiment([]).lift,null);
+const sparse=[{date:'empty',a:{visitors:0,conversions:0},b:{visitors:10,conversions:1}},{date:'invalid',a:{visitors:1,conversions:2},b:{visitors:10,conversions:1}},{date:'NaN',a:{visitors:NaN,conversions:0},b:{visitors:10,conversions:1}}];
+assert.equal(summarizeExperiment(sparse).data.length,1);assert.equal(summarizeExperiment(sparse).comparable,0);assert.equal(summarizeExperiment(sparse).lift,null);
+assert.equal(meetsExperimentGate(SAMPLE_DAYS,96,95),true);assert.equal(meetsExperimentGate(SAMPLE_DAYS,96,99),false);assert.equal(meetsExperimentGate(SAMPLE_DAYS,null,95),false);assert.equal(meetsExperimentGate(SAMPLE_DAYS,Infinity,95),false);
+assert.equal(meetsExperimentGate(EXPERIMENTS[1].days,99,95),false);assert.equal(meetsExperimentGate(EXPERIMENTS[2].days,99,95),false);
+console.log('PASS: reference totals, weighted cumulative rates, lift vs percentage points, daily win counts, zero-denominator gaps, invalid rows, confidence and visitor gates.');

@@ -246,3 +246,7 @@ Inspired by [Nizam’s callback board](https://x.com/nizamdesign/status/21102794
 ### Project Board
 
 `/project-board` turns [Navneet’s project dashboard reference](https://x.com/sterlynavneet/status/2110264347595583949) into Overview, Board and Grid views backed by one local project dataset. ProjectCreateCard and ProjectBoardOverview have component docs and playgrounds. Existing ProjectSummary and KanbanBoard remain the owners of project progress and drag behavior. Create/edit, search, priority/category filtering, archive/undo and owner swimlanes are local fixtures that reset on reload.
+
+### Experiment Workspace
+
+`/experiment-workspace` is an A/B testing workspace inspired by [Charles Postiaux’s result cards](https://x.com/PostiauxCharles/status/2110321094301479197). ExperimentChart, VariantResults and ExperimentDecision have docs and playgrounds. Two synchronized charts compare cumulative rates and daily gaps, with keyboard inspection and data tables. Draft creation, sample loading, label editing, pause/resume, confidence gates and reversible decisions are local demo interactions. Observed lift uses aggregate counts; confidence is explicitly supplied sample metadata. No statistical engine or live traffic is connected.
