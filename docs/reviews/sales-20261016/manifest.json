@@ -19,7 +19,13 @@
     "src/components/sales/model.ts": "d60c15dcc0d771f2a563964d159a141b2e3ee214f861ddedbe8862fde379bb27",
     "src/patterns/sales-workspace/index.tsx": "3a3813ef421fa181164a0ae19635cb85c1bc8ab949ac33877071254dc5236aa3",
     "src/patterns/sales-workspace/data.ts": "7e2d22c2edb5b4815f58970370b2ae339c1a18b395b77f5b7eb951f77b30ab5b",
-    "src/patterns/sales-workspace/sales-workspace.css": "b3ed1c2532c12e2d38dcf258a2f910b0fa06f336bcc15eac21232e10fe23ea29"
+    "src/patterns/sales-workspace/sales-workspace.css": "b3ed1c2532c12e2d38dcf258a2f910b0fa06f336bcc15eac21232e10fe23ea29",
+    "src/App.tsx": "40bfefdc4088aa114de748a8d90ba5934ed7e6df9df0374b777315176681dad3",
+    "src/lib/site.ts": "3116393ac96556a3f76192f851bf4c77cb042c02d0bfd47019bc7e83aee02a7f",
+    "src/docs/Sidebar.tsx": "92e7e7c58f198001ec72ea9212fae4fecdc800d1cfcf42a08731e7e60e52223b",
+    "src/docs/playground/registry.tsx": "2b0ea6828cbcd25340dd86723cbaee8ac76eaad2fbd518e94be74ce1a9e2cebe",
+    "src/pages/SalesDocs.tsx": "9b17c3193c288fd00c473c4767d447b790f4bd5291a408ffd62711836f446221",
+    "src/patterns/changelog/data.ts": "b1c1776a46e5f2f1296ac4ef633ccbda67aa03fad6b251592a9f3d444e494efc"
   },
   "media": [
     {
@@ -235,6 +241,24 @@
       "bytes": 240
     },
     {
+      "file": "final-changelog-entry.png",
+      "sha256": "9401e9e43088e72febf6e189a40b0e1a710edfe89a9788e80a1bbb735ca318d1",
+      "bytes": 136505,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "final-changelog.png",
+      "sha256": "3e9b87aaae2b261c21f43799031d8512e9581c990005672fbf27589634c5a67a",
+      "bytes": 127944,
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
       "file": "final-desktop-dark.png",
       "sha256": "6dd2d4921667048ff66f152712ef05a98347303e5a58d61742c7333a92f49534",
       "bytes": 211481,
@@ -262,11 +286,29 @@
       ]
     },
     {
+      "file": "final-medium-dark-exact.png",
+      "sha256": "e7ef5d02e82f653adab52d7f4b064b7fc7839009c747c1a4bbdd48f3f5981bb7",
+      "bytes": 192793,
+      "dimensions": [
+        900,
+        2207
+      ]
+    },
+    {
       "file": "final-medium-dark.png",
       "sha256": "08bd1f508986317f344745cad12f0fd85b2733dede7318adf5ed776506bbb46c",
       "bytes": 201316,
       "dimensions": [
         1020,
+        2207
+      ]
+    },
+    {
+      "file": "final-medium-light-exact.png",
+      "sha256": "7839d8fd323a63bcb3fdf811cc716d0d6b8b3b1bd2d5366331ac58047aa9a4b6",
+      "bytes": 195373,
+      "dimensions": [
+        900,
         2207
       ]
     },
@@ -418,5 +460,7 @@
       "sha256": "4d485d9db3f43e95ad04315367f707c694f440b2f31b75a1b149de4573a3535c",
       "bytes": 167431
     }
-  ]
+  ],
+  "implementation_commit": "bffece03add028bd213c53ee6e2249e33e05957f",
+  "pr": "https://github.com/oreo-design/oreo-ui/pull/61"
 }
