@@ -22,6 +22,9 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Agent Connect Card", page: "agent-connect-card" },
+      { label: "Quota Usage", page: "quota-usage" },
+      { label: "Agent Client Picker", page: "agent-client-picker" },
       { label: "Balance Chart", page: "balance-chart" },
       { label: "Allocation Bar", page: "allocation-bar" },
       { label: "Spending Gauge", page: "spending-gauge" },
@@ -111,7 +114,8 @@ const NAV: Group[] = [
   },
   {
     title: "Templates",
-    items: [{ label: "Finance Workspace", page: "finance-workspace" }, { label: "Presence Room", page: "presence-room" },
+    items: [
+      { label: "Agent Connections", page: "agent-connections" },{ label: "Finance Workspace", page: "finance-workspace" }, { label: "Presence Room", page: "presence-room" },
       { label: "Brand Guide", page: "brand-guide" }, { label: "Project Workspace", page: "project-workspace" }, { label: "Security Review", page: "security-review" }, { label: "Position Studio", page: "position-studio" }, { label: "Studio Inbox", page: "studio-inbox" }, { label: "Edge Observatory", page: "edge-observatory" }, { label: "Preference Studio", page: "preference-studio" }, { label: "Composer Studio", page: "composer-studio" }, { label: "Canvas Studio", page: "canvas-studio" }, { label: "Writing Studio", page: "writing-studio" }, { label: "Meeting Planner", page: "meeting-planner" }, { label: "Subscription", page: "subscription" }, { label: "Comment Workspace", page: "comment-workspace" }, { label: "Calendar Sync", page: "calendar-sync" }, { label: "Document Workspace", page: "document-workspace" }, { label: "Automation Studio", page: "automation-studio" }, { label: "Connections", page: "connections-workspace" }, { label: "Knowledge Base", page: "knowledge-base" }, { label: "Music Workspace", page: "music-workspace" }, { label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
   },
   {

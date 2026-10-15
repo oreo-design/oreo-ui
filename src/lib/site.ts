@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "agent-connect-card": { title: "Agent Connect Card", description: "A compact integration setup card with arced client identities and a focused action." },
+  "quota-usage": { title: "Quota Usage", description: "A compact circular quota meter with clear usage, unknown and over-limit states." },
+  "agent-client-picker": { title: "Agent Client Picker", description: "A controlled client selector with native radio navigation and provider marks." },
+  "agent-connections": { title: "Agent Connections", description: "A complete local MCP setup template with client selection, read-only tool access, configuration and connection management." },
   "balance-chart": { title:"Balance Chart", description:"Accessible multi-series financial snapshots with a shared scale and a data table." },
   "allocation-bar": { title:"Allocation Bar", description:"Proportional savings categories with labels and amounts." },
   "spending-gauge": { title:"Spending Gauge", description:"A segmented half-ring budget meter with remaining and over-budget states." },
