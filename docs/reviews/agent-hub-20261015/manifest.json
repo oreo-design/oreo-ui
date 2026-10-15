@@ -32,7 +32,8 @@
     "src/patterns/agent-hub/data.ts": "0072c8600c1ef3236aa7f88e7154f2f2e9ca9ebfb27e5a032432bf51427d38d5",
     "src/patterns/agent-hub/agent-hub.css": "2767a06f8c0059d806b8a79bfcbc969c300e03dbb1b73830b29267f09b9e3a3b",
     "src/pages/AgentHubPage.tsx": "e6269786b33810a235c769de1fdf70b894dafc98b472e097d5960feb5bd9698a",
-    "src/pages/AgentHubDocs.tsx": "bbf4abefc828f2892cdd0a0108cbe0930571bda831e560f143a3154bb74c9e4a"
+    "src/pages/AgentHubDocs.tsx": "bbf4abefc828f2892cdd0a0108cbe0930571bda831e560f143a3154bb74c9e4a",
+    "src/patterns/changelog/data.ts": "7f520d41c0ef4c032b2cc9f8cadcb67654374dd35c56f4111a410630d634973a"
   },
   "artifacts": {
     "peer-catalog.png": "fa1d294fb316d97f20d4caef255416eea9f744e392756388cf1fc5e5f8c5008b",
@@ -62,7 +63,8 @@
     "before-mobile.png": "72d98eb9da23ec7542f71f55e05e4557002838efae581cf09212c4e890484c0f",
     "my-agents.png": "49d6ab5a4be4d61b3fa0d80b8c3c981075e439fd30f35d2c11b9308596c8de7c",
     "search-empty-final.png": "cb21af020c1227d3753aa1b3d13e783dbc82b6efee64ca864ba95de9d25de37f",
-    "final-dark.png": "7e408f089a79971df0f9de5fb74d255b302aa7dbb973899c9da506237fd18498"
+    "final-dark.png": "7e408f089a79971df0f9de5fb74d255b302aa7dbb973899c9da506237fd18498",
+    "changelog-after.png": "b3d14d8f90e5e996589bd4888bc443db4a8caa72955cf7ba178f316031561f0a"
   },
   "recording": {
     "width": 1440,
@@ -72,5 +74,7 @@
     "original_seconds": 40.43173599243164,
     "frames": 39,
     "timing": "variable-rate capture, idle frame holds capped at 2s; full original frames and timestamps retained"
-  }
+  },
+  "product_source_revision": "a3fb928087ac6119c5aad6619d6a17dabd8388a3",
+  "pull_request": "https://github.com/oreo-design/oreo-ui/pull/49"
 }

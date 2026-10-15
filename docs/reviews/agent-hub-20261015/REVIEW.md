@@ -4,7 +4,7 @@ Reference: [Karthik_designs — agent hub](https://x.com/Karthik_designs/status/
 
 ## Scope and environment
 
-Baseline: `0a1a34a4655cb7c644ad9842ddb82529d920cc2c` (main, PR #48). Branch: `codex/agent-hub-20261015`. Product hashes and final source revision are maintained in [manifest.json](manifest.json).
+Baseline: `0a1a34a4655cb7c644ad9842ddb82529d920cc2c` (main, PR #48). Branch: `codex/agent-hub-20261015`. Final product source: `a3fb928087ac6119c5aad6619d6a17dabd8388a3`. PR: [#49](https://github.com/oreo-design/oreo-ui/pull/49). Product hashes and capture environment are maintained in [manifest.json](manifest.json).
 
 Local fixture preview: http://localhost:5223/agent-hub. Chromium / Playwriter session 56, English, local sample data. Viewports: desktop 1440×1000, mobile 390×844, intermediate 900×1000, navigation breakpoint 800×1000. Full-page images extend below the viewport. Primary checkout's unrelated settings and web-search work was preserved in place. No production deployment.
 
@@ -34,7 +34,7 @@ Reuse: Button/IconButton (tapScale=1), Icon, OreoLogo, AgentWorkspaceState and e
 | Unknown search / recovery | No prior equivalent | [Final empty](search-empty-final.png) | Canonical empty state per result group; Clear filters restores catalog. |
 | Demo connection state | No prior equivalent | [Disconnected](integration-disconnected.png) | Connect/disconnect changes local groups and labels only. |
 | Component docs/playgrounds | No prior modules | [Category playground](category-playground.png) | All three playgrounds exercised; documentation usage/API opened. |
-| Website Changelog | [Before](changelog-before.png) | Pending actual PR entry capture | Existing release list, no new Changelog pattern. |
+| Website Changelog | [Before](changelog-before.png) | [After](changelog-after.png) | Existing release list, no new Changelog pattern. |
 | Actual interaction | No prior interaction available | [Recording](interaction.mp4), [original timestamps/frames](interaction-original.json.xz), [timing map](interaction-timing.json) | Category → agent details → add to collection → integrations → connect demo. 1440×1000, 21.4s; encoded 30fps from 39 variable-rate CDP frames. Idle frame holds capped at 2s; 40.43s original timeline preserved. No FPS-performance claim. Contact sheet inspected. |
 
 Historical diagnostic originals retained: `initial-desktop.png` has weak dark accent and barely visible texture; `after-dark.png` contains a transient text-rendering capture artifact (superseded by `final-dark.png`). `after-desktop.png`, `after-mobile.png`, `after-tablet.png` precede the grid empty-cell refinement. `final-desktop.png` captures the intentional post-interaction state with four connections; `final-desktop-default.png` is the reload/default state. `search-empty.png` shows duplicate browser/custom clear buttons; `search-empty-final.png` shows the correction. Other final screenshots predate only the native clear-button suppression, which has no effect on their empty search fields.
@@ -76,4 +76,4 @@ Historical diagnostic originals retained: `initial-desktop.png` has weak dark ac
 
 ## Limits
 
-All evidence is a local component fixture. It does not prove agent execution, authentication, external integration permissions, persistence or production deployment. The source is a static image, so there is no reference motion to reproduce. Screen-reader and physical-device coverage are not claimed. Changelog evidence is finalized after the real PR number exists; media gaps are separate from authorized delivery.
+All evidence is a local component fixture. It does not prove agent execution, authentication, external integration permissions, persistence or production deployment. The source is a static image, so there is no reference motion to reproduce. Screen-reader and physical-device coverage are not claimed. Changelog entry and its link to PR #49 were checked after the real PR number existed. Media gaps are separate from authorized delivery.
