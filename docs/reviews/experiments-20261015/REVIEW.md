@@ -4,7 +4,7 @@ Reference: [Charles Postiaux, A/B testing](https://x.com/PostiauxCharles/status/
 
 ## Scope and baseline
 
-Baseline `b2e0d07b42135c323d6db2c52c7c4960f0a1ddfe`, origin/main after Project Board #58. Task branch `codex/experiments-20261015`. Sources and media are hashed in `manifest.json`; after state is the implementation in this directory's containing commit. Main checkout and other task worktrees remain untouched.
+Baseline `b2e0d07b42135c323d6db2c52c7c4960f0a1ddfe`, origin/main after Project Board #58. Task branch `codex/experiments-20261015`; implementation commit `ed0a9af`; [PR #59](https://github.com/oreo-design/oreo-ui/pull/59). Sources and media are hashed in `manifest.json`; after state is the implementation in this directory's containing commit. Main checkout and other task worktrees remain untouched.
 
 Three reusable components: **ExperimentChart**, **VariantResults**, **ExperimentDecision**. Template: `/experiment-workspace`; docs and playground routes: `/experiment-chart`, `/variant-results`, `/experiment-decision`. Registers through existing App, site metadata, Sidebar and playground source mapping. Changelog uses the existing release-entry implementation.
 
@@ -34,7 +34,7 @@ Playwriter session 65, task-owned tabs, Chromium, localhost:5233, English local 
 | Data table | No prior experiment table | [Table open](after-data-table.png) | Canonical disclosure, horizontal scroll container and opaque sticky header. Rows match cumulative counts; no title-overlay fade needed. |
 | Responsive / themes | Mobile/medium baseline not captured | [Medium](after-medium-light.png), [mobile light](after-mobile-light.png), [mobile dark](after-mobile-dark.png) | Inspected actual media. Cards stack; mobile navigation scrolls horizontally; body width stays 390px. Tooltip bounded within plot after a focused layout correction. |
 | Library docs / controls | No prior dedicated entries | [Chart docs](after-chart-docs.png), [chart empty](after-chart-empty.png), [variants](after-variant-playground.png), [decision](after-decision-playground.png) | Daily mode/empty controls, decision collecting/decided states and VariantResults source export checked. Existing property controls capitalize rendered labels; early automation retries used wrong-case selectors, then succeeded with actual labels. |
-| Changelog | [Before](before-changelog.png) | `after-changelog.png` | Adds one task entry with actual PR link; existing release layout retained. |
+| Changelog | [Before](before-changelog.png) | [Page](after-changelog.png), [entry](after-changelog-entry.png) | Adds one task entry with actual PR link; existing release layout retained. |
 
 `after-desktop-initial.png` and `after-desktop-dark.png` are retained historical captures, superseded by `after-desktop-final.png`. Final fixes use Button's `trailingIcon` slot (prevented an arrow wrapping below the label), the success token for dark-mode readiness text (palette mint text is intended for its filled Tag surface), and a clamped tooltip position. No historical originals overwritten.
 
