@@ -1,0 +1,7 @@
+PASS: pause preserves progress; paused/stopped/error/completed ignore ticks; resume advances; failure and retry complete; reset returns idle.
+Browser: Playwriter session 60 / installed Chromium / localhost:5227 / local fixtures, English.
+1440x1000 light + dark; 1024x900; 390x844 light + dark.
+Verified: starter -> composer -> run -> six stages -> prewritten result; pause/resume; stop/restart; selected context failure -> retry -> complete; custom prompt -> generic sample structure; copy success notice; save toggle; New brief clears state; stop/reset return focus to heading; 2001-character validation.
+Verified controls: circle shape, purple tone, 2x speed (computed duration 1.2s in main and timeline), paused animation-play-state, reduced-motion animation-name none, opt-in shimmer, timeline empty fixture, API route.
+Final reload / actions: no new browser errors. Development HMR errors and initial unsupported icon failure were corrected before final captures.
+Clipboard success means writeText resolved; clipboard readback not performed. No production, real AI, real web search, real account, screen-reader or cross-browser validation claimed.

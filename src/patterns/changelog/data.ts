@@ -5,6 +5,7 @@ export const REPOSITORY = "https://github.com/oreo-design/oreo-ui";
 /** Selected main-branch changes. Dates are merge dates in Asia/Shanghai, not package releases. */
 export const releases: Release[] = [
   { date: "2026-10-15", label: "October 15, 2026", title: "More pieces. More possibilities.", description: "Brand tools, focused workspaces, and the small details that make them work.", changes: [
+    { id:"thinking-workspace", kind:"Added", title:"Thinking Workspace", description:"Six pixel activity signals and a controlled run timeline, composed into a local assistant workspace with pause/resume, stop/restart, failure recovery and configurable motion.", page:"thinking-workspace", pr:53 },
     { id:"command-dashboard", kind:"Added", title:"Command Dashboard", description:"Grouped command search, workspace metrics and deployment rows, composed into a developer workspace with keyboard navigation, local project drafts and build-error recovery.", page:"command-dashboard", pr:52 },
     { id:"invoice-workspace", kind:"Added", title:"Invoice Workspace", description:"Reusable payment-status badges, sortable invoice rows and totals, composed into a CRM workspace with four views, local edits, delete/undo and CSV export.", page:"invoice-workspace", pr:51 },
     { id:"analytics-assistant", kind:"Added", title:"Analytics Assistant", description:"A compact Ask Analytics card and reusable source chips, composed into a dashboard with local sample answers, saved insights and connection-error recovery.", page:"analytics-assistant", pr:50 },
