@@ -15,3 +15,5 @@
   .oreo-kanban-action:active { transform: none; }
   .oreo-kanban-card, .oreo-kanban-action { transition: none; }
 }
+
+.oreo-kanban-open{border-radius:var(--radius-control);cursor:pointer}.oreo-kanban-handle{display:grid;place-items:center;width:1.5rem;height:1.5rem;border-radius:var(--radius-control);cursor:grab}.oreo-kanban-handle:active{cursor:grabbing}.oreo-kanban-open:focus-visible,.oreo-kanban-handle:focus-visible{outline:2px solid var(--color-status-progress);outline-offset:2px}

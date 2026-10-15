@@ -1,0 +1,113 @@
+.oreo-task-row {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  min-width: 0;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+.oreo-task-row:last-child {
+  border-bottom: 0;
+}
+.oreo-task-row > input {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  accent-color: var(--color-status-success);
+}
+.tr-title {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  border-radius: var(--radius-control);
+}
+.tr-title > span {
+  display: block;
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+.tr-title small {
+  display: block;
+  color: var(--color-text-tertiary);
+  font-size: 0.625rem;
+  margin-top: 0.25rem;
+}
+.oreo-task-row[data-done] .tr-title > span {
+  text-decoration: line-through;
+  color: var(--color-text-tertiary);
+}
+.tr-title:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+.oreo-task-row :disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.tr-status {
+  width: 5rem;
+  flex-shrink: 0;
+}
+.tr-priority {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  font-size: 0.625rem;
+  color: var(--color-text-tertiary);
+  width: 3.75rem;
+  flex-shrink: 0;
+}
+.tr-priority[data-high] {
+  color: var(--color-palette-orange-text);
+}
+.tr-due {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+  width: 3.5rem;
+  flex-shrink: 0;
+  text-align: right;
+}
+.tr-due[data-overdue] {
+  color: var(--color-status-error);
+}
+.tr-unassigned {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: grid;
+  place-items: center;
+  color: var(--color-text-tertiary);
+}
+@media (hover: hover) and (pointer: fine) {
+  .tr-title:hover > span {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+  }
+}
+@media (max-width: 720px) {
+  .oreo-task-row {
+    gap: 0.625rem;
+    padding: 0.875rem;
+  }
+  .tr-priority {
+    display: none;
+  }
+  .tr-status {
+    width: auto;
+  }
+  .tr-due {
+    width: 2.75rem;
+    font-size: 0.625rem;
+  }
+}
+@media (max-width: 440px) {
+  .tr-status {
+    display: none;
+  }
+  .oreo-task-row > input {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}

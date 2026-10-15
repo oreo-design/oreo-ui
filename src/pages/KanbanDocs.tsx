@@ -80,6 +80,7 @@ const [cards, setCards] = useState(initialCards);
               { prop: "cards", type: "KanbanCard[]", desc: "Ordered cards. Every id must be unique and refer to an existing columnId." },
               { prop: "people", type: "KanbanPerson[]", def: "[]", desc: "Assignee names, optional avatar URLs and Oreo palette colors. Unknown assignees appear in Unassigned." },
               { prop: "onCardsChange", type: "(cards: KanbanCard[]) => void", desc: "Called when a drop commits or a card is added. Cancelled drags do not write changes." },
+              { prop: "onCardOpen", type: "(card: KanbanCard) => void", desc: "Optional task-details action. Adds a title button and separate keyboard-accessible drag handle; without it the entire card remains draggable." },
               { prop: "defaultView", type: '"status" | "swimlanes"', def: '"status"', desc: "The initial grouping." },
               { prop: "className", type: "string", desc: "Additional classes for the board surface." },
             ]} /></div></div>
