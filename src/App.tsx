@@ -1,3 +1,5 @@
+import { InvoiceDocs } from "@/pages/InvoiceDocs";
+import { InvoiceWorkspacePage } from "@/pages/InvoiceWorkspacePage";
 import { AskAnalyticsDocs } from "@/pages/AskAnalyticsDocs";
 import { AnalyticsAssistantPage } from "@/pages/AnalyticsAssistantPage";
 import { AgentHubDocs } from "@/pages/AgentHubDocs";
@@ -113,6 +115,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "invoice-status-badge": InvoiceDocs, "invoice-table": InvoiceDocs, "invoice-totals": InvoiceDocs, "invoice-workspace": InvoiceWorkspacePage,
   "ask-analytics": AskAnalyticsDocs, "insight-sources": AskAnalyticsDocs, "analytics-assistant": AnalyticsAssistantPage,
   "hub-search-hero": AgentHubDocs, "agent-category-grid": AgentHubDocs, "integration-tile": AgentHubDocs, "agent-hub": AgentHubPage,
   "place-map": PlaceMapDocs, "place-detail-card": PlaceMapDocs, "map-style-picker": PlaceMapDocs, "place-explorer": PlaceExplorerPage,

@@ -1,0 +1,185 @@
+.invoice-status-badge {
+  border: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  font-weight: 400;
+}
+.invoice-table-host {
+  width: 100%;
+  min-width: 0;
+}
+.invoice-table-scroll {
+  overflow: auto;
+  max-height: calc(100dvh - 13rem);
+  scrollbar-gutter: stable;
+}
+.invoice-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  color: var(--color-text-primary);
+}
+.invoice-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-bg-surface);
+}
+.invoice-table th {
+  height: 3.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.invoice-table th button {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+.invoice-table th svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  opacity: 0.65;
+}
+.invoice-table th[aria-sort="ascending"] svg,
+.invoice-table th[aria-sort="descending"] svg {
+  color: var(--color-text-primary);
+  opacity: 1;
+}
+.invoice-table td {
+  height: 3rem;
+}
+.invoice-table th,
+.invoice-table td {
+  padding: 0 0.875rem;
+}
+.invoice-table th:first-child,
+.invoice-table td:first-child {
+  padding-left: 1.5rem;
+}
+.invoice-table th:last-child,
+.invoice-table td:last-child {
+  padding-right: 1.25rem;
+}
+.invoice-table td:first-child {
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+.invoice-table td:last-child {
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+.invoice-table [data-column="amountCents"] {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+.invoice-table th[data-column="amountCents"] button {
+  margin-left: auto;
+  font-weight: 400;
+}
+.invoice-id-link {
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+}
+.invoice-description-link {
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  max-width: 17rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  text-align: left;
+}
+.invoice-client {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.invoice-client > span:last-child {
+  max-width: 12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.invoice-table button:focus-visible,
+.invoice-table-scroll:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+.invoice-table tr:focus-within td {
+  background: var(--color-bg-elevated);
+}
+.invoice-table[data-compact] td {
+  height: 2.5rem;
+}
+.invoice-table[data-compact] [data-column="description"],
+.invoice-table[data-compact] [data-column="dueDate"] {
+  display: none;
+}
+.invoice-totals {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.invoice-totals article {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: var(--color-bg-surface);
+}
+.invoice-totals article > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+}
+.invoice-totals strong {
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-size: 1.5rem;
+  letter-spacing: -0.0625rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.invoice-totals p {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+}
+@media (hover: hover) and (pointer: fine) {
+  .invoice-table tbody tr:hover td {
+    background: var(--color-bg-elevated);
+  }
+  .invoice-table button:hover {
+    color: var(--color-text-primary);
+  }
+}
+@media (max-width: 1000px) {
+  .invoice-totals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .invoice-table {
+    min-width: 58rem;
+  }
+  .invoice-table[data-compact] {
+    min-width: 35rem;
+  }
+}
+@media (max-width: 480px) {
+  .invoice-totals {
+    gap: 0.625rem;
+  }
+  .invoice-totals article {
+    padding: 1rem;
+  }
+  .invoice-totals strong {
+    font-size: 1.25rem;
+  }
+  .invoice-table-scroll {
+    max-height: calc(100dvh - 16rem);
+  }
+}
