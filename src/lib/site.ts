@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "invoice-status-badge": { title:"Invoice Status Badge", description:"Payment state labels using the shared Oreo Tag palette." },
+  "invoice-table": { title:"Invoice Table", description:"Sortable invoice rows with customer avatars and accessible actions." },
+  "invoice-totals": { title:"Invoice Totals", description:"Outstanding, overdue, paid and draft totals from one invoice dataset." },
+  "invoice-workspace": { title:"Invoice Workspace", description:"A local CRM invoice workspace with list, board, compact and overview views." },
   "ask-analytics": { title:"Ask Analytics", description:"A compact dashboard question card with suggestions, grounded answers and recovery states." },
   "insight-sources": { title:"Insight Sources", description:"Actionable source chips for analytics answers." },
   "analytics-assistant": { title:"Analytics Assistant", description:"A local analytics dashboard with a question assistant, source details and saved insights." },

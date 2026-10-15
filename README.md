@@ -214,3 +214,7 @@ Browse selected main-branch updates at `/changelog`, with date anchors, search/t
 ### Analytics Assistant
 
 `AskAnalytics` and `InsightSources` compose the `/analytics-assistant` template: trial metrics and daily data, suggested questions, cancellable sample responses, source details, saved insights, unsupported questions and connection-error recovery. Light/dark and mobile layouts are included. Docs/playgrounds: `/ask-analytics` and `/insight-sources`. No AI service or external data is connected; all state resets on reload.
+
+### Invoice Workspace
+
+`InvoiceStatusBadge`, `InvoiceTable` and `InvoiceTotals` compose `/invoice-workspace`: status-sorted list, compact list, board and overview; search, multi-status filtering, creation/editing, mark-as-paid, draft duplication, confirmed deletion/undo and CSV export. EUR amounts are stored in cents; overdue status uses an explicit sample date. Shared Tag, Avatar, Menu, Button and Base UI Dialog retain Oreo conventions. Docs/playgrounds: `/invoice-status-badge`, `/invoice-table`, `/invoice-totals`. Local fixture only; no invoices, emails or payments are sent.

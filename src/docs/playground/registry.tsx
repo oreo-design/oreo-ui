@@ -1,3 +1,5 @@
+import { InvoiceStatusBadge, InvoiceTable, InvoiceTotals, INVOICE_STATUSES, type InvoiceSortKey } from "@/components/invoice";
+import { INITIAL_INVOICES, INVOICE_TODAY } from "@/patterns/invoice-workspace/data";
 import { AskAnalytics, InsightSources, type AnalyticsRequest } from "@/components/ask-analytics";
 import { SUGGESTIONS, ANALYTICS_SOURCES, ANSWERS, answerFor } from "@/patterns/analytics-assistant/data";
 import { HubSearchHero, AgentCategoryGrid, IntegrationTile } from "@/components/agent-hub";
@@ -88,6 +90,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "invoice": { InvoiceStatusBadge, InvoiceTable, InvoiceTotals },
   "ask-analytics": { AskAnalytics, InsightSources },
   "agent-hub": { HubSearchHero, AgentCategoryGrid, IntegrationTile },
   "place-map": { PlaceMap, PlaceDetailCard, MapStylePicker },
@@ -141,6 +144,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "invoice-status-badge": { ...define("Invoice Status Badge",{status:select(INVOICE_STATUSES,"pending")},v=><InvoiceStatusBadge status={v.status}/>),source:"invoice" },
+  "invoice-table": { ...define("Invoice Table",{compact:toggle(false),empty:toggle(false),sortKey:select(["dueDate","id","status","description","client","amountCents"],"status"),direction:select(["asc","desc"],"asc"),action:text("")},(v,set)=><div className="w-full"><InvoiceTable invoices={v.empty?[]:INITIAL_INVOICES.slice(0,9)} asOf={INVOICE_TODAY} sort={{key:v.sortKey as InvoiceSortKey,direction:v.direction}} onSortChange={sort=>{set("sortKey",sort.key);set("direction",sort.direction);}} compact={v.compact} onAction={(invoice,action)=>set("action",`${invoice.id}: ${action}`)} onClearFilters={()=>set("empty",false)}/><p className="mt-4 text-xs text-text-secondary" role="status">{v.action?`Host callback: ${v.action}`:"Actions emit callbacks in this isolated preview. Open the template to edit invoices."}</p></div>),source:"invoice" },
+  "invoice-totals": { ...define("Invoice Totals",{empty:toggle(false)},v=><div className="w-full"><InvoiceTotals invoices={v.empty?[]:INITIAL_INVOICES} asOf={INVOICE_TODAY}/></div>),source:"invoice" },
   "ask-analytics": { ...define("Ask Analytics", { question:text(""), status:select(["idle","loading","success","empty","error"],"idle"), emptySuggestions:toggle(false), source:text("") }, (v,set)=>{
     const question=v.question||SUGGESTIONS[0].question;
     const request:AnalyticsRequest=v.status==="idle"?{status:"idle"}:v.status==="success"?{status:"success",question,answer:answerFor(question)??ANSWERS.signups}:v.status==="error"?{status:"error",question,message:"The source is unavailable. Try again."}:{status:v.status,question};
