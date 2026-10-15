@@ -78,6 +78,7 @@ export const ICON_NAMES = [
   "paper-plane",
   "pencil",
   "plane",
+  "truck",
   "plug",
   "plus",
   "prohibit",

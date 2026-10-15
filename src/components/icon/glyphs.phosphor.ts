@@ -1,4 +1,5 @@
 import {
+  Truck,
   Hand,
   Columns,
   Info,
@@ -154,6 +155,7 @@ export const phosphorGlyphs: Record<IconName, IconGlyph> = {
   paperclip: Paperclip,
   "paper-plane": PaperPlaneTilt,
   pencil: PencilSimple,
+  truck: Truck,
   plane: Airplane,
   plug: Plugs,
   plus: Plus,

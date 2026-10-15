@@ -1,3 +1,5 @@
+import { OperationsDocs } from "@/pages/OperationsDocs";
+import { FleetControlPage, PipelineWorkspacePage, IncidentMonitorPage } from "@/patterns/operations-suite";
 import { ExperimentDocs } from "@/pages/ExperimentDocs";
 import { ExperimentWorkspacePage } from "@/pages/ExperimentWorkspacePage";
 import { ProjectBoardDocs } from "@/pages/ProjectBoardDocs";
@@ -131,6 +133,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "operations-map": OperationsDocs, "operations-feed": OperationsDocs, "health-meters": OperationsDocs, "route-timeline": OperationsDocs, "pipeline-file": OperationsDocs, "camera-checkpoint": OperationsDocs, "fleet-control": FleetControlPage, "pipeline-workspace": PipelineWorkspacePage, "incident-monitor": IncidentMonitorPage,
   "experiment-chart": ExperimentDocs, "variant-results": ExperimentDocs, "experiment-decision": ExperimentDocs, "experiment-workspace": ExperimentWorkspacePage,
   "project-create-card": ProjectBoardDocs, "project-board-overview": ProjectBoardDocs, "project-board": ProjectBoardPage,
   "workspace-setup": WorkspaceAccessDocs, "tool-access-row": WorkspaceAccessDocs, "member-access-table": WorkspaceAccessDocs, "workspace-invitation": WorkspaceAccessDocs, "access-workspace": AccessWorkspacePage,

@@ -1,3 +1,5 @@
+import { OperationsMap, OperationsFeed, HealthMeters, RouteTimeline, PipelineFile, CameraCheckpoint } from "@/components/operations";
+import { VEHICLES, vehicleEvent, vehiclePoint, vehicleStops, HEALTH, MODULES } from "@/patterns/operations-suite/data";
 import { ExperimentChart, VariantResults, ExperimentDecision, summarizeExperiment } from "@/components/experiment";
 import { SAMPLE_DAYS } from "@/patterns/experiment-workspace/data";
 import { ProjectCreateCard, ProjectBoardOverview } from "@/components/project-board";
@@ -106,6 +108,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  operations: {OperationsMap, OperationsFeed, HealthMeters, RouteTimeline, PipelineFile, CameraCheckpoint},
   experiment: {ExperimentChart, VariantResults, ExperimentDecision},
   "project-board": {ProjectCreateCard, ProjectBoardOverview},
   "workspace-access": {WorkspaceSetup, ToolAccessRow, MemberAccessTable, WorkspaceInvitation},
@@ -168,6 +171,12 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "operations-map": {...define("Operations Map",{empty:toggle(false),selected:select(["TRK-04","TRK-03","TRK-05","TRK-06","TRK-07"],"TRK-04")},(v,set)=><div className="w-full max-w-2xl p-4"><OperationsMap points={v.empty?[]:VEHICLES.map(vehiclePoint)} selectedId={v.selected} onSelect={id=>set("selected",id as typeof v.selected)}/></div>),source:"operations"},
+  "operations-feed": {...define("Operations Feed",{empty:toggle(false)},v=><div className="w-full max-w-md p-4"><OperationsFeed items={v.empty?[]:VEHICLES.map(vehicleEvent)}/></div>),source:"operations"},
+  "health-meters": {...define("Health Meters",{schema:number(100,0,100,1)},v=><div className="w-full max-w-md p-6"><HealthMeters readings={HEALTH.map(r=>r.label==="Schema match"?{...r,value:v.schema,status:v.schema===100?"All fields match":"Review schema",tone:v.schema===100?"success":"warning"}:r)}/></div>),source:"operations"},
+  "route-timeline": {...define("Route Timeline",{vehicle:select(["TRK-04","TRK-06","TRK-07"],"TRK-04")},v=><div className="w-full max-w-md p-6"><RouteTimeline stops={vehicleStops(VEHICLES.find(x=>x.id===v.vehicle)!)}/></div>),source:"operations"},
+  "pipeline-file": {...define("Pipeline File",{name:text("feature_pipeline.py"),source:text(MODULES[1].source,true)},v=><div className="w-full max-w-3xl p-4"><PipelineFile name={v.name} source={v.source}/></div>),source:"operations"},
+  "camera-checkpoint": {...define("Camera Checkpoint",{label:text("North Avenue"),selected:toggle(false)},(v,set)=><div className="w-full max-w-xs p-6"><CameraCheckpoint label={v.label} selected={v.selected} onSelect={()=>set("selected",!v.selected)}/></div>),source:"operations"},
   "experiment-chart": {...define("Experiment Chart",{mode:select(["cumulative","daily"],"cumulative"),empty:toggle(false)},v=><div className="w-full max-w-xl p-6"><ExperimentChart days={v.empty?[]:SAMPLE_DAYS} mode={v.mode}/></div>),source:"experiment"},
   "variant-results": {...define("Variant Results",{a:text("Design that ships."),b:text("Interfaces people get at a glance."),empty:toggle(false)},v=><div className="w-full max-w-xl p-6"><VariantResults a={v.empty?{visitors:0,conversions:0}:summarizeExperiment(SAMPLE_DAYS).a} b={v.empty?{visitors:0,conversions:0}:summarizeExperiment(SAMPLE_DAYS).b} labels={[v.a,v.b]}/></div>),source:"experiment"},
   "experiment-decision": {...define("Experiment Decision",{state:select(["ready","collecting","decided"],"ready"),confidence:number(96,0,100,1)},v=><div className="w-full max-w-lg p-6"><ExperimentDecision state={v.state} confidence={v.confidence}/></div>),source:"experiment"},
