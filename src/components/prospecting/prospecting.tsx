@@ -12,9 +12,9 @@ export function MiniBarChart({ values = [12, 72, 86, 91, 100, 87], label = "Tren
   return <span role="img" aria-label={label} className="prospect-bars">{safe.map((value, i) => <span key={i} style={{ height: `${Math.max(6, value / max * 100)}%` }} />)}</span>;
 }
 
-export type ProspectMetricProps = { label: string; value: string; change: string; description: string; trend?: "up" | "down"; bars?: number[]; className?: string };
-export function ProspectMetric({ label, value, change, description, trend = "up", bars, className }: ProspectMetricProps) {
-  return <article className={cn("prospect-metric", className)}><p className="text-sm text-text-secondary">{label}</p><div className="mt-3 flex items-end justify-between gap-3"><div className="min-w-0"><div className="flex flex-wrap items-baseline gap-x-2 gap-y-1"><strong className="text-4xl font-semibold tracking-tight tabular-nums">{value}</strong><span className={cn("inline-flex items-center gap-1 text-sm font-medium", trend === "up" ? "prospect-positive" : "text-status-error")}><Icon name={trend === "up" ? "arrow-up-right" : "arrow-down"} size="sm" />{change}</span></div><p className="mt-2 text-xs text-text-tertiary">{description}</p></div><MiniBarChart values={bars} label={`${label} trend`} /></div></article>;
+export type ProspectMetricProps = { label: string; value: string; change: string; description: string; trend?: "up" | "down"; sentiment?: "positive" | "negative"; bars?: number[]; className?: string };
+export function ProspectMetric({ label, value, change, description, trend = "up", sentiment, bars, className }: ProspectMetricProps) {
+  return <article className={cn("prospect-metric", className)}><p className="text-sm text-text-secondary">{label}</p><div className="mt-3 flex items-end justify-between gap-3"><div className="min-w-0"><div className="flex flex-wrap items-baseline gap-x-2 gap-y-1"><strong className="text-4xl font-semibold tracking-tight tabular-nums">{value}</strong><span className={cn("inline-flex items-center gap-1 text-sm font-medium", (sentiment ?? (trend === "up" ? "positive" : "negative")) === "positive" ? "prospect-positive" : "text-status-error")}><Icon name={trend === "up" ? "arrow-up-right" : "arrow-down"} size="sm" />{change}</span></div><p className="mt-2 text-xs text-text-tertiary">{description}</p></div><MiniBarChart values={bars} label={`${label} trend`} /></div></article>;
 }
 
 export function ScoreMeter({ value, label = "AI score", className }: { value: number; label?: string; className?: string }) {

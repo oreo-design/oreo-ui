@@ -18,6 +18,11 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "balance-chart": { title:"Balance Chart", description:"Accessible multi-series financial snapshots with a shared scale and a data table." },
+  "allocation-bar": { title:"Allocation Bar", description:"Proportional savings categories with labels and amounts." },
+  "spending-gauge": { title:"Spending Gauge", description:"A segmented half-ring budget meter with remaining and over-budget states." },
+  "payment-card": { title:"Payment Card", description:"A masked account card with an explicit frozen state." },
+  "finance-workspace": { title:"Finance Workspace", description:"A complete local finance dashboard with cash flow, savings goals, spending and demo payments." },
   "presence-stack": { title:"Presence Stack", description:"An interactive live roster with avatar overlap, status badges and an accessible people panel." },
   "presence-badge": { title:"Presence Badge", description:"Accessible online, away and typing marks with optional motion." },
   "presence-room": { title:"Presence Room", description:"A local collaborative brief with presence, editable content, checklist and discussion." },
