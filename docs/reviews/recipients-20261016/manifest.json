@@ -7,14 +7,10 @@
     "src/components/recipient/model.ts": "74d78e5996d83c9d0807aa989f605b874d72855c43f92e8d086bc5910f16dfd1",
     "src/patterns/payment-workspace/index.tsx": "69f7ed9ec3c592ecdf66acd8f5a361351cf817cff7a6168d0edbaf03e0253f61",
     "src/patterns/payment-workspace/data.ts": "5f6006366abdb2d8f56fd4645985650daf8054f92c834162e49640fbf34b76fa",
-    "src/patterns/payment-workspace/payment-workspace.css": "100a6e3de9312c6f940cf47bc861e53b1e2a052df58bcd221ad165cce3bbebc5"
+    "src/patterns/payment-workspace/payment-workspace.css": "100a6e3de9312c6f940cf47bc861e53b1e2a052df58bcd221ad165cce3bbebc5",
+    "src/patterns/changelog/data.ts": "f175afd9d515d29959cee69171c72fb6816732c0545442cb262fff884a1281a2"
   },
   "artifacts": [
-    {
-      "file": "REVIEW.md",
-      "bytes": 8331,
-      "sha256": "7b9d290b800fc3ee253eafb53b587802b2c04203ac4937b0ca9c7e8ec7769c0f"
-    },
     {
       "file": "amount-error.png",
       "bytes": 60793,
@@ -344,6 +340,29 @@
       "dimensions": [
         900,
         1167
+      ]
+    },
+    {
+      "file": "final-changelog.png",
+      "bytes": 129818,
+      "sha256": "cdd9dea855a6e0ca1c9d38d23b2e2aaf02fe1afc9ca3ebecbebf865532a91b14",
+      "dimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "REVIEW.md",
+      "bytes": 8577,
+      "sha256": "9763c82d618a19a28bf842ceb3fafd334d4aac672efe0b7bbd0732115560cacb"
+    },
+    {
+      "file": "final-changelog-entry.png",
+      "bytes": 129584,
+      "sha256": "ac48eeeab954af7fcde40d5c10d65addaaeaad2e49d63c9953905072f5f5181d",
+      "dimensions": [
+        1440,
+        1000
       ]
     }
   ]

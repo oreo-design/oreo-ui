@@ -24,7 +24,7 @@ The baseline `/payment-workspace` route did not exist and redirected to Button d
 | Edit / navigation | [Security Review](peer-review.png) | Browser transcript and interaction movie | Editing funding resets later steps; retained amount is reconfirmed; cancel returns search focus |
 | Empty / component docs | New component, shared AgentWorkspaceState owner | [Search](docs-search.png), [empty](docs-search-empty.png), [rail](docs-rail.png), [form](docs-form.png), [API](docs-api.png) | Same docs shell, playground controls and API table |
 | Search focus | New input | [Final focus](search-focus-corrected.png) | One focus ring on the composite search field |
-| Changelog | [Before](before-changelog.png) | Final Changelog screenshot added after actual PR assignment | Existing release-entry structure |
+| Changelog | [Before](before-changelog.png) | [After](final-changelog.png), [entry](final-changelog-entry.png) — PR #62 | Existing release-entry structure |
 
 ![Before — missing route](before-entry.png)
 ![After — inline form](final-form-light.png)
@@ -51,3 +51,7 @@ The baseline `/payment-workspace` route did not exist and redirected to Button d
 ## Historical captures
 
 Preserve originals: `initial-desktop-light.png`, `form-desktop-light.png`, `search-create.png`, `form-errors.png` are superseded exploratory captures from before the namespace correction. `recipient-interaction.mp4` and `interaction-frames.json.xz` precede the composite-search focus-ring correction; the final movie also predates the final specificity fix. Use `search-focus-corrected.png` for the final single-ring treatment. The movies still demonstrate the same workflow. No historical media was overwritten. Source hashes in `manifest.json` identify the final implementation independently of commit metadata.
+
+## Delivery
+
+Task PR: https://github.com/oreo-design/oreo-ui/pull/62. Changelog uses this actual PR number. Final source revision and merge result are recorded by the GitHub PR; the manifest pins implementation files by SHA-256.
