@@ -1,0 +1,44 @@
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+Console output:
+[log] entry
+[log] edit
+[log] delete
+[log] edit
+[log] delete
+[log] edit
+[log] delete
+[log] edit
+[log] delete
+[log] edit
+[log] delete
+[log] empty drag mode
+[log] empty recovery
+[log] long note recovery
+[log] reset
+[log] suggestion
+[log] add suggestion
+[log] suggestion
+[log] add suggestion
+[log] suggestion
+[log] add suggestion
+[log] suggestion
+[log] add suggestion
+[log] suggestion
+[log] add suggestion
+[log] suggestion
+[log] add suggestion
+[log] suggestion
+[log] add suggestion
+[log] full board
+[log] close
+[log] capacity recovery
+[log] fresh sample
+[log] Element: button.relative
+Box: x=838 y=142 w=79 h=40
+Children: 2  Text length: 3
+Scroll Y: size=40 client=40 overflowing=false top=0
+Scroll X: size=79 client=79 overflowing=false left=0
+Styles: background-color=rgb(32, 32, 32) color=rgb(255, 255, 255)
+Aria: aria-expanded=false
+[log] PASS empty state, add in pan mode, long content, 12-block limit, disabled actions and undo recovery.

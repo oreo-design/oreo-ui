@@ -1,0 +1,19 @@
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+Console output:
+[log] final entry
+[log] add
+[log] editor
+[log] saved
+[log] suggestion
+[log] suggestion position
+[log] undo
+[log] default
+[log] RECORDING_BLOCKED Error: Failed to start recording: Extension has not been invoked for the current page (see activeTab permission). Chrome pages cannot be captured.. Click the Playwriter extension icon on this tab to enable recording.
+
+For automated recording, start a managed Playwriter browser with the bundled extension loaded:
+
+  playwriter browser start
+
+Or click the Playwriter extension icon on the tab once to grant permission.
+[log] PASS actual card rectangles do not overlap after adding a note or suggestion; undo and reload recover.

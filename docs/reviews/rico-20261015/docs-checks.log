@@ -1,0 +1,14 @@
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+Console output:
+[log] playground
+[log] max zoom
+[log] close
+[log] min zoom
+[log] close
+[log] lucide
+[log] dark
+[log] pan selected
+[log] disabled
+[log] code
+[log] documentation
+[log] PASS min/max zoom, Lucide adapter, dark active control, disabled group, JSX panel and documentation route.

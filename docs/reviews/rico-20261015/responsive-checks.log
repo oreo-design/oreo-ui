@@ -1,0 +1,41 @@
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+Console output (before error):
+[log] desktop
+[log] dark desktop
+[log] dark menu
+[log] escape
+[log] tablet
+[log] Element: body
+Box: x=0 y=0 w=900 h=1111
+Children: 9  Text length: 1261
+Scroll Y: size=1111 client=1111 overflowing=false top=0
+Scroll X: size=900 client=900 overflowing=false left=0
+Styles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1
+[log] mobile dark
+[log] Element: body
+Box: x=0 y=0 w=390 h=1320
+Children: 9  Text length: 1261
+Scroll Y: size=1320 client=1320 overflowing=false top=0
+Scroll X: size=390 client=390 overflowing=false left=0
+Styles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1
+[log] mobile add menu
+[log] Element: div.rounded-[var(--radius-card-medium)]
+Box: x=82 y=477 w=176 h=120
+Children: 3  Text length: 12
+Scroll Y: size=120 client=120 overflowing=false top=0
+Scroll X: size=176 client=176 overflowing=false left=0
+Styles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1
+[log] mobile editor
+[log] mobile long title
+[log] Element: body
+Box: x=0 y=-58 w=390 h=1350
+Children: 11  Text length: 1410
+Scroll Y: size=1350 client=1350 overflowing=false top=0
+Scroll X: size=390 client=390 overflowing=false left=0
+Styles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1
+[log] reset
+
+
+Error executing code: Code execution timed out after 60000ms
