@@ -22,6 +22,10 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Workspace Setup", page: "workspace-setup" },
+      { label: "Tool Access Row", page: "tool-access-row" },
+      { label: "Member Access Table", page: "member-access-table" },
+      { label: "Workspace Invitation", page: "workspace-invitation" },
       { label: "Client Summary", page: "client-summary" },
       { label: "Client Contact Strip", page: "client-contact-strip" },
       { label: "Client Finance Summary", page: "client-finance-summary" },
@@ -140,6 +144,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      { label: "Access Workspace", page: "access-workspace" },
       { label: "Client Workspace", page: "client-workspace" },
       { label: "Model Router", page: "model-router" },
       { label: "Callback Workspace", page: "callback-workspace" },

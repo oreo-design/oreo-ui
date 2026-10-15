@@ -18,6 +18,11 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "workspace-setup": {title:"Workspace Setup",description:"A compact, actionable workspace onboarding checklist."},
+  "tool-access-row": {title:"Tool Access Row",description:"Shared-tool identity, status and actions."},
+  "member-access-table": {title:"Member Access Table",description:"Workspace member identity and tool assignments."},
+  "workspace-invitation": {title:"Workspace Invitation",description:"A complete shared-workspace invitation panel."},
+  "access-workspace": {title:"Access Workspace",description:"A local shared-tool workspace with team access, invitations, sessions and settings."},
   "client-summary": {title:"Client Summary",description:"Company identity, project counts and paid revenue."},
   "client-contact-strip": {title:"Client Contact Strip",description:"Responsive company contact details."},
   "client-finance-summary": {title:"Client Finance Summary",description:"Derived client invoice and payment totals."},

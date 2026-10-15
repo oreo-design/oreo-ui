@@ -5,6 +5,7 @@ export const REPOSITORY = "https://github.com/oreo-design/oreo-ui";
 /** Selected main-branch changes. Dates are merge dates in Asia/Shanghai, not package releases. */
 export const releases: Release[] = [
   { date: "2026-10-15", label: "October 15, 2026", title: "More pieces. More possibilities.", description: "Brand tools, focused workspaces, and the small details that make them work.", changes: [
+    { id:"access-workspace", kind:"Added", title:"Access Workspace", description:"Reusable workspace setup, tool access rows, member permissions and invitation panels, composed into a local team workspace with connected tools, session controls, audit history and saved defaults.", page:"access-workspace", pr:57 },
     { id:"client-workspace", kind:"Added", title:"Client Workspace", description:"Reusable company summaries, contact details and derived financial totals, composed into a client workspace with editable invoices, projects, documents, contacts and notes.", page:"client-workspace", pr:56 },
     { id:"model-router", kind:"Added", title:"Model Router", description:"Reusable routing policy controls, model flow diagrams and route metrics, composed into a local workspace with independent drafts, apply/undo and fallback testing.", page:"model-router", pr:55 },
     { id:"callback-workspace", kind:"Added", title:"Callback Workspace", description:"Reusable service priority badges, callback cards and stage boards, composed into an operational workspace with branch grouping, search, editable records and archive recovery.", page:"callback-workspace", pr:54 },
