@@ -24,7 +24,7 @@ All media are actual Chromium captures through Playwriter session 53, English lo
 | Light/dark template | No matching preexisting page | [Dark desktop](desktop-dark.png), [dark mobile](mobile-dark.png) | Normal template and the three new components in context. |
 | Empty/search/recovery | New local states | [Search empty](search-empty.png), [permission error](access-error.png), [connected](connected.png), [configuration](configuration.png) | Zero permissions rejected; one permission recovers; saving and independent clients exercised. |
 | Components/docs | New routes | [Card playground](card-playground.png), [client playground](client-playground.png), [client empty](client-empty.png), [API docs](client-docs.png), [quota over limit](quota-over-limit.png), [no limit](quota-no-limit.png) | Native keyboard selection, disabled choice, empty-list restore, 4500/3000 and zero-limit rendering. |
-| Changelog | [Baseline](changelog-before.png) | Final capture added after PR number exists | Baseline recovered in an exact-revision checkout on port 5221. |
+| Changelog | [Baseline](changelog-before.png) | [After entry](changelog-after-entry.png), [after entry point](changelog-after.png) | Baseline recovered in an exact-revision checkout on port 5221. |
 
 [Initial desktop](initial-desktop.png) is superseded: the promo card initially fell below the fold as the main column grew. The final sidebar stays within the desktop viewport, then returns to normal flow below 850px. Prior dark captures predate the native `color-scheme` polish; final captures will supersede them without overwriting originals. The 1-tool success text in the early connected capture was subsequently pluralized correctly.
 
@@ -50,7 +50,7 @@ External reference: the supplied image is the focused reference. Adopted arced i
 - Playground: disabled custom radio cannot be selected; empty list/restored list; over-limit ring at actual usage 4500, maximum 3000; zero limit changes to non-meter No limit set; API documentation and source-module registration.
 - Responsive captures visually inspected. No horizontal overflow in the inspected mobile main. Final source and evidence revisions, fresh-page diagnostics, Changelog proof and delivery result are recorded below when available.
 - Not tested: real MCP transport/authentication, production deployment, clipboard-denied runtime branch, nonfinite usage via browser controls (reviewed in code only). No such capabilities are claimed.
-- No new entrance/selection/number animation: frequent data and keyboard updates are instant. Existing shared button tapScale is 1. A scroll recording will cover the desktop sidebar behavior; new-page baseline has no comparable sidebar interaction.
+- No new entrance/selection/number animation: frequent data and keyboard updates are instant. Existing shared button tapScale is 1. A scroll recording covers the desktop sidebar behavior; new-page baseline has no comparable sidebar interaction.
 
 ## Animation review
 
@@ -60,3 +60,17 @@ External reference: the supplied image is the focused reference. Adopted arced i
 | Main-content height pushed sidebar promo below fold | Sticky desktop sidebar; normal-flow tablet/mobile | Preserve the reference's persistent sidebar role without hiding narrow-screen content. |
 
 Disposition: approve the absence of new animation. Shared primitives retain their existing behavior. Record scroll behavior separately from still-frame visual coverage.
+
+
+## Final verification / source review
+
+Final product source: `9972ed45b9e04bfef99950eaf14b1972234d00b9`. Later commits only package evidence. [Build log](build.log), [machine-readable capture manifest](manifest.json).
+
+- Final matched result: [desktop entry](final-desktop.png), [complete desktop](final-full.png), [mobile](final-mobile.png), [dark desktop](final-dark.png), [dark mobile](final-mobile-dark.png), [dark tablet](final-tablet-dark.png). Earlier files remain as historical captures; these final files supersede their normal-state counterparts. The tablet light image still matches the final light rendering.
+- Added breakpoint checks at [851px](breakpoint-851.png) and [1201px](breakpoint-1201.png). Browser geometry reports body scroll width equal to viewport width. Long client labels wrap inside their cards; no clipping observed. Reduced-motion emulation retains immediate radio keyboard selection.
+- Fresh-page `pageerror` collection stayed empty through reload, connect/disconnect, scroll and both themes. Browser fonts report loaded. Historical hot-reload logs from initial file creation are not treated as final runtime failures.
+- [Changelog before entry](changelog-before-entry.png) / [after entry](changelog-after-entry.png), both at scroll 600, same viewport. New PR #47 and template link observed. Data-only entry added to the existing Changelog owner.
+- [Interaction recording](interactions.mp4): 1440×1000, 8.8 seconds, encoded at 30fps from the browser's variable render frames using original timestamps. Three ranges were cut from a 47-second capture to remove idle time; no interaction was reconstructed. [Original frames/timestamps](recording-originals.json.xz), [inspected contact sheet](recording-contact.png). Shows actual desktop sidebar scrolling and connect/disconnect state changes. No equivalent baseline flow existed.
+- Code review covered all new component and template owners, controlled selection, independent saved scope arrays, clamped meter semantics, invalid values, focus after removed client actions, clipboard fallback, route registration and generated component exports. No shared-owner behavior edits, real MCP calls, credentials, new dependencies or unrelated WIP included. No outstanding implementation findings.
+
+Delivery: [PR #47](https://github.com/oreo-design/oreo-ui/pull/47). The final exact-head merge and remote-main readback are reported in the task result; production deployment is not asserted.
