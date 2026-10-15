@@ -1,0 +1,15 @@
+Console output:
+[log] Element: div.tf-track
+Box: x=57 y=483 w=508 h=40
+Children: 15  Text length: 33
+Scroll Y: size=40 client=40 overflowing=false top=0
+Scroll X: size=508 client=508 overflowing=false left=0
+Styles: transition=none
+[log] Escape focus More timeframes
+[log] Element: div.tf-track
+Box: x=291 y=548 w=508 h=40
+Children: 15  Text length: 33
+Scroll Y: size=40 client=40 overflowing=false top=0
+Scroll X: size=508 client=508 overflowing=false left=0
+Styles: transition=none
+[log] []

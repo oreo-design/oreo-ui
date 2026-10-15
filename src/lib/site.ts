@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "timeframe-selector": { title: "Timeframe Selector", description: "Compact duration choices that expand and cycle inline." },
+  "inline-search-select": { title: "Inline Search Select", description: "A selected value that turns into an anchored search field." },
+  "position-studio": { title: "Position Studio", description: "A local practice position form with inline token search and duration selection." },
   "studio-inbox-components": { title: "Studio Inbox", description: "Grouped collaboration notifications with controlled selection, unread state and type filters." },
   "studio-inbox": { title: "Studio Inbox Template", description: "A music collaboration inbox with project discussions, audio previews and local replies." },
   "edge-monitor": { title: "Edge Monitor", description: "Metric cards, regional traffic, latency percentiles and deployment history for infrastructure dashboards." },
