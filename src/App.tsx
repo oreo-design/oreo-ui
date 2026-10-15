@@ -1,3 +1,6 @@
+import { TreeStepperDocs } from "@/pages/TreeStepperDocs";
+import { StepProgressDocs } from "@/pages/StepProgressDocs";
+import { SecurityReviewPage } from "@/pages/SecurityReviewPage";
 import { TimeframeSelectorDocs } from "@/pages/TimeframeSelectorDocs";
 import { InlineSearchSelectDocs } from "@/pages/InlineSearchSelectDocs";
 import { PositionStudioPage } from "@/pages/PositionStudioPage";
@@ -91,6 +94,9 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "tree-stepper": TreeStepperDocs,
+  "step-progress": StepProgressDocs,
+  "security-review": SecurityReviewPage,
   "timeframe-selector": TimeframeSelectorDocs,
   "inline-search-select": InlineSearchSelectDocs,
   "position-studio": PositionStudioPage,

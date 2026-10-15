@@ -1,3 +1,6 @@
+import { TreeStepper, getTreeSteps } from "@/components/tree-stepper";
+import { StepProgress } from "@/components/step-progress";
+import { REVIEW_TREE } from "@/patterns/security-review/data";
 import { TimeframeSelector } from "@/components/timeframe-selector";
 import { InlineSearchSelect } from "@/components/inline-search-select";
 import { SAMPLE_ASSETS } from "@/patterns/position-studio/data";
@@ -66,6 +69,8 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "tree-stepper": { TreeStepper },
+  "step-progress": { StepProgress },
   "timeframe-selector": { TimeframeSelector },
   "inline-search-select": { InlineSearchSelect },
   "studio-inbox": { InboxNotification },
@@ -107,6 +112,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "tree-stepper": define("Tree Stepper", { value: select(getTreeSteps(REVIEW_TREE).map(s=>s.node.id),"suspicious"), disabled: toggle(), empty: toggle(), attention: toggle() }, (v,set)=><div className="w-full max-w-sm rounded-card-medium border border-border-subtle bg-bg-base p-4"><TreeStepper nodes={v.empty?[]:REVIEW_TREE} value={v.value} onValueChange={value=>set("value",value)} completed={["devices","ownership","overview"]} attention={v.attention?["overview"]:[]} disabled={v.disabled}/></div>),
+  "step-progress": define("Step Progress", { completed:number(3,0,18,1), total:number(18,0,18,1), label:text("Review progress") }, v=><div className="w-full max-w-sm"><StepProgress {...v}/></div>),
   "timeframe-selector": define("Timeframe Selector", { value: select(["1h","4h","24h","3d","1w"],"24h"), disabled: toggle() }, (v,set) => <TimeframeSelector {...v} onValueChange={value=>set("value",value as typeof v.value)} />),
   "inline-search-select": define("Inline Search Select", { value: select(["eth","btc","bnb","sol","avax"],"eth"), disabled: toggle(), loading: toggle(), error: toggle() }, (v,set) => <div className="w-48"><InlineSearchSelect options={SAMPLE_ASSETS} label="Token" value={v.value} disabled={v.disabled} loading={v.loading} error={v.error?"The sample catalog is unavailable.":undefined} onRetry={()=>set("error",false)} onValueChange={value=>set("value",value as typeof v.value)} /></div>),
   "studio-inbox-components": define("Inbox Notification", { selected: toggle(true), unread: toggle(true), preview: text(NOTIFICATIONS[0].preview) }, (v,set) => <div className="w-full max-w-md rounded-card-medium border border-border-subtle bg-bg-base p-2"><InboxNotification item={{...NOTIFICATIONS[0], unread:v.unread, preview:v.preview}} selected={v.selected} onSelect={()=>set("selected",!v.selected)}/></div>),
