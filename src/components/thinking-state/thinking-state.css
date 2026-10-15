@@ -1,0 +1,112 @@
+.thinking-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  min-width: 0;
+}
+.thinking-pixels {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: none;
+  fill: currentColor;
+  color: var(--color-text-secondary);
+}
+.thinking-state[data-tone="mint"] .thinking-pixels {
+  color: var(--color-status-success);
+}
+.thinking-state[data-tone="purple"] .thinking-pixels {
+  color: var(--color-palette-purple-text);
+}
+.thinking-state[data-tone="orange"] .thinking-pixels {
+  color: var(--color-palette-orange-text);
+}
+.thinking-grid {
+  opacity: 0.1;
+}
+.thinking-pixel {
+  animation: oreo-thinking-pixel 2.4s linear infinite;
+}
+@keyframes oreo-thinking-pixel {
+  0%,
+  100% {
+    opacity: 0.18;
+  }
+  30% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.25;
+  }
+}
+.thinking-state[data-active="false"] .thinking-pixel,
+.thinking-state[data-visible="false"] .thinking-pixel,
+.thinking-state[data-visible="false"] .oreo-shimmer {
+  animation-play-state: paused;
+}
+.thinking-label {
+  overflow-wrap: anywhere;
+}
+.thinking-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.thinking-timeline li {
+  display: flex;
+  gap: 0.75rem;
+  position: relative;
+  padding: 0 0 1.75rem;
+}
+.thinking-timeline li:last-child {
+  padding-bottom: 0;
+}
+.thinking-timeline li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 1.5rem;
+  bottom: 0.25rem;
+  width: 1px;
+  background: var(--color-border-subtle);
+}
+.thinking-step-icon {
+  padding-top: 0.25rem;
+  flex: none;
+  color: var(--color-text-tertiary);
+}
+.thinking-timeline li > div {
+  min-width: 0;
+}
+.thinking-timeline strong {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+.thinking-timeline p {
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--color-text-tertiary);
+  margin: 0.25rem 0;
+}
+.thinking-step-status {
+  font-size: 0.625rem;
+  color: var(--color-text-tertiary);
+}
+.thinking-timeline [data-current] .thinking-step-status {
+  color: var(--color-text-secondary);
+}
+.thinking-timeline [data-done] .thinking-step-icon {
+  color: var(--color-status-success);
+}
+@media (prefers-reduced-motion: reduce) {
+  .thinking-pixel {
+    animation: none;
+  }
+}

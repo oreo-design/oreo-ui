@@ -107,6 +107,8 @@ const NAV: Group[] = [
       { label: "Context Window", page: "context-window" },
       { label: "Tool Call", page: "tool-call" },
       { label: "Reasoning", page: "reasoning" },
+      { label: "Thinking State", page: "thinking-state" },
+      { label: "Thinking Timeline", page: "thinking-timeline" },
       { label: "Plan", page: "plan" },
       { label: "Sources", page: "sources" },
       { label: "Confirmation", page: "confirmation" },
@@ -129,6 +131,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      { label: "Thinking Workspace", page: "thinking-workspace" },
       { label: "Command Dashboard", page: "command-dashboard" },
       { label: "Invoice Workspace", page: "invoice-workspace" },
       { label: "Analytics Assistant", page: "analytics-assistant" },

@@ -1,3 +1,5 @@
+import { ThinkingStateDocs } from "@/pages/ThinkingStateDocs";
+import { ThinkingWorkspacePage } from "@/pages/ThinkingWorkspacePage";
 import { CommandSearchDocs } from "@/pages/CommandSearchDocs";
 import { CommandDashboardPage } from "@/pages/CommandDashboardPage";
 import { InvoiceDocs } from "@/pages/InvoiceDocs";
@@ -117,6 +119,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "thinking-state": ThinkingStateDocs, "thinking-timeline": ThinkingStateDocs, "thinking-workspace": ThinkingWorkspacePage,
   "command-search": CommandSearchDocs, "workspace-metric": CommandSearchDocs, "deployment-row": CommandSearchDocs, "command-dashboard": CommandDashboardPage,
   "invoice-status-badge": InvoiceDocs, "invoice-table": InvoiceDocs, "invoice-totals": InvoiceDocs, "invoice-workspace": InvoiceWorkspacePage,
   "ask-analytics": AskAnalyticsDocs, "insight-sources": AskAnalyticsDocs, "analytics-assistant": AnalyticsAssistantPage,

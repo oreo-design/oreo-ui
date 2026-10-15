@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "thinking-state": { title:"Thinking State", description:"Six tiny pixel signals for ongoing assistant activity, with controlled motion and accessible labels." },
+  "thinking-timeline": { title:"Thinking Timeline", description:"A controlled operational timeline with running, paused, complete and recoverable error states." },
+  "thinking-workspace": { title:"Thinking Workspace", description:"A calm assistant template with a local run sequence, pause, stop, retry and editable pixel signals." },
   "command-search": { title:"Command Search", description:"Grouped workspace command search with keyboard navigation and real host actions." },
   "workspace-metric": { title:"Workspace Metric", description:"Quiet metric cards with explicit values, units and supporting context." },
   "deployment-row": { title:"Deployment Row", description:"Actionable project build records with clear ready and failed states." },

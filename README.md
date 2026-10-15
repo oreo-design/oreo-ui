@@ -222,3 +222,7 @@ Browse selected main-branch updates at `/changelog`, with date anchors, search/t
 ### Command Dashboard
 
 Inspired by [Efferd’s command search](https://x.com/efferdco/status/2110449789066490250), `/command-search`, `/workspace-metric` and `/deployment-row` expose three reusable components. `/command-dashboard` composes a complete local developer workspace: grouped F / Cmd+K search, keyboard navigation, seven pages, project drafts, failed-build recovery and settings. It reuses Base UI Combobox, Oreo Shortcut, Icon, Tag, Avatar and empty states. All data is illustrative; no deployments or external connections occur, and changes reset on reload.
+
+### Thinking Workspace
+
+Inspired by [Purpose Walker’s Thinking State](https://x.com/purpose_walker/status/2110382989414740308), `/thinking-state` adds six deterministic pixel status patterns with controlled activity, shape, token color, speed, grid and optional shimmer. `/thinking-timeline` composes the indicator with the existing StatusIcon. `/thinking-workspace` is a complete local assistant template with starter briefs, a six-stage run, pause/resume, stop/restart, error recovery and copy/save. It reuses PromptBox, Button, Avatar and AgentWorkspaceState. Responses are prewritten fixtures; no AI service or web search runs.
