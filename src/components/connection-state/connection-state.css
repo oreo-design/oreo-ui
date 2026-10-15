@@ -1,0 +1,17 @@
+/* Illustration geometry is local; every surface and text color uses Oreo tokens. */
+.integration-stack { position: relative; width: 168px; height: 88px; }
+.integration-tile { position: absolute; display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-card-medium); background: var(--color-bg-surface); color: var(--color-text-secondary); box-shadow: var(--shadow-active); transition: transform 240ms var(--ease-out), opacity 160ms var(--ease-out); }
+.integration-provider { left: 8px; top: 20px; transform: rotate(-10deg); }
+.integration-status { left: 52px; top: 0; z-index: 1; transform: rotate(6deg); }
+.integration-destination { right: 8px; top: 20px; z-index: 2; transform: rotate(16deg); }
+.integration-stack[data-status="syncing"] .integration-status { transform: rotate(0deg) translateY(-4px); }
+.integration-stack[data-status="success"] .integration-provider, .integration-stack[data-status="success"] .integration-destination { opacity: .5; }
+.integration-stack[data-status="error"] .integration-status { color: var(--color-status-error); }
+.integration-sweep { transform-origin: 16px 16px; animation: integration-turn 1.2s linear infinite; }
+@keyframes integration-turn { to { transform: rotate(360deg); } }
+.connection-dot-field { position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: radial-gradient(circle, var(--color-border-default) .7px, transparent .8px); background-size: 6px 22px; mask-image: radial-gradient(ellipse at center, black, transparent 68%); opacity: .65; }
+.meeting-row summary { list-style: none; }
+.meeting-row summary::-webkit-details-marker { display: none; }
+@media (hover: hover) and (pointer: fine) { .meeting-row:hover { background: var(--color-state-hover); } }
+.integration-stack[data-instant="true"] .integration-tile { transition: none; }
+@media (prefers-reduced-motion: reduce) { .integration-tile { transition: opacity 160ms var(--ease-out); } .integration-sweep { animation: none; } }
