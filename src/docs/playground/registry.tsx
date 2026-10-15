@@ -1,3 +1,5 @@
+import { ThinkingState, ThinkingTimeline, THINKING_STATES } from "@/components/thinking-state";
+import { STEPS as THINKING_STEPS } from "@/patterns/thinking-workspace/data";
 import { CommandSearch, WorkspaceMetric, DeploymentRow } from "@/components/command-search";
 import { DEPLOYMENTS } from "@/patterns/command-dashboard/data";
 import { InvoiceStatusBadge, InvoiceTable, InvoiceTotals, INVOICE_STATUSES, type InvoiceSortKey } from "@/components/invoice";
@@ -92,6 +94,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "thinking-state": { ThinkingState, ThinkingTimeline },
   "command-search": { CommandSearch, WorkspaceMetric, DeploymentRow },
   "invoice": { InvoiceStatusBadge, InvoiceTable, InvoiceTotals },
   "ask-analytics": { AskAnalytics, InsightSources },
@@ -147,6 +150,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "thinking-state": { ...define("Thinking State", {phase:select(THINKING_STATES,"thinking"),active:toggle(true),shape:select(["square","circle"],"square"),tone:select(["neutral","mint","purple","orange"],"mint"),speed:number(1,.5,2,.25),grid:toggle(true),shimmer:toggle(false)},v=><ThinkingState {...v}/>),source:"thinking-state" },
+  "thinking-timeline": { ...define("Thinking Timeline", {empty:toggle(false),current:number(2,0,5,1),status:select(["idle","running","paused","complete","error","stopped"],"running"),tone:select(["neutral","mint","purple","orange"],"mint"),shape:select(["square","circle"],"square")},v=><div className="w-full max-w-sm p-6"><ThinkingTimeline steps={v.empty?[]:THINKING_STEPS} current={v.current} status={v.status} tone={v.tone} shape={v.shape}/></div>),source:"thinking-state" },
   "command-search": { ...define("Command Search", { empty:toggle(false), disabled:toggle(false), selected:text("") }, (v,set)=><div className="w-full max-w-sm"><CommandSearch groups={v.empty?[]:[{label:"Platform",items:[{id:"overview",label:"Overview",icon:"columns"},{id:"deployments",label:"Deployments",keywords:"build release",icon:"plane",disabled:v.disabled}]},{label:"Actions",items:[{id:"theme",label:"Switch theme",icon:"moon"}]}]} onSelect={command=>set("selected",command.label)}/><p className="mt-4 text-xs text-text-secondary" role="status">{v.selected?`Selected: ${v.selected}`:"Choose an action to see the host callback. Global shortcuts are off in this preview."}</p></div>), source:"command-search" },
   "workspace-metric": { ...define("Workspace Metric", {label:text("Requests"),value:text("181.2k"),detail:text("Across the last 7 days")},v=><div className="w-full max-w-sm"><WorkspaceMetric {...v} icon={<Icon name="chart-bar"/>}/></div>),source:"command-search" },
   "deployment-row": { ...define("Deployment Row", {status:select(["ready","failed"],"ready"),opened:toggle(false)},(v,set)=><div className="w-full"><DeploymentRow deployment={{...DEPLOYMENTS[0],status:v.status}} onOpen={()=>set("opened",true)}/><p className="mt-4 text-xs text-text-secondary" role="status">{v.opened?"Host callback: open dpl-1042":"Activate the row to emit an open callback."}</p></div>),source:"command-search" },
