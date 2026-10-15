@@ -22,6 +22,9 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Experiment Chart", page: "experiment-chart" },
+      { label: "Variant Results", page: "variant-results" },
+      { label: "Experiment Decision", page: "experiment-decision" },
       { label: "Project Create Card", page: "project-create-card" },
       { label: "Project Board Overview", page: "project-board-overview" },
       { label: "Workspace Setup", page: "workspace-setup" },
@@ -146,6 +149,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      { label: "Experiment Workspace", page: "experiment-workspace" },
       { label: "Project Board", page: "project-board" },
       { label: "Access Workspace", page: "access-workspace" },
       { label: "Client Workspace", page: "client-workspace" },

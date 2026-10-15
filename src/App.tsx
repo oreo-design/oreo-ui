@@ -1,3 +1,5 @@
+import { ExperimentDocs } from "@/pages/ExperimentDocs";
+import { ExperimentWorkspacePage } from "@/pages/ExperimentWorkspacePage";
 import { ProjectBoardDocs } from "@/pages/ProjectBoardDocs";
 import { ProjectBoardPage } from "@/pages/ProjectBoardPage";
 import { WorkspaceAccessDocs } from "@/pages/WorkspaceAccessDocs";
@@ -129,6 +131,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "experiment-chart": ExperimentDocs, "variant-results": ExperimentDocs, "experiment-decision": ExperimentDocs, "experiment-workspace": ExperimentWorkspacePage,
   "project-create-card": ProjectBoardDocs, "project-board-overview": ProjectBoardDocs, "project-board": ProjectBoardPage,
   "workspace-setup": WorkspaceAccessDocs, "tool-access-row": WorkspaceAccessDocs, "member-access-table": WorkspaceAccessDocs, "workspace-invitation": WorkspaceAccessDocs, "access-workspace": AccessWorkspacePage,
   "client-summary": ClientDocs, "client-contact-strip": ClientDocs, "client-finance-summary": ClientDocs, "client-workspace": ClientWorkspacePage,
