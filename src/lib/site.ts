@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "routing-policy": { title:"Routing Policy", description:"Controlled cost, balanced and quality policy selection." },
+  "routing-flow": { title:"Routing Flow", description:"An accessible model-routing flow with optional simulated packet motion." },
+  "route-metrics": { title:"Route Metrics", description:"Compact model allocation, latency, cost and error metrics." },
+  "model-router": { title:"Model Router", description:"A local model-routing template with draft policies, fallback testing and undo." },
   "callback-priority": { title:"Callback Priority", description:"Compact operational priority badges with readable labels and signal bars." },
   "callback-card": { title:"Callback Card", description:"A service callback card with priority, reported date, technician and cost." },
   "callback-board": { title:"Callback Board", description:"Controlled service callback stages with record counts and accessible detail actions." },

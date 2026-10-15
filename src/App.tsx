@@ -1,3 +1,5 @@
+import { ModelRoutingDocs } from "@/pages/ModelRoutingDocs";
+import { ModelRouterPage } from "@/pages/ModelRouterPage";
 import { CallbackDocs } from "@/pages/CallbackDocs";
 import { CallbackWorkspacePage } from "@/pages/CallbackWorkspacePage";
 import { ThinkingStateDocs } from "@/pages/ThinkingStateDocs";
@@ -121,6 +123,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "routing-policy": ModelRoutingDocs, "routing-flow": ModelRoutingDocs, "route-metrics": ModelRoutingDocs, "model-router": ModelRouterPage,
   "callback-priority": CallbackDocs, "callback-card": CallbackDocs, "callback-board": CallbackDocs, "callback-workspace": CallbackWorkspacePage,
   "thinking-state": ThinkingStateDocs, "thinking-timeline": ThinkingStateDocs, "thinking-workspace": ThinkingWorkspacePage,
   "command-search": CommandSearchDocs, "workspace-metric": CommandSearchDocs, "deployment-row": CommandSearchDocs, "command-dashboard": CommandDashboardPage,

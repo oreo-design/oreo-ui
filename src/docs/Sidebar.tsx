@@ -22,6 +22,9 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Routing Policy", page: "routing-policy" },
+      { label: "Routing Flow", page: "routing-flow" },
+      { label: "Route Metrics", page: "route-metrics" },
       { label: "Callback Priority", page: "callback-priority" },
       { label: "Callback Card", page: "callback-card" },
       { label: "Callback Board", page: "callback-board" },
@@ -134,6 +137,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      { label: "Model Router", page: "model-router" },
       { label: "Callback Workspace", page: "callback-workspace" },
       { label: "Thinking Workspace", page: "thinking-workspace" },
       { label: "Command Dashboard", page: "command-dashboard" },
