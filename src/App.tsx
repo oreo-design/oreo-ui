@@ -1,3 +1,5 @@
+import { RecipientDocs } from "@/pages/RecipientDocs";
+import { PaymentWorkspacePage } from "@/patterns/payment-workspace";
 import { SalesDocs } from "@/pages/SalesDocs";
 import { SalesWorkspacePage } from "@/patterns/sales-workspace";
 import { OperationsDocs } from "@/pages/OperationsDocs";
@@ -135,6 +137,10 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "recipient-search": RecipientDocs,
+  "payment-rail-picker": RecipientDocs,
+  "recipient-form": RecipientDocs,
+  "payment-workspace": PaymentWorkspacePage,
   "revenue-matrix": SalesDocs,
   "pipeline-funnel": SalesDocs,
   "deal-stage-badge": SalesDocs,

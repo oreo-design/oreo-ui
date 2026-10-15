@@ -4,7 +4,8 @@ export type Release = { date: string; label: string; title: string; description:
 export const REPOSITORY = "https://github.com/oreo-design/oreo-ui";
 /** Selected main-branch changes. Dates are merge dates in Asia/Shanghai, not package releases. */
 export const releases: Release[] = [
-  { date: "2026-10-16", label: "October 16, 2026", title: "Sales and operations, in focus.", description: "Reusable sales and monitoring components, with complete workspaces for customer relationships, fleet, data and incident operations.", changes: [
+  { date: "2026-10-16", label: "October 16, 2026", title: "Payments, sales and operations.", description: "Reusable recipient, sales and monitoring components, with complete workspaces for payment drafts, customer relationships, fleet, data and incident operations.", changes: [
+    { id:"payment-workspace", kind:"Added", title:"Payment Workspace", description:"Searchable recipients, payment-rail cards and inline business or individual forms, composed into a five-step local payment draft with exact decimal amounts, review and edit recovery.", page:"payment-workspace", pr:62 },
     { id:"sales-workspace", kind:"Added", title:"Sales Workspace", description:"Pixel revenue charts, pipeline funnels and deal tables, composed into a CRM dashboard with editable local deals, stage filters, bulk win with undo and CSV export.", page:"sales-workspace", pr:61 },
     { id:"fleet-control", kind:"Added", title:"Fleet Control", description:"Selectable vehicle maps, route timelines and operational feeds, composed into a fleet workspace with filtered telemetry and reversible alert acknowledgement.", page:"fleet-control", pr:60 },
     { id:"pipeline-workspace", kind:"Added", title:"Pipeline Workspace", description:"Annotated source files and segmented health meters, composed into a module workspace with editable JSON configuration, explicit range checks and local validation history.", page:"pipeline-workspace", pr:60 },

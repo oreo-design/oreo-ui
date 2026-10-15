@@ -1,0 +1,488 @@
+.payment-workspace {
+  min-height: 100dvh;
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+}
+.payflow-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 15rem;
+  padding: 2rem 1.5rem;
+  border-right: 1px solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-surface);
+}
+.payflow-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0.5rem 3rem;
+}
+.payflow-brand > svg {
+  color: var(--color-status-progress);
+}
+.payflow-brand span {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+  margin-left: auto;
+}
+.payflow-sidebar .ts-level {
+  gap: 0.5rem;
+}
+.payflow-sidebar-bottom {
+  margin-top: auto;
+  padding: 2rem 0.5rem 0;
+  line-height: 1.7;
+}
+.payflow-sidebar-bottom p {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.payflow-sidebar-bottom > span {
+  display: block;
+  color: var(--color-text-tertiary);
+  font-size: 0.6875rem;
+  margin-top: 0.5rem;
+}
+.payflow-sidebar-bottom > a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  margin-top: 1.5rem;
+}
+.payflow-main {
+  margin-left: 15rem;
+  min-width: 0;
+}
+.payflow-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  min-height: 4.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-surface);
+}
+.payflow-topbar > a {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.payflow-topbar > a > span {
+  color: var(--color-text-tertiary);
+}
+.payflow-topbar > div {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.payflow-main main {
+  width: min(100%, 52rem);
+  margin: 0 auto;
+  padding: 3rem 2rem 1.5rem;
+}
+.payflow-heading > p {
+  font-size: 0.5625rem;
+  letter-spacing: 0.125rem;
+  color: var(--color-text-tertiary);
+  margin-bottom: 1rem;
+}
+.payflow-heading h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  outline: none;
+}
+.payflow-heading > span {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--color-text-tertiary);
+  margin-top: 0.625rem;
+  line-height: 1.7;
+}
+.payflow-notice {
+  min-height: 2rem;
+  padding: 0.5rem 0;
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+.payflow-editor {
+  margin-top: 1rem;
+}
+.payflow-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control-large);
+  background: var(--color-bg-elevated);
+}
+.payflow-selected > span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+.payflow-selected > span > svg {
+  flex: none;
+  color: var(--color-status-success);
+}
+.payflow-actions {
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.payflow-actions > span {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+}
+.payflow-credit {
+  margin-top: 1rem;
+  color: var(--color-text-tertiary);
+  font-size: 0.625rem;
+  line-height: 1.6;
+}
+.payflow-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.payflow-section-heading h2,
+.payflow-funding legend {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.payflow-recipient-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small);
+  background: var(--color-bg-surface);
+}
+.payflow-recipient-card > div {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.payflow-recipient-card strong {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+.payflow-recipient-card p {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  margin-top: 0.375rem;
+}
+.payflow-method-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  padding: 0.875rem 1.25rem;
+}
+.payflow-funding {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 0.75rem;
+}
+.payflow-funding legend {
+  margin-bottom: 1rem;
+}
+.payflow-funding label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small);
+  cursor: pointer;
+}
+.payflow-funding label[data-selected] {
+  border-color: var(--color-text-secondary);
+  background: var(--color-bg-elevated);
+}
+.payflow-funding input {
+  accent-color: var(--color-text-primary);
+}
+.payflow-funding label > span:nth-child(2) {
+  flex: 1;
+}
+.payflow-funding strong {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  display: block;
+}
+.payflow-funding small {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+  display: block;
+  margin-top: 0.375rem;
+}
+.payflow-help {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+.payflow-amount-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: 2rem;
+}
+.payflow-amount-label > div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-default);
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+}
+.payflow-amount-label input {
+  flex: 1;
+  min-width: 0;
+  font-size: 2.75rem;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+  background: transparent;
+  color: var(--color-text-primary);
+  outline: 0;
+}
+.payflow-amount-label > div:focus-within {
+  border-color: var(--color-status-progress);
+}
+.payflow-amount-label > div > span {
+  font-size: 1.125rem;
+  color: var(--color-text-tertiary);
+}
+.payflow-error {
+  font-size: 0.75rem;
+  color: var(--color-status-error);
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+.payflow-details {
+  display: grid;
+  gap: 1.5rem;
+}
+.payflow-details label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+.payflow-details label > span {
+  margin-left: auto;
+  color: var(--color-text-tertiary);
+  font-size: 0.6875rem;
+}
+.payflow-details input,
+.payflow-details textarea {
+  flex-basis: 100%;
+  width: 100%;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control-large);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  resize: vertical;
+}
+.payflow-review {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  padding: 1.5rem;
+}
+.payflow-review-total {
+  padding: 1rem 0 1.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.payflow-review-total > span:first-child {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+}
+.payflow-review-total strong {
+  font-size: 2rem;
+  display: block;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  margin: 0.75rem 0;
+}
+.payflow-review-total small {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+.payflow-review dl > div {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-size: 0.75rem;
+}
+.payflow-review dt {
+  color: var(--color-text-tertiary);
+}
+.payflow-review dd {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.payflow-saved {
+  text-align: center;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  padding: 2rem;
+}
+.payflow-success {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: var(--color-palette-mint-bg);
+  color: var(--color-palette-mint-text);
+}
+.payflow-saved h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.payflow-saved > p {
+  margin-top: 0.5rem;
+  color: var(--color-text-secondary);
+}
+.payflow-saved dl {
+  margin: 2rem 0;
+  text-align: left;
+}
+.payflow-saved dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-size: 0.75rem;
+}
+.payflow-saved dt {
+  color: var(--color-text-tertiary);
+}
+.payflow-saved dd {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+.payment-workspace :is(button, a, input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+.payment-workspace .recipient-search-field input:focus-visible {
+  outline: none;
+}
+.payflow-mobile-step {
+  display: none;
+}
+@media (max-width: 1000px) {
+  .payflow-sidebar {
+    width: 12rem;
+    padding: 1.5rem 1rem;
+  }
+  .payflow-main {
+    margin-left: 12rem;
+  }
+  .payflow-main main {
+    padding: 2rem 1.5rem;
+  }
+  .payflow-topbar {
+    padding: 1rem 1.5rem;
+  }
+  .payflow-brand {
+    margin-bottom: 2.5rem;
+  }
+  .payflow-brand > span {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .payflow-sidebar {
+    display: none;
+  }
+  .payflow-main {
+    margin: 0;
+  }
+  .payflow-main main {
+    padding: 1.5rem 1rem;
+  }
+  .payflow-topbar {
+    padding: 1rem;
+  }
+  .payflow-topbar > a > span {
+    display: none;
+  }
+  .payflow-mobile-step {
+    display: block;
+    font-size: 0.6875rem;
+    color: var(--color-text-tertiary);
+    margin-bottom: 1.5rem;
+  }
+  .payflow-selected {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .payflow-review {
+    padding: 1rem;
+  }
+  .payflow-review dl > div {
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem;
+  }
+  .payflow-review dt {
+    grid-column: 1/-1;
+  }
+  .payflow-details input,
+  .payflow-details textarea {
+    font-size: 1rem;
+  }
+  .payflow-amount-label input {
+    font-size: 2.25rem;
+  }
+  .payflow-saved {
+    padding: 1.5rem 1rem;
+  }
+  .payflow-saved h2 {
+    font-size: 1.75rem;
+  }
+  .payflow-credit {
+    text-wrap: balance;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .payflow-funding label:hover {
+    background: var(--color-state-hover);
+  }
+  .payflow-credit a:hover,
+  .payflow-sidebar-bottom > a:hover {
+    color: var(--color-text-primary);
+  }
+}

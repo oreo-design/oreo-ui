@@ -256,3 +256,5 @@ Inspired by [Nizam’s callback board](https://x.com/nizamdesign/status/21102794
 Lumeo Studio reference: [fleet, ML pipeline and incident monitoring](https://x.com/lumeodstudio/status/2110370181365076323). Six reusable components in `src/components/operations`: OperationsMap, OperationsFeed, HealthMeters, RouteTimeline, PipelineFile and CameraCheckpoint. Complete templates: `/fleet-control`, `/pipeline-workspace`, `/incident-monitor`. Local sample data, reversible actions, configuration checks, light/dark themes and responsive layouts. No live geography, camera feed, dispatch, Python execution or persistence.
 
 - **Sales Workspace** (`/sales-workspace`): Wuraola-inspired CRM dashboard with reusable RevenueMatrix, PipelineFunnel, DealStageBadge and DealTable; local creation/editing, stage filters, bulk win/undo and CSV export. Component docs include adjustable previews and data contracts.
+
+- **Payment Workspace** (`/payment-workspace`): Atikh Bana-inspired inline recipient creation with RecipientSearch, PaymentRailPicker and RecipientForm; five local draft steps, rail-dependent fields, precise decimal amounts and editable review. No transfers or persistence.
