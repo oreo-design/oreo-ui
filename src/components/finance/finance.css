@@ -1,0 +1,294 @@
+[data-finance-tone="purple"] {
+  --finance-tone: var(--color-palette-purple-text);
+}
+[data-finance-tone="mint"] {
+  --finance-tone: var(--color-status-success);
+}
+[data-finance-tone="blue"] {
+  --finance-tone: var(--color-palette-blue-text);
+}
+[data-finance-tone="orange"] {
+  --finance-tone: var(--color-palette-orange-text);
+}
+[data-finance-tone="pink"] {
+  --finance-tone: var(--color-palette-pink-text);
+}
+[data-finance-tone="neutral"] {
+  --finance-tone: var(--color-text-tertiary);
+}
+[data-finance-tone] {
+  color: var(--finance-tone);
+}
+.finance-legend,
+.finance-readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  font-size: 0.75rem;
+}
+.finance-legend {
+  justify-content: flex-end;
+  color: var(--color-text-secondary);
+  margin-bottom: 1rem;
+}
+.finance-legend span,
+.finance-readout span,
+.finance-allocation li > span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+:is(
+    .finance-legend,
+    .finance-readout,
+    .finance-allocation,
+    .finance-gauge-legend
+  )
+  i {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: var(--finance-tone);
+}
+.finance-chart {
+  min-width: 0;
+}
+.finance-chart > svg {
+  height: 16rem;
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+.finance-axis {
+  fill: var(--color-text-secondary);
+  font-size: 11px;
+}
+.finance-readout {
+  padding: 1rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+}
+.finance-readout b,
+.finance-readout strong {
+  color: var(--color-text-primary);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.finance-scrubber {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.finance-scrubber input {
+  flex: 1;
+  min-width: 0;
+  accent-color: var(--color-palette-purple-text);
+}
+.finance-data {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.finance-data summary {
+  cursor: pointer;
+  width: fit-content;
+  padding: 0.25rem 0;
+}
+.finance-data table {
+  width: 100%;
+  text-align: right;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+  white-space: nowrap;
+}
+.finance-data th,
+.finance-data td {
+  padding: 0.625rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-variant-numeric: tabular-nums;
+}
+.finance-data th:first-child {
+  text-align: left;
+}
+.finance-chart :is(input, summary):focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 4px;
+}
+.finance-segments {
+  display: flex;
+  gap: 3px;
+  height: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: var(--radius-control-tiny);
+}
+.finance-segments span {
+  flex-basis: 0;
+  min-width: 0;
+  background: var(--finance-tone);
+  border-radius: var(--radius-control-tiny);
+}
+.finance-allocation li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.625rem 0;
+  font-size: 0.8125rem;
+}
+.finance-allocation li > span {
+  min-width: 0;
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+.finance-allocation strong {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.finance-gauge {
+  position: relative;
+  max-width: 20rem;
+  margin: auto;
+}
+.finance-gauge svg {
+  display: block;
+  width: 100%;
+}
+.finance-gauge > div {
+  position: absolute;
+  inset: 45% 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.finance-gauge span {
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+}
+.finance-gauge strong {
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.finance-gauge-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.finance-gauge-legend li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  flex: 1;
+  min-width: 4rem;
+  font-size: 0.75rem;
+}
+.finance-gauge-legend span {
+  color: var(--color-text-secondary);
+}
+.finance-gauge-legend strong {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.finance-spending > p {
+  border-radius: var(--radius-control-tiny);
+  padding: 0.625rem;
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  text-align: center;
+  line-height: 1.5;
+}
+.finance-spending > p.finance-over {
+  color: var(--color-status-error);
+}
+.finance-payment-card {
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  background: linear-gradient(
+    115deg,
+    var(--color-palette-purple-bg),
+    var(--color-palette-blue-bg) 55%,
+    var(--color-palette-mint-bg)
+  );
+  color: var(--color-text-primary);
+  min-height: 13rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.finance-payment-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 5% 0%,
+    var(--color-palette-purple-text),
+    transparent 65%
+  );
+  opacity: 0.2;
+}
+.finance-payment-card header,
+.finance-payment-card footer {
+  overflow-wrap: anywhere;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  font-size: 0.75rem;
+}
+.finance-payment-card p {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+.finance-card-number {
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.finance-payment-card[data-frozen] {
+  background: var(--color-bg-elevated);
+}
+.finance-payment-card[data-frozen]::before {
+  opacity: 0;
+}
+@media (max-width: 480px) {
+  .finance-readout {
+    gap: 0.75rem;
+  }
+  .finance-readout > strong {
+    flex-basis: 100%;
+  }
+  .finance-readout span {
+    flex-basis: 100%;
+  }
+  .finance-readout b {
+    margin-left: auto;
+  }
+}
+
+/* Dark palette backgrounds are vivid. Mix with the surface so card text remains readable. */
+.theme-dark .finance-payment-card:not([data-frozen]) {
+  background:linear-gradient(115deg,color-mix(in srgb,var(--color-palette-purple-bg) 25%,var(--color-bg-surface)),color-mix(in srgb,var(--color-palette-blue-bg) 20%,var(--color-bg-surface)) 55%,color-mix(in srgb,var(--color-palette-mint-bg) 15%,var(--color-bg-surface)));
+}

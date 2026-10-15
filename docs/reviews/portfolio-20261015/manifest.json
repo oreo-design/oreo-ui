@@ -1,0 +1,515 @@
+{
+  "baseline": "839d81ae94e005e2c84b4edf900982bea0e1183b",
+  "product_source": "2c2cbd500a1420b27232eea0e60807bc3449f0c8",
+  "environment": "Chromium / Playwriter 52; local fixture; English; USD; viewports and historical capture revisions in REVIEW.md",
+  "files": [
+    {
+      "file": "REVIEW.md",
+      "sha256": "fb096d52e8055c3e0fae666c2ea06c3b5d8971ebf47078918d83b0e08bc422d4",
+      "bytes": 11099,
+      "captured_or_modified_at": "2026-10-15T10:09:37.302749+00:00"
+    },
+    {
+      "file": "after-desktop-full.png",
+      "sha256": "74f9f15ff3019f6b68fccdf92baf4c7bb1e9ba72ec83438341478f2526ce6a14",
+      "bytes": 254182,
+      "captured_or_modified_at": "2026-10-15T09:52:41.106021+00:00",
+      "pixels": [
+        1440,
+        1949
+      ]
+    },
+    {
+      "file": "after-desktop-initial.png",
+      "sha256": "45230e9a1e8b84741aba75c03f7a3fab57403db5f2df6aff4786053719291313",
+      "bytes": 153819,
+      "captured_or_modified_at": "2026-10-15T09:51:07.500614+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "after-desktop.png",
+      "sha256": "476c2ed0924f23fb97b17eacb8ede06022132f0bde2a1209f5aa234370a80654",
+      "bytes": 153772,
+      "captured_or_modified_at": "2026-10-15T09:52:40.952527+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "after-mobile-full.png",
+      "sha256": "635fadc4eddcae73dce4e6db9ac11eba3de07ced82edfbb1ab85b2cdc50f7881",
+      "bytes": 211985,
+      "captured_or_modified_at": "2026-10-15T09:55:49.259319+00:00",
+      "pixels": [
+        390,
+        3527
+      ]
+    },
+    {
+      "file": "after-mobile.png",
+      "sha256": "04890e149696cb41e119641d344d4edff89d53dea3c7c5bf0ac40ea693713430",
+      "bytes": 40697,
+      "captured_or_modified_at": "2026-10-15T09:55:49.156896+00:00",
+      "pixels": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "allocation-empty.png",
+      "sha256": "4652cca31a118e94b3dbf667c71b3370137b1b902aa3a5e14043fe00460a5e22",
+      "bytes": 87608,
+      "captured_or_modified_at": "2026-10-15T10:02:47.557050+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "baseline-blocked-desktop.png",
+      "sha256": "9e99b8c2dfaf58d1baac9318f608d416448489657921195000c650c6b17c7da5",
+      "bytes": 36746,
+      "captured_or_modified_at": "2026-10-15T09:57:06.051477+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "baseline-blocked-mobile.png",
+      "sha256": "ff5fb17f83053998bfdd84c37a38d26378f77077d821cd59251a8bfc892287ca",
+      "bytes": 30404,
+      "captured_or_modified_at": "2026-10-15T09:57:06.092762+00:00",
+      "pixels": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "before-desktop-recovered.png",
+      "sha256": "1bc91426ca5e0c9632ff2d23b97a562e56084745b17ee474443b38dd4e633b27",
+      "bytes": 90408,
+      "captured_or_modified_at": "2026-10-15T09:58:10.547874+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "before-desktop.png",
+      "sha256": "8756658cbb51ee23618c2bd0c45e12de1e72b271eb73f3a3bd03a477e0b7185c",
+      "bytes": 88761,
+      "captured_or_modified_at": "2026-10-15T09:42:44.952009+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "before-mobile-recovered.png",
+      "sha256": "72d98eb9da23ec7542f71f55e05e4557002838efae581cf09212c4e890484c0f",
+      "bytes": 25983,
+      "captured_or_modified_at": "2026-10-15T09:58:10.612532+00:00",
+      "pixels": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "before-mobile.png",
+      "sha256": "d0f878887afb0af5f3333d6f44c1f626e1fcdd842cdbd0f1acaa0fa467565e6b",
+      "bytes": 25993,
+      "captured_or_modified_at": "2026-10-15T09:42:45.007325+00:00",
+      "pixels": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "build.txt",
+      "sha256": "0bb5cb266fc0160a067078a6f67d4367ad60d2b5a1cf8a643cec5ba421ad547e",
+      "bytes": 31217,
+      "captured_or_modified_at": "2026-10-15T10:05:38.602236+00:00"
+    },
+    {
+      "file": "card-masked-frozen.png",
+      "sha256": "0ba6f109be1472fda7dac8b85460e31faef8575a833ddac04113d1a89d25a61c",
+      "bytes": 89609,
+      "captured_or_modified_at": "2026-10-15T10:02:13.212583+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "changelog-after.png",
+      "sha256": "8021ba8af56dcc21a85eb1aeed0402562cf2cca6ea0c9ba80c869afbfa2bb20e",
+      "bytes": 122029,
+      "captured_or_modified_at": "2026-10-15T10:07:28.640706+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "changelog-before.png",
+      "sha256": "4c17d3eb9ec37d5c2ed55b8075265a70af791c91857bc6ffab7fca2807272cd5",
+      "bytes": 119785,
+      "captured_or_modified_at": "2026-10-15T09:48:49.471039+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "chart-empty.png",
+      "sha256": "f93ea848cddadd6cb06c6e923cfb5825f5fefcab05ae096b58c9f9bb0d260001",
+      "bytes": 89681,
+      "captured_or_modified_at": "2026-10-15T09:59:56.179306+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "dark-corrected.png",
+      "sha256": "07097a55f191c8de7329050213b3a669721414a92d70ed18cea76e25eaacb8ae",
+      "bytes": 254429,
+      "captured_or_modified_at": "2026-10-15T10:05:36.469217+00:00",
+      "pixels": [
+        1440,
+        1928
+      ]
+    },
+    {
+      "file": "dark-initial.png",
+      "sha256": "50851a5b30771e5aab9d5337156fd9420c15c9b2ae6172982658accd8e5884c2",
+      "bytes": 258157,
+      "captured_or_modified_at": "2026-10-15T09:59:31.966276+00:00",
+      "pixels": [
+        1440,
+        1928
+      ]
+    },
+    {
+      "file": "dark-mobile-corrected.png",
+      "sha256": "b1ed417fb66d528675ef4a087ca7f37751c8d7cae23a049e9c54bcff5dff3d10",
+      "bytes": 236665,
+      "captured_or_modified_at": "2026-10-15T10:06:37.389665+00:00",
+      "pixels": [
+        390,
+        3701
+      ]
+    },
+    {
+      "file": "empty-activity.png",
+      "sha256": "1f3a5c21e1331aca74fa20a49df3f62455ad0620acde4818390aec9d3088206a",
+      "bytes": 88632,
+      "captured_or_modified_at": "2026-10-15T09:55:27.335769+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "final-1024.png",
+      "sha256": "e4724cb64ffcbffcf69b1731b26c00d30eafd7d57875af47da63a194fd030a43",
+      "bytes": 244049,
+      "captured_or_modified_at": "2026-10-15T09:58:42.904709+00:00",
+      "pixels": [
+        1024,
+        2234
+      ]
+    },
+    {
+      "file": "final-dark.png",
+      "sha256": "50851a5b30771e5aab9d5337156fd9420c15c9b2ae6172982658accd8e5884c2",
+      "bytes": 258157,
+      "captured_or_modified_at": "2026-10-15T09:59:57.227729+00:00",
+      "pixels": [
+        1440,
+        1928
+      ]
+    },
+    {
+      "file": "final-desktop-full.png",
+      "sha256": "f95ec1a626e86142dd85cb7c807af59a4b78166d7551fc47f28c70a642d9817b",
+      "bytes": 253781,
+      "captured_or_modified_at": "2026-10-15T09:58:43.156278+00:00",
+      "pixels": [
+        1440,
+        1949
+      ]
+    },
+    {
+      "file": "final-desktop.png",
+      "sha256": "da50fcb903272c5783e823a0f4da04f7de744d421e9ff375a5fb6e018c1ce449",
+      "bytes": 151815,
+      "captured_or_modified_at": "2026-10-15T09:58:43.003973+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "final-entry.png",
+      "sha256": "bb6a2bcf76714fbe2383dacb16b2c35bf14d9349ad7bbd00cde0357c332a8b4a",
+      "bytes": 150519,
+      "captured_or_modified_at": "2026-10-15T10:07:45.444817+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "final-mobile-dark.png",
+      "sha256": "c365c2b6da983e192d2572314223d61ad50c10831fa2029dbf59df8a647ef712",
+      "bytes": 236516,
+      "captured_or_modified_at": "2026-10-15T09:59:57.446532+00:00",
+      "pixels": [
+        390,
+        3701
+      ]
+    },
+    {
+      "file": "final-mobile-full.png",
+      "sha256": "bd3824276be04da914cb7def45b56486f998fab2663954e5cc8622f092e1ce9b",
+      "bytes": 223106,
+      "captured_or_modified_at": "2026-10-15T09:56:48.952771+00:00",
+      "pixels": [
+        390,
+        3552
+      ]
+    },
+    {
+      "file": "final-mobile-v2.png",
+      "sha256": "af7c5498ad22f081b08e767837c807cf9f5c648d7c3fd55a6fa27088120cd282",
+      "bytes": 45685,
+      "captured_or_modified_at": "2026-10-15T09:58:10.670988+00:00",
+      "pixels": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "final-mobile.png",
+      "sha256": "4c65f5d53e1edd5302690319a788d4acec34b82939feb31368ebca389b202b46",
+      "bytes": 45113,
+      "captured_or_modified_at": "2026-10-15T09:56:48.740669+00:00",
+      "pixels": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "final-tablet.png",
+      "sha256": "00795c39c65527cb6643428d776523934bf7b18817ce0c6d22030cf89761a28f",
+      "bytes": 223422,
+      "captured_or_modified_at": "2026-10-15T09:58:10.878048+00:00",
+      "pixels": [
+        768,
+        2309
+      ]
+    },
+    {
+      "file": "frozen-error.png",
+      "sha256": "72ef4ab9b2d707f62fe4a347aaf3eaac0ae3a09a9953a9d8dca5f89efad42f22",
+      "bytes": 122884,
+      "captured_or_modified_at": "2026-10-15T09:54:25.015403+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "gauge-over-budget.png",
+      "sha256": "f541dfad09be2886761c048f68b68a46bb28a2cc32af0f03bf5d3a534f91182b",
+      "bytes": 95610,
+      "captured_or_modified_at": "2026-10-15T09:54:02.287930+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "goal-error.png",
+      "sha256": "8d58d70e5a39f5aaa4b54d4ffae272bc037eb088e2c5b0cb7a18762e2b4ebf74",
+      "bytes": 108278,
+      "captured_or_modified_at": "2026-10-15T09:53:25.505198+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "metric-after-final.png",
+      "sha256": "83f5c25d4dafba0bf6dce41feb95442e934b6b6e4e51ad02fa7f1e5fb34f8ca3",
+      "bytes": 102998,
+      "captured_or_modified_at": "2026-10-15T10:07:28.491888+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "metric-before-recovered.png",
+      "sha256": "1d34f8eaef1ab249248602d84ce34b36977a05dccb6614d260909d65ede8a907",
+      "bytes": 102612,
+      "captured_or_modified_at": "2026-10-15T10:07:05.147518+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "mobile-complete.png",
+      "sha256": "ed9cc3722352ad553ef0522d812bb65be2dc8e7dcb768bb6bb3e837e63ce4ac9",
+      "bytes": 232007,
+      "captured_or_modified_at": "2026-10-15T10:01:46.099314+00:00",
+      "pixels": [
+        390,
+        3701
+      ]
+    },
+    {
+      "file": "payment-success.png",
+      "sha256": "7e3a7689afe4a1ae4904f4a157a07f54f23462ccb2333686738a411b4170c784",
+      "bytes": 161137,
+      "captured_or_modified_at": "2026-10-15T09:54:48.529237+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "peer-activity.png",
+      "sha256": "444abfdccb79d881682a18ce7c28f9c2757a19a8f0647e72ed2699b3f808f9df",
+      "bytes": 131982,
+      "captured_or_modified_at": "2026-10-15T09:45:03.711472+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "peer-metric-after.png",
+      "sha256": "e0a44d07f54ea0714d0fdf10363faee29bfc6d58ce83a03bf4736ea8a9b898b0",
+      "bytes": 100745,
+      "captured_or_modified_at": "2026-10-15T09:53:07.426148+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "peer-metric-before.png",
+      "sha256": "e0a44d07f54ea0714d0fdf10363faee29bfc6d58ce83a03bf4736ea8a9b898b0",
+      "bytes": 100745,
+      "captured_or_modified_at": "2026-10-15T09:51:07.262203+00:00",
+      "pixels": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "reference-1.png",
+      "sha256": "d0fbe14f190918f3977a712fe7f2a50c9bf21f07d7b4a259233069822e8f886f",
+      "bytes": 82618,
+      "captured_or_modified_at": "2026-10-15T09:41:24.045933+00:00",
+      "pixels": [
+        900,
+        1000
+      ]
+    },
+    {
+      "file": "reference-2.png",
+      "sha256": "f05ee8492a2a51ef73b8d0ff9298492bed904cab113e1a067e3e0cc9b4a22a97",
+      "bytes": 104293,
+      "captured_or_modified_at": "2026-10-15T09:42:14.606203+00:00",
+      "pixels": [
+        900,
+        1000
+      ]
+    },
+    {
+      "file": "reference-3.png",
+      "sha256": "0081fc30b405a10cc012b85c1378aee9d68c2e2dd7e73f4c14917b996e25ee06",
+      "bytes": 154273,
+      "captured_or_modified_at": "2026-10-15T09:42:14.608862+00:00",
+      "pixels": [
+        900,
+        1000
+      ]
+    },
+    {
+      "file": "reference.json",
+      "sha256": "7b8685a10a222155aa75d4b44fb3a1bc211088c5b348d988535a80be87aa7e0a",
+      "bytes": 1857,
+      "captured_or_modified_at": "2026-10-15T10:07:29.465539+00:00"
+    },
+    {
+      "file": "verified-desktop-dark.png",
+      "sha256": "fda3368d173e7540cf0c4427b81c65275bd149a5fa811aee9825e608b3a8c17d",
+      "bytes": 254133,
+      "captured_or_modified_at": "2026-10-15T10:04:02.336734+00:00",
+      "pixels": [
+        1440,
+        1928
+      ]
+    },
+    {
+      "file": "verified-desktop.png",
+      "sha256": "bcd1f3f03fe96e7e56b20e570ac14a4881db6f997a4d2007403f505ad97d6476",
+      "bytes": 252477,
+      "captured_or_modified_at": "2026-10-15T10:02:15.461329+00:00",
+      "pixels": [
+        1440,
+        1928
+      ]
+    },
+    {
+      "file": "verified-light-extra.png",
+      "sha256": "2e6fa1b3a7200f820e427c5e3fd00150429714b342e8ec4a17e49f76f1a30449",
+      "bytes": 252755,
+      "captured_or_modified_at": "2026-10-15T10:04:34.456972+00:00",
+      "pixels": [
+        1440,
+        1928
+      ]
+    },
+    {
+      "file": "verified-mobile-dark.png",
+      "sha256": "ccd1ba8db9c34c4a78bca0da72d50b077e439ce61f7e9b8c7120f7555a41ae23",
+      "bytes": 236497,
+      "captured_or_modified_at": "2026-10-15T10:04:01.221917+00:00",
+      "pixels": [
+        390,
+        3701
+      ]
+    },
+    {
+      "file": "verified-mobile.png",
+      "sha256": "1fe1feaa950a6bf0762acb907792e5dc60f28062e162ba82d53febfbe6c7edb3",
+      "bytes": 231838,
+      "captured_or_modified_at": "2026-10-15T10:02:15.940110+00:00",
+      "pixels": [
+        390,
+        3701
+      ]
+    },
+    {
+      "file": "verified-tablet.png",
+      "sha256": "f4352326694ff55f43c22e78713c0d21e2023ced94be0a43a916982422c75d0c",
+      "bytes": 229097,
+      "captured_or_modified_at": "2026-10-15T10:02:15.693594+00:00",
+      "pixels": [
+        768,
+        2442
+      ]
+    }
+  ]
+}

@@ -194,3 +194,7 @@ Browse selected main-branch updates at `/changelog`, with date anchors, search/t
 ### Presence Room
 
 `/presence-room` combines an editable brief, checklist and discussion with a live-presence demo. Reusable `PresenceStack` and `PresenceBadge` live in `src/components/presence` with playgrounds at `/presence-stack` and `/presence-badge`. Existing `TypingPresence` now supports multiple people without changing its single-person default. All room activity is local, including connection failure/retry; no realtime backend is implied.
+
+### Finance Workspace
+
+`/finance-workspace` combines a multi-series BalanceChart, AllocationBar, SpendingGauge and masked PaymentCard with existing Oreo metrics, cards, controls and empty states. The full local template includes period selection, savings goals, editable budgets, card freezing, demo payments and searchable activity. Each new component has its own editable playground and API docs. See `src/patterns/finance-workspace/README.md` for data and integration boundaries.

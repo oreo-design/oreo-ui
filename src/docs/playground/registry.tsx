@@ -1,3 +1,5 @@
+import { BalanceChart, AllocationBar, SpendingGauge, PaymentCard } from "@/components/finance";
+import { PERIODS, SAVINGS, SPENDING } from "@/patterns/finance-workspace/data";
 import { PresenceStack, PresenceBadge } from "@/components/presence";
 import { ROOM_PEOPLE } from "@/patterns/presence-room/data";
 import { ReleaseEntry } from "@/components/release-entry";
@@ -78,6 +80,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  finance: { BalanceChart, AllocationBar, SpendingGauge, PaymentCard },
   presence: { PresenceStack, PresenceBadge },
   "release-entry": { ReleaseEntry }, "upgrade-prompt": { UpgradePrompt },
   "brand-swatch": { BrandSwatch }, "type-scale": { TypeScale }, "email-signature": { EmailSignature },
@@ -126,6 +129,10 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "balance-chart": { ...define("Balance Chart", { period:select(["week","month"],"month"), empty:toggle(false) }, v=><div className="w-full max-w-3xl"><BalanceChart points={v.empty?[]:PERIODS[v.period].points}/></div>), source:"finance" },
+  "allocation-bar": { ...define("Allocation Bar", { count:number(4,0,4,1) }, v=><div className="w-full max-w-md"><AllocationBar items={SAVINGS.slice(0,v.count)}/></div>), source:"finance" },
+  "spending-gauge": { ...define("Spending Gauge", { limit:number(2000,0,5000,100), empty:toggle(false) }, v=><div className="w-full max-w-sm"><SpendingGauge items={v.empty?[]:SPENDING} limit={v.limit}/></div>), source:"finance" },
+  "payment-card": { ...define("Payment Card", { holder:text("ALEX MORGAN"), lastFour:text("1327"), label:text("Everyday card"), frozen:toggle(false) }, v=><div className="w-full max-w-sm"><PaymentCard {...v}/></div>), source:"finance" },
   "presence-stack": { ...define("Presence Stack", { count:number(5,0,7,1), max:number(4,1,6,1), animate:toggle(true) }, v=><PresenceStack people={ROOM_PEOPLE.slice(0,v.count)} selfId="you" max={v.max} animate={v.animate} />), source:"presence" },
   "presence-badge": { ...define("Presence Badge", { status:select(["online","away","typing"],"typing"), animate:toggle(true) }, v=><div className="flex items-center gap-3 text-sm"><PresenceBadge {...v} /><span>{v.status}</span></div>), source:"presence" },
   "release-entry": define("Release Entry", { title:text("Brand Guide"), description:text("A practical toolkit for colours, typography and signatures."), kind:select(["Added","Updated","Fixed","Breaking"],"Added") }, v=><div className="w-full max-w-lg"><ReleaseEntry {...v} href="/brand-guide" sourceHref="https://github.com/oreo-design/oreo-ui/pull/43" sourceLabel="PR #43" /></div>),
