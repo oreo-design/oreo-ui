@@ -1,0 +1,169 @@
+{
+  "baseline": "785384cc78fc45966484a98f7472848ba679afc9",
+  "implementation": "81fa1856592648dd41208a5502b33737bebc3afd",
+  "environment": "Local Oreo fixture, Playwriter Chromium, English",
+  "recording": "blocked by extension activeTab permission",
+  "images": [
+    {
+      "file": "after-docs-final.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "51f351ff0fcf1771f702732c108bdd87dbbae9315522d0255c9d58485c6e7339",
+      "status": "current"
+    },
+    {
+      "file": "after-docs-states-final.png",
+      "width": 1440,
+      "height": 2219,
+      "sha256": "b61d80bcd0acaf821794b96cc0be9dc6850c51c99818457afc218c6dc648f4bb",
+      "status": "current"
+    },
+    {
+      "file": "after-docs-states.png",
+      "width": 1440,
+      "height": 2219,
+      "sha256": "9eb3b3b907def36bc9fada3fb6d3176d6a9ace6a34d4c5301a0e38acc8f58898",
+      "status": "superseded"
+    },
+    {
+      "file": "after-docs.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "51f351ff0fcf1771f702732c108bdd87dbbae9315522d0255c9d58485c6e7339",
+      "status": "superseded"
+    },
+    {
+      "file": "after-empty-final.png",
+      "width": 1440,
+      "height": 1193,
+      "sha256": "859e8c5804b7c141f1d679d47c98ab22d58c3ac6959c516460214c94ab8730af",
+      "status": "current"
+    },
+    {
+      "file": "after-empty.png",
+      "width": 1440,
+      "height": 1193,
+      "sha256": "332d7a4d6c703c8602392d4d6b9f26c5de129531e52195e40411ecb0acaf162c",
+      "status": "superseded"
+    },
+    {
+      "file": "after-medium-final.png",
+      "width": 900,
+      "height": 1354,
+      "sha256": "bb80521af614abc54458e49b9239bf817e6d1e6e0338eed14ccffd2c091ad81a",
+      "status": "current"
+    },
+    {
+      "file": "after-medium.png",
+      "width": 900,
+      "height": 1354,
+      "sha256": "15f04eab0bb7d5600c2aa796eaac5f4593d97b47a94274c3a81f55eb676ee630",
+      "status": "superseded"
+    },
+    {
+      "file": "after-mobile-final.png",
+      "width": 390,
+      "height": 2177,
+      "sha256": "4374bfdde1fbafbe3dc7778c85dfae3c087694573cad2169bfe2bb31ce067151",
+      "status": "current"
+    },
+    {
+      "file": "after-mobile.png",
+      "width": 390,
+      "height": 2177,
+      "sha256": "4374bfdde1fbafbe3dc7778c85dfae3c087694573cad2169bfe2bb31ce067151",
+      "status": "superseded"
+    },
+    {
+      "file": "after-playground-final.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "724687e27e269f33f2b1b183134bc814f7397c19feb555b765cafe4faa8ed5cf",
+      "status": "current"
+    },
+    {
+      "file": "after-quiet-final.png",
+      "width": 1440,
+      "height": 1193,
+      "sha256": "52b5f31e425ac4c69540ab2bdcf264295ef1f8203200a7ffe1b53592dc7994ba",
+      "status": "current"
+    },
+    {
+      "file": "after-quiet.png",
+      "width": 1440,
+      "height": 1193,
+      "sha256": "ff567090ffbec7e8b9678b012efa4f3982a8a4eb3e673e8805619b7d7871182e",
+      "status": "superseded"
+    },
+    {
+      "file": "after-settings-peer.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b2fb08b635d6cd68bdc45f5b310ee3220d43c200e70690425bf598c1f9a886ff",
+      "status": "current"
+    },
+    {
+      "file": "after-template-dark-final.png",
+      "width": 1440,
+      "height": 1193,
+      "sha256": "20de6fb41127cb4d6021e8c176cdd5d46237e436f4b66e028634a3f5af0ba144",
+      "status": "current"
+    },
+    {
+      "file": "after-template-dark.png",
+      "width": 1440,
+      "height": 1193,
+      "sha256": "f5cfdeb6a237b570188c8a2e63a64bef371fada336b22427e4097bacb664bed4",
+      "status": "superseded"
+    },
+    {
+      "file": "after-template-light-final.png",
+      "width": 1440,
+      "height": 1312,
+      "sha256": "12f968bd9979e4419dd2654d3c55839c9a6f99e2a06d4e2b146140f96df13d69",
+      "status": "current"
+    },
+    {
+      "file": "after-template-light.png",
+      "width": 1440,
+      "height": 1312,
+      "sha256": "12f968bd9979e4419dd2654d3c55839c9a6f99e2a06d4e2b146140f96df13d69",
+      "status": "superseded"
+    },
+    {
+      "file": "before-entry-managed.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d7cad854c96b219ae85fb1bf688eb56b61548875ac57cb0330096c4756a15c79",
+      "status": "current"
+    },
+    {
+      "file": "before-settings-peer.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "c27079684bd6041e9fc921c9d63ea91ee6581126583d7904d4cdc360538c6380",
+      "status": "current"
+    },
+    {
+      "file": "reference-frame-2.png",
+      "width": 1134,
+      "height": 506,
+      "sha256": "1993dd34d1b753b52e2c4ccc352204bc058b980d06bd8dbcb8b10e5205bb1f2b",
+      "status": "current"
+    },
+    {
+      "file": "reference-off.png",
+      "width": 1134,
+      "height": 506,
+      "sha256": "fb63de2cfad6635eebe595ea6cbebc20ad0ee218498187fe744c754d0c5fb61c",
+      "status": "current"
+    },
+    {
+      "file": "reference-stretch-docs.png",
+      "width": 2544,
+      "height": 1624,
+      "sha256": "26e81fa76c36a0a5b2a7efd40b758924556575deda909d04501f12fbed9098c8",
+      "status": "current"
+    }
+  ]
+}
