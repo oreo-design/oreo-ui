@@ -1,3 +1,5 @@
+import { MultiSelectMenu } from "@/components/multi-select-menu";
+import { meetingCategories } from "@/patterns/meeting-planner/data";
 import { AgentResultCard } from "@/components/automation";
 import { DocumentStorage } from "@/components/document-activity";
 import { CommentThread } from "@/components/comment-thread";
@@ -53,6 +55,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "multi-select-menu": { MultiSelectMenu },
   automation: { AgentResultCard },
   "document-activity": { DocumentStorage },
   "comment-thread": { CommentThread },
@@ -85,6 +88,7 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "meeting-components": { ...define("Multi-select Menu", { label: text("Event category"), heading: text("Meeting category"), disabled: toggle(), empty: toggle(), selected: text("review,brainstorm,interview") }, (v,set) => <div className="w-full max-w-sm rounded-card-medium border border-border-subtle bg-bg-base p-3"><MultiSelectMenu label={v.label} heading={v.heading} disabled={v.disabled} options={v.empty ? [] : meetingCategories} value={v.selected.split(",").map(id=>id.trim()).filter(Boolean)} onValueChange={value=>set("selected",value.join(","))} /></div>), source: "multi-select-menu" },
   "automation-components": { ...define("Agent Result", { title: text("Selected account and ad sets"), status: select(["ready", "running", "error"], "ready"), open: toggle(false), details: text("Oreo Store · Weekend essentials · $200 daily budget") }, (v, set) => <div className="w-full max-w-xl"><AgentResultCard title={v.title} status={v.status} open={v.open} onOpenChange={open => set("open", open)}>{v.details}</AgentResultCard></div>), source: "automation" },
   "document-activity": define("Document Storage", { capacity: number(20, 0, 100), photos: number(7.2, 0, 100, .1), documents: number(3.8, 0, 100, .1), video: number(1.8, 0, 100, .1) }, v => <div className="w-full max-w-sm"><DocumentStorage capacity={v.capacity} segments={[{label:"Photos",value:v.photos,tone:"photos"},{label:"Documents",value:v.documents,tone:"documents"},{label:"Video",value:v.video,tone:"video"}]} /></div>),
   "comment-thread": define("Comment Thread", { state: select(["open", "resolution", "resolved"], "open"), resolutionId: text("r5") }, (v, set) => <CommentThread key={v.state} thread={{ id: commentThreadFixtures[0].id, comments: commentThreadFixtures[0].comments, resolved: v.state === "resolved", resolutionId: v.state === "open" ? undefined : v.resolutionId }} onChange={thread => { if (thread.resolutionId) set("resolutionId", thread.resolutionId); set("state", thread.resolved ? "resolved" : thread.resolutionId ? "resolution" : "open"); }} className="w-full max-w-xl" />),

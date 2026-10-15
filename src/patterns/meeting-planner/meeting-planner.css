@@ -1,0 +1,40 @@
+.meeting-planner-grid {
+  display: grid;
+  grid-template-columns: 19rem minmax(0, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+.meeting-planner :is(button, a, input):focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+.meeting-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: 0.625rem 0.75rem;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+.meeting-dialog {
+  width: min(28rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+}
+.meeting-dialog::backdrop {
+  background: var(--color-overlay-strong);
+}
+@media (max-width: 900px) {
+  .meeting-planner-grid {
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 680px) {
+  .meeting-planner-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+}

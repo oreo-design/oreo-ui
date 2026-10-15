@@ -1,0 +1,170 @@
+{
+  "baseline": "c5780ada102e0e729d177ad046a798fa12847111",
+  "implementation": "e90380b0e5e4e9d787e085bcf81b246a954ccec6",
+  "source": "https://x.com/noman_huge/status/2110294792034996359",
+  "environment": "Chrome/macOS, Playwriter session 39, local English fixtures",
+  "files": [
+    {
+      "file": "after-calendars.png",
+      "bytes": 104953,
+      "captured_at": "2026-10-15T12:39:38.269991+08:00",
+      "sha256": "07b16911214b428b3664ec1def92953dc0b6ed57e5b28b2bb6cd01a5bad87ad0"
+    },
+    {
+      "file": "after-category-error.png",
+      "bytes": 93799,
+      "captured_at": "2026-10-15T12:39:37.746059+08:00",
+      "sha256": "ad4f9cfacecac76fb433631c06ef5e0e77ab2dc358c648e74e4b1f25a603f064"
+    },
+    {
+      "file": "after-delete.png",
+      "bytes": 71866,
+      "captured_at": "2026-10-15T12:40:02.345389+08:00",
+      "sha256": "d717f41a739d5df5178a80c6543790c05bc5199f3e7799334031dcfb6b60d846"
+    },
+    {
+      "file": "after-desktop-menu.png",
+      "bytes": 131420,
+      "captured_at": "2026-10-15T12:34:29.325542+08:00",
+      "sha256": "66aabc4b28dc27c954bcd8939ddcc3e98534986eaf72e3288483f8c3b8c65137"
+    },
+    {
+      "file": "after-desktop.png",
+      "bytes": 101323,
+      "captured_at": "2026-10-15T12:34:29.112788+08:00",
+      "sha256": "43ffbef112ba5188854f4cb885cb5a7bab8b3280e97354e3c15d11f837e0061a"
+    },
+    {
+      "file": "after-docs-dark-menu.png",
+      "bytes": 153033,
+      "captured_at": "2026-10-15T12:41:51.705014+08:00",
+      "sha256": "5220fc402c118cd8f2b88f9987d124c04fab9f08ef6831209cdd08c0564c4d38"
+    },
+    {
+      "file": "after-docs-dark.png",
+      "bytes": 148888,
+      "captured_at": "2026-10-15T12:41:51.464816+08:00",
+      "sha256": "99822f24c112227fc1231940043554fc75a1f39018ca93da6a8cc4ebb2fcc42f"
+    },
+    {
+      "file": "after-edit-error.png",
+      "bytes": 87948,
+      "captured_at": "2026-10-15T12:39:39.527217+08:00",
+      "sha256": "d58247e1a1f1892a7d46253770d50c01772b674e6594ad1691ade49df67cae10"
+    },
+    {
+      "file": "after-menu-rebased.png",
+      "bytes": 113681,
+      "captured_at": "2026-10-15T12:43:29.678866+08:00",
+      "sha256": "fcac15f8dff31075e331f7c9eefc16abfdab72f5435372563c4073efaed28624"
+    },
+    {
+      "file": "after-menu.png",
+      "bytes": 113303,
+      "captured_at": "2026-10-15T12:42:41.524677+08:00",
+      "sha256": "364a46ec52acd3faf11978344c9cd4e35e726967862239abdf85e178062da1e3"
+    },
+    {
+      "file": "after-picker-disabled.png",
+      "bytes": 88949,
+      "captured_at": "2026-10-15T12:41:46.231449+08:00",
+      "sha256": "5eca53d9c7b00fc7a55a024cd42f415066e1b29783a4c4e79f10615ee6c1962e"
+    },
+    {
+      "file": "after-picker-empty.png",
+      "bytes": 96297,
+      "captured_at": "2026-10-15T12:41:46.840211+08:00",
+      "sha256": "ab9624f4656570bfa3f1a1443bce3f252874e1e53922a56ab25be823e41c6e9f"
+    },
+    {
+      "file": "after-playground-dark.png",
+      "bytes": 108718,
+      "captured_at": "2026-10-15T12:41:47.566025+08:00",
+      "sha256": "81ec26ae71dd641b01686fad5a2181de49d20d533a62d6e254b73e108d9f2d4e"
+    },
+    {
+      "file": "after-search-empty.png",
+      "bytes": 87158,
+      "captured_at": "2026-10-15T12:40:02.597423+08:00",
+      "sha256": "bc5ebebb3b5db4e636507449aa7dc1bb981fd19b0629cecd4916674e96cc6d85"
+    },
+    {
+      "file": "before-entry-recovered.png",
+      "bytes": 87139,
+      "captured_at": "2026-10-15T12:34:29.467424+08:00",
+      "sha256": "f54df1fff3ad99e1406bb008b0d28b9efec3b3b71476d845ceed90c48b907c8c"
+    },
+    {
+      "file": "before-entry.png",
+      "bytes": 6797,
+      "captured_at": "2026-10-15T12:32:21.137233+08:00",
+      "sha256": "2efdae649aa7a0a9f609f193ef977f58b7292099c702d3719d7bc91e9eed5a7a"
+    },
+    {
+      "file": "before-menu.png",
+      "bytes": 110439,
+      "captured_at": "2026-10-15T12:25:53.925938+08:00",
+      "sha256": "9fce66da1102ad4982fd6c345ac93bb71640ebad945cd4115268816abb5e5c11"
+    },
+    {
+      "file": "corrected-dark-mobile-menu.png",
+      "bytes": 50173,
+      "captured_at": "2026-10-15T12:41:19.180386+08:00",
+      "sha256": "348f4f5b1423b15f734ea3e727caa4d622bb02206372937b09766a9ed1490711"
+    },
+    {
+      "file": "corrected-light-mobile-menu.png",
+      "bytes": 45441,
+      "captured_at": "2026-10-15T12:41:18.627587+08:00",
+      "sha256": "1fd91245363e177b7e9d63af0d23dd85a92337685bc71ef8fad73754b1022425"
+    },
+    {
+      "file": "final-dark-mobile-menu.png",
+      "bytes": 48137,
+      "captured_at": "2026-10-15T12:40:32.518671+08:00",
+      "sha256": "b890f50f1f75533478d982734a5b206943ba9a4ae2d80494b9e88c3ef5966a5b"
+    },
+    {
+      "file": "final-dark-tablet.png",
+      "bytes": 101013,
+      "captured_at": "2026-10-15T12:40:32.017013+08:00",
+      "sha256": "0c50d4cae8eb8114ab5a75ff9d18e66436232156dc223306fc09a3ad59a3f382"
+    },
+    {
+      "file": "final-dark-wide.png",
+      "bytes": 125914,
+      "captured_at": "2026-10-15T12:40:31.641971+08:00",
+      "sha256": "0ed70ef4c0957d523e68605e68836f1665e960a074a9baa2b8f4f0066403dc56"
+    },
+    {
+      "file": "final-light-mobile-full.png",
+      "bytes": 88044,
+      "captured_at": "2026-10-15T12:40:32.942712+08:00",
+      "sha256": "34d2fd3f789595ab81b7eb729009fba2a5156642963e1772d2aa8b2cf81c6a2b"
+    },
+    {
+      "file": "final-light-mobile-menu.png",
+      "bytes": 47169,
+      "captured_at": "2026-10-15T12:40:33.195838+08:00",
+      "sha256": "48075b5adc78776f2502622de40bf97eefbdb60bb8e1aa3fd639708b431cfa9c"
+    },
+    {
+      "file": "final-light-wide.png",
+      "bytes": 123990,
+      "captured_at": "2026-10-15T12:40:31.030187+08:00",
+      "sha256": "85ff508b3929439568cad70dc1dbb5e6fd9723538e7f83d28e291b68ff90f6aa"
+    },
+    {
+      "file": "final-rebased-wide.png",
+      "bytes": 123990,
+      "captured_at": "2026-10-15T12:43:40.737685+08:00",
+      "sha256": "85ff508b3929439568cad70dc1dbb5e6fd9723538e7f83d28e291b68ff90f6aa"
+    },
+    {
+      "file": "reference.jpg",
+      "bytes": 291599,
+      "captured_at": "2026-10-15T12:24:59.194236+08:00",
+      "sha256": "9c06adeb9fa1cbf260a8f9d90ecf3f6086613dd6ac6973d8f661c9f3568a37ae"
+    }
+  ]
+}
