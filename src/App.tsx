@@ -1,3 +1,5 @@
+import { StudioInboxDocs } from "@/pages/StudioInboxDocs";
+import { StudioInboxPage } from "@/pages/StudioInboxPage";
 import { EdgeMonitorDocs } from "@/pages/EdgeMonitorDocs";
 import { EdgeObservatoryPage } from "@/pages/EdgeObservatoryPage";
 import { SwitchDocs } from "@/pages/SwitchDocs";
@@ -86,6 +88,8 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "studio-inbox-components": StudioInboxDocs,
+  "studio-inbox": StudioInboxPage,
   "edge-monitor": EdgeMonitorDocs,
   "edge-observatory": EdgeObservatoryPage,
   switch: SwitchDocs,

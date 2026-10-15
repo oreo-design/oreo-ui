@@ -18,6 +18,8 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "studio-inbox-components": { title: "Studio Inbox", description: "Grouped collaboration notifications with controlled selection, unread state and type filters." },
+  "studio-inbox": { title: "Studio Inbox Template", description: "A music collaboration inbox with project discussions, audio previews and local replies." },
   "edge-monitor": { title: "Edge Monitor", description: "Metric cards, regional traffic, latency percentiles and deployment history for infrastructure dashboards." },
   "edge-observatory": { title: "Edge Observatory", description: "A responsive infrastructure monitoring template with regional traffic, latency, logs and deployment previews." },
   switch: { title: "Switch", description: "An accessible on/off control with optional stretch motion, existing Oreo tokens and native form behavior." },
