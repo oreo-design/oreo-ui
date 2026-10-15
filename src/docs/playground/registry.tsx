@@ -1,3 +1,5 @@
+import { PlaceMap, PlaceDetailCard, MapStylePicker, MAP_STYLES } from "@/components/place-map";
+import { SAMPLE_PLACES } from "@/patterns/place-explorer/data";
 import { AgentConnectCard, QuotaUsage, AgentClientPicker } from "@/components/agent-connect";
 import { AGENT_CLIENTS, AGENT_MARKS } from "@/patterns/agent-connections/data";
 import { BalanceChart, AllocationBar, SpendingGauge, PaymentCard } from "@/components/finance";
@@ -82,6 +84,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "place-map": { PlaceMap, PlaceDetailCard, MapStylePicker },
   "agent-connect": { AgentConnectCard, QuotaUsage, AgentClientPicker },
   finance: { BalanceChart, AllocationBar, SpendingGauge, PaymentCard },
   presence: { PresenceStack, PresenceBadge },
@@ -132,6 +135,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "place-map": { ...define("Place Map", { selected:select(["lakehouse","juniper","northlight"],"lakehouse"), mapStyle:select(MAP_STYLES,"meadow"), empty:toggle(false) }, (v,set)=><div className="w-full max-w-4xl"><PlaceMap places={v.empty?[]:SAMPLE_PLACES} selectedId={v.selected} mapStyle={v.mapStyle} onSelect={id=>{if(id==="lakehouse"||id==="juniper"||id==="northlight")set("selected",id);}} toolbar={<MapStylePicker value={v.mapStyle} onValueChange={style=>set("mapStyle",style)}/>}/></div>), source:"place-map" },
+  "place-detail-card": { ...define("Place Detail Card", { place:select(["lakehouse","juniper","northlight"],"lakehouse"), saved:toggle(false) }, (v,set)=><div className="w-full max-w-4xl"><PlaceDetailCard place={SAMPLE_PLACES.find(p=>p.id===v.place)!} index={SAMPLE_PLACES.findIndex(p=>p.id===v.place)} total={3} instant onPrevious={()=>{const i=SAMPLE_PLACES.findIndex(p=>p.id===v.place);set("place",["lakehouse","juniper","northlight"][(i+2)%3] as typeof v.place);}} onNext={()=>{const i=SAMPLE_PLACES.findIndex(p=>p.id===v.place);set("place",["lakehouse","juniper","northlight"][(i+1)%3] as typeof v.place);}} saved={v.saved} onSave={()=>set("saved",!v.saved)}/></div>), source:"place-map" },
+  "map-style-picker": { ...define("Map Style Picker", { value:select(MAP_STYLES,"meadow") }, (v,set)=><MapStylePicker value={v.value} onValueChange={value=>set("value",value)}/>), source:"place-map" },
   "agent-connect-card": { ...define("Agent Connect Card", { title:text("Your workspace, in your AI."), description:text("Connect your favorite tools with Oreo MCP."), actionLabel:text("Set up agents") }, v=><div className="w-full max-w-xs"><AgentConnectCard {...v} marks={AGENT_MARKS} onAction={()=>{window.location.href="/agent-connections";}}/></div>), source:"agent-connect" },
   "quota-usage": { ...define("Quota Usage", { label:text("Automations this month"), used:number(54,0,120000,1), limit:number(3000,0,100000,1) }, v=><QuotaUsage {...v}/>), source:"agent-connect" },
   "agent-client-picker": { ...define("Agent Client Picker", { value:select(["desktop","editor","terminal","custom"],"desktop"), empty:toggle(false), disableCustom:toggle(false) }, (v,set)=><div className="w-full max-w-xl"><AgentClientPicker clients={v.empty?[]:AGENT_CLIENTS.map(c=>({...c,disabled:c.id==="custom"&&v.disableCustom}))} value={v.value} onValueChange={value=>{if(value==="desktop"||value==="editor"||value==="terminal"||value==="custom") set("value",value);}}/></div>), source:"agent-connect" },
