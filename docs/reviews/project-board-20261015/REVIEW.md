@@ -5,7 +5,7 @@ Reference: [Navneet, “Motion Enabled”](https://x.com/sterlynavneet/status/21
 ## Scope and revisions
 
 - Baseline: `b67381e7a4d1ae3e4970c2c31dc0640683fda0ec` (origin/main, PR #57).
-- Branch: `codex/project-board-20261015`. After captures use this task's component/template implementation, identified by this directory's containing commit. `manifest.json` hashes source and original media for exact matching.
+- Branch: `codex/project-board-20261015`; implementation commit `bd00934`. [PR #58](https://github.com/oreo-design/oreo-ui/pull/58). After captures use this task's component/template implementation, identified by this directory's containing commit. `manifest.json` hashes source and original media for exact matching.
 - New reusable components: `ProjectCreateCard`, `ProjectBoardOverview`; `BoardProjectSummary` composes the existing `ProjectSummary` rather than creating a second progress/avatar implementation.
 - Template: `/project-board`. Three shared-data views, category/search/priority filters, creation/editing, stage/owner/task changes, keyboard Kanban movement, owner swimlanes, inline cards, archive/undo and activity history.
 - Docs/playgrounds: `/project-create-card`, `/project-board-overview`; existing site navigation, source export and Changelog receive entries.
@@ -26,7 +26,7 @@ Playwriter session 65; local Chromium; `http://localhost:5232`; desktop viewport
 | Empty and recovery | No prior filtered state | [No matches](after-empty.png) | Clear filters restores results. Component empty columns also verified in playground. |
 | Mobile | No matching mobile pre-change capture | [Grid](after-mobile-grid.png), [overview scroll](after-mobile-overview.png), [editor](after-mobile-editor.png) | 390×844; full-page media inspected; grid stacks, overview scrolls within region, editor remains usable. This is desktop Chromium viewport emulation, not physical phone evidence. |
 | Component docs / properties | Old route fallback; no dedicated docs | [Create playground](after-create-docs.png), [API](after-create-api.png), [overview playground](after-overview-docs.png), [empty](after-overview-empty-docs.png) | Code export exposes canonical import; docs open; empty/showCreate switches work. Callbacks deliberately omitted by existing source serializer and connected in documented usage. |
-| Changelog entry | [Before](before-changelog.png) | `after-changelog.png` | Same existing release-entry composition; final capture added with actual PR number. |
+| Changelog entry | [Before](before-changelog.png) | [Page](after-changelog.png), [entry](after-changelog-entry.png) | Same existing release-entry composition; final capture added with actual PR number. |
 | Creation hover | No old component/motion; source frames retained | [Actual page recording](hover-review.mp4), [computed states](motion-checks.json) | 1440×1000, 24.44s. Native recording blocked by extension activeTab permission; captured through same Playwriter CDP connection. Original 112 timestamped browser JPEG frames retained in `motion-frames.json.xz`; MP4 uses original intervals, no acceleration. |
 
 ## Consistency review — six lenses
@@ -57,7 +57,7 @@ This is a web-template consistency check against actual Oreo peer surfaces, not 
 
 - `npm run build`: passes TypeScript and Vite; existing large-chunk warning retained in build logs.
 - `node --experimental-strip-types docs/reviews/project-board-20261015/adapter-check.mjs`: preserves filtered-out projects, incoming visible order, completion invariant, owner reassignment and inline creation defaults. [Output](adapter-check.log).
-- [Browser observations](browser-checks.jsonl): creation, invalid name, filters, view synchronization, keyboard movement, completed-stage task normalization, archive/undo, unsaved-draft recovery, mobile editor, theme, activity and motion. No uncaught application errors observed.
+- [Browser observations](browser-checks.jsonl): creation, invalid name, filters, view synchronization, keyboard movement, completed-stage task normalization, archive/undo, unsaved-draft recovery, mobile editor, theme, activity and motion. No uncaught application errors observed in focused scenarios. The older Changelog tab retained connection/HMR errors from preview restarts; a fresh navigation is clean in `changelog-check.json`.
 - `git diff --check`: clean. Review reads all new source and task-scoped registry changes. No unrelated primary-checkout files staged.
 
 Missing mobile baseline, new-state before media and native recording permissions are evidence limits, not delivery gates. No historical images overwritten. `after-overview-initial.png` is retained as the earlier review capture; `after-overview-final.png` is the default-state delivery capture.
