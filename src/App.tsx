@@ -1,3 +1,5 @@
+import { AgentHubDocs } from "@/pages/AgentHubDocs";
+import { AgentHubPage } from "@/pages/AgentHubPage";
 import { PlaceMapDocs } from "@/pages/PlaceMapDocs";
 import { PlaceExplorerPage } from "@/pages/PlaceExplorerPage";
 import { AgentConnectDocs } from "@/pages/AgentConnectDocs";
@@ -109,6 +111,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "hub-search-hero": AgentHubDocs, "agent-category-grid": AgentHubDocs, "integration-tile": AgentHubDocs, "agent-hub": AgentHubPage,
   "place-map": PlaceMapDocs, "place-detail-card": PlaceMapDocs, "map-style-picker": PlaceMapDocs, "place-explorer": PlaceExplorerPage,
   "agent-connect-card": AgentConnectDocs, "quota-usage": AgentConnectDocs, "agent-client-picker": AgentConnectDocs, "agent-connections": AgentConnectionsPage,
   "balance-chart": FinanceDocs, "allocation-bar": FinanceDocs, "spending-gauge": FinanceDocs, "payment-card": FinanceDocs, "finance-workspace": FinanceWorkspacePage,

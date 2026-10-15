@@ -206,3 +206,7 @@ Browse selected main-branch updates at `/changelog`, with date anchors, search/t
 ### Place Explorer
 
 `/place-explorer` turns [pitus’ map reference](https://x.com/pitus_/status/2110421626873643338) into PlaceMap, PlaceDetailCard and MapStylePicker, with individual docs/playgrounds. Explore three illustrative venues, change palettes, filter and save places, and copy a sample itinerary. Original SVG geography and thumbnails require no map service or location access. The map is not for navigation.
+
+### Agent Hub
+
+`HubSearchHero`, `AgentCategoryGrid` and `IntegrationTile` compose the `/agent-hub` template: local catalog search, category browsing, agent details and personal collection, draft creation, demo integration state, keyboard shortcut and responsive light/dark layouts. Component documentation and playgrounds live at `/hub-search-hero`, `/agent-category-grid` and `/integration-tile`. No external accounts are connected; changes reset on reload.

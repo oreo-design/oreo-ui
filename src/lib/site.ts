@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "hub-search-hero": { title:"Hub Search Hero", description:"A dotted catalog header with controlled search and shortcut support." },
+  "agent-category-grid": { title:"Agent Category Grid", description:"A compact category directory with accessible selection and counts." },
+  "integration-tile": { title:"Integration Tile", description:"A tool identity, connection state and agent count in one compact card." },
+  "agent-hub": { title:"Agent Hub", description:"Explore sample agents, browse work categories and manage local demo integrations." },
   "place-map": { title:"Place Map", description:"An illustrative neighborhood map with accessible markers, selected routes and composable details." },
   "place-detail-card": { title:"Place Detail Card", description:"A compact venue summary with amenities, rating, navigation and optional copy/save actions." },
   "map-style-picker": { title:"Map Style Picker", description:"Five labeled map palettes using Oreo Inline Quick Menu behavior." },

@@ -1,0 +1,61 @@
+.hub-root { --hub-accent:var(--color-palette-mint-text); min-height:100dvh; display:grid; grid-template-columns:3.5rem 14rem minmax(0,1fr); background:var(--color-bg-base); color:var(--color-text-primary); color-scheme:light; }
+.theme-dark .hub-root,.theme-dark .hub-dialog { color-scheme:dark; }
+.theme-dark .hub-root { --hub-accent:var(--color-status-success); }
+.hub-rail { position:sticky; top:0; height:100dvh; display:flex; align-items:center; flex-direction:column; gap:.75rem; padding:1.25rem .5rem; border-right:1px solid var(--color-border-subtle); }
+.hub-rail a { display:flex; justify-content:center; padding:.5rem; color:var(--color-text-secondary); }
+.hub-rail-divider { width:1.25rem; height:1px; background:var(--color-border-subtle); }
+.hub-rail .hub-rail-bottom { margin-top:auto; }
+.hub-sidebar { position:sticky; top:0; height:100dvh; display:flex; flex-direction:column; padding:1.5rem .75rem; border-right:1px solid var(--color-border-subtle); }
+.hub-workspace { display:flex; align-items:center; gap:.5rem; padding:0 .25rem; font-size:.75rem; color:var(--color-text-secondary); }
+.hub-workspace-avatar { display:grid; place-items:center; width:1.5rem; height:1.5rem; background:var(--color-bg-inverse); color:var(--color-text-on-inverse); border-radius:var(--radius-control-tiny); font-size:.625rem; }
+.hub-workspace-label { font-size:.625rem; margin-left:auto; color:var(--color-text-tertiary); }
+.hub-nav-label { display:flex; align-items:center; gap:.5rem; margin:2rem .5rem .75rem; font-family:monospace; font-size:.625rem; letter-spacing:.08em; text-transform:uppercase; color:var(--color-text-tertiary); }
+.hub-nav-label i { width:.25rem; height:.25rem; background:var(--hub-accent); }
+.hub-sidebar nav { display:grid; gap:.25rem; }
+.hub-sidebar nav button { display:flex; align-items:center; gap:.625rem; padding:.625rem .75rem; width:100%; border-radius:var(--radius-control-tiny); font-size:.8125rem; text-align:left; color:var(--color-text-secondary); cursor:pointer; }
+.hub-sidebar nav button[aria-current="page"] { color:var(--hub-accent); background:color-mix(in srgb,var(--hub-accent) 12%,transparent); }
+.hub-sidebar-note { display:flex; gap:.5rem; margin-top:auto; padding:.75rem .5rem; font-size:.6875rem; line-height:1.7; color:var(--color-text-tertiary); }
+.hub-sidebar-note svg { flex-shrink:0; margin-top:.125rem; }
+.hub-content { min-width:0; }
+.hub-topbar { display:flex; align-items:center; justify-content:space-between; height:4rem; gap:1rem; padding:0 1.5rem; border-bottom:1px solid var(--color-border-subtle); font-size:.75rem; color:var(--color-text-secondary); }
+.hub-main { max-width:86rem; margin:auto; padding:1.5rem; }
+.hub-section { margin-top:2.5rem; }
+.hub-section-heading { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1rem; }
+.hub-section-heading h2 { font-size:.9375rem; font-weight:500; letter-spacing:-.015em; }
+.hub-section-heading p { margin-top:.375rem; color:var(--color-text-secondary); font-size:.75rem; }
+.hub-integration-group+.hub-integration-group { margin-top:1.5rem; }
+.hub-integration-group>h3 { margin-bottom:.5rem; color:var(--color-text-tertiary); font-family:monospace; font-size:.625rem; text-transform:uppercase; letter-spacing:.06em; }
+.hub-integration-group>h3 span { margin-left:.5rem; font-variant-numeric:tabular-nums; }
+.hub-integration-grid,.hub-agent-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; }
+.hub-agent-card { display:flex; flex-direction:column; min-width:0; padding:1.25rem; border:1px solid var(--color-border-subtle); border-radius:var(--radius-card-small); text-align:left; background:var(--color-bg-elevated); cursor:pointer; }
+.hub-agent-top { display:flex; align-items:center; gap:.75rem; color:var(--color-text-secondary); font-size:.625rem; }
+.hub-agent-top>span { flex:1; }
+.hub-agent-card h3 { margin-top:1.25rem; font-size:.9375rem; font-weight:500; overflow-wrap:anywhere; }
+.hub-agent-card>p { margin-top:.5rem; color:var(--color-text-secondary); font-size:.75rem; line-height:1.7; }
+.hub-agent-tags { display:flex; flex-wrap:wrap; gap:.5rem; padding-top:1.5rem; margin-top:auto; }
+.hub-agent-tags>span { border:1px solid var(--color-border-subtle); padding:.125rem .375rem; border-radius:var(--radius-control-tiny); font-size:.625rem; color:var(--color-text-secondary); }
+.hub-agent-filters { display:flex; gap:.5rem; flex-wrap:wrap; }
+.hub-agent-filters select { max-width:100%; min-height:2rem; padding:.375rem .5rem; border:1px solid var(--color-border-default); border-radius:var(--radius-control); font-size:.75rem; background:var(--color-bg-base); }
+.hub-footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.75rem; margin-top:3rem; padding-top:1rem; border-top:1px solid var(--color-border-subtle); color:var(--color-text-tertiary); font-size:.6875rem; }
+.hub-notice { margin-top:1rem; padding:.75rem 1rem; border:1px solid var(--color-border-subtle); border-radius:var(--radius-control); color:var(--color-text-secondary); font-size:.8125rem; }
+.hub-root a:focus-visible,.hub-root button:focus-visible,.hub-root select:focus-visible { outline:2px solid var(--color-status-progress); outline-offset:2px; }
+.hub-dialog-backdrop { position:fixed; inset:0; z-index:40; background:var(--color-backdrop,rgba(0,0,0,.5)); }
+.hub-dialog { position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); z-index:50; width:calc(100% - 2rem); max-width:30rem; max-height:85dvh; overflow:auto; padding:1.5rem; border:1px solid var(--color-border-default); border-radius:var(--radius-card-medium); background:var(--color-bg-base); color:var(--color-text-primary); box-shadow:var(--shadow-overlay); outline:none; }
+.hub-dialog-heading { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:.75rem; }
+.hub-dialog-heading h2 { font-size:1.125rem; font-weight:500; overflow-wrap:anywhere; }
+.hub-dialog>p { font-size:.8125rem; line-height:1.7; color:var(--color-text-secondary); }
+.hub-detail-section { margin-top:1.5rem; font-size:.8125rem; }
+.hub-detail-section h3 { margin-bottom:.5rem; font-weight:500; }
+.hub-detail-section p { color:var(--color-text-secondary); line-height:1.8; }
+.hub-demo-note { margin-top:1.5rem; padding:.75rem; border:1px solid var(--color-border-subtle); border-radius:var(--radius-control); color:var(--color-text-secondary); }
+.hub-dialog-actions { display:flex; align-items:center; justify-content:flex-end; gap:.75rem; margin-top:1.5rem; font-size:.75rem; }
+.hub-dialog-actions>span { margin-right:auto; color:var(--color-text-secondary); }
+.hub-create-form { display:grid; gap:1rem; margin-top:1.5rem; }
+.hub-create-form label { display:grid; gap:.5rem; font-size:.8125rem; }
+.hub-create-form input,.hub-create-form select,.hub-create-form textarea { width:100%; min-width:0; padding:.625rem .75rem; border:1px solid var(--color-border-default); border-radius:var(--radius-control); font-size:1rem; background:var(--color-bg-elevated); }
+.hub-create-form textarea { min-height:6rem; resize:vertical; }
+.hub-create-form .hub-dialog-actions { margin-top:.25rem; }
+@media(hover:hover) and (pointer:fine) { .hub-agent-card:hover { border-color:var(--color-border-default); } .hub-sidebar nav button:not([aria-current]):hover { background:var(--color-state-hover); } }
+@media(max-width:1200px) { .hub-root { grid-template-columns:3rem 12rem minmax(0,1fr); } .hub-integration-grid,.hub-agent-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:800px) { .hub-root { grid-template-columns:minmax(0,1fr); } .hub-rail { display:none; } .hub-sidebar { position:static; height:auto; padding:1rem; border-right:0; border-bottom:1px solid var(--color-border-subtle); } .hub-workspace { margin-bottom:1rem; } .hub-sidebar nav { display:flex; } .hub-sidebar nav button { justify-content:center; } .hub-sidebar-note,.hub-nav-label { display:none; } .hub-main { padding:1rem; } .hub-topbar { height:3.5rem; padding:0 1rem; } }
+@media(max-width:600px) { .hub-integration-grid,.hub-agent-grid { grid-template-columns:minmax(0,1fr); } .hub-section { margin-top:2rem; } .hub-dialog { padding:1.25rem; } }
