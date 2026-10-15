@@ -1,0 +1,402 @@
+[
+  {
+    "frame": 0,
+    "originalDuration": 0.03516197204589844,
+    "editedDuration": 0.03516197204589844
+  },
+  {
+    "frame": 1,
+    "originalDuration": 0.02768397331237793,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 2,
+    "originalDuration": 0.004881858825683594,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 3,
+    "originalDuration": 0.010030031204223633,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 4,
+    "originalDuration": 0.010977983474731445,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 5,
+    "originalDuration": 0.013375043869018555,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 6,
+    "originalDuration": 0.006196022033691406,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 7,
+    "originalDuration": 0.010689973831176758,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 8,
+    "originalDuration": 0.006144046783447266,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 9,
+    "originalDuration": 0.016607046127319336,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 10,
+    "originalDuration": 0.010843992233276367,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 11,
+    "originalDuration": 0.005647897720336914,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 12,
+    "originalDuration": 0.016707181930541992,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 13,
+    "originalDuration": 0.011056900024414062,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 14,
+    "originalDuration": 0.0057239532470703125,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 15,
+    "originalDuration": 0.010767936706542969,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 16,
+    "originalDuration": 0.016391992568969727,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 17,
+    "originalDuration": 0.006545066833496094,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 18,
+    "originalDuration": 8.53691291809082,
+    "editedDuration": 2
+  },
+  {
+    "frame": 19,
+    "originalDuration": 0.001026153564453125,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 20,
+    "originalDuration": 0.03717684745788574,
+    "editedDuration": 0.03717684745788574
+  },
+  {
+    "frame": 21,
+    "originalDuration": 0.011004209518432617,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 22,
+    "originalDuration": 0.0077168941497802734,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 23,
+    "originalDuration": 0.008879899978637695,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 24,
+    "originalDuration": 0.016381025314331055,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 25,
+    "originalDuration": 0.007908105850219727,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 26,
+    "originalDuration": 0.009736061096191406,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 27,
+    "originalDuration": 0.01615285873413086,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 28,
+    "originalDuration": 0.008553028106689453,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 29,
+    "originalDuration": 0.0051419734954833984,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 30,
+    "originalDuration": 0.016592979431152344,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 31,
+    "originalDuration": 0.010615110397338867,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 32,
+    "originalDuration": 0.0071258544921875,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 33,
+    "originalDuration": 0.009572029113769531,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 34,
+    "originalDuration": 0.018774986267089844,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 35,
+    "originalDuration": 0.0039141178131103516,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 36,
+    "originalDuration": 0.01092386245727539,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 37,
+    "originalDuration": 0.02114701271057129,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 38,
+    "originalDuration": 0.010354995727539062,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 39,
+    "originalDuration": 0.008550167083740234,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 40,
+    "originalDuration": 0.015303850173950195,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 41,
+    "originalDuration": 0.01025700569152832,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 42,
+    "originalDuration": 0.006175041198730469,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 43,
+    "originalDuration": 0.01102304458618164,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 44,
+    "originalDuration": 0.01641702651977539,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 45,
+    "originalDuration": 0.008432865142822266,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 46,
+    "originalDuration": 9.291304111480713,
+    "editedDuration": 2
+  },
+  {
+    "frame": 47,
+    "originalDuration": 0.0012049674987792969,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 48,
+    "originalDuration": 0.001995086669921875,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 49,
+    "originalDuration": 0.007164955139160156,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 50,
+    "originalDuration": 0.015635013580322266,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 51,
+    "originalDuration": 0.005589008331298828,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 52,
+    "originalDuration": 0.01061105728149414,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 53,
+    "originalDuration": 0.01744389533996582,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 54,
+    "originalDuration": 0.0074329376220703125,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 55,
+    "originalDuration": 0.008594989776611328,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 56,
+    "originalDuration": 0.016607999801635742,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 57,
+    "originalDuration": 0.0059909820556640625,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 58,
+    "originalDuration": 0.010758161544799805,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 59,
+    "originalDuration": 0.01417088508605957,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 60,
+    "originalDuration": 0.011881113052368164,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 61,
+    "originalDuration": 0.0056149959564208984,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 62,
+    "originalDuration": 0.01749396324157715,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 63,
+    "originalDuration": 0.015189886093139648,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 64,
+    "originalDuration": 0.0027070045471191406,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 65,
+    "originalDuration": 0.014873027801513672,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 66,
+    "originalDuration": 0.01076817512512207,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 67,
+    "originalDuration": 0.005628824234008789,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 68,
+    "originalDuration": 0.010889053344726562,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 69,
+    "originalDuration": 0.016417980194091797,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 70,
+    "originalDuration": 0.006540060043334961,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 71,
+    "originalDuration": 0.010571002960205078,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 72,
+    "originalDuration": 0.00557708740234375,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 73,
+    "originalDuration": 0.016626834869384766,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 74,
+    "originalDuration": 0.010964155197143555,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 75,
+    "originalDuration": 0.005747795104980469,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 76,
+    "originalDuration": 0.01896810531616211,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 77,
+    "originalDuration": 0.0062999725341796875,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 78,
+    "originalDuration": 0.010795116424560547,
+    "editedDuration": 0.033
+  },
+  {
+    "frame": 79,
+    "originalDuration": 0.5,
+    "editedDuration": 0.5
+  }
+]
