@@ -1,0 +1,10 @@
+[
+  {
+    "state": "hover",
+    "detail": "Element: div.pb-floating-card\nBox: x=456 y=318 w=60 h=75\nChildren: 3  Text length: 0\nScroll Y: size=70 client=70 overflowing=false top=0\nScroll X: size=54 client=54 overflowing=false left=0\nStyles: transform=matrix(0.99863, -0.052336, 0.052336, 0.99863, 0, -3) transition-duration=0.18s"
+  },
+  {
+    "state": "reduced-hover",
+    "detail": "Element: div.pb-floating-card\nBox: x=454 y=319 w=64 h=78\nChildren: 3  Text length: 0\nScroll Y: size=70 client=70 overflowing=false top=0\nScroll X: size=54 client=54 overflowing=false left=0\nStyles: transform=matrix(0.992546, -0.121869, 0.121869, 0.992546, 0, 0) transition-duration=0s"
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "baseline": "b67381e7a4d1ae3e4970c2c31dc0640683fda0ec",
+  "capturedAt": "2026-10-15T23:17:37.014500",
+  "environment": {
+    "origin": "http://localhost:5232",
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "fixture": true,
+    "locale": "en-US"
+  },
+  "sha256": {
+    "docs/reviews/project-board-20261015/after-empty.png": "5018ab39389d145f063404c0ec6380326f971d74f929b8f12cc1423c16bf44d7",
+    "docs/reviews/project-board-20261015/hover-review.mp4": "b685afd9a2cbd58b2a1c098f64d43c6a20bbd9c527b63341f42660fa7ac7169f",
+    "docs/reviews/project-board-20261015/after-archive-confirm.png": "3a01639bd849d9f47031c2b97b90943e72628a2ba2b5cba8ea457e6acbc9c17d",
+    "docs/reviews/project-board-20261015/oreo-sterly-reference-16.png": "7f73df588bbaa39741f516e98430ac72313d4697858eda48406b0e51fe408fe5",
+    "docs/reviews/project-board-20261015/after-create-api.png": "2c3a1538ae695fff292fd224579929b7cf96227c9602e6f7a5fe2f05b2607090",
+    "docs/reviews/project-board-20261015/oreo-sterly-reference-1.png": "ff1ca38052022e62bc1d61e22cce89f433d1abf17154f78e50505599d0f7e1b9",
+    "docs/reviews/project-board-20261015/after-overview-empty-docs.png": "98c696024ef12f0e2c75b7df43cc4fd3b7be904009f5a12e7de2f0700d1fa599",
+    "docs/reviews/project-board-20261015/after-create-error.png": "40792d3bad3df664ca54d2e8ce8f37d93be2fc02d073c7deb970d3100473f71d",
+    "docs/reviews/project-board-20261015/oreo-sterly-reference-4.png": "fe5534158a1746a1b862b612e864b9bbbf4e7daf17e9d24ea54843fc971f7078",
+    "docs/reviews/project-board-20261015/after-mobile-editor.png": "8c58fa97119d6861092c4acd33fbe6c2d3fe8f331d3becd094b162727859ca7b",
+    "docs/reviews/project-board-20261015/adapter-check.log": "65da85074b8dfb0042d2829f55875039aa989e2e2668e453776c46fd28c6d287",
+    "docs/reviews/project-board-20261015/oreo-sterly-reference-12.png": "cfbaa1b672e5c953a145a3502602b8d2bf6a08ff659b800318e939389401f512",
+    "docs/reviews/project-board-20261015/motion-checks.json": "a9d31b5e832561c82987e21bf75391add26096b17c999340e699ed6fa55f3f5b",
+    "docs/reviews/project-board-20261015/after-mobile-grid.png": "b813676dc07b6481a65b265fbd77af9d784afab9dbd8d9fcec7b1de8468272f8",
+    "docs/reviews/project-board-20261015/before-entry.png": "193e926b6aba8416206f4e14e6531bcfa0c54c4f5e701fa6df629bbb96523411",
+    "docs/reviews/project-board-20261015/reference-metadata.json": "b3ea399dd7c500696c79e16f35bdb6cb96c3694de51f2d873cdd8b186add3af9",
+    "docs/reviews/project-board-20261015/adapter-check.mjs": "e20d2d8912a786fbf57183be4f6e72dc8e15d8289cf0986c12b2f5e29887730a",
+    "docs/reviews/project-board-20261015/after-swimlanes.png": "15374c8dbf7863bba5c4961bd28c0aa903a21fc9221b1f563f3ada8c3c7da710",
+    "docs/reviews/project-board-20261015/after-overview-docs.png": "ecd3af5d038f9f00fef1820768dde0b18ce628feb072a5e151a32ba158627f80",
+    "docs/reviews/project-board-20261015/build-final.log": "e5ea0932b00860307219b0df8a3e6e5021d9064c732ab9a81224a73e2b029c48",
+    "docs/reviews/project-board-20261015/after-grid-completed.png": "7c21e86c66a78d7ab32cb52f38f5f707213e01c766830a48d44614d472ae6c90",
+    "docs/reviews/project-board-20261015/after-board-view.png": "c657861a64f30450a31241a06c4436a523d57aadc3375214f331631148f574f9",
+    "docs/reviews/project-board-20261015/browser-checks.jsonl": "4364bbdb8d7d82b2fceae92de199b390f7291b11e8309298e50746743adf47f3",
+    "docs/reviews/project-board-20261015/after-grid-dark.png": "15ee411e0359fa2d0467656f745b860de79830fce72b071a1af6e7f768b20055",
+    "docs/reviews/project-board-20261015/motion-frames.json.xz": "febc4221730708928395c00a511539ecd88580a75eefbbe0551eb8906766ca62",
+    "docs/reviews/project-board-20261015/after-overview-initial.png": "312e897bd9b85d009e7d88408ccbf03b5af01767c4f700f347c727fa8237c7e5",
+    "docs/reviews/project-board-20261015/peer-project-workspace.png": "74969779b73761095237d211c0ef1ea9f6a1dc06655d0d1d58ab55fa140ddb8e",
+    "docs/reviews/project-board-20261015/oreo-sterly-reference-8.png": "f567bc07292ca2ba4334c9806bf1b8c660b6a64b5ede4dfa00e64987c987d01e",
+    "docs/reviews/project-board-20261015/after-activity.png": "5fac831232d33afdc00a1a1a04d91bac7fadf235be7a1299972b01b7d846db58",
+    "docs/reviews/project-board-20261015/after-mobile-overview.png": "7b1f4567db35567d93c605d93375ac1ab8e536447c106291d146ef386e0a6a2d",
+    "docs/reviews/project-board-20261015/after-create-docs.png": "86bb05a72c61429c0f2e571d55868d0c29cc3db0dade17342a3a945c718eccc4",
+    "docs/reviews/project-board-20261015/before-changelog.png": "446f46db0f2801d33fe9032235122ffc335cf416b43bc3877c2691cac93ac334",
+    "docs/reviews/project-board-20261015/build.log": "fa53e7b34d8fb71e96e075b9c99afa73d4090cfc0439d24bd281eb1c431cacc4",
+    "docs/reviews/project-board-20261015/after-overview-final.png": "628b55443ac9f0ff250128515d2f36686113565baf11d76e3a90738c915ac730",
+    "src/components/project-board/index.tsx": "09142b31f9226299373437192d3074a788e40d58fab0b31a05621a50985b2170",
+    "src/components/project-board/project-board.css": "399bff6bd2f580eec017e62424c9a9c789a1490bf56741f78676c223ffc15f8f",
+    "src/patterns/project-board/index.tsx": "67f81765ab6cc6061b9b8408d2bd29e7ed403ac76f836ef0d824abcac27cdf3e",
+    "src/patterns/project-board/data.ts": "4466e22bfef5a6d2fd26f4753398984d2b45e0b77429ce0e1f9e4c00f391cda0",
+    "src/patterns/project-board/project-board-workspace.css": "f7cf19dd02609a2b4baf1779741e58f48206137f533017a1c7f7a23c1de9c6ea"
+  }
+}

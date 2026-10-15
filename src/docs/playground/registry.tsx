@@ -1,3 +1,5 @@
+import { ProjectCreateCard, ProjectBoardOverview } from "@/components/project-board";
+import { BOARD_PROJECTS, BOARD_PEOPLE } from "@/patterns/project-board/data";
 import { WorkspaceSetup, ToolAccessRow, MemberAccessTable, WorkspaceInvitation } from "@/components/workspace-access";
 import { ACCESS_TOOLS, ACCESS_MEMBERS, SETUP_STEPS } from "@/patterns/access-workspace/data";
 import { ClientSummary, ClientContactStrip, ClientFinanceSummary } from "@/components/client";
@@ -102,6 +104,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "project-board": {ProjectCreateCard, ProjectBoardOverview},
   "workspace-access": {WorkspaceSetup, ToolAccessRow, MemberAccessTable, WorkspaceInvitation},
   client: { ClientSummary, ClientContactStrip, ClientFinanceSummary },
   "model-routing": { RoutingPolicyControl, RoutingFlow, RouteMetrics },
@@ -162,6 +165,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "project-create-card": {...define("Project Create Card",{title:text("A little room for your next idea."),animated:toggle(true),action:toggle(true)},v=><div className="w-full max-w-xs p-4"><ProjectCreateCard title={v.title} animated={v.animated} onCreate={v.action?()=>{window.location.href="/project-board";}:undefined}/></div>),source:"project-board"},
+  "project-board-overview": {...define("Project Board Overview",{empty:toggle(false),showCreate:toggle(true)},v=><div className="w-full min-w-0 p-4"><ProjectBoardOverview projects={v.empty?[]:BOARD_PROJECTS} people={BOARD_PEOPLE} showCreate={v.showCreate}/></div>),source:"project-board"},
   "workspace-setup": {...define("Workspace Setup",{complete:toggle(false),empty:toggle(false)},v=><div className="w-full p-6"><WorkspaceSetup steps={v.empty?[]:SETUP_STEPS.map(s=>({...s,complete:v.complete||s.complete}))}/></div>),source:"workspace-access"},
   "tool-access-row": {...define("Tool Access Row",{name:text("Claude"),detail:text("4 people have access")},v=><div className="w-full max-w-lg p-6"><ToolAccessRow tool={{...ACCESS_TOOLS[0],name:v.name}} detail={v.detail}/></div>),source:"workspace-access"},
   "member-access-table": {...define("Member Access Table",{empty:toggle(false),active:toggle(true)},v=><div className="w-full p-4"><MemberAccessTable members={v.empty?[]:ACCESS_MEMBERS} tools={ACCESS_TOOLS} activeMemberIds={v.active?["sophia","maya"]:[]}/></div>),source:"workspace-access"},
