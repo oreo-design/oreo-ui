@@ -238,3 +238,7 @@ Inspired by [Nizam’s callback board](https://x.com/nizamdesign/status/21102794
 ### Client Workspace
 
 `/client-workspace` adapts [Tanjim’s client detail reference](https://x.com/Tanjim38/status/2110407786957795338) into a responsive light/dark local CRM template. Client Summary, Client Contact Strip and Client Finance Summary are reusable from `src/components/client`; each has docs and a live playground. Six client sections include editable USD invoices, projects, downloadable sample documents, contacts, activity and notes. Totals derive from the fixtures, with an explicit January 16, 2026 snapshot. The shared InvoiceTable adds optional currency and contact-column labeling; its default EUR behavior is unchanged. Local changes reset on reload.
+
+### Access Workspace
+
+`/access-workspace` is a shared-tool workspace inspired by [Marcel Kargul’s UniOps study](https://kargul.studio/work/uniops). It includes Dashboard, Tools, Team, Sessions, Audit and Settings, plus invitation previews. Four reusable components have docs and playgrounds: WorkspaceSetup, ToolAccessRow, MemberAccessTable and WorkspaceInvitation. Local invitations, access grants and sessions share one dataset; reload resets it. No external app, credential, email or authorization service is connected.
