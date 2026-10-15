@@ -1,3 +1,6 @@
+import { ProjectSummaryDocs } from "@/pages/ProjectSummaryDocs";
+import { TaskRowDocs } from "@/pages/TaskRowDocs";
+import { ProjectWorkspacePage } from "@/pages/ProjectWorkspacePage";
 import { TreeStepperDocs } from "@/pages/TreeStepperDocs";
 import { StepProgressDocs } from "@/pages/StepProgressDocs";
 import { SecurityReviewPage } from "@/pages/SecurityReviewPage";
@@ -94,6 +97,9 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "project-summary": ProjectSummaryDocs,
+  "task-row": TaskRowDocs,
+  "project-workspace": ProjectWorkspacePage,
   "tree-stepper": TreeStepperDocs,
   "step-progress": StepProgressDocs,
   "security-review": SecurityReviewPage,

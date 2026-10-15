@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "project-summary": { title: "Project Summary", description: "Compact project progress, team and delivery metadata." },
+  "task-row": { title: "Task Row", description: "Accessible task completion and detail actions with contextual metadata." },
+  "project-workspace": { title: "Project Workspace", description: "An interactive project overview, task list and board with editing and progress." },
   "tree-stepper": { title: "Tree Stepper", description: "A hierarchical checklist that opens only the selected branch." },
   "step-progress": { title: "Step Progress", description: "A compact accessible progress track for completed checks." },
   "security-review": { title: "Security Review", description: "A local review workspace with branching steps, evidence, outcomes and completion summary." },

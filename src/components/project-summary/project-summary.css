@@ -1,0 +1,87 @@
+.oreo-project-summary {
+  min-width: 0;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  padding: 1.25rem;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+.ps-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+.ps-icon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  background: var(--color-palette-purple-bg);
+  color: var(--color-palette-purple-text);
+  border-radius: var(--radius-control);
+}
+.ps-heading h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  flex: 1;
+  min-width: 0;
+}
+.ps-heading h3 button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
+  width: 100%;
+  border-radius: var(--radius-control);
+}
+.ps-heading h3 svg {
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+}
+.ps-heading button:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 4px;
+}
+.ps-description {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin: 0.875rem 0 1.25rem;
+}
+.oreo-project-summary .oreo-step-progress {
+  margin-top: 1.25rem;
+}
+.oreo-project-summary footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.ps-due {
+  display: flex;
+  gap: 0.375rem;
+  align-items: center;
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+}
+.ps-people {
+  display: flex;
+  align-items: center;
+  padding-left: 0.375rem;
+}
+.ps-people > span {
+  margin-left: -0.375rem;
+  outline: 2px solid var(--color-bg-base);
+}
+.ps-more {
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  font-size: 0.625rem;
+  background: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+}

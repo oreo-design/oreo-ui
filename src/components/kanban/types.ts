@@ -19,6 +19,8 @@ export type KanbanBoardProps = {
   cards: KanbanCard[];
   people?: KanbanPerson[];
   onCardsChange: (cards: KanbanCard[]) => void;
+  /** Optional details action; gives dragging its own accessible handle. */
+  onCardOpen?: (card: KanbanCard) => void;
   defaultView?: KanbanView;
   className?: string;
 };

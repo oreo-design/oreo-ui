@@ -1,3 +1,5 @@
+import { ProjectSummary } from "@/components/project-summary";
+import { TaskRow } from "@/components/task-row";
 import { TreeStepper, getTreeSteps } from "@/components/tree-stepper";
 import { StepProgress } from "@/components/step-progress";
 import { REVIEW_TREE } from "@/patterns/security-review/data";
@@ -69,6 +71,8 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "project-summary": { ProjectSummary },
+  "task-row": { TaskRow },
   "tree-stepper": { TreeStepper },
   "step-progress": { StepProgress },
   "timeframe-selector": { TimeframeSelector },
@@ -112,6 +116,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "project-summary": define("Project Summary", { title:text("Website redesign"), description:text("A clearer story, from first visit to first customer."), completed:number(3,0,18,1), total:number(12,0,18,1), status:select(["On track","At risk","Planning"],"On track"), due:text("Oct 30") }, v=><div className="w-full max-w-md"><ProjectSummary {...v} people={[{name:"Alex Morgan",color:"purple"},{name:"Sam Chen",color:"pink"},{name:"Jules Carter",color:"blue"},{name:"Maya Wilson",color:"mint"}]}/></div>),
+  "task-row": define("Task Row", { title:text("Finalize navigation"), status:select(["backlog","todo","progress","review","done"],"progress"), priority:select(["Low","Medium","High"],"High"), overdue:toggle(), disabled:toggle() }, (v,set)=><div className="w-full rounded-card-medium border border-border-subtle"><TaskRow {...v} id="WEB-102" project="Website redesign" due="Today" person={{name:"Alex Morgan",color:"purple"}} onOpen={()=>window.location.assign("/project-workspace")} onComplete={done=>set("status",done?"done":"todo")}/></div>),
   "tree-stepper": define("Tree Stepper", { value: select(getTreeSteps(REVIEW_TREE).map(s=>s.node.id),"suspicious"), disabled: toggle(), empty: toggle(), attention: toggle() }, (v,set)=><div className="w-full max-w-sm rounded-card-medium border border-border-subtle bg-bg-base p-4"><TreeStepper nodes={v.empty?[]:REVIEW_TREE} value={v.value} onValueChange={value=>set("value",value)} completed={["devices","ownership","overview"]} attention={v.attention?["overview"]:[]} disabled={v.disabled}/></div>),
   "step-progress": define("Step Progress", { completed:number(3,0,18,1), total:number(18,0,18,1), label:text("Review progress") }, v=><div className="w-full max-w-sm"><StepProgress {...v}/></div>),
   "timeframe-selector": define("Timeframe Selector", { value: select(["1h","4h","24h","3d","1w"],"24h"), disabled: toggle() }, (v,set) => <TimeframeSelector {...v} onValueChange={value=>set("value",value as typeof v.value)} />),
