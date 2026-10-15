@@ -1,0 +1,98 @@
+Console output:
+[log] URL: http://localhost:5210/edge-observatory
+        - complementary:
+          - role=link[name="O Oreo Edge Pro · sample team"i]
+          - tablist "Monitor views":
+            - tab "Overview" [id="base-ui-_r_0_"]
+            - tab "Regions" [id="base-ui-_r_1_"]
+            - tab "Logs" [id="base-ui-_r_2_"]
+            - tab "Deployments" [id="base-ui-_r_3_"]
+            - paragraph:
+              - text: "Projects"
+              - text: "storefront-prod"
+                - text: "Edge request
+[log] [
+  '[debug] [vite] hot updated: /src/patterns/edge-observatory/index.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[error] Failed to load resource: the server responded with a status of 403 (Forbidden)',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://localhost:5210/edge-observatory color: rgb(120, 120, 120) color: inherit {o: http://localhost:5210/edge-observatory, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792045219920} /_vercel/insights/view'
+]
+[log] inition:
+                          - text: "124"
+                          - text: "ms"
+                        - term "Requests / s"
+                        - definition:
+                          - text: "158K"
+                        - term "5xx errors"
+                        - definition:
+                          - text: "0.36"
+                          - text: "%"
+  - dialog:
+      - heading "Deployment #4127"
+      - role=button[name="Close deployment"i]
+    - paragraph:
+      - text: "Extend edge image cache lifetime"
+    - descriptionlist:
+        - term "Status"
+        - definition:
+          - text: "Needs attention"
+        - term "Commit"
+        - definition:
+          - text: "3fd2b7a"
+        - term "Author"
+        - definition:
+          - text: "Jamie Lee"
+        - term "Environment"
+        - definition:
+          - text: "Production preview"
+    - paragraph:
+      - text: "This is a local release preview. No repository, server or traffic routing is changed."
+    - role=button[name="Inspect error trace"i]
+    - toolbar "Playwriter tools":
+      - role=button[name="Copy Locator"i]:
+        - text: "Copy locator"
+      - role=button[name="Record Skill Record a skill"i]
+      - role=button[name="Start remote control"i]:
+          - text: "Remote control"
+        - text: "Share this tab"
+      - role=button[name="Hide toolbar"i]
+      - generic "Drag to move"
+[log] []
+[log]                - row:
+                      - cell "14:50:28"
+                      - cell "504"
+                      - cell "/api/products"
+                      - cell "sin1"
+                      - cell "124 ms"
+                    - row:
+                      - cell "14:45:38"
+                      - cell "504"
+                      - cell "/images/hero.webp"
+                      - cell "sin1"
+                      - cell "124 ms"
+              - status:
+                - text: "3"
+                - text: "of"
+                - text: "36"
+                - text: "recent requests ·"
+                - text: "Singapore"
+          - sectionfooter:
+              - text: "Sample infrastructure · changes reset on reload"
+            - role=link[name="Explore the components ↗"i]
+            - role=link[name="Inspired by Augustas ↗"i]
+    - toolbar "Playwriter tools":
+      - role=button[name="Copy Locator"i]:
+        - text: "Copy locator"
+      - role=button[name="Record Skill Record a skill"i]
+      - role=button[name="Start remote control"i]:
+          - text: "Remote control"
+        - text: "Share this tab"
+      - role=button[name="Hide toolbar"i]
+      - generic "Drag to move"
+[log] []
+[log] PASS deployment detail trace navigation

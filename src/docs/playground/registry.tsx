@@ -1,3 +1,5 @@
+import { RegionTrafficMap } from "@/components/edge-monitor";
+import { REGIONS } from "@/patterns/edge-observatory/data";
 import { Switch } from "@/components/switch";
 import { ToggleComposer, ComposerModeSwitch, ComposerFormattingToolbar, EMPTY_COMPOSER, type ComposerMode } from "@/components/toggle-composer";
 import { CanvasToolbar, type CanvasMode } from "@/components/canvas-toolbar";
@@ -59,6 +61,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "edge-monitor": { RegionTrafficMap },
   switch: { Switch },
   "toggle-composer": { ToggleComposer, ComposerModeSwitch, ComposerFormattingToolbar },
   "canvas-toolbar": { CanvasToolbar },
@@ -96,6 +99,7 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "edge-monitor": define("Region Traffic Map", { selected: select(REGIONS.map(r=>r.id), "sin1"), empty: toggle() }, (v,set) => <div className="w-full max-w-3xl rounded-card-medium border border-border-subtle bg-bg-elevated"><RegionTrafficMap regions={v.empty?[]:REGIONS} selected={v.selected} onSelect={id=>set("selected",id)}/></div>),
   switch: define("Switch", { checked: toggle(false), variant: select(["default", "stretch"], "stretch"), disabled: toggle(), readOnly: toggle() }, (v,set) => <Switch aria-label="Stretch motion" checked={v.checked} onCheckedChange={checked=>set("checked",checked)} variant={v.variant} disabled={v.disabled} readOnly={v.readOnly} />),
   "toggle-composer": define("Toggle Composer", { mode: select(["quick", "long"], "quick"), surface: select(["solid", "frosted"], "solid"), quick: text("A thought worth sharing."), headline: text("A longer story"), intro: text("Start with a little context."), body: text("Make room for the details."), disabled: toggle() }, (v,set) => <div className="w-full max-w-lg"><ToggleComposer mode={v.mode as ComposerMode} onModeChange={mode=>set("mode",mode)} surface={v.surface} disabled={v.disabled} value={{...EMPTY_COMPOSER,quick:v.quick,headline:v.headline,intro:v.intro,body:v.body}} onValueChange={value=>{for (const key of Object.keys(EMPTY_COMPOSER) as (keyof typeof EMPTY_COMPOSER)[]) set(key,value[key]);}} /></div>),
   "canvas-toolbar": define("Canvas Toolbar", { zoom: number(95,10,200,5), mode: select(["pan","select"],"select"), disabled: toggle() }, (v,set) => <CanvasToolbar zoom={v.zoom} onZoomChange={zoom=>set("zoom",zoom)} mode={v.mode as CanvasMode} onModeChange={mode=>set("mode",mode)} disabled={v.disabled} onFit={()=>set("zoom",95)} />),

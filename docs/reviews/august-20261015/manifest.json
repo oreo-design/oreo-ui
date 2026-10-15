@@ -1,0 +1,200 @@
+{
+  "baseline": "00d813aedd735404d4b1304523b9039c1e6b44ed",
+  "implementation": "f8fb13b84072e1e2b57f7a74507ffd41fd5369a6",
+  "environment": "Local fixture, Playwriter managed Chromium, English, 2026-10-15",
+  "recording": "not captured; no new motion or timing claims",
+  "images": [
+    {
+      "file": "after-deployment-final.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "32b96ea7cc6fc1512e29ad193dae16389f56d13801feb88dc0609ccdf7074f9a",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-deployment.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "f85d5a9e2371b5bc76bc273a09d1579b76735c14540f173f49e505b18dfd6ff9",
+      "status": "superseded",
+      "kind": "after"
+    },
+    {
+      "file": "after-desktop-final.png",
+      "width": 1440,
+      "height": 1385,
+      "sha256": "eadc95b3851569c5dbb1b00a74841378c8d76e4278800bdc9a188ebd306bae8e",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-desktop-first.png",
+      "width": 1440,
+      "height": 1339,
+      "sha256": "d1d5f4275cf4c0383d0535d7425e268d525eae96d389573a3acb9af7f73d9270",
+      "status": "superseded",
+      "kind": "after"
+    },
+    {
+      "file": "after-desktop.png",
+      "width": 1440,
+      "height": 1385,
+      "sha256": "eadc95b3851569c5dbb1b00a74841378c8d76e4278800bdc9a188ebd306bae8e",
+      "status": "superseded",
+      "kind": "after"
+    },
+    {
+      "file": "after-docs.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d7216995b0280aebe776e18d576f38bb93067a97a1e025921af4ce8d3f2f12b8",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-empty.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "fad48b0b17506e090269748bbe42720c65d16b57093a75a4c6265ea7f4a10fe6",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-light-default-final.png",
+      "width": 1440,
+      "height": 1385,
+      "sha256": "fa97c8dc4f5b4366c61015396e374e2ee719a26bbb26a153c15ed325a940f89f",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-light-final.png",
+      "width": 1440,
+      "height": 1385,
+      "sha256": "7ab1b24945d8dda813e2a1225a5631011648037512732f92067c4fe64442b275",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-light.png",
+      "width": 1440,
+      "height": 1339,
+      "sha256": "53b578c5c4af26216e6ddb9f0e429c106f7a32266340e1a781bb6d0b8bd4ec35",
+      "status": "superseded",
+      "kind": "after"
+    },
+    {
+      "file": "after-medium.png",
+      "width": 1000,
+      "height": 1918,
+      "sha256": "c4412cde623e00d10e94419b794643ad370e692d8cf6506d8cda012a062be627",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "width": 390,
+      "height": 2497,
+      "sha256": "1df6e1f1a936e465811208fc2e2152ed6119ee3e4db794a91eb1effc8d1be859",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-mobile-final.png",
+      "width": 390,
+      "height": 2497,
+      "sha256": "7094bfc7d0174ed7456ea8d41e7eb26db7ec6fc73d5e6e77bb00d95c41932981",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-mobile-logs.png",
+      "width": 390,
+      "height": 2819,
+      "sha256": "61a1e6bbb9a0d746eeb446cc2cb31b5d4a7bae9c991f49f8d8bb58be210569aa",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-mobile.png",
+      "width": 390,
+      "height": 2388,
+      "sha256": "775f30efe3277ab101afd61851eb7e29c0a014ee61550c9950d9d0e11798ae5a",
+      "status": "superseded",
+      "kind": "after"
+    },
+    {
+      "file": "after-playground-empty.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "ba7638c23c2c3f50c9646b50265e7f70bdf1027416e5cc41443fc07a13380af8",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-playground.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "7ef9a6ef121e10dfda663d8493232c15f739cdb449adf558de8cefcfb8d70548",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "after-trace.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "94131f6c11d9ed0cac912156b6048894958340e356b24c7a9074d7defdc39c28",
+      "status": "current",
+      "kind": "after"
+    },
+    {
+      "file": "before-activity-peer.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "ff47f9b8bda42442295ba717e523ff526bb7dde3ada1ccb0b789281011e88759",
+      "status": "current",
+      "kind": "baseline"
+    },
+    {
+      "file": "before-entry.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "47acd76280376c6da8d7005ddef7bad0ed296dc27f2c96dbd3a9cc86c1931870",
+      "status": "current",
+      "kind": "baseline"
+    },
+    {
+      "file": "reference-center.png",
+      "width": 2544,
+      "height": 1624,
+      "sha256": "ad5c8707d6af89f60f897985a9b3e89a19e1c0bb722bd064e44ad6af1327e92a",
+      "status": "current",
+      "kind": "reference"
+    },
+    {
+      "file": "reference-left.png",
+      "width": 2544,
+      "height": 1624,
+      "sha256": "39fc84a09acc36716599b192aee0070e2e3cf46ee38e53ff448859b6cf2af540",
+      "status": "current",
+      "kind": "reference"
+    },
+    {
+      "file": "reference-post.png",
+      "width": 2544,
+      "height": 1624,
+      "sha256": "80364b5e64601a996e690b6145c1ca4f2ff85adc90d99d68c6ce1599652ab03c",
+      "status": "current",
+      "kind": "reference"
+    },
+    {
+      "file": "reference-right.png",
+      "width": 2544,
+      "height": 1624,
+      "sha256": "9ed5fa9fdcf8e3f40b1ff91da954a9b4138a5aadf838216f2c90091e8cb32722",
+      "status": "current",
+      "kind": "reference"
+    }
+  ]
+}
