@@ -1,0 +1,330 @@
+.uf-timeline,
+.uf-projection,
+.uf-pace {
+  color: var(--color-text-primary);
+  width: 100%;
+  min-width: 0;
+  font-variant-numeric: tabular-nums;
+}
+.uf-timeline-scroll {
+  overflow: auto;
+  border-radius: var(--radius-control);
+  scrollbar-width: thin;
+}
+.uf-timeline-inner {
+  min-width: 43rem;
+}
+.uf-axis,
+.uf-timeline-row {
+  display: grid;
+  grid-template-columns: 10rem minmax(15rem, 1fr) 11rem;
+  gap: 1rem;
+  align-items: center;
+}
+.uf-axis {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+  padding: 0 0.75rem 0.75rem;
+}
+.uf-axis > div {
+  display: flex;
+  justify-content: space-between;
+}
+.uf-axis > div span {
+  flex: 1;
+  text-align: left;
+}
+.uf-timeline-row {
+  width: 100%;
+  text-align: left;
+  min-height: 3.75rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  cursor: pointer;
+  border-radius: var(--radius-control);
+}
+.uf-timeline-row[aria-pressed="true"] {
+  background: var(--color-bg-elevated);
+}
+.uf-account-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  font-size: 0.8125rem;
+}
+.uf-account-label > span:last-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.uf-account-label small,
+.uf-row-outlook small {
+  display: block;
+  font-size: 0.625rem;
+  color: var(--color-text-tertiary);
+  margin-top: 0.3rem;
+}
+.uf-monogram {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-default);
+  display: grid;
+  place-items: center;
+  flex: none;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.uf-cells {
+  height: 2.5rem;
+  display: grid;
+  gap: 2px;
+  position: relative;
+}
+.uf-cells > i {
+  border-radius: 2px;
+  background: var(--color-text-secondary);
+}
+.uf-cells > i[data-state="future"] {
+  background: transparent;
+  border: 1px dotted var(--color-border-default);
+}
+.uf-cells > i[data-state="locked"] {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 3px,
+    var(--color-status-error) 3px,
+    var(--color-status-error) 4px
+  );
+  opacity: 0.55;
+}
+.uf-reset-marker {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: var(--color-text-primary);
+  z-index: 1;
+}
+.uf-out-marker {
+  position: absolute;
+  top: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+  background: var(--color-status-error);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 2px var(--color-bg-surface);
+}
+.uf-row-outlook {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.uf-row-outlook[data-risk] {
+  color: var(--color-text-primary);
+}
+.uf-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.625rem;
+  color: var(--color-text-tertiary);
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+.uf-legend > span {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.uf-legend i {
+  display: inline-block;
+  width: 0.875rem;
+  height: 0.5rem;
+  border-radius: 2px;
+  flex: none;
+}
+.uf-key-used {
+  background: var(--color-text-secondary);
+  opacity: 0.65;
+}
+.uf-key-locked {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    var(--color-status-error) 2px,
+    var(--color-status-error) 3px
+  );
+}
+.uf-legend .uf-key-reset {
+  width: 2px;
+  background: var(--color-text-primary);
+}
+.uf-key-future {
+  border: 1px dotted var(--color-border-default);
+}
+.uf-key-over {
+  background: var(--color-palette-orange-text);
+}
+.uf-key-line {
+  background: var(--color-text-primary);
+  height: 2px !important;
+}
+.uf-key-dash {
+  border-top: 1px dashed var(--color-text-secondary);
+  height: 1px !important;
+}
+.uf-key-dots {
+  border-top: 1px dotted var(--color-text-tertiary);
+  height: 1px !important;
+}
+.uf-footnote {
+  font-size: 0.6875rem;
+  line-height: 1.7;
+  color: var(--color-text-tertiary);
+  margin-top: 0.5rem;
+}
+.uf-projection figcaption,
+.uf-pace figcaption {
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+.uf-projection figcaption > span,
+.uf-pace figcaption > span {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+  margin-top: 0.5rem;
+}
+.uf-projection svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  margin-top: 1rem;
+}
+.uf-projection svg text {
+  fill: var(--color-text-tertiary);
+  font: 11px var(--font-sans);
+}
+.uf-gridline {
+  stroke: var(--color-border-default);
+  stroke-dasharray: 3 5;
+}
+.uf-history {
+  stroke: var(--color-text-primary);
+  stroke-width: 2;
+  fill: none;
+}
+.uf-area {
+  fill: var(--color-text-primary);
+  opacity: 0.05;
+}
+.uf-prediction {
+  stroke: var(--color-text-primary);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+  fill: none;
+}
+.uf-even {
+  stroke: var(--color-text-tertiary);
+  stroke-dasharray: 2 5;
+  fill: none;
+}
+.uf-now-line {
+  stroke: var(--color-border-default);
+  stroke-dasharray: 4 4;
+}
+.uf-data {
+  margin-top: 1rem;
+  font-size: 0.625rem;
+  color: var(--color-text-tertiary);
+}
+.uf-data summary {
+  cursor: pointer;
+}
+.uf-data table {
+  width: 100%;
+  margin-top: 0.75rem;
+  border-collapse: collapse;
+}
+.uf-data th,
+.uf-data td {
+  padding: 0.4rem 0;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.uf-data th:last-child,
+.uf-data td:last-child {
+  text-align: right;
+}
+.uf-pace {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+.uf-pace-bars {
+  position: relative;
+  height: 8rem;
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0 2rem;
+  border-bottom: 1px solid var(--color-border-default);
+}
+.uf-pace-column {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  position: relative;
+}
+.uf-pace-bar {
+  display: block;
+  min-height: 1px;
+  width: 65%;
+  max-width: 2rem;
+  background: var(--color-text-tertiary);
+  position: relative;
+  border-radius: 3px 3px 0 0;
+}
+.uf-pace-bar[data-over] {
+  background: var(--color-palette-orange-text);
+}
+.uf-pace-bar b {
+  position: absolute;
+  top: -1.25rem;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 400;
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+}
+.uf-pace-day {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.625rem;
+  color: var(--color-text-tertiary);
+}
+.uf-allowance {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed var(--color-text-secondary);
+  z-index: 1;
+  pointer-events: none;
+}
+.uf-timeline-scroll:focus-visible,
+.uf-timeline-row:focus-visible,
+.uf-data summary:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: -2px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .uf-timeline-row:hover {
+    background: var(--color-state-hover);
+  }
+}

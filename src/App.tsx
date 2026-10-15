@@ -1,3 +1,5 @@
+import { UsageForecastDocs } from "@/pages/UsageForecastDocs";
+import { UsageForecastPage } from "@/patterns/usage-forecast";
 import { RecipientDocs } from "@/pages/RecipientDocs";
 import { PaymentWorkspacePage } from "@/patterns/payment-workspace";
 import { SalesDocs } from "@/pages/SalesDocs";
@@ -137,6 +139,10 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "forecast-timeline": UsageForecastDocs,
+  "usage-projection": UsageForecastDocs,
+  "daily-usage-pace": UsageForecastDocs,
+  "usage-forecast": UsageForecastPage,
   "recipient-search": RecipientDocs,
   "payment-rail-picker": RecipientDocs,
   "recipient-form": RecipientDocs,

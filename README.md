@@ -258,3 +258,5 @@ Lumeo Studio reference: [fleet, ML pipeline and incident monitoring](https://x.c
 - **Sales Workspace** (`/sales-workspace`): Wuraola-inspired CRM dashboard with reusable RevenueMatrix, PipelineFunnel, DealStageBadge and DealTable; local creation/editing, stage filters, bulk win/undo and CSV export. Component docs include adjustable previews and data contracts.
 
 - **Payment Workspace** (`/payment-workspace`): Atikh Bana-inspired inline recipient creation with RecipientSearch, PaymentRailPicker and RecipientForm; five local draft steps, rail-dependent fields, precise decimal amounts and editable review. No transfers or persistence.
+
+- **Usage Forecast** — reusable account timelines, usage projections and daily pace charts, composed into a local scenario workspace with filters, table view and CSV export. Reference: [nyx](https://x.com/Niyxuis/status/2110504674143150148).
