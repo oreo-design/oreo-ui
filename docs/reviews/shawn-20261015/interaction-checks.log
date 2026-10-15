@@ -1,0 +1,120 @@
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+Console output:
+[log] Checked entry [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked bold [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Element: span.writing-block-text
+Box: x=146 y=809 w=820 h=36
+Children: 0  Text length: 34
+Scroll Y: size=36 client=36 overflowing=false top=0
+Scroll X: size=820 client=820 overflowing=false left=0
+Styles: font-weight=700
+[log] Checked Italic [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked Underline [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked Strikethrough [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked Inline code [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked Highlight [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked font size [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked decrease [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked alignment [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked color menu [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked rose [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked font menu [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked serif [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked disable code [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Element: span.writing-block-text
+Box: x=146 y=809 w=820 h=36
+Children: 0  Text length: 34
+Scroll Y: size=36 client=36 overflowing=false top=0
+Scroll X: size=820 client=820 overflowing=false left=0
+Styles: font-family=Georgia, "Times New Roman", serif text-align=right text-decoration-line=underline line-through color=rgb(194, 41, 138)
+[log] Checked link dialog [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked link rejected [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked link saved [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked edit existing link [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked remove link [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked mention dialog [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked mention inserted [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked edit text [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked actions [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked tidy [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked actions [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked sentence [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked undo [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked redo [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked switch block [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked restore block [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked empty block [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked empty recovery [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked reset [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] Checked undo reset [
+  "[pageerror] Uncaught TypeError: Cannot read properties of undefined (reading 'session')"
+]
+[log] PASS: style toggles, code precedence, size, alignment, color/font, link rejection/save/remove/focus, mention, text transforms, independent blocks, undo/redo, empty/recovery, reversible reset.

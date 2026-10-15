@@ -1,0 +1,28 @@
+Console output:
+[log] lucide
+[log] dark
+[log] dark colors
+[log] dismiss
+[log] disabled
+[log] code
+[log] Preview
+Code
+Replay
+
+Starting JSX with your current properties.
+
+Copy code
+TSX
+import { TextToolbar } from "@/components/text-toolbar";
+
+// Starting props. Connect event handlers in your app.
+<TextToolbar
+  disabled={false}
+  value={{"bold":false,"italic":false,"underline":false,"strikethrough":false,"code":false,"highlight":false,"color":"ink","font":"hand","size":22,"align":"center","disabled":false}}
+ />
+Use this component
+Copy command
+npx oreo-ui add text-toolbar
+
+Or copy src/components/text-toolbar/* into your project.
+[log] PASS size bounds, alternate icons, dark menu, disabled controls, JSX panel

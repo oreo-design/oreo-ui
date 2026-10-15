@@ -1,0 +1,271 @@
+{
+  "baseline": "3ee45537187f83bc7a445218f23fcc9e5e2742e7",
+  "implementation": "fe291a90b2a74b7b2a4a3d5af2a08faee02cd357",
+  "browser": "Chrome on macOS / Playwriter session 39",
+  "origin": "http://localhost:5206",
+  "fixture": "Writing Studio local sample; English; no account",
+  "files": [
+    {
+      "file": "after-color-menu.png",
+      "sha256": "9978a726c57d93ccae3d8e1b22ebe96d75431df5a80c069ad101c4aa9ea0f413",
+      "bytes": 133129,
+      "capturedOrLoggedAt": "2026-10-15T04:55:35.388322+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "after-empty-block.png",
+      "sha256": "ee860037e60d7d3e1bf456094322ed09d89859fb87065753aa0216aba7cd8507",
+      "bytes": 119678,
+      "capturedOrLoggedAt": "2026-10-15T04:55:37.668920+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "after-formatting.png",
+      "sha256": "ccd3979f6a82962307075b65e26fac7f5b13af9d1141e02abee1a10310848211",
+      "bytes": 125318,
+      "capturedOrLoggedAt": "2026-10-15T04:55:35.870220+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "after-initial-wide.png",
+      "sha256": "bd048fbf4908cc9db412c33fd197ed562e7cce93f6e5d93bfcdff00f9169dde8",
+      "bytes": 119649,
+      "capturedOrLoggedAt": "2026-10-15T04:53:53.922151+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "superseded visual iteration"
+    },
+    {
+      "file": "after-link-error.png",
+      "sha256": "c7426fb4fcaef809d0e7f98d9ee6f0a45a73e0924b10b1ea2e68ccf66cf61821",
+      "bytes": 121484,
+      "capturedOrLoggedAt": "2026-10-15T04:55:36.150177+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "before-entry.png",
+      "sha256": "edd0ca5e2b3a7b82a51b1bc683bbf4d50e2936b5b2d05df8ad1ec17a05965241",
+      "bytes": 87157,
+      "capturedOrLoggedAt": "2026-10-15T04:48:26.001018+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "baseline"
+    },
+    {
+      "file": "before-inline-menu.png",
+      "sha256": "478df662b935a6a0266f44a5cb65f41cff36a3f1e1b22d454b917893af58b685",
+      "bytes": 118599,
+      "capturedOrLoggedAt": "2026-10-15T04:50:08.752303+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "baseline"
+    },
+    {
+      "file": "build.log",
+      "sha256": "0dc5600329aae20f2df6c6ddd103cb8b6ef02fd29a168711e91a95f2a5bfa668",
+      "bytes": 31170,
+      "capturedOrLoggedAt": "2026-10-15T05:06:15.630497+00:00",
+      "status": "retained evidence"
+    },
+    {
+      "file": "edge-and-recording-checks.log",
+      "sha256": "99cf582bd956389e1bc5afdf41e89baa4971e5d0f8554a8e742c7d897ae8e3e2",
+      "bytes": 829,
+      "capturedOrLoggedAt": "2026-10-15T05:06:15.627411+00:00",
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-dark-color-menu.png",
+      "sha256": "21f1d3ea7836921f70c4087cea0aa23a20a5302b5f1ec66bed2425bd835af208",
+      "bytes": 128151,
+      "capturedOrLoggedAt": "2026-10-15T04:56:23.634480+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-dark-mobile-menu.png",
+      "sha256": "af82c834c4f8e17f0a7bd3887a56bc2ab207b642d7a0a12a7dbe0b0e1502d7f1",
+      "bytes": 62167,
+      "capturedOrLoggedAt": "2026-10-15T04:56:24.009594+00:00",
+      "pixels": [
+        390,
+        844
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-dark-mobile.png",
+      "sha256": "610a192cffadc66307bb9d8bcde60e7fd0b73b8ee363f2cc412917bf2bc3e230",
+      "bytes": 110335,
+      "capturedOrLoggedAt": "2026-10-15T04:56:23.826651+00:00",
+      "pixels": [
+        390,
+        1867
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-dark-tablet.png",
+      "sha256": "2dd85c318ab56848528f26216669b87bf462992b08f6f277c40138b2ee38cada",
+      "bytes": 121267,
+      "capturedOrLoggedAt": "2026-10-15T04:56:23.757568+00:00",
+      "pixels": [
+        900,
+        1723
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-dark-wide.png",
+      "sha256": "bf0791454f94b527d6c9b5cb85141616e3b4809eba82230e2ed597dbe0dc908c",
+      "bytes": 124741,
+      "capturedOrLoggedAt": "2026-10-15T04:56:23.442803+00:00",
+      "pixels": [
+        1440,
+        1095
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-docs-dark-lucide-menu.png",
+      "sha256": "97086df95ebb3ef582920d8a07a14d904c8983ac3131b95460ef308f11fe2398",
+      "bytes": 124710,
+      "capturedOrLoggedAt": "2026-10-15T05:04:20.094602+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-docs-disabled.png",
+      "sha256": "01dc03dbcadc9693e63744dc2d2c4be2dd39936c293c172db8a26e244af37d52",
+      "bytes": 111790,
+      "capturedOrLoggedAt": "2026-10-15T05:04:23.193538+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-light-mobile-menu.png",
+      "sha256": "dbbb979266d7edc653b5bbe5942288979a127598b8c3e11cbbef8fddee7d6426",
+      "bytes": 61846,
+      "capturedOrLoggedAt": "2026-10-15T04:58:51.871961+00:00",
+      "pixels": [
+        390,
+        844
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-light-mobile.png",
+      "sha256": "e62c6e7ad2ebe7aa2af2f8a60b055a1544f5835f8849fcee7e36eccd72be0673",
+      "bytes": 109696,
+      "capturedOrLoggedAt": "2026-10-15T04:58:51.172390+00:00",
+      "pixels": [
+        390,
+        1867
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-light-wide.png",
+      "sha256": "aa9f47a530211ef7769632b1e8cd57a069892d2799648fbcd268b28d2f7491dd",
+      "bytes": 124831,
+      "capturedOrLoggedAt": "2026-10-15T04:56:23.111631+00:00",
+      "pixels": [
+        1440,
+        1095
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-mention-limit.png",
+      "sha256": "3e7276ec36bbc6ed624b1ef52e320c5a737096a72316b1e3e0f4b5fb8e5af1ce",
+      "bytes": 117747,
+      "capturedOrLoggedAt": "2026-10-15T05:04:51.030709+00:00",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-mobile-link.png",
+      "sha256": "16d7c0c41c59704d2e3bac4b2cb9d2f59b8b7bfbe51e3c5c22ab59ed24fea6da",
+      "bytes": 49349,
+      "capturedOrLoggedAt": "2026-10-15T04:58:51.529428+00:00",
+      "pixels": [
+        390,
+        844
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "final-reviewed-wide.png",
+      "sha256": "7c18e685bfea537233da9b053e07485c2d2a501dae4ed8266ddb60328f02bb13",
+      "bytes": 125539,
+      "capturedOrLoggedAt": "2026-10-15T05:04:57.572554+00:00",
+      "pixels": [
+        1440,
+        1095
+      ],
+      "status": "retained evidence"
+    },
+    {
+      "file": "interaction-checks.log",
+      "sha256": "210ebf18a5f20180a67027e0f0091711483c9cb9e2802954715d988dd2faa5f9",
+      "bytes": 5081,
+      "capturedOrLoggedAt": "2026-10-15T05:06:15.625354+00:00",
+      "status": "retained evidence"
+    },
+    {
+      "file": "mobile-checks.log",
+      "sha256": "d577161f0eceb8c9efdc24d44952db3fac62154e306b6b8575dd02d77f95612f",
+      "bytes": 1145,
+      "capturedOrLoggedAt": "2026-10-15T05:06:15.629079+00:00",
+      "status": "retained evidence"
+    },
+    {
+      "file": "playground-checks.log",
+      "sha256": "305f9b88272e6cb92000dae3b68016c81c48c299032a9cff8b4358aa6d45e12c",
+      "bytes": 715,
+      "capturedOrLoggedAt": "2026-10-15T05:06:15.626511+00:00",
+      "status": "retained evidence"
+    },
+    {
+      "file": "reference.jpg",
+      "sha256": "e7ce81c462941c2018f77d991f212a839e6b6c3aa988613a7c47d1455fbaf9e2",
+      "bytes": 74441,
+      "capturedOrLoggedAt": "2026-10-15T04:47:07.229394+00:00",
+      "status": "reference"
+    }
+  ]
+}
