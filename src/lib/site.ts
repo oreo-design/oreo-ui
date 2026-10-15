@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  changelog: { title: "Changelog", description: "Selected Oreo UI updates with live previews, source links and upgrade context." },
+  "release-entry": { title: "Release Entry", description: "A reusable update entry with source provenance and a live preview slot." },
+  "upgrade-prompt": { title: "Upgrade Prompt", description: "Readable, copyable upgrade context with success feedback and manual recovery." },
   "brand-guide": { title: "Brand Guide", description: "A practical brand kit with logo downloads, colours, typography and a signature builder." },
   "brand-swatch": { title: "Brand Swatch", description: "A reusable colour specimen with an accessible copy action." },
   "type-scale": { title: "Type Scale", description: "Preview and export a responsive modular typography scale." },

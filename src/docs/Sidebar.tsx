@@ -8,12 +8,14 @@ type Group = { title: string; items: Item[] };
 const NAV: Group[] = [
   {
     title: "Getting Started",
-    items: [{ label: "Introduction", soon: true }, { label: "Tokens", soon: true }],
+    items: [{ label: "Changelog", page: "changelog" }, { label: "Introduction", soon: true }, { label: "Tokens", soon: true }],
   },
   {
     title: "Components",
     items: [
       { label: "Button", page: "button" },
+      { label: "Release Entry", page: "release-entry" },
+      { label: "Upgrade Prompt", page: "upgrade-prompt" },
       { label: "Icon Button", page: "icon-button" },
       { label: "Status Icon", page: "status-icon" },
       { label: "Chip", page: "chip" },

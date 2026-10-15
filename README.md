@@ -186,3 +186,7 @@ Inspired by [rico’s navigation concept](https://x.com/_heyrico/status/21104085
 - **Switch / Preference Studio** — opt-in stretch feedback on the existing Switch, plus a responsive settings template with live appearance and activity preferences. [Reference](https://x.com/samosemudiamhe/status/2110425458806235278).
 
 - **Edge Monitor / Edge Observatory** — metric tiles, regional traffic, percentile latency, request filters and deployment previews. [Reference](https://x.com/augustasdesign/status/2110393766754341153).
+
+### Changelog
+
+Browse selected main-branch updates at `/changelog`, with date anchors, search/type filters, real component previews, Markdown download and an agent upgrade prompt. `ReleaseEntry` (`/release-entry`) and `UpgradePrompt` (`/upgrade-prompt`) include editable playgrounds and API docs. The complete template lives in `src/patterns/changelog`; update its curated `data.ts` with verified merges. A merge entry does not assert a package release or website deployment.

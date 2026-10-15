@@ -1,3 +1,5 @@
+import { ReleaseEntry } from "@/components/release-entry";
+import { UpgradePrompt } from "@/components/upgrade-prompt";
 import { BrandSwatch } from "@/components/brand-swatch";
 import { TypeScale } from "@/components/type-scale";
 import { EmailSignature, SAMPLE_SIGNATURE } from "@/components/email-signature";
@@ -74,6 +76,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "release-entry": { ReleaseEntry }, "upgrade-prompt": { UpgradePrompt },
   "brand-swatch": { BrandSwatch }, "type-scale": { TypeScale }, "email-signature": { EmailSignature },
   "project-summary": { ProjectSummary },
   "task-row": { TaskRow },
@@ -120,6 +123,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "release-entry": define("Release Entry", { title:text("Brand Guide"), description:text("A practical toolkit for colours, typography and signatures."), kind:select(["Added","Updated","Fixed","Breaking"],"Added") }, v=><div className="w-full max-w-lg"><ReleaseEntry {...v} href="/brand-guide" sourceHref="https://github.com/oreo-design/oreo-ui/pull/43" sourceLabel="PR #43" /></div>),
+  "upgrade-prompt": define("Upgrade Prompt", { prompt:text("Review Oreo UI PR #43 and the components used in my project. Preserve local customizations and propose only relevant changes. https://github.com/oreo-design/oreo-ui/pull/43") }, v=><div className="w-full max-w-lg"><UpgradePrompt {...v} /></div>),
   "brand-swatch": define("Brand Swatch", { name:text("Iris"), hex:select(["#6550b9","#027864","#202020","#ffffff"],"#6550b9"), role:text("Accent colour"), disabled:toggle() }, v=><div className="w-full max-w-xs"><BrandSwatch {...v} onCopy={hex=>navigator.clipboard.writeText(hex).catch(()=>window.prompt("Copy this colour",hex))}/></div>),
   "type-scale": define("Type Scale", { base:number(16,12,24,1), ratio:number(1.25,1.125,1.5,.025), sample:text("") }, v=><div className="w-full max-w-3xl"><TypeScale {...v}/></div>),
   "email-signature": define("Email Signature", { name:text(SAMPLE_SIGNATURE.name), role:text(SAMPLE_SIGNATURE.role), email:text(SAMPLE_SIGNATURE.email), phone:text(""), website:text("example.com"), company:text("Oreo Studio") }, v=><div className="w-full max-w-md rounded-card-medium border border-border-subtle bg-bg-elevated p-6"><EmailSignature data={v}/></div>),

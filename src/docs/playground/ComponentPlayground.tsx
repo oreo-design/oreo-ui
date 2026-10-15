@@ -53,6 +53,7 @@ export function ComponentPlayground({ spec, nav, breadcrumb, appearance, onDocum
           <span aria-current="page" className="rounded-md bg-[var(--color-bg-base)] px-3 py-1.5 text-xs font-medium shadow-sm">Playground</span>
           <button type="button" onClick={onDocumentation} className="rounded-md px-3 py-1.5 text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] focus-visible:ring-2">Documentation</button>
         </div>
+        <a className="text-xs underline underline-offset-4 lg:hidden" href="/changelog">Changelog</a>
         <label className="flex w-full items-center gap-3 text-xs lg:hidden">Component
           <select aria-label="Component" value={nav.active} onChange={e => nav.onNavigate(e.target.value)} className="min-w-0 flex-1 rounded-lg border border-[var(--color-border-subtle)] bg-[var(--color-bg-base)] p-2">{Object.entries(playgrounds).map(([slug, entry]) => <option key={slug} value={slug}>{entry.title}</option>)}</select>
         </label>
