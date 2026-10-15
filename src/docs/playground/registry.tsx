@@ -1,3 +1,5 @@
+import { AskAnalytics, InsightSources, type AnalyticsRequest } from "@/components/ask-analytics";
+import { SUGGESTIONS, ANALYTICS_SOURCES, ANSWERS, answerFor } from "@/patterns/analytics-assistant/data";
 import { HubSearchHero, AgentCategoryGrid, IntegrationTile } from "@/components/agent-hub";
 import { HUB_CATEGORIES, HUB_AGENTS, HUB_INTEGRATIONS } from "@/patterns/agent-hub/data";
 import { PlaceMap, PlaceDetailCard, MapStylePicker, MAP_STYLES } from "@/components/place-map";
@@ -86,6 +88,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "ask-analytics": { AskAnalytics, InsightSources },
   "agent-hub": { HubSearchHero, AgentCategoryGrid, IntegrationTile },
   "place-map": { PlaceMap, PlaceDetailCard, MapStylePicker },
   "agent-connect": { AgentConnectCard, QuotaUsage, AgentClientPicker },
@@ -138,6 +141,12 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "ask-analytics": { ...define("Ask Analytics", { question:text(""), status:select(["idle","loading","success","empty","error"],"idle"), emptySuggestions:toggle(false), source:text("") }, (v,set)=>{
+    const question=v.question||SUGGESTIONS[0].question;
+    const request:AnalyticsRequest=v.status==="idle"?{status:"idle"}:v.status==="success"?{status:"success",question,answer:answerFor(question)??ANSWERS.signups}:v.status==="error"?{status:"error",question,message:"The source is unavailable. Try again."}:{status:v.status,question};
+    return <div className="w-full max-w-xl"><AskAnalytics value={v.question} onValueChange={q=>set("question",q)} suggestions={v.emptySuggestions?[]:SUGGESTIONS} request={request} onAsk={q=>{set("question",q);set("status",answerFor(q)?"success":"empty");}} onReset={()=>{set("status","idle");set("source","");}} onSourceSelect={id=>set("source",id)} defaultExpanded/>{v.source&&<p role="status" className="mt-4 text-sm text-text-secondary">{ANALYTICS_SOURCES.find(s=>s.id===v.source)?.description}</p>}</div>;
+  }), source:"ask-analytics" },
+  "insight-sources": { ...define("Insight Sources", { empty:toggle(false), selected:text("") }, (v,set)=><div className="w-full max-w-xl"><InsightSources sources={v.empty?[]:ANALYTICS_SOURCES.slice(0,3)} onSelect={id=>set("selected",id)}/>{v.selected&&<p role="status" className="mt-4 text-sm text-text-secondary">{ANALYTICS_SOURCES.find(s=>s.id===v.selected)?.description}</p>}</div>),source:"ask-analytics" },
   "hub-search-hero": { ...define("Hub Search Hero", { query:text(""), title:text("Agent hub"), description:text("Discover agents and integrations built for your team.") }, (v,set)=><div className="w-full max-w-4xl"><HubSearchHero value={v.query} onValueChange={query=>set("query",query)} title={v.title} description={v.description}/></div>), source:"agent-hub" },
   "agent-category-grid": { ...define("Agent Category Grid", { selected:select(["support","sales","marketing","engineering","finance","operations","research","people","other"],"support"), empty:toggle(false) }, (v,set)=><div className="w-full max-w-4xl"><AgentCategoryGrid items={v.empty?[]:HUB_CATEGORIES.map(c=>({...c,count:HUB_AGENTS.filter(a=>a.category===c.id).length}))} selectedId={v.selected} onSelect={id=>set("selected",id as typeof v.selected)}/></div>), source:"agent-hub" },
   "integration-tile": { ...define("Integration Tile", { connected:toggle(true), agentCount:number(4,0,100), integration:select(["zendesk","slack","intercom","github","notion","hubspot"],"slack") }, (v,set)=><div className="w-full max-w-md"><IntegrationTile integration={HUB_INTEGRATIONS.find(i=>i.id===v.integration)!} connected={v.connected} agentCount={v.agentCount} onOpen={()=>set("connected",!v.connected)}/><p className="mt-3 text-xs text-text-secondary">Click to toggle the demo state.</p></div>), source:"agent-hub" },

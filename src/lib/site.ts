@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "ask-analytics": { title:"Ask Analytics", description:"A compact dashboard question card with suggestions, grounded answers and recovery states." },
+  "insight-sources": { title:"Insight Sources", description:"Actionable source chips for analytics answers." },
+  "analytics-assistant": { title:"Analytics Assistant", description:"A local analytics dashboard with a question assistant, source details and saved insights." },
   "hub-search-hero": { title:"Hub Search Hero", description:"A dotted catalog header with controlled search and shortcut support." },
   "agent-category-grid": { title:"Agent Category Grid", description:"A compact category directory with accessible selection and counts." },
   "integration-tile": { title:"Integration Tile", description:"A tool identity, connection state and agent count in one compact card." },

@@ -22,6 +22,8 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Ask Analytics", page: "ask-analytics" },
+      { label: "Insight Sources", page: "insight-sources" },
       { label: "Hub Search Hero", page: "hub-search-hero" },
       { label: "Agent Category Grid", page: "agent-category-grid" },
       { label: "Integration Tile", page: "integration-tile" },
@@ -121,6 +123,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      { label: "Analytics Assistant", page: "analytics-assistant" },
       { label: "Agent Hub", page: "agent-hub" },
       { label: "Place Explorer", page: "place-explorer" },
       { label: "Agent Connections", page: "agent-connections" },{ label: "Finance Workspace", page: "finance-workspace" }, { label: "Presence Room", page: "presence-room" },

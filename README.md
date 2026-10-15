@@ -210,3 +210,7 @@ Browse selected main-branch updates at `/changelog`, with date anchors, search/t
 ### Agent Hub
 
 `HubSearchHero`, `AgentCategoryGrid` and `IntegrationTile` compose the `/agent-hub` template: local catalog search, category browsing, agent details and personal collection, draft creation, demo integration state, keyboard shortcut and responsive light/dark layouts. Component documentation and playgrounds live at `/hub-search-hero`, `/agent-category-grid` and `/integration-tile`. No external accounts are connected; changes reset on reload.
+
+### Analytics Assistant
+
+`AskAnalytics` and `InsightSources` compose the `/analytics-assistant` template: trial metrics and daily data, suggested questions, cancellable sample responses, source details, saved insights, unsupported questions and connection-error recovery. Light/dark and mobile layouts are included. Docs/playgrounds: `/ask-analytics` and `/insight-sources`. No AI service or external data is connected; all state resets on reload.
