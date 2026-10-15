@@ -50,6 +50,10 @@ Copy `src/components/skill-card` with its Oreo dependencies for the primitives, 
 
 ## Develop
 
+### Automation Studio
+
+Inspired by [rico’s agentic workspace](https://x.com/_heyrico/status/2110385506685186429), `/automation-components` adds eight reusable parts for grouped navigation, panels, run summaries, result disclosures, Build/Canvas views, workflow steps and empty/error states. `/automation-studio` combines them with Oreo’s Message, PromptBox and shared controls into a complete responsive template. The cropped reference informs the visible layout; workflow nodes and local interactions are independent extensions. No AI service, ad account or scheduler is connected. See the [component map and integration notes](src/patterns/automation-studio/README.md).
+
 ### Settings design-language experiment
 
 `/settings-lab` compares content changes, composition and deliberate extensions of the original Settings pattern. The reusable implementation, lineage contract and checks are documented in [the experiment guide](docs/settings-language/README.md), with evidence in [the results](docs/settings-language/RESULTS.md).

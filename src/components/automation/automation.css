@@ -1,0 +1,69 @@
+@reference "../../index.css";
+
+.agent-shell { @apply grid min-w-0 gap-2 rounded-card-medium border border-border-subtle bg-bg-elevated p-2 text-text-primary; grid-template-columns: 14rem minmax(0, 1fr) minmax(0, 1.08fr); height: calc(100dvh - 7rem); min-height: 42rem; }
+.agent-shell :is(button, a, input, textarea):focus-visible { outline: 2px solid var(--color-status-progress); outline-offset: 3px; }
+.agent-shell-assistant, .agent-shell-workspace { @apply min-h-0 min-w-0; }
+.agent-nav { @apply flex min-h-0 min-w-0 flex-col px-2 py-3; }
+.agent-nav-brand { @apply mb-8 flex min-h-10 items-center gap-3 px-2 text-base font-medium; }
+.agent-nav-groups { @apply min-h-0 flex-1 overflow-y-auto; }
+.agent-nav-groups section + section { @apply mt-7; }
+.agent-nav-groups h2 { @apply mb-2 px-3 text-xs font-normal text-text-tertiary; }
+.agent-nav-groups a { @apply flex min-h-10 items-center gap-3 rounded-control-large px-3 py-2 text-sm text-text-secondary hover:bg-state-hover; }
+.agent-nav-groups a[aria-current="page"] { @apply bg-state-press font-medium text-text-primary; }
+.agent-nav-groups svg { @apply shrink-0; }
+.agent-nav-footer { @apply mt-6 px-3 text-xs text-text-tertiary; }
+.agent-panel { @apply flex h-full min-h-0 min-w-0 flex-col overflow-hidden rounded-card-medium border border-border-subtle bg-bg-base; }
+.agent-panel-header { @apply flex min-h-14 shrink-0 items-center justify-between gap-2 border-b border-border-subtle bg-bg-base px-5 py-2; }
+.agent-panel-header h2 { @apply flex min-w-0 items-center gap-2.5 text-sm font-medium; overflow-wrap: anywhere; }
+.agent-panel-header h2 svg { @apply shrink-0 text-text-secondary; }
+.agent-panel-body { @apply min-h-0 flex-1 overflow-y-auto overscroll-contain; }
+.agent-panel-footer { @apply shrink-0 border-t border-border-subtle bg-bg-base p-4; }
+.agent-summary { @apply text-sm leading-7; }
+.agent-summary-duration { @apply mb-5 border-b border-border-subtle pb-4 text-sm text-text-tertiary; }
+.agent-summary h3 { @apply mb-4 text-base font-medium; }
+.agent-summary ol { @apply mt-6 list-decimal space-y-3 pl-6 text-text-secondary; }
+.agent-summary li { @apply pl-1; overflow-wrap: anywhere; }
+.agent-result { @apply overflow-hidden rounded-card-small border border-border-subtle bg-bg-base shadow-sm; }
+.agent-result-trigger { @apply flex min-h-16 w-full cursor-pointer items-center gap-3 px-4 py-3 text-sm font-medium hover:bg-state-hover; }
+.agent-result-mark { @apply grid size-8 shrink-0 place-items-center rounded-control bg-palette-mint-bg text-palette-mint-text; }
+.agent-result-dot { @apply size-2 shrink-0 rounded-capsule bg-status-progress ring-4 ring-status-progress-subtle; }
+.agent-result[data-status="error"] .agent-result-dot { @apply bg-status-error ring-0; }
+.agent-result[data-status="running"] .agent-result-dot { @apply bg-text-tertiary ring-0; }
+.agent-result-detail { @apply border-t border-border-subtle px-4 py-4 text-sm leading-6 text-text-secondary; }
+.agent-views { @apply flex min-h-full flex-col; }
+.agent-view-toolbar { @apply flex flex-wrap items-center justify-between gap-3 border-b border-border-subtle bg-bg-base px-5 py-4; }
+.agent-view-tabs { @apply inline-flex rounded-control-large bg-state-press p-1; }
+.agent-view-tabs button { @apply cursor-pointer rounded-control px-3 py-1.5 text-sm text-text-secondary; }
+.agent-view-tabs button[data-active] { @apply bg-bg-base text-text-primary shadow-sm; }
+.agent-view-content { @apply flex-1 p-5; }
+.agent-step { @apply flex w-full cursor-pointer items-center gap-3 rounded-card-small border border-border-default bg-bg-base p-4 text-left shadow-sm hover:bg-bg-elevated; }
+.agent-step[aria-pressed="true"] { @apply border-status-progress ring-1 ring-status-progress; }
+.agent-step-icon { @apply grid size-9 shrink-0 place-items-center rounded-control bg-bg-elevated text-text-secondary; }
+.agent-workspace-state { @apply flex min-h-72 flex-col items-center justify-center gap-3 px-5 py-10 text-center; }
+.agent-canvas-stack { @apply mx-auto flex w-full max-w-sm flex-col items-center py-5; }
+.agent-canvas-connector { @apply h-8 w-px bg-border-default; }
+.agent-build-field { @apply flex flex-col gap-2 text-sm text-text-secondary; }
+.agent-build-field input { @apply min-h-10 min-w-0 rounded-control border border-border-default bg-bg-base px-3 text-text-primary; }
+@media (max-width: 1199px) {
+  .agent-shell { grid-template-columns: 11rem minmax(0, 1fr) minmax(0, 1fr); }
+  .agent-nav { @apply px-0; }
+  .agent-nav-groups a { @apply gap-2 px-2 text-xs; }
+  .agent-nav-brand { @apply text-sm; }
+}
+@media (max-width: 959px) {
+  .agent-shell { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); height: auto; min-height: 0; }
+  .agent-nav { @apply col-span-full p-2; }
+  .agent-nav-brand { @apply mb-3; }
+  .agent-nav-groups { @apply flex flex-wrap gap-x-6 gap-y-3; }
+  .agent-nav-groups section + section { @apply mt-0; }
+  .agent-nav-groups ul { @apply flex flex-wrap; }
+  .agent-nav-footer { @apply hidden; }
+  .agent-shell-assistant, .agent-shell-workspace { height: 48rem; }
+}
+@media (max-width: 639px) {
+  .agent-shell { @apply grid-cols-1; }
+  .agent-shell-assistant, .agent-shell-workspace { height: auto; }
+  .agent-panel-body { @apply overflow-visible; }
+  .agent-panel-header { @apply px-4; }
+  .agent-panel-footer { @apply p-3; }
+}
