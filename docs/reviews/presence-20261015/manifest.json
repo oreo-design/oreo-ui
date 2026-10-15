@@ -1,0 +1,201 @@
+{
+  "baseline": "6d7f1597b76320a41591047b579826e57d60568f",
+  "source": "398a4a501e17f1b5554fdf4e8b7adaf0d4d40395",
+  "files": [
+    {
+      "path": "REVIEW.md",
+      "bytes": 10111,
+      "sha256": "861626c8571c681f84352e08ade4c53b7e5d660296d67251e00c345d32af200c"
+    },
+    {
+      "path": "after-desktop-initial.png",
+      "bytes": 6490,
+      "sha256": "6e3c38217a68d0651549bcc3faab486ce6aae1c796325fe61c8dc7fb19aaaeb0"
+    },
+    {
+      "path": "after-desktop.png",
+      "bytes": 111203,
+      "sha256": "0f1fcbc731bdf1f906951a3e3653adb1224d2f445b57451b65a8f66796d4562c"
+    },
+    {
+      "path": "after-empty-room.png",
+      "bytes": 80875,
+      "sha256": "f7e1c212e0d1b3653bf17dbb5bb75fb70980994d6b805f0be7556353bf0e379a"
+    },
+    {
+      "path": "after-empty-stack.png",
+      "bytes": 90519,
+      "sha256": "1fe274eddb8ce8f870657ff4417ac636cd43254dbcb74f984d480387a4bca0fe"
+    },
+    {
+      "path": "after-hover.png",
+      "bytes": 114209,
+      "sha256": "07477c5da12d1f39c1733a4d23d822eeeef6207c8898af2f870dce23435109da"
+    },
+    {
+      "path": "after-keyboard.png",
+      "bytes": 120016,
+      "sha256": "f5e5e479d778d3795777ac4cb0a11c9dcdbb22294a4efaa2052a33603d9c80d1"
+    },
+    {
+      "path": "after-offline.png",
+      "bytes": 87825,
+      "sha256": "52595223f7e418110ff1e95d0cb4bd381411d96e426dcfaae93fdfa7a2bedd70"
+    },
+    {
+      "path": "after-playground.png",
+      "bytes": 89910,
+      "sha256": "d8d833047f5de6a53012c31d05504cfb2b454083ad873d8b3f79470f58043fb6"
+    },
+    {
+      "path": "after-roster-initial.png",
+      "bytes": 126548,
+      "sha256": "ae843b2a4d7aef86d62a4f5eb1a502b46419a25f8cf09c266f3cc101ec0fe780"
+    },
+    {
+      "path": "after-roster.png",
+      "bytes": 132431,
+      "sha256": "2d6fa5f81990f8cbea8e4f4bf56ead00b0866701715bb23cf4594709da10bd17"
+    },
+    {
+      "path": "badge-playground.png",
+      "bytes": 81007,
+      "sha256": "00c45970e79b510562be663d74898efd20165155c93b61c9d98330113453bb3e"
+    },
+    {
+      "path": "before-desktop.png",
+      "bytes": 87398,
+      "sha256": "616f38e03eefb048c54549ebfafb63c8408a2b2fe7cd10fd41d2bbc80f4c9d44"
+    },
+    {
+      "path": "before-mobile.png",
+      "bytes": 25730,
+      "sha256": "2a97386681bf0bcbd61bcd60d2bc9c4c224f69e7c8d3157464f2d05199023730"
+    },
+    {
+      "path": "build.txt",
+      "bytes": 31217,
+      "sha256": "77d789f3828fe47078baf61d7dbd5f9a33aae881a85fcbc10eb6a61c3d990d0f"
+    },
+    {
+      "path": "changelog-after-entry.png",
+      "bytes": 119228,
+      "sha256": "ea8c082181460e41520f34f2fc3cda44725ee58ccf8d2e829262df2a745c6e05"
+    },
+    {
+      "path": "changelog-after.png",
+      "bytes": 119228,
+      "sha256": "ea8c082181460e41520f34f2fc3cda44725ee58ccf8d2e829262df2a745c6e05"
+    },
+    {
+      "path": "changelog-before.png",
+      "bytes": 118938,
+      "sha256": "7b19af299bd57a8c6434bcf0886040fa52bd3b0bf0ea6d1bad2caf9f5d069788"
+    },
+    {
+      "path": "component-recording-originals.json.xz",
+      "bytes": 909204,
+      "sha256": "300c8fdcd972edbfbdcee871257a832cd1aad6c0b9c0fc3b5e1cb3619eb1403b"
+    },
+    {
+      "path": "final-dark-roster.png",
+      "bytes": 129612,
+      "sha256": "93cd9f061f4f11c2c91021423c4e732caf324f3a7740ff0ba442f3005929c03a"
+    },
+    {
+      "path": "final-dark.png",
+      "bytes": 114438,
+      "sha256": "712d8e3efb087007a311b05425a737aede98aa99da9ea3a1b3ea2e4471b69746"
+    },
+    {
+      "path": "final-desktop-full.png",
+      "bytes": 162272,
+      "sha256": "b299e58a9ac9687ec77b02ad5446f28468e2560d3c7ed444e0a418229de2686f"
+    },
+    {
+      "path": "final-desktop.png",
+      "bytes": 114235,
+      "sha256": "104c11c2793e37f026f8e166fce1c3c2eb12d9d523797b9229580a33b4cc9a93"
+    },
+    {
+      "path": "final-mobile-full.png",
+      "bytes": 144973,
+      "sha256": "bfaa70474612c3fd274f97fe225b96edaf726ef946bf00e703002182ca37bed6"
+    },
+    {
+      "path": "final-mobile-roster.png",
+      "bytes": 61347,
+      "sha256": "c493256e80bf18fc3125aa6fe4e05000de200bcef30b7fce2eebf6d8975cc9d5"
+    },
+    {
+      "path": "final-mobile.png",
+      "bytes": 57592,
+      "sha256": "cc4f99a8f00bdb49c8aca23028d9c8d8d25b3f66091330e13f121469d98a4944"
+    },
+    {
+      "path": "final-tablet.png",
+      "bytes": 71070,
+      "sha256": "f4f2171e85eb19812b59f69284206dceade2ba32c2a17bb64067d268e98afda0"
+    },
+    {
+      "path": "interactions-partial.mp4",
+      "bytes": 117070,
+      "sha256": "cc9bb2d3c79bf756af185f71625ece172e3563f72364d66a80cdc71a8a726397"
+    },
+    {
+      "path": "interactions.mp4",
+      "bytes": 68115,
+      "sha256": "5a9ebbda328895926931d61b61691bee5b5b790f1aaadc4918bf3d5da33db7a7"
+    },
+    {
+      "path": "mobile-roster-corrected.png",
+      "bytes": 71186,
+      "sha256": "c11c6bfed8cd25c4d8f708b9c8347738406296e855a7ee240e22f9cff39e2196"
+    },
+    {
+      "path": "peer-api-after.png",
+      "bytes": 174324,
+      "sha256": "9b7ecb3a41c292f0202d447f71e0a032e466decb1d73c2e01f6fc25f56050b58"
+    },
+    {
+      "path": "peer-api-before.png",
+      "bytes": 168712,
+      "sha256": "50e514cb895e64890f083930257492d044f994e3369ee8ef58855ec55f852082"
+    },
+    {
+      "path": "peer-chat-after.png",
+      "bytes": 149955,
+      "sha256": "f4388e25ec2a7ac3a5bf0cfd8f1c1c0318c8bfcbbee4a730ed037f4f542ac1a6"
+    },
+    {
+      "path": "peer-chat-before.png",
+      "bytes": 149211,
+      "sha256": "35e0c65653ebaab18a401b5584a058b6008dafaa46a08c179df707f9016fd8e8"
+    },
+    {
+      "path": "recording-originals.json.xz",
+      "bytes": 1896272,
+      "sha256": "33d9dd4ae5d649d23576d7310b53a3293a54f0e9696b1eaf2cf80fad82eb8dbd"
+    },
+    {
+      "path": "reference-hover.png",
+      "bytes": 150807,
+      "sha256": "789efa4fe8a1b966c0717bd58220145424e97889ee2508e2d8ecca83fd6a2ea4"
+    },
+    {
+      "path": "reference-roster.png",
+      "bytes": 186100,
+      "sha256": "287fc98be70266253f5692edc1563fae11220400958861de897308b169fb0570"
+    },
+    {
+      "path": "reference.png",
+      "bytes": 144545,
+      "sha256": "a818721a1af9fb13fdc593fbf484c32fe1653b31478e553ad9c62456728ac522"
+    },
+    {
+      "path": "verified-roster.png",
+      "bytes": 129598,
+      "sha256": "d7329c66d7c094ac7b9fa529c00ff55403cc1fe09a06480cb98122b1b696ccdf"
+    }
+  ]
+}
