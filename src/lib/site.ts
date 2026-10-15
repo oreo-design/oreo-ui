@@ -26,6 +26,9 @@ export const PAGE_META = {
   "calendar-sync": { title: "Calendar Sync", description: "A complete first-connection template: empty calendar, syncing, success and grouped meetings." },
   "comment-thread": { title: "Comment Thread", description: "Composable comments, participant summaries, highlighted resolutions and collapsible resolved threads with resilient replies." },
   "comment-workspace": { title: "Comment Workspace", description: "An interactive discussion workspace with search, filters, resolution highlights and resolved-thread history." },
+
+  "subscription-components": { title: "Subscription Components", description: "Two-plane product previews, a shared usage disclosure, and an accessible subscription offer dialog with pointer depth and reduced-motion support." },
+  subscription: { title: "Subscription", description: "A complete subscription workspace template with a three-product offer, layered previews, and an accessible dialog." },
   "inline-confirm": { title: "Inline Confirm", description: "An in-place destructive action that unfolds into Cancel and Confirm, with asynchronous progress, success and retry." },
   "inline-quick-menu": { title: "Inline Quick Menu", description: "A capsule trigger with an anchored horizontal choice menu, instant keyboard navigation and theme-aware styling." },
   "project-chat": { title: "Project Chat", description: "Composable collaborator presence, project channels, audio clips, messages and a resilient composer." },

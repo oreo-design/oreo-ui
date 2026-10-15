@@ -158,3 +158,7 @@ Includes an editable playground, generated JSX and API documentation with local 
 - Source: `src/components/document-activity` and `src/patterns/document-workspace`.
 - Design reference: [csakani / Sakani UI](https://x.com/samosemudiamhe/status/2110304795869524372). Independent implementation using Oreo primitives; all interactions are local fixtures, with no backend connection.
 - Visual evidence: [task review](docs/reviews/samo-20261015/REVIEW.md).
+
+### Subscription
+
+`/subscription-components` contains a live product-card playground, composition examples and the accessible dialog API. `/subscription` is the complete workspace template. Two independently moving decorative planes retain static captions, use Oreo theme tokens, and remain still on touch or reduced motion. The template uses fictional data and creates no account, subscription or payment. Source reference: [Hamza A. / Benji Taylor](https://x.com/HamzaInstantly/status/2110392051074511159).
