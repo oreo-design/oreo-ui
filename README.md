@@ -230,3 +230,7 @@ Inspired by [Purpose Walker’s Thinking State](https://x.com/purpose_walker/sta
 ### Callback Workspace
 
 Inspired by [Nizam’s callback board](https://x.com/nizamdesign/status/2110279441683235256), `/callback-priority`, `/callback-card` and `/callback-board` expose three reusable service components. `/callback-workspace` adds team/mine views, live counts and cost totals, search, branch grouping, board/list layouts, sorting and editable local records with stage changes and archive/undo. It reuses Oreo Avatar, Button, Switch, AgentWorkspaceState and Base UI Dialog. All records are fixtures; no service visits are scheduled or customers contacted.
+
+## Model Router
+
+`/model-router` combines Routing Policy, Routing Flow and Route Metrics into a local routing panel inspired by Maxim Kuznetsov. It includes independent environment drafts, cost projections, fallback validation/testing and apply/undo. Metrics are fixtures; no model calls or infrastructure deployment occur. Component docs and playgrounds are available at `/routing-policy`, `/routing-flow` and `/route-metrics`.

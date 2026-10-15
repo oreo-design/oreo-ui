@@ -1,3 +1,5 @@
+import { RoutingPolicyControl, RoutingFlow, RouteMetrics } from "@/components/model-routing";
+import { routesFor } from "@/patterns/model-router/data";
 import { CallbackPriority, CallbackCard, CallbackBoard } from "@/components/callback";
 import { INITIAL_CALLBACKS, PEOPLE as CALLBACK_PEOPLE } from "@/patterns/callback-workspace/data";
 import { ThinkingState, ThinkingTimeline, THINKING_STATES } from "@/components/thinking-state";
@@ -96,6 +98,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "model-routing": { RoutingPolicyControl, RoutingFlow, RouteMetrics },
   callback: { CallbackPriority, CallbackCard, CallbackBoard },
   "thinking-state": { ThinkingState, ThinkingTimeline },
   "command-search": { CommandSearch, WorkspaceMetric, DeploymentRow },
@@ -153,6 +156,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "routing-policy": { ...define("Routing Policy", {value:select(["cost","balanced","quality"],"balanced"),disabled:toggle(false)},(v,set)=><RoutingPolicyControl {...v} onChange={value=>set("value",value)}/>),source:"model-routing" },
+  "routing-flow": { ...define("Routing Flow", {policy:select(["cost","balanced","quality"],"balanced"),active:toggle(true),empty:toggle(false),selected:text("")},(v,set)=><div className="w-full max-w-xl rounded-2xl bg-bg-elevated p-5"><RoutingFlow routes={v.empty?[]:routesFor(v.policy,333)} active={v.active} selected={v.selected} onSelect={id=>set("selected",v.selected===id?"":id)}/></div>),source:"model-routing" },
+  "route-metrics": { ...define("Route Metrics", {policy:select(["cost","balanced","quality"],"balanced"),empty:toggle(false),selected:text("")},(v,set)=><div className="w-full max-w-2xl rounded-2xl bg-bg-elevated p-5"><RouteMetrics routes={v.empty?[]:routesFor(v.policy,333)} selected={v.selected} onSelect={id=>set("selected",v.selected===id?"":id)}/></div>),source:"model-routing" },
   "callback-priority": { ...define("Callback Priority", {priority:select(["Low","Medium","High","Critical"],"Critical")},v=><CallbackPriority {...v}/>),source:"callback" },
   "callback-card": { ...define("Callback Card", {customer:text("Hillside Dental"),priority:select(["Low","Medium","High","Critical"],"Critical"),cost:number(1280,0,10000,10),showBranch:toggle(true)},v=><div className="w-full max-w-sm rounded-3xl bg-bg-elevated p-4"><CallbackCard callback={{...INITIAL_CALLBACKS[4],customer:v.customer,priority:v.priority,cost:v.cost}} person={CALLBACK_PEOPLE[1]} showBranch={v.showBranch} onOpen={()=>{window.location.href="/callback-workspace";}}/></div>),source:"callback" },
   "callback-board": { ...define("Callback Board", {empty:toggle(false),showBranch:toggle(false)},v=><div className="w-full"><CallbackBoard callbacks={v.empty?[]:INITIAL_CALLBACKS} people={CALLBACK_PEOPLE} showBranch={v.showBranch} onOpen={()=>{window.location.href="/callback-workspace";}}/></div>),source:"callback" },
