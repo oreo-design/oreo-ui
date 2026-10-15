@@ -1,0 +1,90 @@
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+[PAGE ERROR] Uncaught TypeError: Cannot read properties of undefined (reading 'session')
+Console output:
+[log] PASS: absent submit handler disables save
+[log] URL: http://localhost:5208/toggle-composer?view=docs
+                - listitem:
+                  - role=link[name="Menu"i]
+                - listitem:
+                  - role=link[name="Meeting"i]
+                - listitem:
+                  - role=link[name="Toggle Composer"i]
+                - listitem:
+                  - role=link[name="Canvas Toolbar"i]
+                - listitem:
+                  - role=link[name="Text Toolbar"i]
+                - listitem:
+---
+                - listitem:
+                  - role=link[name="Page Loader"i]
+              - text: "TEMPLATES"
+              - list:
+                - listitem:
+                  - role=link[name="Composer Studio"i]
+                - listitem:
+                  - role=link[name="Canvas Studio"i]
+                - listitem:
+                  - role=link[name="Writing Studio"i]
+                - listitem:
+                  - role=link[name="Meeting Planner"i]
+                - listitem:
+                  - role=link[name="Subscription"i] >> nth=1
+                - listitem:
+---
+                - listitem:
+                  - role=link[name="Calendar Sync"i]
+                - listitem:
+                  - role=link[name="Document Workspace"i]
+                - listitem:
+                  - role=link[name="Automation Studio"i]
+                - listitem:
+                  - role=link[name="Connections"i] >> nth=1
+                - listitem:
+                  - role=link[name="Knowledge Base"i] >> nth=1
+                - listitem:
+---
+                  - role=link[name="Onboarding Board"i]
+        - main:
+            - navigation:
+              - text: "Components"
+              - text: "/"
+              - text: "Toggle Composer"
+            - role=button[name="Open playground"i]
+            - sectionheader:
+              - heading "A thought, or a whole story."
+              - paragraph:
+                - text: "A compact Quick Post editor unfolds into a structured Long Post composer. Solid and frosted surfaces use the same controlled fields and familiar Oreo actions."
+              - paragraph:
+                - text: "Inspired by"
+                - role=link[name="Greg Washington’s toggle composers"i]
+                - text: ". The source’s mode hierarchy, inset fields and formatting row are adapted to Oreo tokens."
+              - role=link[name="Open Composer Studio ↗"i]
+                - region "Post composer":
+                  - group "Post length":
+                    - labeltext:
+                      - role=radio[name="Quick Post"i]
+                      - text: "Quick Post"
+                    - labeltext:
+[log] PASS: documentation opens template
+[log] POINTER: Element: span.composer-mode-indicator
+Box: x=426 y=373 w=252 h=37
+Children: 0  Text length: 0
+Scroll Y: size=37 client=37 overflowing=false top=0
+Scroll X: size=252 client=252 overflowing=false left=0
+Styles: transition-duration=0.18s transition-timing-function=cubic-bezier(0.77, 0, 0.175, 1) transform=matrix(1, 0, 0, 1, 250.151, 0)
+Aria: aria-hidden=true
+[log] KEYBOARD: Element: span.composer-mode-indicator
+Box: x=181 y=453 w=252 h=37
+Children: 0  Text length: 0
+Scroll Y: size=37 client=37 overflowing=false top=0
+Scroll X: size=252 client=252 overflowing=false left=0
+Styles: transition-duration=0s
+Aria: aria-hidden=true
+[log] REDUCED: Element: span.composer-mode-indicator
+Box: x=433 y=373 w=252 h=37
+Children: 0  Text length: 0
+Scroll Y: size=37 client=37 overflowing=false top=0
+Scroll X: size=252 client=252 overflowing=false left=0
+Styles: transition-duration=0s
+Aria: aria-hidden=true
+[log] DOCS QA COMPLETE
