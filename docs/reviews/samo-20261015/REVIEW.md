@@ -61,3 +61,7 @@ The earlier `after-dark-wide.png`, `after-approved.png`, `after-*-wide.png`, `af
 ## Delivery
 
 Implementation and local verification complete. PR integration is tracked by the repository and the final chat response, separately from the recording coverage gap. Original dirty checkout is untouched; this task uses `codex/samo-template-20261015` in an isolated worktree.
+
+### Main integration refresh
+
+Rebased onto `8a4af26` after concurrent PR #27 merged. Resolved additive registration conflicts in App, Sidebar, playground registry and site metadata by retaining both Automation Studio and Document Workspace entries. New implementation commit: `ea74fe901833b4290c63289a67c0fb9403c8b81a`. Document components, template, assets and page implementations are byte-identical to the captured implementation; no visual evidence was replaced. TypeScript and production build rechecked after integration.

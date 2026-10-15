@@ -235,5 +235,7 @@
       "status": "final"
     }
   ],
-  "recording_gap": "Chrome activeTab capture permission missing. Click the Playwriter extension icon on the task-owned localhost:5187 tab to enable a follow-up recording."
+  "recording_gap": "Chrome activeTab capture permission missing. Click the Playwriter extension icon on the task-owned localhost:5187 tab to enable a follow-up recording.",
+  "rebased_implementation_commit": "ea74fe901833b4290c63289a67c0fb9403c8b81a",
+  "integration_base": "8a4af26"
 }
