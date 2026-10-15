@@ -24,6 +24,8 @@ export const PAGE_META = {
   "document-workspace": { title: "Document Workspace", description: "A property document template with scoped search, activity filters, file previews and local approval flows." },
   "connection-state": { title: "Connection State", description: "Composable integration stack, connection states and grouped meeting lists with recovery and reduced-motion support." },
   "calendar-sync": { title: "Calendar Sync", description: "A complete first-connection template: empty calendar, syncing, success and grouped meetings." },
+  "comment-thread": { title: "Comment Thread", description: "Composable comments, participant summaries, highlighted resolutions and collapsible resolved threads with resilient replies." },
+  "comment-workspace": { title: "Comment Workspace", description: "An interactive discussion workspace with search, filters, resolution highlights and resolved-thread history." },
   "inline-confirm": { title: "Inline Confirm", description: "An in-place destructive action that unfolds into Cancel and Confirm, with asynchronous progress, success and retry." },
   "inline-quick-menu": { title: "Inline Quick Menu", description: "A capsule trigger with an anchored horizontal choice menu, instant keyboard navigation and theme-aware styling." },
   "project-chat": { title: "Project Chat", description: "Composable collaborator presence, project channels, audio clips, messages and a resilient composer." },

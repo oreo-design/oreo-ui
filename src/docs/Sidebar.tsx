@@ -43,6 +43,7 @@ const NAV: Group[] = [
     // Conversation output — the chat transcript itself (taxonomy after assistant-ui).
     title: "Chat",
     items: [
+      { label: "Comment Thread", page: "comment-thread" },
       { label: "Project Chat", page: "project-chat" },
       { label: "Message", page: "message" },
       { label: "Conversation", page: "conversation" },
@@ -85,7 +86,7 @@ const NAV: Group[] = [
   },
   {
     title: "Templates",
-    items: [{ label: "Calendar Sync", page: "calendar-sync" }, { label: "Document Workspace", page: "document-workspace" }, { label: "Automation Studio", page: "automation-studio" }, { label: "Connections", page: "connections-workspace" }, { label: "Knowledge Base", page: "knowledge-base" }, { label: "Music Workspace", page: "music-workspace" }, { label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
+    items: [{ label: "Comment Workspace", page: "comment-workspace" }, { label: "Calendar Sync", page: "calendar-sync" }, { label: "Document Workspace", page: "document-workspace" }, { label: "Automation Studio", page: "automation-studio" }, { label: "Connections", page: "connections-workspace" }, { label: "Knowledge Base", page: "knowledge-base" }, { label: "Music Workspace", page: "music-workspace" }, { label: "Orbit Gallery", page: "orbit-gallery-showcase" }, { label: "Neutomni Intro", page: "neutomni-intro" }, { label: "Activity Workspace", page: "activity-workspace" }, { label: "Prospecting Dashboard", page: "prospecting-dashboard" }, { label: "Features Showcase", page: "features-showcase" }, { label: "Review Workspace", page: "review-workspace" }, { label: "Skills Workspace", page: "skills-workspace" }],
   },
   {
     title: "Patterns",
