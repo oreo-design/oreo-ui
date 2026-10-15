@@ -2,6 +2,8 @@ import { AutomationComponentsDocs } from "@/pages/AutomationComponentsDocs";
 import { AutomationStudioPage } from "@/pages/AutomationStudioPage";
 import { DocumentActivityDocs } from "@/pages/DocumentActivityDocs";
 import { DocumentWorkspacePage } from "@/pages/DocumentWorkspacePage";
+import { ConnectionStateDocs } from "@/pages/ConnectionStateDocs";
+import { CalendarSyncPage } from "@/pages/CalendarSyncPage";
 import { InlineConfirmDocs } from "@/pages/InlineConfirmDocs";
 import { InlineQuickMenuDocs } from "@/pages/InlineQuickMenuDocs";
 import { ProjectChatDocs } from "@/pages/ProjectChatDocs";
@@ -71,6 +73,8 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "automation-studio": AutomationStudioPage,
   "document-activity": DocumentActivityDocs,
   "document-workspace": DocumentWorkspacePage,
+  "connection-state": ConnectionStateDocs,
+  "calendar-sync": CalendarSyncPage,
   "inline-confirm": InlineConfirmDocs,
   "inline-quick-menu": InlineQuickMenuDocs,
   "project-chat": ProjectChatDocs,
