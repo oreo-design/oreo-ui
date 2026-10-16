@@ -43,8 +43,8 @@ export function ParkMapArtwork() {
   </g>;
 }
 const clamp = (n:number) => Number.isFinite(n) ? Math.max(0,Math.min(100,n)) : 50;
-export function PlaceMap({ places, selectedId, onSelect, mapStyle = "meadow", origin = {x:25,y:78}, artwork, toolbar, footer, label = "Places around Willow Park" }: {
-  places: PlaceResult[]; selectedId?: string; onSelect: (id: string, instant: boolean) => void; mapStyle?: MapStyle; origin?: MapPoint; artwork?: ReactNode; toolbar?: ReactNode; footer?: ReactNode; label?: string;
+export function PlaceMap({ places, selectedId, onSelect, mapStyle = "meadow", origin = {x:25,y:78}, artwork, toolbar, footer, renderMarker, originLabel, getSelectionLabel, onPreview, label = "Places around Willow Park" }: {
+  places: PlaceResult[]; selectedId?: string; onSelect: (id: string, instant: boolean) => void; mapStyle?: MapStyle; origin?: MapPoint; artwork?: ReactNode; toolbar?: ReactNode; footer?: ReactNode; label?: string; renderMarker?: (place: PlaceResult, selected: boolean) => ReactNode; originLabel?: string; getSelectionLabel?: (place: PlaceResult) => string; onPreview?: (id: string) => void;
 }) {
   const id=useId();
   const selected=places.find(p=>p.id===selectedId)??places[0];
@@ -53,17 +53,17 @@ export function PlaceMap({ places, selectedId, onSelect, mapStyle = "meadow", or
   return <section className="place-map place-palette" data-map-style={mapStyle} aria-label={label}>
     {toolbar && <div className="place-map-toolbar">{toolbar}</div>}
     <div className="place-map-scene">
-      <svg className="place-map-art" viewBox="0 0 1000 560" aria-hidden="true">{artwork??<ParkMapArtwork/>}
+      <svg className="place-map-art" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">{artwork??<ParkMapArtwork/>}
         <g><polyline points={route} fill="none" stroke="var(--map-road)" strokeWidth="11" strokeLinecap="round" strokeLinejoin="round"/><polyline points={route} fill="none" stroke="var(--map-route)" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round"/></g>
       </svg>
-      <span className="place-origin" style={{left:`${clamp(origin.x)}%`,top:`${clamp(origin.y)}%`}} role="img" aria-label="Sample starting point"/>
+      <span className={originLabel ? "place-origin place-origin-labelled" : "place-origin"} style={{left:`${clamp(origin.x)}%`,top:`${clamp(origin.y)}%`}} role="img" aria-label={originLabel ?? "Sample starting point"}>{originLabel && <span>{originLabel}</span>}</span>
       <div className="place-map-pins" role="group" aria-label="Choose a place">{places.map(place=><div key={place.id} className="place-map-marker" data-edge={place.point.x<25?"left":place.point.x>75?"right":undefined} style={{left:`${clamp(place.point.x)}%`,top:`${clamp(place.point.y)}%`}}>
-        <button type="button" aria-pressed={selected.id===place.id} aria-controls={`${id}-selection`} onClick={e=>onSelect(place.id,e.detail===0)}><span>{place.name}</span><span className="place-map-minutes">{place.minutes} min</span></button><i aria-hidden="true"/>
+        <button type="button" aria-pressed={selected.id===place.id} aria-controls={`${id}-selection`} onPointerEnter={e=>{if(e.pointerType==="mouse")onPreview?.(place.id);}} aria-label={getSelectionLabel?.(place)} onClick={e=>onSelect(place.id,e.detail===0)}>{renderMarker ? renderMarker(place,selected.id===place.id) : <><span>{place.name}</span><span className="place-map-minutes">{place.minutes} min</span></>}</button><i aria-hidden="true"/>
       </div>)}</div>
     </div>
-    <div id={`${id}-selection`} className="sr-only" role="status">{selected.name}, {selected.minutes} minute walk, rated {selected.rating} out of 5.</div>
+    <div id={`${id}-selection`} className="sr-only" role="status">{getSelectionLabel ? getSelectionLabel(selected) : `${selected.name}, ${selected.minutes} minute walk, rated ${selected.rating} out of 5.`}</div>
     {footer&&<div className="place-map-footer">{footer}</div>}
-    <div className="place-map-caption"><span><i/> Starting point</span><span>Illustrated map · Not for navigation</span></div>
+    <div className="place-map-caption"><span><i/> {originLabel ?? "Starting point"}</span><span>Illustrated map · Not for navigation</span></div>
   </section>;
 }
 

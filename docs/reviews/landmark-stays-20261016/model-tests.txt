@@ -1,0 +1,12 @@
+✔ schematic distances use both scene axes and coincide at origin (0.351458ms)
+✔ intersecting filters and new landmarks change real result set (0.363ms)
+✔ saved view and price sorting preserve input and support empty shortlist (0.070125ms)
+✔ room subtotals are exact and reject invalid stay lengths (0.176458ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 65.077709

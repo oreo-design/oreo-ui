@@ -1,0 +1,61 @@
+import type { Stay, Landmark } from "@/components/stay-results/model";
+export const LANDMARKS: Landmark[] = [
+  { id: "tower", name: "Eiffel Tower", point: { x: 42, y: 45 } },
+  { id: "museum", name: "Musée d’Orsay", point: { x: 73, y: 31 } },
+];
+export const STAYS: Stay[] = [
+  {
+    id: "atelier",
+    name: "Atelier de la Tour",
+    stars: 4,
+    nightly: 148,
+    point: { x: 40, y: 63 },
+    amenities: ["Breakfast", "Wi-Fi", "City view"],
+    color: "orange",
+  },
+  {
+    id: "jardin",
+    name: "Maison Jardin",
+    stars: 4,
+    nightly: 143,
+    point: { x: 23, y: 72 },
+    amenities: ["Kitchen", "Wi-Fi", "Garden"],
+    color: "mint",
+  },
+  {
+    id: "rue",
+    name: "Rue Cler House",
+    stars: 3,
+    nightly: 119,
+    point: { x: 61, y: 59 },
+    amenities: ["Wi-Fi", "Kitchen"],
+    color: "purple",
+  },
+  {
+    id: "seine",
+    name: "The Seine Rooms",
+    stars: 5,
+    nightly: 208,
+    point: { x: 72, y: 43 },
+    amenities: ["Breakfast", "Wi-Fi", "River view"],
+    color: "mint",
+  },
+  {
+    id: "rive",
+    name: "Rive Gauche Studio",
+    stars: 4,
+    nightly: 160,
+    point: { x: 58, y: 80 },
+    amenities: ["Kitchen", "Wi-Fi", "Balcony"],
+    color: "orange",
+  },
+  {
+    id: "passage",
+    name: "Le Petit Passage",
+    stars: 3,
+    nightly: 133,
+    point: { x: 24, y: 30 },
+    amenities: ["Breakfast", "Wi-Fi"],
+    color: "purple",
+  },
+];

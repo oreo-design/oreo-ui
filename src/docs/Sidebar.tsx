@@ -107,6 +107,9 @@ const NAV: Group[] = [
       { label: "Hub Search Hero", page: "hub-search-hero" },
       { label: "Agent Category Grid", page: "agent-category-grid" },
       { label: "Integration Tile", page: "integration-tile" },
+      { label: "Stay Price Label", page: "stay-price-label" },
+      { label: "Stay Result Card", page: "stay-result-card" },
+      { label: "Stay Selection Card", page: "stay-selection-card" },
       { label: "Place Map", page: "place-map" },
       { label: "Place Detail Card", page: "place-detail-card" },
       { label: "Map Style Picker", page: "map-style-picker" },
@@ -213,6 +216,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Landmark Stays",page:"landmark-stays"},
       {label:"Agent Observatory",page:"agent-observatory"},
       {label:"Dispatch Allocation",page:"dispatch-allocation"},
       {label:"Writing Folders",page:"writing-folders"},
