@@ -1,0 +1,110 @@
+.gt-groups {
+  display: grid;
+  gap: calc(var(--spacing) * 5);
+  min-width: 0;
+}
+.gt-group {
+  min-width: 0;
+}
+.gt-group-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--radius-control-tiny);
+  padding: 0 calc(var(--spacing) * 2);
+  min-height: calc(var(--spacing) * 10);
+}
+.gt-group-heading h2 {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin: 0;
+}
+.gt-group-trigger {
+  display: flex;
+  gap: calc(var(--spacing) * 2);
+  align-items: center;
+  padding: calc(var(--spacing) * 2) 0;
+  cursor: pointer;
+}
+.gt-status-dot {
+  width: calc(var(--spacing) * 2);
+  height: calc(var(--spacing) * 2);
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+.gt-count {
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+}
+.gt-table-scroll {
+  overflow-x: auto;
+}
+.gt-table {
+  width: 100%;
+  min-width: 960px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.gt-name-col {
+  width: 38%;
+}
+.gt-table th {
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+  text-align: left;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+}
+.gt-table td {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  height: calc(var(--spacing) * 12);
+  border-top: 1px solid var(--color-border-subtle);
+}
+.gt-table th:first-child,
+.gt-table td:first-child {
+  padding-left: calc(var(--spacing) * 4);
+}
+.gt-task-title {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: baseline;
+  gap: calc(var(--spacing) * 3);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: var(--spacing) 0;
+}
+.gt-task-title > span:last-child {
+  overflow-wrap: anywhere;
+}
+.gt-task-id {
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+.gt-list-name {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+}
+.gt-list-name svg {
+  flex-shrink: 0;
+}
+.gt-tags {
+  display: flex;
+  gap: var(--spacing);
+  flex-wrap: wrap;
+}
+.gt-row:focus-within {
+  background: var(--color-bg-elevated);
+}
+.gt-group :focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+@media (hover: hover) {
+  .gt-row:hover {
+    background: var(--color-bg-elevated);
+  }
+}

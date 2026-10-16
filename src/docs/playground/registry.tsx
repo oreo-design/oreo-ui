@@ -1,3 +1,6 @@
+import { TaskStatusGroup, TaskListRow, GroupedTaskList } from "@/components/grouped-tasks";
+import { SAMPLE_TASKS, MEMBERS } from "@/patterns/grouped-tasks/data";
+import type { TaskStatus } from "@/components/task-row";
 import { SpendLimitChart, SecretField, ApiKeyTable } from "@/components/support-console";
 import { SPEND_DAYS, SAMPLE_KEYS } from "@/patterns/support-console/data";
 import { ForecastTimeline, UsageProjection, DailyUsagePace, forecastUsage } from "@/components/usage-forecast";
@@ -116,6 +119,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "grouped-tasks": {TaskStatusGroup,TaskListRow,GroupedTaskList},
   "support-console": { SpendLimitChart, SecretField, ApiKeyTable },
   "usage-forecast": { ForecastTimeline, UsageProjection, DailyUsagePace },
   recipient: { RecipientSearch, PaymentRailPicker, RecipientForm },
@@ -183,6 +187,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "task-status-group": {...define("Task Status Group",{open:toggle(true),count:number(3,0,20,1)},(v,set)=><div className="w-full p-4"><TaskStatusGroup status="progress" count={v.count} open={v.open} onOpenChange={open=>set("open",open)}><p className="p-4 text-sm text-text-secondary">The host supplies the group contents.</p></TaskStatusGroup></div>),source:"grouped-tasks"},
+ "task-list-row": {...define("Task List Row",{selected:toggle()},(v,set)=><div className="w-full min-w-0 p-4"><div className="gt-table-scroll"><table className="gt-table"><thead><tr>{["Name","Priority","List","Tag","Due date","Assignee"].map(t=><th key={t} scope="col">{t}</th>)}</tr></thead><tbody><TaskListRow task={SAMPLE_TASKS[0]} people={MEMBERS} onOpen={()=>set("selected",true)}/></tbody></table></div>{v.selected&&<p role="status" className="mt-4 text-sm">Selected: Craft user personas · <a className="underline" href="/grouped-tasks">Open editable template</a></p>}</div>),source:"grouped-tasks"},
+ "grouped-task-list": {...define("Grouped Task List",{empty:toggle(),showEmpty:toggle(),collapsed:text(""),selected:text("")},(v,set)=><div className="w-full min-w-0 p-4"><GroupedTaskList tasks={v.empty?[]:SAMPLE_TASKS.slice(0,8)} people={MEMBERS} collapsed={v.collapsed.split(",").filter(Boolean) as TaskStatus[]} onCollapsedChange={statuses=>set("collapsed",statuses.join(","))} onTaskOpen={task=>set("selected",task.title)} showEmpty={v.showEmpty}/>{v.selected&&<p role="status" className="mt-4 text-sm">Selected: {v.selected} · <a className="underline" href="/grouped-tasks">Open editable template</a></p>}</div>),source:"grouped-tasks"},
   "spend-limit-chart": {...define("Spend Limit Chart",{limit:number(70,0,150,5),empty:toggle()},v=><div className="w-full p-4"><SpendLimitChart days={v.empty?[]:SPEND_DAYS} dailyLimitCents={v.limit*100}/></div>),source:"support-console"},
   "secret-field": {...define("Secret Field",{value:text("demo_only_0123456789abcdef"),failCopy:toggle()},v=><div className="w-full max-w-lg p-6"><SecretField value={v.value} onCopy={v.failCopy?async()=>{throw new Error("Demo clipboard failure")}:undefined}/></div>),source:"support-console"},
   "api-key-table": {...define("API Key Table",{empty:toggle()},v=><div className="w-full p-4"><ApiKeyTable keys={v.empty?[]:SAMPLE_KEYS}/></div>),source:"support-console"},
