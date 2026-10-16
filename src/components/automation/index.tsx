@@ -33,8 +33,8 @@ export function AgentWorkspacePanel({ title, icon, actions, footer, children, cl
   </section>;
 }
 
-export type AgentResultState = "ready" | "running" | "error";
-const stateLabel: Record<AgentResultState, string> = { ready: "Ready to review", running: "In progress", error: "Needs attention" };
+export type AgentResultState = "ready" | "running" | "error" | "reviewed";
+const stateLabel: Record<AgentResultState, string> = { ready: "Ready to review", running: "In progress", error: "Needs attention", reviewed: "Reviewed" };
 
 /** Controlled or uncontrolled disclosure. Status is conveyed by text as well as color. */
 export function AgentResultCard({ title, icon = "folder", status = "ready", open, defaultOpen = false, onOpenChange, children }: { title: string; icon?: IconName; status?: AgentResultState; open?: boolean; defaultOpen?: boolean; onOpenChange?: (open: boolean) => void; children: ReactNode }) {

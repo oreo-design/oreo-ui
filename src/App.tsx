@@ -1,3 +1,5 @@
+import { EngineeringHandoffPage } from "@/patterns/engineering-handoff";
+import { AgentHandoffDocs } from "@/pages/AgentHandoffDocs";
 import { CompanyDirectoryPage } from "@/patterns/company-directory";
 import { CompanyDocs } from "@/pages/CompanyDocs";
 import { ProjectFeedPage } from "@/patterns/project-feed";
@@ -164,6 +166,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "agent-mention-composer": AgentHandoffDocs, "agent-session-card": AgentHandoffDocs, "engineering-handoff": EngineeringHandoffPage,
   "company-identity": CompanyDocs, "company-table": CompanyDocs, "company-directory": CompanyDirectoryPage,
   "activity-event-row": ProjectActivityDocs, "grouped-activity-feed": ProjectActivityDocs, "project-feed": ProjectFeedPage,
   "weekly-heatmap": AgentRunsDocs, "agent-runs-card": AgentRunsDocs, "agent-runs": AgentRunsPage,

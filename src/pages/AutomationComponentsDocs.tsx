@@ -22,7 +22,7 @@ export function AutomationComponentsDocs({ nav }: { nav: DocsNav }) {
       { prop: "AgentWorkspaceNav", type: "brand; groups; footer?", desc: "WorkspaceNavGroup[] contains a label and link items (label, href, icon, active). Host supplies destinations." },
       { prop: "AgentWorkspaceShell", type: "navigation; assistant; workspace", desc: "Three layout slots; responsive columns with no hidden mobile content." },
       { prop: "AgentWorkspacePanel", type: "title; icon?; actions?; footer?; children; className?", desc: "Named section, protected heading, scrolling body and optional composer footer." },
-      { prop: "AgentResultCard", type: "title; icon?; status?; open?; defaultOpen?; onOpenChange?; children", desc: "Status is ready, running or error. Controlled or uncontrolled disclosure with an accessible status label." },
+      { prop: "AgentResultCard", type: "title; icon?; status?; open?; defaultOpen?; onOpenChange?; children", desc: "Status is ready, running, error or reviewed. Controlled or uncontrolled disclosure with an accessible status label." },
       { prop: "AgentRunSummary", type: "duration; title?; result?; steps", desc: "Steps contain title and description. Supply actual elapsed time in production." },
       { prop: "AutomationViews", type: "value; onValueChange; build; canvas; actions?", desc: "Controlled build/canvas tabs with Base UI keyboard and panel semantics." },
       { prop: "AutomationStepCard", type: "step; selected?; onSelect", desc: "Step contains id, title, description, icon and kind (Trigger, Condition, Action). Selection returns its id." },

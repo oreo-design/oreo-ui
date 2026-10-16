@@ -24,6 +24,8 @@ const NAV: Group[] = [
       { label: "Avatar", page: "avatar" },
       {label:"Activity Event Row",page:"activity-event-row"},
       {label:"Grouped Activity Feed",page:"grouped-activity-feed"},
+      {label:"Agent Mention Composer",page:"agent-mention-composer"},
+      {label:"Agent Session Card",page:"agent-session-card"},
       {label:"Company Identity",page:"company-identity"},
       {label:"Company Table",page:"company-table"},
       {label:"Weekly Heatmap",page:"weekly-heatmap"},
@@ -197,6 +199,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Engineering Handoff",page:"engineering-handoff"},
       {label:"Company Directory",page:"company-directory"},
       {label:"Agent Runs",page:"agent-runs"},
       {label:"Progressive Checkout",page:"progressive-checkout"},

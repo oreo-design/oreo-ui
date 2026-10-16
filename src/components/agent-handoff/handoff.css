@@ -1,0 +1,210 @@
+.ah-composer {
+  position: relative;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control-large);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+.ah-composer-input {
+  padding: calc(var(--spacing) * 4);
+}
+.ah-composer textarea {
+  width: 100%;
+  display: block;
+  resize: vertical;
+  min-height: 76px;
+  max-height: 240px;
+  background: transparent;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  outline: none;
+}
+.ah-composer:focus-within {
+  border-color: var(--color-text-tertiary);
+}
+.ah-composer textarea:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+  border-radius: var(--radius-control-tiny);
+}
+.ah-composer textarea:disabled {
+  opacity: 0.5;
+}
+.ah-composer footer {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  border-top: 1px solid var(--color-border-subtle);
+}
+.ah-composer footer > span {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  margin-left: auto;
+}
+.ah-composer footer > button:last-child {
+  margin-left: auto;
+}
+.ah-mention-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing);
+  color: var(--color-palette-blue-text);
+  background: var(--color-palette-blue-bg);
+  border-radius: var(--radius-control-tiny);
+  font-size: var(--text-xs);
+  margin-bottom: calc(var(--spacing) * 2);
+  padding-left: calc(var(--spacing) * 2);
+}
+.ah-mention-chip button {
+  width: 24px;
+  height: 24px;
+  color: inherit;
+}
+.ah-agent-picker {
+  position: absolute;
+  left: calc(var(--spacing) * 4);
+  right: calc(var(--spacing) * 4);
+  bottom: 48px;
+  max-width: 400px;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-base);
+  box-shadow: var(--shadow-overlay);
+  z-index: 5;
+  padding: var(--spacing);
+}
+.ah-agent-picker > span,
+.ah-agent-picker > p {
+  display: block;
+  padding: calc(var(--spacing) * 3);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.ah-agent-picker [role="listbox"] {
+  max-height: 240px;
+  overflow: auto;
+}
+.ah-agent-option {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 3);
+  border-radius: var(--radius-control-tiny);
+  cursor: pointer;
+}
+.ah-agent-option[aria-selected="true"] {
+  background: var(--color-state-hover);
+}
+.ah-agent-option[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.ah-agent-option > span:nth-child(2) {
+  display: grid;
+  gap: var(--spacing);
+  flex: 1;
+  min-width: 0;
+}
+.ah-agent-option strong {
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+.ah-agent-option small {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.ah-input-error {
+  font-size: var(--text-xs);
+  color: var(--color-status-error);
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
+}
+.ah-session {
+  color: var(--color-text-primary);
+}
+.ah-session > header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 2);
+  margin-bottom: calc(var(--spacing) * 3);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.ah-session > header > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+}
+.ah-session > header strong {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+.ah-session > header > button {
+  margin-left: auto;
+}
+.ah-session-body {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control-large);
+  background: var(--color-bg-base);
+  overflow: hidden;
+}
+.ah-session-body .ct-comment + .ct-comment {
+  border-top: 1px solid var(--color-border-subtle);
+}
+.ah-working {
+  padding: calc(var(--spacing) * 5);
+}
+.ah-working > p {
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  margin: calc(var(--spacing) * 2) 0 0;
+}
+.ah-awaiting {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 5);
+  border-top: 1px solid var(--color-border-subtle);
+}
+.ah-result {
+  padding: calc(var(--spacing) * 4);
+}
+.ah-result .agent-result {
+  margin: 0;
+}
+.ah-session-skeleton {
+  padding: calc(var(--spacing) * 5);
+  min-height: 160px;
+  display: grid;
+  gap: calc(var(--spacing) * 3);
+}
+.ah-session-skeleton i {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-bg-elevated);
+}
+.ah-session-skeleton span {
+  height: 12px;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-control-tiny);
+}
+.ah-session-skeleton span:last-child {
+  width: 70%;
+}
+@media (max-width: 600px) {
+  .ah-composer footer > span {
+    display: none;
+  }
+  .ah-agent-picker {
+    left: 8px;
+    right: 8px;
+  }
+  .ah-agent-option small {
+    display: none;
+  }
+  .ah-session > header {
+    line-height: 1.6;
+  }
+}
