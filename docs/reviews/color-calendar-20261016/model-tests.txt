@@ -1,0 +1,13 @@
+✔ date helpers preserve wall-clock dates across DST and month/year boundaries (1.84925ms)
+✔ event validation rejects invalid dates, durations, quarter-hour boundaries and unknown calendars (0.228416ms)
+✔ overlap groups include chained overlaps and keep adjacent events in one lane (0.161584ms)
+✔ triple overlaps and all-day exclusion are deterministic (0.071833ms)
+✔ filtering shares visible source, exact date and search semantics with export (5.245625ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 68.4005

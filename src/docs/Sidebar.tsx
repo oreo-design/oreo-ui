@@ -107,6 +107,10 @@ const NAV: Group[] = [
       { label: "Hub Search Hero", page: "hub-search-hero" },
       { label: "Agent Category Grid", page: "agent-category-grid" },
       { label: "Integration Tile", page: "integration-tile" },
+      {label:"Calendar Event Block",page:"calendar-event-block"},
+      {label:"Calendar Color Picker",page:"calendar-color-picker"},
+      {label:"Calendar Source List",page:"calendar-source-list"},
+      {label:"Calendar Week Grid",page:"calendar-week-grid"},
       {label:"Currency Balance Card",page:"currency-balance-card"},
       {label:"Currency Balance Summary",page:"currency-balance-summary"},
       {label:"Money Activity List",page:"money-activity-list"},
@@ -220,6 +224,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Color Calendar",page:"color-calendar"},
       {label:"Cross-Currency",page:"cross-currency"},
       {label:"Landmark Stays",page:"landmark-stays"},
       {label:"Agent Observatory",page:"agent-observatory"},

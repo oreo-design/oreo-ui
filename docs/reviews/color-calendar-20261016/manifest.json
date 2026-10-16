@@ -1,0 +1,406 @@
+{
+  "baseline": "50519583c38511db47996cfe704aad9c91e53928",
+  "environment": "localhost:5257; Playwriter session 10; local Chromium fixture; English",
+  "files": [
+    {
+      "path": "docs/reviews/color-calendar-20261016/before-peer.png",
+      "sha256": "c701945e02bffb26390f809f734164467d9ba7418d13831717f8e847e9cd88ee",
+      "bytes": 102047,
+      "modifiedUTC": "2026-10-16T11:45:28.910769+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-empty.png",
+      "sha256": "b9a038f6a252f357bf06adad40c8668af7dd84e3cefa705950306481a1d8b2c6",
+      "bytes": 62674,
+      "modifiedUTC": "2026-10-16T11:53:44.606279+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/pre-final-after-entry.png",
+      "sha256": "5a707b64742ce97cb25690b762639287bd1e7d123c948b585eb548cb162dab3e",
+      "bytes": 149652,
+      "modifiedUTC": "2026-10-16T11:54:02.771480+00:00",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/model-tests.txt",
+      "sha256": "4c80e0a4f97287f6892410686f4a091659212edcfdf538d87359a6805ce1e051",
+      "bytes": 579,
+      "modifiedUTC": "2026-10-16T11:57:28.665076+00:00"
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/pre-final-after-mobile-dark.png",
+      "sha256": "39e2a6b1f4461389a4eef20c677014805d396d908e6d5bb1d63dd8216cad0ec2",
+      "bytes": 51147,
+      "modifiedUTC": "2026-10-16T11:54:50.624114+00:00",
+      "dimensions": [
+        390,
+        1184
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-palette-playground.png",
+      "sha256": "5627287a89b13facf417974a802f7c7a55dc0f7409b0a35bc771110f9be7bc74",
+      "bytes": 98523,
+      "modifiedUTC": "2026-10-16T11:56:33.394879+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/superseded-after-medium-dark.png",
+      "sha256": "0056fea96109c2e9f040b1670d62641d2363dd422827e35019aea367b0da9aca",
+      "bytes": 109736,
+      "modifiedUTC": "2026-10-16T11:54:03.883052+00:00",
+      "dimensions": [
+        900,
+        1012
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/pre-final-after-mobile.png",
+      "sha256": "d31b7c7b19fa374a348458d47cc407b513f8f75c69e9e58ce6df720d4a7983d5",
+      "bytes": 50364,
+      "modifiedUTC": "2026-10-16T11:54:04.759002+00:00",
+      "dimensions": [
+        390,
+        1184
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-source-color.png",
+      "sha256": "05f2ce884320c1a2d6fb3db13482bd2835879d861f66cdbbba300ee25ca8c8a2",
+      "bytes": 226614,
+      "modifiedUTC": "2026-10-16T11:52:56.095256+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/initial-desktop.png",
+      "sha256": "28345867b728820060ff25d443a51f4a1817cc1569bf59d7e6ec38c7eb051f81",
+      "bytes": 163064,
+      "modifiedUTC": "2026-10-16T11:51:51.895010+00:00",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-event-playground.png",
+      "sha256": "558eb07d5aa3b3ea2bf15e8b8ab67517220ee9e083cac0d7cfe55a052ba48e7b",
+      "bytes": 95473,
+      "modifiedUTC": "2026-10-16T11:57:12.958916+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/source.json",
+      "sha256": "9106926b90bbfc8a4ed641f3d100666daeb67265be00ced88d339e47df845dd0",
+      "bytes": 1970,
+      "modifiedUTC": "2026-10-16T11:45:10.116976+00:00"
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-mobile-dark.png",
+      "sha256": "d7167cd95186c7da57dfd9f2d2ad89a6c480479f9186b7f0ae202d04b0f79a80",
+      "bytes": 50933,
+      "modifiedUTC": "2026-10-16T11:57:35.752040+00:00",
+      "dimensions": [
+        390,
+        1184
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-edit.png",
+      "sha256": "b1e6932a474e8cf684ad173686fe730bf9d4f8799d13cdc922a72dc18d538ba2",
+      "bytes": 229974,
+      "modifiedUTC": "2026-10-16T11:52:55.898025+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/reference.png",
+      "sha256": "65355d76372e64e38922145eabd8b44c556de1e43c625ea5a946671f23ad4d4a",
+      "bytes": 711213,
+      "modifiedUTC": "2026-10-16T11:45:10.119655+00:00",
+      "dimensions": [
+        1600,
+        1100
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-loading.png",
+      "sha256": "41087fd6ad5a7a640972a6af2d6767b6422bbc47f84701504f02f12893cac428",
+      "bytes": 93228,
+      "modifiedUTC": "2026-10-16T11:56:32.130824+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-validation.png",
+      "sha256": "9d32ec2b4d0bae06f7ba8d62c78148a4c20a6828a44516c5d030cdfc100ec50b",
+      "bytes": 228784,
+      "modifiedUTC": "2026-10-16T11:52:22.585199+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/before-entry.png",
+      "sha256": "561972d44eaf979e74b82e9074f8ba290951db7cce0dc4ee582ef29c9b97f118",
+      "bytes": 98649,
+      "modifiedUTC": "2026-10-16T11:45:27.978829+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-sources-playground.png",
+      "sha256": "d7ee0d68391fba98e609d65576198ffdad3aab38a686b3b81cef5304de3b62ca",
+      "bytes": 89979,
+      "modifiedUTC": "2026-10-16T11:57:13.892173+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/superseded-after-desktop-dark.png",
+      "sha256": "1ea5f8e86cc3bdf829892a8337eb1266c65a33964d63f81f66d9ff68dc19a0e1",
+      "bytes": 149470,
+      "modifiedUTC": "2026-10-16T11:54:03.823436+00:00",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/superseded-after-scroll-end.png",
+      "sha256": "9ac5bb3bbab13c847982f643bd40739128c2397e9eceac7ec61d3a064b5a181a",
+      "bytes": 149561,
+      "modifiedUTC": "2026-10-16T11:54:02.822635+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-desktop-dark.png",
+      "sha256": "c8e75789e854b8acaf77461f8b682020f865d604727f2a407c94908e31b52a94",
+      "bytes": 149918,
+      "modifiedUTC": "2026-10-16T11:55:43.756432+00:00",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-delete.png",
+      "sha256": "3d5dddf47a106faddae9cd372860572deb4b0e2c91d5723936ecff969ab74fbd",
+      "bytes": 227988,
+      "modifiedUTC": "2026-10-16T11:53:12.666237+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-mobile.png",
+      "sha256": "98193466ac82d029fc8216c78db70f202f3d3d59879a2002380ea9e691048420",
+      "bytes": 50183,
+      "modifiedUTC": "2026-10-16T11:57:35.649792+00:00",
+      "dimensions": [
+        390,
+        1184
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-entry.png",
+      "sha256": "0d300038a84453f594d2bbff21afea8316cabdd8281e7675b8dc1e714e980ff8",
+      "bytes": 148271,
+      "modifiedUTC": "2026-10-16T11:57:34.763027+00:00",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/export-filtered.json",
+      "sha256": "e7fa3beea1448230cf5ebd6861ac9950b5f7dbce8e2173c043abb89b341adaf7",
+      "bytes": 1171,
+      "modifiedUTC": "2026-10-16T11:53:45.000912+00:00"
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-mobile-dialog.png",
+      "sha256": "d05a820d2d165bb836fc993b8e6f2db42080b5db56a7eb16f8286a708d9a6e3a",
+      "bytes": 48127,
+      "modifiedUTC": "2026-10-16T11:57:35.851095+00:00",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/REVIEW.md",
+      "sha256": "2fca5ce14e28df7135002df1506fca7a65f989407f1792881c72b39ed93cd68e",
+      "bytes": 9464,
+      "modifiedUTC": "2026-10-16T11:59:10.334069+00:00"
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-scroll-end.png",
+      "sha256": "996c56c5b5ddae0e8541358604b002c8cdefdd740b2579c2b5a0656d6392fe22",
+      "bytes": 144858,
+      "modifiedUTC": "2026-10-16T11:55:54.751925+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-grid-playground.png",
+      "sha256": "a71585e19a3306fd0ccb4dfd9814a49ad063851fa55142a2645c9eafcf7e7e2b",
+      "bytes": 154904,
+      "modifiedUTC": "2026-10-16T11:56:32.400787+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-error.png",
+      "sha256": "bda2733f13d21f59d6198daa825d114aefee564422dd36e50bafea23058ecbd5",
+      "bytes": 97859,
+      "modifiedUTC": "2026-10-16T11:56:32.178002+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/pre-final-after-mobile-dialog.png",
+      "sha256": "4347ee96086cde37fa9b1fd4700ce4532e3934f6ed05abf659454aef22570af0",
+      "bytes": 48107,
+      "modifiedUTC": "2026-10-16T11:55:55.723809+00:00",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/superseded-after-mobile-dialog.png",
+      "sha256": "50be9b9daabacafd4d4959802a6af18299ea3acf5b9b17e3eae29a96d8c68661",
+      "bytes": 63609,
+      "modifiedUTC": "2026-10-16T11:54:50.728956+00:00",
+      "dimensions": [
+        390,
+        1184
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/after-medium-dark.png",
+      "sha256": "b1e27735afb91a62498470da7db59c16bf6d6f2c4abc5ed3862130ce3d796e23",
+      "bytes": 110141,
+      "modifiedUTC": "2026-10-16T11:55:23.198152+00:00",
+      "dimensions": [
+        900,
+        1000
+      ]
+    },
+    {
+      "path": "docs/reviews/color-calendar-20261016/before-changelog.png",
+      "sha256": "1c75776a2159d752cfad9c144fc9338181a8dbd3d9569f91007d19feca716baa",
+      "bytes": 145704,
+      "modifiedUTC": "2026-10-16T11:45:29.782972+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "src/components/color-calendar/index.tsx",
+      "sha256": "55994ab0479e91047aaed4e6204e23012cd4a6cc40ee92cb50cf26597d059936",
+      "bytes": 8123,
+      "modifiedUTC": "2026-10-16T11:55:42.517331+00:00"
+    },
+    {
+      "path": "src/components/color-calendar/model.ts",
+      "sha256": "88641dd62a52dd51228f5e4844008068e60356bd178f25c21235f0be8978e2ea",
+      "bytes": 4368,
+      "modifiedUTC": "2026-10-16T11:50:46.480410+00:00"
+    },
+    {
+      "path": "src/components/color-calendar/color-calendar.css",
+      "sha256": "ca45d51482b85452df9d90693df1122a15a9db1b477dd77167332fc0aec4ee78",
+      "bytes": 8157,
+      "modifiedUTC": "2026-10-16T11:57:14.900631+00:00"
+    },
+    {
+      "path": "src/patterns/color-calendar/index.tsx",
+      "sha256": "da5d568459d73827da6e8ba9ac13214e07f9c200231ab9d06d9c61650327cac2",
+      "bytes": 22077,
+      "modifiedUTC": "2026-10-16T11:57:15.003403+00:00"
+    },
+    {
+      "path": "src/patterns/color-calendar/data.ts",
+      "sha256": "90b5bc154a1a0efa68bcc210729fb2d1d0f9490630c91afb77f738b9c21adc94",
+      "bytes": 2926,
+      "modifiedUTC": "2026-10-16T11:50:46.504755+00:00"
+    },
+    {
+      "path": "src/patterns/color-calendar/color-calendar.css",
+      "sha256": "b9cd65d8f903d56c9889cf099222572863e307ebb3211b4ddbf57196f23e275c",
+      "bytes": 7277,
+      "modifiedUTC": "2026-10-16T11:57:14.978289+00:00"
+    },
+    {
+      "path": "src/pages/ColorCalendarDocs.tsx",
+      "sha256": "18541ae817cd77060c913d93446474e5f0a6d965108350add00ed86f77d7002f",
+      "bytes": 6281,
+      "modifiedUTC": "2026-10-16T11:50:46.549360+00:00"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "d55848a25a8ffb0f3b5c23b6b7becfc9cae5a72df940c4784440f2ce165f8a11",
+      "bytes": 22373,
+      "modifiedUTC": "2026-10-16T11:50:46.302518+00:00"
+    },
+    {
+      "path": "src/docs/Sidebar.tsx",
+      "sha256": "26e3d7e6c0e241770abb60ac64619d9c0b116a79e62b17267e0b05f1045cff73",
+      "bytes": 18785,
+      "modifiedUTC": "2026-10-16T11:50:46.303097+00:00"
+    },
+    {
+      "path": "src/docs/playground/registry.tsx",
+      "sha256": "4a4d00fe5101111540c00581bd37fab4ed0dd891701c44acd4490a0a02c1e8ad",
+      "bytes": 99445,
+      "modifiedUTC": "2026-10-16T11:50:46.326808+00:00"
+    },
+    {
+      "path": "src/lib/site.ts",
+      "sha256": "b04bd3fe26a342bc023df4052398dce3bc2966af11315c443142768242aa76c8",
+      "bytes": 42208,
+      "modifiedUTC": "2026-10-16T11:50:46.302865+00:00"
+    }
+  ]
+}
