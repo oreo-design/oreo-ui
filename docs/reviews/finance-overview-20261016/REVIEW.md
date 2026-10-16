@@ -7,7 +7,7 @@ Baseline `c67a0a8f24bc5fdfea0ed74c948faa7ee4ac8067` from freshly fetched origin/
 
 | Target → peer | Canonical owner / reuse | Difference and evidence |
 | --- | --- | --- |
-| Bank list → Cross-Currency balances/activity | `src/components/currency-finance` money formatting and fixed rational FX helpers; shared neutral borders, tinted icon tiles, rows | Rendered `/cross-currency` inspected (`peer-cross-currency.png`). New bank rows have account identity + 10-point spark bars, rather than currency-only cards. |
+| Bank list → Cross-Currency balances/activity | `src/components/currency-finance` money formatting and fixed rational FX helpers; shared neutral borders, tinted icon tiles, rows | Rendered `/cross-currency` inspected (`peer-cross-currency.png`). New bank rows have account identity + eight-point spark bars, rather than currency-only cards. |
 | Attention panel → Inbox Stream / escalation cards | `src/patterns/stream/StreamCard.tsx`, `src/components/consulting/index.tsx`, shared Button/IconButton | Inbox Stream rendered/captured; escalation source-only. New composition uses compact rows and readable action links, not author notifications or task approvals. |
 | Loading → MoneyActivityList loading | `src/components/currency-finance/index.tsx` content-shaped skeleton and retained-content refresh | Existing source-only loading comparison. New reusable SkeletonReveal adds matched slots and short content transition; no global loader overhaul. |
 | Empty/error → AgentWorkspaceState | Shared title/description/action hierarchy, centered inside owning panel | Source inspected, runtime states to be captured after implementation. |
@@ -42,10 +42,10 @@ Local fixtures only; English. Desktop 1440×1080 light unless specified. Browser
 | Empty/reminder/search recovery | No prior route | after-empty.png | Distinct caught-up and no-matches states; clear and undo exercised |
 | Validation / account zero details | No prior route | after-validation.png / after-account-zero.png | Error and successful recovery; earlier captures precede icon cleanup |
 | Responsive light/dark | Missing-route narrow baseline not captured | after-mobile-light-v2.png / after-mobile-dark.png | 390×844 viewport; full-page captures; readable wrapped balances, single column |
-| Dialog context / title and scroll | No prior route | after-mobile-dialog.png | Dark mobile full-page capture includes scrolled background; dialog is viewport-fixed; viewport crop pending |
+| Dialog context / title and scroll | No prior route | after-mobile-dialog.png | Dark mobile full-page capture includes scrolled background; dialog is viewport-fixed; viewport crop added below |
 | Medium / reduced motion | Missing-route medium baseline not captured | after-medium-dark-reduced.png | 900×1000 dark; OS reduction emulated; no continuous timing claim |
 | Component documentation | Missing-route component baselines not separately captured | docs-skeleton.png / docs-api.png / docs-attention-empty.png | Canonical playground / docs / shared empty state |
-| Changelog | before-changelog.png | Pending final PR entry capture | Same desktop viewport/theme |
+| Changelog | before-changelog.png | after-changelog.png | Same desktop viewport/theme |
 
 Superseded originals are retained: after-ready.png and after-ready-v2.png contained wrapping/duplicate arrow icons; v3 is canonical. after-loading.png had a cursor overlay; v3 is canonical. after-mobile-light.png predates icon and minimum-height fixes; v2 is canonical. docs-bank-error.png predates unavailable-total correction. No source screenshot overwritten.
 
@@ -57,3 +57,8 @@ Superseded originals are retained: after-ready.png and after-ready-v2.png contai
 | Hidden content still focusable risk | Pending content is inert and aria-hidden; skeleton always decorative (`src/components/finance-overview/index.tsx:56`) | Prevent focus entering hidden actions |
 
 Verdict: Approve code-level motion review. No layout-property animation or transition:all; CSS transitions are interruptible. Shared strong ease-out; keyboard and reduced-motion opt out, a deliberate conservative choice for this dashboard. Continuous motion recording is unavailable in this direct Playwriter session (extension tabCapture disconnected); timing smoothness and real-device touch remain unverified. Static state evidence is separate from that gap and does not block authorized delivery.
+
+### Final correction round
+Product source snapshot `80c5092` was reviewed, then keyboard activation was hardened on Refresh, Replay loading and Simulate failure: click `detail === 0` explicitly disables reveal, in addition to keyboard capture and reduced-motion CSS. Browser keyboard replay now reads `data-animate=false` after completion; reusable SkeletonReveal keyboard toggling also verified false. Initial-failure counts/totals are unavailable em dashes. `docs-bank-error-v2.png` supersedes v1. `after-mobile-dialog-viewport.png` supplies the pending 390×844 viewport crop with fixed title/footer and full account table.
+
+PR: https://github.com/oreo-design/oreo-ui/pull/87. Changelog addition links this actual PR. Final screenshot manifest records file hashes/dimensions and source content hashes; evidence-only later commits do not alter the captured product code. Canonical ready screenshot v3 matches final visible overview; final correction only affects keyboard transition intent and initial-error labels. Deployment is not verified.

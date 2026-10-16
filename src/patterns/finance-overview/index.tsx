@@ -168,7 +168,10 @@ export function FinanceOverviewPage() {
               type="secondary"
               tapScale={1}
               disabled={loading}
-              onClick={() => load()}
+              onClick={(event) => {
+                setAnimate(event.detail > 0);
+                load();
+              }}
               leadingIcon={<Icon name="refresh" size="sm" />}
             >
               {loading ? "Loading…" : "Refresh"}
@@ -191,7 +194,10 @@ export function FinanceOverviewPage() {
                 size="sm"
                 tapScale={1}
                 disabled={loading}
-                onClick={() => load(false, true)}
+                onClick={(event) => {
+                  setAnimate(event.detail > 0);
+                  load(false, true);
+                }}
               >
                 Replay loading
               </Button>
@@ -200,7 +206,10 @@ export function FinanceOverviewPage() {
                 size="sm"
                 tapScale={1}
                 disabled={loading}
-                onClick={() => load(true)}
+                onClick={(event) => {
+                  setAnimate(event.detail > 0);
+                  load(true);
+                }}
               >
                 Simulate failure
               </Button>
