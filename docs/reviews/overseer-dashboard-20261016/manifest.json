@@ -235,6 +235,18 @@
       "width": 1440,
       "height": 1080,
       "sha256": "7b508896e917b821302c8e0e86e95fa3850a3e49106b0b27dc5acd4c399f63f3"
+    },
+    {
+      "file": "after-desktop-top.png",
+      "width": 1440,
+      "height": 1586,
+      "sha256": "3e6105651195c55a250f0a14660ad08519596cc65adda9a035a48758d1558829"
+    },
+    {
+      "file": "after-desktop-verified.png",
+      "width": 1440,
+      "height": 1585,
+      "sha256": "f2da4b4e36d1bd80b131c366f212918381f16130930843695efeb2b623d5787a"
     }
   ],
   "sourceHashes": {
@@ -247,5 +259,6 @@
     "src/patterns/agent-observatory/workspace.css": "f63ebca7897e6cdfdd38212c7c7ab2884cac094a2920a484b2fe9a13fce72f88"
   },
   "implementationRevision": "3a2178037247dc4a8f23e1afea0f126f98852b74",
-  "changelogSourceHash": "c947c1100bae92c5964d9cc6322287b531dce11192f341d0a31c6f9e27e6ddb1"
+  "changelogSourceHash": "c947c1100bae92c5964d9cc6322287b531dce11192f341d0a31c6f9e27e6ddb1",
+  "verifiedMainMerge": "2ff2a1dfc2d47596be4b4171bce783d4969c6c9d"
 }
