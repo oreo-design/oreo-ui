@@ -436,3 +436,96 @@
     font-size: 0.6875rem;
   }
 }
+.edge-routing-saved {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-small);
+  background: var(--color-bg-elevated);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+.edge-routing-dialog {
+  position: fixed;
+  z-index: 50;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(32rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium);
+  color: var(--color-text-primary);
+  background: var(--color-bg-base);
+  box-shadow: var(--shadow-overlay);
+}
+.edge-routing-dialog > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.edge-routing-dialog h2 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.edge-routing-body {
+  overflow: auto;
+  padding: 1.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+.edge-routing-body > p {
+  color: var(--color-text-secondary);
+}
+.edge-routing-share {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.edge-routing-share input {
+  width: 100%;
+  accent-color: var(--color-status-progress);
+}
+.edge-routing-share output {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.edge-routing-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+.edge-routing-facts dt {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+}
+.edge-routing-facts dd {
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.edge-routing-dialog > footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+@media (max-width: 600px) {
+  .edge-routing-saved {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

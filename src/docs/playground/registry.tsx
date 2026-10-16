@@ -1,3 +1,4 @@
+import {MonitorReveal} from "@/components/monitor-reveal";
 import {SegmentRuleBuilder,SegmentPreview,SubscriptionPlanPicker,RevenueTargetEditor,segmentFields} from "@/components/subscription-operations";
 import {CUSTOMERS as SUB_CUSTOMERS,PLANS as SUB_PLANS,LEGS as SUB_LEGS,INITIAL_SEGMENT as SUB_SEGMENT,TODAY as SUB_TODAY} from "@/patterns/subscription-workspace/data";
 import {IssueRow,IssueQueue,IssueReader} from "@/components/issue-browser";
@@ -114,8 +115,8 @@ import { InlineSearchSelect } from "@/components/inline-search-select";
 import { SAMPLE_ASSETS } from "@/patterns/position-studio/data";
 import { InboxNotification } from "@/components/studio-inbox";
 import { NOTIFICATIONS } from "@/patterns/studio-inbox/data";
-import { RegionTrafficMap } from "@/components/edge-monitor";
-import { REGIONS } from "@/patterns/edge-observatory/data";
+import { RegionTrafficMap,RegionSpotlight,IncidentRecommendation } from "@/components/edge-monitor";
+import { REGIONS, latencySamples } from "@/patterns/edge-observatory/data";
 import { Switch } from "@/components/switch";
 import { ToggleComposer, ComposerModeSwitch, ComposerFormattingToolbar, EMPTY_COMPOSER, type ComposerMode } from "@/components/toggle-composer";
 import { CanvasToolbar, type CanvasMode } from "@/components/canvas-toolbar";
@@ -238,7 +239,8 @@ export const componentModules = {
   "timeframe-selector": { TimeframeSelector },
   "inline-search-select": { InlineSearchSelect },
   "studio-inbox": { InboxNotification },
-  "edge-monitor": { RegionTrafficMap },
+  "monitor-reveal":{MonitorReveal},
+  "edge-monitor": { RegionTrafficMap,RegionSpotlight,IncidentRecommendation },
   switch: { Switch },
   "toggle-composer": { ToggleComposer, ComposerModeSwitch, ComposerFormattingToolbar },
   "canvas-toolbar": { CanvasToolbar },
@@ -454,6 +456,9 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
   "timeframe-selector": define("Timeframe Selector", { value: select(["1h","4h","24h","3d","1w"],"24h"), disabled: toggle() }, (v,set) => <TimeframeSelector {...v} onValueChange={value=>set("value",value as typeof v.value)} />),
   "inline-search-select": define("Inline Search Select", { value: select(["eth","btc","bnb","sol","avax"],"eth"), disabled: toggle(), loading: toggle(), error: toggle() }, (v,set) => <div className="w-48"><InlineSearchSelect options={SAMPLE_ASSETS} label="Token" value={v.value} disabled={v.disabled} loading={v.loading} error={v.error?"The sample catalog is unavailable.":undefined} onRetry={()=>set("error",false)} onValueChange={value=>set("value",value as typeof v.value)} /></div>),
   "studio-inbox-components": define("Inbox Notification", { selected: toggle(true), unread: toggle(true), preview: text(NOTIFICATIONS[0].preview) }, (v,set) => <div className="w-full max-w-md rounded-card-medium border border-border-subtle bg-bg-base p-2"><InboxNotification item={{...NOTIFICATIONS[0], unread:v.unread, preview:v.preview}} selected={v.selected} onSelect={()=>set("selected",!v.selected)}/></div>),
+  "monitor-reveal":{...define("Monitor Reveal",{play:number(1,0,100,1),variant:select(["rise","wipe"],"rise"),delay:number(100,0,400,50)},v=><MonitorReveal className="w-96 max-w-full" play={v.play} variant={v.variant} delay={v.delay}><RegionSpotlight region={REGIONS[6]} samples={latencySamples("24h",REGIONS[6])}/></MonitorReveal>),source:"monitor-reveal"},
+  "region-spotlight":{...define("Region Spotlight",{selected:select(REGIONS.map(r=>r.id),"sin1"),trend:toggle(true)},v=><div className="w-96 max-w-full"><RegionSpotlight region={REGIONS.find(r=>r.id===v.selected)!} samples={v.trend?latencySamples("24h",REGIONS.find(r=>r.id===v.selected)):[]}/></div>),source:"edge-monitor"},
+  "incident-recommendation":{...define("Incident Recommendation",{share:number(30,1,50,1),action:text("")},(v,set)=><div className="w-full max-w-lg"><IncidentRecommendation source={REGIONS[6]} baseline={38} target={REGIONS[7]} headroom={41} share={v.share} onReview={()=>set("action","Review requested. The complete template opens a local routing draft.")} onTrace={()=>set("action","Trace requested. Open the template to inspect the sample requests.")}/><p role="status" className="px-3 text-sm text-text-secondary">{v.action}</p></div>),source:"edge-monitor"},
   "edge-monitor": define("Region Traffic Map", { selected: select(REGIONS.map(r=>r.id), "sin1"), empty: toggle() }, (v,set) => <div className="w-full max-w-3xl rounded-card-medium border border-border-subtle bg-bg-elevated"><RegionTrafficMap regions={v.empty?[]:REGIONS} selected={v.selected} onSelect={id=>set("selected",id)}/></div>),
   switch: define("Switch", { checked: toggle(false), variant: select(["default", "stretch"], "stretch"), disabled: toggle(), readOnly: toggle() }, (v,set) => <Switch aria-label="Stretch motion" checked={v.checked} onCheckedChange={checked=>set("checked",checked)} variant={v.variant} disabled={v.disabled} readOnly={v.readOnly} />),
   "toggle-composer": define("Toggle Composer", { mode: select(["quick", "long"], "quick"), surface: select(["solid", "frosted"], "solid"), quick: text("A thought worth sharing."), headline: text("A longer story"), intro: text("Start with a little context."), body: text("Make room for the details."), disabled: toggle() }, (v,set) => <div className="w-full max-w-lg"><ToggleComposer mode={v.mode as ComposerMode} onModeChange={mode=>set("mode",mode)} surface={v.surface} disabled={v.disabled} value={{...EMPTY_COMPOSER,quick:v.quick,headline:v.headline,intro:v.intro,body:v.body}} onValueChange={value=>{for (const key of Object.keys(EMPTY_COMPOSER) as (keyof typeof EMPTY_COMPOSER)[]) set(key,value[key]);}} /></div>),
