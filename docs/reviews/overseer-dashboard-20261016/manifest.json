@@ -241,6 +241,12 @@
       "width": 1440,
       "height": 1586,
       "sha256": "3e6105651195c55a250f0a14660ad08519596cc65adda9a035a48758d1558829"
+    },
+    {
+      "file": "after-desktop-verified.png",
+      "width": 1440,
+      "height": 1585,
+      "sha256": "f2da4b4e36d1bd80b131c366f212918381f16130930843695efeb2b623d5787a"
     }
   ],
   "sourceHashes": {
