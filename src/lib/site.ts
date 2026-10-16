@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "issue-browser":{title:"Issue Browser",description:"A compact issue workspace with fast list navigation, a persistent reader and local discussions."},
+ "issue-row":{title:"Issue Row",description:"A dense selectable issue with status, labels and discussion counts."},
+ "issue-queue":{title:"Issue Queue",description:"An issue list with shared loading, empty and failure states."},
+ "issue-reader":{title:"Issue Reader",description:"A nonmodal markdown reader with issue metadata and a persistent reply composer."},
  "task-board":{title:"Task Board",description:"A campaign board with inline task details, local discussions and editable properties."},
  "task-properties":{title:"Task Properties",description:"Searchable task properties, paired date validation and controlled label selection."},
  "task-subtasks":{title:"Task Subtasks",description:"A controlled checklist with inline creation and derived completion."},

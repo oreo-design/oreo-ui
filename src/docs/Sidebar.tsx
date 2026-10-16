@@ -22,6 +22,7 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+ {label:"Issue Row",page:"issue-row"},{label:"Issue Queue",page:"issue-queue"},{label:"Issue Reader",page:"issue-reader"},
  {label:"Task Properties",page:"task-properties"},{label:"Task Subtasks",page:"task-subtasks"},{label:"Task Detail Panel",page:"task-detail-panel"},
       {label:"Activity Event Row",page:"activity-event-row"},
       {label:"Grouped Activity Feed",page:"grouped-activity-feed"},
@@ -248,6 +249,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Issue Browser",page:"issue-browser"},
       {label:"Task Board",page:"task-board"},
       {label:"Music Project",page:"music-project"},
       {label:"Voice Agent",page:"voice-agent"},

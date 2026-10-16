@@ -1,3 +1,5 @@
+import {IssueRow,IssueQueue,IssueReader} from "@/components/issue-browser";
+import {SAMPLE_ISSUES} from "@/patterns/issue-browser/data";
 import {TaskProperties,TaskSubtasks,TaskDetailPanel,type TaskDetails} from "@/components/task-editor";
 import {CAMPAIGN_TASKS,TASK_PEOPLE} from "@/patterns/task-board/data";
 import {AnnotatedWaveform,ProductionTaskList,MixVersionList,toggleTask,type ProductionTask} from "@/components/music-project";
@@ -173,6 +175,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "issue-browser":{IssueRow,IssueQueue,IssueReader},
  "task-editor":{TaskProperties,TaskSubtasks,TaskDetailPanel},
  "music-project":{AnnotatedWaveform,ProductionTaskList,MixVersionList},
  "voice-telemetry":{VoiceSignal,VoiceLatencyBreakdown,TurnLatencyHistory},
@@ -270,6 +273,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "issue-row":{...define("Issue Row",{selected:toggle(true),state:select(["open","closed"],"open"),title:text(SAMPLE_ISSUES[0].title)},(v,set)=><div className="w-full max-w-2xl"><IssueRow issue={{...SAMPLE_ISSUES[0],title:v.title,state:v.state}} selected={v.selected} onSelect={()=>set("selected",!v.selected)}/></div>),source:"issue-browser"},
+ "issue-queue":{...define("Issue Queue",{state:select(["ready","loading","refreshing","empty","filtered","error"],"ready"),selected:number(8428,8400,8500,1)},(v,set)=><div className="w-full max-w-2xl h-96"><IssueQueue issues={v.state==="ready"||v.state==="refreshing"?SAMPLE_ISSUES.slice(0,5):[]} selectedId={v.selected} onSelect={id=>set("selected",id)} loading={v.state==="loading"||v.state==="refreshing"} error={v.state==="error"?"The sample request failed. Try again to restore the list.":undefined} onRetry={()=>set("state","ready")} filtered={v.state==="filtered"} onClear={()=>set("state","ready")}/></div>),source:"issue-browser"},
+ "issue-reader":{...define("Issue Reader",{draft:text(""),open:toggle(true),posted:text("")},(v,set)=>v.open?<div className="w-full max-w-md h-[38rem]"><IssueReader issue={{...SAMPLE_ISSUES[0],comments:[...SAMPLE_ISSUES[0].comments,...(v.posted?[{id:"local",author:"You",body:v.posted,date:"Just now"}]:[])]}} draft={v.draft} onDraftChange={draft=>set("draft",draft)} onComment={()=>{set("posted",v.draft.trim());set("draft","");}} onClose={()=>set("open",false)}/></div>:<Button onClick={()=>set("open",true)} tapScale={1}>Open issue reader</Button>),source:"issue-browser"},
  "task-properties":{...define("Task Properties",{task:text(JSON.stringify(CAMPAIGN_TASKS[1]))},(v,set)=>{let task:TaskDetails;try{task=JSON.parse(v.task);if(!task||["id","title","status","priority","assigneeId","start","due","repeat","estimate","blockedBy"].some(k=>typeof task[k as keyof TaskDetails]!=="string")||!Array.isArray(task.labels)||task.labels.some((l:unknown)=>typeof l!=="string"))throw new Error();}catch{return <p role="alert">Enter a valid TaskDetails JSON object.</p>}return <div className="w-full max-w-md p-6"><TaskProperties task={task} people={TASK_PEOPLE} dependencies={CAMPAIGN_TASKS} onChange={patch=>set("task",JSON.stringify({...task,...patch}))}/></div>;}),source:"task-editor"},
  "task-subtasks":{...define("Task Subtasks",{items:text(JSON.stringify(CAMPAIGN_TASKS[4].subtasks))},(v,set)=>{let items;try{items=JSON.parse(v.items);if(!Array.isArray(items)||items.some(x=>typeof x.id!=="string"||typeof x.title!=="string"||typeof x.done!=="boolean"))throw new Error();}catch{return <p role="alert">Enter a valid Subtask array.</p>}return <div className="w-full max-w-md p-6"><TaskSubtasks items={items} onChange={next=>set("items",JSON.stringify(next))}/></div>;}),source:"task-editor"},
  "task-detail-panel":{...define("Task Detail Panel",{title:text("Paid social creatives"),complete:toggle(false),open:toggle(true)},(v,set)=>v.open?<div className="h-[32rem] w-full max-w-md"><TaskDetailPanel taskId="MKT-109" title={v.title} complete={v.complete} onComplete={()=>set("complete",!v.complete)} onClose={()=>set("open",false)}><p className="text-sm text-text-secondary">Compose task properties, checklists and discussions here.</p></TaskDetailPanel></div>:<Button type="secondary" onClick={()=>set("open",true)}>Open task details</Button>),source:"task-editor"},
