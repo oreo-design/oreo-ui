@@ -16,8 +16,8 @@ Baseline: `1f6e834d55343d8e27331b2ee5479b35a54ef639`. Local fixture at http://lo
 
 Tokens: Oreo neutral button hierarchy replaces reference's pink CTA. Existing status-progress/success/error, border-subtle/default, bg-base/elevated, text-primary/secondary/tertiary, rounded-xl/2xl, spacing scale. Resource column and hour-cell widths are layout geometry needed for timed placement, not new global design tokens. Do not copy reference branding or wallpaper.
 
-## Coverage (to complete)
-Entry, loading, empty, actions, titled scroll surfaces, icons/color: pending after implementation. Drag recording unavailable in direct headless Playwriter; extension sessions timed out repeatedly. Static frames do not verify motion. No live dispatch or production deployment is claimed.
+## Pre-edit coverage plan
+Entry, loading, empty, actions, titled scroll surfaces, icons/color were scheduled for inspection; completed findings are recorded below. Drag recording unavailable in direct headless Playwriter; extension sessions timed out repeatedly. Static frames do not verify motion. No live dispatch or production deployment is claimed.
 
 ## Implemented and checked
 Two exported components (`RouteJobCard`, `AllocationTimeline`) and the `/dispatch-allocation` template. Date and category/search filters; driver/vehicle labels; draggable pending and allocated jobs; form-based keyboard allocation; validation of overlap, day bounds and seats; dispatch confirmation and locking; unassign; one-step undo; full JSON export. Site routes, sidebar, metadata, playgrounds, docs and changelog are included. All data is a local fixture.
@@ -75,3 +75,6 @@ Verdict: Approve source-level motion implementation. Pointer overlay uses dnd-ki
 
 ## Remaining evidence limits
 Playwriter extension sessions timed out; direct headless session supports screenshots and interactions but not tabCapture recording. Drag recording, physical touch device, matched mobile/tablet pre-change screenshots and automated export-file readback remain gaps. No baseline screenshot was invented. This does not block the authorized merge. Source baseline is preserved above. No production deployment is verified.
+
+## Source review and delivery
+Implementation source: `c5228fba7c0731f5576b3c73de638fe877e75d12`. [PR #80](https://github.com/oreo-design/oreo-ui/pull/80). Final follow-up adds the verified PR changelog entry and settled screenshot. Diff reviewed for task scope, controlled state, full-data conflict validation, correct dialog focus fallback, disabled actions, escaped JSX export and token usage. No unresolved source findings. Browser follow-up also checked Unassign, date change/Demo day, vehicle labels and tray collapse.

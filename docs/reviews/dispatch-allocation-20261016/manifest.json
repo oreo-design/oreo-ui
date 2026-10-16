@@ -20,6 +20,7 @@
     "after-assigned.png",
     "after-capacity-error.png",
     "after-card-playground.png",
+    "after-changelog.png",
     "after-conflict.png",
     "after-dark-final.png",
     "after-dark.png",
@@ -27,6 +28,7 @@
     "after-desktop.png",
     "after-dispatched.png",
     "after-dragging.png",
+    "after-drop-settled.png",
     "after-drop.png",
     "after-empty-final.png",
     "after-empty.png",
@@ -53,5 +55,7 @@
     "No physical touch test",
     "No matched tablet/mobile baseline",
     "No production verification"
-  ]
+  ],
+  "implementation_revision": "c5228fba7c0731f5576b3c73de638fe877e75d12",
+  "pr": "https://github.com/oreo-design/oreo-ui/pull/80"
 }
