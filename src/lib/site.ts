@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "model-trend-chart": {title:"Model Trend Chart",description:"Daily model cost, token and request series with accessible inspection."},
+  "model-usage-ring": {title:"Model Usage Ring",description:"Model request shares and total token usage with selectable legends."},
+  "agent-usage-row": {title:"Agent Usage Row",description:"Agent activity with model, tokens, costs and optional actions."},
+  "model-costs": {title:"Model Costs",description:"A local LLM usage dashboard with synchronized costs, model shares and sample activity."},
   "saved-payment-methods": {title:"Saved Payment Methods",description:"Selectable payment identities with edit and remove actions."},
   "discount-code-field": {title:"Discount Code Field",description:"Explicit discount validation and applied-code status."},
   "checkout-summary": {title:"Checkout Summary",description:"Clear line items, discount, tax basis and due-today totals."},

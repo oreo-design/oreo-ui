@@ -1,0 +1,281 @@
+.mu-trend {
+  min-width: 0;
+  color: var(--color-text-primary);
+}
+.mu-trend svg {
+  width: 100%;
+  display: block;
+  overflow: visible;
+}
+.mu-trend svg text {
+  font-size: 11px;
+  fill: var(--color-text-secondary);
+  font-family: var(--font-sans);
+}
+.mu-legend {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 3);
+  margin: calc(var(--spacing) * 4) 0;
+}
+.mu-legend button {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  min-height: 28px;
+  border-bottom: 2px solid transparent;
+}
+.mu-legend button[aria-pressed="true"] {
+  color: var(--color-text-primary);
+  border-color: var(--mu-color);
+}
+.mu-legend i,
+.mu-point-values i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--mu-color);
+}
+.mu-trend figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  font-size: var(--text-xs);
+  margin-top: calc(var(--spacing) * 4);
+}
+.mu-trend figcaption label {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  color: var(--color-text-secondary);
+}
+.mu-trend input {
+  accent-color: var(--color-text-primary);
+  width: 96px;
+}
+.mu-point-values {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 3);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-control);
+}
+.mu-point-values span {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+  flex-wrap: wrap;
+  color: var(--color-text-secondary);
+}
+.mu-point-values b {
+  color: var(--color-text-primary);
+  width: 100%;
+  font-weight: 500;
+}
+.mu-data {
+  margin-top: calc(var(--spacing) * 4);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.mu-data summary {
+  cursor: pointer;
+}
+.mu-data > div {
+  overflow: auto;
+  position: relative;
+  margin-top: calc(var(--spacing) * 3);
+}
+.mu-data table {
+  border-collapse: collapse;
+  min-width: 440px;
+  width: 100%;
+}
+.mu-data th,
+.mu-data td {
+  text-align: left;
+  padding: calc(var(--spacing) * 2);
+  border-bottom: 1px solid var(--color-border-subtle);
+  white-space: nowrap;
+}
+.mu-chart-skeleton {
+  height: 300px;
+  border-radius: var(--radius-card-small);
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-bg-elevated) 0 48px,
+    var(--color-border-subtle) 49px 50px
+  );
+}
+.mu-distribution {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+  color: var(--color-text-primary);
+}
+.mu-ring-wrap {
+  position: relative;
+  max-width: 210px;
+}
+.mu-ring-wrap svg {
+  width: 100%;
+  display: block;
+}
+.mu-ring-wrap > div {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  pointer-events: none;
+}
+.mu-ring-wrap strong {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+.mu-ring-wrap span {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.mu-token-total > span {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.mu-token-total strong {
+  display: block;
+  font-size: var(--text-2xl);
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  margin-top: calc(var(--spacing) * 2);
+}
+.mu-token-total small {
+  color: var(--color-text-secondary);
+}
+.mu-distribution ul {
+  grid-column: 1/-1;
+  display: grid;
+  gap: var(--spacing);
+}
+.mu-distribution li button {
+  display: grid;
+  grid-template-columns: 3px minmax(0, 1fr) auto 48px;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  width: 100%;
+  min-height: 36px;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  text-align: left;
+  padding: var(--spacing);
+  border-radius: var(--radius-control);
+}
+.mu-distribution button[aria-pressed="true"] {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+.mu-distribution li i {
+  height: 22px;
+}
+.mu-distribution li b {
+  font-size: var(--text-xs);
+  font-weight: 400;
+}
+.mu-distribution li strong {
+  font-weight: 500;
+  text-align: right;
+  font-size: var(--text-xs);
+}
+.mu-legend button:disabled,
+.mu-distribution button:disabled {
+  cursor: default;
+}
+.mu-agent-row {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  gap: calc(var(--spacing) * 3);
+  align-items: start;
+  padding: calc(var(--spacing) * 4) 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.mu-agent-row:last-child {
+  border-bottom: 0;
+}
+.mu-agent-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  display: grid;
+  place-items: center;
+  color: var(--color-text-secondary);
+}
+.mu-agent-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+}
+.mu-agent-title > button,
+.mu-agent-title > strong {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-align: left;
+}
+.mu-agent-title > button {
+  cursor: pointer;
+}
+.mu-agent-row p {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-top: var(--spacing);
+}
+.mu-agent-row small {
+  display: block;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: calc(var(--spacing) * 2);
+}
+.mu-agent-actions {
+  display: grid;
+  justify-items: end;
+  gap: calc(var(--spacing) * 3);
+}
+.mu-agent-actions time {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+.mu-trend :focus-visible,
+.mu-distribution :focus-visible,
+.mu-agent-row :focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .mu-agent-row {
+    grid-template-columns: 32px minmax(0, 1fr);
+  }
+  .mu-agent-actions {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mu-point-values {
+    gap: calc(var(--spacing) * 2);
+  }
+  .mu-point-values span {
+    font-size: 10px;
+  }
+}
