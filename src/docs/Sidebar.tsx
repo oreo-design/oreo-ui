@@ -111,6 +111,10 @@ const NAV: Group[] = [
       {label:"Calendar Color Picker",page:"calendar-color-picker"},
       {label:"Calendar Source List",page:"calendar-source-list"},
       {label:"Calendar Week Grid",page:"calendar-week-grid"},
+      {label:"Skeleton Reveal",page:"skeleton-reveal"},
+      {label:"Balance Spark Bars",page:"balance-spark-bars"},
+      {label:"Finance Attention List",page:"finance-attention-list"},
+      {label:"Bank Account List",page:"bank-account-list"},
       {label:"Agent Run Card",page:"agent-run-card"},
       {label:"Agent Run Activity",page:"agent-run-activity"},
       {label:"Agent Inbox Board",page:"agent-inbox-board"},
@@ -227,6 +231,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Finance Overview",page:"finance-overview"},
       {label:"Agent Inbox",page:"agent-inbox"},
       {label:"Color Calendar",page:"color-calendar"},
       {label:"Cross-Currency",page:"cross-currency"},

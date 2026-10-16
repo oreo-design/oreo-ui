@@ -1,3 +1,5 @@
+import {FinanceOverviewPage} from "@/patterns/finance-overview";
+import {FinanceOverviewDocs} from "@/pages/FinanceOverviewDocs";
 import {AgentInboxPage} from "@/patterns/agent-inbox";
 import {AgentInboxDocs} from "@/pages/AgentInboxDocs";
 import {ColorCalendarPage} from "@/patterns/color-calendar";
@@ -184,6 +186,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+ "skeleton-reveal":FinanceOverviewDocs,"balance-spark-bars":FinanceOverviewDocs,"finance-attention-list":FinanceOverviewDocs,"bank-account-list":FinanceOverviewDocs,"finance-overview":FinanceOverviewPage,
  "agent-run-card":AgentInboxDocs,"agent-run-activity":AgentInboxDocs,"agent-inbox-board":AgentInboxDocs,"agent-inbox":AgentInboxPage,
  "calendar-event-block":ColorCalendarDocs,"calendar-color-picker":ColorCalendarDocs,"calendar-source-list":ColorCalendarDocs,"calendar-week-grid":ColorCalendarDocs,"color-calendar":ColorCalendarPage,
  "currency-balance-card": CurrencyFinanceDocs, "currency-balance-summary": CurrencyFinanceDocs, "money-activity-list": CurrencyFinanceDocs, "cash-flow-bars": CurrencyFinanceDocs, "cross-currency": CrossCurrencyPage,
