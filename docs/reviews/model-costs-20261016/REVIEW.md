@@ -63,4 +63,4 @@ Superseded originals are retained: `after-mobile.png` had crowded date ticks; `a
 
 ## Delivery
 
-Task-scoped PR and remote merge verification are reported with the final delivery. The primary dirty Oreo checkout and other running previews were left untouched.
+[PR #71](https://github.com/oreo-design/oreo-ui/pull/71). Implementation commit: `83e32d1`. Remote merge verification is reported with the final delivery. The primary dirty Oreo checkout and other running previews were left untouched.

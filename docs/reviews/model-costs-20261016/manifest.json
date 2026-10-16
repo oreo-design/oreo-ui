@@ -32,7 +32,8 @@
     "src/App.tsx": "38bf5f09b25441cd24d076c49efaa0f906263f0b4d80328dfebff3a37df46435",
     "src/docs/Sidebar.tsx": "fbe87ee2af17a742e5fa4d9354c8ff9301149e733eb02db964e8a950f035a919",
     "src/docs/playground/registry.tsx": "2b557055f97e788f9e90a55e9874c40f8283cca19b11fb41c726c0c937e999db",
-    "src/lib/site.ts": "b8f7b2b3e0efd4fb69f0fe00f8362c86fa11854409c96526313cea38db5d1690"
+    "src/lib/site.ts": "b8f7b2b3e0efd4fb69f0fe00f8362c86fa11854409c96526313cea38db5d1690",
+    "src/patterns/changelog/data.ts": "1909e3e8c6e44e2e3b898d07eb14e778fad3a20bd5b4e35248f132957d142508"
   },
   "mediaSha256": {
     "after-empty.png": "b5d37d44f4579c557d7ea362ea277344ab920815ca0b57e412b7ebb5457f3c55",
@@ -60,6 +61,9 @@
     "after-error.png": "611ce32566f5cbab0b658af85aae78a9d9dc1391d8fdf113056c074f6e351c11",
     "after-search-empty.png": "7f04e387e602725b07076020891a5c45f5d62c8cb922aee55e77f7c9486cb104",
     "after-agent-paused.png": "8aeeff7edf1717757e2c25c5736a6b3725d7be4aba4e5550f431c943a11c55af",
-    "before-changelog.png": "1cbd189a67b2e5218d8caffa20adc8a3bf5bebf7037c45a520f27ad772edd186"
-  }
+    "before-changelog.png": "1cbd189a67b2e5218d8caffa20adc8a3bf5bebf7037c45a520f27ad772edd186",
+    "after-changelog.png": "c089d596c37713cf67790525c4d789d5d7ed8a5dd380b443b6272e5ca6de944a"
+  },
+  "implementationCommit": "83e32d18fbbb87c8b0db679e0612f787032751a5",
+  "pullRequest": "https://github.com/oreo-design/oreo-ui/pull/71"
 }
