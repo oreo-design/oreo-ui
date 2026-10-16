@@ -1,0 +1,89 @@
+{
+  "demo": true,
+  "transfers": [
+    {
+      "id": "4e92585c-73f3-44cc-93fc-02229a47fd12",
+      "fromId": "arb-usdc",
+      "toId": "sol-usdc",
+      "amount": "200",
+      "fee": "0.42",
+      "received": "199.58",
+      "symbol": "USDC",
+      "time": "2026-10-16T08:19:04.133Z"
+    }
+  ],
+  "balances": [
+    {
+      "id": "eth-usdc",
+      "chainId": "ethereum",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "mark": "$",
+      "decimals": 6,
+      "balance": "1204.10"
+    },
+    {
+      "id": "eth-usdt",
+      "chainId": "ethereum",
+      "name": "Tether",
+      "symbol": "USDT",
+      "mark": "₮",
+      "decimals": 6,
+      "balance": "510.25"
+    },
+    {
+      "id": "eth-eth",
+      "chainId": "ethereum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "mark": "Ξ",
+      "decimals": 18,
+      "balance": "0.1207"
+    },
+    {
+      "id": "sol-usdc",
+      "chainId": "solana",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "mark": "$",
+      "decimals": 6,
+      "balance": "248.3"
+    },
+    {
+      "id": "sol-usdt",
+      "chainId": "solana",
+      "name": "Tether",
+      "symbol": "USDT",
+      "mark": "₮",
+      "decimals": 6,
+      "balance": "240"
+    },
+    {
+      "id": "arb-usdc",
+      "chainId": "arbitrum",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "mark": "$",
+      "decimals": 6,
+      "balance": "1004.1"
+    },
+    {
+      "id": "arb-usdt",
+      "chainId": "arbitrum",
+      "name": "Tether",
+      "symbol": "USDT",
+      "mark": "₮",
+      "decimals": 6,
+      "balance": "0"
+    },
+    {
+      "id": "arb-eth",
+      "chainId": "arbitrum",
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "mark": "Ξ",
+      "decimals": 18,
+      "balance": "0.0482"
+    }
+  ]
+}

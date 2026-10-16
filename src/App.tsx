@@ -1,3 +1,5 @@
+import {TokenBridgePage} from "@/patterns/token-bridge";
+import {TokenBridgeDocs} from "@/pages/TokenBridgeDocs";
 import { EngineeringHandoffPage } from "@/patterns/engineering-handoff";
 import { AgentHandoffDocs } from "@/pages/AgentHandoffDocs";
 import { CompanyDirectoryPage } from "@/patterns/company-directory";
@@ -166,6 +168,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "chain-token-badge": TokenBridgeDocs, "token-amount-panel": TokenBridgeDocs, "chain-token-picker": TokenBridgeDocs, "token-bridge": TokenBridgePage,
   "agent-mention-composer": AgentHandoffDocs, "agent-session-card": AgentHandoffDocs, "engineering-handoff": EngineeringHandoffPage,
   "company-identity": CompanyDocs, "company-table": CompanyDocs, "company-directory": CompanyDirectoryPage,
   "activity-event-row": ProjectActivityDocs, "grouped-activity-feed": ProjectActivityDocs, "project-feed": ProjectFeedPage,

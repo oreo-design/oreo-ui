@@ -1,3 +1,5 @@
+import {ChainTokenBadge,TokenAmountPanel,ChainTokenPicker} from "@/components/token-bridge";
+import {BRIDGE_CHAINS,BRIDGE_TOKENS} from "@/patterns/token-bridge/data";
 import {AgentMentionComposer,AgentSessionCard,type HandoffStatus} from "@/components/agent-handoff";
 import {HANDOFF_AGENTS} from "@/patterns/engineering-handoff/data";
 import { CompanyIdentity, CompanyTable, companyRows, type CompanySort } from "@/components/company";
@@ -141,6 +143,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "token-bridge": {ChainTokenBadge,TokenAmountPanel,ChainTokenPicker},
   "agent-handoff": {AgentMentionComposer,AgentSessionCard},
   company: {CompanyIdentity,CompanyTable},
   "project-activity": {ActivityEventRow,GroupedActivityFeed},
@@ -222,6 +225,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "chain-token-badge": {...define("Chain Token Badge",{chain:select(["ethereum","solana","arbitrum"],"ethereum"),compact:toggle(false)},v=><ChainTokenBadge chain={BRIDGE_CHAINS.find(c=>c.id===v.chain)!} token={BRIDGE_TOKENS[0]} compact={v.compact}/>),source:"token-bridge"},
+ "token-amount-panel": {...define("Token Amount Panel",{amount:text("200"),output:toggle(false),disabled:toggle(false),error:text("")},(v,set)=><div className="w-full p-6"><TokenAmountPanel label={v.output?"To":"From"} chain={BRIDGE_CHAINS[0]} token={BRIDGE_TOKENS[0]} amount={v.amount} onAmountChange={v.output?undefined:value=>set("amount",value)} onMax={v.output?undefined:()=>set("amount",BRIDGE_TOKENS[0].balance)} disabled={v.disabled} error={v.error} estimate="Sample amount"/></div>),source:"token-bridge"},
+ "chain-token-picker": {...define("Chain Token Picker",{selected:text("eth-usdc"),state:select(["ready","loading","empty","error"],"ready")},(v,set)=><div className="w-full p-4"><ChainTokenPicker chains={BRIDGE_CHAINS} tokens={v.state==="empty"?[]:BRIDGE_TOKENS} value={v.selected} onSelect={t=>set("selected",t.id)} loading={v.state==="loading"} error={v.state==="error"?"Sample token data is unavailable.":undefined} onRetry={()=>set("state","ready")}/></div>),source:"token-bridge"},
  "agent-mention-composer": {...define("Agent Mention Composer",{agent:select(["none","claude","codex"],"none"),disabled:toggle(false),lastComment:text("")},(v,set)=><div className="w-full p-6"><AgentMentionComposer agents={HANDOFF_AGENTS} agentId={v.agent==="none"?"":v.agent} onAgentChange={id=>set("agent",(id||"none") as "none"|"claude"|"codex")} disabled={v.disabled} onSend={(body,id)=>{set("lastComment",`${id?"@"+id+" ":""}${body}`);set("agent","none");}}/>{v.lastComment&&<p className="mt-4 text-sm text-text-secondary" role="status">Local preview: {v.lastComment}</p>}</div>),source:"agent-handoff"},
  "agent-session-card": {...define("Agent Session Card",{agent:text("Claude"),status:select(["idle","analyzing","awaiting","implementing","review","completed","failed","stopped"],"awaiting"),loading:toggle(false)},(v,set)=><div className="w-full p-6"><AgentSessionCard agent={v.agent} status={v.status as HandoffStatus} loading={v.loading} messages={v.status==="idle"?[]:[{id:"sample",author:{id:"agent",name:v.agent},body:"Should we use the existing job queue? Keep the change scoped to exports.",time:"Sample message"}]} result={<p className="text-sm">Illustrative export patch. Not executed.</p>} onStop={()=>set("status","stopped")} onRetry={()=>set("status","analyzing")}/></div>),source:"agent-handoff"},
  "company-identity": {...define("Company Identity",{name:text("Northstar Labs"),domain:text("northstar.example"),hot:toggle(true)},v=><div className="p-6"><CompanyIdentity name={v.name} domain={v.domain} hot={v.hot}/></div>),source:"company"},
