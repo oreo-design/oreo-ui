@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "weekly-heatmap": {title:"Weekly Heatmap",description:"A keyboard-accessible day-by-hour activity matrix with exact values and controlled selection."},
+  "agent-runs-card": {title:"Agent Runs Card",description:"Weekly agent activity, calculated summaries and metric selection."},
+  "agent-runs": {title:"Agent Runs",description:"A local activity dashboard with hourly heatmaps, agent and week filters, detailed tables and CSV export."},
   "progressive-steps": {title:"Progressive Steps",description:"Sculpted linear steps with expanded and compact variants, controlled navigation and completion."},
   "progressive-checkout": {title:"Progressive Checkout",description:"A local four-step checkout with cart, details, saved sample methods, review and recovery."},
   "model-trend-chart": {title:"Model Trend Chart",description:"Daily model cost, token and request series with accessible inspection."},
