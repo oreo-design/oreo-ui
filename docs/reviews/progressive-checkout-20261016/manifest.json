@@ -1,0 +1,76 @@
+{
+  "baseline": "94abfb1e055c7f4d4aa85acb5fb9fb085f78c651",
+  "capturedAt": "2026-10-16T06:09:35.913424+00:00",
+  "environment": {
+    "url": "http://localhost:5245",
+    "browser": "Chrome / Playwriter session 1",
+    "locale": "en",
+    "fixture": "local checkout",
+    "viewports": [
+      [
+        1440,
+        1000
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        768,
+        1024
+      ]
+    ]
+  },
+  "sourceSha256": {
+    "src/components/progressive-steps/index.tsx": "d33d4d05ba9d0966efce0d1b45ca33cca5b115c70244bcd0dd57964f206fd662",
+    "src/components/progressive-steps/steps.css": "d9b07de3b548a046bb83af1b513477f4fd8b8ef42e023f35c1ad7a4747810196",
+    "src/patterns/progressive-checkout/index.tsx": "1f90b7660938a174273e32f073580b049870a83a97de9e2b8fdc06352a15f16a",
+    "src/patterns/progressive-checkout/checkout.css": "76627dfe8b42a9a7cb7b2b0dc5dc68239e5c47ad0bb272d9acc2c275a188282d",
+    "src/patterns/progressive-checkout/model.ts": "ede0b5a102f0f2767ef82b559496140c111489e35df1eb090f650e0a7d8695b6",
+    "src/pages/ProgressiveStepsDocs.tsx": "6f985f10d3b5e218500c9645c6624ce44c8be40c218a1d2bbd5a4f78bc76b123",
+    "src/docs/playground/registry.tsx": "11a6acdf9cff59c6b07b9e1ba1b796e8b2e23694ffe4096decd0089096e85fd7",
+    "src/docs/Sidebar.tsx": "6a5e2ac2eada7121db67a62407f7694b396e1af0e30a10adefd8bd5252a232aa",
+    "src/App.tsx": "54b3897e217cfc0eb3af60f0b134524332fc01597fe947d6a4c50cfefa695b1a",
+    "src/lib/site.ts": "0040546dac6cd9d135142a76c6382f22bf0c80339c27ebbf29509fea048d717c",
+    "src/patterns/changelog/data.ts": "ce87d227dcd52d1fae5c018cbe5a88697dc3ea3566a2aaf2c5c9dea53fdcd467"
+  },
+  "mediaSha256": {
+    "after-doc-api.png": "38d414b0b54d7e37158ccaa8bb64024e276d35d76e3414d1dd2095bed069779e",
+    "after-order-error.png": "53f781ed18c3bf5b0f5b8e2151fb6aafc81020a6242c599243fb958d45a18604",
+    "after-reduced-motion-v2.png": "f3b4ca7cc5adbcea09983703e66bdcff5fbc702889fcf10b72bf63449ee382cb",
+    "after-details-errors.png": "0e76b418436d4c91352c496574d778ab69dd6e7d6dbebbfb6fe69ef6fd173286",
+    "after-doc-expanded.png": "f7bdd770c60d420d9fb25e5b67cfbb6c23087c5c0da30a971c49677f50df85e2",
+    "after-empty-cart.png": "32becd77340e5c7cdf1da4460733cb6e150457503377684c3c2ef709100d8671",
+    "peer-plan-upgrade.png": "873879f954796253696253e6bdb6820c826e2973b04c0dc428ad372340789fc1",
+    "after-empty-methods.png": "39f6497ea8d87f65be68c45bf1cc87dd2111ead7420525cf4132bf4491de5705",
+    "interaction.mp4": "68d2537f4d15fd6e3d895a4a60fea6a41379a37357dba2d605e88635de1801d8",
+    "after-review.png": "32dea25bf0fa7df8d0af4bd796fb9bd486809ce1048b56406fd82793341c22a6",
+    "after-loading.png": "17be35afb09133926924279aa8abeb360076c8f58a7abaf163b8aa1cd3e5af2c",
+    "before-entry.png": "82a266ce1b82bc58841878d5e622eabd0210820e1ce1b28c6a187319c4fd81f9",
+    "after-complete.png": "3774f7e628ba947a48734a83e0dd4b134d461d49b557d848aec90375dbdd78cf",
+    "reference-8.png": "f3a135a9f64a17ecec5d1de82d8439b65ae1de5ad5b14e096f16fd0da6845bdc",
+    "after-payment-error.png": "76bc06839669cea6feb325d6aad67a0246aa698e0c29048825b255142db2d281",
+    "reference-4.png": "832bff57c7c333032458baf150bb2ba8f81c454e092e89b13a0e28ce1365ee2b",
+    "after-reduced-motion.png": "ad0a3e992a5f0266d015207af3cea396e46f083cb4cc722af9477681722ed404",
+    "after-tablet.png": "94fddf428da2602daf1275dc8e969823be125f88a92324c7ca5a2e392a1079ba",
+    "after-dark.png": "cfa5379649f1007276457fcdf14df3723b12cf2cbb7fbdcaf32772e8c4356b0a",
+    "after-cart-final.png": "c07f37f6f69656c1866f232583ce0bfeb6747aefa095193c0bbd3c46ec9aca81",
+    "after-doc-compact-six.png": "1122e63a584a2c9800b297c518f3b5777fb44cf782993e31b3bb40065cbab410",
+    "after-cart.png": "86d02712221574f34afb87f64490a40b9089b95ba6aa3eed64b2298dc89c04f3",
+    "reference-0.png": "cbd759515a0dabe14920d439deada7cb847dcc9b7969a4b8f42f24ddcdbb2f27",
+    "after-mobile.png": "3a67d8b9da89ba0a6d81cdece1fddaf1999217b2b6b566384f58b3de47920ca4",
+    "interaction-v2.mp4": "10bed6a1543d5e8bb81fdde149af06180fe49b5142949fe128eb0306132e8f5f",
+    "after-cart-v2.png": "c07f37f6f69656c1866f232583ce0bfeb6747aefa095193c0bbd3c46ec9aca81",
+    "interaction-frames.json.xz": "777c9d06b960ce7a71731d67b15fd9d1e39e2a2b54b1161ac6ce57d3b79fa08c",
+    "after-doc-compact-six-v2.png": "1122e63a584a2c9800b297c518f3b5777fb44cf782993e31b3bb40065cbab410",
+    "interaction-frames-v2.json.xz": "7c73017186001bb02a493832deb529f3d0e05241ae9f1f2e79b391a7475ad4cf",
+    "after-mobile-compact.png": "0c1d9911d5dfc78432ab176e12ee13ca1e789370654cc71cc5d0e4ace764337e",
+    "before-changelog.png": "c089d596c37713cf67790525c4d789d5d7ed8a5dd380b443b6272e5ca6de944a",
+    "after-payment.png": "d5a2d7d864cf74496039f7247a015251e5e5a0962755202acf3b1358ba3cc44f",
+    "after-changelog.png": "74dfb96948ec3e894bb4eb3bc52e1d77d0a25ae772827921ab5b2ef67cb16424",
+    "after-changelog-entry.png": "039a9bc0ed74cad9161c01425d6bb2c17d318346c013da8b9b0ab4d454e61dfd",
+    "after-changelog-entry-v2.png": "975143ce78fd7aef9436786553ccc6ab447cf0805afadedb1f794d4d63477efb"
+  },
+  "implementationCommit": "980217d",
+  "pullRequest": "https://github.com/oreo-design/oreo-ui/pull/72"
+}

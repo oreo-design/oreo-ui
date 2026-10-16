@@ -18,6 +18,8 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "progressive-steps": {title:"Progressive Steps",description:"Sculpted linear steps with expanded and compact variants, controlled navigation and completion."},
+  "progressive-checkout": {title:"Progressive Checkout",description:"A local four-step checkout with cart, details, saved sample methods, review and recovery."},
   "model-trend-chart": {title:"Model Trend Chart",description:"Daily model cost, token and request series with accessible inspection."},
   "model-usage-ring": {title:"Model Usage Ring",description:"Model request shares and total token usage with selectable legends."},
   "agent-usage-row": {title:"Agent Usage Row",description:"Agent activity with model, tokens, costs and optional actions."},
