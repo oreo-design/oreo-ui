@@ -218,6 +218,14 @@
         1440,
         1080
       ]
+    },
+    {
+      "file": "after-release-entry.png",
+      "sha256": "6130997121d86f3fe5fd92840194cda08db396f609f0c54117658b2a48c849ce",
+      "imageDimensions": [
+        639,
+        175
+      ]
     }
   ]
 }
