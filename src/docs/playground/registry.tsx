@@ -1,3 +1,5 @@
+import { ActivityEventRow, GroupedActivityFeed } from "@/components/project-activity";
+import { FEED_EVENTS, FEED_NOW } from "@/patterns/project-feed/data";
 import { WeeklyHeatmap, AgentRunsCard, type RunMetric } from "@/components/agent-runs";
 import { selectedWeek } from "@/patterns/agent-runs/data";
 import { ProgressiveSteps } from "@/components/progressive-steps";
@@ -135,6 +137,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "project-activity": {ActivityEventRow,GroupedActivityFeed},
   "agent-runs": {WeeklyHeatmap,AgentRunsCard},
   "progressive-steps": {ProgressiveSteps},
  "model-usage": {ModelTrendChart,ModelUsageRing,AgentUsageRow},
@@ -213,6 +216,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "activity-event-row": {...define("Activity Event Row",{event:number(1,1,18,1),unread:toggle(true),selected:toggle(),interactive:toggle(true)},(v,set)=><div className="w-full p-6"><ActivityEventRow event={FEED_EVENTS[Math.floor(v.event)-1]} now={FEED_NOW} currentUserId="alex" unread={v.unread} selected={v.selected} onOpen={v.interactive?()=>{set("selected",!v.selected);set("unread",false);}:undefined}/></div>),source:"project-activity"},
+ "grouped-activity-feed": {...define("Grouped Activity Feed",{count:number(8,1,18,1),state:select(["ready","loading","empty","error"],"ready"),read:toggle(),selected:number(0,0,18,1)},(v,set)=><div className="w-full p-6"><GroupedActivityFeed events={v.state==="ready"?FEED_EVENTS.slice(0,Math.floor(v.count)):[]} now={FEED_NOW} currentUserId="alex" readIds={v.read?FEED_EVENTS.map(e=>e.id):[]} selectedId={v.selected?FEED_EVENTS[Math.floor(v.selected)-1]?.id:undefined} onOpen={event=>set("selected",FEED_EVENTS.findIndex(e=>e.id===event.id)+1)} loading={v.state==="loading"} error={v.state==="error"?"Activity could not be loaded.":undefined} onReset={()=>set("state","ready")}/></div>),source:"project-activity"},
  "weekly-heatmap": {...define("Weekly Heatmap",{metric:select(["runs","credits","failures"],"runs"),slot:number(82,0,167,1),state:select(["ready","loading","empty","error"],"ready")},(v,set)=><div className="w-full p-6"><WeeklyHeatmap data={v.state==="ready"?selectedWeek():[]} metric={v.metric as RunMetric} value={Math.floor(v.slot)} onValueChange={i=>set("slot",i)} loading={v.state==="loading"} error={v.state==="error"?"Activity could not be loaded.":undefined} onRetry={()=>set("state","ready")}/></div>),source:"agent-runs"},
  "agent-runs-card": {...define("Agent Runs Card",{metric:select(["runs","credits","failures"],"runs"),slot:number(82,0,167,1),agent:select(["all","triage","research","digest"],"all"),state:select(["ready","loading","empty","error"],"ready")},(v,set)=><div className="w-full p-6"><AgentRunsCard data={v.state==="ready"?selectedWeek(v.agent):[]} previousData={selectedWeek(v.agent,true)} description={`${v.agent === "all" ? "All agents" : v.agent} · Oct 5–11, 2026 · UTC`} metric={v.metric as RunMetric} onMetricChange={m=>set("metric",m)} value={Math.floor(v.slot)} onValueChange={i=>set("slot",i)} loading={v.state==="loading"} error={v.state==="error"?"Activity could not be loaded.":undefined} onRetry={()=>set("state","ready")}/></div>),source:"agent-runs"},
  "progressive-steps": {...define("Progressive Steps",{variant:select(["expanded","compact"],"expanded"),count:select(["4","6"],"4"),step:number(1,1,6,1),completed:toggle(),disabled:toggle(),empty:toggle()},(v,set)=>{const labels=v.count==="6"?["Profile","Email","Phone","ID photo","Selfie","Review"]:["Cart","Details","Payment","Review"];const index=Math.max(0,Math.min(labels.length-1,Math.floor(v.step)-1));const steps=labels.map((label,i)=>({id:String(i+1),label}));return <div className="w-full max-w-lg p-6"><ProgressiveSteps steps={v.empty?[]:steps} value={v.completed?"":String(index+1)} completed={steps.slice(0,v.completed?steps.length:index).map(s=>s.id)} variant={v.variant as "expanded"|"compact"} disabled={v.disabled} onValueChange={id=>set("step",Number(id))}/></div>;}),source:"progressive-steps"},

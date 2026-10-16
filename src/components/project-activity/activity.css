@@ -1,0 +1,114 @@
+.paf-feed {
+  width: 100%;
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+.paf-feed section + section {
+  margin-top: calc(var(--spacing) * 7);
+}
+.paf-feed h2 {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+  padding: 0 calc(var(--spacing) * 2);
+  margin-bottom: calc(var(--spacing) * 3);
+}
+.paf-event {
+  display: flex;
+  width: 100%;
+  gap: calc(var(--spacing) * 3);
+  align-items: center;
+  text-align: left;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 2);
+  border-radius: var(--radius-control);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text-primary);
+}
+button.paf-event {
+  cursor: pointer;
+}
+button.paf-event:hover,
+.paf-event[data-selected] {
+  background: var(--color-bg-elevated);
+}
+button.paf-event:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+.paf-event > span:first-child {
+  display: flex;
+  flex-shrink: 0;
+}
+.paf-event-copy {
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.paf-event-copy strong,
+.paf-event-copy b {
+  font-weight: 500;
+}
+.paf-event-copy > span {
+  color: var(--color-text-secondary);
+}
+.paf-event time {
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+  margin-left: calc(var(--spacing) * 4);
+}
+.paf-unread {
+  width: calc(var(--spacing) * 1.5);
+  height: calc(var(--spacing) * 1.5);
+  border-radius: var(--radius-capsule);
+  flex-shrink: 0;
+}
+.paf-unread[data-unread] {
+  background: var(--color-status-progress);
+}
+.paf-skeleton {
+  display: grid;
+  gap: calc(var(--spacing) * 6);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 2);
+}
+.paf-skeleton > div {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+}
+.paf-skeleton i {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-capsule);
+  background: var(--color-bg-elevated);
+}
+.paf-skeleton span {
+  height: 12px;
+  width: 65%;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-control-tiny);
+}
+.paf-skeleton small {
+  height: 10px;
+  width: 32px;
+  margin-left: auto;
+  background: var(--color-bg-elevated);
+}
+@media (max-width: 600px) {
+  .paf-event {
+    flex-wrap: wrap;
+    gap: calc(var(--spacing) * 2);
+  }
+  .paf-event-copy {
+    flex-basis: calc(100% - 48px);
+  }
+  .paf-event time {
+    margin-left: calc(var(--spacing) * 8);
+  }
+  .paf-event .paf-unread {
+    margin-left: auto;
+  }
+}
