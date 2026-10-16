@@ -22,6 +22,9 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Spend Limit Chart", page: "spend-limit-chart" },
+      { label: "Secret Field", page: "secret-field" },
+      { label: "API Key Table", page: "api-key-table" },
       { label: "Forecast Timeline", page: "forecast-timeline" },
       { label: "Usage Projection", page: "usage-projection" },
       { label: "Daily Usage Pace", page: "daily-usage-pace" },
@@ -165,6 +168,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      { label: "Support Console", page: "support-console" },
       { label: "Usage Forecast", page: "usage-forecast" },
       { label: "Payment Workspace", page: "payment-workspace" },
       { label: "Sales Workspace", page: "sales-workspace" },
