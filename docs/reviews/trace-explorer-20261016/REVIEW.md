@@ -30,7 +30,7 @@ Same-product peers inspected: Edge Observatory overview/logs, its real no-result
 
 | Changed scenario | Before | After / interaction |
 | --- | --- | --- |
-| New template route | `before-entry.png`: visiting the absent `/trace-explorer` fell back to Button playground | `after-entry-light.png` matches 1440×1000 light viewport; `after-dark-final.png` shows complete default dark template |
+| New template route | `before-entry.png`: visiting the absent `/trace-explorer` fell back to Button playground | `after-entry-light-matched.png` matches 1440×1000 light viewport; `after-dark-final.png` shows complete default dark template |
 | Compound filtering and detail | No comparable trace query flow existed at baseline; external `reference-4.png` / `reference-10.png` | `after-field-picker.png`, `after-filtered.png`, `after-detail-final.png`, `interaction-final.mp4` |
 | Validation / recovery | New states; shared empty peer in `peer-empty.png` | `after-invalid-score.png`, `after-empty.png`, `after-error.png`; invalid-to-valid submission, reset and retry exercised |
 | Query document / export / save | No equivalent baseline route | `after-query.png`, actual browser download `export-filtered.json`, recordings; saved query restored 5 failed agents after navigating to all traces |
@@ -41,7 +41,7 @@ Same-product peers inspected: Edge Observatory overview/logs, its real no-result
 
 ### Historical captures and corrections
 
-All earlier captures are retained. `after-dark.png` predates the sidebar plus-icon fix; `after-detail.png` and `interaction.mp4` predate the switch to the canonical subtle overlay token. `interaction-final.mp4` is the current interaction record. Both recordings preserve their original browser frame streams losslessly as `.json.xz`.
+All earlier captures are retained. `after-entry-light.png` was scrolled by the theme-toggle interaction; `after-entry-light-matched.png` restores top-of-page framing. `after-dark.png` predates the sidebar plus-icon fix; `after-detail.png` and `interaction.mp4` predate the switch to the canonical subtle overlay token. `interaction-final.mp4` is the current interaction record. Both recordings preserve their original browser frame streams losslessly as `.json.xz`.
 
 Early `after-medium-{light,dark}.png`, `after-mobile-{light,dark}.png`, `after-mobile-{light,dark}-final.png` contain horizontal page overflow. Inspection traced it to the absolutely positioned accessible Details heading escaping an unpositioned scroll container. `TraceTable` now establishes its own positioning context. Final DOM inspection confirmed document scroll width equals client width at 390 and 900px; the 980px table scrolls within its own region. The `*-corrected` and `*-verified` mobile captures were taken during theme changes; prefer `after-mobile-dark-settled.png` for settled button colors.
 
