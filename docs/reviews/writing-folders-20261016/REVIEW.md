@@ -25,7 +25,7 @@ New components: FolderEmptyState (decorative fading rows + canonical DocumentEmp
 - Shared DocumentEmpty only gains optional `actionLabel`, defaulting to the previous Clear filters. Both activity and files consumers were inspected; the Activity empty/recovery state was exercised in the existing DocumentWorkspace. Files empty runtime capture is a coverage gap.
 - `npm run build` and `node scripts/writing-folders/check.mjs` passed. The build retains the existing large-bundle advisory. Model checks cover duplicate normalization, invalid names/documents, unknown folder prevention, counts, movement, deletion conservation and immutable undo snapshots.
 - Browser checks: new folder through contextual CTA; duplicate validation and recovery; workspace/private filtering; renamed folder updates navigation; a document moved from Unorganized to Studio letters changed counts 4→3 and 0→1; delete moved it back; undo restored the folder and membership. Mobile created a document inside a folder. Download event fired and actual Downloads JSON was parsed: one folder, five documents, expected title/body and matching folder ID. Original exported fixture is retained.
-- Error Try again restored existing data; Clear filters restored results; loading with rows retained them. Escape returned focus to the rename button. Mobile HTML width stayed 390px; the table alone scrolled 543px content within 356px. Folder Collection playground grid selection and row callback worked; documentation navigation and API rendered. Folder Empty State action was exercised separately.
+- Error Try again restored existing data; Clear filters restored results; loading with rows retained them. Escape returned focus to the rename button. Mobile HTML width stayed 390px; the table alone scrolled 543px content within 356px. Folder Collection playground grid selection and row callback worked; documentation navigation and API rendered. Folder Empty State rendered its creation action in the playground; its callback was exercised through the same component in the template. The standalone playground action attempt later timed out.
 
 ## Capture map
 
@@ -43,10 +43,16 @@ Desktop screenshots use 1440×1000, mobile uses 390×844 (full-page images retai
 | Initial loading | New state | [final visible skeleton](after-loading-final.png); preview ready restores empty view |
 | Mobile | No pre-change mobile route capture; desktop missing-route baseline retained | [empty](after-mobile-empty.png), [list](after-mobile-list.png), [editor](after-mobile-editor.png), [final grid](after-mobile-grid-final.png) |
 | Component catalog/playground | Previously absent; missing route baseline above | [collection playground](after-docs.png); shared documentation shell retained |
-| Changelog | [before update](before-changelog.png) | Follow-up capture recorded with the actual PR entry |
+| Changelog | [before update](before-changelog.png) | Actual PR #79 entry added; after capture pending due browser timeouts |
 
 Historical correction captures are retained: after-empty.png has stacked button icons and inherited CTA color, fixed by Button.leadingIcon and a narrower description selector; after-empty-fixed.png precedes the final elevated rail/header. after-grid-dark.png was captured mid theme-color transition; after-grid-dark-settled.png is the settled replacement. after-mobile-loading.png exposed invisible white-on-white skeletons, replaced by after-loading-final.png. after-loading-fixed.png and after-mobile-grid.png precede the final elevated-shell token correction. Mobile empty document description now wraps rather than inheriting document-row truncation; the initial editor screenshot retains the old background description. No historical original was overwritten.
 
 ## Evidence limits
 
 Recording attempt failed: “Extension has not been invoked for the current page (see activeTab permission).” Enabling recording requires clicking the Playwriter extension icon on this task's tab. No MP4 was produced. Interactive behavior was exercised and state captures inspected; timing/motion evidence remains incomplete. No new authored animation is part of this template. Missing mobile baseline and uncaptured same-role Files empty state are explicitly separate from implementation/merge status. No cloud persistence, permissions, or production deployment was tested.
+
+## Delivery reference
+
+Implementation commit: `9bb5dfa0c9b056278d8146af4a06e39019a2e13c`. [PR #79](https://github.com/oreo-design/oreo-ui/pull/79) carries this task only. Changelog entry uses the actual PR number and links `/writing-folders`. Final release/evidence follow-up does not change the captured implementation beyond its changelog entry. The source revision for each final image is this implementation commit; intermediate correction images are identified above. Artifact sizes and SHA-256 hashes are in [manifest.json](manifest.json).
+
+Post-entry changelog screenshot remains a coverage gap: repeated 15–20 second Playwriter snapshot/navigation timeouts persisted after reconnect, while earlier captures succeeded. The retained before capture predates the changelog data change but already includes new sidebar entries. No new browser fallback or unrelated tab navigation was used. The new entry is verified in source and the build.
