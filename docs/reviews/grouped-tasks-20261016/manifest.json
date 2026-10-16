@@ -1,0 +1,231 @@
+{
+  "baselineRevision": "f3dc4d58c5e369e5c07cc92d588c6026fccd5298",
+  "implementationRevision": "8b4a21f11ee5ad402eb8fd3bb111ac19e6ac80cf",
+  "deliveryPR": "https://github.com/oreo-design/oreo-ui/pull/65",
+  "environment": {
+    "origin": "http://localhost:5239",
+    "browser": "Chrome via Playwriter session 65",
+    "locale": "en",
+    "viewports": [
+      [
+        1440,
+        1000
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "data": "Local task fixture; no real account"
+  },
+  "route": "/grouped-tasks",
+  "notes": [
+    "Full-page captures extend beyond viewport height.",
+    "Reference and before-entry captured before product edits.",
+    "Changelog before captured before adding this release entry; sidebar already had new routes.",
+    "Historical blank playground and scrolled dark frames retained, superseded in REVIEW.md.",
+    "61 CDP screencast frames; original timestamps; 1440x1000 26.625-second MP4."
+  ],
+  "media": [
+    {
+      "file": "after-board.png",
+      "sha256": "90750e454097429e1ed88669b51acaa9dec932512849d2d8976e28608459724b",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "after-changelog.png",
+      "sha256": "ca346f3ab4594bb2781d7e63f419b10bdb626f40023de1cf7bb4220c96c46c09",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "after-dark-top.png",
+      "sha256": "a8f5c3049ca3682c8cac26c7fba284a86cd58f39ddfd610d4752e47031218f35",
+      "imageDimensions": [
+        1440,
+        1470
+      ]
+    },
+    {
+      "file": "after-dark.png",
+      "sha256": "c76958df8a03c62c97192c900cf84f5f56cd397dc12e36d2db7e4b315cd5cb62",
+      "imageDimensions": [
+        1440,
+        1470
+      ]
+    },
+    {
+      "file": "after-desktop-final.png",
+      "sha256": "0c65bfe02fdf6d86c4effa99ecd8156f7edd48944df23e05a3efc0c46841d423",
+      "imageDimensions": [
+        1440,
+        1470
+      ]
+    },
+    {
+      "file": "after-desktop.png",
+      "sha256": "e32846be115c4aa405ae5dc20302984b4e66bef73d8cd46c3bc6b9fa2a49822b",
+      "imageDimensions": [
+        1440,
+        1470
+      ]
+    },
+    {
+      "file": "after-documentation.png",
+      "sha256": "8e6caf6bbc7fca1b780a8622020801a9e3b7731155058b17764e9002dcb1a345",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "after-empty-group.png",
+      "sha256": "f6b60645fb95df1810035d428fd3971883941d2a373e4f1b4a175e053ed5085d",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "after-empty.png",
+      "sha256": "351221e2c18c39a3d1794ea7e4054e4d5ae993031d1339c0a2bf3f90d1c1e5f8",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "after-medium-dark-final.png",
+      "sha256": "3369befdffc4c227ae8069aa4f85056b4801fc082ba67a33e7b3d2ae6136b659",
+      "imageDimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "after-medium-dark.png",
+      "sha256": "c84b80c38cb28991af3faea077a4a30130b496022dd33e8b68f3ec2d12c83a53",
+      "imageDimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "after-medium-light.png",
+      "sha256": "ae23c58c938698e2c557bfea975b4fc31d9c1df2bc0cdcf5e8faf7eb52815b8f",
+      "imageDimensions": [
+        768,
+        1024
+      ]
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "sha256": "e0b1e4c0f8ef5b71b4d0ddd4ff1c3e76026886c4198149082b435fdcfcdde5d4",
+      "imageDimensions": [
+        390,
+        1615
+      ]
+    },
+    {
+      "file": "after-mobile-editor.png",
+      "sha256": "3923cf77e58ca30820778fd415924b1b757c5a9972f7834a0ebb4ca6f12e6586",
+      "imageDimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "after-mobile-light.png",
+      "sha256": "6fece323a6112c655001bda931e577bc330a0d119e3b8b6be6026ab8fba172eb",
+      "imageDimensions": [
+        390,
+        1615
+      ]
+    },
+    {
+      "file": "after-playground-fixed.png",
+      "sha256": "214a8d030d045d5459a2b4c45c24c0c13e5e55876f904081ad27924a27050118",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "after-playground.png",
+      "sha256": "2efdae649aa7a0a9f609f193ef977f58b7292099c702d3719d7bc91e9eed5a7a",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "after-validation.png",
+      "sha256": "0c0305222d48b86ab1d6fa8ea850a1a938104f8097f25eb384aac83476feb47c",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "before-changelog.png",
+      "sha256": "39be55958996432e68902950d124c7c41d34381236f3925072f24a97033afb57",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "before-entry.png",
+      "sha256": "f43de8545752266c5131436741ee5925de6a26b7e8eae95df236c41971dd3e51",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "interaction-frames.json.xz",
+      "sha256": "ef95cfdec3b32c2042bf6bd376d72717dd78d4411662d5e8dd217568a3da0dac"
+    },
+    {
+      "file": "interactions.mp4",
+      "sha256": "8be4a0363428ff0618d7a161370e0c779e4ddea2e3c04eca52b19f921e5d0cb0"
+    },
+    {
+      "file": "peer-project-workspace.png",
+      "sha256": "74969779b73761095237d211c0ef1ea9f6a1dc06655d0d1d58ab55fa140ddb8e",
+      "imageDimensions": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "file": "reference.png",
+      "sha256": "4269a3bd7e7f4d5edbb22215215ed92ebb2d31356cda61a58998926faa33d692",
+      "imageDimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "after-release-entry.png",
+      "sha256": "6130997121d86f3fe5fd92840194cda08db396f609f0c54117658b2a48c849ce",
+      "imageDimensions": [
+        639,
+        175
+      ]
+    }
+  ]
+}

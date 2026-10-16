@@ -1,6 +1,8 @@
 import { IconRevealDocs } from "@/pages/IconRevealDocs";
 import { WordRollerDocs } from "@/pages/WordRollerDocs";
 import { LoadingSequenceDocs } from "@/pages/LoadingSequenceDocs";
+import { GroupedTasksDocs } from "@/pages/GroupedTasksDocs";
+import { GroupedTasksPage } from "@/patterns/grouped-tasks";
 import { SupportConsoleDocs } from "@/pages/SupportConsoleDocs";
 import { SupportConsolePage } from "@/patterns/support-console";
 import { UsageForecastDocs } from "@/pages/UsageForecastDocs";
@@ -147,6 +149,10 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "icon-reveal": IconRevealDocs,
   "word-roller": WordRollerDocs,
   "loading-sequence": LoadingSequenceDocs,
+  "task-status-group": GroupedTasksDocs,
+  "task-list-row": GroupedTasksDocs,
+  "grouped-task-list": GroupedTasksDocs,
+  "grouped-tasks": GroupedTasksPage,
   "spend-limit-chart": SupportConsoleDocs,
   "secret-field": SupportConsoleDocs,
   "api-key-table": SupportConsoleDocs,

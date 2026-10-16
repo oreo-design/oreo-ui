@@ -90,6 +90,9 @@ const NAV: Group[] = [
       { label: "Email Signature", page: "email-signature" },
       { label: "Project Summary", page: "project-summary" },
       { label: "Task Row", page: "task-row" },
+      { label: "Task Status Group", page: "task-status-group" },
+      { label: "Task List Row", page: "task-list-row" },
+      { label: "Grouped Task List", page: "grouped-task-list" },
       { label: "Tree Stepper", page: "tree-stepper" },
       { label: "Step Progress", page: "step-progress" },
       { label: "Timeframe Selector", page: "timeframe-selector" },
@@ -172,6 +175,7 @@ const NAV: Group[] = [
     title: "Templates",
     items: [
       { label: "Support Console", page: "support-console" },
+      { label: "Grouped Tasks", page: "grouped-tasks" },
       { label: "Usage Forecast", page: "usage-forecast" },
       { label: "Payment Workspace", page: "payment-workspace" },
       { label: "Sales Workspace", page: "sales-workspace" },

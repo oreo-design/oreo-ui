@@ -1,10 +1,10 @@
-✔ pause preserves remaining dwell and resume does not repeat frames (0.868958ms)
-✔ manual takeover and disposal cancel all pending changes (0.1045ms)
-✔ rapid replay owns only one timer and starts from the beginning (0.091042ms)
-✔ reduced motion preserves all demo states without per-character typing (0.205875ms)
-✔ numeric controls reject incomplete and non-finite input (0.613333ms)
-✔ numeric controls clamp and snap without floating-point drift (0.2405ms)
-✔ linked bounds keep inspector values and preview values in sync (0.79575ms)
+✔ pause preserves remaining dwell and resume does not repeat frames (0.96625ms)
+✔ manual takeover and disposal cancel all pending changes (0.207167ms)
+✔ rapid replay owns only one timer and starts from the beginning (0.149458ms)
+✔ reduced motion preserves all demo states without per-character typing (0.358917ms)
+✔ numeric controls reject incomplete and non-finite input (0.544708ms)
+✔ numeric controls clamp and snap without floating-point drift (0.095291ms)
+✔ linked bounds keep inspector values and preview values in sync (0.618291ms)
 ℹ tests 7
 ℹ suites 0
 ℹ pass 7
@@ -12,4 +12,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 111.335417
+ℹ duration_ms 82.577833
