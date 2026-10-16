@@ -1,0 +1,185 @@
+{
+  "query": {
+    "schema": "oreo-trace-query/v1",
+    "match": "all",
+    "from": "2026-09-16T12:00:00.000Z",
+    "search": "",
+    "sort": "newest",
+    "conditions": [
+      {
+        "field": "kind",
+        "operator": "eq",
+        "value": "Agent"
+      },
+      {
+        "field": "status",
+        "operator": "eq",
+        "value": "error"
+      }
+    ]
+  },
+  "snapshot": "2026-10-16T12:00:00.000Z",
+  "count": 5,
+  "traces": [
+    {
+      "id": "tr_a7f0c5",
+      "startedAt": "2026-10-16T11:40:00.000Z",
+      "kind": "Agent",
+      "name": "docs-agent",
+      "primitiveId": "docs-agent-v2",
+      "environment": "Production",
+      "status": "error",
+      "input": "Find the deployment guide and summarize the required environment variables.",
+      "output": "{\n  \"error\": \"RETRIEVAL_TIMEOUT\",\n  \"message\": \"The documentation index did not respond within the configured limit.\",\n  \"retryable\": true\n}",
+      "durationMs": 2119,
+      "costUsd": 0.0014,
+      "score": null,
+      "feedback": null,
+      "model": "fast-model",
+      "tags": [
+        "docs",
+        "customer"
+      ],
+      "spans": [
+        {
+          "name": "Prepare context",
+          "status": "success",
+          "durationMs": 212
+        },
+        {
+          "name": "Retrieve documents",
+          "status": "error",
+          "durationMs": 636
+        }
+      ]
+    },
+    {
+      "id": "tr_a7f372",
+      "startedAt": "2026-10-16T00:00:00.000Z",
+      "kind": "Agent",
+      "name": "docs-agent",
+      "primitiveId": "docs-agent-v2",
+      "environment": "Production",
+      "status": "error",
+      "input": "How do I add memory to my documentation agent?",
+      "output": "{\n  \"error\": \"RETRIEVAL_TIMEOUT\",\n  \"message\": \"The documentation index did not respond within the configured limit.\",\n  \"retryable\": true\n}",
+      "durationMs": 10814,
+      "costUsd": 0.0049,
+      "score": null,
+      "feedback": null,
+      "model": "reasoning-model",
+      "tags": [
+        "docs",
+        "customer"
+      ],
+      "spans": [
+        {
+          "name": "Prepare context",
+          "status": "success",
+          "durationMs": 1081
+        },
+        {
+          "name": "Retrieve documents",
+          "status": "error",
+          "durationMs": 3244
+        }
+      ]
+    },
+    {
+      "id": "tr_a7f61f",
+      "startedAt": "2026-10-14T19:40:00.000Z",
+      "kind": "Agent",
+      "name": "docs-agent",
+      "primitiveId": "docs-agent-v2",
+      "environment": "Preview",
+      "status": "error",
+      "input": "Draft a response using only the retrieved documentation.",
+      "output": "{\n  \"error\": \"RETRIEVAL_TIMEOUT\",\n  \"message\": \"The documentation index did not respond within the configured limit.\",\n  \"retryable\": true\n}",
+      "durationMs": 7509,
+      "costUsd": 0.0007,
+      "score": null,
+      "feedback": null,
+      "model": "fast-model",
+      "tags": [
+        "docs",
+        "preview"
+      ],
+      "spans": [
+        {
+          "name": "Prepare context",
+          "status": "success",
+          "durationMs": 751
+        },
+        {
+          "name": "Retrieve documents",
+          "status": "error",
+          "durationMs": 2253
+        }
+      ]
+    },
+    {
+      "id": "tr_a7f8cc",
+      "startedAt": "2026-10-12T22:40:00.000Z",
+      "kind": "Agent",
+      "name": "docs-agent",
+      "primitiveId": "docs-agent-v2",
+      "environment": "Production",
+      "status": "error",
+      "input": "Which tools can the research agent call in a workflow?",
+      "output": "{\n  \"error\": \"RETRIEVAL_TIMEOUT\",\n  \"message\": \"The documentation index did not respond within the configured limit.\",\n  \"retryable\": true\n}",
+      "durationMs": 4204,
+      "costUsd": 0.0042,
+      "score": null,
+      "feedback": null,
+      "model": "fast-model",
+      "tags": [
+        "docs",
+        "customer"
+      ],
+      "spans": [
+        {
+          "name": "Prepare context",
+          "status": "success",
+          "durationMs": 420
+        },
+        {
+          "name": "Retrieve documents",
+          "status": "error",
+          "durationMs": 1261
+        }
+      ]
+    },
+    {
+      "id": "tr_a800d3",
+      "startedAt": "2026-10-03T03:40:00.000Z",
+      "kind": "Agent",
+      "name": "docs-agent",
+      "primitiveId": "docs-agent-v2",
+      "environment": "Production",
+      "status": "error",
+      "input": "Find the deployment guide and summarize the required environment variables.",
+      "output": "{\n  \"error\": \"RETRIEVAL_TIMEOUT\",\n  \"message\": \"The documentation index did not respond within the configured limit.\",\n  \"retryable\": true\n}",
+      "durationMs": 6289,
+      "costUsd": 0.007,
+      "score": null,
+      "feedback": null,
+      "model": "fast-model",
+      "tags": [
+        "docs",
+        "customer"
+      ],
+      "spans": [
+        {
+          "name": "Prepare context",
+          "status": "success",
+          "durationMs": 629
+        },
+        {
+          "name": "Retrieve documents",
+          "status": "error",
+          "durationMs": 1887
+        }
+      ]
+    }
+  ]
+}
