@@ -1,3 +1,5 @@
+import { BrowserSessionDocs } from "@/pages/BrowserSessionDocs";
+import { BrowserAgentPage } from "@/patterns/browser-agent";
 import { TraceQueryDocs } from "@/pages/TraceQueryDocs";
 import { TraceExplorerPage } from "@/patterns/trace-explorer";
 import { GroupedTasksDocs } from "@/pages/GroupedTasksDocs";
@@ -145,6 +147,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "browser-session-tabs": BrowserSessionDocs, "browser-control-bar": BrowserSessionDocs, "browser-agent": BrowserAgentPage,
   "query-filter-bar": TraceQueryDocs,
   "trace-table": TraceQueryDocs,
   "trace-explorer": TraceExplorerPage,

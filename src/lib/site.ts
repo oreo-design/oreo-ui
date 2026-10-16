@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "browser-session-tabs": {title:"Browser Session Tabs",description:"Accessible browser tabs with agent activity independent of selection."},
+ "browser-control-bar": {title:"Browser Control Bar",description:"Controlled agent ownership, pause, takeover and recovery actions."},
+ "browser-agent": {title:"Browser Agent",description:"A local browser session template with visible agent activity and user handoff."},
  "query-filter-bar": {title:"Query Filter Bar",description:"Composable field, condition and value filters with search and validation."},
  "trace-table": {title:"Trace Table",description:"Dense trace results with selectable columns, status and host-owned details."},
  "trace-explorer": {title:"Trace Explorer",description:"A local observability workspace with trace queries, saved filters, details and JSON export."},
