@@ -1,0 +1,4 @@
+"Agent","Role","Region","Status","Requests","Successes","Success %","USD per 1K","p95 ms"
+"Prism","Summarization","ap-south","Healthy","3698","3624","98.00","0.5642","1102"
+"Sentinel","Guardrails","us-east","Healthy","6620","6547","98.90","0.4213","1204"
+"Vector QA","Evaluations","eu-central","Healthy","5111","4927","96.40","0.7386","1418"

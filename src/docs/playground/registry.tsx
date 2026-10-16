@@ -1,3 +1,5 @@
+import {PixelMeter,InferenceChart,RegionalTraffic,AgentHealthTable} from "@/components/agent-observability";
+import {AGENTS as OBSERVATORY_AGENTS,trafficRegions,inferenceSeries} from "@/patterns/agent-observatory/data";
 import { RouteJobCard, AllocationTimeline } from "@/components/dispatch-allocation";
 import { RESOURCES, SAMPLE_JOBS, DEMO_DATE } from "@/patterns/dispatch-allocation/data";
 import {FolderEmptyState,FolderCollection} from "@/components/writing-folders";
@@ -149,6 +151,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "agent-observability": {PixelMeter,InferenceChart,RegionalTraffic,AgentHealthTable},
  "dispatch-allocation": {RouteJobCard,AllocationTimeline},
   "writing-folders": {FolderEmptyState,FolderCollection},
   "team-performance": {PerformanceScore,ReviewProgress,MemberPerformanceTable},
@@ -234,6 +237,10 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "pixel-meter": {...define("Pixel Meter",{value:number(92.6,0,150,.1),max:number(100,1,200,1),label:text("Success rate"),tone:select(["success","warning","neutral"],"success"),unknown:toggle(false)},v=><PixelMeter value={v.unknown?-1:v.value} max={v.max} label={v.label} tone={v.tone}/>),source:"agent-observability"},
+ "inference-chart": {...define("Inference Chart",{state:select(["ready","loading","empty","error","zero"],"ready")},(v,set)=><div className="w-full max-w-2xl p-6"><InferenceChart points={v.state==="ready"?inferenceSeries(118629,"Last 30 days"):v.state==="zero"?inferenceSeries(0,"Last 30 days"):[]} loading={v.state==="loading"} error={v.state==="error"?"Sample telemetry could not be loaded.":undefined} onRetry={()=>set("state","ready")}/></div>),source:"agent-observability"},
+ "regional-traffic": {...define("Regional Traffic",{region:select(["all","us-east","eu-central","ap-south"],"all"),state:select(["ready","empty","invalid"],"ready")},(v,set)=><div className="w-full max-w-xl p-6"><RegionalTraffic regions={v.state==="empty"?[]:trafficRegions(OBSERVATORY_AGENTS).map(r=>({...r,requests:v.state==="invalid"?-1:r.requests}))} value={v.region} onValueChange={id=>set("region",id as "all")}/></div>),source:"agent-observability"},
+ "agent-health-table": {...define("Agent Health Table",{state:select(["ready","loading","empty","filtered","error"],"ready"),opened:text("")},(v,set)=><div className="w-full p-4"><AgentHealthTable agents={v.state==="ready"?OBSERVATORY_AGENTS:[]} loading={v.state==="loading"} filtered={v.state==="filtered"} error={v.state==="error"?"Sample agent health could not be loaded.":undefined} onReset={()=>set("state","ready")} onOpen={a=>set("opened",a.name)}/>{v.opened&&<p className="mt-4 text-sm" role="status">Selected {v.opened}. Open the template for full details.</p>}</div>),source:"agent-observability"},
  "route-job-card": {...define("Route Job Card", {category:select(["Private hire","Provisional","Contract"],"Private hire"), passengers:number(8,1,16)}, v=><div className="w-full max-w-sm p-4"><RouteJobCard job={{...SAMPLE_JOBS[0],category:v.category,passengers:v.passengers}}/></div>),source:"dispatch-allocation"},
  "allocation-timeline": {...define("Allocation Timeline", {view:select(["driver","vehicle"],"driver"),state:select(["ready","loading","empty","filtered","error"],"ready")}, (v,set)=><div className="w-full"><AllocationTimeline jobs={v.state==="empty"||v.state==="loading"?[]:SAMPLE_JOBS} resources={RESOURCES} date={DEMO_DATE} resourceView={v.view} query={v.state==="filtered"?"no-match":""} loading={v.state==="loading"} error={v.state==="error"?"Sample schedule could not be loaded.":undefined} onRetry={()=>set("state","ready")} onClearFilters={()=>set("state","ready")}/></div>),source:"dispatch-allocation"},
  "folder-empty-state": {...define("Folder Empty State",{title:text("It’s empty here"),description:text("Create a folder to start organizing your writing."),created:toggle(false)},(v,set)=><div className="w-full"><FolderEmptyState title={v.title} description={v.description} onCreate={()=>set("created",true)}/>{v.created&&<p role="status" className="px-6 text-sm">Creation requested. Open the template to create a folder.</p>}</div>),source:"writing-folders"},

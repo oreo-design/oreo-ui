@@ -1,0 +1,277 @@
+.ao-pixel-meter {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-status-success);
+  min-width: 0;
+}
+.ao-pixel-meter[data-tone="warning"] {
+  color: var(--color-palette-orange-text);
+}
+.ao-pixel-meter[data-tone="neutral"] {
+  color: var(--color-text-secondary);
+}
+.ao-pixel-meter svg {
+  width: 120px;
+  height: 18px;
+  flex: none;
+}
+.ao-meter-number {
+  font:
+    12px ui-monospace,
+    monospace;
+  color: var(--color-text-primary);
+  min-width: 48px;
+}
+.ao-inference {
+  margin: 0;
+  min-width: 0;
+}
+.ao-inference > svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+.ao-axis {
+  font:
+    10px ui-monospace,
+    monospace;
+  fill: var(--color-text-tertiary);
+}
+.ao-axis line {
+  stroke: var(--color-border-subtle);
+  stroke-dasharray: 2 4;
+}
+.ao-chart-dots {
+  fill: var(--color-status-success);
+  opacity: 0.55;
+}
+.ao-chart-inspector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  font:
+    12px ui-monospace,
+    monospace;
+}
+.ao-chart-inspector select {
+  padding: 6px 8px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+.ao-chart-inspector output span {
+  color: var(--color-text-secondary);
+}
+.ao-data {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+.ao-data summary {
+  cursor: pointer;
+  width: fit-content;
+}
+.ao-data table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+  text-align: left;
+}
+.ao-data th,
+.ao-data td {
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: 8px;
+  font-weight: 400;
+}
+.ao-data td {
+  text-align: right;
+  font-family: monospace;
+}
+.ao-chart-skeleton {
+  height: 280px;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--color-border-subtle);
+  background:
+    repeating-linear-gradient(
+      to top,
+      var(--color-border-subtle) 0 1px,
+      transparent 1px 56px
+    ),
+    linear-gradient(transparent 40%, var(--color-border-subtle));
+}
+.ao-world {
+  position: relative;
+  aspect-ratio: 500/260;
+  max-width: 560px;
+  margin: auto;
+  color: var(--color-status-success);
+}
+.ao-world > svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.38;
+}
+.ao-region-point {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.ao-region-point span {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--color-bg-base);
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 12%, transparent);
+}
+.ao-region-point[aria-pressed="true"] {
+  border-color: currentColor;
+  background: color-mix(in srgb, currentColor 10%, transparent);
+}
+.ao-region-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  margin: 4px 0 12px;
+}
+.ao-region-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.ao-region-list button {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  padding: 10px;
+  background: var(--color-bg-base);
+  color: var(--color-text-secondary);
+  font:
+    11px ui-monospace,
+    monospace;
+  cursor: pointer;
+  min-width: 0;
+}
+.ao-region-list button strong {
+  font-size: 16px;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+.ao-region-list button[aria-pressed="true"] {
+  border-color: var(--color-status-success);
+  background: color-mix(
+    in srgb,
+    var(--color-status-success) 6%,
+    var(--color-bg-base)
+  );
+}
+.ao-region-list button:disabled,
+.ao-region-point:disabled {
+  cursor: default;
+}
+.ao-health-scroll {
+  overflow: auto;
+  max-height: 560px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  position: relative;
+}
+.ao-health-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  white-space: nowrap;
+  font-size: 12px;
+  text-align: left;
+}
+.ao-health-table th,
+.ao-health-table td {
+  padding: 12px 16px;
+  height: 60px;
+  background: var(--color-bg-base);
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-weight: 400;
+}
+.ao-health-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--color-bg-surface);
+  height: 44px;
+  color: var(--color-text-secondary);
+  padding: 6px 12px;
+}
+.ao-health-table tr > :first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 150px;
+  border-right: 1px solid var(--color-border-subtle);
+}
+.ao-health-table thead tr > :first-child {
+  z-index: 3;
+}
+.ao-health-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.ao-health-table tbody tr:hover > * {
+  background: var(--color-bg-elevated);
+}
+.ao-health-table td small {
+  display: block;
+  margin-top: 4px;
+  font:
+    10px ui-monospace,
+    monospace;
+  color: var(--color-text-tertiary);
+}
+.ao-agent-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: inherit;
+  border: 0;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+span.ao-agent-name {
+  cursor: default;
+}
+.ao-table-skeleton {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+.ao-table-skeleton > div {
+  height: 44px;
+  background: var(--color-border-subtle);
+  border-radius: var(--radius-control);
+}
+.ao-agent-name:focus-visible,
+.ao-region-point:focus-visible,
+.ao-region-list button:focus-visible,
+.ao-health-scroll:focus-visible,
+.ao-data summary:focus-visible,
+.ao-chart-inspector select:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 3px;
+}

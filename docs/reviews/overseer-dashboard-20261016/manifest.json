@@ -1,0 +1,251 @@
+{
+  "baseline": "17273e9837bd13aa65c317cb494f0431f7580e18",
+  "environment": "Chromium Playwriter session 10 direct headless; localhost:5254; English; local fixture; captured October 16 2026 Asia/Shanghai",
+  "images": [
+    {
+      "file": "after-chart-code.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "89eaf2cd28e54950d3b23b415d2456df9ae87f2c12a494e1f8550794852f8619"
+    },
+    {
+      "file": "after-chart-error.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "368e3950c1715b5f696e3b94345cc909fcca57bdb3d7c725fe48b7dc276b7173"
+    },
+    {
+      "file": "after-chart-loading-final.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "cb617a9ea3e109e4622ded7890c2f0500a26cc2f46dcf2b097d923240c8421e8"
+    },
+    {
+      "file": "after-chart-loading-v2.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "cb617a9ea3e109e4622ded7890c2f0500a26cc2f46dcf2b097d923240c8421e8"
+    },
+    {
+      "file": "after-chart-loading.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "6a3b5726e74e7a210190cfb5ba97dd1cf03f1202b39729b1f01230cb81da35ce"
+    },
+    {
+      "file": "after-chart-values.png",
+      "width": 1440,
+      "height": 1241,
+      "sha256": "7f9f4c786d9906c62c5a824cbf4fcac7f5d3e9c9bae8539bef149dd9662059cb"
+    },
+    {
+      "file": "after-chart-zero-final.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "7c3e0d46477b82de83ed7e2da8bb52e37d7daf64871625d67120d66b69706e90"
+    },
+    {
+      "file": "after-chart-zero.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "541d111184c2ebcf43db0ad723c9201e6a6bbd8285facf6547191cbe72f12c66"
+    },
+    {
+      "file": "after-desktop-dark.png",
+      "width": 1440,
+      "height": 1585,
+      "sha256": "9d8a898cf19c629b74f9da867616faa6518a8cf213a661523e308868ac20cbe5"
+    },
+    {
+      "file": "after-desktop-final.png",
+      "width": 1440,
+      "height": 1586,
+      "sha256": "335ac68199f03c55331e90b1a7a3fc642a1d50c65b7fc0a31bff413b8c6728a7"
+    },
+    {
+      "file": "after-desktop-light.png",
+      "width": 1440,
+      "height": 1586,
+      "sha256": "3e6105651195c55a250f0a14660ad08519596cc65adda9a035a48758d1558829"
+    },
+    {
+      "file": "after-details-paused.png",
+      "width": 1440,
+      "height": 1345,
+      "sha256": "6d8e89e9258741c21f15f1fb8d6f29a3d6e0dc949dab4516b3a9cae03fc1dbcc"
+    },
+    {
+      "file": "after-docs.png",
+      "width": 1440,
+      "height": 1244,
+      "sha256": "fc6d0718a108ffacfdd1ee2931767a9466267f36a75fadc5b76c3e7c3eefebbf"
+    },
+    {
+      "file": "after-meter-over-limit.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "b4deeb7bf38029cf854a9b57f9b8958db2fb46366dcf03cf716c32837b54325d"
+    },
+    {
+      "file": "after-meter-unknown.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "e1982102407733aecfdc25bdede93219c1aeae3541c3424297429fef7cb4d0d4"
+    },
+    {
+      "file": "after-mobile-details.png",
+      "width": 390,
+      "height": 2195,
+      "sha256": "e3d6810acb3054136a13dbe7ac3aa610253b1bc1ad9118138e8ae4ffee81f688"
+    },
+    {
+      "file": "after-mobile-dialog-viewport.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "fa241c546291df38ba36f5a8c5ae135afadfe4e0b5c58a2a2659162d419f371e"
+    },
+    {
+      "file": "after-mobile-final.png",
+      "width": 390,
+      "height": 2270,
+      "sha256": "194f53491ba0d84aaccfeae3bb7128c185c67d177b0c3525b505178fe1fb6829"
+    },
+    {
+      "file": "after-mobile-light.png",
+      "width": 390,
+      "height": 2195,
+      "sha256": "8ead9a6df5f48ff9ba3ba1dda24b74e098021bdade768d155bbd0c112f415d68"
+    },
+    {
+      "file": "after-mobile-menu-clean.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "61054b3602e8207e2834796fd930b2804e76430e3adf44010396155c57a48cee"
+    },
+    {
+      "file": "after-mobile-menu.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "4dba328344b661c56ad753b81ddcf5b415287c6b114a415fb9b38fe0ef3bdb0f"
+    },
+    {
+      "file": "after-no-matches.png",
+      "width": 1440,
+      "height": 1467,
+      "sha256": "2231143b37d1d73876bf7d3150e0bfdf4b7db31ce6a1e6b7d6b9a55392dc5fa7"
+    },
+    {
+      "file": "after-region-period.png",
+      "width": 1440,
+      "height": 1345,
+      "sha256": "9fcf1190312176e0eb0730b39c4097a2321175b779168f86c0dd28887ac8661d"
+    },
+    {
+      "file": "after-region-playground.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "cfb8565948076edeae8247b67846a3255f52a2bd74a1c6a9835a59a3d527b0f8"
+    },
+    {
+      "file": "after-table-empty.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "ea69235f86899a688e25bd7e9548857a27a0c10b1669fe6fbaa70cb4cd8c1e7b"
+    },
+    {
+      "file": "after-table-error.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "512914f72d8d62e047c36f60b907bbe8c311a508c566515128061f5e724cb415"
+    },
+    {
+      "file": "after-table-filtered.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "de4e12f3aca06607963ff4c0ec8318db19f43ac5268a45e423ae8de7e1284238"
+    },
+    {
+      "file": "after-table-loading-final.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "59ac0656de91bafcd82917bb99c1d306994572f5e125609bbbfd298df59847fa"
+    },
+    {
+      "file": "after-table-loading.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "4d0541a677ae618667c2d656546c26ccb1689a2da371b66044d303e0dc2c6665"
+    },
+    {
+      "file": "after-table-playground.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "29d3ee0b6692f894f9113f544f57e9875c98fa24de79c8d6571127c2cd62a146"
+    },
+    {
+      "file": "after-tablet-dark.png",
+      "width": 768,
+      "height": 2167,
+      "sha256": "78e3a004f04d194b931a48efdf152832639146ada481330a60e07e9ae4d424ff"
+    },
+    {
+      "file": "before-changelog.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "449dc8e08a8b8fa69480fe8a24a1998178385e8f0878d6f577fa5f7149af22e9"
+    },
+    {
+      "file": "before-entry.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "bbc267e5f67783f978d2d79dbe44ccb4e45fb1b179324efab98302150c67e9d5"
+    },
+    {
+      "file": "peer-performance.png",
+      "width": 1440,
+      "height": 1168,
+      "sha256": "c718fdd232c0f91d058f85d55c6d7a9b1eccab6d34c0a0d40c3b8ddb4129f02f"
+    },
+    {
+      "file": "peer-sales.png",
+      "width": 1440,
+      "height": 1630,
+      "sha256": "9e477eb7353ae2341b61ca661b22fed7f9ba04a93a88e33057a44a76ae8ebb08"
+    },
+    {
+      "file": "reference-agents.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "d06a295581a9917ae85cf96d2c2b13b539be4eeb0327eba513bd5fbf0ad9aafb"
+    },
+    {
+      "file": "reference-details.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "a0227a89e9a819dd6b37c2a917044734705e9a6d1d815632c2e54e6e455640d1"
+    },
+    {
+      "file": "reference-overview.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "975c5cb233458dd76c440b7a3b9f6c8ca5f19d7097f287f906f21c6e2136f174"
+    },
+    {
+      "file": "after-changelog.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "7b508896e917b821302c8e0e86e95fa3850a3e49106b0b27dc5acd4c399f63f3"
+    }
+  ],
+  "sourceHashes": {
+    "src/components/agent-observability/index.tsx": "27438802a249f8e0a4e565dd5ed86570b6fd57c17001f3b23e079f59270fa9e6",
+    "src/components/agent-observability/model.ts": "76ef0849d9cf0c666d29840105d48d8e259d92fb7afae30ef487ddb248be2df1",
+    "src/components/agent-observability/observability.css": "8e7d4fc70522020f82072193eb1351bdfec1cbad34355f1eee899bb73f45d92d",
+    "src/patterns/agent-observatory/README.md": "9c821f482274fdb79276bdbaac41bf7da7a1b3e19c3c17da482bd24ec658df99",
+    "src/patterns/agent-observatory/data.ts": "51f49e8a6e4e4c63bc298a974331c19f68e975dd7fc86eb4159892982a1154a7",
+    "src/patterns/agent-observatory/index.tsx": "77a1189e8a6e80f9ebcc6a3ed02f1874699c9c03744c1a19e9ef1d09f26004f0",
+    "src/patterns/agent-observatory/workspace.css": "f63ebca7897e6cdfdd38212c7c7ab2884cac094a2920a484b2fe9a13fce72f88"
+  },
+  "implementationRevision": "3a2178037247dc4a8f23e1afea0f126f98852b74",
+  "changelogSourceHash": "c947c1100bae92c5964d9cc6322287b531dce11192f341d0a31c6f9e27e6ddb1"
+}
