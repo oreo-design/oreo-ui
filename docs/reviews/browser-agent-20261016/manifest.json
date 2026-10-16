@@ -1,0 +1,73 @@
+{
+  "baseline": "d618ba3e218dd1d04bb40a14d8d5993b8ed61d56",
+  "fixture": "local deterministic sample pages",
+  "environment": {
+    "url": "http://localhost:5241/browser-agent",
+    "desktop": [
+      1440,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "locale": "en",
+    "browser": "Chromium through Playwriter"
+  },
+  "source_sha256": {
+    "src/components/browser-session/index.tsx": "0f4c3cd4453d6045c02b5ff75190ca5aab58d00febc3428ab223c8dc86d1d8d3",
+    "src/components/browser-session/model.ts": "a7e64a2a4bf22441b83386936740c11e30e33152c84031580751bcb670d26de1",
+    "src/components/browser-session/browser-session.css": "388963874f474b3735ab6b8e6d7b06dbe9e4f2a44586a7b9e9dced3550fe4c77",
+    "src/patterns/browser-agent/index.tsx": "ed15a41633e0aefc5e96a5c89a3abc77f7f4eab02f6e4a76a679a204c1af5322",
+    "src/patterns/browser-agent/data.ts": "482a0dbace7b7212c85b855ee7be6cbff3e34c9bccab96086f7109edf5a1d05b",
+    "src/patterns/browser-agent/workspace.css": "4bedf2cc8c8365bddbba6d76a399dae2263663e7066507a2bf702194a3e71d9d",
+    "src/pages/BrowserSessionDocs.tsx": "533468d1fc156f645d7aff3ac720d9383d6822ca6c09fd7bcd890f2ee84dc817",
+    "src/App.tsx": "efc3701712570195e346928e34addd96f2c86ebad5fe7312c8721ee189ba2d3a",
+    "src/lib/site.ts": "cc601b5073d58be86a5a75a584d4b552a1e9957b6a07783263d315db0342d390",
+    "src/docs/Sidebar.tsx": "1b850c40d6ee972066ebe92b18d12c42bd166b6b58d2ef4d54e086ab55139852",
+    "src/docs/playground/registry.tsx": "d67e9fd27ac65d4bb92b4bf02c151c7cb3885a6570eff7181ff36b6b8d40ec2a",
+    "src/patterns/changelog/data.ts": "9626bce505ce173c73fce5ebc233abd4421af31a09138b95a36c992245e43ca7"
+  },
+  "media_sha256": {
+    "reference-50.png": "f917c08994967cf9db455aec3b00364ba431529546227f348a7366785aad5812",
+    "reference-fit-58.png": "85a95cbb6e389daedcae870c1f6979c52050c4f82f25a2883bc8279c7459f3d5",
+    "after-stopped.png": "9cadd97e0e292aa494c4dd90172c5d27e2965f194fb8906b0af13d9b944d10e6",
+    "after-empty-search.png": "8270947679e4311cc8131d493432d4d906b490b69d629eed61eec91ae32aaa5b",
+    "after-control-error.png": "125a23bdf2622e1a2b6eb78d16ca61fc7d01a6551184fb880323142db13507cc",
+    "reference-0.2.png": "58c13b2cd4f3fa2ab3b6fd98af3159a1a0fd2f2e40424a9e808852afb102146f",
+    "after-final-running.png": "55ca909fd1b54ddb6d2141e8736a338ed3ef4b30f38a17615de4d927279a2025",
+    "reference-fit-0.2.png": "58c13b2cd4f3fa2ab3b6fd98af3159a1a0fd2f2e40424a9e808852afb102146f",
+    "reference-40.png": "6c6c942565fd213d547d48db69a1472a53fc41d7040558b825eb463d15a1c5d3",
+    "after-control-playground.png": "cff2dd9e721d7beaf386150adb651932ddf631ddcbb480a5439481cf01447e7f",
+    "peer-thinking-idle.png": "38e5c1fd037028ae5dec9b32b0b0191c3946ec5136796e34fe8a6ae37f9a6b83",
+    "interaction.mp4": "c05134527f431a4cf15731c484dbc43729477e9579ba91c924f0cae1beff989a",
+    "reference-30.png": "f77ce9334fbeec3016fb4713ea1ab1c806201116f6eec3f318a023cbdea1c368",
+    "reference-fit-10.png": "fad463e97c6924e1f5be1d89109e3d2d2602161b66501a04a88b9c19812bf9cb",
+    "before-entry.png": "6cc17d66a7dfa0491c11e8927ee479c03f124b35e4c696e639eb1e0d9cc11659",
+    "after-complete.png": "14fa37319b9c8856dca067f7ef233e42284dd5fb94ef2c179d958c0b1f5274e2",
+    "reference-20.png": "b32795cdc0015af415a807cd4ed0b063cb995c6b0bff1efac41ef4b409edff83",
+    "after-changelog.png": "334fc6427ed15b97e790736088c41c89568400e10b9a1f712cc9cc1189ede493",
+    "after-reduced-motion.png": "79ac362bbfced690a052c1dd839cade942851e74f177a22c96c11c093ce9a56e",
+    "after-documentation.png": "47fa336edc08824f2bca39e5e1f3b0151024c1ab3279812d0a88e63f839ff75c",
+    "reference-fit-30.png": "f77ce9334fbeec3016fb4713ea1ab1c806201116f6eec3f318a023cbdea1c368",
+    "reference-10.png": "fad463e97c6924e1f5be1d89109e3d2d2602161b66501a04a88b9c19812bf9cb",
+    "reference-fit-20.png": "b32795cdc0015af415a807cd4ed0b063cb995c6b0bff1efac41ef4b409edff83",
+    "after-takeover.png": "a73adc61c342a693c41c595bce8a1abe815af8ba151694b7c93a443ad72043c3",
+    "after-ready-dark.png": "819ac569964123354175c5da430ebe545c094b39b27729961dd50e0fd2082d5a",
+    "peer-thinking-running.png": "ced39d255413711151c5aa08fab169abd9cdd09e18641296bcefb011fea53c8d",
+    "after-light.png": "8198199809e422851305f6398c3f2e8840257dde52cd95db784ac012b6a56b2a",
+    "after-tabs-playground.png": "5803f4c807a5f366027f26f5a1ba1b5c84317fede074b2009d20830c584b4a58",
+    "reference-fit-50.png": "f917c08994967cf9db455aec3b00364ba431529546227f348a7366785aad5812",
+    "reference-58.png": "85a95cbb6e389daedcae870c1f6979c52050c4f82f25a2883bc8279c7459f3d5",
+    "interaction-frames.json.xz": "1692a6648cada8aee21d5f2cc5f4de8251897c020163a4ca2c34c0f8a1a7ba6c",
+    "after-mobile-light.png": "61819906f5426c28f0b27d543ac26b21cb9def5208816ca1b9d5eaf584aa1c74",
+    "after-error.png": "7eeff3c2c42cc9976a318dcb5b11dc0d256e53b8d4b4490b29f712b37a9a5882",
+    "after-running-chat.png": "aa32b3e0b22941c994d06e8895ececd41bba142e49ecd4c0abdc3863449e8eed",
+    "reference-fit-40.png": "6c6c942565fd213d547d48db69a1472a53fc41d7040558b825eb463d15a1c5d3",
+    "after-tabs-empty.png": "3d4ab243ca0fab01852aed7381abfb148ffec64e419ad8b572a3e99e6db5f0d7",
+    "after-paused.png": "21ce65fd5b05dd803c83539d77678e71abc866eebb03e415202a24b955b74058",
+    "before-changelog.png": "1dcbef6dcba32f42e4134e497b0160dc1a1c2640b868540479e0b04fd0bcbee7"
+  },
+  "implementation_commit": "7520f2e",
+  "pull_request": "https://github.com/oreo-design/oreo-ui/pull/68"
+}

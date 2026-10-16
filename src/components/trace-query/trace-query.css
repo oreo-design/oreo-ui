@@ -1,0 +1,261 @@
+.tq-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.tq-editor {
+  min-width: 0;
+}
+.tq-filter-trigger {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  min-height: calc(var(--spacing) * 8);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-capsule);
+  padding: var(--spacing) calc(var(--spacing) * 3);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-elevated);
+  cursor: pointer;
+  max-width: 100%;
+}
+.tq-filter-trigger:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.tq-filter-trigger svg {
+  flex-shrink: 0;
+}
+.tq-filter-trigger strong {
+  color: var(--color-text-primary);
+  font-weight: 500;
+  max-width: calc(var(--spacing) * 40);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tq-filter-chip {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-capsule);
+}
+.tq-filter-active {
+  border: 0;
+  background: transparent;
+  border-radius: var(--radius-capsule) 0 0 var(--radius-capsule);
+}
+.tq-operator {
+  border-inline: 1px solid var(--color-border-default);
+  padding-inline: calc(var(--spacing) * 2);
+}
+.tq-filter-remove {
+  flex-shrink: 0;
+}
+.tq-positioner {
+  z-index: 60;
+}
+.tq-filter-popup {
+  width: min(320px, calc(100vw - 32px));
+  max-height: var(--available-height);
+  overflow-y: auto;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-small);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-overlay);
+}
+.tq-filter-popup form {
+  padding: calc(var(--spacing) * 4);
+  display: grid;
+  gap: calc(var(--spacing) * 4);
+}
+.tq-field-search {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 3);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.tq-field-search input {
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  font-size: var(--text-sm);
+}
+.tq-field-options {
+  max-height: calc(var(--spacing) * 80);
+  overflow-y: auto;
+  padding: var(--spacing);
+}
+.tq-field-options button {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  width: 100%;
+  border-radius: var(--radius-control);
+  min-height: calc(var(--spacing) * 10);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  text-align: left;
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+.tq-field-options button svg:last-child {
+  margin-left: auto;
+}
+.tq-field-options button:hover,
+.tq-field-options button:focus-visible {
+  background: var(--color-bg-elevated);
+}
+.tq-no-fields {
+  padding: calc(var(--spacing) * 4);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+.tq-back {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+}
+.tq-filter-popup form label,
+.tq-enum-value {
+  display: grid;
+  gap: calc(var(--spacing) * 2);
+  font-size: var(--text-xs);
+}
+.tq-filter-popup select,
+.tq-filter-popup form input {
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  min-height: calc(var(--spacing) * 10);
+  padding: calc(var(--spacing) * 2);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  width: 100%;
+  font-size: var(--text-sm);
+}
+.tq-enum-value > .oreo-inline-search {
+  width: 100%;
+}
+.tq-filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: calc(var(--spacing) * 2);
+}
+.tq-error {
+  color: var(--color-status-error);
+  font-size: var(--text-xs);
+}
+.tq-table-wrap {
+  position: relative;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small);
+  overflow: hidden;
+}
+.tq-table-scroll {
+  overflow: auto;
+}
+.tq-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 980px;
+  table-layout: fixed;
+  font-size: var(--text-xs);
+}
+.tq-table th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-elevated);
+  padding: calc(var(--spacing) * 3);
+}
+.tq-table td {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  height: calc(var(--spacing) * 12);
+  border-top: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.tq-table .tq-col-startedAt {
+  width: 156px;
+}
+.tq-table .tq-col-kind {
+  width: 110px;
+}
+.tq-table .tq-col-name {
+  width: 148px;
+}
+.tq-table .tq-col-input {
+  width: 32%;
+}
+.tq-table .tq-col-status {
+  width: 80px;
+}
+.tq-table .tq-col-durationMs,
+.tq-table .tq-col-costUsd,
+.tq-table .tq-col-score,
+.tq-table .tq-col-feedback {
+  width: 90px;
+}
+.tq-table th:last-child {
+  width: 44px;
+}
+.tq-table td:last-child {
+  padding: var(--spacing);
+}
+.tq-input-preview {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: var(--font-mono);
+  color: var(--color-text-primary);
+}
+.tq-kind {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+}
+.tq-kind svg {
+  flex-shrink: 0;
+}
+.tq-table tr[data-selected],
+.tq-table tr:focus-within {
+  background: var(--color-bg-elevated);
+}
+.tq-skeleton {
+  display: block;
+  height: calc(var(--spacing) * 3);
+  width: 80%;
+  background: var(--color-palette-default-bg);
+  border-radius: var(--radius-capsule);
+}
+.tq-filter-bar :focus-visible,
+.tq-table-wrap :focus-visible,
+.tq-filter-popup :focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+@media (hover: hover) {
+  .tq-table tbody tr:hover {
+    background: var(--color-bg-elevated);
+  }
+}
+@media (max-width: 600px) {
+  .tq-filter-popup input,
+  .tq-filter-popup select {
+    font-size: 16px !important;
+  }
+  .tq-filter-trigger {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}

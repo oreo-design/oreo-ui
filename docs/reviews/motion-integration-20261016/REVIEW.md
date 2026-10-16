@@ -54,3 +54,7 @@ Historical recordings from October 13 use matching component sources and supplem
 | Existing local motion APIs and timings | Preserved | Integration should not redesign previously authored behavior |
 
 Motion verdict: suitable for this scoped integration. IconReveal retains fast reveal and slower settle, WordRoller retains spring snapping and immediate keyboard changes, and LoadingSequence retains finite transform/opacity/clip-path choreography. Reduced-motion paths remain present. LoadingSequence has no Skip intro control; unlike CutReveal this is its existing API, and adding one is a separate product decision. Review opportunities, not newly established defects: assess decorative-text contrast at very small sizes, physical touch/wheel feel, and whether consuming products need a skip control or shorter wordmark intro.
+
+## Final synchronization
+
+After direct merge confirmation, main advanced to `ee01ede` through #67 and #68. Their imports, routes, playground registrations and changelog entries were preserved while resolving additive conflicts. The three imported component implementations remain unchanged. Production build and the seven existing playground tests were rerun against this combined tree; no new visual design was introduced.
