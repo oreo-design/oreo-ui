@@ -18,6 +18,11 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "currency-balance-card": {title:"Currency Balance Card",description:"Currency identity, balance and controlled account selection."},
+ "currency-balance-summary": {title:"Currency Balance Summary",description:"Combined account totals and controlled visibility with explicit illustrative conversion rates."},
+ "money-activity-list": {title:"Money Activity List",description:"Currency-aware transaction and draft rows with details and recovery states."},
+ "cash-flow-bars": {title:"Cash Flow Bars",description:"Incoming and outgoing USD bars with keyboard inspection and exact data."},
+ "cross-currency": {title:"Cross-Currency",description:"A local multi-currency finance dashboard with reviewed operations, undo, filtering and activity export."},
  "stay-price-label": {title:"Stay Price Label",description:"Compact nightly prices with selected hotel names for map marker buttons."},
  "stay-result-card": {title:"Stay Result Card",description:"Accommodation results with star category, distance, price and controlled selection."},
  "stay-selection-card": {title:"Stay Selection Card",description:"Selected accommodation details, pagination, save and room actions for map footers."},
