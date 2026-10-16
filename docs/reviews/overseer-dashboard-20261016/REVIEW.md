@@ -51,3 +51,9 @@ The template uses a 216 px desktop rail, 4-column metrics (2 on smaller screens)
 - Superseded originals retained: `after-mobile-light.png` / `after-mobile-details.png` precede the mobile navigation correction; `after-chart-loading.png` / `after-table-loading.png` show the initial low-contrast placeholders; `after-chart-loading-v2.png` is an intermediate capture; `after-chart-zero.png` precedes integer axis ticks; `after-mobile-menu.png` includes the automation cursor and is replaced by the clean version. Other originals remain useful state records. Unknown-meter capture includes a pointer overlay; it verifies the text state, not a clean presentation image.
 
 Manifest contains original image dimensions, SHA-256 hashes and source hashes. This index is the single task review location; subsequent changelog evidence and delivery revision are appended here.
+
+## Delivery revision
+
+Implementation commit: `3a2178037247dc4a8f23e1afea0f126f98852b74`. [PR 81](https://github.com/oreo-design/oreo-ui/pull/81). The follow-up adds the real PR-linked changelog entry and its evidence; product component/template source is unchanged. Changelog pairing: [before](before-changelog.png) → [after](after-changelog.png), 1440×1080 light.
+
+Coverage clarification: the four new component routes did not receive separate pre-change screenshots; their exact baseline revision is retained above. The captured template entry demonstrates the pre-change missing-route behavior, but is not claimed as four independent component-route captures. `git diff --check` flags the downloaded CSV's original CRLF line endings; `git -c core.whitespace=cr-at-eol diff --check` passes without altering the downloaded artifact.

@@ -229,6 +229,12 @@
       "width": 1440,
       "height": 1080,
       "sha256": "975c5cb233458dd76c440b7a3b9f6c8ca5f19d7097f287f906f21c6e2136f174"
+    },
+    {
+      "file": "after-changelog.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "7b508896e917b821302c8e0e86e95fa3850a3e49106b0b27dc5acd4c399f63f3"
     }
   ],
   "sourceHashes": {
@@ -239,5 +245,7 @@
     "src/patterns/agent-observatory/data.ts": "51f49e8a6e4e4c63bc298a974331c19f68e975dd7fc86eb4159892982a1154a7",
     "src/patterns/agent-observatory/index.tsx": "77a1189e8a6e80f9ebcc6a3ed02f1874699c9c03744c1a19e9ef1d09f26004f0",
     "src/patterns/agent-observatory/workspace.css": "f63ebca7897e6cdfdd38212c7c7ab2884cac094a2920a484b2fe9a13fce72f88"
-  }
+  },
+  "implementationRevision": "3a2178037247dc4a8f23e1afea0f126f98852b74",
+  "changelogSourceHash": "c947c1100bae92c5964d9cc6322287b531dce11192f341d0a31c6f9e27e6ddb1"
 }
