@@ -1,0 +1,20 @@
+{
+  "source_worktree": "/Users/ziye/Documents/Project/Research/oreo-ui",
+  "source_head": "f63171f4d0f8097d98ca9606a7d6760f7871bf79",
+  "baseline": "f3dc4d58c5e369e5c07cc92d588c6026fccd5298",
+  "sha256": {
+    "src/components/icon-reveal/icon-reveal.tsx": "f0586252908a5ce91be5d005b9b17c681d67920c6ce946b3d5c80f75349e36f1",
+    "src/components/icon-reveal/index.ts": "49a1223f04f08b824c5b521cd6204298cd230d987721f6e7563e4aefb48d2bca",
+    "src/components/word-roller/word-roller.css": "a6f7bb7f11d2af7654b80e48bf1590ac886087a87d72b1458d64e7391537d890",
+    "src/components/word-roller/word-roller.tsx": "21f9d88f82204c02a2ca3c3eb7c608709aac54b247e8bf8e3e1bb3924deabb32",
+    "src/components/word-roller/index.ts": "a4a5e9815c126e92c8ad3dc191db65b8a548a9be6ab99a118cfefee858c53491",
+    "src/components/loading-sequence/loading-sequence.css": "53886570749a112f9a643b7eebf07f9b32e93fcc35a1de88730093e08d725452",
+    "src/components/loading-sequence/index.ts": "e366c40843797282bbce2b1c774afad0467f570ac5c01234b317436822ca3681",
+    "src/components/loading-sequence/loading-sequence.tsx": "59fe4bec7ee1bb0bc0f5ed44398c6f9d59693e8286cdba8f820418d07fa3d04f",
+    "src/pages/IconRevealDocs.tsx": "2fdfd09db01f1762ea75f9f8614240f5cb853fb94b679ccafda865fc4ef3c5a1",
+    "src/pages/WordRollerDocs.tsx": "9b560978872f5cda43a39d9fc6646377439c00b07cef2ffde78af16307cd2c76",
+    "src/pages/LoadingSequenceDocs.tsx": "6cae01b1bc5e15f5126e350813de976bc48e3e7ea91165b391d05eada3775f68",
+    "src/docs/playground/loading-sequence.preview.tsx": "80d23b42a0de55913b6c0377e7f27a819892615d78099f9bf7ef59ea849db481",
+    "src/docs/playground/loading-sequence.preview.css": "8d832fcade21af87bb102595a458936e93f4a29da26d25cc0b45b28a474572c0"
+  }
+}

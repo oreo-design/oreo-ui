@@ -1,3 +1,6 @@
+import { IconRevealDocs } from "@/pages/IconRevealDocs";
+import { WordRollerDocs } from "@/pages/WordRollerDocs";
+import { LoadingSequenceDocs } from "@/pages/LoadingSequenceDocs";
 import { BrowserSessionDocs } from "@/pages/BrowserSessionDocs";
 import { BrowserAgentPage } from "@/patterns/browser-agent";
 import { TraceQueryDocs } from "@/pages/TraceQueryDocs";
@@ -147,6 +150,9 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "icon-reveal": IconRevealDocs,
+  "word-roller": WordRollerDocs,
+  "loading-sequence": LoadingSequenceDocs,
   "browser-session-tabs": BrowserSessionDocs, "browser-control-bar": BrowserSessionDocs, "browser-agent": BrowserAgentPage,
   "query-filter-bar": TraceQueryDocs,
   "trace-table": TraceQueryDocs,

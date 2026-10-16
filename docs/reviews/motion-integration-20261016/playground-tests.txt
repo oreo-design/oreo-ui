@@ -1,0 +1,15 @@
+✔ pause preserves remaining dwell and resume does not repeat frames (0.931875ms)
+✔ manual takeover and disposal cancel all pending changes (0.08925ms)
+✔ rapid replay owns only one timer and starts from the beginning (0.078792ms)
+✔ reduced motion preserves all demo states without per-character typing (0.229541ms)
+✔ numeric controls reject incomplete and non-finite input (0.40325ms)
+✔ numeric controls clamp and snap without floating-point drift (0.078625ms)
+✔ linked bounds keep inspector values and preview values in sync (0.399375ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 73.709416

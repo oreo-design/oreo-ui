@@ -1,0 +1,152 @@
+Console output:
+[log] []
+[log] []
+[log] URL: http://127.0.0.1:5242/loading-sequence
+--- snapshot (previous)
++++ snapshot (current)
+@@ -6,12 +6,16 @@
+     - region "Component preview":
+         - status:
+           - text: "Content ready"
+-          - text: "OREO RETREATS"
+-          - text: "A PLACE TO RETURN TO"
+-        - heading "UNMATCHED ABUNDANCE"
+-          - text: "EXPLORE THE COLLECTION ↗"
+-          - text: "ROOM TO BREATHE"
+-          - text: "SCROLL TO DISCOVER ↓"
++          - text: "OREO STUDIO"
++          - text: "DESIGN & DEVELOPMENT"
++        - text: "Crafting Websites"
++        - text: "that Feel Good"
++          - text: "INDEPENDENT"
++          - text: "BY DESIGN."
++            - text: "SELECTED WORK · 2026"
++          - text: "Thoughtful details."
++          - text: "Memorable experiences."
++          - text: "LET’S MAKE SOMETHING ↗"
+   - sectionfooter:
+       - heading "Use this component"
+       - role=button[name="Copy command"i]
+[log] []
+[log] []
+[log] URL: http://127.0.0.1:5242/loading-sequence
+- main "Loading Sequence playground":
+    - generic "Preview view":
+      - role=button[name="Preview"i]
+      - role=button[name="Code"i]
+    - role=button[name="Replay"i]
+    - region "Component preview":
+        - status:
+          - text: "Content ready"
+          - text: "OREO / CREATIVE STUDIO"
+          - text: "AVAILABLE FOR SELECT PROJECTS"
+          - heading "CREATIVE DEVELOPER Ideas made tangible. One detail at a time."
+          - text: "INDEPENDENT · WORLDWIDE"
+          - text: "SCROLL TO EXPLORE ↓"
+  - sectionfooter:
+      - heading "Use this component"
+      - role=button[name="Copy command"i]
+    - code:
+      - text: "npx oreo-ui add loading-sequence"
+    - paragraph:
+      - text: "Or copy"
+      - code:
+        - text: "src/components/"
+        - text: "loading-sequence"
+        - text: "/*"
+      - text: "into your project."
+[log] []
+[log] []
+[log] URL: http://127.0.0.1:5242/loading-sequence
+--- snapshot (previous)
++++ snapshot (current)
+@@ -6,11 +6,12 @@
+     - region "Component preview":
+         - status:
+           - text: "Content ready"
+-          - text: "OREO / CREATIVE STUDIO"
+-          - text: "AVAILABLE FOR SELECT PROJECTS"
+-          - heading "CREATIVE DEVELOPER Ideas made tangible. One detail at a time."
+-          - text: "INDEPENDENT · WORLDWIDE"
+-          - text: "SCROLL TO EXPLORE ↓"
++          - text: "OREO"
++          - text: "A NEW PERSPECTIVE"
++        - heading "INTELLIGENCE AT PLANETARY SCALE"
++          - text: "DISCOVER WHAT’S POSSIBLE ↗"
++          - text: "SEE THE BIGGER PICTURE"
++          - text: "01 — 04"
+   - sectionfooter:
+       - heading "Use this component"
+       - role=button[name="Copy command"i]
+[log] []
+[log] []
+[log] URL: http://127.0.0.1:5242/loading-sequence
+--- snapshot (previous)
++++ snapshot (current)
+@@ -6,12 +6,12 @@
+     - region "Component preview":
+         - status:
+           - text: "Content ready"
+-          - text: "OREO"
+-          - text: "A NEW PERSPECTIVE"
+-        - heading "INTELLIGENCE AT PLANETARY SCALE"
+-          - text: "DISCOVER WHAT’S POSSIBLE ↗"
+-          - text: "SEE THE BIGGER PICTURE"
+-          - text: "01 — 04"
++          - text: "OREO RETREATS"
++          - text: "A PLACE TO RETURN TO"
++        - heading "UNMATCHED ABUNDANCE"
++          - text: "EXPLORE THE COLLECTION ↗"
++          - text: "ROOM TO BREATHE"
++          - text: "SCROLL TO DISCOVER ↓"
+   - sectionfooter:
+       - heading "Use this component"
+       - role=button[name="Copy command"i]
+[log] []
+[log] []
+[log] Element: span.ols-clock
+Box: x=344 y=189 w=1 h=1
+Children: 0  Text length: 0
+Scroll Y: size=1 client=1 overflowing=false top=0
+Scroll X: size=1 client=1 overflowing=false left=0
+Styles: animation-play-state=paused
+Visibility: opacity=0 pointer-events=none
+Aria: aria-hidden=true
+[log] []
+[log] [
+  { name: 'WordRoller End selects Golf', pass: true },
+  { name: 'WordRoller loops to Sprint', pass: true },
+  { name: 'WordRoller typeahead selects Relay', pass: true },
+  { name: 'WordRoller export uses defaultValue', pass: true },
+  { name: 'WordRoller disabled blocks selection', pass: true },
+  { name: 'WordRoller empty disables listbox', pass: true },
+  { name: 'IconReveal keyboard focus reveals entire mask', pass: true },
+  { name: 'IconReveal Escape restores spotlight', pass: true },
+  { name: 'IconReveal controlled reveal', pass: true },
+  { name: 'LoadingSequence typography begins inert', pass: true },
+  { name: 'LoadingSequence typography unlocks content', pass: true },
+  { name: 'LoadingSequence aperture begins inert', pass: true },
+  { name: 'LoadingSequence aperture unlocks content', pass: true },
+  { name: 'LoadingSequence wordmark begins inert', pass: true },
+  { name: 'LoadingSequence wordmark unlocks content', pass: true },
+  { name: 'LoadingSequence curtain begins inert', pass: true },
+  { name: 'LoadingSequence curtain unlocks content', pass: true },
+  { name: 'LoadingSequence pause exposes false state', pass: true },
+  {
+    name: 'LoadingSequence reduced motion completes within 1.5 seconds',
+    pass: true
+  },
+  { name: 'LoadingSequence typography begins inert', pass: true },
+  { name: 'LoadingSequence typography unlocks content', pass: true },
+  { name: 'LoadingSequence aperture begins inert', pass: true },
+  { name: 'LoadingSequence aperture unlocks content', pass: true },
+  { name: 'LoadingSequence wordmark begins inert', pass: true },
+  { name: 'LoadingSequence wordmark unlocks content', pass: true },
+  { name: 'LoadingSequence curtain begins inert', pass: true },
+  { name: 'LoadingSequence curtain unlocks content', pass: true },
+  { name: 'LoadingSequence pause exposes false state', pass: true },
+  {
+    name: 'LoadingSequence reduced motion completes within 1.5 seconds',
+    pass: true
+  }
+]

@@ -1,0 +1,74 @@
+/* Four finite page-entry timelines. Artwork and presentation geometry are local;
+   interface colors/radii and easing come from Oreo. No width/height animation. */
+.oreo-loading-sequence {
+  position: relative; isolation: isolate; overflow: hidden; container-type: inline-size;
+  width: 100%; aspect-ratio: 16 / 10; border-radius: var(--radius-card-medium);
+  background: var(--color-bg-base); color: var(--color-text-primary);
+  --ols-ink: var(--color-text-primary); --ols-paper: var(--color-bg-base);
+}
+.oreo-loading-sequence *, .oreo-loading-sequence *::before, .oreo-loading-sequence *::after { animation-play-state: inherit; }
+.oreo-loading-sequence[data-playing="false"] { animation-play-state: paused; }
+.oreo-loading-sequence[data-playing="true"] { animation-play-state: running; }
+.ols-content, .ols-intro, .ols-backdrop, .ols-curtain { position: absolute; inset: 0; }
+.ols-content { z-index: 1; animation: ols-content var(--loading-duration) var(--ease-out) both; }
+.ols-intro { z-index: 2; pointer-events: none; animation: ols-overlay var(--loading-duration) linear both; }
+.ols-backdrop { background: var(--ols-paper); }
+.ols-backdrop > * { width: 100%; height: 100%; object-fit: cover; }
+.ols-heading { position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+  font-size: clamp(1rem, 6cqw, 3rem); font-weight: 600; line-height: 1.02; letter-spacing: -.065em;
+  padding: 5%; animation: ols-heading var(--loading-duration) var(--ease-drawer) both; }
+.ols-line { display: flex; justify-content: center; flex-wrap: wrap; }
+.ols-word { display: inline-block; transform-origin: bottom left; animation: ols-word calc(var(--loading-duration) * .16) var(--ease-out) both; animation-delay: var(--word-delay); }
+.ols-loader { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: .5rem; color: var(--color-code-fg); animation: ols-loader var(--loading-duration) var(--ease-out) both; }
+.ols-spinner { width: 1rem; height: 1rem; border: 2px solid currentColor; border-right-color: transparent; border-top-color: transparent; border-radius: 50%; animation: ols-spin .8s linear infinite; }
+.ols-loading-label { font-size: .5rem; letter-spacing: .06em; }
+.ols-brand { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: clamp(.75rem, 3cqw, 1.5rem); letter-spacing: .18em; color: var(--color-code-fg); animation: ols-brand var(--loading-duration) var(--ease-drawer) both; }
+.ols-brand > span { display: inline-block; animation: ols-letter calc(var(--loading-duration) * .1) var(--ease-out) both; animation-delay: var(--letter-delay); }
+.ols-curtain { background: var(--color-palette-mint-text); color: var(--color-palette-mint-bg); animation: ols-curtain var(--loading-duration) var(--ease-drawer) both; display: grid; place-items: center; }
+.ols-mark { width: 2rem; height: 2rem; animation: ols-mark var(--loading-duration) var(--ease-out) both; }
+.ols-mark svg { width: 100%; height: 100%; }
+.ols-clock { position: absolute; width: 1px; height: 1px; pointer-events: none; opacity: 0; animation: ols-clock var(--loading-duration) linear both; }
+.oreo-loading-sequence[data-complete="true"] .ols-intro { visibility: hidden; }
+.oreo-loading-sequence[data-complete="true"] .ols-spinner { animation: none; }
+.oreo-loading-sequence[data-variant="typography"] .ols-backdrop { animation: ols-paper var(--loading-duration) linear both; }
+.oreo-loading-sequence[data-variant="aperture"] .ols-backdrop {
+  background: radial-gradient(ellipse at 45% 40%, var(--color-code-bg) 0%, transparent 45%), conic-gradient(from 30deg at 25% 120%, var(--color-code-bg), var(--color-status-progress), var(--color-code-bg), var(--color-palette-blue-text));
+  animation: ols-atmosphere var(--loading-duration) var(--ease-out) both;
+}
+.oreo-loading-sequence[data-variant="aperture"] .ols-content { z-index: 3; background: var(--ols-paper); animation-name: ols-aperture; }
+.oreo-loading-sequence[data-variant="wordmark"] .ols-backdrop { background: var(--color-code-bg); animation: ols-dark var(--loading-duration) var(--ease-out) both; }
+.oreo-loading-sequence[data-variant="curtain"] .ols-backdrop { display: none; }
+.oreo-loading-sequence[data-variant="curtain"] .ols-content { animation-name: ols-curtain-content; }
+.oreo-loading-sequence[data-variant="wordmark"] .ols-content { animation-name: ols-world-content; }
+@keyframes ols-word { from { opacity: 0; transform: translateY(.6em) scale(.65); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes ols-heading { 0%, 27% { transform: translateY(0) scale(1); opacity: 1; } 44%, 82% { transform: translateY(-39%) scale(.62); opacity: 1; } 100% { transform: translateY(-39%) scale(.62); opacity: 0; } }
+@keyframes ols-paper { 0%, 31% { opacity: 1; } 46%, 100% { opacity: 0; } }
+@keyframes ols-content { 0%, 30% { opacity: 0; transform: translateY(12%); } 54%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes ols-overlay { 0%, 90% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes ols-spin { to { transform: rotate(360deg); } }
+@keyframes ols-loader { 0%, 30% { opacity: 1; transform: translateY(0); } 42%, 100% { opacity: 0; transform: translateY(-.5rem); } }
+@keyframes ols-atmosphere { 0% { transform: scale(1.06); } 65%, 100% { transform: scale(1); } }
+@keyframes ols-aperture { 0%, 32% { clip-path: inset(100% 7% 0 7%); transform: translateY(8%); } 43% { clip-path: inset(62% 7% 0 7%); transform: translateY(0); } 61%, 100% { clip-path: inset(0% 0% 0% 0%); transform: translateY(0); } }
+@keyframes ols-letter { from { opacity: 0; transform: translateY(.5em) rotateX(-70deg); } to { opacity: 1; transform: translateY(0) rotateX(0deg); } }
+@keyframes ols-brand { 0%, 60% { transform: translateY(0) scale(1); opacity: 1; } 76%, 90% { transform: translateY(-42%) scale(.48); opacity: 1; } 100% { transform: translateY(-42%) scale(.48); opacity: 0; } }
+@keyframes ols-dark { 0%, 43% { opacity: 1; } 63%, 100% { opacity: 0; } }
+@keyframes ols-world-content { 0%, 45% { opacity: 0; transform: scale(1.08); } 70%, 100% { opacity: 1; transform: scale(1); } }
+@keyframes ols-mark { 0% { opacity: 0; transform: translateY(.5rem) rotateY(-80deg); } 25%, 100% { opacity: 1; transform: translateY(0) rotateY(0deg); } }
+@keyframes ols-curtain { 0%, 32% { transform: translateY(0); } 63%, 100% { transform: translateY(-101%); } }
+@keyframes ols-curtain-content { 0%, 31% { transform: translateY(10%) scale(1.04); opacity: 0; } 63%, 100% { transform: translateY(0) scale(1); opacity: 1; } }
+@keyframes ols-clock { from { opacity: 0; } to { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .oreo-loading-sequence .ols-content { animation: ols-reduced-content .2s linear both; }
+  .oreo-loading-sequence .ols-intro { animation: ols-reduced-overlay .2s linear both; }
+  .oreo-loading-sequence .ols-intro * { animation: none; }
+  .oreo-loading-sequence .ols-clock { animation-duration: .2s; }
+  @keyframes ols-reduced-content { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes ols-reduced-overlay { from { opacity: 1; } to { opacity: 0; } }
+}
+/* Animation shorthands set play-state to running; override them explicitly. */
+.oreo-loading-sequence[data-playing="false"] *,
+.oreo-loading-sequence[data-playing="false"] *::before,
+.oreo-loading-sequence[data-playing="false"] *::after { animation-play-state: paused !important; }
+
+/* Keep the dark reveal dark while its artwork crossfades in. */
+.oreo-loading-sequence[data-variant="wordmark"] { background: var(--color-code-bg); }

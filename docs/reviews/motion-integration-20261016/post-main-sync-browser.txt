@@ -1,0 +1,143 @@
+Console output:
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/loading-sequence color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/loading-sequence, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124293184} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/loading-sequence color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/loading-sequence, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124382468} /_vercel/insights/view',
+  '[debug] [vite] hot updated: /src/patterns/changelog/index.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/word-roller/word-roller.css',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/loading-sequence color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/loading-sequence, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124434991} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/loading-sequence color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/loading-sequence, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124449999} /_vercel/insights/view',
+  '[error] Failed to load resource: the server responded with a status of 500 (Internal Server Error)',
+  '[error] [vite] Failed to reload /src/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)',
+  '[debug] [vite] hot updated: /src/App.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/word-roller/word-roller.css',
+  '[debug] [vite] hot updated: /src/docs/Sidebar.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/word-roller/word-roller.css',
+  '[error] Failed to load resource: the server responded with a status of 500 (Internal Server Error)',
+  '[error] [vite] Failed to reload /src/docs/playground/ComponentPlayground.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)',
+  '[error] [vite] Failed to reload /src/docs/DocsPage.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)',
+  '[debug] [vite] hot updated: /src/docs/DocsPage.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/word-roller/word-roller.css',
+  '[debug] [vite] hot updated: /src/docs/playground/ComponentPlayground.tsx',
+  '[error] Failed to load resource: the server responded with a status of 500 (Internal Server Error)',
+  '[error] [vite] Failed to reload /src/patterns/changelog/index.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)',
+  '[debug] [vite] hot updated: /src/patterns/changelog/index.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/word-roller/word-roller.css',
+  '[debug] [vite] hot updated: /src/App.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/word-roller/word-roller.css',
+  '[debug] [vite] hot updated: /src/docs/DocsPage.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/word-roller/word-roller.css',
+  '[debug] [vite] hot updated: /src/docs/playground/ComponentPlayground.tsx',
+  '[debug] [vite] hot updated: /src/patterns/changelog/index.tsx',
+  '[debug] [vite] hot updated: /src/index.css',
+  '[debug] [vite] hot updated: /src/components/automation/automation.css',
+  '[debug] [vite] hot updated: /src/components/word-roller/word-roller.css',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/loading-sequence color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/loading-sequence, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124489990} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/loading-sequence color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/loading-sequence, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124504196} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/icon-reveal color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/icon-reveal, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124536302} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] URL: http://127.0.0.1:5242/changelog
+- main:
+    - navigation:
+      - text: "Oreo UI"
+      - text: "/"
+      - text: "Changelog"
+    - sectionheader:
+        - role=link[name="Browse components"i]
+        - role=button[name="Dark theme"i]
+      - paragraph:
+        - text: "THE LIBRARY, IN MOTION"
+      - heading "Changelog"
+      - paragraph:
+        - text: "New components. Thoughtful updates."
+        - text: "A running record of what’s taking shape in Oreo UI."
+      - paragraph:
+        - text: "Selected updates merged to main · Dates in Asia/Shanghai."
+        - text: "Code availability and website deployment may differ."
+        - role=link[name="Download Markdown"i]
+        - role=link[name="All commits"i]
+        - role=link[name="Use this template"i]
+      - region:
+        - heading "Bring the updates into your project"
+        - paragraph:
+          - text: "Copy the context for your coding agent. Review the changes together before applying them."
+          - role=button[name="Copy upgrade prompt"i]
+          - disclosuretriangle "Read the prompt"
+      - labeltext:
+        - text: "Search updates"
+        - role=searchbox[name="Search updates"i]
+      - generic "Change type":
+        - role=button[name="All"i]
+        - role=button[name="Added"i]
+        - role=button[name="Fixed"i]
+        - status:
+          - text: "33"
+          - text: "updates"
+    - role=link[name="October 16, 2026"i]
+    - heading "A clearer view of what comes next."
+    - paragraph:
+      - text: "Usage forecasts, payment drafts, sales and operational workspaces, built from reusable components."
+    - article:
+          - text: "Added"
+        - role=link[name="PR #66"i] >> nth=0
+      - heading:
+        - role=link[name="Icon Reveal"i]
+      - paragrap
+
+[Truncated to 10000 characters. Use search to find specific content]

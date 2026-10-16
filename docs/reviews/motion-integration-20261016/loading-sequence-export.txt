@@ -1,0 +1,61 @@
+import { LoadingSequence } from "@/components/loading-sequence";
+
+// Starting props. Connect event handlers in your app.
+<LoadingSequence
+  variant={"typography"}
+  playing
+  brand={"OREO"}
+  headline={"Crafting Websites\nthat Feel Good"}
+>
+  <div
+    className={"ols-scene ols-scene-type"}
+  >
+    <div
+      className={"ols-scene-top"}
+    >
+      <span>
+        {"OREO STUDIO"}
+      </span>
+      <span>
+        {"DESIGN & DEVELOPMENT"}
+      </span>
+    </div>
+    <div
+      className={"ols-scene-type-heading"}
+    >
+      <div>
+        {"Crafting Websites"}
+      </div>
+      <div>
+        {"that Feel Good"}
+      </div>
+    </div>
+    <div
+      className={"ols-project"}
+    >
+      <div
+        className={"ols-checker"}
+       />
+      <div>
+        {"INDEPENDENT"}
+        <br />
+{"BY DESIGN."}
+        <span>
+          {"SELECTED WORK · 2026"}
+        </span>
+      </div>
+    </div>
+    <div
+      className={"ols-scene-bottom"}
+    >
+      <span>
+        {"Thoughtful details."}
+        <br />
+{"Memorable experiences."}
+      </span>
+      <span>
+        {"LET’S MAKE SOMETHING ↗"}
+      </span>
+    </div>
+  </div>
+</LoadingSequence>

@@ -1,0 +1,343 @@
+Console output (before error):
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/icon-reveal color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/icon-reveal, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124145356} /_vercel/insights/view'
+]
+[log] []
+[log] URL: http://127.0.0.1:5242/icon-reveal
+- main "Icon Reveal playground":
+    - generic "Preview view":
+      - role=button[name="Preview"i]
+      - role=button[name="Code"i]
+    - role=button[name="Replay"i]
+    - region "Component preview":
+        - image "Oreo UI. Move over the letters to reveal icons, or focus to reveal all."
+  - sectionfooter:
+      - heading "Use this component"
+      - role=button[name="Copy command"i]
+    - code:
+      - text: "npx oreo-ui add icon-reveal"
+    - paragraph:
+      - text: "Or copy"
+      - code:
+        - text: "src/components/"
+        - text: "icon-reveal"
+        - text: "/*"
+      - text: "into your project."
+
+use refToLocator({ ref: 'e3', page: state.page }) to get locators for ref strings.
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/icon-reveal color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/icon-reveal, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124147045} /_vercel/insights/view'
+]
+[log] []
+[log] URL: http://127.0.0.1:5242/icon-reveal
+- main "Icon Reveal playground":
+    - generic "Preview view":
+      - role=button[name="Preview"i]
+      - role=button[name="Code"i]
+    - role=button[name="Replay"i]
+    - region "Component preview":
+        - image "Oreo UI. Move over the letters to reveal icons, or focus to reveal all."
+  - sectionfooter:
+      - heading "Use this component"
+      - role=button[name="Copy command"i]
+    - code:
+      - text: "npx oreo-ui add icon-reveal"
+    - paragraph:
+      - text: "Or copy"
+      - code:
+        - text: "src/components/"
+        - text: "icon-reveal"
+        - text: "/*"
+      - text: "into your project."
+
+use refToLocator({ ref: 'e3', page: state.page }) to get locators for ref strings.
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] []
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/icon-reveal color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/icon-reveal, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124148759} /_vercel/insights/view'
+]
+[log] URL: http://127.0.0.1:5242/icon-reveal
+- main "Icon Reveal playground":
+    - generic "Preview view":
+      - role=button[name="Preview"i]
+      - role=button[name="Code"i]
+    - role=button[name="Replay"i]
+    - region "Component preview":
+        - image "Oreo UI. Move over the letters to reveal icons, or focus to reveal all."
+  - sectionfooter:
+      - heading "Use this component"
+      - role=button[name="Copy command"i]
+    - code:
+      - text: "npx oreo-ui add icon-reveal"
+    - paragraph:
+      - text: "Or copy"
+      - code:
+        - text: "src/components/"
+        - text: "icon-reveal"
+        - text: "/*"
+      - text: "into your project."
+
+use refToLocator({ ref: 'e3', page: state.page }) to get locators for ref strings.
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] URL: http://127.0.0.1:5242/icon-reveal?view=docs
+- main:
+    - navigation:
+      - text: "Components"
+      - text: "/"
+      - text: "Icon Reveal"
+    - role=button[name="Open playground"i]
+    - sectionheader:
+      - heading "Icon Reveal"
+      - paragraph:
+        - text: "A quiet wordmark with a little more inside. Move across the letters to uncover a field of icons; move away and let it settle."
+      - paragraph:
+        - text: "Inspired by"
+        - role=link[name="Nexvyn’s Rune Icons footer"i]
+        - text: ". Rebuilt with Oreo’s icon vocabulary and theme tokens."
+    - heading:
+      - role=link[name="A finishing touch"i]
+    - paragraph:
+      - text: "Hover over the wordmark, tab to focus, or tap on a touch screen."
+      - sectionfooter:
+            - image "Oreo UI"
+            - paragraph:
+              - text: "Thoughtful components."
+              - text: "A little joy in the details."
+          - navigation "Example footer":
+              - paragraph:
+                - text: "Explore"
+              - role=link[name="Components"i]
+              - role=link[name="Patterns"i]
+              - paragraph:
+                - text: "Create"
+              - role=link[name="Playground"i]
+              - role=link[name="Get started"i]
+            - text: "Made to be yours."
+            - text: "Oreo UI · Components for the details"
+        - image "Oreo UI. Move over the letters to reveal icons, or focus to reveal all."
+    - heading:
+      - role=link[name="Usage"i]
+    - paragraph:
+      - text: "Copy the icon-reveal folder alongside Oreo’s Icon adapter, cn helper and theme tokens."
+          - text: "TSX"
+        - role=button[name="Copy"i]
+      - code:
+        - text: "import { IconReveal } from \"@/components/icon-reveal\";
+
+<IconReveal text=\"Oreo UI\" radius=\"md\" density=\"regular\" />"
+      - paragraph:
+        - text: "Use it as a decorative wordmark in a footer or hero. It contains no links or network calls. Focus reveals the full texture; touch toggles it without blocking page scrolling. Reduced motion removes pointer lag and fades. Multiple instances keep their masks separate."
+    - heading:
+      - role=link[name="API Reference"i]
+    - paragraph:
+      - text: "Accepts div attributes and className. The wordmark scales to its container and fits long labels automatically."
+      - region "Icon Reveal properties":
+            - table:
+              - rowgroup:
+                - row:
+                  - columnheader "Prop"
+                  - columnheader "Type"
+                  - columnheader "Default"
+                  - columnheader "Description"
+                - row:
+                  - cell "text"
+                  - cell "string"
+                  - cell "Oreo UI"
+                  - cell "The wordmark, rendered as real SVG text using the project font."
+                - row:
+                  - cell "radius"
+                  - cell "\"sm\" | \"md\" | \"lg\""
+                  - cell "md"
+                  - cell "The spotlight size, relative to the wordmark."
+                - row:
+                  - cell "density"
+                  - cell "\"fine\" | \"regular\" | \"coarse\""
+                  - cell "regular"
+                  - cell "Icon spacing and size within the letters."
+                - row:
+                  - cell "revealed"
+                  - cell "boolean"
+                  - cell "false"
+                  - cell "Show the complete icon texture."
+                - row:
+                  - cell "animated"
+                  - cell "boolean"
+                  - cell "true"
+                  - cell "Enable the soft pointer follow and enter/leave fades. Respects reduced motion."
+
+use refToLocator({ ref: 'e3', page: state.page }) to get locators for ref strings.
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/icon-reveal?view=docs color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/icon-reveal?view=docs, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124149763} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] []
+[log] URL: http://127.0.0.1:5242/word-roller
+- main "Word Roller playground":
+    - generic "Preview view":
+      - role=button[name="Preview"i]
+      - role=button[name="Code"i]
+    - role=button[name="Replay"i]
+    - region "Component preview":
+          - listbox "Choose a word":
+            - text: "for every season."
+            - text: "Scroll or drag to choose. Use Up and Down arrows, Home, End, or type a word."
+            - option "Sprint" [id="_r_0_-word-0"]
+            - option "Hurdles" [id="_r_0_-word-1"]
+            - option "Relay" [id="_r_0_-word-2"]
+            - option "Marathon" [id="_r_0_-word-3"]
+            - option "Triathlon" [id="_r_0_-word-4"]
+            - option "Cycling" [id="_r_0_-word-5"]
+            - option "Rowing" [id="_r_0_-word-6"]
+            - option "Climbing" [id="_r_0_-word-7"]
+            - option "Tennis" [id="_r_0_-word-8"]
+            - option "Football" [id="_r_0_-word-9"]
+            - option "Skiing" [id="_r_0_-word-10"]
+            - option "Surfing" [id="_r_0_-word-11"]
+            - option "Boxing" [id="_r_0_-word-12"]
+            - option "Golf" [id="_r_0_-word-13"]
+  - sectionfooter:
+      - heading "Use this component"
+      - role=button[name="Copy command"i]
+    - code:
+      - text: "npx oreo-ui add word-roller"
+    - paragraph:
+      - text: "Or copy"
+      - code:
+        - text: "src/components/"
+        - text: "word-roller"
+        - text: "/*"
+      - text: "into your project."
+
+use refToLocator({ ref: 'e3', page: state.page }) to get locators for ref strings.
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/word-roller color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/word-roller, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124150691} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] []
+[log] URL: http://127.0.0.1:5242/word-roller
+- main "Word Roller playground":
+    - generic "Preview view":
+      - role=button[name="Preview"i]
+      - role=button[name="Code"i]
+    - role=button[name="Replay"i]
+    - region "Component preview":
+          - listbox "Choose a word":
+            - text: "for every season."
+            - text: "Scroll or drag to choose. Use Up and Down arrows, Home, End, or type a word."
+            - option "Sprint" [id="_r_0_-word-0"]
+            - option "Hurdles" [id="_r_0_-word-1"]
+            - option "Relay" [id="_r_0_-word-2"]
+            - option "Marathon" [id="_r_0_-word-3"]
+            - option "Triathlon" [id="_r_0_-word-4"]
+            - option "Cycling" [id="_r_0_-word-5"]
+            - option "Rowing" [id="_r_0_-word-6"]
+            - option "Climbing" [id="_r_0_-word-7"]
+            - option "Tennis" [id="_r_0_-word-8"]
+            - option "Football" [id="_r_0_-word-9"]
+            - option "Skiing" [id="_r_0_-word-10"]
+            - option "Surfing" [id="_r_0_-word-11"]
+            - option "Boxing" [id="_r_0_-word-12"]
+            - option "Golf" [id="_r_0_-word-13"]
+  - sectionfooter:
+      - heading "Use this component"
+      - role=button[name="Copy command"i]
+    - code:
+      - text: "npx oreo-ui add word-roller"
+    - paragraph:
+      - text: "Or copy"
+      - code:
+        - text: "src/components/"
+        - text: "word-roller"
+        - text: "/*"
+      - text: "into your project."
+
+use refToLocator({ ref: 'e3', page: state.page }) to get locators for ref strings.
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/word-roller color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/word-roller, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124152685} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] []
+[log] URL: http://127.0.0.1:5242/word-roller
+- main "Word Roller playground":
+    - generic "Preview view":
+      - role=button[name="Preview"i]
+      - role=button[name="Code"i]
+    - role=button[name="Replay"i]
+    - region "Component preview":
+          - listbox "Choose a word":
+            - text: "for every season."
+            - text: "Scroll or drag to choose. Use Up and Down arrows, Home, End, or type a word."
+            - option "Sprint" [id="_r_0_-word-0"]
+            - option "Hurdles" [id="_r_0_-word-1"]
+            - option "Relay" [id="_r_0_-word-2"]
+            - option "Marathon" [id="_r_0_-word-3"]
+            - option "Triathlon" [id="_r_0_-word-4"]
+            - option "Cycling" [id="_r_0_-word-5"]
+            - option "Rowing" [id="_r_0_-word-6"]
+            - option "Climbing" [id="_r_0_-word-7"]
+            - option "Tennis" [id="_r_0_-word-8"]
+            - option "Football" [id="_r_0_-word-9"]
+            - option "Skiing" [id="_r_0_-word-10"]
+            - option "Surfing" [id="_r_0_-word-11"]
+            - option "Boxing" [id="_r_0_-word-12"]
+            - option "Golf" [id="_r_0_-word-13"]
+  - sectionfooter:
+      - heading "Use this component"
+      - role=button[name="Copy command"i]
+    - code:
+      - text: "npx oreo-ui add word-roller"
+    - paragraph:
+      - text: "Or copy"
+      - code:
+        - text: "src/components/"
+        - text: "word-roller"
+        - text: "/*"
+      - text: "into your project."
+
+use refToLocator({ ref: 'e3', page: state.page }) to get locators for ref strings.
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/word-roller color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/word-roller, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124153670} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+
+
+Error executing code: Error: Page navigated while the accessibility snapshot was being captured. Try again.
+    at snapshot (file:///opt/homebrew/lib/node_modules/playwriter/dist/executor.js:1079:27)
+    at async /private/tmp/oreo-motion-integration-20261016/.playwriter-eval.js:14:14
+    at async file:///opt/homebrew/lib/node_modules/playwriter/dist/executor.js:1633:28
+    at async PlaywrightExecutor.executeInternal (file:///opt/homebrew/lib/node_modules/playwriter/dist/executor.js:1631:28)
+
+[HINT: If this is an internal Playwright error, page/browser closed, or connection issue, call reset to reconnect.]

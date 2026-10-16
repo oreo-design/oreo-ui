@@ -260,3 +260,11 @@ Lumeo Studio reference: [fleet, ML pipeline and incident monitoring](https://x.c
 - **Payment Workspace** (`/payment-workspace`): Atikh Bana-inspired inline recipient creation with RecipientSearch, PaymentRailPicker and RecipientForm; five local draft steps, rail-dependent fields, precise decimal amounts and editable review. No transfers or persistence.
 
 - **Usage Forecast** — reusable account timelines, usage projections and daily pace charts, composed into a local scenario workspace with filters, table view and CSV export. Reference: [nyx](https://x.com/Niyxuis/status/2110504674143150148).
+
+### Icon Reveal, Word Roller and Loading Sequence
+
+- `/icon-reveal`: token-based icon-texture wordmark with pointer, keyboard and touch reveal; includes a complete footer example.
+- `/word-roller`: controlled or standalone word selection with wheel/drag snapping, looping or finite lists, keyboard selection and empty/disabled states.
+- `/loading-sequence`: four decorative page-entry sequences (typography, aperture, wordmark, curtain), with pause/resume, replay, custom artwork and reduced motion. These are presentation effects, not network progress indicators.
+
+Each route includes an editable playground, generated starting JSX and API docs (`?view=docs`). Copy its component folder and referenced Oreo dependencies. Existing APIs and motion are preserved; LoadingSequence does not add CutReveal's skip control. [Integration review and evidence](docs/reviews/motion-integration-20261016/REVIEW.md).

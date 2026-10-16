@@ -1,0 +1,103 @@
+[
+  {
+    "name": "WordRoller End selects Golf",
+    "pass": true
+  },
+  {
+    "name": "WordRoller loops to Sprint",
+    "pass": true
+  },
+  {
+    "name": "WordRoller typeahead selects Relay",
+    "pass": true
+  },
+  {
+    "name": "WordRoller export uses defaultValue",
+    "pass": true,
+    "detail": "import { WordRoller } from \"@/components/word-roller\";\n\n// Starting props. Connect event handlers in your app.\n<WordRoller\n  words={[\"Sprint\",\"Hurdles\",\"Relay\",\"Marathon\",\"Triathlon\",\"Cycling\",\"Rowing\",\"Climbing\",\"Tennis\",\"Football\",\"Skiing\",\"Surfing\",\"Boxing\",\"Golf\"]}\n  defaultValue={\"Relay\"}\n  suffix={\"for every season\"}\n  loop\n  disabled={false}\n  size={\"md\"}\n  visibleWords={9}\n />"
+  },
+  {
+    "name": "WordRoller disabled blocks selection",
+    "pass": true
+  },
+  {
+    "name": "WordRoller empty disables listbox",
+    "pass": true
+  },
+  {
+    "name": "IconReveal keyboard focus reveals entire mask",
+    "pass": true
+  },
+  {
+    "name": "IconReveal Escape restores spotlight",
+    "pass": true
+  },
+  {
+    "name": "IconReveal controlled reveal",
+    "pass": true
+  },
+  {
+    "name": "LoadingSequence typography begins inert",
+    "pass": true
+  },
+  {
+    "name": "LoadingSequence typography unlocks content",
+    "pass": true
+  },
+  {
+    "name": "LoadingSequence aperture begins inert",
+    "pass": true
+  },
+  {
+    "name": "LoadingSequence aperture unlocks content",
+    "pass": true
+  },
+  {
+    "name": "LoadingSequence wordmark begins inert",
+    "pass": true
+  },
+  {
+    "name": "LoadingSequence wordmark unlocks content",
+    "pass": true
+  },
+  {
+    "name": "LoadingSequence curtain begins inert",
+    "pass": true
+  },
+  {
+    "name": "LoadingSequence curtain unlocks content",
+    "pass": true
+  },
+  {
+    "name": "LoadingSequence pause exposes false state",
+    "pass": true
+  },
+  {
+    "name": "LoadingSequence reduced motion completes within 1.5 seconds",
+    "pass": true
+  },
+  {
+    "name": "icon-reveal documentation route has API reference",
+    "pass": true
+  },
+  {
+    "name": "word-roller documentation route has API reference",
+    "pass": true
+  },
+  {
+    "name": "loading-sequence documentation route has API reference",
+    "pass": true
+  },
+  {
+    "name": "WordRoller finite boundary holds last value",
+    "pass": true
+  },
+  {
+    "name": "icon-reveal code export registers component",
+    "pass": true
+  },
+  {
+    "name": "loading-sequence code export registers component",
+    "pass": true
+  }
+]

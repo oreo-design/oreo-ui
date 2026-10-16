@@ -1,0 +1,18 @@
+[
+  {
+    "route": "icon-reveal",
+    "pass": true
+  },
+  {
+    "route": "word-roller",
+    "pass": true
+  },
+  {
+    "route": "loading-sequence",
+    "pass": true
+  },
+  {
+    "route": "changelog",
+    "pass": true
+  }
+]
