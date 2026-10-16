@@ -1,0 +1,270 @@
+.va-page {
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  --settings-hairline: var(--color-border-subtle);
+}
+.va-brand,
+.va-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.va-brand span {
+  color: var(--color-text-secondary);
+}
+.va-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8125rem;
+}
+.va-nav a {
+  padding: 1rem 0;
+  color: var(--color-text-secondary);
+}
+.va-nav a[aria-current] {
+  color: var(--color-text-primary);
+  border-bottom: 2px solid currentColor;
+}
+.va-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.va-eyebrow {
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.75rem;
+}
+.va-title h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+.va-title h1 + p {
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.va-title > span {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.va-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+.va-console {
+  max-width: 42rem;
+  margin: auto;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  overflow: hidden;
+  box-shadow: var(--shadow-default);
+}
+.va-console-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+.va-console-header h2 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.va-console-header h2 > span {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+.va-signal-panel,
+.va-latency-panel {
+  padding: 1.25rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-elevated);
+}
+.va-latency-panel {
+  margin-top: 2px;
+}
+.va-latency-panel .vt-history {
+  margin-top: 1.5rem;
+}
+.va-console-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+.va-console-footer > span {
+  font: 0.6875rem monospace;
+  color: var(--color-text-secondary);
+}
+.va-transport {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.va-transport > span {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  max-width: 16rem;
+  text-align: right;
+}
+.va-feedback {
+  min-height: 3rem;
+  padding-top: 0.75rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.va-local {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+}
+.va-inspector {
+  display: grid;
+  gap: 1.75rem;
+}
+.va-inspector h2 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.va-inspector section > p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+.va-inspector select {
+  flex-shrink: 0;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: 0.5rem;
+  font-size: 0.75rem;
+}
+.va-overview {
+  padding: 1.25rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small);
+  background: var(--color-bg-base);
+}
+.va-overview dl {
+  display: grid;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  margin: 1rem 0;
+}
+.va-overview dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.va-overview dt {
+  color: var(--color-text-secondary);
+}
+.va-overview dd {
+  font-variant-numeric: tabular-nums;
+}
+.va-meaning p + p {
+  margin-top: 0.5rem;
+}
+.va-meaning strong {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+.va-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-top: 2rem;
+}
+.va-page a:focus-visible,
+.va-page button:focus-visible,
+.va-page select:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+.va-page.theme-dark {
+  color-scheme: dark;
+}
+@media (min-width: 1280px) {
+  .va-page .activity-root main {
+    max-width: 1280px;
+    margin: auto;
+  }
+}
+@media (max-width: 1000px) {
+  .va-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+  .va-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .va-inspector {
+    grid-template-columns: 1fr 1fr;
+  }
+  .va-console-zone {
+    max-width: 42rem;
+    width: 100%;
+    margin: auto;
+  }
+}
+@media (max-width: 600px) {
+  .va-inspector {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .va-title h1 {
+    font-size: 1.75rem;
+  }
+  .va-signal-panel,
+  .va-latency-panel {
+    padding: 1rem;
+  }
+  .va-title {
+    margin-bottom: 1.5rem;
+  }
+  .va-console-footer .va-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .va-inspector section > div {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .va-nav {
+    gap: 1rem;
+  }
+  .va-page .activity-root main {
+    padding-top: 2rem;
+  }
+}
+
+.va-console-zone,
+.va-inspector,
+.va-inspector section {
+  min-width: 0;
+}
