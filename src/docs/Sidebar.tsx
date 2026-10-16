@@ -27,6 +27,8 @@ const NAV: Group[] = [
       {label:"Performance Score",page:"performance-score"},
       {label:"Review Progress",page:"review-progress"},
       {label:"Member Performance Table",page:"member-performance-table"},
+      {label:"Folder Empty State",page:"folder-empty-state"},
+      {label:"Folder Collection",page:"folder-collection"},
       {label:"Chain Token Badge",page:"chain-token-badge"},
       {label:"Token Amount Panel",page:"token-amount-panel"},
       {label:"Chain Token Picker",page:"chain-token-picker"},
@@ -205,6 +207,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Writing Folders",page:"writing-folders"},
       {label:"Team Performance",page:"team-performance"},
       {label:"Token Bridge",page:"token-bridge"},
       {label:"Engineering Handoff",page:"engineering-handoff"},

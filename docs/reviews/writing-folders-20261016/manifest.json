@@ -1,0 +1,215 @@
+{
+  "baseline": "4f9ff6ac4fcd624baf2ddc7f85262a687120fe2e",
+  "implementation": "9bb5dfa0c9b056278d8146af4a06e39019a2e13c",
+  "localURL": "http://localhost:5252",
+  "environment": "Chromium / Playwriter, local sample data, en-US",
+  "desktopViewport": [
+    1440,
+    1000
+  ],
+  "mobileViewport": [
+    390,
+    844
+  ],
+  "artifacts": [
+    {
+      "file": "after-delete-confirm.png",
+      "sha256": "477e4b908a3caa586e55da3572113da62b002dd120f141f55ac628269b48eb6f",
+      "bytes": 83344,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-deleted.png",
+      "sha256": "1f52f3c2d3a9773956faa1773900325d926f3eaae441fdd29df15a052a453585",
+      "bytes": 68083,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-docs.png",
+      "sha256": "0d57bedd0bc88c92644d388e46eec4cd53e536cb4e8384f1f08190beaf992ed9",
+      "bytes": 101043,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-document-editor.png",
+      "sha256": "c800a995eb3d1e6764d85a25bd3a67d072e1c473183db88a982ecc9f17d1c598",
+      "bytes": 98201,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-empty-final.png",
+      "sha256": "38a03839ea7a9c459d47d5f126e22dacdf0575648a8722193e3a446ff1fa578f",
+      "bytes": 69671,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-empty-fixed.png",
+      "sha256": "ea488b81e50628eb5e322ee72aa29fe5edd292466bf8157e529232940c22b843",
+      "bytes": 69640,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-empty.png",
+      "sha256": "9b6ddc6e9f5bfae7a4403b3053f2496b935c78bd355d5363402d601269fa851f",
+      "bytes": 69575,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-error.png",
+      "sha256": "21e2d04d72b25837091a43c82f388df73417ff065cfab86114fec2a1ddf17708",
+      "bytes": 71477,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-grid-dark-settled.png",
+      "sha256": "255d3dfa13965b8a0eeb2590b06de7b3e880feacff96da81a300f5c7aa7b490a",
+      "bytes": 71601,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-grid-dark.png",
+      "sha256": "815bc6d24f9c71d40df0bf7d0c620534ebed9ca909b41658c43aaf34ce6877b2",
+      "bytes": 72671,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-list.png",
+      "sha256": "2b5329d404975656c87adaa085a45494e41b7349f3925f871993de892add027b",
+      "bytes": 75495,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-loading-final.png",
+      "sha256": "2cda2593126990b139c131178d92cfb0171bd945ef1e415582535e812703488e",
+      "bytes": 57995,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-loading-fixed.png",
+      "sha256": "d83f5518788b42d593b6792118e727dd6b7c29d4a19b0cbad70f685d6bf0fcd3",
+      "bytes": 57970,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-mobile-editor.png",
+      "sha256": "3346a52dbb9ca75e0d9e5445a842f8f327cf865059cd11dd49b840516f01bc4b",
+      "bytes": 31176,
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after-mobile-empty.png",
+      "sha256": "9766b0da514b0f05111f985cbd8e75fa5e7f8fbe752ccf0eef96ea9866095925",
+      "bytes": 46140,
+      "width": 390,
+      "height": 1172
+    },
+    {
+      "file": "after-mobile-grid-final.png",
+      "sha256": "2b93cae30f73c1264367ee1d6b860989afefd284a6526dc4704a132b20bbf99d",
+      "bytes": 43555,
+      "width": 390,
+      "height": 952
+    },
+    {
+      "file": "after-mobile-grid.png",
+      "sha256": "314a7e09fcc81b8e0c52268f804f37b1c981e39313e907616be1d7bab85e0f6e",
+      "bytes": 43709,
+      "width": 390,
+      "height": 952
+    },
+    {
+      "file": "after-mobile-list.png",
+      "sha256": "0baadf9cbefd343e9ef1a0f069bf7dae811d6d1c26a7878c8e0568ebb22a6812",
+      "bytes": 41569,
+      "width": 390,
+      "height": 856
+    },
+    {
+      "file": "after-mobile-loading.png",
+      "sha256": "a8005b673f3ab535cd1d510df55cf59c2420d75e1f000d15c24cf3e2c7e31daa",
+      "bytes": 34409,
+      "width": 390,
+      "height": 999
+    },
+    {
+      "file": "after-no-results.png",
+      "sha256": "8f7ba2673ad50754779106375a6f755593d8f8bbb4e76a42987320733836e8fb",
+      "bytes": 72373,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-peer-empty.png",
+      "sha256": "9bb20902f915b97cecf863da7840766dd93867e45a52b1671579ae7753df67db",
+      "bytes": 90816,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-validation.png",
+      "sha256": "8d9cfe0aca964f2908153a68f4fc1b9fc313ce2d0ad5e3e4e770c7139ac369cb",
+      "bytes": 86522,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "before-changelog.png",
+      "sha256": "94f4909345c9ae99d6e51fd3296b62654a2c730c109d89cd09ffdbf8f5e7ef31",
+      "bytes": 129900,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "before-entry.png",
+      "sha256": "9a7bb84ff2b65ea530e78c853528934a57b1f0aba032c0ac543964b810be7e1d",
+      "bytes": 96689,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "before-peer-empty.png",
+      "sha256": "9bb20902f915b97cecf863da7840766dd93867e45a52b1671579ae7753df67db",
+      "bytes": 90816,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "exported-library.json",
+      "sha256": "f60f8c9fbf8451b4eec5cc137c89f32a6b0d6297ec1578d6d83066401cd0786c",
+      "bytes": 1292
+    },
+    {
+      "file": "peer-document.png",
+      "sha256": "022366d6947f7b4df20d2c6ea1e518c761f7da776536d8c206cc7daf7b10cc10",
+      "bytes": 184694,
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "reference.png",
+      "sha256": "735adfbc2856f1d036c50970efbb682f0795bb8a90e8e11c81e1d6bea3900bce",
+      "bytes": 143126,
+      "width": 1440,
+      "height": 1095
+    },
+    {
+      "file": "source.json",
+      "sha256": "3da27f23c22f170fec0c3c3cbeed445a54c66cb10c03111cedeaaeecab63452a",
+      "bytes": 2038
+    }
+  ]
+}

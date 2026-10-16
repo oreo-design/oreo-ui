@@ -36,10 +36,12 @@ export function DocumentEmpty({
   title = "No activity found",
   description = "Try another folder or clear your filters.",
   onReset,
+  actionLabel = "Clear filters",
 }: {
   title?: string;
   description?: string;
   onReset?: () => void;
+  actionLabel?: string;
 }) {
   return (
     <div
@@ -53,7 +55,7 @@ export function DocumentEmpty({
       <p className="max-w-xs text-sm text-text-secondary">{description}</p>
       {onReset && (
         <Button type="secondary" onClick={onReset} tapScale={1}>
-          Clear filters
+          {actionLabel}
         </Button>
       )}
     </div>

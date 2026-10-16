@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "folder-empty-state": {title:"Folder Empty State",description:"Fading decorative folder rows with a clear creation action."},
+  "folder-collection": {title:"Folder Collection",description:"Controlled list and grid folder browsing with counts and recovery states."},
+  "writing-folders": {title:"Writing Folders",description:"A local writing library with folders, document editing and organization, undo and export."},
   "performance-score": {title:"Performance Score",description:"A compact score ring with clear thresholds and accessible numeric context."},
   "review-progress": {title:"Review Progress",description:"Segmented review completion with exact counts and optional category filtering."},
   "member-performance-table": {title:"Member Performance Table",description:"Sortable team reviews with scores, changes and review status."},
