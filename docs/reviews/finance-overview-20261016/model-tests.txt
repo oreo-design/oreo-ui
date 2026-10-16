@@ -1,0 +1,13 @@
+✔ change handles rising, falling, unchanged and undefined comparisons (0.335458ms)
+✔ spark values preserve proportional geometry and do not fabricate zero or invalid data (0.295416ms)
+✔ review changes only its target without mutating undo snapshot (0.06325ms)
+✔ account validation rejects blanks, malformed endings, and case-insensitive duplicate banks (0.125084ms)
+✔ account search handles bank, name, currency, ending and empty results (0.074708ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 66.8995

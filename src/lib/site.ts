@@ -18,6 +18,11 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "finance-overview":{title:"Finance Overview",description:"A local finance overview with skeleton-to-data reveal, reminders, bank accounts and recoverable refresh."},
+ "skeleton-reveal":{title:"Skeleton Reveal",description:"A matched skeleton/content slot with accessible loading and retained-data refresh."},
+ "balance-spark-bars":{title:"Balance Spark Bars",description:"Compact balance history with a highlighted final bar and accessible values."},
+ "finance-attention-list":{title:"Finance Attention List",description:"Financial reminders with supporting context, explicit actions and loading recovery."},
+ "bank-account-list":{title:"Bank Account List",description:"Bank identities, native balances, mini trends and an illustrative combined total."},
  "agent-inbox": {title:"Agent Inbox",description:"A local agent inbox with status groups, board/list views, activity, approval, retry and undo."},
  "agent-run-card": {title:"Agent Run Card",description:"An expandable run summary with status, telemetry and host-owned actions."},
  "agent-run-activity": {title:"Agent Run Activity",description:"A compact model activity timeline with readable event timestamps."},

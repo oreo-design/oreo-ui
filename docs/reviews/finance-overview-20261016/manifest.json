@@ -1,0 +1,283 @@
+{
+  "baseline": "c67a0a8f24bc5fdfea0ed74c948faa7ee4ac8067",
+  "sourceSnapshot": "80c5092 plus final keyboard correction and changelog; exact final product hashes below",
+  "environment": "Playwriter 10 local Chromium; localhost:5259; English fixtures; desktop 1440x1080 light, mobile 390x844 light/dark, medium 900x1000 dark/reduced",
+  "screenshots": [
+    {
+      "file": "after-account-zero.png",
+      "sha256": "e34f6dfd0413bd514c0c88c1c21b8222ca01149ca46cbd9c2aca3dd9d520c073",
+      "pixels": [
+        1440,
+        1154
+      ]
+    },
+    {
+      "file": "after-changelog.png",
+      "sha256": "3439cb1f0a0ac4e7f7ce6b3df331e39918623d2c52184a3911f3d7227d4f70ad",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "after-empty.png",
+      "sha256": "28f397db9e84560f70bfe1a42f1f5dbf59192975fb79c3c5c676731c03ff6913",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "after-error.png",
+      "sha256": "813411ff13c942f582514fb966e957ceb5e4ec383e7c5555a1f051e0cdfa92a4",
+      "pixels": [
+        1440,
+        1354
+      ]
+    },
+    {
+      "file": "after-loading-v2.png",
+      "sha256": "2928e3f7fad0cae4e934f3f1add2531b7a1df97d8b6f15d8cc2ee41e7a486a82",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "after-loading-v3.png",
+      "sha256": "2928e3f7fad0cae4e934f3f1add2531b7a1df97d8b6f15d8cc2ee41e7a486a82",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "after-loading.png",
+      "sha256": "7f3982abf731da26133339455f827c9364c860bcaa5425371f84279e14ff1db1",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "after-medium-dark-reduced.png",
+      "sha256": "48d45a577fff0e8898ce23f397b817da14290f78f3382bf722879adb453299dc",
+      "pixels": [
+        900,
+        1066
+      ]
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "sha256": "69cf97940ae53e038a63009b9f4d73c7fb9185cec6baa645cc54144c831922e2",
+      "pixels": [
+        390,
+        2123
+      ]
+    },
+    {
+      "file": "after-mobile-dialog-viewport.png",
+      "sha256": "76e969cdc4f16e4e32a772ffdf9c25309a5426cb7f06437f13e60a9be91b74d2",
+      "pixels": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "after-mobile-dialog.png",
+      "sha256": "a296a41c77ccaa5629b20fc83f5b37eeffd01607600e45040095943cf6f041fc",
+      "pixels": [
+        390,
+        2123
+      ]
+    },
+    {
+      "file": "after-mobile-light-v2.png",
+      "sha256": "12de4e2fb2250450f463e06a67c550eeaaa813dc571feacf148caa39060c3d1f",
+      "pixels": [
+        390,
+        2123
+      ]
+    },
+    {
+      "file": "after-mobile-light.png",
+      "sha256": "a6a8214bb4ab48aab60f5112b0d8c4203489e951d1a4cb61a74927e6fba5d189",
+      "pixels": [
+        390,
+        2052
+      ]
+    },
+    {
+      "file": "after-ready-v2.png",
+      "sha256": "146017df6a547112e66da5bc17d719b2183dc5b3c79cf3c8c2a4826a965eb420",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "after-ready-v3.png",
+      "sha256": "9c7fee32c386fbf990cfde57221af416aea21467ddbe03dc1b706ae6fdbb6312",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "after-ready.png",
+      "sha256": "f71344169da8438e554ee3fdd9a46df8ca0b18e4f19c9ef77b6087f4ff25ad0f",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "after-refresh.png",
+      "sha256": "f08aabd0537c768b1524705b1ba00cb7b8e5da603eab783d084bfaee743d5820",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "after-validation.png",
+      "sha256": "94ccb9473750188bd8c092f4181ad4ef46068c10fd49a3958e13be1d05f3c66e",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "before-changelog.png",
+      "sha256": "b5c86730faf2fb02e3f69b0d7526ede4f7f7044b914db57c5ea18e7be7d2a33f",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "before-entry.png",
+      "sha256": "561972d44eaf979e74b82e9074f8ba290951db7cce0dc4ee582ef29c9b97f118",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "docs-api.png",
+      "sha256": "dbf946062cc7aa83eeb54f101790cf74d0fb0f47d65c70bb8e4507b1d33ecaaf",
+      "pixels": [
+        1440,
+        1336
+      ]
+    },
+    {
+      "file": "docs-attention-empty.png",
+      "sha256": "7ec9be306db2088af7b5fff1f1ace74777bbee58fd6b0cfb95df32ab300d5314",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "docs-bank-error-v2.png",
+      "sha256": "1859562cc67e54c3eb302e5a060fab183a6c0b0b75b97638f4e5080f63b275ca",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "docs-bank-error.png",
+      "sha256": "01e6c50ee37a981aa76cb45a5e2afb62c805dea0c98cab789449f5f456b2a868",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "docs-skeleton.png",
+      "sha256": "d8f939377664e67beb1142d097dbcd72c3e6b01bc00da0b65f129cc5a8328d57",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "hakim-0.png",
+      "sha256": "650a27c2a094bcc8054725d895463048ef0d2ef222c186aea0b4faabf19cc2fc",
+      "pixels": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "hakim-3.png",
+      "sha256": "4e988e9a4e5db54c66cac2599a3d5ce7be7bb3f7f1c95a021d2ba9aaa587a6a0",
+      "pixels": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "hakim-5.png",
+      "sha256": "03c34d9c993b4628e972f1f64015e3d84d89f8e71a2968e051806fce75790f6c",
+      "pixels": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "hakim-skeleton.png",
+      "sha256": "465932ff9f4edb902b3e8ecc22dec3e7f49f6a59ab6dca3f167228ca6338cf21",
+      "pixels": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "hakim-transition.png",
+      "sha256": "047857d803be0d1c82b995ddf65115fdf3cb54b836b742df87058d873ebdd875",
+      "pixels": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "peer-cross-currency.png",
+      "sha256": "d8c8e7e5275222edbdb7a3323f92deb753cb11ab406f677316a42c37321f967d",
+      "pixels": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "file": "peer-inbox-stream.png",
+      "sha256": "a450360aa12b72b9110a30df950a7245afc69019707428a94f8acfb90472276d",
+      "pixels": [
+        1440,
+        1080
+      ]
+    }
+  ],
+  "finalProductSha256": {
+    "src/components/finance-overview/index.tsx": "ca5e88b7c087f164bae6fd3afbaece51d24baa8fb57e0f4d98453ac2afdcd997",
+    "src/components/finance-overview/model.test.ts": "e952235dd00b91237087ff2fe9f57714345174af70117b067f36534192622131",
+    "src/components/finance-overview/finance-overview.css": "90236da823373ea019c9cbc05e9a565662a0df1c15cea3311e96007271ee8870",
+    "src/components/finance-overview/model.ts": "e03fda0e063a158fbd37a7ce9b000c1992f744f276dbbb9e02e44e37ecbab144",
+    "src/patterns/finance-overview/index.tsx": "dd258b7b66aaa0e7b0e1fae94a8b59d474b5aa0076ce28ea10d16e81eae47d1d",
+    "src/patterns/finance-overview/data.ts": "e0839eac0d14a6ff3ddd56684b8e0da4e654d202d5607e1f63b2c58bfd306200",
+    "src/patterns/finance-overview/finance-overview-page.css": "3271174e4ebdf50b2ed1ca7a2bae01393e331354ccf5377bc945896a543c0f8f",
+    "src/pages/FinanceOverviewDocs.tsx": "bedfbb3a18af911804fbd12b0ae42157a6e9dc8662181fc0a6cc38f54d986fdd",
+    "src/patterns/changelog/data.ts": "e25dd71c4ed73ac2d59a032d1001d4fb0a864707f39f5eb963fec7cb01135415",
+    "src/App.tsx": "fbbee14232cd0c50d8171a98c0bfac007a78c2c9b00065d1dae44a8b7c916ffd",
+    "src/lib/site.ts": "666c253c5e12da6e2c965aa934bb00a00df1612497e34f475ab3932ed7463d49",
+    "src/docs/playground/registry.tsx": "64dc5245b2c4f71abe598e04abfc475f43168e0d24c0b4403b7c746985ec4396",
+    "src/docs/Sidebar.tsx": "5f91430ddb591a8ba30c46e0f71c13a446838fde408376513512eac5f642c030"
+  },
+  "limits": [
+    "No continuous motion recording: extension tabCapture unavailable",
+    "No real-device touch, live banking or deployment verification",
+    "Narrow and component-specific pre-change screenshots absent; baseline revision retained"
+  ]
+}
