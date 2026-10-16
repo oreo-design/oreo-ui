@@ -2,6 +2,8 @@ import { IconReveal } from "@/components/icon-reveal";
 import { WordRoller } from "@/components/word-roller";
 import { LoadingSequence } from "@/components/loading-sequence";
 import { loadingSequencePlayground } from "./loading-sequence.preview";
+import { EscalationCard, SourceConflictCard, KnowledgeSourceTable, ConversationActivity } from "@/components/consulting";
+import { CASES, SOURCES, CONFLICTS, DAYS } from "@/patterns/consulting-workspace/data";
 import { BrowserSessionTabs, BrowserControlBar, type BrowserRunStatus, type BrowserAction } from "@/components/browser-session";
 import { QueryFilterBar, TraceTable, TRACE_FIELDS, type QueryCondition } from "@/components/trace-query";
 import { SAMPLE_TRACES } from "@/patterns/trace-explorer/data";
@@ -129,6 +131,7 @@ export const componentModules = {
   "icon-reveal": { IconReveal },
   "word-roller": { WordRoller },
   "loading-sequence": { LoadingSequence },
+ consulting: {EscalationCard,SourceConflictCard,KnowledgeSourceTable,ConversationActivity},
  "browser-session": {BrowserSessionTabs,BrowserControlBar},
  "trace-query": {QueryFilterBar,TraceTable},
  "grouped-tasks": {TaskStatusGroup,TaskListRow,GroupedTaskList},
@@ -215,6 +218,10 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     size: select(["sm", "md", "lg"], "md"),
     visibleWords: select(["5", "7", "9"], "9"),
   }, (v, set) => <WordRoller words={v.words.split(",").map(word => word.trim()).filter(Boolean)} value={v.value} onValueChange={word => set("value", word)} suffix={v.suffix} loop={v.loop} disabled={v.disabled} size={v.size} visibleWords={Number(v.visibleWords) as 5 | 7 | 9} />),
+ "escalation-card": {...define("Escalation Card",{open:toggle(true),caseIndex:number(0,0,CASES.length-1,1)},(v,set)=><div className="w-full p-4"><EscalationCard item={CASES[Math.round(v.caseIndex)]??CASES[0]} open={v.open} onOpenChange={open=>set("open",open)}/></div>),source:"consulting"},
+ "source-conflict-card": {...define("Source Conflict Card",{resolution:select(["unresolved","s2","s3","ask"],"unresolved"),disabled:toggle()},(v,set)=><div className="w-full p-4"><SourceConflictCard conflict={{...CONFLICTS[0],resolution:v.resolution==="unresolved"?undefined:v.resolution}} disabled={v.disabled} onResolve={choice=>set("resolution",choice==="s2"?"s2":choice==="s3"?"s3":"ask")}/></div>),source:"consulting"},
+ "knowledge-source-table": {...define("Knowledge Source Table",{state:select(["ready","loading","refreshing","empty","error"],"ready")},(v,set)=><div className="w-full min-w-0 p-4"><KnowledgeSourceTable sources={v.state==="ready"||v.state==="refreshing"?SOURCES:[]} conflicts={CONFLICTS} loading={v.state==="loading"||v.state==="refreshing"} error={v.state==="error"?"The source preview is unavailable.":undefined} onRetry={()=>set("state","ready")} onClear={()=>set("state","ready")}/></div>),source:"consulting"},
+ "conversation-activity": {...define("Conversation Activity",{empty:toggle()},v=><div className="w-full max-w-md p-4"><ConversationActivity days={v.empty?[]:DAYS}/></div>),source:"consulting"},
  "browser-session-tabs": {...define("Browser Session Tabs",{selected:select(["chat","guide"],"chat"),status:select(["ready","running","paused","user","complete","error","stopped"],"running"),action:select(["navigating","reading","searching","typing","waiting"],"reading"),empty:toggle()},(v,set)=><div className="w-full p-4"><BrowserSessionTabs value={v.selected} onValueChange={id=>set("selected",id==="guide"?"guide":"chat")} tabs={v.empty?[]:[{id:"chat",title:"Research task",icon:"chat",closable:false},{id:"guide",title:"Browser guide",activity:{status:v.status as BrowserRunStatus,action:v.action as BrowserAction}}]} renderPanel={tab=><p className="p-6 text-sm text-text-secondary">{tab.title} — selection and activity are independent.</p>} onAdd={v.empty?()=>set("empty",false):undefined}/></div>),source:"browser-session"},
  "browser-control-bar": {...define("Browser Control Bar",{status:select(["ready","running","paused","user","complete","error","stopped"],"running"),action:select(["navigating","reading","searching","typing","waiting"],"reading"),target:text("Browser guide")},(v,set)=><div className="w-full p-4"><BrowserControlBar status={v.status as BrowserRunStatus} action={v.action as BrowserAction} target={v.target} onStart={()=>set("status","running")} onPause={()=>set("status","paused")} onResume={()=>set("status","running")} onTakeOver={()=>set("status","user")} onReturnControl={()=>set("status","running")} onStop={()=>set("status","stopped")} onRetry={()=>set("status","running")}/></div>),source:"browser-session"},
  "query-filter-bar": {...define("Query Filter Bar",{conditions:text("[]"),disabled:toggle()},(v,set)=><div className="w-full p-4"><QueryFilterBar fields={TRACE_FIELDS} value={(()=>{try{const data=JSON.parse(v.conditions);return Array.isArray(data)?data.filter(c=>c&&typeof c.id==="string"&&typeof c.field==="string"&&typeof c.value==="string"&&["eq","neq","contains","gte","lte"].includes(c.operator)) as QueryCondition[]:[];}catch{return [];}})()} onChange={value=>set("conditions",JSON.stringify(value))} disabled={v.disabled}/></div>),source:"trace-query"},
