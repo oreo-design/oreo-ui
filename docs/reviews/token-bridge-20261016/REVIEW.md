@@ -11,7 +11,7 @@ Baseline: `169c129e9470f9338cc596b9cb0d19d0e66f4aa4`. New `/token-bridge` route 
 | Entry | InlineSearchSelect + RecipientSearch; Base UI Dialog | Read source for searchable options and recovery. Two independent chain/token lists justify a wide dialog rather than a one-dimensional combobox. Keyboard-native buttons/inputs; Base UI focus/escape. |
 | Loading | Existing component-shaped skeletons | Static two-list loading fixture, not a spinner over an empty page. |
 | Empty/error | AgentWorkspaceState | Reuse shared centered recovery in the affected token list, not a new full-page error style. |
-| Actions | Button, IconButton, payment template | Reuse canonical primary/secondary/tertiary roles and token spacing. PaymentWorkspace runtime peer capture pending. |
+| Actions | Button, IconButton, payment template | Reuse canonical primary/secondary/tertiary roles and token spacing. PaymentWorkspace runtime peer captured below. |
 | Titled scrolling | Existing Base UI dialogs | Opaque header and separate list scroll surfaces; mobile stacked regions with bounded scrolling. |
 | Icon/color | Icon, Tag, palette tokens | Operation icons inherit neutral color; chain/token identity uses existing palette pairs. Marks are simple identity glyphs, not downloaded brand assets. |
 
@@ -30,7 +30,7 @@ All product images use actual local React components, Chromium/Playwriter, en-US
 
 | State | Baseline / reference | After |
 | --- | --- | --- |
-| New route | [Missing route → Button home](before-entry.png) | [Dark entry](after-entry-dark.png), [light after interaction](after-entry-light.png), [mobile dark](after-mobile-dark.png), [mobile light](after-mobile-light.png) |
+| New route | [Missing route → Button home](before-entry.png) | [Dark entry](after-entry-dark.png), [light after interaction](after-entry-light.png), [mobile dark](after-mobile-dark.png), [mobile light](after-mobile-light.png), [complete mobile page](after-mobile-light-full.png) |
 | Two-column picker | [Reference](reference-01.png), [reference selected chain](reference-16.png); no previous picker | [Desktop](after-picker-dark.png), [combined search](after-picker-filtered.png), [mobile stacked](after-mobile-picker.png) |
 | Loading / empty / error | New component; no previous state | [Empty mobile](after-mobile-empty.png), [loading corrected](after-mobile-loading-fixed.png), [error / retry](after-mobile-picker-error.png) |
 | Quote and review | [Reference amount cards](reference-10.png) | [Review](after-review-dark.png), [pending](after-pending.png), [history](after-history.png) |
@@ -38,6 +38,7 @@ All product images use actual local React components, Chromium/Playwriter, en-US
 | Failure / cancellation | No previous simulation | [Failed](after-simulation-error.png), [cancelled](after-cancelled.png), unchanged balances verified |
 | Demo connection | New action | [Disconnected](after-disconnected.png); reconnect restores review without external effects |
 | Documentation | New routes; baseline not separately captured | [Picker playground](after-picker-playground.png), [picker docs](after-picker-docs.png), [amount playground](after-amount-playground.png) |
+| Changelog | [Previous entries](before-changelog.png) | [Updated page](after-changelog.png), [Token Bridge entry](after-changelog-entry.png), linked to PR #77 |
 | Export | No prior action | [Actual downloaded JSON](export-history.json); 200 USDC from Arbitrum to Solana, fee 0.42, received 199.58, balances 1004.1 and 248.3 |
 | Same-role peer | [Payment Workspace](peer-payment-full.png) | Shared Button, recovery, search, focus and token behavior retained; no edits to peer |
 
@@ -64,3 +65,10 @@ Layout: 720px template max width, 800px selector max width, two-column desktop s
 - Recording attempt failed: `Extension has not been invoked for the current page (activeTab permission)`. Click the Playwriter extension icon once on the task's local bridge tab to enable later recording. No recording exists; screenshots do not prove timing.
 - No actual wallet connection, transaction signing, real prices, network access to a chain or fund movement. Fees/times are fixture values and balances/history reset on reload.
 - Missing prior picker/review/history states are explicit new-surface baseline gaps. No prior UI was fabricated. Reference video was inspected through its native browser URL; it was not downloaded.
+
+## Delivery record
+
+- Pull request: https://github.com/oreo-design/oreo-ui/pull/77
+- Implementation revision: `94750cc071cef5516adc96b97820f1fe06fb52d0`. Final follow-up adds changelog and this evidence manifest; product behavior is unchanged.
+- [Capture manifest](manifest.json) records original asset dimensions and SHA-256 hashes. All captures belong to this same review package.
+- Source/API review covered exact-decimal arithmetic, pending/cancel/stale events, component boundaries, shared Button/Dialog/recovery usage and exported interactive examples. Remote delivery is verified after the final push; a merge is not a production-deployment assertion.
