@@ -1,0 +1,243 @@
+.allocation-job {
+  border: 1px solid var(--color-border-default);
+  border-radius: 12px;
+  background: var(--color-bg-base);
+  padding: 16px;
+  position: relative;
+  color: var(--color-text-primary);
+}
+.allocation-job::before,
+.allocation-bar::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--allocation-tone);
+}
+[data-tone="progress"] {
+  --allocation-tone: var(--color-status-progress);
+}
+[data-tone="error"] {
+  --allocation-tone: var(--color-status-error);
+}
+[data-tone="success"] {
+  --allocation-tone: var(--color-status-success);
+}
+.allocation-route {
+  margin: 20px 0;
+  display: grid;
+  gap: 16px;
+  font-size: 13px;
+}
+.allocation-route li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.allocation-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.allocation-job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 12px;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+.allocation-job-meta span {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.allocation-scroll {
+  overflow: auto;
+  max-height: 480px;
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.allocation-grid {
+  min-width: 1100px;
+}
+.allocation-hours {
+  display: grid;
+  grid-template-columns: 220px repeat(10, minmax(0, 1fr));
+  position: sticky;
+  top: 0;
+  background: var(--color-bg-base);
+  z-index: 4;
+  border-bottom: 1px solid var(--color-border-default);
+}
+.allocation-hours > span {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  padding: 16px 8px;
+  border-left: 1px solid var(--color-border-subtle);
+}
+.allocation-resource {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--color-bg-base);
+  border-right: 1px solid var(--color-border-default);
+  font-size: 12px;
+}
+.allocation-resource strong {
+  display: block;
+  font-weight: 500;
+}
+.allocation-resource small {
+  display: block;
+  color: var(--color-text-tertiary);
+  font-size: 10px;
+  margin-top: 4px;
+}
+.allocation-hours .allocation-resource {
+  justify-content: space-between;
+  font-size: 11px;
+}
+.allocation-row {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  border-bottom: 1px solid var(--color-border-subtle);
+  height: 64px;
+}
+.allocation-row:last-child {
+  border-bottom: 0;
+}
+.allocation-track {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  position: relative;
+  background: var(--color-bg-elevated);
+}
+.allocation-slot {
+  border-right: 1px solid var(--color-border-subtle);
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+.allocation-slot[data-over] {
+  background: var(--color-status-progress-subtle);
+  outline: 1px solid var(--color-status-progress);
+  outline-offset: -1px;
+  z-index: 2;
+}
+.allocation-slot[data-invalid] {
+  color: var(--color-status-error);
+  outline-color: var(--color-status-error);
+}
+.allocation-slot span {
+  background: var(--color-bg-base);
+  padding: 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.allocation-position {
+  position: absolute;
+  top: 12px;
+  height: 40px;
+  padding: 0 4px;
+  pointer-events: none;
+}
+.allocation-bar-wrap {
+  height: 100%;
+  pointer-events: auto;
+}
+.allocation-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border: 1px solid var(--color-border-default);
+  border-radius: 8px;
+  background: var(--color-bg-base);
+  padding: 0 4px;
+  box-shadow: 0 1px 2px var(--color-border-subtle);
+}
+.allocation-bar::before {
+  top: 6px;
+  bottom: 6px;
+}
+.allocation-bar-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+  width: 100%;
+  padding: 8px 4px;
+  text-align: left;
+  font-size: 11px;
+}
+.allocation-bar-label span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.allocation-bar-label:disabled {
+  opacity: 1;
+}
+.allocation-handle {
+  touch-action: none;
+  cursor: grab;
+}
+.allocation-handle:active {
+  cursor: grabbing;
+}
+.allocation-backlog-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  gap: 12px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-base);
+}
+.allocation-backlog {
+  display: flex;
+  gap: 16px;
+  overflow: auto;
+  padding: 24px;
+  background: var(--color-bg-elevated);
+}
+.allocation-card-wrap {
+  flex: 0 0 280px;
+}
+.allocation-drag {
+  width: 300px;
+  transform: rotate(2deg);
+  box-shadow: var(--shadow-overlay);
+  border-radius: 12px;
+}
+.allocation-drag .allocation-job {
+  border-color: var(--color-status-progress);
+}
+.allocation-skeleton {
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+.allocation-skeleton > div {
+  height: 48px;
+  background: var(--color-border-subtle);
+  border-radius: 8px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .allocation-drag {
+    transform: none;
+  }
+}
