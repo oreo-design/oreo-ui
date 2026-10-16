@@ -1,3 +1,5 @@
+import {StorageUsageCard,StorageModuleTable,RetentionPolicyRow} from "@/components/storage-management";
+import {initialStorage} from "@/patterns/storage-manager/data";
 import {DashboardStatCard,ComparisonBarChart,TrendAreaChart,ChannelBreakdown} from "@/components/dashboard-suite";
 import {DEMO_POINTS} from "@/patterns/dashboard-suite/data";
 import {SkeletonReveal,BalanceSparkBars,FinanceAttentionList,BankAccountList} from "@/components/finance-overview";
@@ -163,6 +165,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "storage-management":{StorageUsageCard,StorageModuleTable,RetentionPolicyRow},
  "dashboard-suite":{DashboardStatCard,ComparisonBarChart,TrendAreaChart,ChannelBreakdown},
  "finance-overview":{SkeletonReveal,BalanceSparkBars,FinanceAttentionList,BankAccountList},
  "agent-inbox":{AgentRunCard,AgentRunActivity,AgentInboxBoard},
@@ -255,6 +258,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "storage-usage-card":{...define("Storage Usage Card",{capacity:number(20,1,100,1),recycled:number(0,0,10,.1)},v=><div className="w-full p-6"><StorageUsageCard modules={initialStorage.modules} capacity={v.capacity*1e9} recycledBytes={Math.round(v.recycled*1e9)}/></div>),source:"storage-management"},
+ "storage-module-table":{...define("Storage Module Table",{empty:toggle(false),selected:text("")},(v,set)=><div className="w-full p-6"><StorageModuleTable modules={v.empty?[]:initialStorage.modules} totalUsed={18800000000} selected={v.selected?v.selected.split(","):[]} onSelectionChange={ids=>set("selected",ids.join(","))}/></div>),source:"storage-management"},
+ "retention-policy-row":{...define("Retention Policy Row",{days:select(["7","30","90","180","365","0"],"30"),disabled:toggle(false)},(v,set)=><div className="w-full p-6"><RetentionPolicyRow title="Recycle bin retention" description="Keep deleted records recoverable." icon="trash" value={Number(v.days)} onChange={days=>set("days",String(days) as typeof v.days)} disabled={v.disabled}/></div>),source:"storage-management"},
  "dashboard-stat-card":{...define("Dashboard Stat Card",{variant:select(["footer","header","plain"],"header"),label:text("Total revenue"),value:text("$42,800"),change:number(12.4,-100,100,.1)},v=><div className="w-80"><DashboardStatCard {...v}/></div>),source:"dashboard-suite"},
  "comparison-bar-chart":{...define("Comparison Bar Chart",{mode:select(["stacked","grouped"],"stacked"),state:select(["ready","zero","empty","invalid"],"ready")},v=><div className="w-full p-6"><ComparisonBarChart mode={v.mode} series={["New","Returning"]} points={v.state==="empty"?[]:v.state==="invalid"?[{label:"Invalid",values:[-1,2]}]:v.state==="zero"?[{label:"Oct 16",values:[0,0]}]:DEMO_POINTS}/></div>),source:"dashboard-suite"},
  "trend-area-chart":{...define("Trend Area Chart",{state:select(["ready","single","zero","empty","invalid"],"ready")},v=><div className="w-full p-6"><TrendAreaChart points={v.state==="empty"?[]:v.state==="invalid"?[{label:"Invalid",values:[-1]}]:v.state==="zero"?[{label:"Oct 16",values:[0]}]:v.state==="single"?[{label:"Oct 16",values:[120]}]:DEMO_POINTS.map(p=>({...p,values:[p.values[0]+p.values[1]]}))}/></div>),source:"dashboard-suite"},

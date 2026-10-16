@@ -1,0 +1,72 @@
+{
+  "capacityBytes": 20000000000,
+  "usedBytes": 18800000000,
+  "modules": [
+    {
+      "id": "contacts",
+      "name": "Contacts",
+      "bytes": 6200000000,
+      "files": 452,
+      "growth": 4.2,
+      "tone": "documents",
+      "archivedBytes": 400000000,
+      "archivedFiles": 32
+    },
+    {
+      "id": "tasks",
+      "name": "Tasks",
+      "bytes": 4800000000,
+      "files": 341,
+      "growth": 2.1,
+      "tone": "photos",
+      "archivedBytes": 200000000,
+      "archivedFiles": 21
+    },
+    {
+      "id": "deals",
+      "name": "Deals",
+      "bytes": 3100000000,
+      "files": 234,
+      "growth": 1.8,
+      "tone": "mint",
+      "archivedBytes": 250000000,
+      "archivedFiles": 18
+    },
+    {
+      "id": "emails",
+      "name": "Emails",
+      "bytes": 2200000000,
+      "files": 187,
+      "growth": 5.7,
+      "tone": "yellow",
+      "archivedBytes": 500000000,
+      "archivedFiles": 42
+    },
+    {
+      "id": "companies",
+      "name": "Companies",
+      "bytes": 1500000000,
+      "files": 134,
+      "growth": 0.4,
+      "tone": "pink",
+      "archivedBytes": 100000000,
+      "archivedFiles": 9
+    },
+    {
+      "id": "other",
+      "name": "Other",
+      "bytes": 1000000000,
+      "files": 84,
+      "growth": -1.2,
+      "tone": "neutral",
+      "archivedBytes": 50000000,
+      "archivedFiles": 6
+    }
+  ],
+  "recycleBin": [],
+  "retentionDays": {
+    "bin": 7,
+    "email": 180,
+    "logs": 365
+  }
+}
