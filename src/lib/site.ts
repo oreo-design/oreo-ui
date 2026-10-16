@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "performance-score": {title:"Performance Score",description:"A compact score ring with clear thresholds and accessible numeric context."},
+  "review-progress": {title:"Review Progress",description:"Segmented review completion with exact counts and optional category filtering."},
+  "member-performance-table": {title:"Member Performance Table",description:"Sortable team reviews with scores, changes and review status."},
+  "team-performance": {title:"Team Performance",description:"A local team performance dashboard with period filters, editable reviews, undo and CSV export."},
   "chain-token-badge": {title:"Chain Token Badge",description:"Overlapping chain and token identity marks with network labels."},
   "token-amount-panel": {title:"Token Amount Panel",description:"A token amount surface with wallet context, balance, Max and network selection."},
   "chain-token-picker": {title:"Chain Token Picker",description:"Searchable chain and token lists with balances, selection and recovery states."},

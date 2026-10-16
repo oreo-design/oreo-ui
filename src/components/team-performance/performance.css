@@ -1,0 +1,249 @@
+.tp-score {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  --tp-tone: var(--color-text-tertiary);
+}
+.tp-score[data-tone="mint"] {
+  --tp-tone: var(--color-palette-mint-text);
+}
+.tp-score[data-tone="blue"] {
+  --tp-tone: var(--color-palette-blue-text);
+}
+.tp-score[data-tone="orange"] {
+  --tp-tone: var(--color-palette-orange-text);
+}
+.tp-score[data-tone="pink"] {
+  --tp-tone: var(--color-palette-pink-text);
+}
+.tp-score svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--tp-tone);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.tp-score .tp-ring-track {
+  stroke: var(--color-border-subtle);
+}
+.tp-review-progress {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  padding: calc(var(--spacing) * 5);
+  background: var(--color-bg-base);
+}
+.tp-review-progress header,
+.tp-review-progress footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+  flex-wrap: wrap;
+}
+.tp-review-progress h2 {
+  font-weight: 500;
+  font-size: var(--text-sm);
+}
+.tp-review-progress strong {
+  font-size: var(--text-xl);
+  font-weight: 500;
+}
+.tp-review-progress strong small {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+.tp-review-track {
+  display: flex;
+  height: 28px;
+  overflow: hidden;
+  background: var(--color-bg-elevated);
+  margin: calc(var(--spacing) * 5) 0 calc(var(--spacing) * 3);
+  mask-image: repeating-linear-gradient(
+    to right,
+    #000 0 4px,
+    transparent 4px 7px
+  );
+}
+.tp-review-track i {
+  height: 100%;
+  display: block;
+}
+.tp-review-progress [data-state="Completed"] {
+  --tp-state: var(--color-status-success);
+}
+.tp-review-progress [data-state="Pending"] {
+  --tp-state: var(--color-palette-orange-text);
+}
+.tp-review-progress [data-state="Overdue"] {
+  --tp-state: var(--color-status-error);
+}
+.tp-review-track i {
+  background: var(--tp-state);
+}
+.tp-review-progress footer {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.tp-review-progress footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 4);
+}
+.tp-review-progress footer button,
+.tp-review-progress footer div > span {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  padding: var(--spacing) 0;
+}
+.tp-review-progress footer button {
+  cursor: pointer;
+}
+.tp-review-progress footer button[aria-pressed="true"] {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  color: var(--color-text-primary);
+}
+.tp-review-progress footer i {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--tp-state);
+}
+.tp-table-scroll {
+  position: relative;
+  overflow: auto;
+  max-height: 560px;
+  min-width: 0;
+  width: 100%;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+}
+.tp-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  white-space: nowrap;
+  width: 100%;
+  font-size: var(--text-xs);
+  text-align: left;
+}
+.tp-table th,
+.tp-table td {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  height: 48px;
+  font-weight: 400;
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-base);
+  color: var(--color-text-secondary);
+}
+.tp-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--color-bg-surface);
+  height: 40px;
+}
+.tp-table thead button {
+  font-size: inherit;
+  color: inherit;
+  margin-left: calc(var(--spacing) * -2);
+}
+.tp-table tr > :first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 180px;
+  border-right: 1px solid var(--color-border-subtle);
+}
+.tp-table thead tr > :first-child {
+  z-index: 3;
+}
+.tp-table tbody tr:hover > * {
+  background: var(--color-bg-elevated);
+}
+.tp-member {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  color: var(--color-text-primary);
+  text-align: left;
+}
+.tp-member [role="img"] {
+  width: 24px;
+  height: 24px;
+  font-size: var(--text-xs);
+}
+button.tp-member {
+  cursor: pointer;
+}
+button.tp-member:hover span {
+  text-decoration: underline;
+}
+.tp-table .tp-delta[data-direction="up"] {
+  color: var(--color-palette-mint-text);
+}
+.tp-table .tp-delta[data-direction="down"] {
+  color: var(--color-palette-pink-text);
+}
+.tp-skeleton {
+  padding: calc(var(--spacing) * 4);
+  min-height: 360px;
+}
+.tp-skeleton > div {
+  display: flex;
+  gap: calc(var(--spacing) * 6);
+  height: 48px;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.tp-skeleton i {
+  height: 12px;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-control-tiny);
+  flex: 1;
+}
+.tp-table-scroll:focus-visible,
+.tp-table :focus-visible,
+.tp-review-progress :focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: -2px;
+}
+@media (max-width: 600px) {
+  .tp-review-progress {
+    padding: calc(var(--spacing) * 4);
+  }
+  .tp-review-progress footer > div {
+    gap: calc(var(--spacing) * 3);
+  }
+  .tp-table tr > :first-child {
+    min-width: 150px;
+    max-width: 170px;
+    white-space: normal;
+  }
+  .tp-table-scroll {
+    max-height: 65dvh;
+  }
+}
+
+/* Palette text tokens are foregrounds for filled Tags. Standalone marks
+   use brighter palette backgrounds on dark surfaces. */
+.theme-dark .tp-score[data-tone="mint"] {
+  --tp-tone: var(--color-palette-mint-bg);
+}
+.theme-dark .tp-score[data-tone="blue"] {
+  --tp-tone: var(--color-palette-blue-bg);
+}
+.theme-dark .tp-score[data-tone="orange"] {
+  --tp-tone: var(--color-palette-orange-bg);
+}
+.theme-dark .tp-review-progress [data-state="Pending"] {
+  --tp-state: var(--color-palette-orange-bg);
+}
+.theme-dark .tp-table .tp-delta[data-direction="up"] {
+  color: var(--color-palette-mint-bg);
+}
