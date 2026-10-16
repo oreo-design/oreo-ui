@@ -22,6 +22,10 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+      { label: "Escalation Card", page: "escalation-card" },
+      { label: "Source Conflict Card", page: "source-conflict-card" },
+      { label: "Knowledge Source Table", page: "knowledge-source-table" },
+      { label: "Conversation Activity", page: "conversation-activity" },
       { label: "Browser Session Tabs", page: "browser-session-tabs" },
       { label: "Browser Control Bar", page: "browser-control-bar" },
       { label: "Query Filter Bar", page: "query-filter-bar" },
@@ -179,6 +183,7 @@ const NAV: Group[] = [
     title: "Templates",
     items: [
       { label: "Support Console", page: "support-console" },
+      { label: "Consulting Workspace", page: "consulting-workspace" },
       { label: "Browser Agent", page: "browser-agent" },
       { label: "Trace Explorer", page: "trace-explorer" },
       { label: "Grouped Tasks", page: "grouped-tasks" },

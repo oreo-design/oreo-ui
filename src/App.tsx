@@ -1,6 +1,8 @@
 import { IconRevealDocs } from "@/pages/IconRevealDocs";
 import { WordRollerDocs } from "@/pages/WordRollerDocs";
 import { LoadingSequenceDocs } from "@/pages/LoadingSequenceDocs";
+import { ConsultingDocs } from "@/pages/ConsultingDocs";
+import { ConsultingWorkspacePage } from "@/patterns/consulting-workspace";
 import { BrowserSessionDocs } from "@/pages/BrowserSessionDocs";
 import { BrowserAgentPage } from "@/patterns/browser-agent";
 import { TraceQueryDocs } from "@/pages/TraceQueryDocs";
@@ -153,6 +155,7 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "icon-reveal": IconRevealDocs,
   "word-roller": WordRollerDocs,
   "loading-sequence": LoadingSequenceDocs,
+ "escalation-card": ConsultingDocs, "source-conflict-card": ConsultingDocs, "knowledge-source-table": ConsultingDocs, "conversation-activity": ConsultingDocs, "consulting-workspace": ConsultingWorkspacePage,
   "browser-session-tabs": BrowserSessionDocs, "browser-control-bar": BrowserSessionDocs, "browser-agent": BrowserAgentPage,
   "query-filter-bar": TraceQueryDocs,
   "trace-table": TraceQueryDocs,
