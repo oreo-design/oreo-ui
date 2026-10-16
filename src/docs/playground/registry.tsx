@@ -1,3 +1,5 @@
+import {PerformanceScore,ReviewProgress,MemberPerformanceTable} from "@/components/team-performance";
+import {PERFORMANCE_MEMBERS} from "@/patterns/team-performance/data";
 import {ChainTokenBadge,TokenAmountPanel,ChainTokenPicker} from "@/components/token-bridge";
 import {BRIDGE_CHAINS,BRIDGE_TOKENS} from "@/patterns/token-bridge/data";
 import {AgentMentionComposer,AgentSessionCard,type HandoffStatus} from "@/components/agent-handoff";
@@ -143,6 +145,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "team-performance": {PerformanceScore,ReviewProgress,MemberPerformanceTable},
   "token-bridge": {ChainTokenBadge,TokenAmountPanel,ChainTokenPicker},
   "agent-handoff": {AgentMentionComposer,AgentSessionCard},
   company: {CompanyIdentity,CompanyTable},
@@ -225,6 +228,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "performance-score": {...define("Performance Score",{value:number(94,0,100,1),label:text("Performance")},v=><PerformanceScore value={v.value} label={v.label}/>),source:"team-performance"},
+ "review-progress": {...define("Review Progress",{completed:number(6,0,20,1),pending:number(4,0,20,1),overdue:number(2,0,20,1),selected:select(["none","Completed","Pending","Overdue"],"none")},(v,set)=><div className="w-full p-6"><ReviewProgress counts={{Completed:v.completed,Pending:v.pending,Overdue:v.overdue}} selected={v.selected==="none"?undefined:v.selected as "Completed"} onSelect={s=>set("selected",v.selected===s?"none":s)}/></div>),source:"team-performance"},
+ "member-performance-table": {...define("Member Performance Table",{state:select(["ready","loading","empty","error"],"ready"),opened:text("")},(v,set)=><div className="w-full p-4"><MemberPerformanceTable members={v.state==="ready"?PERFORMANCE_MEMBERS.slice(0,7):[]} loading={v.state==="loading"} error={v.state==="error"?"Sample reviews are unavailable.":undefined} onReset={()=>set("state","ready")} onOpen={m=>set("opened",m.name)}/>{v.opened&&<p role="status" className="mt-4 text-sm">Selected {v.opened}</p>}</div>),source:"team-performance"},
  "chain-token-badge": {...define("Chain Token Badge",{chain:select(["ethereum","solana","arbitrum"],"ethereum"),compact:toggle(false)},v=><ChainTokenBadge chain={BRIDGE_CHAINS.find(c=>c.id===v.chain)!} token={BRIDGE_TOKENS[0]} compact={v.compact}/>),source:"token-bridge"},
  "token-amount-panel": {...define("Token Amount Panel",{amount:text("200"),output:toggle(false),disabled:toggle(false),error:text("")},(v,set)=><div className="w-full p-6"><TokenAmountPanel label={v.output?"To":"From"} chain={BRIDGE_CHAINS[0]} token={BRIDGE_TOKENS[0]} amount={v.amount} onAmountChange={v.output?undefined:value=>set("amount",value)} onMax={v.output?undefined:()=>set("amount",BRIDGE_TOKENS[0].balance)} disabled={v.disabled} error={v.error} estimate="Sample amount"/></div>),source:"token-bridge"},
  "chain-token-picker": {...define("Chain Token Picker",{selected:text("eth-usdc"),state:select(["ready","loading","empty","error"],"ready")},(v,set)=><div className="w-full p-4"><ChainTokenPicker chains={BRIDGE_CHAINS} tokens={v.state==="empty"?[]:BRIDGE_TOKENS} value={v.selected} onSelect={t=>set("selected",t.id)} loading={v.state==="loading"} error={v.state==="error"?"Sample token data is unavailable.":undefined} onRetry={()=>set("state","ready")}/></div>),source:"token-bridge"},
