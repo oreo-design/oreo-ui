@@ -1,0 +1,277 @@
+{
+  "baseline": "ac1c5b5726f050bf12f4f00c2f992b397042abba",
+  "implementation": "b0688f563ae286622603a93bc025cd6e7db82298",
+  "reference": "https://x.com/eliakuratli/status/2110823532917862573",
+  "referenceType": "static photo; actual browser pixels inspected",
+  "preview": "http://localhost:5248/company-directory",
+  "fixture": "COMPANIES, 23 fictional accounts; local session only",
+  "locale": "en-US",
+  "timezone": "UTC contact dates",
+  "browser": "Playwriter session 2, Chromium installed extension",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      390,
+      600
+    ]
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "sourceHashes": {
+    "src/components/company/index.tsx": "802ffe45c0b56e8813d182ad740a246021e5cad1366f485985369abe95ae2801",
+    "src/components/company/model.ts": "60468aef8ca00887bf4ac4fb55c035d9a9cd254b1651fc4d4100271106eb4c5a",
+    "src/components/company/company.css": "7b41633dd2341c28155ef5a24cff7d38ef56d713f9191a61897d6e3946a4de2d",
+    "src/patterns/company-directory/index.tsx": "0ddc0a1d297293a105f91ba6798a2a4e37ea387f86a25592475b399f7658e6bf",
+    "src/patterns/company-directory/data.ts": "6de29924dd6333cf7df3e01a8c622dcddc25d1938d6dca3fe5f42d543a115d93",
+    "src/patterns/company-directory/workspace.css": "739e713f6b8f99091240865d1958b853daa21ba0486403d8214a2c57c1384154"
+  },
+  "media": [
+    {
+      "file": "after-added.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "fd745ce9dbf7db043026ded33a9082863f7318085f0d29dd96c77859a7f8245d"
+    },
+    {
+      "file": "after-changelog-entry.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "e30baaae2c5c86e219ea114678b82c3e25e681f8fb3da8c33bd2ade5e00ec3cd"
+    },
+    {
+      "file": "after-changelog.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "efdd30620509599a94fae1abba32f4ed04035f7171ba2b68b88ece822e3794a3"
+    },
+    {
+      "file": "after-empty-v2.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "323dd4e4d2c5b070f384165dd1911763906a74dfe3442a71e09c3c64a27a84b9"
+    },
+    {
+      "file": "after-empty.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d48aafa1c90520eaa264b5ad3db53ddcbce80fc4d7be9017cf52c680317bb5cb"
+    },
+    {
+      "file": "after-error.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d6cf608512b45e0e5248e997f1e670ef57ddbeb5ee19dd05758ea5ce12978c2b"
+    },
+    {
+      "file": "after-filtered.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "0247de1822dd60bc50a309c443eacb110f423082f75d56e5ca97859f28958c26"
+    },
+    {
+      "file": "after-final-dark.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "928c1da2065497a6557c3eba5111b484ca12e5b20261e3f16226431e058cfa79"
+    },
+    {
+      "file": "after-final-light.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d48aafa1c90520eaa264b5ad3db53ddcbce80fc4d7be9017cf52c680317bb5cb"
+    },
+    {
+      "file": "after-identity-docs.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b65705af33f1c1ccaaf5c2d7f6bb1a74b9be816758f83c3aeab9f4e834d24a86"
+    },
+    {
+      "file": "after-initial.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "5c3b9ca904e5ff42efe13e64bf08945ea5d6213ffa6dc8dd7a2b784dabb3784f"
+    },
+    {
+      "file": "after-light.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "f2de06c39b3d9e851a0298c30c0391fbb5d4550249b774cde3d7e5bf62eff96f"
+    },
+    {
+      "file": "after-loading.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "674015bfc7169f2d311c5bea08c17a1c42b3bd8e114f96f104e474b2f9989457"
+    },
+    {
+      "file": "after-mobile-dark-final.png",
+      "width": 390,
+      "height": 600,
+      "sha256": "35c87447a5e970043db4bc651c6192cc063cff64ed10e69863ba1046f5d2f7e6"
+    },
+    {
+      "file": "after-mobile-dark-verified.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "c9ae08f124394d1e31d6f7b15dae0855aab7feff27d7e0c97ff9c40ef2a73f1d"
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "8fe79b35d4cebd6ea71f0d710acf9f681cbd6180af2aac25d6af29aee4c12036"
+    },
+    {
+      "file": "after-mobile-details-scroll.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "a927a34d689e257aea56048693a9d2a3de126c1b27fa88256b9072b1d5a8ff41"
+    },
+    {
+      "file": "after-mobile-details.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "a927a34d689e257aea56048693a9d2a3de126c1b27fa88256b9072b1d5a8ff41"
+    },
+    {
+      "file": "after-mobile-horizontal-settled.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "cef6eeb50be82cc003067ad80326447a48f6522c9978e6a717cfc5ee1b3f5a66"
+    },
+    {
+      "file": "after-mobile-light-final.png",
+      "width": 390,
+      "height": 600,
+      "sha256": "cf3e710055e543124dab37c14ce1fff4aff44f1a1f2cacead32c009a8b22ed10"
+    },
+    {
+      "file": "after-mobile-light-verified.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "268beb1b2f30bcedcb5f9792cf8df60d8e6b505e55c0bc2838e765f1e37377bc"
+    },
+    {
+      "file": "after-mobile-light.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "b11534fb4134536a0e5a69eb8a9605c9c2f59f480c90a85fee8c8bef3fd332a8"
+    },
+    {
+      "file": "after-mobile-nav.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "c9dd8f190bd5eec27ec2807f75133626aff42751d9ec9c44e55f51880e10f7ff"
+    },
+    {
+      "file": "after-mobile-table-end.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "a750fd47a682d741b833278f36ac60d1562c8ed4c7fbb47b4fa25ae5390a3f4e"
+    },
+    {
+      "file": "after-mobile-table-scroll.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "cef6eeb50be82cc003067ad80326447a48f6522c9978e6a717cfc5ee1b3f5a66"
+    },
+    {
+      "file": "after-short-dialog-error.png",
+      "width": 390,
+      "height": 600,
+      "sha256": "c2446d141ba5d89b5ddff1a1b92657ef251bd0f0e06e23ad337feefc16910367"
+    },
+    {
+      "file": "after-table-docs.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "a4b04086a11fe42107ef380e6fcfef4532950e74b342a41e371606f9a6d15b21"
+    },
+    {
+      "file": "after-table-playground.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "bbefb514307197da72f5a4f7989b63ebfe57be324a0f1bf0bb40b53ca03d371a"
+    },
+    {
+      "file": "after-tablet-dark.png",
+      "width": 768,
+      "height": 1024,
+      "sha256": "7d1ecce44e88e5ee67bed0c9542cf306d4bd32e415c462f424cbe5293a0f23cb"
+    },
+    {
+      "file": "after-tablet-light.png",
+      "width": 768,
+      "height": 1024,
+      "sha256": "639d104839da5b998b3f367dde2fdcc355ec86b2a668a5ceb8aa0e1ece7b5602"
+    },
+    {
+      "file": "after-validation.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "9302c1e834d5b0acc255a160367148b782433622042da86243012d2d7e855cd3"
+    },
+    {
+      "file": "before-changelog.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "ac1f5a161465cbc46618c1a06ca851488df5441147ded91b67f28dfdd26b99a9"
+    },
+    {
+      "file": "before-entry.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "fcea54e6bb840694df421b54db00ab408fa54d9f5e2d1440575f1f5efab0ccb7"
+    },
+    {
+      "file": "peer-sales-table-settled.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "197306963e76aebf4999f0ba9a1850649e25da11b5f2fb6d73fd41f1a0032b61"
+    },
+    {
+      "file": "peer-sales-table.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "878b0bfc079ea3867f6aa696f93c0e499b72d4454dac9d3bf0ca1f2f2b3453ab"
+    },
+    {
+      "file": "peer-sales.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "878b0bfc079ea3867f6aa696f93c0e499b72d4454dac9d3bf0ca1f2f2b3453ab"
+    },
+    {
+      "file": "reference-full.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "954547eaac6ab661da6d08abc02ab062ec31ec1230fc2f4ac0e37ddd56d41844"
+    },
+    {
+      "file": "reference.png",
+      "width": 1440,
+      "height": 1100,
+      "sha256": "dd92f8f574362e33084a9f9de66f20dcbd7cee33e856d2b1e1ab657e7db4353d"
+    }
+  ],
+  "recording": {
+    "status": "blocked",
+    "reason": "activeTab permission not granted to this task tab; no recording artifact",
+    "recovery": "Click Playwriter extension icon on the preview tab."
+  },
+  "supersession": "See REVIEW.md for intermediate and superseded media."
+}
