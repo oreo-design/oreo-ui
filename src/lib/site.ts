@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "voice-agent":{title:"Voice Agent",description:"A silent local voice-session replay with dual signal lanes, latency stages and turn inspection."},
+ "voice-signal":{title:"Voice Signal",description:"Caller and agent signal lanes with seek position, phase and sample transcripts."},
+ "voice-latency-breakdown":{title:"Voice Latency Breakdown",description:"Exact stage timings, total latency and an explicit budget marker."},
+ "turn-latency-history":{title:"Turn Latency History",description:"Selectable per-turn latency bars with outliers and nearest-rank percentiles."},
  "agent-budget":{title:"Agent Budget",description:"Explainable AI budgets with bounded cap editing, remaining-run estimates and local pause simulation."},
  "budget-cap-control":{title:"Budget Cap Control",description:"A controlled spending cap with hatched usage, keyboard input and explained boundaries."},
  "budget-outcome":{title:"Budget Outcome",description:"Translate remaining allowance into agent runs and time at the current spending pace."},

@@ -1,0 +1,14 @@
+✔ phase boundaries follow summed latency without overlap (0.554625ms)
+✔ interrupt wins and never mutates source timing (0.0455ms)
+✔ validation rejects duplicate or negative stages and impossible signal windows (0.106458ms)
+✔ nearest-rank percentiles do not mutate samples (0.069041ms)
+✔ clock advance clamps at end and handles stalled deltas (0.038625ms)
+✔ transcript has no future text and completes exactly (0.042209ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 58.173459

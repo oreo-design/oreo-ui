@@ -111,6 +111,9 @@ const NAV: Group[] = [
       {label:"Calendar Color Picker",page:"calendar-color-picker"},
       {label:"Calendar Source List",page:"calendar-source-list"},
       {label:"Calendar Week Grid",page:"calendar-week-grid"},
+      {label:"Voice Signal",page:"voice-signal"},
+      {label:"Voice Latency Breakdown",page:"voice-latency-breakdown"},
+      {label:"Turn Latency History",page:"turn-latency-history"},
       {label:"Budget Cap Control",page:"budget-cap-control"},
       {label:"Budget Outcome",page:"budget-outcome"},
       {label:"Monthly Budget Card",page:"monthly-budget-card"},
@@ -241,6 +244,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Voice Agent",page:"voice-agent"},
       {label:"Agent Budget",page:"agent-budget"},
       {label:"Storage Manager",page:"storage-manager"},
       {label:"Commerce Dashboard",page:"dashboard-suite"},

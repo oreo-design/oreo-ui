@@ -1,3 +1,5 @@
+import {VoiceSignal,VoiceLatencyBreakdown,TurnLatencyHistory} from "@/components/voice-telemetry";
+import {VOICE_TURNS} from "@/patterns/voice-agent/data";
 import {BudgetCapControl,BudgetOutcome,MonthlyBudgetCard} from "@/components/agent-budget";
 import {DEMO_BUDGET} from "@/patterns/agent-budget";
 import {StorageUsageCard,StorageModuleTable,RetentionPolicyRow} from "@/components/storage-management";
@@ -167,6 +169,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "voice-telemetry":{VoiceSignal,VoiceLatencyBreakdown,TurnLatencyHistory},
  "agent-budget":{BudgetCapControl,BudgetOutcome,MonthlyBudgetCard},
  "storage-management":{StorageUsageCard,StorageModuleTable,RetentionPolicyRow},
  "dashboard-suite":{DashboardStatCard,ComparisonBarChart,TrendAreaChart,ChannelBreakdown},
@@ -261,6 +264,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "voice-signal":{...define("Voice Signal",{position:number(3800,0,8000,100),interrupted:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-6"><VoiceSignal turn={VOICE_TURNS[11]} position={v.position} interrupted={v.interrupted} onSeek={n=>set("position",n)}/></div>),source:"voice-telemetry"},
+ "voice-latency-breakdown":{...define("Voice Latency Breakdown",{budget:number(800,200,1200,100),invalid:toggle(false)},v=><div className="w-full max-w-2xl p-6"><VoiceLatencyBreakdown stages={v.invalid?[{id:"bad",label:"Invalid",ms:-1,tone:"neutral"}]:VOICE_TURNS[11].stages} budget={v.budget} turnLabel="turn 12"/></div>),source:"voice-telemetry"},
+ "turn-latency-history":{...define("Turn Latency History",{selectedId:number(12,1,12,1),budget:number(800,200,1200,100),empty:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-6"><TurnLatencyHistory turns={v.empty?[]:VOICE_TURNS} budget={v.budget} selectedId={v.selectedId} onSelect={n=>set("selectedId",n)}/></div>),source:"voice-telemetry"},
  "budget-cap-control":{...define("Budget Cap Control",{value:number(120000,64000,200000,1000),disabled:toggle(false)},(v,set)=><div className="w-full max-w-xl p-6"><BudgetCapControl value={v.value} spent={64000} planMax={200000} disabled={v.disabled} onChange={n=>set("value",n)}/></div>),source:"agent-budget"},
  "budget-outcome":{...define("Budget Outcome",{cap:number(120000,64000,200000,1000),dailySpend:number(4000,0,10000,1000),invalid:toggle(false)},v=><div className="w-full max-w-xl p-6"><BudgetOutcome budget={{...DEMO_BUDGET,cap:v.cap,dailySpend:v.dailySpend,costPerRun:v.invalid?0:25}}/></div>),source:"agent-budget"},
  "monthly-budget-card":{...define("Monthly Budget Card",{cap:number(120000,64000,200000,1000),saved:number(120000,64000,200000,1000),disabled:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-6"><MonthlyBudgetCard budget={{...DEMO_BUDGET,cap:v.cap}} disabled={v.disabled} dirty={v.cap!==v.saved} onChange={n=>set("cap",n)} onSave={()=>set("saved",v.cap)} onCancel={()=>set("cap",v.saved)}/></div>),source:"agent-budget"},

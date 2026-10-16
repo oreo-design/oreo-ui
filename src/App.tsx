@@ -1,3 +1,5 @@
+import {VoiceAgentPage} from "@/patterns/voice-agent";
+import {VoiceTelemetryDocs} from "@/pages/VoiceTelemetryDocs";
 import {AgentBudgetPage} from "@/patterns/agent-budget";
 import {AgentBudgetDocs} from "@/pages/AgentBudgetDocs";
 import {StorageManagerPage} from "@/patterns/storage-manager";
@@ -192,6 +194,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+ "voice-agent":VoiceAgentPage,"voice-signal":VoiceTelemetryDocs,"voice-latency-breakdown":VoiceTelemetryDocs,"turn-latency-history":VoiceTelemetryDocs,
  "agent-budget":AgentBudgetPage,"budget-cap-control":AgentBudgetDocs,"budget-outcome":AgentBudgetDocs,"monthly-budget-card":AgentBudgetDocs,
  "storage-manager":StorageManagerPage,"storage-usage-card":StorageManagementDocs,"storage-module-table":StorageManagementDocs,"retention-policy-row":StorageManagementDocs,
  "dashboard-suite":DashboardSuitePage,"campaign-dashboard":CampaignDashboardPage,"crm-dashboard":CRMDashboardPage,"membership-dashboard":MembershipDashboardPage,"dashboard-stat-card":DashboardSuiteDocs,"comparison-bar-chart":DashboardSuiteDocs,"trend-area-chart":DashboardSuiteDocs,"channel-breakdown":DashboardSuiteDocs,
