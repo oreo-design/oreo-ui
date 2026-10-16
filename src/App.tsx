@@ -1,3 +1,5 @@
+import {DashboardSuitePage,CampaignDashboardPage,CRMDashboardPage,MembershipDashboardPage} from "@/patterns/dashboard-suite";
+import {DashboardSuiteDocs} from "@/pages/DashboardSuiteDocs";
 import {FinanceOverviewPage} from "@/patterns/finance-overview";
 import {FinanceOverviewDocs} from "@/pages/FinanceOverviewDocs";
 import {AgentInboxPage} from "@/patterns/agent-inbox";
@@ -186,6 +188,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+ "dashboard-suite":DashboardSuitePage,"campaign-dashboard":CampaignDashboardPage,"crm-dashboard":CRMDashboardPage,"membership-dashboard":MembershipDashboardPage,"dashboard-stat-card":DashboardSuiteDocs,"comparison-bar-chart":DashboardSuiteDocs,"trend-area-chart":DashboardSuiteDocs,"channel-breakdown":DashboardSuiteDocs,
  "skeleton-reveal":FinanceOverviewDocs,"balance-spark-bars":FinanceOverviewDocs,"finance-attention-list":FinanceOverviewDocs,"bank-account-list":FinanceOverviewDocs,"finance-overview":FinanceOverviewPage,
  "agent-run-card":AgentInboxDocs,"agent-run-activity":AgentInboxDocs,"agent-inbox-board":AgentInboxDocs,"agent-inbox":AgentInboxPage,
  "calendar-event-block":ColorCalendarDocs,"calendar-color-picker":ColorCalendarDocs,"calendar-source-list":ColorCalendarDocs,"calendar-week-grid":ColorCalendarDocs,"color-calendar":ColorCalendarPage,

@@ -18,6 +18,15 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "dashboard-suite":{title:"Commerce Dashboard",description:"Pixel revenue charts and shared metrics in a local commerce dashboard."},
+ "campaign-dashboard":{title:"Campaign Dashboard",description:"Layered metric cards and stacked audience revenue with local campaign records."},
+ "crm-dashboard":{title:"CRM Dashboard",description:"Revenue trends, grouped audience activity and a local relationship workspace."},
+ "membership-dashboard":{title:"Membership Dashboard",description:"Sparse revenue trends and membership records in a local workspace."},
+ "dashboard-stat-card":{title:"Dashboard Stat Card",description:"A layered metric card with header, footer and filled variants."},
+ "comparison-bar-chart":{title:"Comparison Bar Chart",description:"Stacked or grouped series with a zero baseline and exact-data disclosure."},
+ "trend-area-chart":{title:"Trend Area Chart",description:"A neutral area chart with pointer and keyboard observation inspection."},
+ "channel-breakdown":{title:"Channel Breakdown",description:"Source counts and proportional pixel meters with controlled selection."},
+
  "finance-overview":{title:"Finance Overview",description:"A local finance overview with skeleton-to-data reveal, reminders, bank accounts and recoverable refresh."},
  "skeleton-reveal":{title:"Skeleton Reveal",description:"A matched skeleton/content slot with accessible loading and retained-data refresh."},
  "balance-spark-bars":{title:"Balance Spark Bars",description:"Compact balance history with a highlighted final bar and accessible values."},

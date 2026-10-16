@@ -1,0 +1,606 @@
+.ds-page {
+  display: flex;
+  min-height: 100dvh;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+.ds-sidebar {
+  width: 14rem;
+  flex-shrink: 0;
+  padding: 1.5rem 1rem;
+  border-right: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-elevated);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  overflow: auto;
+}
+.ds-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0.25rem 0.5rem 1.5rem;
+}
+.ds-brand > span {
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+}
+.ds-workspace {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border: 1px solid var(--color-border-default);
+  padding: 0.75rem;
+  border-radius: var(--radius-control);
+  font-size: 0.8125rem;
+}
+.ds-workspace-mark {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: var(--color-palette-mint-bg);
+  color: var(--color-palette-mint-text);
+}
+.ds-workspace small {
+  display: block;
+  color: var(--color-text-tertiary);
+  font-size: 0.625rem;
+  margin-top: 0.25rem;
+}
+.ds-nav-label {
+  margin: 1.25rem 0.5rem 0.5rem;
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+}
+.ds-sidebar nav {
+  display: grid;
+  gap: 0.25rem;
+}
+.ds-sidebar nav button,
+.ds-sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-align: left;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-control);
+  cursor: pointer;
+}
+.ds-sidebar nav a {
+  justify-content: space-between;
+}
+.ds-sidebar nav [aria-current="page"] {
+  background: var(--color-state-hover);
+  color: var(--color-text-primary);
+}
+.ds-sidebar-bottom {
+  margin-top: auto;
+  padding-top: 3rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.ds-sidebar-bottom > div {
+  padding: 1rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-small);
+  margin-bottom: 1.25rem;
+}
+.ds-sidebar-bottom small {
+  font-size: 0.5625rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+}
+.ds-sidebar-bottom strong {
+  display: block;
+  margin: 0.625rem 0;
+  font-weight: 500;
+}
+.ds-sidebar-bottom p {
+  font-size: 0.6875rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-tertiary);
+}
+.ds-workspace-main {
+  flex: 1;
+  min-width: 0;
+}
+.ds-topbar {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-size: 0.8125rem;
+}
+.ds-topbar > span > span:not(.ds-actions),
+.ds-demo {
+  color: var(--color-text-tertiary);
+}
+.ds-demo {
+  font-size: 0.6875rem;
+}
+.ds-main {
+  max-width: 90rem;
+  margin: auto;
+  padding: 2.5rem 2rem;
+}
+.ds-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.ds-title p {
+  font-size: 0.5625rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.75rem;
+}
+.ds-title h1 {
+  font-size: 1.875rem;
+  line-height: 1.3;
+  font-weight: 550;
+  letter-spacing: -0.04em;
+}
+.ds-title h1 + span {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  display: block;
+  margin-top: 0.5rem;
+}
+.ds-period {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+}
+.ds-period select,
+.ds-filter select {
+  font-size: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+.ds-demo-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin: 1.5rem 0;
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+}
+.ds-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.ds-content {
+  display: grid;
+  gap: 1.5rem;
+  min-width: 0;
+}
+.ds-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.ds-panel {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-elevated);
+  min-width: 0;
+  overflow: hidden;
+}
+.ds-panel > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.ds-panel h2 {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.ds-panel header p {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+  margin-top: 0.375rem;
+}
+.ds-big-number {
+  display: block;
+  font-size: 1.875rem;
+  font-weight: 550;
+  letter-spacing: -0.04em;
+  margin-top: 0.5rem;
+}
+.ds-up {
+  font-size: 0.8125rem;
+  color: var(--color-palette-mint-text);
+}
+.ds-up small {
+  color: var(--color-text-tertiary);
+  font-size: 0.6875rem;
+}
+.ds-panel-body {
+  padding: 1.5rem;
+}
+.ds-secondary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+}
+.ds-page[data-kind="crm"] .ds-secondary-grid {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+}
+.ds-secondary-grid.ds-paired {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+}
+.ds-channel-panel {
+  padding: 1.5rem;
+}
+.ds-page[data-kind="commerce"] .ds-primary-chart .revenue-fill {
+  fill: var(--color-text-secondary);
+}
+.ds-page[data-kind="commerce"] .revenue-fill-0,
+.ds-page[data-kind="commerce"] .revenue-fill-1,
+.ds-page[data-kind="commerce"] .revenue-fill-2 {
+  fill: var(--color-text-secondary);
+}
+.ds-page[data-kind="campaigns"] .ds-panel {
+  background: var(--color-bg-base);
+  box-shadow: var(--shadow-default);
+}
+.ds-page[data-kind="membership"] .ds-panel {
+  background: var(--color-bg-base);
+}
+.ds-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+}
+.ds-filter > label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: 0.5rem 0.75rem;
+  flex: 1;
+  min-width: 12rem;
+  color: var(--color-text-tertiary);
+}
+.ds-filter input {
+  min-width: 0;
+  width: 100%;
+  outline: none;
+  background: transparent;
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+}
+.ds-filter > label:focus-within {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}
+.ds-record-scroll {
+  overflow: auto;
+  max-height: 26rem;
+}
+.ds-record-scroll table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.ds-record-scroll th,
+.ds-record-scroll td {
+  text-align: left;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.ds-record-scroll th {
+  font-weight: 400;
+}
+.ds-record-scroll thead {
+  position: sticky;
+  top: 0;
+  background: var(--color-bg-elevated);
+  z-index: 1;
+  color: var(--color-text-tertiary);
+  font-size: 0.6875rem;
+}
+.ds-record-scroll tbody strong {
+  font-weight: 500;
+  display: block;
+}
+.ds-record-scroll small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--color-text-tertiary);
+  font-size: 0.6875rem;
+}
+.ds-message {
+  min-height: 1.5rem;
+  margin: 1.5rem 0;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.ds-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+.ds-report-note {
+  padding: 1.5rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium);
+}
+.ds-report-note h2 {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.ds-report-note p {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin: 0.75rem 0 1rem;
+}
+.ds-error {
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-small);
+}
+.ds-loading {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.ds-loading > div {
+  height: 10rem;
+  background: var(--color-state-hover);
+  border-radius: var(--radius-card-medium);
+}
+.ds-loading > section {
+  grid-column: 1/-1;
+  height: 25rem;
+  background: var(--color-state-hover);
+  border-radius: var(--radius-card-medium);
+}
+.ds-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--color-overlay-subtle);
+}
+.ds-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100vw - 2rem);
+  max-width: 32rem;
+  max-height: calc(100dvh - 2rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium);
+  z-index: 61;
+  font-family: var(--font-sans);
+}
+.ds-dialog > header,
+.ds-dialog > footer {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-shrink: 0;
+  background: var(--color-bg-base);
+}
+.ds-dialog > header {
+  border-bottom: 1px solid var(--color-border-default);
+}
+.ds-dialog > header h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.ds-dialog > footer {
+  border-top: 1px solid var(--color-border-default);
+  justify-content: flex-end;
+}
+.ds-dialog-body {
+  overflow: auto;
+  padding: 1.25rem;
+}
+.ds-dialog-body > p {
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+.ds-dialog form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+.ds-dialog form label {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+.ds-dialog input,
+.ds-dialog select {
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+}
+.ds-dialog [role="alert"] {
+  color: var(--color-status-error);
+  font-size: 0.8125rem;
+}
+.ds-dialog dl {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  font-size: 0.8125rem;
+}
+.ds-dialog dl > div {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+.ds-dialog dt {
+  color: var(--color-text-tertiary);
+}
+.ds-dialog dd {
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+.theme-dark .ds-page,
+.theme-dark .ds-dialog {
+  color-scheme: dark;
+}
+.ds-page button:focus-visible,
+.ds-page a:focus-visible,
+.ds-page select:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ds-sidebar nav button:hover,
+  .ds-sidebar nav a:hover {
+    background: var(--color-state-hover);
+  }
+}
+@media (max-width: 1100px) {
+  .ds-sidebar {
+    width: 11rem;
+  }
+  .ds-main {
+    padding: 2rem 1.25rem;
+  }
+  .ds-stat-value > strong {
+    font-size: 1.5rem;
+  }
+  .ds-stat .fo-spark {
+    display: none;
+  }
+  .ds-panel > header {
+    flex-wrap: wrap;
+  }
+  .ds-secondary-grid,
+  .ds-page[data-kind="crm"] .ds-secondary-grid,
+  .ds-secondary-grid.ds-paired {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 760px) {
+  .ds-page {
+    display: block;
+  }
+  .ds-sidebar {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border-default);
+  }
+  .ds-sidebar .ds-brand {
+    margin: 0 0 0.5rem;
+  }
+  .ds-workspace,
+  .ds-nav-label,
+  .ds-sidebar-bottom {
+    display: none;
+  }
+  .ds-sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ds-sidebar nav a {
+    font-size: 0.75rem;
+  }
+  .ds-topbar {
+    padding: 0 1rem;
+  }
+  .ds-main {
+    padding: 1.5rem 1rem;
+  }
+  .ds-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ds-title h1 {
+    font-size: 1.5rem;
+  }
+  .ds-stats {
+    grid-template-columns: 1fr;
+  }
+  .ds-stat .fo-spark {
+    display: inline-block;
+  }
+  .ds-panel-body {
+    padding: 1rem;
+  }
+  .ds-panel > header {
+    padding: 1rem;
+  }
+  .ds-filter {
+    padding: 1rem;
+  }
+  .ds-demo-toolbar {
+    flex-wrap: wrap;
+  }
+  .ds-loading {
+    grid-template-columns: 1fr;
+  }
+  .ds-loading > div {
+    height: 8rem;
+  }
+  .ds-demo {
+    display: none;
+  }
+  .ds-readout label {
+    flex-wrap: wrap;
+  }
+  .ds-record-scroll th,
+  .ds-record-scroll td {
+    padding: 0.75rem 1rem;
+  }
+}
+.theme-dark .ds-up {
+  color: var(--color-status-success);
+}

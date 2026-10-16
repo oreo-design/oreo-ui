@@ -1,0 +1,14 @@
+✔ chart validation distinguishes zeros from missing or invalid series (0.339917ms)
+✔ grouped ceiling fits each value and stacked ceiling fits their total (0.084ms)
+✔ percent changes avoid invented zero-base comparison (0.045958ms)
+✔ filters intersect case-insensitive query, status and source (0.314792ms)
+✔ record draft rejects missing names, invalid addresses and unsafe amounts (0.179625ms)
+✔ CSV preserves commas and quotes while neutralizing spreadsheet formulas (0.121333ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 61.889125

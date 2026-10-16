@@ -1,3 +1,5 @@
+import {DashboardStatCard,ComparisonBarChart,TrendAreaChart,ChannelBreakdown} from "@/components/dashboard-suite";
+import {DEMO_POINTS} from "@/patterns/dashboard-suite/data";
 import {SkeletonReveal,BalanceSparkBars,FinanceAttentionList,BankAccountList} from "@/components/finance-overview";
 import {SAMPLE_ACCOUNTS as FINANCE_ACCOUNTS,SAMPLE_NOTICES as FINANCE_NOTICES} from "@/patterns/finance-overview/data";
 import {AgentRunCard,AgentRunActivity,AgentInboxBoard} from "@/components/agent-inbox";
@@ -161,6 +163,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "dashboard-suite":{DashboardStatCard,ComparisonBarChart,TrendAreaChart,ChannelBreakdown},
  "finance-overview":{SkeletonReveal,BalanceSparkBars,FinanceAttentionList,BankAccountList},
  "agent-inbox":{AgentRunCard,AgentRunActivity,AgentInboxBoard},
  "color-calendar":{CalendarEventBlock,CalendarColorPicker,CalendarSourceList,CalendarWeekGrid},
@@ -252,6 +255,10 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "dashboard-stat-card":{...define("Dashboard Stat Card",{variant:select(["footer","header","plain"],"header"),label:text("Total revenue"),value:text("$42,800"),change:number(12.4,-100,100,.1)},v=><div className="w-80"><DashboardStatCard {...v}/></div>),source:"dashboard-suite"},
+ "comparison-bar-chart":{...define("Comparison Bar Chart",{mode:select(["stacked","grouped"],"stacked"),state:select(["ready","zero","empty","invalid"],"ready")},v=><div className="w-full p-6"><ComparisonBarChart mode={v.mode} series={["New","Returning"]} points={v.state==="empty"?[]:v.state==="invalid"?[{label:"Invalid",values:[-1,2]}]:v.state==="zero"?[{label:"Oct 16",values:[0,0]}]:DEMO_POINTS}/></div>),source:"dashboard-suite"},
+ "trend-area-chart":{...define("Trend Area Chart",{state:select(["ready","single","zero","empty","invalid"],"ready")},v=><div className="w-full p-6"><TrendAreaChart points={v.state==="empty"?[]:v.state==="invalid"?[{label:"Invalid",values:[-1]}]:v.state==="zero"?[{label:"Oct 16",values:[0]}]:v.state==="single"?[{label:"Oct 16",values:[120]}]:DEMO_POINTS.map(p=>({...p,values:[p.values[0]+p.values[1]]}))}/></div>),source:"dashboard-suite"},
+ "channel-breakdown":{...define("Channel Breakdown",{selected:text(""),empty:toggle(false)},(v,set)=><div className="w-80 p-4"><ChannelBreakdown channels={v.empty?[]:[{id:"organic",label:"Organic search",value:4200},{id:"direct",label:"Direct",value:2900},{id:"social",label:"Social",value:1600}]} selected={v.selected} onSelect={id=>set("selected",id)}/></div>),source:"dashboard-suite"},
  "skeleton-reveal":{...define("Skeleton Reveal",{loading:toggle(true),hasData:toggle(false),animate:toggle(true)},v=><div className="w-full p-6"><SkeletonReveal {...v} skeleton={<div className="h-24 rounded-card-small bg-state-hover"/>}><div className="flex h-24 items-center rounded-card-small border border-border-default p-5 text-sm">Your data is ready.</div></SkeletonReveal></div>),source:"finance-overview"},
  "balance-spark-bars":{...define("Balance Spark Bars",{state:select(["ready","zero","empty","invalid"],"ready")},v=><BalanceSparkBars values={v.state==="ready"?FINANCE_ACCOUNTS[0].history:v.state==="zero"?[0,0,0,0]:v.state==="invalid"?[-1,2]:[]} label="Sample balance in cents"/>),source:"finance-overview"},
  "finance-attention-list":{...define("Finance Attention List",{state:select(["ready","loading","refreshing","empty","error"],"ready"),opened:text("")},(v,set)=><div className="w-full p-4"><FinanceAttentionList items={v.state==="ready"||v.state==="refreshing"?FINANCE_NOTICES:[]} loading={v.state==="loading"||v.state==="refreshing"} hasData={v.state==="ready"||v.state==="refreshing"} error={v.state==="error"?"The sample feed could not be loaded.":undefined} onRetry={()=>set("state","ready")} onOpen={item=>set("opened",item.title)}/>{v.opened&&<p role="status" className="mt-3 text-sm">Selected: {v.opened}. Open the template for full details.</p>}</div>),source:"finance-overview"},
