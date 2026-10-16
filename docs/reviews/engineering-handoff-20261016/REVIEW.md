@@ -60,3 +60,9 @@ The after-entry/mention/running/awaiting and first patch captures precede the ad
 - Recording attempted and blocked: `Extension has not been invoked for the current page (activeTab permission)`. To recover recording, click the Playwriter extension icon on the local handoff tab once. No recording was produced; screenshots do not prove animation timing. Source video frames were inspected directly in a browser; no remote video was downloaded.
 - Shared ThinkingState supplies reduced-motion behavior; no new custom motion introduced. Actual timing recording, assistive-technology testing and live integration remain unverified.
 - This is a frontend simulation. It does not run code, send messages to real agents, execute the displayed checks, create remote PRs, or persist through reload. Implementation delivery below is separate from these fixture limits and evidence gaps.
+
+## Delivery revisions
+
+Implementation: `7187a6cb2f1ae76aec6e103b8660980b86272955`. PR: https://github.com/oreo-design/oreo-ui/pull/76. Follow-up adds the changelog entry, explicit None playground selection and resultIcon API documentation; final source head is the PR head. Main baseline was fetched again and unchanged before push.
+
+Changelog baseline captured from the preceding Company Directory preview at `http://localhost:5248/changelog` (same main content before this addition), 1440×1000 light: [before](before-changelog.png), [after](after-changelog.png). Final mention playground: [after](after-mention-final.png); earlier mention empty/disabled captures retain a superseded blank selector label, now explicitly labelled None.

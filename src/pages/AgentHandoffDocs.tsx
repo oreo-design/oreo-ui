@@ -70,9 +70,9 @@ export function AgentHandoffDocs({ nav }: { nav: DocsNav }) {
                         desc: "Controlled lifecycle and shared comment rows. States: idle, analyzing, awaiting, implementing, review, completed, failed and stopped.",
                       },
                       {
-                        prop: "reply / result / resultTitle",
-                        type: "ReactNode / ReactNode / string",
-                        desc: "Host-owned reply form and result content. Optional resultTitle defaults to Execution result. Result uses the canonical AgentResultCard disclosure and appears only in review/completed states.",
+                        prop: "reply / result / resultTitle / resultIcon",
+                        type: "ReactNode / ReactNode / string / IconName",
+                        desc: "Host-owned reply form and result content. Optional resultTitle defaults to Execution result; resultIcon defaults to folder. Result uses the canonical AgentResultCard disclosure and appears only in review/completed states.",
                       },
                       {
                         prop: "onStop / onRetry / loading",
