@@ -42,7 +42,7 @@ Three exported components: BudgetCapControl, BudgetOutcome, MonthlyBudgetCard. C
 | Component API | Checked | [Card playground](after-card-playground-v2.png), [cap disabled playground](after-cap-playground.png), [docs](after-api.png). Increasing $1,200 gives $1,250 and Save stores 125000 in controls. Generated JSX uses public import and serialized inputs, with host-handler placeholder per existing generator. |
 | Local model and export | Checked | Saving $640 pauses; attempting 100 runs spends nothing. Save $690, run 100 at $0.25: actual spend becomes $665 and remaining $25. Draft $2,000 does not alter saved $690. Cancel restores $690. [Downloaded JSON](budget-snapshot.json) checked for saved/draft 69000, spent 66500, pace 0, correct units. |
 | Pointer interaction | Checked, recording gap | Real mouse drag from 60% to 80% produced $1,600; Cancel returned $1,200. Numeric feedback stays immediate; no rolling/blur/spring effect added. Current Playwriter direct CDP session does not support chrome.tabCapture recording. A connected extension tab (click Playwriter extension icon) is needed to recover a recording; this does not block delivery. Stills do not prove timing. |
-| Changelog | Pending entry | [Before](before-changelog.png); PR-number entry and after image follow. |
+| Changelog | Checked | [Before](before-changelog.png), [after](after-changelog.png): Agent Budget / PR #90; 55 → 56 entries. |
 
 Validation: TypeScript/Vite build passed ([log](build.txt)), six focused model tests passed ([results](tests.txt)): remaining math, invalid inputs, zero pace/exhaustion, exact bounds, partial batches without overspend and resumption after raising the cap. Existing bundle-size warning remains. No dependency changes. Local fixture validation does not establish real billing, reset jobs, live charges or production deployment.
 
@@ -51,3 +51,6 @@ Historical captures: `after-light.png` precedes empty-state selector correction;
 ## Before / after
 ![Previous route](before-entry.png)
 ![New budget workspace](after-light-v2.png)
+
+## Delivery record
+PR: https://github.com/oreo-design/oreo-ui/pull/90. Initial implementation revision: `36a80a71745681e63a8fd22778c44fd20c9eb6bc`. Final follow-up includes the changelog entry and evidence manifest. [Manifest](manifest.json) records source/media hashes. Remote merge status is verified separately before delivery.
