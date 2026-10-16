@@ -39,7 +39,8 @@
     "src/pages/EdgeMotionDocs.tsx": "3eeefb7b1465e282fc963f973563878244dc893f4f47cba6ef4647696a3eb989",
     "src/patterns/edge-observatory/README.md": "2acda505d886d8c8c0a04b9ce68238b7194cbf01988f5c486ae74f7688330c54",
     "src/patterns/edge-observatory/edge-observatory.css": "5a98382ad1e297ad107510cfacfbf53c90117f059178e980cc31a3ae9b82241d",
-    "src/patterns/edge-observatory/index.tsx": "f5b7901e1630b17418534794fceae2ecde8bdbfbe82822f907f73ab00d3a80e6"
+    "src/patterns/edge-observatory/index.tsx": "f5b7901e1630b17418534794fceae2ecde8bdbfbe82822f907f73ab00d3a80e6",
+    "src/patterns/changelog/data.ts": "28d61432a30adbb82fd24226866803bb7dc4385455e2d45d9933fab272caceb9"
   },
   "media_sha256": {
     "after-dark-final.png": "49a2cc427c5d844d5e53df625aed29ca94861923fc2896824bc77081a18ed8d2",
@@ -434,6 +435,7 @@
     "routing-light.png": "937c2ce16d77ca22af19a8f5a8f6549b7e496243baa205cfed1cbdb710cf49c3",
     "routing-mobile.png": "025ea6e466bbd89d269293d5983a394d433868da653d36dbdb021bba9deb013b",
     "routing-saved.png": "0b1f1783fdf5605a349b7d042a2fb6077a4a9585288be0452544db88c11095f8",
-    "source-metadata.json": "202f6e35ba8d650bcf7a5f2744d7eb5f0d5105c99714f94609edaae312ab35cc"
+    "source-metadata.json": "202f6e35ba8d650bcf7a5f2744d7eb5f0d5105c99714f94609edaae312ab35cc",
+    "after-changelog.png": "addce428a5d1077f8df559085b65ef8fd4c3a9ae8260fd4c9ff974a0b733b6e2"
   }
 }

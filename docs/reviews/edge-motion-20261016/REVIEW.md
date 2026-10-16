@@ -78,3 +78,7 @@ Coverage limits: no physical mobile, screen-reader or live backend testing; no m
 - Source video remains reference-only: the source shows buttons but does not demonstrate their clicks. Implemented local draft behavior is explicitly our template composition.
 
 Source baseline and capture environment are recorded above; `manifest.json` records SHA-256 hashes of final source files and all retained media. Product source hashes identify the tested build independently of the later evidence-only commit. Integration outcome is reported in the PR and final delivery, not inferred from local screenshots.
+
+## Changelog delivery
+
+[Before](before-changelog.png) → [After](after-changelog.png), same 1440×1080 light docs shell. Updated entry links to the existing template and PR #96. Entry rendering and both destinations checked. PR: https://github.com/oreo-design/oreo-ui/pull/96.
