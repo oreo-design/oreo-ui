@@ -21,7 +21,7 @@ Baseline: `0b4987091da75778dca674ca147757200b77ad3a`. Branch `codex/plan-upgrade
 | Failure / recovery / completion | No prior matching flow | [failed attempt](after-failure.png), [complete](after-complete-final.png). Failure preserves state; recovery completes 4 monthly seats at $43.20 with Mastercard. Completion clears removal Undo so the receipt cannot change afterward. |
 | Responsive | New page | [mobile light](after-mobile-light-settled.png), [mobile dark](after-mobile-dark-settled.png), [mobile plan](after-plan-mobile.png), [tablet](after-tablet.png). Actual HTML scroll/client widths 390/390 and 960/960. Summary follows the form on mobile; no horizontal page overflow. |
 | Component states/docs | New routes absent; individual baselines not captured | [saved methods](after-methods-playground.png), [empty](after-methods-empty.png), [error](after-methods-error.png), [loading](after-methods-loading.png), [discount](after-discount-playground.png), [summary](after-summary-playground.png), [docs](after-docs.png). Empty recovery and retry tested, radio ArrowDown selects Mastercard. |
-| Changelog | [before](before-changelog.png) | PR-linked entry and capture added during delivery. |
+| Changelog | [before](before-changelog.png) | [after](after-changelog.png), [entry](after-changelog-entry.png), linking [PR #70](https://github.com/oreo-design/oreo-ui/pull/70). |
 
 [Interaction recording](interaction.mp4): real local Plan → monthly cycle → Payment → Mastercard → Complete, 1440×1000, 3 seconds. Original 11 screencast events in `interaction-frames.json.xz`. Viewing copy clamps idle intervals to 2s and holds very short frames for 0.1s; not a performance benchmark. Actual resulting video frame was inspected. No custom animation was added; existing shared button color transitions and StepProgress behavior are inherited.
 
@@ -54,3 +54,7 @@ Runtime peer: [Payment Workspace](peer-payment.png), with its source, shared But
 - Browser interactions: discount invalid/apply/Enter, radio keyboard selection, removal/Undo, missing-selection block, edit, metadata validation/add, annual/monthly and seat recalculation, invalid-seat gate, failure/retry, completion/restart, loading/empty/error fixtures. Responsive and theme captures above.
 - Formula defaults to reference arithmetic: $460.80 − $92.16 + $46.08 = $414.72. Demo tax is explicitly based on pre-discount subtotal; alternate discounted basis is supported. This is no claim about applicable tax law.
 - No source motion was visible; no source interactions inferred. No physical-device, payment-provider, real-account or deployed-site verification. Component route baseline gaps and peer loading/empty runtime gaps remain explicit. Evidence limits do not change scoped implementation/merge status.
+
+Delivery: [PR #70](https://github.com/oreo-design/oreo-ui/pull/70). Implementation commit `41a0a1d`; final reviewed source includes this release record.
+
+Final component review: disabled empty/error fixtures suppress recovery actions, matching disabled populated choices. [Disabled empty capture](after-methods-disabled-empty.png) confirms no active add button.

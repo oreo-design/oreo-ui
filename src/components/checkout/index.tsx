@@ -34,7 +34,7 @@ export function SavedPaymentMethods({
         title="Payment methods unavailable"
         description={error}
         error
-        actionLabel={onRetry ? "Try again" : undefined}
+        actionLabel={onRetry && !disabled ? "Try again" : undefined}
         onAction={onRetry}
       />
     );
@@ -55,7 +55,7 @@ export function SavedPaymentMethods({
       <AgentWorkspaceState
         title="No saved payment methods"
         description="Add a sample payment method to continue."
-        actionLabel={onAdd ? "Add sample method" : undefined}
+        actionLabel={onAdd && !disabled ? "Add sample method" : undefined}
         onAction={onAdd}
       />
     );

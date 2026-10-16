@@ -20,7 +20,7 @@
     ]
   },
   "source_sha256": {
-    "src/components/checkout/index.tsx": "e96b621f847a364fc1fb3f71c6a234b612c3aedcbcc1b7312263071eb43e1514",
+    "src/components/checkout/index.tsx": "0c8c422f59f9ed27dd88056ed37ebb071d92d6a2f1cf08b7bd0d10c432fe2d37",
     "src/components/checkout/checkout.css": "5407316b83427344a0bc1a11541d43aecb3b5f153a06fdc9c7441e5f8acc8bd5",
     "src/components/checkout/model.ts": "f3530e3196f433fa9c961a0c562d5549dbcf6fcd3778b709b4c7d3a76918995e",
     "src/patterns/plan-upgrade/index.tsx": "a7411a492d13e7caccdfd1f3a90218feb00b4b5630f8d15254f793eed10e3e3e",
@@ -30,7 +30,8 @@
     "src/App.tsx": "5ed9a1958583fd3f148d4f5010172317a06516d6d607434fcfe2e651706ece51",
     "src/lib/site.ts": "13ec7b213a4691c821785174e62fdb956af7d4569b996245720b2200f46aeb9f",
     "src/docs/Sidebar.tsx": "1a2083c310eeead0a85d750b4f8c7d60055ccdf26145bb7050b81fdbce578b6b",
-    "src/docs/playground/registry.tsx": "ea7c60733c570c26fe673eec2e6bc67d89fc105dc7982ce3a93b3824b239f5d1"
+    "src/docs/playground/registry.tsx": "ea7c60733c570c26fe673eec2e6bc67d89fc105dc7982ce3a93b3824b239f5d1",
+    "src/patterns/changelog/data.ts": "339e8b300bd195a811a79442f90ac9513f6fc9163754df99adf3b8ce8e3b2d5a"
   },
   "media_sha256": {
     "after-mobile-dark-settled.png": "fa3c86a3cc58b8ed08b54e160347b407be8509228eadfb4a7abfddef2fb3783e",
@@ -66,6 +67,11 @@
     "after-payment-dark-settled.png": "7915a82c35f19b24565ab46a9dd0d5d62007f16a0ac1cd466fa6bf9c77f0f29f",
     "after-methods-empty.png": "c068fcb804128ecbb3ec6cd9b757a6cf0230d3667e0abe94dba81187b56c5a44",
     "after-payment-light-final.png": "18d6bf213c94b16fcadcf430fef871f2ea0ed43f774856368bb258e105415239",
-    "before-changelog.png": "f6c698f3a89aef7768d6b32c668abdcefff5cfb43e82c3d87872d86d90dac4b3"
-  }
+    "before-changelog.png": "f6c698f3a89aef7768d6b32c668abdcefff5cfb43e82c3d87872d86d90dac4b3",
+    "after-changelog.png": "1cbd189a67b2e5218d8caffa20adc8a3bf5bebf7037c45a520f27ad772edd186",
+    "after-changelog-entry.png": "6b29e0132191290309274cc0744ca69b58eeac8d1db5438bce27a746aa7a8eea",
+    "after-methods-disabled-empty.png": "ed49a896b2036f50ec71fba70112f29d5a9a91e349483ee70ba75dc2d7c32b4a"
+  },
+  "pull_request": "https://github.com/oreo-design/oreo-ui/pull/70",
+  "implementation_commit": "41a0a1d"
 }
