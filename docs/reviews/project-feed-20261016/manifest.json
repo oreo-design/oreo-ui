@@ -1,0 +1,251 @@
+{
+  "baselineRevision": "d697303942153c69dd8c16a70c009683ca3aa167",
+  "implementationRevision": "5b6af1385e05a3e83db8030859393e2e5ae3ecd0",
+  "reference": "https://x.com/zahragr8r/status/2110632965361529237",
+  "pullRequest": "https://github.com/oreo-design/oreo-ui/pull/74",
+  "capture": {
+    "browser": "Chromium via Playwriter session 2",
+    "url": "http://localhost:5247",
+    "locale": "en-US",
+    "data": "local deterministic fixtures",
+    "clock": "2026-10-16T12:00:00Z (local comments advance one second)",
+    "viewports": [
+      [
+        1440,
+        1000
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "theme": "filename indicates dark or light; docs and changelog light; detail-scroll and mobile-detail light; initial comment shots dark",
+    "baselineChangelog": "Recovered from localhost:5246 with baseline-equivalent source tree"
+  },
+  "sourceHashes": {
+    "src/components/project-activity/index.tsx": "4ef7bc02263ea2019b63efcaec5d6b0a2bd0e648bc99aa5df42a1bd541bd627e",
+    "src/components/project-activity/model.ts": "5443c7c930749ea49b52789c898cc36874bc38a737837fb8924cde55ecbbae62",
+    "src/components/project-activity/activity.css": "79c3a4b780538ee9f4e787e173639a36c45e0d5104822cd742941ae42e44aac1",
+    "src/patterns/project-feed/index.tsx": "468589a62c216fb10cb4ac6e22d0c851eb276ec16e6050045e5bf360fd4b81e1",
+    "src/patterns/project-feed/data.ts": "1b4dd90c82eaa9828822dc60a5306e4f02f4fc5fd068ab545f3dae0584469655",
+    "src/patterns/project-feed/workspace.css": "a88d6c202ddebd775c79f5cf1f24b29a8e8bf1e2e7eafe70f6b3744c1f6f1676"
+  },
+  "superseded": {
+    "after-empty.png": "after-empty-v2.png",
+    "after-dark.png": "after-final-dark.png",
+    "after-light-full.png": "after-final-light.png",
+    "after-comment.png": "Button counter-label style corrected; after-mobile-detail.png and after-detail-scroll.png show final button styling"
+  },
+  "media": [
+    {
+      "file": "after-changelog.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "e421a1d75e0bc2071fe487310fb4de8fc6a8b7bfaa6dbe4123aa9aa9a7b6b564"
+    },
+    {
+      "file": "after-comment-error.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "800ecad2d15765bd1ddaec5c2c98102ef0c959ab773ec3c2172d71dfc6671566"
+    },
+    {
+      "file": "after-comment.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "398fe98c7816861dafb026bdf6a2af0ce78861e8f2ee891525d32c30004b0903"
+    },
+    {
+      "file": "after-dark.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "f1ebafdfb9ca120bab76f6ce5d2fe679c46748e1bad639867e180c15cdb1e2e1"
+    },
+    {
+      "file": "after-detail-scroll.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "72eba2f3ce4ffeb7e8a1944396bbadb9f39509eba46b5104317a3d3e706b8dfb"
+    },
+    {
+      "file": "after-empty-v2.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "2986e63c1a4bc8988f4ccda1bb5a928953205e2be09325170b870ce716c87b18"
+    },
+    {
+      "file": "after-empty.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "cd94910ef85608051995397f7adf2b821181ef5c6c0e72eb0d5bec57e77cec34"
+    },
+    {
+      "file": "after-error.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "7c35c49dfcaba356293f4d06121f33133d13a50bbe9514914fbda61036b476b8"
+    },
+    {
+      "file": "after-feed-docs.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "e18f566f4d755e5e54ce6f3d00afa8b083e2622b98c5af9b9c09150372ba632f"
+    },
+    {
+      "file": "after-filtered-comment.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "250eb10081764cf1e53f4a6dd4144bf88f054ed05c6eea7c6dd3ffbaa92b15f4"
+    },
+    {
+      "file": "after-final-dark.png",
+      "pixels": [
+        1440,
+        1311
+      ],
+      "sha256": "33cc57fce1c4a507785785332f35fcae5f0203da9b91581095589d8288111b34"
+    },
+    {
+      "file": "after-final-light.png",
+      "pixels": [
+        1440,
+        1311
+      ],
+      "sha256": "1e0ebb925fbfeb49045831f9444ffecc4eb170674d2f552fb1790dc34fb835e4"
+    },
+    {
+      "file": "after-light-full.png",
+      "pixels": [
+        1440,
+        1597
+      ],
+      "sha256": "257d6ce7c22aa0eb993965c62399b32059ee0f205b3ec1962cf8b62d48969a33"
+    },
+    {
+      "file": "after-loading.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "c161fe6878370f2fcdcfa34b0e41253817ba57813f79f12d34de636aa05845cf"
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "pixels": [
+        390,
+        1592
+      ],
+      "sha256": "ca76e1ae97ff174676ebeea464c5add4dbc28fa0271e6d34453b8f695ffc7c13"
+    },
+    {
+      "file": "after-mobile-detail.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "sha256": "7958d6650931136cb3bda85814ab334a7edc2ce1b939d81eb6af8477edd01992"
+    },
+    {
+      "file": "after-mobile-light.png",
+      "pixels": [
+        390,
+        2545
+      ],
+      "sha256": "f029f9282259fc09450a07562099956954f46c323fd70ee611ee86f8c0282909"
+    },
+    {
+      "file": "after-mobile-nav.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "sha256": "4d469771a1742a0718b88393e7b3c49fc51e1ceed7a87cc192e3e9477c8d23ef"
+    },
+    {
+      "file": "after-row-docs.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "4582720fdeab0f8dd2887f72af437f28a4b172e65118e1fcb87a8ed946c21f11"
+    },
+    {
+      "file": "after-tablet-dark.png",
+      "pixels": [
+        768,
+        1531
+      ],
+      "sha256": "69c6886783e1641e853ea3b49e7b005b06b63b90618be46b34888bc814c677f3"
+    },
+    {
+      "file": "after-tablet-light.png",
+      "pixels": [
+        768,
+        1531
+      ],
+      "sha256": "ea2aa2f84ad4a1afaa8481ca38cef9364a87e3881449bb2d825473fc39b8b0a9"
+    },
+    {
+      "file": "before-changelog.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "d7d96da48e8e35f03d249987281516ed214c31e2d1561f3944147722dbef348e"
+    },
+    {
+      "file": "before-entry.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "5c53bdd96b1d2c7b694b2231313c4a5ddfc764492b2cb5472e1178e68fe8b2ee"
+    },
+    {
+      "file": "peer-project-workspace.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "sha256": "f60e4fe9a703127a9c32c0a02374a2a0a30805ae295ad910be02bf84bccefd70"
+    },
+    {
+      "file": "reference.png",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "sha256": "29861041e9b966943e4d56dfc2dc45b40fa9d04aae7c3974271686956b8b23bd"
+    }
+  ],
+  "coverageLimits": [
+    "No source motion; no custom timed animation added.",
+    "Local fixtures do not prove server persistence, notifications or production deployment.",
+    "Peer empty/loading comparisons are source-level only."
+  ],
+  "postCaptureCorrection": "Mobile All projects and Activity selections return focus to the heading after closing the inline navigation. Typecheck and focused browser checks repeated."
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "activity-3",
+    "actor": {
+      "id": "sam",
+      "name": "Sam Chen",
+      "color": "pink"
+    },
+    "project": {
+      "id": "website",
+      "name": "Website redesign",
+      "description": "A clearer story, from first visit to first customer.",
+      "due": "2026-10-30",
+      "status": "On track"
+    },
+    "subjectId": "WEB-103",
+    "subject": "Create homepage wireframes",
+    "action": "moved",
+    "at": "2026-10-16T10:30:00.000Z",
+    "previous": "In progress",
+    "next": "In review"
+  }
+]
