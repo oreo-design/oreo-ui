@@ -68,7 +68,8 @@
     "before-changelog.png": "c089d596c37713cf67790525c4d789d5d7ed8a5dd380b443b6272e5ca6de944a",
     "after-payment.png": "d5a2d7d864cf74496039f7247a015251e5e5a0962755202acf3b1358ba3cc44f",
     "after-changelog.png": "74dfb96948ec3e894bb4eb3bc52e1d77d0a25ae772827921ab5b2ef67cb16424",
-    "after-changelog-entry.png": "039a9bc0ed74cad9161c01425d6bb2c17d318346c013da8b9b0ab4d454e61dfd"
+    "after-changelog-entry.png": "039a9bc0ed74cad9161c01425d6bb2c17d318346c013da8b9b0ab4d454e61dfd",
+    "after-changelog-entry-v2.png": "975143ce78fd7aef9436786553ccc6ab447cf0805afadedb1f794d4d63477efb"
   },
   "implementationCommit": "980217d",
   "pullRequest": "https://github.com/oreo-design/oreo-ui/pull/72"
