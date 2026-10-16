@@ -682,6 +682,21 @@
       "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00046.jpg",
       "sha256": "83fb799b89bc5e6409a37728df010a29105bd7f613d4a9b04a68c0ef20392dc7",
       "bytes": 72164
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/before-changelog-recovered.png",
+      "sha256": "88a6edffb4ad5fb635ae55bcd9c6968c7037c4967c90f7bee66a05c6c2289d73",
+      "bytes": 142834
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-changelog.png",
+      "sha256": "ddb876eaec78736fba2b1c81de6164db4f42d3354eb775d8f49be2f97c62d7e7",
+      "bytes": 146099
     }
-  ]
+  ],
+  "changelogBaseline": {
+    "revision": "07b587383eee05e77e29bde5e89c062eb4c0265c",
+    "url": "http://localhost:5266/changelog",
+    "equivalence": "src tree identical to baseline merge 85a96bae; checkout clean"
+  }
 }

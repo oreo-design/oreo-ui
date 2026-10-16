@@ -69,3 +69,7 @@ Superseded captures retained: `after-workspace-dark.png`, `after-segment-dark.pn
 - Manifest records source/media hashes; baseline remains `85a96bae23623562abe39e3656acde15e6182dbe`. Integration status is recorded in the linked PR, separately from media coverage.
 
 Final checks: [single past-month validation error](target-error-final.png) confirmed blocked submit and corrected single announcement. Unpinned segment remains selectable in the saved-segment picker, editing updates that same segment, and undo restores its previous data. The review approved this task diff before commit.
+
+Delivery PR: https://github.com/oreo-design/oreo-ui/pull/95. Implementation revision `1919e55` contains the reviewed component/template and evidence. Follow-up only adds the changelog entry, its capture and this index; final exact-head approval is recorded in PR metadata.
+
+Changelog baseline was recovered after editing from the preserved, clean Issue Browser checkout at `07b587383eee05e77e29bde5e89c062eb4c0265c` (localhost:5266), whose src tree is identical to baseline merge `85a96bae`. Matched 1440×1080 light [before](before-changelog-recovered.png) and [after](after-changelog.png) were inspected; count increases 60→61 and PR #95 links the new entry.
