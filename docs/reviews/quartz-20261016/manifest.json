@@ -1,0 +1,512 @@
+{
+  "baselineRevision": "973dda85a4c36d9d7ed352b99a0ffc3ec7d324f4",
+  "implementationRevision": "5c75f0019b89be709d39774892675b47a6ba38ab",
+  "reference": "https://x.com/arlanoska/status/2110824051912683637",
+  "preview": "http://localhost:5238/support-console",
+  "pullRequest": "https://github.com/oreo-design/oreo-ui/pull/64",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      900,
+      1000
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "locale": "en-US",
+  "files": [
+    {
+      "file": "after-budget-error.png",
+      "sha256": "71698aa68f87f59a83792d36a4d261ff4b9d70b7df46ceba9adb12206593435e",
+      "capturedAt": "2026-10-16T03:43:37.656867+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-changelog.png",
+      "sha256": "39be55958996432e68902950d124c7c41d34381236f3925072f24a97033afb57",
+      "capturedAt": "2026-10-16T03:54:20.701138+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-dialog-mobile-dark.png",
+      "sha256": "250428ff1448c5ea3379e07b33ef3b5f7d95f07639a8369a0478b2c5d433c7ca",
+      "capturedAt": "2026-10-16T03:51:18.035536+00:00",
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "theme": "dark",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-inbox-medium-dark.png",
+      "sha256": "3fc4b0d59655ee8016b5b25b092a8a7c7e3a167b10c6aebad86f1c8d7156fa71",
+      "capturedAt": "2026-10-16T03:51:20.782147+00:00",
+      "imageDimensions": [
+        900,
+        1124
+      ],
+      "theme": "dark",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-inbox-mobile-dark-final.png",
+      "sha256": "9dc2a9bbdf729c5d544c71f0e5ac8e25880cedfcd654e1fc6b68477837b35105",
+      "capturedAt": "2026-10-16T03:52:15.978585+00:00",
+      "imageDimensions": [
+        390,
+        1539
+      ],
+      "theme": "dark",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-inbox-mobile.png",
+      "sha256": "6de53037f7b2399e0b9c364a84e29013b682dd6b5cdaf35807cae33a56a01c03",
+      "capturedAt": "2026-10-16T03:50:03.826854+00:00",
+      "imageDimensions": [
+        390,
+        1539
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-inbox.png",
+      "sha256": "e9d468a057d2c119d51c33df7160c4073942483fa0f60b84088dac59f6f36b19",
+      "capturedAt": "2026-10-16T03:42:33.048942+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-key-copied.png",
+      "sha256": "2df91e34e60ff5b9528fa56dceefee4b58d5a50e78ad031308ed3a0168da671a",
+      "capturedAt": "2026-10-16T03:44:46.256012+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-key-created.png",
+      "sha256": "82e5cb5c4c1d9aa69c3ba556a1140b89b85715a63834a63718acf8eba9d4ae44",
+      "capturedAt": "2026-10-16T03:44:35.570646+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys-dark-final.png",
+      "sha256": "7cfeb0ed7e6840ccace82b78b936e42a693e4a82b7e788acde0ffd3ffa212633",
+      "capturedAt": "2026-10-16T03:47:56.976313+00:00",
+      "imageDimensions": [
+        1440,
+        1328
+      ],
+      "theme": "dark",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys-dark.png",
+      "sha256": "3131cd4cf6628f831f1589602f81a010149b1a3caaf88d66e054caf4fcea1ece",
+      "capturedAt": "2026-10-16T03:45:10.318261+00:00",
+      "imageDimensions": [
+        1440,
+        1412
+      ],
+      "theme": "dark",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys-empty.png",
+      "sha256": "8539764ec3c99f0aeb46a57035f01d9ede424025502f791e68e62a399f45316a",
+      "capturedAt": "2026-10-16T03:45:09.678291+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys-final.png",
+      "sha256": "9ac7832da683d2c09375b0763127ba7a06b8d817122490c1bc031db68f134aa9",
+      "capturedAt": "2026-10-16T03:47:56.692399+00:00",
+      "imageDimensions": [
+        1440,
+        1328
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys-medium-light.png",
+      "sha256": "f39295dc91975218f839f1a2626900bdd8baf020666cec28a219baf37f126ac8",
+      "capturedAt": "2026-10-16T03:52:35.835712+00:00",
+      "imageDimensions": [
+        900,
+        1280
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys-mobile-actions.png",
+      "sha256": "8c2877f99a48875d38300e6d1fb836bbfe5752c79da1ec8c4235c2d07feaabb8",
+      "capturedAt": "2026-10-16T03:53:14.612754+00:00",
+      "imageDimensions": [
+        390,
+        844
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys-mobile-clipped.png",
+      "sha256": "605084cc0600d01dedc7712344ec0cba2f72a6025236a7e5007ceb1d922109dd",
+      "capturedAt": "2026-10-16T03:53:14.421602+00:00",
+      "imageDimensions": [
+        390,
+        1387
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys-mobile-dark-final.png",
+      "sha256": "7f565321f3e5b3b22fee4f11506afae9f58629423ece8ae92771371306b43cb8",
+      "capturedAt": "2026-10-16T03:52:16.176272+00:00",
+      "imageDimensions": [
+        551,
+        1387
+      ],
+      "theme": "dark",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys-mobile-dark.png",
+      "sha256": "807eedb2e497bfd6f93adadd5f1277155cab24656986a08c7b90ff85c68b433e",
+      "capturedAt": "2026-10-16T03:51:16.697226+00:00",
+      "imageDimensions": [
+        514,
+        1387
+      ],
+      "theme": "dark",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys-mobile.png",
+      "sha256": "7a3f6d1cb17c64f5c43adb00ee2bd062161bb88a747908df31619d73ad0d0cee",
+      "capturedAt": "2026-10-16T03:50:25.027820+00:00",
+      "imageDimensions": [
+        514,
+        1387
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-keys.png",
+      "sha256": "8cbbf187dd5dde07a3bc1feb68f169734a4301633bf4fdf5e4caa56c1e44dd21",
+      "capturedAt": "2026-10-16T03:43:39.051216+00:00",
+      "imageDimensions": [
+        1440,
+        1328
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-reply-saved.png",
+      "sha256": "408a25ee64c4568cf9464543b7455f7c2a229f5c4d0f4d68e706075f681e07af",
+      "capturedAt": "2026-10-16T03:49:27.747964+00:00",
+      "imageDimensions": [
+        1440,
+        1249
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-secret-error.png",
+      "sha256": "e14a39befa3b10191c20319c6ac94cdffa3d8831d5f76ce925411b70e6a26f56",
+      "capturedAt": "2026-10-16T03:45:47.431381+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-spend-empty.png",
+      "sha256": "ed716cc9284842193d83a531ad8ca602fe4c31366b06c267c89501fe6398299c",
+      "capturedAt": "2026-10-16T03:52:43.451435+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-usage-dark.png",
+      "sha256": "96499c076fb42e7854d5e100c8d7dd62a074b8467d6be80cff3192eb37e6ceca",
+      "capturedAt": "2026-10-16T03:48:17.640546+00:00",
+      "imageDimensions": [
+        1440,
+        1193
+      ],
+      "theme": "dark",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-usage-final-v2.png",
+      "sha256": "73886de63bfae878f13486d955c121fb4a570af3db317136d9c4cdf9b5a2a32b",
+      "capturedAt": "2026-10-16T03:52:36.284369+00:00",
+      "imageDimensions": [
+        1440,
+        1193
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-usage-final.png",
+      "sha256": "e289dfed7cf8c5a5e0cd85f57f4ea2a579b7d34b02b1669e3538312f5ecc1823",
+      "capturedAt": "2026-10-16T03:49:11.853871+00:00",
+      "imageDimensions": [
+        1440,
+        1193
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-usage-mobile.png",
+      "sha256": "b302b9aba7585d6f22328fb2c505001dc12eba16c9807c046be7a34874d7f76b",
+      "capturedAt": "2026-10-16T03:50:23.911607+00:00",
+      "imageDimensions": [
+        390,
+        1345
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "after-usage.png",
+      "sha256": "22e5052ddf5072ccbbdacfd01ebe3ec492877c26307bae81bef927eda0c29f12",
+      "capturedAt": "2026-10-16T03:42:54.322985+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "before-changelog.png",
+      "sha256": "d1fa439793cff02981449b3fd58c831bde3bd50fd13a22eda37cfbf2d7761ffb",
+      "capturedAt": "2026-10-16T03:53:45.147481+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "before-entry.png",
+      "sha256": "2ae8b5ad2dd0ce2a9a1dc57c105c8f896a9410bc0d33921127ac9a9766487a71",
+      "capturedAt": "2026-10-16T03:37:13.444429+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "interaction-frames.json.xz",
+      "sha256": "c0522b8738449a8197993358be1227997ccf8605788a8c70188944d7b7d6921e",
+      "capturedAt": "2026-10-16T03:48:41.519767+00:00",
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "oreo-quartz-ref-0.png",
+      "sha256": "f170220ea58d349e11d3226b94c9c18a6d6470e3bf327946ab1cf001e799b1b2",
+      "capturedAt": "2026-10-16T03:36:00.523933+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-10.png",
+      "sha256": "bb4dffd2d73ba3bfafc0fa9fc4e375869048f280735d4409589206e51e071e30",
+      "capturedAt": "2026-10-16T03:36:00.524586+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-12.png",
+      "sha256": "6b54adb28ed72134b66ad5f7e86066587731a2c296558e119c1794b3f6628f8d",
+      "capturedAt": "2026-10-16T03:36:00.526108+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-14.png",
+      "sha256": "eeeac57549f8d3a79258d28cdf1a67228c5e26810f1d6ddc90fef077ca874788",
+      "capturedAt": "2026-10-16T03:36:00.526719+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-16.png",
+      "sha256": "db58f5bde395ddcfe66eaa2c21db84aeed7b0636fa08d7f3e1164061ed2aa0b6",
+      "capturedAt": "2026-10-16T03:36:00.527427+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-17.png",
+      "sha256": "63f9030b9fff58654701e55e759ad2117f9093622d4ea1b4f5a44ff8b4f96039",
+      "capturedAt": "2026-10-16T03:36:00.528830+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-19.png",
+      "sha256": "c890a2b463052d901209d72db9ab03b374dcc5dfb10603500778b4ab8e50efe7",
+      "capturedAt": "2026-10-16T03:36:00.529948+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-2.png",
+      "sha256": "07e1ed77f28dc30784e7a8ca1772353c98f47c099c0108bc9eabb8dd20f0b3d9",
+      "capturedAt": "2026-10-16T03:36:00.530642+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-21.png",
+      "sha256": "dbd9367fab0e7f98d4ede6a50b615098fd9baa2d6878373ebb0a581ba6e0bec1",
+      "capturedAt": "2026-10-16T03:36:00.531496+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-5.png",
+      "sha256": "d519d49cc30e5caee224faffa1ed09e82b0f4135bc9af47d268d72932f0b5527",
+      "capturedAt": "2026-10-16T03:36:00.532887+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-7.png",
+      "sha256": "78ccfaa2f799713b427c8151a70de229e0ae0713a4505b701230bd0e921f81ee",
+      "capturedAt": "2026-10-16T03:36:00.533750+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "oreo-quartz-ref-8.png",
+      "sha256": "aa1938d6e7e6a1aed9ef3073f05c2aa00681fcc8f1bc94e9e3b66698ffbd110a",
+      "capturedAt": "2026-10-16T03:36:00.534243+00:00",
+      "imageDimensions": [
+        1350,
+        1080
+      ],
+      "theme": "light",
+      "source": "external video reference"
+    },
+    {
+      "file": "peer-activity.png",
+      "sha256": "221e7986ee291cc6ca498e5e9ee18e4b81926aa9fb6bfcb57b915ae2697d4ddd",
+      "capturedAt": "2026-10-16T03:42:10.023530+00:00",
+      "imageDimensions": [
+        1440,
+        1000
+      ],
+      "theme": "light",
+      "source": "local real-component fixture"
+    },
+    {
+      "file": "usage-interaction.mp4",
+      "sha256": "9d6691f333414018ece2de01f03718a0291d1e0abbd0109ef8e0fcd5b8dba24f",
+      "capturedAt": "2026-10-16T03:49:46.488826+00:00",
+      "theme": "light",
+      "source": "local real-component fixture"
+    }
+  ],
+  "limits": "Superseded captures are intermediate working-tree revisions; use REVIEW.md correction history. No live backend, production deployment, physical touch or screen-reader test."
+}

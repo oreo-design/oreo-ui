@@ -5,6 +5,7 @@ export const REPOSITORY = "https://github.com/oreo-design/oreo-ui";
 /** Selected main-branch changes. Dates are merge dates in Asia/Shanghai, not package releases. */
 export const releases: Release[] = [
   { date: "2026-10-16", label: "October 16, 2026", title: "A clearer view of what comes next.", description: "Usage forecasts, payment drafts, sales and operational workspaces, built from reusable components.", changes: [
+    { id:"support-console", kind:"Added", title:"Support Console", description:"Daily spend split at a threshold, one-time secret fields and API key tables, composed with existing inbox and draft components into a local support workspace.", page:"support-console", pr:64 },
     { id:"usage-forecast", kind:"Added", title:"Usage Forecast", description:"Selectable account timelines, cumulative projections and daily pace charts, composed into a usage workspace with hypothetical pace controls, filters, table view and CSV export.", page:"usage-forecast", pr:63 },
     { id:"payment-workspace", kind:"Added", title:"Payment Workspace", description:"Searchable recipients, payment-rail cards and inline business or individual forms, composed into a five-step local payment draft with exact decimal amounts, review and edit recovery.", page:"payment-workspace", pr:62 },
     { id:"sales-workspace", kind:"Added", title:"Sales Workspace", description:"Pixel revenue charts, pipeline funnels and deal tables, composed into a CRM dashboard with editable local deals, stage filters, bulk win with undo and CSV export.", page:"sales-workspace", pr:61 },
