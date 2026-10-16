@@ -20,6 +20,9 @@ export type PageMeta = { title: string; description: string };
 export const PAGE_META = {
   "activity-event-row": {title:"Activity Event Row",description:"A compact project event with actor, action, subject, time and unread state."},
   "grouped-activity-feed": {title:"Grouped Activity Feed",description:"A chronological activity list with UTC date groups and empty, loading and error states."},
+  "company-identity": {title:"Company Identity",description:"A compact company mark, name, domain and hot-account signal."},
+  "company-table": {title:"Company Table",description:"A dense account table with controlled sorting, details, favorites and ARR totals."},
+  "company-directory": {title:"Company Directory",description:"A local CRM directory with views, filters, editable accounts, undo and CSV export."},
   "project-feed": {title:"Project Feed",description:"A local project activity workspace with filters, details, comments, read states and export."},
   "weekly-heatmap": {title:"Weekly Heatmap",description:"A keyboard-accessible day-by-hour activity matrix with exact values and controlled selection."},
   "agent-runs-card": {title:"Agent Runs Card",description:"Weekly agent activity, calculated summaries and metric selection."},
