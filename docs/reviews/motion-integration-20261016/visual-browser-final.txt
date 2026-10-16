@@ -1,0 +1,229 @@
+Console output:
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/word-roller?view=docs color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/word-roller?view=docs, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124154641} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/word-roller?view=docs color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/word-roller?view=docs, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124156600} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold',
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/word-roller?view=docs color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/word-roller?view=docs, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124157629} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/loading-sequence color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/loading-sequence, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124182305} /_vercel/insights/view'
+]
+[log] URL: http://127.0.0.1:5242/loading-sequence
+- main "Loading Sequence playground":
+    - generic "Preview view":
+      - role=button[name="Preview"i]
+      - role=button[name="Code"i]
+    - role=button[name="Replay"i]
+    - region "Component preview":
+        - status:
+          - text: "Content ready"
+          - text: "OREO STUDIO"
+          - text: "DESIGN & DEVELOPMENT"
+        - text: "Crafting Websites"
+        - text: "that Feel Good"
+          - text: "INDEPENDENT"
+          - text: "BY DESIGN."
+            - text: "SELECTED WORK · 2026"
+          - text: "Thoughtful details."
+          - text: "Memorable experiences."
+          - text: "LET’S MAKE SOMETHING ↗"
+  - sectionfooter:
+      - heading "Use this component"
+      - role=button[name="Copy command"i]
+    - code:
+      - text: "npx oreo-ui add loading-sequence"
+    - paragraph:
+      - text: "Or copy"
+      - code:
+        - text: "src/components/"
+        - text: "loading-sequence"
+        - text: "/*"
+      - text: "into your project."
+
+use refToLocator({ ref: 'e3', page: state.page }) to get locators for ref strings.
+[log] [
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] []
+[log] URL: http://127.0.0.1:5242/loading-sequence
+- main "Loading Sequence playground":
+    - generic "Preview view":
+      - role=button[name="Preview"i]
+      - role=button[name="Code"i]
+    - role=button[name="Replay"i]
+    - region "Component preview":
+        - status:
+          - text: "Content ready"
+          - text: "OREO STUDIO"
+          - text: "DESIGN & DEVELOPMENT"
+        - text: "Crafting Websites"
+        - text: "that Feel Good"
+          - text: "INDEPENDENT"
+          - text: "BY DESIGN."
+            - text: "SELECTED WORK · 2026"
+          - text: "Thoughtful details."
+          - text: "Memorable experiences."
+          - text: "LET’S MAKE SOMETHING ↗"
+  - sectionfooter:
+      - heading "Use this component"
+      - role=button[name="Copy command"i]
+    - code:
+      - text: "npx oreo-ui add loading-sequence"
+    - paragraph:
+      - text: "Or copy"
+      - code:
+        - text: "src/components/"
+        - text: "loading-sequence"
+        - text: "/*"
+      - text: "into your project."
+
+use refToLocator({ ref: 'e3', page: state.page }) to get locators for ref strings.
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/loading-sequence color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/loading-sequence, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124186554} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] []
+[log] URL: http://127.0.0.1:5242/loading-sequence
+- main "Loading Sequence playground":
+    - generic "Preview view":
+      - role=button[name="Preview"i]
+      - role=button[name="Code"i]
+    - role=button[name="Replay"i]
+    - region "Component preview":
+        - status:
+          - text: "Content ready"
+          - text: "OREO STUDIO"
+          - text: "DESIGN & DEVELOPMENT"
+        - text: "Crafting Websites"
+        - text: "that Feel Good"
+          - text: "INDEPENDENT"
+          - text: "BY DESIGN."
+            - text: "SELECTED WORK · 2026"
+          - text: "Thoughtful details."
+          - text: "Memorable experiences."
+          - text: "LET’S MAKE SOMETHING ↗"
+  - sectionfooter:
+      - heading "Use this component"
+      - role=button[name="Copy command"i]
+    - code:
+      - text: "npx oreo-ui add loading-sequence"
+    - paragraph:
+      - text: "Or copy"
+      - code:
+        - text: "src/components/"
+        - text: "loading-sequence"
+        - text: "/*"
+      - text: "into your project."
+
+use refToLocator({ ref: 'e3', page: state.page }) to get locators for ref strings.
+[log] [
+  '[log] %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit',
+  '[log] %c[Vercel Web Analytics]%c [view] http://127.0.0.1:5242/loading-sequence color: rgb(120, 120, 120) color: inherit {o: http://127.0.0.1:5242/loading-sequence, sv: 0.1.3, sdkn: @vercel/analytics/react, sdkv: 2.0.1, ts: 1792124190807} /_vercel/insights/view',
+  '[debug] [vite] connecting...',
+  '[debug] [vite] connected.',
+  '[info] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold'
+]
+[log] URL: http://127.0.0.1:5242/loading-sequence?view=docs
+- main:
+    - navigation:
+      - text: "Components"
+      - text: "/"
+      - text: "Loading Sequence"
+    - role=button[name="Open playground"i]
+    - sectionheader:
+      - heading "Loading Sequence"
+      - paragraph:
+        - text: "Make an entrance. Four finite page reveals, from words finding their place to a curtain lifting on the next scene."
+      - paragraph:
+        - text: "Motion studies from"
+        - role=link[name="Details’ four loading animations"i]
+        - text: ". Original demo artwork, Oreo colors, and your own content."
+    - heading:
+      - role=link[name="A first impression, four ways"i]
+    - paragraph:
+      - text: "Replay the four sequences together. The preview controls pause at the current frame; replay starts a fresh run."
+          - role=button[name="Pause all"i]
+          - role=button[name="Replay all"i]
+          - figure:
+            - status:
+              - text: "Introducing content"
+            - figcaption:
+                - text: "0"
+                - text: "1"
+                - text: "Words into place"
+              - code:
+                - text: "typography"
+          - figure:
+            - status:
+              - text: "Introducing content"
+            - figcaption:
+                - text: "0"
+                - text: "2"
+                - text: "An opening frame"
+              - code:
+                - text: "aperture"
+          - figure:
+            - status:
+              - text: "Introducing content"
+            - figcaption:
+                - text: "0"
+                - text: "3"
+                - text: "Letters from the dark"
+              - code:
+                - text: "wordmark"
+          - figure:
+            - status:
+              - text: "Introducing content"
+            - figcaption:
+                - text: "0"
+                - text: "4"
+                - text: "Lift the curtain"
+              - code:
+                - text: "curtain"
+    - heading:
+      - role=link[name="Bring your own scene"i]
+    - paragraph:
+      - text: "Copy the loading-sequence folder, including its CSS, with Oreo’s cn helper and design tokens. Mount it when your content is ready."
+          - text: "TSX"
+        - role=button[name="Copy"i]
+      - code:
+        - text: "import { LoadingSequence } from \"@/components/loading-sequence\";
+
+<LoadingSequence
+  variant=\"curtain\"
+  playing={playing}
+  replayKey={replayCount}
+  onComplete={() => console.log(\"Intro complete\")}
+>
+  <YourHero />
+</LoadingSequence>
+
+// Typography: newline separates the headline.
+<LoadingSequence
+  variant=\"typography\"
+  headline={\"Made with care\nBuilt for people\"}
+  duration={3.2}
+>
+  <YourPortfolio />
+</LoadingSequence>"
+      - paragraph:
+
+
+[Truncated to 10000 characters. Use search to find specific content]

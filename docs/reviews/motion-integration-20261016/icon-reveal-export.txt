@@ -1,0 +1,10 @@
+import { IconReveal } from "@/components/icon-reveal";
+
+// Starting props. Connect event handlers in your app.
+<IconReveal
+  text={"Oreo UI"}
+  radius={"md"}
+  density={"regular"}
+  revealed={false}
+  animated
+ />

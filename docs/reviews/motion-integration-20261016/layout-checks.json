@@ -1,0 +1,56 @@
+[
+  {
+    "route": "icon-reveal",
+    "name": "desktop-light",
+    "body": "Element: body\nBox: x=0 y=0 w=1440 h=1000\nChildren: 3  Text length: 4781\nScroll Y: size=1000 client=1000 overflowing=false top=0\nScroll X: size=1440 client=1440 overflowing=false left=0\nStyles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1",
+    "preview": "Element: div.flex\nBox: x=240 y=141 w=880 h=512\nChildren: 1  Text length: 14\nScroll Y: size=512 client=512 overflowing=false top=0\nScroll X: size=880 client=880 overflowing=false left=0\nStyles: overflow-y=auto overflow-x=auto position=static max-height=none display=flex flex-direction=row flex-shrink=1"
+  },
+  {
+    "route": "icon-reveal",
+    "name": "tablet-light",
+    "body": "Element: body\nBox: x=0 y=0 w=768 h=1024\nChildren: 3  Text length: 4781\nScroll Y: size=1024 client=1024 overflowing=false top=0\nScroll X: size=768 client=768 overflowing=false left=0\nStyles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1",
+    "preview": "Element: div.flex\nBox: x=0 y=192 w=480 h=512\nChildren: 1  Text length: 14\nScroll Y: size=512 client=512 overflowing=false top=0\nScroll X: size=480 client=480 overflowing=false left=0\nStyles: overflow-y=auto overflow-x=auto position=static max-height=none display=flex flex-direction=row flex-shrink=1"
+  },
+  {
+    "route": "icon-reveal",
+    "name": "mobile-dark",
+    "body": "Element: body\nBox: x=0 y=-672 w=390 h=1516\nChildren: 3  Text length: 4781\nScroll Y: size=1516 client=1516 overflowing=false top=0\nScroll X: size=390 client=390 overflowing=false left=0\nStyles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1",
+    "preview": "Element: div.flex\nBox: x=0 y=-428 w=390 h=384\nChildren: 1  Text length: 14\nScroll Y: size=384 client=384 overflowing=false top=0\nScroll X: size=390 client=390 overflowing=false left=0\nStyles: overflow-y=auto overflow-x=auto position=static max-height=none display=flex flex-direction=row flex-shrink=1"
+  },
+  {
+    "route": "word-roller",
+    "name": "desktop-light",
+    "body": "Element: body\nBox: x=0 y=0 w=1440 h=1000\nChildren: 3  Text length: 5418\nScroll Y: size=1000 client=1000 overflowing=false top=0\nScroll X: size=1440 client=1440 overflowing=false left=0\nStyles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1",
+    "preview": "Element: div.flex\nBox: x=240 y=141 w=880 h=512\nChildren: 1  Text length: 509\nScroll Y: size=512 client=512 overflowing=false top=0\nScroll X: size=880 client=880 overflowing=false left=0\nStyles: overflow-y=auto overflow-x=auto position=static max-height=none display=flex flex-direction=row flex-shrink=1"
+  },
+  {
+    "route": "word-roller",
+    "name": "tablet-light",
+    "body": "Element: body\nBox: x=0 y=0 w=768 h=1046\nChildren: 3  Text length: 5418\nScroll Y: size=1046 client=1046 overflowing=false top=0\nScroll X: size=768 client=768 overflowing=false left=0\nStyles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1",
+    "preview": "Element: div.flex\nBox: x=0 y=192 w=480 h=512\nChildren: 1  Text length: 509\nScroll Y: size=512 client=512 overflowing=false top=0\nScroll X: size=480 client=480 overflowing=false left=0\nStyles: overflow-y=auto overflow-x=auto position=static max-height=none display=flex flex-direction=row flex-shrink=1"
+  },
+  {
+    "route": "word-roller",
+    "name": "mobile-dark",
+    "body": "Element: body\nBox: x=0 y=-900 w=390 h=1744\nChildren: 3  Text length: 5418\nScroll Y: size=1744 client=1744 overflowing=false top=0\nScroll X: size=390 client=390 overflowing=false left=0\nStyles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1",
+    "preview": "Element: div.flex\nBox: x=0 y=-656 w=390 h=384\nChildren: 1  Text length: 509\nScroll Y: size=384 client=384 overflowing=false top=0\nScroll X: size=390 client=390 overflowing=false left=0\nStyles: overflow-y=auto overflow-x=auto position=static max-height=none display=flex flex-direction=row flex-shrink=1"
+  },
+  {
+    "route": "loading-sequence",
+    "name": "desktop-light",
+    "body": "Element: body\nBox: x=0 y=0 w=1440 h=1000\nChildren: 3  Text length: 5106\nScroll Y: size=1000 client=1000 overflowing=false top=0\nScroll X: size=1440 client=1440 overflowing=false left=0\nStyles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1",
+    "preview": "Element: div.flex\nBox: x=240 y=141 w=880 h=516\nChildren: 1  Text length: 210\nScroll Y: size=516 client=516 overflowing=false top=0\nScroll X: size=880 client=880 overflowing=false left=0\nStyles: overflow-y=auto overflow-x=auto position=static max-height=none display=flex flex-direction=row flex-shrink=1"
+  },
+  {
+    "route": "loading-sequence",
+    "name": "tablet-light",
+    "body": "Element: body\nBox: x=0 y=0 w=768 h=1024\nChildren: 3  Text length: 5106\nScroll Y: size=1024 client=1024 overflowing=false top=0\nScroll X: size=768 client=768 overflowing=false left=0\nStyles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1",
+    "preview": "Element: div.flex\nBox: x=0 y=192 w=480 h=512\nChildren: 1  Text length: 210\nScroll Y: size=512 client=512 overflowing=false top=0\nScroll X: size=480 client=480 overflowing=false left=0\nStyles: overflow-y=auto overflow-x=auto position=static max-height=none display=flex flex-direction=row flex-shrink=1"
+  },
+  {
+    "route": "loading-sequence",
+    "name": "mobile-dark",
+    "body": "Element: body\nBox: x=0 y=-729 w=390 h=1573\nChildren: 3  Text length: 5106\nScroll Y: size=1573 client=1573 overflowing=false top=0\nScroll X: size=390 client=390 overflowing=false left=0\nStyles: overflow-y=visible overflow-x=visible position=static max-height=none display=block flex-direction=row flex-shrink=1",
+    "preview": "Element: div.flex\nBox: x=0 y=-485 w=390 h=384\nChildren: 1  Text length: 210\nScroll Y: size=384 client=384 overflowing=false top=0\nScroll X: size=390 client=390 overflowing=false left=0\nStyles: overflow-y=auto overflow-x=auto position=static max-height=none display=flex flex-direction=row flex-shrink=1"
+  }
+]

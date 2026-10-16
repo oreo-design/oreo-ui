@@ -1,3 +1,7 @@
+import { IconReveal } from "@/components/icon-reveal";
+import { WordRoller } from "@/components/word-roller";
+import { LoadingSequence } from "@/components/loading-sequence";
+import { loadingSequencePlayground } from "./loading-sequence.preview";
 import { SpendLimitChart, SecretField, ApiKeyTable } from "@/components/support-console";
 import { SPEND_DAYS, SAMPLE_KEYS } from "@/patterns/support-console/data";
 import { ForecastTimeline, UsageProjection, DailyUsagePace, forecastUsage } from "@/components/usage-forecast";
@@ -116,6 +120,9 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "icon-reveal": { IconReveal },
+  "word-roller": { WordRoller },
+  "loading-sequence": { LoadingSequence },
   "support-console": { SpendLimitChart, SecretField, ApiKeyTable },
   "usage-forecast": { ForecastTimeline, UsageProjection, DailyUsagePace },
   recipient: { RecipientSearch, PaymentRailPicker, RecipientForm },
@@ -183,6 +190,22 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "loading-sequence": loadingSequencePlayground,
+  "icon-reveal": define("Icon Reveal", {
+    text: { ...text("Oreo UI"), label: "Text" },
+    radius: { ...select(["sm", "md", "lg"], "md"), label: "Spotlight" },
+    density: { ...select(["fine", "regular", "coarse"], "regular"), label: "Icon density" },
+    revealed: { ...toggle(), label: "Reveal all" },
+    animated: { ...toggle(true), label: "Animate" },
+  }, v => <IconReveal {...v} />),
+  "word-roller": define("Word Roller", {
+    words: { ...text("Sprint, Hurdles, Relay, Marathon, Triathlon, Cycling, Rowing, Climbing, Tennis, Football, Skiing, Surfing, Boxing, Golf", true), description: "Separate words with commas." },
+    suffix: text("for every season"),
+    value: { ...text("Triathlon"), label: "Selected word" },
+    loop: toggle(true), disabled: toggle(),
+    size: select(["sm", "md", "lg"], "md"),
+    visibleWords: select(["5", "7", "9"], "9"),
+  }, (v, set) => <WordRoller words={v.words.split(",").map(word => word.trim()).filter(Boolean)} value={v.value} onValueChange={word => set("value", word)} suffix={v.suffix} loop={v.loop} disabled={v.disabled} size={v.size} visibleWords={Number(v.visibleWords) as 5 | 7 | 9} />),
   "spend-limit-chart": {...define("Spend Limit Chart",{limit:number(70,0,150,5),empty:toggle()},v=><div className="w-full p-4"><SpendLimitChart days={v.empty?[]:SPEND_DAYS} dailyLimitCents={v.limit*100}/></div>),source:"support-console"},
   "secret-field": {...define("Secret Field",{value:text("demo_only_0123456789abcdef"),failCopy:toggle()},v=><div className="w-full max-w-lg p-6"><SecretField value={v.value} onCopy={v.failCopy?async()=>{throw new Error("Demo clipboard failure")}:undefined}/></div>),source:"support-console"},
   "api-key-table": {...define("API Key Table",{empty:toggle()},v=><div className="w-full p-4"><ApiKeyTable keys={v.empty?[]:SAMPLE_KEYS}/></div>),source:"support-console"},

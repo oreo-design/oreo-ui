@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "icon-reveal": { title: "Icon Reveal", description: "An icon-texture wordmark revealed by a pointer spotlight, keyboard focus or touch." },
+  "word-roller": { title: "Word Roller", description: "A draggable, scrollable word list with snapping, looping and keyboard selection." },
+  "loading-sequence": { title: "Loading Sequence", description: "Four decorative page-entry sequences with pause, replay and reduced-motion support." },
   "spend-limit-chart": {title:"Spend Limit Chart",description:"Daily spending split at a reporting threshold with exact accessible amounts."},
   "secret-field": {title:"Secret Field",description:"A masked secret with reveal and asynchronous copy feedback."},
   "api-key-table": {title:"API Key Table",description:"API key metadata, permission tags and host-owned actions."},
