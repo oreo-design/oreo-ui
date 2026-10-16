@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "agent-budget":{title:"Agent Budget",description:"Explainable AI budgets with bounded cap editing, remaining-run estimates and local pause simulation."},
+ "budget-cap-control":{title:"Budget Cap Control",description:"A controlled spending cap with hatched usage, keyboard input and explained boundaries."},
+ "budget-outcome":{title:"Budget Outcome",description:"Translate remaining allowance into agent runs and time at the current spending pace."},
+ "monthly-budget-card":{title:"Monthly Budget Card",description:"A complete budget editor with cap, estimates, reset date and explicit draft/save behavior."},
  "storage-manager":{title:"Storage Manager",description:"A local storage workspace with module accounting, retention drafts, recycle-bin recovery and reviewed cleanup."},
  "storage-usage-card":{title:"Storage Usage Card",description:"Segmented capacity with exact module totals and recycle-bin usage."},
  "storage-module-table":{title:"Storage Module Table",description:"Selectable storage inventory with file counts, growth and occupied shares."},

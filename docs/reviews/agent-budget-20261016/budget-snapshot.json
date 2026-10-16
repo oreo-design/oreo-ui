@@ -1,0 +1,17 @@
+{
+  "savedCap": 69000,
+  "draftCap": 69000,
+  "spent": 66500,
+  "planMax": 200000,
+  "costPerRun": 25,
+  "dailySpend": 0,
+  "currency": "USD",
+  "unit": "cents",
+  "daysToReset": 16,
+  "history": [
+    "100 sample runs completed for $25. ",
+    "Monthly cap saved at $690.",
+    "Agents are paused. Increase and save your cap to resume.",
+    "Monthly cap saved at $640."
+  ]
+}
