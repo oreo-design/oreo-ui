@@ -42,7 +42,7 @@ All captures: actual local components, localhost:5261, Playwriter session 10, Ch
 | Search / sort | New module table | [empty search](after-empty.png); Clear search recovers; sort by name puts Companies first |
 | Retention / export | New local data flow | Cancel resets 90-day draft to 30; save 7-day preference; [downloaded snapshot](storage-snapshot.json) verified 18,800,000,000 occupied bytes equals sum and retention bin=7 |
 | Playgrounds / docs | Old route fallback | [table](after-table-playground.png): individual and select-all update controlled IDs; empty toggle works; Code serializes public import and props. [usage](after-usage-playground.png), [API](after-api-v2.png). Policy native select updates days property, disabled switch disables control |
-| Changelog | [before](before-changelog.png) | Final PR-number entry/capture pending |
+| Changelog | [before](before-changelog.png) | [after](after-changelog.png), Storage Manager entry with PR #89; count increases from 54 to 55 |
 
 ## Six consistency lenses
 | Lens | Result | Evidence / limit |
@@ -67,3 +67,6 @@ Existing route fallback:
 ![Before entry](before-entry.png)
 Complete new page in context (dark default):
 ![After](after-dark-v3.png)
+
+## Delivery record
+PR: https://github.com/oreo-design/oreo-ui/pull/89. Implementation revision: `edc8d82d0aae9629efa41160bcbf70968f0a1407`. Follow-up adds the verified changelog entry and evidence manifest. [Manifest](manifest.json) records product-source hashes and original capture hashes; merge outcome is verified separately against the remote PR.
