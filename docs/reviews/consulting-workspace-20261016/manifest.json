@@ -30,7 +30,8 @@
     "src/App.tsx": "f39d62fb1e061fa81d3549319251146a07c69631b56b1589517a1f844d1079ab",
     "src/lib/site.ts": "2728d66727e0d3ff8e36fe93542e5cc43f1a7e88e4e95353c861cc48f2ab1083",
     "src/docs/Sidebar.tsx": "a5df3200622d29d13be11a16d6c585fc5ce1cae18f2fd0d632d3212ed25f3252",
-    "src/docs/playground/registry.tsx": "75c9dc6a366c2ac68a57e997e2091971cfded3adf4ba0f5e8232950d0d1cd79b"
+    "src/docs/playground/registry.tsx": "75c9dc6a366c2ac68a57e997e2091971cfded3adf4ba0f5e8232950d0d1cd79b",
+    "src/patterns/changelog/data.ts": "d044d8e6772330e838d0a7ba58265c933aab66b84b067fc2a6d438d7c704cffc"
   },
   "media_sha256": {
     "after-dashboard-dark.png": "b446901fa6cd056bc5460a82da387f4e35f2ea5ac5c7031b97eb5ba251132e6c",
@@ -70,6 +71,10 @@
     "oreo-nizam-reference-1.png": "c8f418986651d1d6008aadf5fcef3507b5f1a9ec2dabedc44e5cb50a2fca9b10",
     "after-review-response.png": "c35ef0a23a180b1216cc99836195face34ddcc9df5437b7f17fe8eea4e138aa4",
     "after-activity-playground.png": "7acff4e7bda11237ce5729cc38d03bad8726f2de038473f54f5f11ef14fc8014",
-    "before-changelog.png": "334fc6427ed15b97e790736088c41c89568400e10b9a1f712cc9cc1189ede493"
-  }
+    "before-changelog.png": "334fc6427ed15b97e790736088c41c89568400e10b9a1f712cc9cc1189ede493",
+    "after-changelog.png": "f186ad4d896404e213eb30cf5e9f0e66e3da378a9234561a7afd3c2ac6b03029",
+    "after-changelog-entry.png": "5ed2a3c2a16d8583a415da0e622d647a49fd7a3d6290a16af99ea95904406ace"
+  },
+  "implementation_commit": "3bcaa22",
+  "pull_request": "https://github.com/oreo-design/oreo-ui/pull/69"
 }

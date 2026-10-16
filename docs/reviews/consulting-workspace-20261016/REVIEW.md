@@ -8,7 +8,7 @@ Observed: advisor dashboard with expandable client escalations, question/evidenc
 
 Implemented four reusable components: EscalationCard, SourceConflictCard, KnowledgeSourceTable and ConversationActivity. `/consulting-workspace` composes Dashboard and Advisor knowledge views with existing Oreo actions, avatars, tags, metrics, progress and empty states. Local response review, queue updates, metadata imports, source approval/archive undo and advisor profile settings are working host interactions. The source's broader five-stage wizard is represented by focused advisor settings and reviewed-source progress rather than nonfunctional navigation; unrelated source sidebar sections are not reproduced. Actual client/knowledge templates are linked as existing peers.
 
-Baseline: `ee01edea9b5411e01901391c6b34b79fffe5549d`. Branch: `codex/consulting-workspace-20261016`, isolated from primary WIP. Final product files and media hashes are in `manifest.json`; source is the PR tree containing this index.
+Baseline: `ee01edea9b5411e01901391c6b34b79fffe5549d`. Branch: `codex/consulting-workspace-20261016`, isolated from primary WIP. Final product files and media hashes are in `manifest.json`; implementation commit: `3bcaa22`. Delivery: [PR #69](https://github.com/oreo-design/oreo-ui/pull/69); source is its final reviewed tree.
 
 Captures: actual React components at http://localhost:5242 in Chromium through Playwriter session 1. English, no account, deterministic local fixtures. Desktop 1440×1000, tablet 960×1000, mobile 390×844. Light and dark; browser overlays hidden. References captured in a 1000×1240 native image tab. No real file analysis, AI calls, customer messages or production deployment is implied.
 
@@ -25,7 +25,7 @@ Captures: actual React components at http://localhost:5242 in Chromium through P
 | Empty / failure recovery | New states | [empty](after-source-empty.png), [failure](after-source-error.png), [initial loading fixture](after-source-loading.png). Clear filters and retry restore content; approvals and archive/undo verified. |
 | Mobile / tablet | No equivalent template | [light knowledge 390px](after-knowledge-mobile.png), [final dark dashboard 390px](after-dashboard-mobile-dark-final.png), [tablet](after-dashboard-tablet.png). Actual HTML client/scroll widths 390/390 and 960/960. Source table owns horizontal overflow. |
 | Public component docs | Routes absent at baseline; not individually recaptured | [source table Playground](after-source-playground.png), [activity Playground](after-activity-playground.png), [docs](after-docs.png). Native keyboard disclosure and exact chart selection values verified. |
-| Changelog | [before](before-changelog.png) | Final entry capture added with PR number. Existing release list reused. |
+| Changelog | [before](before-changelog.png) | [matching entry point](after-changelog.png), [visible new entry](after-changelog-entry.png), linking PR #69. Existing release list reused. |
 
 [Interaction clip](interaction.mp4): actual local response approval and knowledge ask-on-use flow, 1440×1000, 5.64 seconds. Original 38 screencast events are preserved losslessly in `interaction-frames.json.xz`; viewing copy clamps long idle intervals to 2s and holds near-instant frames for 0.1s. It is an interaction illustration, not a timing/performance benchmark. Source images have no motion, and the previous route had no matching workflow. No new timed animation is introduced. Recording predates the final color-only correction; final screenshots show current styling.
 
