@@ -41,7 +41,7 @@ Three controlled components (VoiceSignal, VoiceLatencyBreakdown, TurnLatencyHist
 | Narrow, 390×844 viewport | No narrow baseline captured; baseline revision retained | [Dark](after-mobile-dark.png), [light](after-mobile-light-final.png); internal history scrolling and wrapping settings. |
 | Medium, 900×1000 viewport | No prior page | [Completed playback](after-medium.png); one-column console and two-column inspector. |
 | Components | No prior routes | [Signal playground](after-signal-playground.png), [invalid latency](after-invalid-playground.png), [empty history](after-empty-playground.png); restored valid states and selected turn 5. API docs and generated JSX imports inspected. |
-| Changelog | [Prior entries](before-changelog.png) | Addition captured after actual PR number was assigned. |
+| Changelog | [Prior entries](before-changelog.png) | [Voice Agent / PR 91](after-changelog.png), captured and inspected. |
 
 Screenshots are full-page where needed, hence output height can exceed viewport height. Dark/light captures use identical English fixture data for the selected state. These are local fixture captures, not production or real call verification.
 
@@ -68,3 +68,7 @@ Native Playwriter recording is unsupported in the retained direct-browser mode. 
 - Export JSON read back: 12 turns, selected turn 12, 800 ms budget, last turn 621 ms. Stored export-session.json.
 - Runtime logs clean after development initialization; initial HMR requests during file creation were transient.
 - Coverage gaps: physical mobile devices, other engines, full screen-reader flow, hidden-tab recording, separate screenshots for every docs API page. No remote voice service, microphone, real audio or production deployment included.
+
+## Delivery record
+
+[PR #91](https://github.com/oreo-design/oreo-ui/pull/91). Product implementation reviewed at `4dc25c91b4e708a78c9839e58e246c2e29e53ee6`; subsequent commit adds only changelog entry and evidence metadata. Final delivery uses exact-head PR merge and remote readback. Source hashes are preserved in manifest.json.
