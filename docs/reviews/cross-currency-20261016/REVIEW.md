@@ -56,3 +56,7 @@ All originals are retained. `initial-*` and validation/conversion/scheduled/empt
 Evidence is local Chromium fixture evidence, not real banking, production deployment or native-device evidence. No previous mobile/modal page existed to capture; the actual missing-route baseline is preserved instead. Continuous recording remains missing because this direct headless Playwriter session lacks extension tabCapture; screenshots and exercised keyboard/actions do not establish timed-motion fidelity. This template adds no timed animation. No Safari, physical-device, screen-reader session or real-account flow was tested. Evidence coverage is separate from the authorized merge.
 
 Source/media digests, dimensions and UTC file timestamps are recorded in `manifest.json`; source digests identify the code behind final captures without self-referential commit hashes. Historical states are identified above. All screenshots linked here were visually inspected.
+
+## Delivery record
+
+PR: https://github.com/oreo-design/oreo-ui/pull/84. Initial implementation commit: `ca8fbea`; baseline remained current after fetch. [Final changelog entry](after-changelog.png) links to PR #84 and `/cross-currency`, verified from rendered DOM and inspected screenshot at 1440×1080 light. Changelog uses the existing Release Entry structure; no new layout pattern. The final source is reviewed and merged by its exact PR head; remote merge result is reported in the task delivery response. This index is evidence of source/local preview, not deployment.

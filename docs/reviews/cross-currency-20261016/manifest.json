@@ -175,6 +175,16 @@
       ]
     },
     {
+      "path": "docs/reviews/cross-currency-20261016/after-changelog.png",
+      "sha256": "1c75776a2159d752cfad9c144fc9338181a8dbd3d9569f91007d19feca716baa",
+      "bytes": 145704,
+      "modifiedUTC": "2026-10-16T11:43:14.351312+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
       "path": "docs/reviews/cross-currency-20261016/initial-mobile.png",
       "sha256": "0137654059467b77cbe587ae8d94206139350c60f5db61a42b4551b5c4aefed1",
       "bytes": 128050,
@@ -212,9 +222,9 @@
     },
     {
       "path": "docs/reviews/cross-currency-20261016/REVIEW.md",
-      "sha256": "002c4398a615c25562d9c5fddacf83e87f0c986b8d27a57254dbe4c6086b63a2",
-      "bytes": 9110,
-      "modifiedUTC": "2026-10-16T11:41:23.464950+00:00"
+      "sha256": "fdebd12a3bb46d9bfb377ded98051d9cc5fe74018fb365209141cf48d0a4fbe2",
+      "bytes": 9686,
+      "modifiedUTC": "2026-10-16T11:43:14.388475+00:00"
     },
     {
       "path": "docs/reviews/cross-currency-20261016/superseded-after-mobile-dark.png",
@@ -377,6 +387,36 @@
       "sha256": "ed97b203676e598a443e866f9aac8e83cb3cd7524e3c7358991ce02497b5b97d",
       "bytes": 7070,
       "modifiedUTC": "2026-10-16T11:30:17.719416+00:00"
+    },
+    {
+      "path": "src/patterns/changelog/data.ts",
+      "sha256": "579af9de95cb4e5afee1ea558e2f32a7de96deb8c7eec52b041e296394ca84ad",
+      "bytes": 16334,
+      "modifiedUTC": "2026-10-16T11:42:08.403882+00:00"
+    },
+    {
+      "path": "src/App.tsx",
+      "sha256": "014de11e2502a33ae00d4d14353d989c1f7617ba3f37f8319bdb8cd9e783c667",
+      "bytes": 22051,
+      "modifiedUTC": "2026-10-16T11:30:17.520501+00:00"
+    },
+    {
+      "path": "src/docs/Sidebar.tsx",
+      "sha256": "9a9338ff8adb75414ae50834c767b3ab910302242b79b82c15c4b16c04d46cdc",
+      "bytes": 18469,
+      "modifiedUTC": "2026-10-16T11:30:17.521277+00:00"
+    },
+    {
+      "path": "src/docs/playground/registry.tsx",
+      "sha256": "299bc2b2c36fe859b19b6437328be96ff641086b2b8f0ae55e687ddc3bb15464",
+      "bytes": 97578,
+      "modifiedUTC": "2026-10-16T11:30:17.521666+00:00"
+    },
+    {
+      "path": "src/lib/site.ts",
+      "sha256": "e3a7f0465f7395ac41259b68f4c640754c4a50bec4273616def0a4da46746648",
+      "bytes": 41522,
+      "modifiedUTC": "2026-10-16T11:30:17.520885+00:00"
     }
   ]
 }
