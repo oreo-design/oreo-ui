@@ -1,0 +1,169 @@
+{
+  "tasks": [
+    {
+      "id": "MKT-115",
+      "title": "Influencer outreach list",
+      "status": "backlog",
+      "priority": "Medium",
+      "assigneeId": "leo",
+      "start": "",
+      "due": "",
+      "labels": [
+        "Growth"
+      ],
+      "repeat": "Does not repeat",
+      "estimate": "Not estimated",
+      "blockedBy": "",
+      "description": "",
+      "subtasks": [],
+      "comments": [],
+      "activity": [
+        "Task created in this local workspace."
+      ]
+    },
+    {
+      "id": "MKT-109",
+      "title": "Paid social creatives — launch",
+      "status": "progress",
+      "priority": "High",
+      "assigneeId": "emma",
+      "start": "2026-10-11",
+      "due": "2026-10-20",
+      "labels": [
+        "Design",
+        "Growth"
+      ],
+      "repeat": "Does not repeat",
+      "estimate": "3d",
+      "blockedBy": "MKT-112",
+      "description": "",
+      "subtasks": [
+        {
+          "id": "34279ddb-cf62-4adb-831c-dc94c2c5a46e",
+          "title": "Prepare launch assets",
+          "done": true
+        }
+      ],
+      "comments": [
+        {
+          "id": "5cb24084-b601-4672-b971-a5904c43b887",
+          "text": "Draft retained for the creative review.",
+          "at": "2026-10-16T14:34:38.308Z"
+        }
+      ],
+      "activity": [
+        "Updated blockedBy.",
+        "Added a comment.",
+        "Updated subtasks.",
+        "Updated subtasks.",
+        "Updated start and due.",
+        "Renamed task.",
+        "Updated status.",
+        "Task created in this local workspace."
+      ]
+    },
+    {
+      "id": "MKT-112",
+      "title": "Email nurture sequence",
+      "status": "todo",
+      "priority": "Medium",
+      "assigneeId": "dan",
+      "start": "",
+      "due": "2026-10-18",
+      "labels": [
+        "Content"
+      ],
+      "repeat": "Does not repeat",
+      "estimate": "Not estimated",
+      "blockedBy": "",
+      "description": "",
+      "subtasks": [],
+      "comments": [],
+      "activity": [
+        "Task created in this local workspace."
+      ]
+    },
+    {
+      "id": "MKT-118",
+      "title": "Launch webinar deck",
+      "status": "todo",
+      "priority": "Medium",
+      "assigneeId": "alex",
+      "start": "",
+      "due": "2026-10-24",
+      "labels": [
+        "Content"
+      ],
+      "repeat": "Does not repeat",
+      "estimate": "Not estimated",
+      "blockedBy": "",
+      "description": "",
+      "subtasks": [],
+      "comments": [],
+      "activity": [
+        "Task created in this local workspace."
+      ]
+    },
+    {
+      "id": "MKT-106",
+      "title": "Landing page experiments",
+      "status": "progress",
+      "priority": "Medium",
+      "assigneeId": "emma",
+      "start": "",
+      "due": "",
+      "labels": [
+        "Design"
+      ],
+      "repeat": "Does not repeat",
+      "estimate": "Not estimated",
+      "blockedBy": "",
+      "description": "Compare two headlines and share the strongest direction with the team.",
+      "subtasks": [
+        {
+          "id": "sub1",
+          "title": "Draft headline variants",
+          "done": true
+        },
+        {
+          "id": "sub2",
+          "title": "Review with the team",
+          "done": false
+        }
+      ],
+      "comments": [],
+      "activity": [
+        "Task created in this local workspace."
+      ]
+    },
+    {
+      "id": "MKT-103",
+      "title": "Campaign brief",
+      "status": "done",
+      "priority": "Medium",
+      "assigneeId": "alex",
+      "start": "",
+      "due": "",
+      "labels": [
+        "Growth"
+      ],
+      "repeat": "Does not repeat",
+      "estimate": "Not estimated",
+      "blockedBy": "",
+      "description": "",
+      "subtasks": [],
+      "comments": [],
+      "activity": [
+        "Task created in this local workspace."
+      ]
+    }
+  ],
+  "attachments": {
+    "MKT-109": [
+      {
+        "name": "creative-brief.txt",
+        "size": 28
+      }
+    ]
+  }
+}

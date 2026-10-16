@@ -21,6 +21,8 @@ export type KanbanBoardProps = {
   onCardsChange: (cards: KanbanCard[]) => void;
   /** Optional details action; gives dragging its own accessible handle. */
   onCardOpen?: (card: KanbanCard) => void;
+  /** Highlights the card whose nonmodal details are open. */
+  selectedCardId?: string;
   defaultView?: KanbanView;
   className?: string;
 };

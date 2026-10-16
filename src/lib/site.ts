@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "task-board":{title:"Task Board",description:"A campaign board with inline task details, local discussions and editable properties."},
+ "task-properties":{title:"Task Properties",description:"Searchable task properties, paired date validation and controlled label selection."},
+ "task-subtasks":{title:"Task Subtasks",description:"A controlled checklist with inline creation and derived completion."},
+ "task-detail-panel":{title:"Task Detail Panel",description:"A nonmodal inspector that keeps the board in view."},
  "music-project":{title:"Music Project",description:"An audio project workspace with timestamped comments, production tasks and mix versions."},
  "annotated-waveform":{title:"Annotated Waveform",description:"An accessible track waveform with collaborator markers and timestamp navigation."},
  "production-task-list":{title:"Production Task List",description:"Nested production checklists with derived completion and audio timestamp links."},

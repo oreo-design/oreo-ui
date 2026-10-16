@@ -1,0 +1,399 @@
+.task-board {
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+}
+.tb-nav {
+  border-right: 1px solid var(--color-border-subtle);
+  min-height: 0;
+  overflow: auto;
+  background: var(--color-bg-elevated);
+}
+.tb-nav .agent-nav {
+  min-height: 100%;
+  height: auto;
+}
+.tb-nav .agent-nav-brand {
+  gap: 0.75rem;
+}
+.tb-nav .agent-nav-footer > a {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.tb-user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 1rem;
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+}
+.tb-user small {
+  display: block;
+  color: var(--color-text-tertiary);
+  margin-top: 0.25rem;
+}
+.tb-workspace {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+.tb-top {
+  height: 4rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+}
+.tb-top b {
+  font-weight: 400;
+  padding: 0 0.625rem;
+  color: var(--color-text-tertiary);
+}
+.tb-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+  flex: 1;
+}
+.task-board[data-details] .tb-split {
+  grid-template-columns: minmax(0, 1fr) 26rem;
+}
+.tb-main {
+  min-width: 0;
+  overflow: auto;
+  padding: 1.5rem;
+}
+.tb-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.tb-title > div {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+}
+.tb-title h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.tb-mark {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-card-small);
+  background: var(--color-palette-pink-bg);
+  color: var(--color-palette-pink-text);
+}
+.tb-stage {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  padding: 0.25rem 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+}
+.tb-tabs {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.tb-tabs button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  color: var(--color-text-secondary);
+  font-size: 0.8125rem;
+  border-bottom: 2px solid transparent;
+}
+.tb-tabs button[aria-pressed="true"] {
+  border-color: var(--color-text-primary);
+  color: var(--color-text-primary);
+}
+.tb-view {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.tb-view .tb-tabs {
+  margin-right: auto;
+  border: 0;
+}
+.tb-tools {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+}
+.tb-tools label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: 0.375rem 0.625rem;
+  min-width: 0;
+  flex: 1;
+  color: var(--color-text-tertiary);
+}
+.tb-tools input {
+  outline: none;
+  background: transparent;
+  min-width: 0;
+  width: 100%;
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+}
+.tb-tools select {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-base);
+  padding: 0.375rem;
+  color: inherit;
+  font-size: 0.75rem;
+}
+.tb-tools > span {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+}
+.tb-notice {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.75rem;
+}
+.tb-main > .oreo-kanban {
+  padding: 1rem;
+  border-radius: var(--radius-card-medium);
+}
+.tb-main .oreo-kanban > header {
+  margin-bottom: 1rem;
+}
+.tb-main .oreo-kanban > header h2 {
+  font-size: 0.875rem;
+}
+.tb-main .oreo-kanban-grid {
+  grid-template-columns: repeat(var(--kanban-columns), minmax(15rem, 1fr));
+}
+.tb-foot {
+  margin-top: 1.25rem;
+  color: var(--color-text-tertiary);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+.tb-edit-title {
+  display: block;
+  margin-bottom: 1rem;
+}
+.tb-edit-title input {
+  width: 100%;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  padding: 0.5rem 0.625rem;
+  font-size: 0.8125rem;
+}
+.tb-edit-title:before {
+  content: "Edit title";
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.375rem;
+}
+.task-board textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 4rem;
+}
+.tb-attach {
+  border: 1px dashed var(--color-border-default);
+  border-radius: var(--radius-control);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3.5rem;
+  font-size: 0.8125rem;
+  position: relative;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+.tb-attach input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  cursor: pointer;
+}
+.tb-attach:focus-within {
+  outline: 2px solid var(--color-status-progress);
+}
+.tb-files li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  padding: 0.625rem 0;
+}
+.tb-files a {
+  flex: 1;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+}
+.tb-comments article {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  font-size: 0.8125rem;
+}
+.tb-comments article > div {
+  min-width: 0;
+}
+.tb-comments strong {
+  font-size: 0.75rem;
+}
+.tb-comments time {
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+  margin-left: 0.5rem;
+}
+.tb-comments p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
+.tb-comments .agent-workspace-state {
+  min-height: 9rem;
+  padding: 1.5rem 0.5rem;
+}
+.tb-comments .agent-workspace-state h3 {
+  font-size: 0.875rem;
+}
+.tb-comments .agent-workspace-state p {
+  font-size: 0.75rem;
+}
+.tb-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.tb-post > span {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+}
+.tb-activity li {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+.tb-activity svg {
+  flex-shrink: 0;
+}
+.tb-list {
+  overflow: auto;
+}
+.task-board :is(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}
+@media (max-width: 1150px) {
+  .task-board {
+    grid-template-columns: 11rem minmax(0, 1fr);
+  }
+  .tb-main {
+    padding: 1rem;
+  }
+  .task-board[data-details] .tb-split {
+    grid-template-columns: minmax(0, 1fr) 24rem;
+  }
+  .tb-title h1 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 850px) {
+  .task-board {
+    grid-template-columns: 1fr;
+  }
+  .tb-nav {
+    display: none;
+  }
+  .task-board[data-details] .tb-split {
+    grid-template-columns: 1fr;
+  }
+  .task-board[data-details] .tb-main {
+    display: none;
+  }
+  .te-panel {
+    border: 0;
+  }
+  .tb-top {
+    padding: 0 1rem;
+  }
+  .tb-top span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .te-panel-body {
+    max-width: 40rem;
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+  }
+  .tb-title h1 {
+    font-size: 1.125rem;
+  }
+  .tb-view {
+    flex-wrap: wrap;
+  }
+  .te-property {
+    grid-template-columns: 6rem minmax(0, 1fr);
+  }
+  .tb-post {
+    align-items: flex-start;
+  }
+  .tb-main .oreo-kanban {
+    padding: 0.75rem;
+  }
+}
+
+.tb-nav .agent-nav-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
