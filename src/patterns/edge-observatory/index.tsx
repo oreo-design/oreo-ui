@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Tabs } from "@base-ui-components/react/tabs";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
 import { Icon, type IconName } from "@/components/icon";
 import { AgentWorkspaceState } from "@/components/automation";
 import {
+  IncidentRecommendation,
   EdgeMetric,
   MonitorPanel,
   RegionTrafficMap,
@@ -22,6 +23,8 @@ import {
   type MonitorPeriod,
 } from "./data";
 import "./edge-observatory.css";
+import { MonitorReveal } from "@/components/monitor-reveal";
+import { routingPreview } from "@/components/edge-monitor/routing";
 
 type View = "overview" | "regions" | "logs" | "deployments";
 const VIEWS: { id: View; label: string; icon: IconName }[] = [
@@ -31,6 +34,23 @@ const VIEWS: { id: View; label: string; icon: IconName }[] = [
   { id: "deployments", label: "Deployments", icon: "plane" },
 ];
 export function EdgeObservatory() {
+  const [intro, setIntro] = useState(1);
+  const introSequence = useRef(1);
+  useEffect(() => {
+    if (!intro) return;
+    const timer = setTimeout(() => setIntro(0), 600);
+    return () => clearTimeout(timer);
+  }, [intro]);
+  const [routingOpen, setRoutingOpen] = useState(false),
+    [share, setShare] = useState(30),
+    [routingDraft, setRoutingDraft] = useState<{
+      share: number;
+      moved: number;
+    } | null>(null);
+  const routingReturn = useRef<HTMLElement | null>(null);
+  const source = REGIONS.find((r) => r.id === "sin1")!,
+    destination = REGIONS.find((r) => r.id === "hkg1")!;
+  const routing = routingPreview(source, destination, share, 41);
   const [narrow, setNarrow] = useState(false);
   useEffect(() => {
     const media = window.matchMedia("(max-width: 850px)");
@@ -95,7 +115,12 @@ export function EdgeObservatory() {
     setDetail(entry);
   };
   return (
-    <div className={dark ? "theme-dark" : ""}>
+    <div
+      className={dark ? "theme-dark" : ""}
+      onPointerDownCapture={() => setIntro(0)}
+      onKeyDownCapture={() => setIntro(0)}
+      onChangeCapture={() => setIntro(0)}
+    >
       <Tabs.Root
         className="edge-observatory"
         orientation={narrow ? "horizontal" : "vertical"}
@@ -187,6 +212,16 @@ export function EdgeObservatory() {
                 </span>
               </div>
               <div className="edge-controls">
+                <Button
+                  type="tertiary"
+                  size="sm"
+                  tapScale={1}
+                  onClick={(e) => {
+                    if (e.detail > 0) setIntro(++introSequence.current);
+                  }}
+                >
+                  Replay intro
+                </Button>
                 <label>
                   <span className="sr-only">Monitoring period</span>
                   <select
@@ -220,7 +255,7 @@ export function EdgeObservatory() {
             <p className="edge-snapshot-label">
               October 15, 2026 · {regionLabel} · {period} snapshot
             </p>
-            <div className="edge-metrics">
+            <MonitorReveal play={intro} className="edge-metrics">
               <EdgeMetric
                 label="Requests"
                 icon="columns"
@@ -256,7 +291,27 @@ export function EdgeObservatory() {
                 detail="Across the edge cache"
                 bars={bars()}
               />
-            </div>
+            </MonitorReveal>
+            {routingDraft && (
+              <div className="edge-routing-saved" role="status">
+                <span>
+                  Local routing draft: shift {routingDraft.share}% (
+                  {routingDraft.moved.toLocaleString("en-US")} req/s) from sin1
+                  to hkg1. Traffic is unchanged.
+                </span>
+                <Button
+                  size="sm"
+                  type="secondary"
+                  tapScale={1}
+                  onClick={() => {
+                    setRoutingDraft(null);
+                    setNotice("Local routing draft removed.");
+                  }}
+                >
+                  Undo routing draft
+                </Button>
+              </div>
+            )}
             <Tabs.Panel value="overview">
               <div className="edge-dashboard-grid">
                 <div className="edge-primary-stack">
@@ -273,6 +328,9 @@ export function EdgeObservatory() {
                     }
                   >
                     <RegionTrafficMap
+                      detailPlacement="overlay"
+                      samples={latencySamples(period, selected ?? source)}
+                      reveal={intro}
                       regions={REGIONS}
                       selected={selected?.id ?? "sin1"}
                       onSelect={setRegionId}
@@ -285,6 +343,7 @@ export function EdgeObservatory() {
                   >
                     <LatencyChart
                       key={`${period}-${regionId}`}
+                      reveal={intro}
                       samples={latencySamples(period, selected)}
                       label={regionLabel}
                     />
@@ -306,24 +365,21 @@ export function EdgeObservatory() {
                       </Button>
                     }
                   >
-                    <div className="edge-incident">
-                      <p>
-                        <Icon name="warning-circle" size="sm" /> Singapore
-                        latency is elevated
-                      </p>
-                      <div>
-                        p95 is 124 ms. Inspect the failing requests before
-                        changing routing.
-                      </div>
-                      <Button
-                        type="secondary"
-                        size="sm"
-                        tapScale={1}
-                        onClick={trace}
-                      >
-                        Open trace
-                      </Button>
-                    </div>
+                    <MonitorReveal play={intro} delay={200}>
+                      <IncidentRecommendation
+                        source={source}
+                        baseline={38}
+                        target={destination}
+                        headroom={41}
+                        onTrace={trace}
+                        onReview={() => {
+                          routingReturn.current =
+                            document.activeElement as HTMLElement;
+                          setShare(30);
+                          setRoutingOpen(true);
+                        }}
+                      />
+                    </MonitorReveal>
                     <RegionHealthList
                       regions={REGIONS.slice(0, 7)}
                       selected={regionId}
@@ -360,6 +416,7 @@ export function EdgeObservatory() {
                   detail="Select a location"
                 >
                   <RegionTrafficMap
+                    samples={latencySamples(period, selected ?? source)}
                     regions={REGIONS}
                     selected={selected?.id ?? "sin1"}
                     onSelect={setRegionId}
@@ -557,6 +614,101 @@ export function EdgeObservatory() {
                   Inspect error trace
                 </Button>
               )}
+            </Dialog.Popup>
+          </div>
+        </Dialog.Portal>
+      </Dialog.Root>
+      <Dialog.Root open={routingOpen} onOpenChange={setRoutingOpen}>
+        <Dialog.Portal>
+          <div className={dark ? "theme-dark" : ""}>
+            <Dialog.Backdrop className="fixed inset-0 z-40 bg-black/50" />
+            <Dialog.Popup
+              className="edge-routing-dialog"
+              finalFocus={() => routingReturn.current}
+            >
+              <header>
+                <Dialog.Title>Review traffic shift</Dialog.Title>
+                <Dialog.Close
+                  render={
+                    <IconButton
+                      type="tertiary"
+                      size="sm"
+                      tapScale={1}
+                      aria-label="Close routing review"
+                      icon={<Icon name="x" size="sm" />}
+                    />
+                  }
+                />
+              </header>
+              <div className="edge-routing-body">
+                <Dialog.Description>
+                  Preview a local routing draft from Singapore to Hong Kong.
+                  This does not change live traffic.
+                </Dialog.Description>
+                <label className="edge-routing-share">
+                  Share of sin1 requests <output>{share}%</output>
+                  <input
+                    type="range"
+                    min="1"
+                    max="50"
+                    value={share}
+                    onChange={(e) => setShare(Number(e.target.value))}
+                    aria-label="Traffic share"
+                    aria-valuetext={`${share} percent`}
+                  />
+                </label>
+                {routing.error ? (
+                  <p role="alert" className="text-status-error">
+                    {routing.error}
+                  </p>
+                ) : (
+                  <dl className="edge-routing-facts">
+                    <div>
+                      <dt>Requests moved / s</dt>
+                      <dd>{routing.moved.toLocaleString("en-US")}</dd>
+                    </div>
+                    <div>
+                      <dt>sin1 after draft / s</dt>
+                      <dd>{routing.sourceAfter.toLocaleString("en-US")}</dd>
+                    </div>
+                    <div>
+                      <dt>hkg1 after draft / s</dt>
+                      <dd>{routing.targetAfter.toLocaleString("en-US")}</dd>
+                    </div>
+                    <div>
+                      <dt>hkg1 remaining headroom</dt>
+                      <dd>{routing.remainingHeadroom.toFixed(1)}%</dd>
+                    </div>
+                  </dl>
+                )}
+                <p>
+                  Capacity estimate uses the sample's 41% headroom. Latency and
+                  error rates are not predicted. Saving retains only this draft
+                  until reload.
+                </p>
+              </div>
+              <footer>
+                <Dialog.Close
+                  render={<Button type="secondary" size="sm" tapScale={1} />}
+                >
+                  Cancel
+                </Dialog.Close>
+                <Button
+                  size="sm"
+                  tapScale={1}
+                  disabled={Boolean(routing.error)}
+                  onClick={() => {
+                    if (routing.error) return;
+                    setRoutingDraft({ share, moved: routing.moved });
+                    setRoutingOpen(false);
+                    setNotice(
+                      "Routing draft saved locally. No traffic changed.",
+                    );
+                  }}
+                >
+                  Save local draft
+                </Button>
+              </footer>
             </Dialog.Popup>
           </div>
         </Dialog.Portal>

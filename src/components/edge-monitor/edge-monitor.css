@@ -266,3 +266,82 @@
     display: none;
   }
 }
+
+.edge-map-block {
+  position: relative;
+}
+.edge-spotlight {
+  box-shadow: var(--shadow-overlay);
+}
+.edge-spotlight header {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.edge-spotlight-code {
+  margin-left: auto;
+  font-family: monospace;
+  font-size: 0.625rem;
+  color: var(--color-text-tertiary);
+}
+.edge-spotlight > svg {
+  width: 100%;
+  height: 3.5rem;
+  margin-top: 0.75rem;
+}
+.edge-spotlight dl {
+  gap: 0.75rem;
+}
+.edge-spotlight dd {
+  font-size: 0.875rem;
+}
+.edge-advice {
+  margin: 0.75rem;
+  padding: 1rem;
+  background: color-mix(
+    in srgb,
+    var(--color-status-error) 8%,
+    var(--color-bg-elevated)
+  );
+  border: 1px solid
+    color-mix(in srgb, var(--color-status-error) 24%, transparent);
+  border-radius: var(--radius-card-small);
+}
+.edge-advice h3 {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+.edge-advice h3 svg {
+  color: var(--color-status-error);
+  flex-shrink: 0;
+}
+.edge-advice p {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0.5rem 0 0.75rem;
+}
+.edge-advice > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+@media (min-width: 1251px) {
+  .edge-map-block[data-placement="overlay"] .edge-spotlight-slot {
+    position: absolute;
+    left: 29%;
+    bottom: 0.75rem;
+    width: 45%;
+    max-width: 19rem;
+  }
+  .edge-map-block[data-placement="overlay"] .edge-spotlight {
+    margin: 0;
+    padding: 0.875rem;
+  }
+  .edge-map-block[data-placement="overlay"] .edge-spotlight dl {
+    margin-top: 0.5rem;
+  }
+}

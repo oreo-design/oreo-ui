@@ -4,6 +4,9 @@ import { ActivityBars, type ActivityBar } from "@/components/activity";
 import { Avatar } from "@/components/avatar";
 import { AgentWorkspaceState } from "@/components/automation";
 import "./edge-monitor.css";
+import { MonitorReveal } from "@/components/monitor-reveal";
+import { RegionSpotlight } from "./spotlight";
+export { RegionSpotlight, IncidentRecommendation } from "./spotlight";
 
 export type EdgeRegion = {
   id: string;
@@ -113,10 +116,16 @@ export function RegionTrafficMap({
   regions,
   selected,
   onSelect,
+  detailPlacement = "below",
+  samples,
+  reveal = 0,
 }: {
   regions: EdgeRegion[];
   selected?: string;
   onSelect: (id: string) => void;
+  detailPlacement?: "below" | "overlay";
+  samples?: LatencySample[];
+  reveal?: number;
 }) {
   const id = useId().replace(/:/g, "");
   const region = regions.find((r) => r.id === selected);
@@ -128,94 +137,71 @@ export function RegionTrafficMap({
       />
     );
   return (
-    <div className="edge-map-block">
-      <div className="edge-map" role="group" aria-label="Traffic region map">
-        <svg viewBox="0 0 600 330" aria-hidden="true">
-          <defs>
-            <pattern
-              id={`${id}-dots`}
-              width="5"
-              height="5"
-              patternUnits="userSpaceOnUse"
-            >
-              <circle
-                cx="2.5"
-                cy="2.5"
-                r=".9"
-                fill="var(--color-text-tertiary)"
-              />
-            </pattern>
-          </defs>
-          <path d={LAND} fill={`url(#${id}-dots)`} opacity=".5" />
-          {regions
-            .filter((r) => r.id !== (selected ?? regions[0].id))
-            .map((r) => {
-              const start = region ?? regions[0];
-              return (
-                <path
-                  key={r.id}
-                  d={`M${start.x * 6},${start.y * 3.3} Q${(start.x + r.x) * 3},${Math.min(start.y, r.y) * 3.3 - 45} ${r.x * 6},${r.y * 3.3}`}
-                  stroke="var(--color-border-default)"
-                  strokeWidth="1"
-                  fill="none"
+    <div className="edge-map-block" data-placement={detailPlacement}>
+      <MonitorReveal play={reveal} delay={50}>
+        <div className="edge-map" role="group" aria-label="Traffic region map">
+          <svg viewBox="0 0 600 330" aria-hidden="true">
+            <defs>
+              <pattern
+                id={`${id}-dots`}
+                width="5"
+                height="5"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle
+                  cx="2.5"
+                  cy="2.5"
+                  r=".9"
+                  fill="var(--color-text-tertiary)"
                 />
-              );
-            })}
-        </svg>
-        {regions.map((r) => (
-          <button
-            key={r.id}
-            type="button"
-            className="edge-map-point"
-            data-elevated={r.latency >= 80 || undefined}
-            aria-label={`${r.city}, ${r.id}, ${r.latency} milliseconds${r.latency >= 80 ? ", elevated" : ""}`}
-            aria-pressed={selected === r.id}
-            onClick={() => onSelect(r.id)}
-            style={{
-              left: `${Math.max(4, Math.min(96, r.x))}%`,
-              top: `${Math.max(5, Math.min(95, r.y))}%`,
-            }}
-          >
-            <span className="edge-map-dot" />
-            <span className="edge-map-tag">
-              <b>{r.id}</b> {compactNumber(r.requests)}
-            </span>
-          </button>
-        ))}
-      </div>
-      {region ? (
-        <div className="edge-region-detail" aria-live="polite">
-          <div>
-            <span
-              className="edge-health"
-              data-elevated={region.latency >= 80 || undefined}
-            />
-            <strong>{region.city}</strong>
-            <span className="ml-2 font-mono text-xs text-text-tertiary">
-              {region.id}
-            </span>
-          </div>
-          <dl>
-            <div>
-              <dt>p95 latency</dt>
-              <dd data-elevated={region.latency >= 80 || undefined}>
-                {region.latency}
-                <small> ms</small>
-              </dd>
-            </div>
-            <div>
-              <dt>Requests / s</dt>
-              <dd>{compactNumber(region.requests)}</dd>
-            </div>
-            <div>
-              <dt>5xx errors</dt>
-              <dd>
-                {region.errors.toFixed(2)}
-                <small>%</small>
-              </dd>
-            </div>
-          </dl>
+              </pattern>
+            </defs>
+            <path d={LAND} fill={`url(#${id}-dots)`} opacity=".5" />
+            {regions
+              .filter((r) => r.id !== (selected ?? regions[0].id))
+              .map((r) => {
+                const start = region ?? regions[0];
+                return (
+                  <path
+                    key={r.id}
+                    d={`M${start.x * 6},${start.y * 3.3} Q${(start.x + r.x) * 3},${Math.min(start.y, r.y) * 3.3 - 45} ${r.x * 6},${r.y * 3.3}`}
+                    stroke="var(--color-border-default)"
+                    strokeWidth="1"
+                    fill="none"
+                  />
+                );
+              })}
+          </svg>
+          {regions.map((r) => (
+            <button
+              key={r.id}
+              type="button"
+              className="edge-map-point"
+              data-elevated={r.latency >= 80 || undefined}
+              aria-label={`${r.city}, ${r.id}, ${r.latency} milliseconds${r.latency >= 80 ? ", elevated" : ""}`}
+              aria-pressed={selected === r.id}
+              onClick={() => onSelect(r.id)}
+              style={{
+                left: `${Math.max(4, Math.min(96, r.x))}%`,
+                top: `${Math.max(5, Math.min(95, r.y))}%`,
+              }}
+            >
+              <span className="edge-map-dot" />
+              <span className="edge-map-tag">
+                <b>{r.id}</b> {compactNumber(r.requests)}
+              </span>
+            </button>
+          ))}
         </div>
+      </MonitorReveal>
+      {region ? (
+        <MonitorReveal
+          play={reveal}
+          delay={150}
+          className="edge-spotlight-slot"
+        >
+          <RegionSpotlight region={region} samples={samples} />
+        </MonitorReveal>
       ) : (
         <p className="edge-map-hint">
           Select a region to inspect its traffic. Locations are schematic.
@@ -269,9 +255,11 @@ export function RegionHealthList({
 export function LatencyChart({
   samples,
   label = "All regions",
+  reveal = 0,
 }: {
   samples: LatencySample[];
   label?: string;
+  reveal?: number;
 }) {
   const id = useId().replace(/:/g, "");
   const data = samples.filter((p) =>
@@ -314,101 +302,107 @@ export function LatencyChart({
   );
   return (
     <figure ref={figure} className="edge-latency">
-      <svg
-        viewBox={`0 0 ${width} 205`}
-        role="img"
-        aria-labelledby={`${id}-title ${id}-desc`}
-      >
-        <title id={`${id}-title`}>{label} latency</title>
-        <desc id={`${id}-desc`}>
-          p50, p95 and p99 latency in milliseconds. Highest p95:{" "}
-          {data[peakIndex].p95} ms at {data[peakIndex].label}.
-        </desc>
-        <defs>
-          <linearGradient id={`${id}-fill`} x1="0" x2="0" y1="0" y2="1">
-            <stop stopColor="var(--color-status-error)" stopOpacity=".18" />
-            <stop
-              offset="1"
-              stopColor="var(--color-status-error)"
-              stopOpacity="0"
-            />
-          </linearGradient>
-        </defs>
-        {[0, 0.5, 1].map((n) => (
-          <g key={n}>
-            <line
-              x1="20"
-              x2={width - 45}
-              y1={y(max * n)}
-              y2={y(max * n)}
-              stroke="var(--color-border-subtle)"
-            />
-            <text x={width - 32} y={y(max * n) + 4}>
-              {max * n}
-            </text>
-          </g>
-        ))}
-        {data[peakIndex].p95 >= 80 && (
-          <rect
-            x={Math.max(20, x(peakIndex) - 32)}
-            y="25"
-            width="64"
-            height="145"
-            fill="var(--color-status-error)"
-            opacity=".06"
-          />
-        )}
-        <path
-          d={`${path("p95")} L${x(data.length - 1)},170 L20,170 Z`}
-          fill={`url(#${id}-fill)`}
-        />
-        <path
-          d={path("p99")}
-          fill="none"
-          stroke="var(--color-text-tertiary)"
-          strokeDasharray="3 4"
-        />
-        <path d={path("p50")} fill="none" stroke="var(--color-text-tertiary)" />
-        <path
-          d={path("p95")}
-          fill="none"
-          stroke={
-            data[peakIndex].p95 >= 80
-              ? "var(--color-status-error)"
-              : "var(--color-text-primary)"
-          }
-          strokeWidth="2"
-          strokeLinejoin="round"
-        />
-        <line
-          x1={x(selected)}
-          x2={x(selected)}
-          y1="25"
-          y2="170"
-          stroke="var(--color-border-default)"
-          strokeDasharray="2 4"
-        />
-        <circle
-          cx={x(selected)}
-          cy={y(point.p95)}
-          r="3"
-          fill="var(--color-text-primary)"
-        />
-        {[0, Math.floor((data.length - 1) / 2), data.length - 1]
-          .filter((n, i, a) => a.indexOf(n) === i)
-          .map((i) => (
-            <text
-              key={i}
-              x={x(i)}
-              y="196"
-              textAnchor={
-                i === 0 ? "start" : i === data.length - 1 ? "end" : "middle"
-              }
-            >
-              {data[i].label}
-            </text>
+      <MonitorReveal play={reveal} delay={100} variant="wipe">
+        <svg
+          viewBox={`0 0 ${width} 205`}
+          role="img"
+          aria-labelledby={`${id}-title ${id}-desc`}
+        >
+          <title id={`${id}-title`}>{label} latency</title>
+          <desc id={`${id}-desc`}>
+            p50, p95 and p99 latency in milliseconds. Highest p95:{" "}
+            {data[peakIndex].p95} ms at {data[peakIndex].label}.
+          </desc>
+          <defs>
+            <linearGradient id={`${id}-fill`} x1="0" x2="0" y1="0" y2="1">
+              <stop stopColor="var(--color-status-error)" stopOpacity=".18" />
+              <stop
+                offset="1"
+                stopColor="var(--color-status-error)"
+                stopOpacity="0"
+              />
+            </linearGradient>
+          </defs>
+          {[0, 0.5, 1].map((n) => (
+            <g key={n}>
+              <line
+                x1="20"
+                x2={width - 45}
+                y1={y(max * n)}
+                y2={y(max * n)}
+                stroke="var(--color-border-subtle)"
+              />
+              <text x={width - 32} y={y(max * n) + 4}>
+                {max * n}
+              </text>
+            </g>
           ))}
-      </svg>
+          {data[peakIndex].p95 >= 80 && (
+            <rect
+              x={Math.max(20, x(peakIndex) - 32)}
+              y="25"
+              width="64"
+              height="145"
+              fill="var(--color-status-error)"
+              opacity=".06"
+            />
+          )}
+          <path
+            d={`${path("p95")} L${x(data.length - 1)},170 L20,170 Z`}
+            fill={`url(#${id}-fill)`}
+          />
+          <path
+            d={path("p99")}
+            fill="none"
+            stroke="var(--color-text-tertiary)"
+            strokeDasharray="3 4"
+          />
+          <path
+            d={path("p50")}
+            fill="none"
+            stroke="var(--color-text-tertiary)"
+          />
+          <path
+            d={path("p95")}
+            fill="none"
+            stroke={
+              data[peakIndex].p95 >= 80
+                ? "var(--color-status-error)"
+                : "var(--color-text-primary)"
+            }
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
+          <line
+            x1={x(selected)}
+            x2={x(selected)}
+            y1="25"
+            y2="170"
+            stroke="var(--color-border-default)"
+            strokeDasharray="2 4"
+          />
+          <circle
+            cx={x(selected)}
+            cy={y(point.p95)}
+            r="3"
+            fill="var(--color-text-primary)"
+          />
+          {[0, Math.floor((data.length - 1) / 2), data.length - 1]
+            .filter((n, i, a) => a.indexOf(n) === i)
+            .map((i) => (
+              <text
+                key={i}
+                x={x(i)}
+                y="196"
+                textAnchor={
+                  i === 0 ? "start" : i === data.length - 1 ? "end" : "middle"
+                }
+              >
+                {data[i].label}
+              </text>
+            ))}
+        </svg>
+      </MonitorReveal>
       <figcaption>
         <label>
           <span className="sr-only">Inspect latency sample</span>

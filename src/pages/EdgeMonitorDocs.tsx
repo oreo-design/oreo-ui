@@ -51,6 +51,21 @@ export function EdgeMonitorDocs({ nav }: { nav: DocsNav }) {
               . Built with Oreo tokens, ActivityBars, Avatar, Button and the
               shared empty state.
             </p>
+            <p className="mt-4 text-sm leading-7 text-text-secondary">
+              The animated follow-up adds{" "}
+              <a href="/monitor-reveal" className="underline">
+                MonitorReveal
+              </a>
+              ,{" "}
+              <a href="/region-spotlight" className="underline">
+                RegionSpotlight
+              </a>{" "}
+              and{" "}
+              <a href="/incident-recommendation" className="underline">
+                IncidentRecommendation
+              </a>
+              . Explore them in the template with a local routing review.
+            </p>
             <Button
               className="my-6"
               tapScale={1}
@@ -117,8 +132,8 @@ export function EdgeMonitorDocs({ nav }: { nav: DocsNav }) {
                 },
                 {
                   prop: "RegionTrafficMap",
-                  type: "regions, selected?, onSelect",
-                  desc: "Controlled selection. x/y coordinates are percentages in an original schematic world illustration. Not a GIS boundary map.",
+                  type: "regions, selected?, onSelect, samples?, detailPlacement?, reveal?",
+                  desc: "Controlled selection. Optional spotlight trend/desktop overlay and nonblocking reveal. Below-map detail remains the default. x/y coordinates are schematic percentages, not GIS data.",
                 },
                 {
                   prop: "RegionHealthList",

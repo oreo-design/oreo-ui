@@ -1,3 +1,4 @@
+import {EdgeMotionDocs} from "@/pages/EdgeMotionDocs";
 import {SubscriptionWorkspacePage} from "@/patterns/subscription-workspace";
 import {SubscriptionOperationsDocs} from "@/pages/SubscriptionOperationsDocs";
 import {IssueBrowserPage} from "@/patterns/issue-browser";
@@ -285,6 +286,7 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "position-studio": PositionStudioPage,
   "studio-inbox-components": StudioInboxDocs,
   "studio-inbox": StudioInboxPage,
+  "monitor-reveal":EdgeMotionDocs,"region-spotlight":EdgeMotionDocs,"incident-recommendation":EdgeMotionDocs,
   "edge-monitor": EdgeMonitorDocs,
   "edge-observatory": EdgeObservatoryPage,
   switch: SwitchDocs,

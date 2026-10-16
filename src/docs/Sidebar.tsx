@@ -159,6 +159,7 @@ const NAV: Group[] = [
       { label: "Menu", page: "menu" },
       { label: "Meeting", page: "meeting-components" },
       { label: "Edge Monitor", page: "edge-monitor" },
+      {label:"Monitor Reveal",page:"monitor-reveal"},{label:"Region Spotlight",page:"region-spotlight"},{label:"Incident Recommendation",page:"incident-recommendation"},
       { label: "Brand Swatch", page: "brand-swatch" },
       { label: "Type Scale", page: "type-scale" },
       { label: "Email Signature", page: "email-signature" },
