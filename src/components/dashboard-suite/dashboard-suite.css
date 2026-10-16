@@ -1,0 +1,265 @@
+.ds-stat {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-elevated);
+  overflow: hidden;
+  color: var(--color-text-primary);
+  min-width: 0;
+}
+.ds-stat header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem 0.5rem;
+  color: var(--color-text-secondary);
+}
+.ds-stat h3 {
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+.ds-stat-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.25rem 1.25rem 1rem;
+}
+.ds-stat-value > strong {
+  font-size: 1.875rem;
+  letter-spacing: -0.04em;
+  font-weight: 550;
+  font-variant-numeric: tabular-nums;
+}
+.ds-stat p {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.ds-stat p > span {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+.ds-stat [data-direction="up"] {
+  color: var(--color-palette-mint-text);
+}
+.ds-stat [data-direction="down"] {
+  color: var(--color-palette-pink-text);
+}
+.ds-stat[data-variant="footer"] p {
+  border-top: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-base);
+}
+.ds-stat[data-variant="header"] .ds-stat-value {
+  background: var(--color-bg-base);
+  border-top: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium) var(--radius-card-medium) 0 0;
+  padding-top: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+.ds-stat[data-variant="header"] p {
+  background: var(--color-bg-base);
+}
+.ds-stat[data-variant="plain"] {
+  border-color: transparent;
+}
+.ds-stat[data-variant="plain"] p {
+  padding-top: 0;
+}
+.ds-chart {
+  min-width: 0;
+  color: var(--color-text-secondary);
+}
+.ds-chart-scroll {
+  overflow: auto;
+  max-width: 100%;
+}
+.ds-chart-scroll svg {
+  display: block;
+  width: 100%;
+  min-width: 35rem;
+  height: auto;
+}
+.ds-area {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ds-axis {
+  fill: var(--color-text-tertiary);
+  font: 10px var(--font-sans);
+}
+.ds-axis line {
+  stroke: var(--color-border-subtle);
+  stroke-dasharray: 3 4;
+}
+.ds-cursor {
+  stroke: var(--color-text-tertiary);
+  stroke-width: 1;
+}
+.ds-chart [data-series="0"] {
+  fill: var(--color-text-secondary);
+  background: var(--color-text-secondary);
+}
+.ds-chart [data-series="1"] {
+  fill: var(--color-text-tertiary);
+  background: var(--color-text-tertiary);
+}
+.ds-chart [data-series="2"] {
+  fill: var(--color-border-default);
+  background: var(--color-border-default);
+}
+.ds-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.75rem;
+  padding: 0 0 1rem;
+}
+.ds-legend > span {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.ds-legend i {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+.ds-readout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  margin-top: 1rem;
+}
+.ds-readout label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ds-readout select {
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: 0.375rem 0.5rem;
+  color: var(--color-text-primary);
+  max-width: 12rem;
+}
+.ds-readout output {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-primary);
+}
+.ds-exact {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-border-subtle);
+  font-size: 0.75rem;
+}
+.ds-exact summary {
+  cursor: pointer;
+  color: var(--color-text-secondary);
+}
+.ds-exact > div {
+  overflow: auto;
+  max-height: 18rem;
+  margin-top: 0.75rem;
+}
+.ds-exact table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+.ds-exact th,
+.ds-exact td {
+  text-align: right;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.ds-exact th:first-child {
+  text-align: left;
+}
+.ds-exact caption {
+  text-align: left;
+  padding: 0.5rem;
+}
+.ds-exact thead {
+  position: sticky;
+  top: 0;
+  background: var(--color-bg-elevated);
+}
+.ds-channels h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.ds-channels ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ds-channels li + li {
+  margin-top: 1rem;
+}
+.ds-channels li > div,
+.ds-channels li > button {
+  display: block;
+  padding: 0.5rem;
+  border-radius: var(--radius-control);
+  width: 100%;
+  text-align: left;
+}
+.ds-channels li > button {
+  cursor: pointer;
+}
+.ds-channels button[aria-pressed="true"] {
+  outline: 1px solid var(--color-text-tertiary);
+  background: var(--color-state-hover);
+}
+.ds-channels li > * > span:first-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.8125rem;
+}
+.ds-channels strong {
+  font-weight: 400;
+  color: var(--color-text-secondary);
+}
+.ds-channels .ao-pixel-meter {
+  display: block;
+  margin: 0.5rem 0 0.25rem;
+}
+.ds-channels small {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+}
+.ds-channels button:focus-visible,
+.ds-readout select:focus-visible,
+.ds-chart-scroll:focus-visible,
+.ds-exact summary:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ds-channels button:hover {
+    background: var(--color-state-hover);
+  }
+}
+.theme-dark .ds-stat [data-direction="up"] {
+  color: var(--color-status-success);
+}
+.theme-dark .ds-stat [data-direction="down"] {
+  color: var(--color-status-error);
+}
+.ds-channels .ao-pixel-meter svg {
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
