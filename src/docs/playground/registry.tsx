@@ -1,3 +1,5 @@
+import { SpendLimitChart, SecretField, ApiKeyTable } from "@/components/support-console";
+import { SPEND_DAYS, SAMPLE_KEYS } from "@/patterns/support-console/data";
 import { ForecastTimeline, UsageProjection, DailyUsagePace, forecastUsage } from "@/components/usage-forecast";
 import { USAGE_ACCOUNTS, FORECAST_NOW } from "@/patterns/usage-forecast/data";
 import { RecipientSearch, PaymentRailPicker, RecipientForm, recipientName } from "@/components/recipient";
@@ -114,6 +116,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "support-console": { SpendLimitChart, SecretField, ApiKeyTable },
   "usage-forecast": { ForecastTimeline, UsageProjection, DailyUsagePace },
   recipient: { RecipientSearch, PaymentRailPicker, RecipientForm },
   sales: { RevenueMatrix, PipelineFunnel, DealStageBadge, DealTable },
@@ -180,6 +183,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "spend-limit-chart": {...define("Spend Limit Chart",{limit:number(70,0,150,5),empty:toggle()},v=><div className="w-full p-4"><SpendLimitChart days={v.empty?[]:SPEND_DAYS} dailyLimitCents={v.limit*100}/></div>),source:"support-console"},
+  "secret-field": {...define("Secret Field",{value:text("demo_only_0123456789abcdef"),failCopy:toggle()},v=><div className="w-full max-w-lg p-6"><SecretField value={v.value} onCopy={v.failCopy?async()=>{throw new Error("Demo clipboard failure")}:undefined}/></div>),source:"support-console"},
+  "api-key-table": {...define("API Key Table",{empty:toggle()},v=><div className="w-full p-4"><ApiKeyTable keys={v.empty?[]:SAMPLE_KEYS}/></div>),source:"support-console"},
   "forecast-timeline": {...define("Forecast Timeline",{selected:select(USAGE_ACCOUNTS.map(a=>a.id),"claude-pro"),days:number(7,1,14,1),empty:toggle()},(v,set)=><div className="w-full p-6"><ForecastTimeline forecasts={v.empty?[]:USAGE_ACCOUNTS.map(a=>forecastUsage(a,FORECAST_NOW))} selectedId={v.selected} onSelect={id=>set("selected",id)} days={v.days}/></div>),source:"usage-forecast"},
   "usage-projection": {...define("Usage Projection",{account:select(USAGE_ACCOUNTS.map(a=>a.id),"claude-pro"),multiplier:number(1,0,2,.25),invalid:toggle()},v=><div className="w-full max-w-lg p-6"><UsageProjection forecast={forecastUsage({...USAGE_ACCOUNTS.find(a=>a.id===v.account)!,...(v.invalid?{observations:[]}:{} )},FORECAST_NOW,v.multiplier)}/></div>),source:"usage-forecast"},
   "daily-usage-pace": {...define("Daily Usage Pace",{account:select(USAGE_ACCOUNTS.map(a=>a.id),"claude-pro")},v=><div className="w-full max-w-lg p-6"><DailyUsagePace forecast={forecastUsage(USAGE_ACCOUNTS.find(a=>a.id===v.account)!,FORECAST_NOW)}/></div>),source:"usage-forecast"},

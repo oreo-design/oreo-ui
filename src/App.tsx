@@ -1,3 +1,5 @@
+import { SupportConsoleDocs } from "@/pages/SupportConsoleDocs";
+import { SupportConsolePage } from "@/patterns/support-console";
 import { UsageForecastDocs } from "@/pages/UsageForecastDocs";
 import { UsageForecastPage } from "@/patterns/usage-forecast";
 import { RecipientDocs } from "@/pages/RecipientDocs";
@@ -139,6 +141,10 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "spend-limit-chart": SupportConsoleDocs,
+  "secret-field": SupportConsoleDocs,
+  "api-key-table": SupportConsoleDocs,
+  "support-console": SupportConsolePage,
   "forecast-timeline": UsageForecastDocs,
   "usage-projection": UsageForecastDocs,
   "daily-usage-pace": UsageForecastDocs,

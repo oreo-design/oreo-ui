@@ -1,0 +1,213 @@
+.qz-spend {
+  min-width: 0;
+}
+.qz-chart-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 20px 24px;
+  font-size: 14px;
+}
+.qz-chart-caption span {
+  color: var(--color-text-secondary);
+}
+.qz-chart-scroll {
+  overflow: auto;
+  padding: 20px 24px 0;
+}
+.qz-chart-plot {
+  display: flex;
+  gap: 12px;
+  min-width: 460px;
+}
+.qz-chart-axis {
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  width: 64px;
+  flex-shrink: 0;
+}
+.qz-chart-bars {
+  display: flex;
+  position: relative;
+  flex: 1;
+  height: 292px;
+  gap: 8px;
+}
+.qz-chart-grid {
+  position: absolute;
+  inset: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.qz-chart-grid i {
+  border-top: 1px solid var(--color-border-subtle);
+}
+.qz-chart-day {
+  position: relative;
+  flex: 1;
+  min-width: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 4px;
+  cursor: pointer;
+  border-radius: var(--radius-control-tiny);
+}
+.qz-chart-day[aria-pressed="true"] {
+  background: var(--color-palette-default-bg);
+}
+.qz-chart-day:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}
+.qz-chart-column {
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 0;
+}
+.qz-chart-column i {
+  display: block;
+  width: 100%;
+}
+.qz-spend-within {
+  background: var(--color-status-progress);
+  opacity: 0.7;
+  border-top: 2px solid var(--color-palette-blue-text);
+}
+.qz-spend-over {
+  background: var(--color-status-error);
+  border-top: 2px solid var(--color-status-error);
+}
+.qz-day-label {
+  font-size: 10px;
+  line-height: 32px;
+  white-space: nowrap;
+  color: var(--color-text-secondary);
+}
+.qz-spend-detail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  font-size: 13px;
+  border-top: 1px solid var(--color-border-subtle);
+  margin-top: 16px;
+}
+.qz-spend-detail span {
+  color: var(--color-text-secondary);
+}
+.qz-spend-detail b {
+  color: var(--color-text-primary);
+  font-weight: 500;
+  margin-left: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.qz-data {
+  padding: 0 24px 20px;
+  font-size: 12px;
+  overflow: auto;
+}
+.qz-data summary {
+  cursor: pointer;
+  color: var(--color-text-secondary);
+}
+.qz-data table {
+  margin-top: 16px;
+  width: 100%;
+  min-width: 320px;
+  text-align: left;
+}
+.qz-data td,
+.qz-data th {
+  padding: 8px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.qz-secret label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.qz-secret-control {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  background: var(--color-palette-default-bg);
+  border-radius: var(--radius-control);
+}
+.qz-secret input {
+  font-family: monospace;
+  min-width: 0;
+  width: 100%;
+  font-size: 14px;
+  padding: 4px;
+  background: transparent;
+  outline-offset: 2px;
+}
+.qz-secret p {
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 8px;
+  min-height: 20px;
+}
+.qz-table-scroll {
+  overflow: auto;
+}
+.qz-key-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+.qz-key-table th,
+.qz-key-table td {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.qz-key-table thead th {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+.qz-key-table tbody th {
+  font-weight: 500;
+}
+.qz-key-table code {
+  background: var(--color-palette-default-bg);
+  border-radius: var(--radius-control-tiny);
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+.qz-key-table td:nth-child(4) {
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+.qz-revoked {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: 400;
+}
+.qz-key-table tr:last-child > * {
+  border-bottom: 0;
+}
+
+.qz-chart-column i[hidden] {
+  display: none;
+}
+.qz-key-table tbody th {
+  white-space: nowrap;
+}

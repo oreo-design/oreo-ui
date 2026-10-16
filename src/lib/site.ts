@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "spend-limit-chart": {title:"Spend Limit Chart",description:"Daily spending split at a reporting threshold with exact accessible amounts."},
+  "secret-field": {title:"Secret Field",description:"A masked secret with reveal and asynchronous copy feedback."},
+  "api-key-table": {title:"API Key Table",description:"API key metadata, permission tags and host-owned actions."},
+  "support-console": {title:"Support Console",description:"A local support workspace with inbox drafts, daily budgets and demo API key management."},
   "forecast-timeline": {title:"Forecast Timeline",description:"Selectable account usage timelines with exhaustion and reset markers."},
   "usage-projection": {title:"Usage Projection",description:"Observed cumulative usage and constant-pace scenarios through the next reset."},
   "daily-usage-pace": {title:"Daily Usage Pace",description:"Observed daily usage compared with remaining allowance."},

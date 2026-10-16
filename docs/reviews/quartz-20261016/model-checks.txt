@@ -1,0 +1,1 @@
+35 money and threshold assertions passed
