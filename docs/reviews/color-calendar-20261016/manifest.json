@@ -195,6 +195,16 @@
       ]
     },
     {
+      "path": "docs/reviews/color-calendar-20261016/after-changelog.png",
+      "sha256": "2f4d8da08d62f4a12ac2f0ee2f2eb4ec737168db6c04c8b1f83944c79991a5e6",
+      "bytes": 146677,
+      "modifiedUTC": "2026-10-16T12:00:04.693014+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
       "path": "docs/reviews/color-calendar-20261016/superseded-after-scroll-end.png",
       "sha256": "9ac5bb3bbab13c847982f643bd40739128c2397e9eceac7ec61d3a064b5a181a",
       "bytes": 149561,
@@ -262,9 +272,9 @@
     },
     {
       "path": "docs/reviews/color-calendar-20261016/REVIEW.md",
-      "sha256": "2fca5ce14e28df7135002df1506fca7a65f989407f1792881c72b39ed93cd68e",
-      "bytes": 9464,
-      "modifiedUTC": "2026-10-16T11:59:10.334069+00:00"
+      "sha256": "01755596d4f81c76aaf2abf0a29a5927d9a626a459081cba2159b7a5ba1a41e8",
+      "bytes": 9989,
+      "modifiedUTC": "2026-10-16T12:00:21.610916+00:00"
     },
     {
       "path": "docs/reviews/color-calendar-20261016/after-scroll-end.png",
@@ -377,6 +387,12 @@
       "sha256": "18541ae817cd77060c913d93446474e5f0a6d965108350add00ed86f77d7002f",
       "bytes": 6281,
       "modifiedUTC": "2026-10-16T11:50:46.549360+00:00"
+    },
+    {
+      "path": "src/patterns/changelog/data.ts",
+      "sha256": "1175d34f8e3d7f43b746e3a78bcb8f3f5aff6a41b523ec9c0614ae6157484f85",
+      "bytes": 16672,
+      "modifiedUTC": "2026-10-16T12:00:02.718590+00:00"
     },
     {
       "path": "src/App.tsx",
