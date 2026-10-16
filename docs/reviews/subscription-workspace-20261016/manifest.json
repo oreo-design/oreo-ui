@@ -1,0 +1,702 @@
+{
+  "baseline": "85a96bae23623562abe39e3656acde15e6182dbe",
+  "environment": "localhost:5267; Chromium Playwriter session 10; en; synchronous local fixture dated 2026-10-16",
+  "desktop": [
+    1440,
+    1080
+  ],
+  "narrow": [
+    390,
+    844
+  ],
+  "medium": [
+    1024,
+    900
+  ],
+  "recording": {
+    "actualSource": [
+      1440,
+      993
+    ],
+    "output": [
+      1440,
+      994
+    ],
+    "seconds": 33.12,
+    "padding": "one bottom pixel; no resize/crop"
+  },
+  "sources": [
+    {
+      "path": "src/components/subscription-operations/index.tsx",
+      "sha256": "b1b58dec02fa85e1755bcb0f9861296d5a3f4f701543ec005837fcfee6017aeb",
+      "bytes": 11849
+    },
+    {
+      "path": "src/components/subscription-operations/model.test.ts",
+      "sha256": "32dd0cee8b49d7b23e8dac274a721a745cbc227b81bb506bb035d1ff6a27d832",
+      "bytes": 4136
+    },
+    {
+      "path": "src/components/subscription-operations/model.ts",
+      "sha256": "7111ac56a65e790f880efa87791d26ed25c9f73e63ebb89ce0651c43c3aec109",
+      "bytes": 6527
+    },
+    {
+      "path": "src/components/subscription-operations/subscription-operations.css",
+      "sha256": "3ba7cbe6bcebaa1a873fbf238b137ea38e2e60283fd46944475271ac192219c8",
+      "bytes": 8838
+    },
+    {
+      "path": "src/patterns/subscription-workspace/index.tsx",
+      "sha256": "1c3d0648fb4611309d2dfa14b3dbe3fdf1d47c7d60c31f97ee934b919e4ec339",
+      "bytes": 40196
+    },
+    {
+      "path": "src/patterns/subscription-workspace/data.ts",
+      "sha256": "1a17638363d43ffa367b68f1fc025738aab2278be4b63bba5324e9efda8152ca",
+      "bytes": 2195
+    },
+    {
+      "path": "src/patterns/subscription-workspace/workspace.css",
+      "sha256": "69499d3767bff350e2ecde4f5c08335507e38e1ed934869d1f958b1e6fadd7fa",
+      "bytes": 11626
+    },
+    {
+      "path": "src/pages/SubscriptionOperationsDocs.tsx",
+      "sha256": "222ea927d654d71240b7a7a11d842d1a00b6c0e5f4095cdd9093ee97d4a1fbac",
+      "bytes": 5910
+    }
+  ],
+  "media": [
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-mobile-customer.png",
+      "sha256": "92c64250cfa8b3ded1fe61e70174cfff95c9cf2871e3fb953421fff7d868c3fc",
+      "bytes": 44334
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-customer-dark.png",
+      "sha256": "0e8be94befdd8cb09faf0503aad29fd9989c12f667f33b1e342c57716fde2a27",
+      "bytes": 123213
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/peer-trace-explorer.png",
+      "sha256": "77efae9d8e7522824d176ea6a9e77179796fb0bceb072d1595dc4a43a425d0f7",
+      "bytes": 148890
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/peer-company-dialog.png",
+      "sha256": "07d834470a29b47da2b034f8e1abcfcd082d4350729c23a8de31e866ee61bbc4",
+      "bytes": 136373
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-segment-v2.png",
+      "sha256": "7b99a9a54cc0ea6ddf421445737a01fd0156c35574aa36d8fd93824e8eb973f7",
+      "bytes": 115869
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/docs-preview.png",
+      "sha256": "ec66ecebe915b88276b88b0687179ea21c815026c63b157afeb2ff249d7d4e58",
+      "bytes": 104445
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-mobile-target.png",
+      "sha256": "919b516980d47777492797bbd7bbb4399645a6eba5e11f6d38a4ac37973fc884",
+      "bytes": 49439
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-customer-light.png",
+      "sha256": "85ddea48ecf1857d01b400889cae2b2ab3885ba34cafa5880bc0189c52f5c87c",
+      "bytes": 131669
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/target-error.png",
+      "sha256": "3b0625b23fca40742c4374c5f83e0784e54bf5db65ce3463607f026b905de258",
+      "bytes": 108781
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-mobile-member.png",
+      "sha256": "c1f06e1697aeb1269a6908627c0f8ac4b021f5f2f942e5abf6c4ab70b49a2d5c",
+      "bytes": 40347
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/docs-target-zero-mrr.png",
+      "sha256": "d862d193e4bbb0be09c43f48b5d5d9e083e3f8b875bc3c5b11999fb3e50b8321",
+      "bytes": 132951
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction.mp4",
+      "sha256": "287e2b00b1d909e53a0ff018bc0096aa14ce35c34989d42c38a76681973a385e",
+      "bytes": 537718
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/before-route.png",
+      "sha256": "dd0623a086db34ce622141b876a22c67835d0a3342cfc4c7815cdf8405275f85",
+      "bytes": 96275
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/docs-rule-api.png",
+      "sha256": "b6f3ff118e6d74734ef8fa1eb1cccb8bfc7f7010f43f0ee82ca4d3815539f52d",
+      "bytes": 174687
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-zero-segment.png",
+      "sha256": "cc7ebfefc3a878b671e819ac53e9dd88438550e39fc1d4ad3ab018c002a70bcb",
+      "bytes": 117392
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/target-error-final.png",
+      "sha256": "591ce624f166c249aefc92a84d15f574d33e801f8ceb4286d3bedfc6eb218adc",
+      "bytes": 113350
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-medium.png",
+      "sha256": "84dcdcd5ea62c2c8cdd4646fd7b566ae15d8b7f4fc9c0d781c5c2cc3593a4d6c",
+      "bytes": 85547
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-target-light.png",
+      "sha256": "ed7db1daf988b3fd31a2cc167cebfa6f7dfa0bf195ad04c720f8d786d8bdc216",
+      "bytes": 120352
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/peer-subscription-dialog.png",
+      "sha256": "26a0080099afdfa79ffb3d951bab97a12fdc3ab1b989f852f6d84ab3f0bff170",
+      "bytes": 119388
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-workspace-dark.png",
+      "sha256": "661a5a763613c96e75ae49dfa16b1ccf93eeca9d04c81184f918b197d612d74a",
+      "bytes": 115015
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-mobile-customer-scrolled.png",
+      "sha256": "62e5d3295c690759ace93464b7c5dffddea760a3c8d2e987738e189e491d2801",
+      "bytes": 45308
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/docs-rule-playground.png",
+      "sha256": "2e90a3ed85c6879fefd7fec00fc9cc1dafd228bf161bf1cc1e5643c1bf16f26c",
+      "bytes": 108597
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-mobile-segment.png",
+      "sha256": "a2e7c7bebcc02e218447fcf3ff28ee1ae9aff9ea991f6128cb799c2ccf41e53e",
+      "bytes": 34718
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-workspace-light.png",
+      "sha256": "2ec62ec76b0565350120e00079dcf1b048f46adcf220ad6b7908cd43a70d0b33",
+      "bytes": 115110
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-workspace-dark-v3.png",
+      "sha256": "3c721d332c470b3a835150295e261e2d335fdab893b82f07dfdd30daca6dc682",
+      "bytes": 114118
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-target-dark.png",
+      "sha256": "c3de603f072fad1d8b3ec8f5651612e4452ba6920810fb6be6340ea295e14ed3",
+      "bytes": 115919
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-segment-dark.png",
+      "sha256": "92b0efc022ba5cc5f247aa72db860c6a42bd703a8897949adcdbc5e89d385843",
+      "bytes": 114929
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/oreo-jubayer-4.png",
+      "sha256": "cd9ba620c4f8af70956eebaa32e183054ec7f3d6ac8a2d1174034a17f20f4ad9",
+      "bytes": 157215
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/docs-plans.png",
+      "sha256": "218e4f54f40aaa601f5086d4567b1a1a2391537ab928a8de48dfd79cbfcf9f37",
+      "bytes": 108081
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-segment-light.png",
+      "sha256": "30ec1dc14013d217cc2d2e93fc98f20104ce52fc5bd7172b8c008d0bb710dd47",
+      "bytes": 126726
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-mobile-workspace.png",
+      "sha256": "6d43522a4be07a0635c41915fa2e2c44320651564ae06b6f4e910eab4cd335ed",
+      "bytes": 36487
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-search-empty.png",
+      "sha256": "50a831edc8cfe5f94a1e09b629dabc1f880207a8a26a68a0d49e3c30ecdbf436",
+      "bytes": 80470
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-segment-dark-v3.png",
+      "sha256": "208e4462fd01f7a05fc057b143160d5129614c21d3b5a94f7c303f4816df7c09",
+      "bytes": 119173
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/oreo-jubayer-1.png",
+      "sha256": "68320aea4df141580bb92e1e33b8ca2c99093cb512512da70e7b36052c567ceb",
+      "bytes": 149899
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-member-light.png",
+      "sha256": "d5dfe04779e173605f84a3a9f8a8a75b10eff15b003a57e146bb9b63e90a3288",
+      "bytes": 126355
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/oreo-jubayer-3.png",
+      "sha256": "efa79a9379a162e4e222d15d42612ffd1289760642abd540334145b00744e76e",
+      "bytes": 151595
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/segment-dark-final.png",
+      "sha256": "65bfe80a5efc0e52b5a71506a68a77a980621d014842757c6cb4af955c86c2dd",
+      "bytes": 133035
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/docs-target.png",
+      "sha256": "074ca7d7fdfe1a7222c776a18bd3c8c6fe9e934d357ae8228749b11865b1c8e6",
+      "bytes": 131576
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-member-dark.png",
+      "sha256": "fbbbbfd164c0c641896d08c68221e56c94d4dfa8f417f00b5f36f245781eb010",
+      "bytes": 115786
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/oreo-jubayer-2.png",
+      "sha256": "2a43b72440c568f0ce73cd2a2b4262ea7ae27d79ffbbd1e059f1985b076610e6",
+      "bytes": 159717
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00063.jpg",
+      "sha256": "71b3915b77543fb012214dcc30462ed11dfb434671dbd2dc192337a05fb6e08a",
+      "bytes": 86409
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00077.jpg",
+      "sha256": "d23531b8f071e90e85d43dc950b6a5fa64ae4cf414aba993c450880e79ceaaeb",
+      "bytes": 95403
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00076.jpg",
+      "sha256": "1dfc1457c7f879028f30be8ecd4ff2435cf56cef6020e18221b7395238ab12c2",
+      "bytes": 78642
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00062.jpg",
+      "sha256": "d64917dd4acb5b82ff56e71a160d97d7657a751f895d4de9ec3f8a3b0aaabe3a",
+      "bytes": 86165
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00074.jpg",
+      "sha256": "1dfc1457c7f879028f30be8ecd4ff2435cf56cef6020e18221b7395238ab12c2",
+      "bytes": 78642
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00060.jpg",
+      "sha256": "f9a68b2275a24f234648787157de387a79eddb3590a8994b6e2adf1a2d95cd53",
+      "bytes": 85116
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00048.jpg",
+      "sha256": "58ad574644462d38398f12ff509f2cbefb90c4bf4268483a93ac9087af4740bf",
+      "bytes": 72192
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00049.jpg",
+      "sha256": "dce39ab5cd74be49e88951305a009adfe71da638e48fcbd10ccb589badd963d6",
+      "bytes": 80506
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00061.jpg",
+      "sha256": "ba0b9873305fa0eaf9b40373d4d3aabe56cf511a6686b8db614483c2f17aac4b",
+      "bytes": 85638
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00075.jpg",
+      "sha256": "1dfc1457c7f879028f30be8ecd4ff2435cf56cef6020e18221b7395238ab12c2",
+      "bytes": 78642
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00059.jpg",
+      "sha256": "e064bad9bacacd0ad9319f08655b37dfb284d4243d51fed1bf8b6aa2e779dc33",
+      "bytes": 85764
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00071.jpg",
+      "sha256": "8a2995fed1c9f8eb7d5287803b4cf94456a9d634025d6889969de461df87937a",
+      "bytes": 79974
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00065.jpg",
+      "sha256": "524eb87e0c4b255b1de6aa7278e60f07a5c39039fb0779c0d1462e0aeb98cc94",
+      "bytes": 86593
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00064.jpg",
+      "sha256": "747865e3a68d0718e4578f26b20e4ee0ceadf7df0e41c2caafed3529470234f2",
+      "bytes": 86538
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00070.jpg",
+      "sha256": "db91979b4f3ef4971370a5942cb28d87e5e69000c834d2cda7f8868c7e6ee18c",
+      "bytes": 81319
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00058.jpg",
+      "sha256": "804de8a57141b42b3d402e2bbc87de17f55b8ff73f3b19f8d139c5603f8f8772",
+      "bytes": 85281
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00066.jpg",
+      "sha256": "dd424d2493e4b80d7fb219c8da3c1d87389fb322d42f617dedca2f66901d369e",
+      "bytes": 86615
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00072.jpg",
+      "sha256": "fceab1c4f0ba4cef98b4bac14f07d1155b3b96d744c0550e2698f4c65e0d6513",
+      "bytes": 79110
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00073.jpg",
+      "sha256": "bf7ed677f4f65900a298141fc293fff1574370705242693c6e86c6c1bba47884",
+      "bytes": 78716
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00067.jpg",
+      "sha256": "dd424d2493e4b80d7fb219c8da3c1d87389fb322d42f617dedca2f66901d369e",
+      "bytes": 86615
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00000.jpg",
+      "sha256": "ea88cb7c29e38c704be87360769f2664dbdf48a9885179bf04320604e545f0c0",
+      "bytes": 92157
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00014.jpg",
+      "sha256": "b03543b96ecaf6061acec17ed574809ea391e96ce6703d7d02cddac18034cf8e",
+      "bytes": 83152
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00028.jpg",
+      "sha256": "1a195e4fe7087c32b284d8c76ca38586071020c1dcbd50946205a88b06bb5f82",
+      "bytes": 82719
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00029.jpg",
+      "sha256": "a48b75372acfec8d303aa46b87ea9db38a2cad16a5c84b23fbf42d6a4c075a53",
+      "bytes": 82348
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00015.jpg",
+      "sha256": "11245373190d6cdc4943a94a424036b74e94c64967599e0d8194c7751722e61b",
+      "bytes": 83169
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00001.jpg",
+      "sha256": "86f0318a96b66b87f72a41fe160fdcf89bac9cb0b4936abec8f8d8ca0d2fe621",
+      "bytes": 83876
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00017.jpg",
+      "sha256": "6decc18aaf45e911a0ab901ca81d2c3b92d374640ee5e4976efc884d25ff345c",
+      "bytes": 79386
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00003.jpg",
+      "sha256": "6571fcc352f7242f2011f2aa1da2d9c6cf1615b1f1e8b11e698eae0ab64f6d3a",
+      "bytes": 83876
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00002.jpg",
+      "sha256": "085ec68cad7cb59662d829e91c7e06fa75d04d550d6e0633a5d00f1f7456ec61",
+      "bytes": 83879
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00016.jpg",
+      "sha256": "384617b78de5b068b7f3827baae29c7bc202aad7e706c4ad1d5b23424aa27e1a",
+      "bytes": 79497
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00012.jpg",
+      "sha256": "5b4965958f4b7301953a669cb27edacb0b5d113703159a7c2cd961c44413f2cc",
+      "bytes": 83228
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00006.jpg",
+      "sha256": "ef4097a2b1fdbaec424e2cf7e1b7f6b401adec8a59d33270d147f456996caafc",
+      "bytes": 83871
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00007.jpg",
+      "sha256": "e843a47b7304c8ca7bae3bde23840afbf7b86682bc51a755ec1cc7a40a6e8d61",
+      "bytes": 83872
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00013.jpg",
+      "sha256": "985d1d475eabb5acf51f8707de28860d55be373143a677cfddca9a8ecb28ff02",
+      "bytes": 83194
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00039.jpg",
+      "sha256": "70347ef0855f3c76965161e1b684aec2818cc77819657609c619b602beea6af0",
+      "bytes": 72369
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00005.jpg",
+      "sha256": "e4f678eea3d42dcf20c0aff002fc36b686decd0831c3006518c0d6441be729c2",
+      "bytes": 83869
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00011.jpg",
+      "sha256": "19041ee902b674c46911275e57ec1a770f60b52d5caa6d21978ecee95d169f3d",
+      "bytes": 82606
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00010.jpg",
+      "sha256": "e843a47b7304c8ca7bae3bde23840afbf7b86682bc51a755ec1cc7a40a6e8d61",
+      "bytes": 83872
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00004.jpg",
+      "sha256": "e4f678eea3d42dcf20c0aff002fc36b686decd0831c3006518c0d6441be729c2",
+      "bytes": 83869
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00038.jpg",
+      "sha256": "f326f499c26591ab72d996c8746116798844b930bd1785dbc43b5a3b359169e7",
+      "bytes": 72455
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00021.jpg",
+      "sha256": "543cb70de02a6b462937f5bcac5b9580826df110e5579a43381101f96aa8e5d2",
+      "bytes": 75847
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00035.jpg",
+      "sha256": "a1f893a852b23c1fca08b492e428e4d3e5e6a2812ae6407caca5cc8e41c8f908",
+      "bytes": 80051
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00009.jpg",
+      "sha256": "e843a47b7304c8ca7bae3bde23840afbf7b86682bc51a755ec1cc7a40a6e8d61",
+      "bytes": 83872
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00008.jpg",
+      "sha256": "e843a47b7304c8ca7bae3bde23840afbf7b86682bc51a755ec1cc7a40a6e8d61",
+      "bytes": 83872
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00034.jpg",
+      "sha256": "3f0e06f8912d38a0d1c07666069994fa82381b580ca02c5db056e85cd76ede54",
+      "bytes": 93946
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00020.jpg",
+      "sha256": "a7f95e30656de36f7dd517897a4850a9b9d1aaf895a1686dfaacfea5558d73f0",
+      "bytes": 79428
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00036.jpg",
+      "sha256": "5bb6095a946140c832fd22b1751686cbc0d0da2ea3e2e09c9ac984fdfd6699f6",
+      "bytes": 80010
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00022.jpg",
+      "sha256": "daa19d9d7fd52667f00e8910ee2f4255883113ece54e989a1991cc9220a2a674",
+      "bytes": 73726
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00023.jpg",
+      "sha256": "6f03186178a4e6f2318bd14458811dba8f9d09d6f3b455ece93651094f01e6a5",
+      "bytes": 74445
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00037.jpg",
+      "sha256": "b0fe2f57be259c730933853984dc3cfe2636ec74c408c3959cb3d981451fae66",
+      "bytes": 80025
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00033.jpg",
+      "sha256": "51428c8acf8f1f2f84788d7bc5ac18a7c7d02d0fa4516c60e13132292770a476",
+      "bytes": 93903
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00027.jpg",
+      "sha256": "a6f7e136564654825eaf770e5835c3866feee6441e28b887bb53fd002d095f2c",
+      "bytes": 82641
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00026.jpg",
+      "sha256": "dbdcad7123db046df1cd511f0909c71c5e510bd0bc0256d79544a19abe2ea738",
+      "bytes": 92114
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00032.jpg",
+      "sha256": "bb6e81bf94d761b13f7bc55fd817fac0b5a253183085bd013c80e900eeb46232",
+      "bytes": 95256
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00018.jpg",
+      "sha256": "997fb529ca6c82dae3cba651871d07311ac8dfe67df570d0f571f3313c2f31dd",
+      "bytes": 79366
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00024.jpg",
+      "sha256": "b5b08aa0d6590c0fd73c74b211efa7a43ce6c69b47efa8e0209ef9779afeae40",
+      "bytes": 74099
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00030.jpg",
+      "sha256": "d7f95424eb5e0f264f2427b6ff86898bf99d1ba121cedf1604d59bbffe5c2e57",
+      "bytes": 92358
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00031.jpg",
+      "sha256": "be3ebb61c4fa0c03de7686ada0e26b2327f2e87a94d50cf79d93cc6f10465f2c",
+      "bytes": 92340
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00025.jpg",
+      "sha256": "32a7092328aca6902ecacb74b43598faaa487b3c092227e474d4ccddda4fb3b7",
+      "bytes": 92107
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00019.jpg",
+      "sha256": "8c2a541eb0183e5876decb1242d3fb70d1981cec7b783f8a10c59aadbfa3a3c3",
+      "bytes": 83524
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00081.jpg",
+      "sha256": "74c3d5f1907579f8ca681fc4d2b0228c768e67d7c4751a769f3dd0d657f1a1ad",
+      "bytes": 95379
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00042.jpg",
+      "sha256": "f8490fa1fb67f63b69d13e2c65ebc8306916fde1fbba0ce3981b9e3b1373c722",
+      "bytes": 72218
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00056.jpg",
+      "sha256": "a4372bb3a9379d714b0449eb41c52aacba9e6ee90c4c73c94ec1f80a5b43d57f",
+      "bytes": 80260
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00057.jpg",
+      "sha256": "455bb2d22e4d80be0fd45e6020fb0d053b5557bce00aa905cd3295c3f507e411",
+      "bytes": 84731
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00043.jpg",
+      "sha256": "785b510402baa9dca4257837ec2e27ebcea16145f67ac048c7fa9ca747e83251",
+      "bytes": 72195
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00080.jpg",
+      "sha256": "997223af9c310f8c7b8a11ef86319ec5c8158e16001edd40adfe0b8f6a656c25",
+      "bytes": 95454
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00082.jpg",
+      "sha256": "feb23a6e3da3beeaf40d293c0cae814e045e5364ee2a163a90ce14ee8463ecb6",
+      "bytes": 95355
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00055.jpg",
+      "sha256": "0a924697469e0379e34a2c94602797531eef5c8eaceaf7a686e79cc2d6ce7be8",
+      "bytes": 80470
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00041.jpg",
+      "sha256": "587c9f6f765899a794ced9bf32748395f0b88df71c07db434f515837f2ab6821",
+      "bytes": 72245
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00069.jpg",
+      "sha256": "5077e4dcb1b15650fdfded9c2677726dc31ac049b236b2932f80091c717288f4",
+      "bytes": 83296
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00068.jpg",
+      "sha256": "518e3057097c077c9a1384fb2957a2b80a51fdcd815078868152411932251b72",
+      "bytes": 85284
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00040.jpg",
+      "sha256": "8812d0bfecdf85c09d78353beb3b67496629ce92389198b5b756dbc9cb536a54",
+      "bytes": 72273
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00054.jpg",
+      "sha256": "e8cd29d44ba52f88e3265064c1136d9ddc91e0adedbacb8cf27b62a55491eb20",
+      "bytes": 80192
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00078.jpg",
+      "sha256": "88353ad930edc99a8593c7e7f0b1b9e9121745714dfad2ffa7a587fba8999c71",
+      "bytes": 95394
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00050.jpg",
+      "sha256": "91ecd4218e9063c9d56a88341a2e8395c6273c89e4735f1460b12a14e71355a9",
+      "bytes": 80522
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00044.jpg",
+      "sha256": "d1039325daf48eb0b71dbdc44c0e2c1f5cc285cc429260598a00ef7c07c4274e",
+      "bytes": 72176
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00045.jpg",
+      "sha256": "bc698a8806886642fc3d734cf468bae3b21382ea1c66319b4b5884fb79c76054",
+      "bytes": 72139
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00051.jpg",
+      "sha256": "01dea18285431100757ee7db7fee84ffcc381289a79c3a334f8c726206c33d50",
+      "bytes": 94128
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00079.jpg",
+      "sha256": "11e9dc940f96678858c9330af13abd9782282b7c7b0a2e343fe2a5535e3e67ac",
+      "bytes": 95422
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00047.jpg",
+      "sha256": "695438ee6bbd6838111cca42d4f7391d93d3386ad5875c433dc1f7dbef965b8a",
+      "bytes": 72134
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00053.jpg",
+      "sha256": "ca61ec909e91df639fdd225acc2afc04f692bf462c1762b30ed5ab90970bcd36",
+      "bytes": 79965
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00052.jpg",
+      "sha256": "151b144ef81e4d952900215bce9030bf52ed948f0076c6750aa84be05694b19b",
+      "bytes": 93908
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/interaction-frames/frame-00046.jpg",
+      "sha256": "83fb799b89bc5e6409a37728df010a29105bd7f613d4a9b04a68c0ef20392dc7",
+      "bytes": 72164
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/before-changelog-recovered.png",
+      "sha256": "88a6edffb4ad5fb635ae55bcd9c6968c7037c4967c90f7bee66a05c6c2289d73",
+      "bytes": 142834
+    },
+    {
+      "path": "docs/reviews/subscription-workspace-20261016/after-changelog.png",
+      "sha256": "ddb876eaec78736fba2b1c81de6164db4f42d3354eb775d8f49be2f97c62d7e7",
+      "bytes": 146099
+    }
+  ],
+  "changelogBaseline": {
+    "revision": "07b587383eee05e77e29bde5e89c062eb4c0265c",
+    "url": "http://localhost:5266/changelog",
+    "equivalence": "src tree identical to baseline merge 85a96bae; checkout clean"
+  }
+}

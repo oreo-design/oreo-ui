@@ -1,3 +1,5 @@
+import {SubscriptionWorkspacePage} from "@/patterns/subscription-workspace";
+import {SubscriptionOperationsDocs} from "@/pages/SubscriptionOperationsDocs";
 import {IssueBrowserPage} from "@/patterns/issue-browser";
 import {IssueBrowserDocs} from "@/pages/IssueBrowserDocs";
 import {TaskBoardPage} from "@/patterns/task-board";
@@ -200,6 +202,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+ "subscription-workspace":SubscriptionWorkspacePage,"segment-rule-builder":SubscriptionOperationsDocs,"segment-preview":SubscriptionOperationsDocs,"subscription-plan-picker":SubscriptionOperationsDocs,"revenue-target-editor":SubscriptionOperationsDocs,
  "issue-browser":IssueBrowserPage,"issue-row":IssueBrowserDocs,"issue-queue":IssueBrowserDocs,"issue-reader":IssueBrowserDocs,
  "task-board":TaskBoardPage,"task-properties":TaskEditorDocs,"task-subtasks":TaskEditorDocs,"task-detail-panel":TaskEditorDocs,
  "music-project":MusicProjectPage,"annotated-waveform":MusicProjectDocs,"production-task-list":MusicProjectDocs,"mix-version-list":MusicProjectDocs,

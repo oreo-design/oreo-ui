@@ -18,6 +18,11 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "subscription-workspace":{title:"Subscription Workspace",description:"Customer segments, revenue goals and local customer/member enrollment in one workspace."},
+ "segment-rule-builder":{title:"Segment Rule Builder",description:"Inline typed rules with match-all or match-any semantics."},
+ "segment-preview":{title:"Segment Preview",description:"Live customer counts, revenue, tenure and per-leg distribution."},
+ "subscription-plan-picker":{title:"Subscription Plan Picker",description:"A native radio group of recurring-price plan cards."},
+ "revenue-target-editor":{title:"Revenue Target Editor",description:"A monthly revenue target with exact cent allocation and an explainable gap."},
  "issue-browser":{title:"Issue Browser",description:"A compact issue workspace with fast list navigation, a persistent reader and local discussions."},
  "issue-row":{title:"Issue Row",description:"A dense selectable issue with status, labels and discussion counts."},
  "issue-queue":{title:"Issue Queue",description:"An issue list with shared loading, empty and failure states."},

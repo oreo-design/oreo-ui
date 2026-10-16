@@ -22,6 +22,7 @@ const NAV: Group[] = [
       { label: "Tag", page: "tag" },
       { label: "Shortcut", page: "shortcut" },
       { label: "Avatar", page: "avatar" },
+ {label:"Segment Rule Builder",page:"segment-rule-builder"},{label:"Segment Preview",page:"segment-preview"},{label:"Subscription Plan Picker",page:"subscription-plan-picker"},{label:"Revenue Target Editor",page:"revenue-target-editor"},
  {label:"Issue Row",page:"issue-row"},{label:"Issue Queue",page:"issue-queue"},{label:"Issue Reader",page:"issue-reader"},
  {label:"Task Properties",page:"task-properties"},{label:"Task Subtasks",page:"task-subtasks"},{label:"Task Detail Panel",page:"task-detail-panel"},
       {label:"Activity Event Row",page:"activity-event-row"},
@@ -249,6 +250,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Subscription Workspace",page:"subscription-workspace"},
       {label:"Issue Browser",page:"issue-browser"},
       {label:"Task Board",page:"task-board"},
       {label:"Music Project",page:"music-project"},
