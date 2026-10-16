@@ -52,3 +52,20 @@ Implementation and delivery pending. Post-change captures, interaction results, 
 
 ## Capture index
 All media in this directory are original browser captures. `superseded-*` and `pre-final-*` retain correction history and must not be treated as final appearance. Metadata/hash manifest will identify canonical captures and final source hashes. Fixture data is local, English. This does not verify production deployment, actual agent execution, API retries or real approvals.
+
+### Final evidence map
+| Surface/state | Before | After | Environment |
+| --- | --- | --- | --- |
+| New inbox entry | `before-entry.png` (fallback Button docs) | `after-board-light.png` | 1440×1080, light |
+| Expanded activity + actions | New state; no prior equivalent route | `after-expanded-light.png` | 1440×1080, light; keyboard approval + undo verified |
+| Mobile overview / expanded | New states; baseline source retained, no matching narrow pre-route capture | `after-mobile-light.png`, `after-mobile-dark.png` | 390×844; full-page originals |
+| Medium dark, reduced motion | New state | `after-medium-dark-reduced.png` | 900×1000; reduced-motion emulation, full page |
+| List and error recovery | New states | `after-list-dark.png`, `after-empty-dark.png` | 1440×1080; early functional captures, before neutral summary copy correction |
+| Pointer drag | Source frames `componest-0.png`, `componest-5.png` | `drag-in-progress.png`, `after-drag.png` | Early drag screenshots before final summary copy/handle semantics correction; final handle drag re-tested successfully |
+| Component docs | Missing route baseline represented by `/agent-inbox`; individual docs-route baseline screenshots unavailable | `docs-card.png`, `docs-activity.png`, `docs-board.png`, `docs-api.png` | 1440×1080; interactive public components, generated Code import checked |
+| Loading/failure | New states | `docs-loading.png`, `docs-error.png` | 1440×1080; retry and populated refresh checked |
+| Changelog | `before-changelog.png` | `after-changelog.png` | Matched 1440×1080, light; 51 → 52 updates, PR #86 |
+
+Final correction: removed stale “waiting for your approval” from summary copy so status moves cannot contradict the description. Narrow embedded boards now respond to their container width, not just viewport width. A document-level keydown listener (cleaned up on unmount) also disables regrouping motion for keyboard search/undo controls outside the board. Rebuilt successfully after these changes. Keyboard Enter approval and final pointer handle drag re-verified.
+
+Delivery: https://github.com/oreo-design/oreo-ui/pull/86. Baseline remained current after fetching origin/main. Exact final source hashes and media dimensions/timestamps are in `manifest.json`; the reviewed final commit and remote merge result are reported with delivery. Source content has been reviewed for state ownership, cancelled drop/no-op behavior, caller omission, event listener cleanup, theme inheritance and registered code export. No production claim.

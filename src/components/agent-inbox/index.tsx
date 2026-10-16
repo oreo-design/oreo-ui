@@ -1,4 +1,4 @@
-import { useId, useRef, useState, type ReactNode } from "react";
+import { useId, useEffect, useRef, useState, type ReactNode } from "react";
 import {
   DndContext,
   DragOverlay,
@@ -293,6 +293,12 @@ export function AgentInboxBoard({
     [notice, setNotice] = useState(""),
     [keyboard, setKeyboard] = useState(false);
   const heading = useRef<HTMLHeadingElement>(null);
+  // Search/undo can live outside this board; keyboard modality still disables motion.
+  useEffect(() => {
+    const onKey = () => setKeyboard(true);
+    document.addEventListener("keydown", onKey, true);
+    return () => document.removeEventListener("keydown", onKey, true);
+  }, []);
   const sensors = useSensors(
     useSensor(MouseSensor, { activationConstraint: { distance: 6 } }),
     useSensor(TouchSensor, {
