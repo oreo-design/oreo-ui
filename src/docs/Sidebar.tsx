@@ -29,6 +29,10 @@ const NAV: Group[] = [
       {label:"Member Performance Table",page:"member-performance-table"},
       {label:"Route Job Card",page:"route-job-card"},
       {label:"Allocation Timeline",page:"allocation-timeline"},
+      {label:"Pixel Meter",page:"pixel-meter"},
+      {label:"Inference Chart",page:"inference-chart"},
+      {label:"Regional Traffic",page:"regional-traffic"},
+      {label:"Agent Health Table",page:"agent-health-table"},
       {label:"Folder Empty State",page:"folder-empty-state"},
       {label:"Folder Collection",page:"folder-collection"},
       {label:"Chain Token Badge",page:"chain-token-badge"},
@@ -209,6 +213,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Agent Observatory",page:"agent-observatory"},
       {label:"Dispatch Allocation",page:"dispatch-allocation"},
       {label:"Writing Folders",page:"writing-folders"},
       {label:"Team Performance",page:"team-performance"},

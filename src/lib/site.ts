@@ -18,6 +18,11 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "pixel-meter": {title:"Pixel Meter",description:"A compact dot-matrix meter with exact accessible values, unknown and overflow states."},
+ "inference-chart": {title:"Inference Chart",description:"A zero-baseline dithered count chart with bucket inspection and exact values."},
+ "regional-traffic": {title:"Regional Traffic",description:"Schematic world traffic with controlled region selection and precise counts."},
+ "agent-health-table": {title:"Agent Health Table",description:"Sortable agent telemetry with pixel success meters, status and host-owned actions."},
+ "agent-observatory": {title:"Agent Observatory",description:"A local agent monitoring dashboard with region and period filters, details, pause/resume, undo and CSV export."},
  "route-job-card": {title:"Route Job Card",description:"Transport route cards with pickup, destination and passenger metadata."},
  "allocation-timeline": {title:"Allocation Timeline",description:"Controlled resource timelines with drag allocation and an unassigned job tray."},
  "dispatch-allocation": {title:"Dispatch Allocation",description:"A local transport scheduler with drag allocation, conflict checks, dispatch review and undo."},
