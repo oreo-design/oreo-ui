@@ -16,7 +16,7 @@ New WeeklyHeatmap and AgentRunsCard; complete Agent Runs template; docs/playgrou
 | Titled scrolling | Heatmap / Model Costs chart | Title outside horizontal chart scrolling; no overlapping sticky title or redundant fade |
 | Icons/color | Template / Model Costs | Shared Icon currentColor neutral operations; semantic blue chart and red failure metric |
 
-Implementation: pending. Evidence coverage: baseline, source, populated peer captured; after-state captures and interactions pending. No cross-product claim.
+Implementation: complete in PR #73; integration status is verified via the PR remote. Evidence coverage is detailed below. No cross-product claim.
 
 ## Implemented result and evidence
 - **WeeklyHeatmap**: 7×24 sparse-or-dense data, relative intensity scale, exact hover/focus values, arrow/Home/End navigation, single tab stop, controlled Enter/Space/tap selection, hoverable tooltip with Escape dismissal. Neutral zero, semantic progress blue or failure red. Grid retains a minimum readable width and scrolls inside its own region.
@@ -35,9 +35,11 @@ Implementation: pending. Evidence coverage: baseline, source, populated peer cap
 | Error / recovery | Existing AgentWorkspaceState peer code | after-error.png; export disabled, Try again restored grid |
 | Initial loading | Existing ModelTrendChart skeleton peer code | after-loading.png; cell-shaped static skeleton; no simulated request claim |
 | Component entries | New routes absent at baseline; same fallback as before-entry.png | after-heatmap-docs.png, after-card-docs-v2.png; documentation API readback verified |
-| Changelog | before-changelog.png, recovered from previous task server 5245 (source tree equals baseline merge tree) | pending |
+| Changelog | before-changelog.png, recovered from previous task server 5245 (source tree equals baseline merge tree) | after-changelog.png |
 | Download | No export on baseline missing route | export-all-current.csv: actual browser download, exactly equals all 168 filtered buckets. Playwriter saveAs artifact transfer failed; recovered the successful native download from Downloads (download failure=null). |
 
 Validation: build and focused weekly-data tests pass. Tests cover invalid/duplicate/out-of-range buckets, zero denominators, exact totals, weighted average, peak, intensity, CSV and agent partitions. Runtime console contains no errors. Matched UI checked against Model Costs within Oreo only; loading and empty shared-owner comparison includes source-level evidence, not a separate captured peer state.
 
 Coverage limits: static source; no source interaction/motion inference. No custom animated transition introduced; no before/after motion recording is applicable. Keyboard and pointer checks are browser checks, not a screen-reader certification. No production deployment or real provider verification. Initial captured state used session 1; after capture switched to dedicated session 2 when session 1 was replaced by another task. Original screenshots preserved. Source revision: see the implementation commit and this review package's Git history.
+
+Final responsive correction captures: after-final-light.png and after-tablet-final.png supersede the earlier wide/tablet light layouts; originals are retained. See manifest.json for capture metadata.
