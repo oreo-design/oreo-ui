@@ -5,6 +5,7 @@ export const REPOSITORY = "https://github.com/oreo-design/oreo-ui";
 /** Selected main-branch changes. Dates are merge dates in Asia/Shanghai, not package releases. */
 export const releases: Release[] = [
   { date: "2026-10-16", label: "October 16, 2026", title: "A clearer view of what comes next.", description: "Usage forecasts, payment drafts, sales and operational workspaces, built from reusable components.", changes: [
+    { id:"browser-agent", kind:"Added", title:"Browser Agent", description:"Browser tabs with independent agent activity and an ownership control bar, composed into a local session with pause, takeover, retry, notes and a visible action history.", page:"browser-agent", pr:68 },
     { id:"trace-explorer", kind:"Added", title:"Trace Explorer", description:"Composable query conditions and dense trace tables with searchable fields, numeric validation, details, saved session queries and filtered JSON export.", page:"trace-explorer", pr:67 },
     { id:"grouped-tasks", kind:"Added", title:"Grouped Tasks", description:"Collapsible status groups and dense task rows with multiple assignees, composed into a sprint workspace with synchronized lists and Kanban, filters, editing and archive recovery.", page:"grouped-tasks", pr:65 },
     { id:"support-console", kind:"Added", title:"Support Console", description:"Daily spend split at a threshold, one-time secret fields and API key tables, composed with existing inbox and draft components into a local support workspace.", page:"support-console", pr:64 },

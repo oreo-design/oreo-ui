@@ -1,3 +1,4 @@
+import { BrowserSessionTabs, BrowserControlBar, type BrowserRunStatus, type BrowserAction } from "@/components/browser-session";
 import { QueryFilterBar, TraceTable, TRACE_FIELDS, type QueryCondition } from "@/components/trace-query";
 import { SAMPLE_TRACES } from "@/patterns/trace-explorer/data";
 import { TaskStatusGroup, TaskListRow, GroupedTaskList } from "@/components/grouped-tasks";
@@ -121,6 +122,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "browser-session": {BrowserSessionTabs,BrowserControlBar},
  "trace-query": {QueryFilterBar,TraceTable},
  "grouped-tasks": {TaskStatusGroup,TaskListRow,GroupedTaskList},
   "support-console": { SpendLimitChart, SecretField, ApiKeyTable },
@@ -190,6 +192,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "browser-session-tabs": {...define("Browser Session Tabs",{selected:select(["chat","guide"],"chat"),status:select(["ready","running","paused","user","complete","error","stopped"],"running"),action:select(["navigating","reading","searching","typing","waiting"],"reading"),empty:toggle()},(v,set)=><div className="w-full p-4"><BrowserSessionTabs value={v.selected} onValueChange={id=>set("selected",id==="guide"?"guide":"chat")} tabs={v.empty?[]:[{id:"chat",title:"Research task",icon:"chat",closable:false},{id:"guide",title:"Browser guide",activity:{status:v.status as BrowserRunStatus,action:v.action as BrowserAction}}]} renderPanel={tab=><p className="p-6 text-sm text-text-secondary">{tab.title} — selection and activity are independent.</p>} onAdd={v.empty?()=>set("empty",false):undefined}/></div>),source:"browser-session"},
+ "browser-control-bar": {...define("Browser Control Bar",{status:select(["ready","running","paused","user","complete","error","stopped"],"running"),action:select(["navigating","reading","searching","typing","waiting"],"reading"),target:text("Browser guide")},(v,set)=><div className="w-full p-4"><BrowserControlBar status={v.status as BrowserRunStatus} action={v.action as BrowserAction} target={v.target} onStart={()=>set("status","running")} onPause={()=>set("status","paused")} onResume={()=>set("status","running")} onTakeOver={()=>set("status","user")} onReturnControl={()=>set("status","running")} onStop={()=>set("status","stopped")} onRetry={()=>set("status","running")}/></div>),source:"browser-session"},
  "query-filter-bar": {...define("Query Filter Bar",{conditions:text("[]"),disabled:toggle()},(v,set)=><div className="w-full p-4"><QueryFilterBar fields={TRACE_FIELDS} value={(()=>{try{const data=JSON.parse(v.conditions);return Array.isArray(data)?data.filter(c=>c&&typeof c.id==="string"&&typeof c.field==="string"&&typeof c.value==="string"&&["eq","neq","contains","gte","lte"].includes(c.operator)) as QueryCondition[]:[];}catch{return [];}})()} onChange={value=>set("conditions",JSON.stringify(value))} disabled={v.disabled}/></div>),source:"trace-query"},
  "trace-table": {...define("Trace Table",{state:select(["ready","loading","refreshing","empty","error"],"ready"),selected:text("")},(v,set)=><div className="w-full min-w-0 p-4"><TraceTable traces={v.state==="ready"||v.state==="refreshing"?SAMPLE_TRACES.slice(0,5):[]} loading={v.state==="loading"||v.state==="refreshing"} error={v.state==="error"?"The trace service could not be reached.":undefined} selectedId={v.selected} onSelect={trace=>set("selected",trace.id)} onRetry={()=>set("state","ready")} onClear={()=>set("state","ready")}/>{v.selected&&<p className="mt-4 text-sm" role="status">Selected: {v.selected} · <a className="underline" href="/trace-explorer">Open complete template</a></p>}</div>),source:"trace-query"},
  "task-status-group": {...define("Task Status Group",{open:toggle(true),count:number(3,0,20,1)},(v,set)=><div className="w-full p-4"><TaskStatusGroup status="progress" count={v.count} open={v.open} onOpenChange={open=>set("open",open)}><p className="p-4 text-sm text-text-secondary">The host supplies the group contents.</p></TaskStatusGroup></div>),source:"grouped-tasks"},
