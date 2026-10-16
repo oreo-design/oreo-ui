@@ -6,7 +6,7 @@ Reference: https://x.com/yogesharc/status/2110796597454102593 — Yogesh, “Sta
 
 Observed: a pixel activity icon replaces the browser tab favicon, a soft colored light stays on the working tab while Chat is selected, new browser tabs appear during the run, and the favicon returns on completion. Reused Oreo ThinkingState for the icon. Added BrowserSessionTabs and BrowserControlBar, plus a complete `/browser-agent` template. Pause, takeover, local guide pages and the activity sidebar are template extensions, not claims about unseen reference behavior.
 
-Baseline: `d618ba3e218dd1d04bb40a14d8d5993b8ed61d56`. Task branch: `codex/browser-agent-20261016`. Product source is the final PR tree containing this index; `manifest.json` records SHA-256 hashes of captured implementation files and original media. Primary checkout WIP was untouched.
+Baseline: `d618ba3e218dd1d04bb40a14d8d5993b8ed61d56`. Task branch: `codex/browser-agent-20261016`. PR: https://github.com/oreo-design/oreo-ui/pull/68. Implementation commit: `7520f2e`; Changelog and final captures are in the following delivery commit. Product source is the final PR tree containing this index; `manifest.json` records SHA-256 hashes of captured implementation files and original media. Primary checkout WIP was untouched.
 
 ## Capture environment
 
@@ -16,15 +16,15 @@ Real React components served at http://localhost:5241 in task-owned Playwriter s
 
 | Scenario | Before | After / evidence | Result |
 | --- | --- | --- | --- |
-| Entry to new template | [before-entry](before-entry.png): `/browser-agent` normalized to existing Button playground | [ready](after-ready-dark.png), [running while Chat selected](after-running-chat.png), [light complete](after-light.png) | Route, sidebar entry, metadata added. New page has no equivalent prior browser state; baseline docs theme is light, template default dark intentionally follows reference. |
+| Entry to new template | [before-entry](before-entry.png): `/browser-agent` normalized to existing Button playground | [ready](after-ready-dark.png), [running while Chat selected](after-final-running.png), [light complete](after-light.png) | Route, sidebar entry, metadata added. New page has no equivalent prior browser state; baseline docs theme is light, template default dark intentionally follows reference. |
 | Live ownership | No corresponding baseline state | [paused](after-paused.png), [takeover with note](after-takeover.png), [stopped](after-stopped.png) | Pause retains progress; takeover selects target, enables local edits; return resumes same step. |
 | Errors / recovery | New state | [error](after-error.png), [complete](after-complete.png) | Retry continues at 1/6; completes 6/6; closed notes reopen through Read the summary. |
 | Empty search / recovery | New state | [empty search](after-empty-search.png) | Shared AgentWorkspaceState; Clear search restores guide. |
 | Tabs playground / keyboard | New routes absent on baseline (same router as captured entry; no individual baseline screenshots) | [tabs](after-tabs-playground.png), [empty tabs](after-tabs-empty.png) | ArrowRight moves focus, Enter selects; empty Open tab recovers. Code export verified; host supplies callbacks. |
-| Control playground / docs | New routes absent; no separate baseline media | [control](after-control-playground.png), [docs](after-documentation.png) | Pause/resume/takeover reflected in properties. Public API and local-demo limits documented. |
+| Control playground / docs | New routes absent; no separate baseline media | [control](after-control-playground.png), [default error](after-control-error.png), [docs](after-documentation.png) | Pause/resume/takeover reflected in properties. Public API and local-demo limits documented. |
 | Responsive | No equivalent template | [390px light](after-mobile-light.png) | Actual document scrollWidth/clientWidth both 390; tabs scroll internally; controls wrap; full page inspected. |
 | Motion | No previous browser signal | [interaction](interaction.mp4), [reduced motion](after-reduced-motion.png) | Automatic handoff scenario completes; tab light follows target while selection stays on another page. Reduced motion: glow and pixels report animation-name=none. |
-| Changelog | [before](before-changelog.png) | `after-changelog.png` added with final entry | One addition in existing release component; existing history preserved. |
+| Changelog | [before](before-changelog.png) | [after](after-changelog.png) | One addition in existing release component; existing history preserved. |
 
 The recording is a Playwriter-connected CDP screencast of actual interactions (1440×1000, 24.6s). All 1,342 original JPEG events with timestamps are preserved losslessly in `interaction-frames.json.xz`; the viewing MP4 caps long idle gaps at 2s. Inspected frames at 4s and 20s plus screenshots. It covers pause/resume, auto progression, selected-page independence and new-target activity. Takeover/error/stop have screenshots and interaction verification, but no separate recording. No pre-change motion exists for these new components. Hidden-document animation pause is code-reviewed, not separately video-captured.
 
@@ -56,5 +56,5 @@ Verdict: **Approve**. No new keyboard/action animation, no animated layout prope
 - Production TypeScript/Vite build passed; pre-existing bundle-size advisory remains.
 - `node --experimental-strip-types scripts/browser-session/check.mjs` passed: late ticks after pause/takeover/stop, retry preserving progress, lifecycle, reset, completion clamping and empty runs.
 - Browser verified manual research flow, local notes edit, no-results recovery, error/retry, completion, close/reopen summary, automatic handoff scenario, pause lasting longer than one timer interval, stop, keyboard tabs, empty tabs, light/dark, mobile and reduced motion.
-- Source review caught and fixed unsupported pause glyph, stale search after navigation, skipped batched step application and reopening a closed summary tab. Historical captures remain preserved.
+- Source review caught and fixed unsupported pause glyph, stale search after navigation, skipped batched step application and reopening a closed summary tab. Historical captures remain preserved; after-final-running.png supersedes after-running-chat.png for final-source presentation (same layout).
 - New routes have no prior equivalent states. Only actual entry and Changelog baselines are available; no fabricated prior template screenshots. No real-service or deployed-site claim.
