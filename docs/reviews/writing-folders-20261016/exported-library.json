@@ -1,0 +1,47 @@
+{
+  "folders": [
+    {
+      "id": "b3c0b1bf-4e77-497a-9368-5b5260056a10",
+      "name": "A quiet place",
+      "visibility": "Private",
+      "modified": "2026-10-16T10:05:48.597Z"
+    }
+  ],
+  "documents": [
+    {
+      "id": "document-1",
+      "title": "A small beginning",
+      "body": "Every good idea starts with a little space to think.",
+      "folderId": null,
+      "modified": "2026-10-12T09:00:00.000Z"
+    },
+    {
+      "id": "document-2",
+      "title": "Notes on noticing",
+      "body": "A collection of observations from this week.",
+      "folderId": null,
+      "modified": "2026-10-13T09:00:00.000Z"
+    },
+    {
+      "id": "document-3",
+      "title": "An idea worth keeping",
+      "body": "Make room for the things that matter.",
+      "folderId": null,
+      "modified": "2026-10-14T09:00:00.000Z"
+    },
+    {
+      "id": "document-4",
+      "title": "The weekly letter",
+      "body": "What we learned, what we made, and what comes next.",
+      "folderId": null,
+      "modified": "2026-10-15T09:00:00.000Z"
+    },
+    {
+      "id": "57a3c64d-87af-4c08-b152-4cbf35e73fc9",
+      "title": "A new beginning",
+      "body": "Today, we begin again.",
+      "folderId": "b3c0b1bf-4e77-497a-9368-5b5260056a10",
+      "modified": "2026-10-16T10:05:48.597Z"
+    }
+  ]
+}

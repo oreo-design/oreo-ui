@@ -1,3 +1,5 @@
+import {FolderEmptyState,FolderCollection} from "@/components/writing-folders";
+import {SAMPLE_FOLDER_ROWS} from "@/patterns/writing-folders/data";
 import {PerformanceScore,ReviewProgress,MemberPerformanceTable} from "@/components/team-performance";
 import {PERFORMANCE_MEMBERS} from "@/patterns/team-performance/data";
 import {ChainTokenBadge,TokenAmountPanel,ChainTokenPicker} from "@/components/token-bridge";
@@ -145,6 +147,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "writing-folders": {FolderEmptyState,FolderCollection},
   "team-performance": {PerformanceScore,ReviewProgress,MemberPerformanceTable},
   "token-bridge": {ChainTokenBadge,TokenAmountPanel,ChainTokenPicker},
   "agent-handoff": {AgentMentionComposer,AgentSessionCard},
@@ -228,6 +231,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "folder-empty-state": {...define("Folder Empty State",{title:text("It’s empty here"),description:text("Create a folder to start organizing your writing."),created:toggle(false)},(v,set)=><div className="w-full"><FolderEmptyState title={v.title} description={v.description} onCreate={()=>set("created",true)}/>{v.created&&<p role="status" className="px-6 text-sm">Creation requested. Open the template to create a folder.</p>}</div>),source:"writing-folders"},
+ "folder-collection": {...define("Folder Collection",{view:select(["list","grid"],"list"),state:select(["ready","loading","empty","filtered","error"],"ready"),opened:text("")},(v,set)=><div className="w-full p-4"><FolderCollection folders={v.state==="ready"?SAMPLE_FOLDER_ROWS:[]} view={v.view as "list"|"grid"} loading={v.state==="loading"} filtered={v.state==="filtered"} error={v.state==="error"?"Sample library unavailable.":undefined} onReset={()=>set("state","ready")} onCreate={()=>set("state","ready")} onOpen={f=>set("opened",f.name)}/>{v.opened&&<p role="status" className="mt-4 text-sm">Selected {v.opened}</p>}</div>),source:"writing-folders"},
  "performance-score": {...define("Performance Score",{value:number(94,0,100,1),label:text("Performance")},v=><PerformanceScore value={v.value} label={v.label}/>),source:"team-performance"},
  "review-progress": {...define("Review Progress",{completed:number(6,0,20,1),pending:number(4,0,20,1),overdue:number(2,0,20,1),selected:select(["none","Completed","Pending","Overdue"],"none")},(v,set)=><div className="w-full p-6"><ReviewProgress counts={{Completed:v.completed,Pending:v.pending,Overdue:v.overdue}} selected={v.selected==="none"?undefined:v.selected as "Completed"} onSelect={s=>set("selected",v.selected===s?"none":s)}/></div>),source:"team-performance"},
  "member-performance-table": {...define("Member Performance Table",{state:select(["ready","loading","empty","error"],"ready"),opened:text("")},(v,set)=><div className="w-full p-4"><MemberPerformanceTable members={v.state==="ready"?PERFORMANCE_MEMBERS.slice(0,7):[]} loading={v.state==="loading"} error={v.state==="error"?"Sample reviews are unavailable.":undefined} onReset={()=>set("state","ready")} onOpen={m=>set("opened",m.name)}/>{v.opened&&<p role="status" className="mt-4 text-sm">Selected {v.opened}</p>}</div>),source:"team-performance"},

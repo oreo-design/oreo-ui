@@ -181,8 +181,8 @@ export function DocumentActivityDocs({ nav }: { nav: DocsNav }) {
                 },
                 {
                   prop: "DocumentEmpty",
-                  type: "title?; description?; onReset?",
-                  desc: "Centered content-region empty state with an optional clear-filters action.",
+                  type: "title?; description?; onReset?; actionLabel?",
+                  desc: "Centered content-region empty state with an optional action. actionLabel defaults to Clear filters; hosts can label creation or other recovery actions.",
                 },
               ]}
             />
