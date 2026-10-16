@@ -29,12 +29,12 @@ All screenshots are original Playwriter session 10 captures of real local compon
 | New route entry / commerce | [before-entry](before-entry.png), old router fallback to Button | [commerce](after-commerce-v2.png) | Same 1440×1080 fixture browser, English. Old fallback was light; new commerce intentionally defaults dark. |
 | Campaigns light | Same missing-route fallback revision; no separate screenshot | [campaigns](after-campaigns-v2.png), [7 days](after-campaigns-7-days.png) | Full-page. 7-day total verified $86,175 in both card and chart. |
 | CRM dark | Same missing-route fallback revision | [CRM](after-crm-v2.png) | Canonical funnel colors restored; shape order does not encode value (disclosed). |
-| Membership light | Same missing-route fallback revision | [membership](after-membership.png) | Full-page. Early capture has whole-dollar table display; detail correction below supersedes that display. |
+| Membership light | Same missing-route fallback revision | [membership](after-membership-v2.png) | Full-page. Final v2 capture includes exact cents in record table. |
 | Responsive | No narrow pre-change captures; baseline revision preserved | [campaigns 390×844](after-campaigns-mobile.png), [CRM 390×844](after-crm-mobile.png), [commerce 900×1000](after-commerce-medium.png), [mobile form](after-form-mobile.png) | Inspected representative shared layouts; not every template/viewport combination or physical touch device. Charts/tables have their own scroll region. |
 | Forms / record recovery | New states, no prior implementation | [validation](after-validation.png), [detail](after-record-detail.png), [empty](after-empty.png), [CSV](records-export.csv) | Empty form rejected; Casey record added at $12.50, removed/undo restored; no-result search cleared; CSV one matching record with 12.5 exact numeric value. |
 | Refresh failure | New state | [failure with retained data](after-refresh-failure.png) | Failure heading and retained $86,175 asserted; Try again clears error. |
 | Public components / docs | Old fallback | [comparison exact table](after-comparison-playground.png), [single area point](after-area-single.png), [API](after-api.png) | Invalid/empty/zero states verified; source code contains public component import and current concrete data. Channel selected/cleared and empty verified. |
-| Changelog | [before-changelog](before-changelog.png) | Pending final PR-number capture | Existing release-entry pattern reused. |
+| Changelog | [before-changelog](before-changelog.png) | [after-changelog](after-changelog.png) | Existing release-entry pattern reused. |
 
 ## Consistency review outcome
 - Entry and return: four dedicated routes plus shared records/reports navigation; Base UI Dialog Escape closes and final focus returns to Add record, verified in separate browser calls. Native period selection updates exact chart readout. Full keyboard traversal and screen reader announcement audit not covered.
@@ -48,4 +48,19 @@ All screenshots are original Playwriter session 10 captures of real local compon
 `after-commerce.png`, `after-campaigns.png`, `after-crm.png` are superseded by v2 captures: dark delta contrast improved, source meters use available width, CRM funnel color/legend restored. `after-validation.png` predates precision correction for record table values; `after-record-detail.png` verifies corrected $12.50. No historical originals deleted. New area charts use a 35rem minimum SVG within horizontal scroll for readable narrow labels. Flat 0% metric no longer shows an upward arrow.
 
 ## Validation
-`npm run build` passed (TypeScript + Vite); existing large-bundle warning remains. Six Node model tests passed, including zero/invalid/overflow series, stacked/grouped scale, percentage zero baseline, intersected filters, decimal form validation, CSV quoting and formula neutralization. See [build](build.txt), [tests](tests.txt). UI checks above are fixture evidence, not service integration tests. New charts do not animate, so original reference motion is not applicable; initial/refresh timing recording remains an explicit media gap. No before screenshot exists for each new form/chart state because those routes did not exist at the preserved baseline.
+`npm run build` passed (TypeScript + Vite); existing large-bundle warning remains. Six Node model tests passed, including zero/invalid/overflow series, stacked/grouped scale, percentage zero baseline, intersected filters, decimal form validation, CSV quoting and formula neutralization. See [final build](build-final.txt), [tests](tests.txt). UI checks above are fixture evidence, not service integration tests. New charts do not animate, so original reference motion is not applicable; initial/refresh timing recording remains an explicit media gap. No before screenshot exists for each new form/chart state because those routes did not exist at the preserved baseline.
+
+
+## Final source and capture record
+PR: https://github.com/oreo-design/oreo-ui/pull/88. Main implementation revision `7b902d89d35020055292e1fbe33087c3c589b21b`; final follow-up changes only membership skeleton shape (remove absent metric slots), PR #88 changelog, and this evidence package. [manifest.json](manifest.json) records final product-file SHA-256 values and each original PNG dimensions/time/hash. Before captures belong to baseline `8bf59f73d4943ddc02d510f66c1566defebc1264`; v2 captures supersede the specific earlier images listed above.
+
+Membership loading: [original](after-initial-loading.png) superseded by [v2](after-initial-loading-v2.png), paired with [ready](after-membership-v2.png). The final loading block omits three metrics which do not exist in membership layout. Both stills inspected, no continuous timing recording. Metric-card playground variant interaction could not be automated reliably (radio action timed out); all three variants rendered in the actual templates and code review covered the zero-delta arrow correction. Shared checkbox/selection controls on other three playgrounds were exercised.
+
+## Representative pair
+Previous new-route entry (fallback, light):
+![Before entry](before-entry.png)
+New commerce route (intentional dark default):
+![Commerce after](after-commerce-v2.png)
+Changelog before and after (matched light/1440×1080):
+![Changelog before](before-changelog.png)
+![Changelog after](after-changelog.png)

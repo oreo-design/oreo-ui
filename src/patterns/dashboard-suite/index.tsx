@@ -463,9 +463,13 @@ function DashboardWorkspace({ kind }: { kind: DashboardKind }) {
               label="Loading dashboard"
               skeleton={
                 <div className="ds-loading">
-                  <div />
-                  <div />
-                  <div />
+                  {kind !== "membership" && (
+                    <>
+                      <div />
+                      <div />
+                      <div />
+                    </>
+                  )}
                   <section />
                 </div>
               }
