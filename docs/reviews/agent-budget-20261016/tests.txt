@@ -1,0 +1,14 @@
+✔ remaining estimates exclude previously spent money (0.594208ms)
+✔ invalid, non-integer and impossible configurations are rejected (0.075792ms)
+✔ zero pace stays unavailable, exhausted budget pauses (0.054208ms)
+✔ clamp preserves exact spent and plan boundaries (0.038208ms)
+✔ partial final batch never overspends and next batch pauses (0.060875ms)
+✔ increasing saved cap restores capacity and invalid request is inert (0.038083ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 57.942875

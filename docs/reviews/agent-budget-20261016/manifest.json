@@ -1,0 +1,159 @@
+{
+  "baseline": "bf836c1bd747f91efe38328ef406855aa8b1bf2f",
+  "pr": "https://github.com/oreo-design/oreo-ui/pull/90",
+  "environment": "Local Chromium via Playwriter session 10; English; fixtures; viewport/theme per REVIEW.md",
+  "sources": {
+    "src/App.tsx": "21648181df09d5c9403cc14f3f47dbec2a3b98ec467fafd4f6ef116acfa9c42c",
+    "src/components/agent-budget/agent-budget.css": "d9450c5db154aec079ed399f558169bf191de2628427968691c8b584da3459bf",
+    "src/components/agent-budget/index.tsx": "62ec574e332a790a4001b900518ab6f4283fe39b7b481645a2cb0f194141b635",
+    "src/components/agent-budget/model.test.ts": "e1f41f695a6712cfd02dbd687a0a04293b1ebae9ae3e9b75d6b2a5d5fd8f3372",
+    "src/components/agent-budget/model.ts": "34eef8ac5564f7695954172bc6831d002b0f811161de46002f8da991a83b80cb",
+    "src/docs/Sidebar.tsx": "907f3846312111e3954820ed8dc2d76a924a7c626bc5e1a9eceacaf0dac7fc8f",
+    "src/docs/playground/registry.tsx": "9ddb5121c4e3c4cdababa73c44e54b3df944175a699e79e9e5eab12e7a011a75",
+    "src/lib/site.ts": "23464fd0a5f39a4334edf41bfbdd66b2e368f18a1b48ff01964c297f8cd1b32d",
+    "src/pages/AgentBudgetDocs.tsx": "b7ac3b09a99afdcbe5e512027e5dbebc6ea02b1dd1d26964176d9588e335556f",
+    "src/patterns/agent-budget/agent-budget-page.css": "2f5622dcc604c340750ace1191430524b8f3998851fa39f25ba28ddd0d8c3766",
+    "src/patterns/agent-budget/index.tsx": "c2e8a17de39020fd3965d51d07be4dbccdda5b70520faf8e5659be087be2bbda",
+    "src/patterns/changelog/data.ts": "2e00e2ae84b9631cb1785372ffcdad508e37a334d4ca01f2a3259ebc0c56ac96"
+  },
+  "captures": [
+    {
+      "file": "after-api.png",
+      "width": 1440,
+      "height": 1249,
+      "sha256": "fe8f01161e2a70d24896c829c98a91e8e11a5e703fa33ec70ba93198e28126a4"
+    },
+    {
+      "file": "after-cap-playground.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "1f0563b442d593aaf3c8746a4f1255f2d2220602afbd013c3682011cbde2f2db"
+    },
+    {
+      "file": "after-card-playground-v2.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "3a8e35ab50e4aabbfd9a07a69e5abe1d8a06ecb43e90f0027e4f6e60ebfb7a24"
+    },
+    {
+      "file": "after-card-playground.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "652d6081202babab20ae95b1e8ac89ecb6675fa8b4db070038ff81f2354dd991"
+    },
+    {
+      "file": "after-changelog.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "24569eb417c3cc2dbef57001a36720f1be52484d4cd40d40c7af32198e1a58f2"
+    },
+    {
+      "file": "after-dark-v2.png",
+      "width": 1440,
+      "height": 1437,
+      "sha256": "3e978392b70ddf0a26a1e2173adba34c7e95971b505781a592f123374401fd2f"
+    },
+    {
+      "file": "after-dark.png",
+      "width": 1440,
+      "height": 1437,
+      "sha256": "df49038725c2e919bed13ae59671a9f74e78559f5330c8ca1eb8d8686773476e"
+    },
+    {
+      "file": "after-invalid.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "a1f3c5803a2f82d294e9010daf0d8ba2f2a648e2818e02e4eaaac51edc07dff1"
+    },
+    {
+      "file": "after-light-v2.png",
+      "width": 1440,
+      "height": 1437,
+      "sha256": "8492a856066af62f0344c31a0d425b80b0bc2ec9ffcd309c40d39705b417e58a"
+    },
+    {
+      "file": "after-light.png",
+      "width": 1440,
+      "height": 1437,
+      "sha256": "1a3a0dd6a56e28664e3c5ecdebdf3c4e7f822d61231d9ae3ce5f537c9c066ba4"
+    },
+    {
+      "file": "after-medium.png",
+      "width": 900,
+      "height": 1801,
+      "sha256": "c782410887902650b77b404f73cb488f711a43e7879a802be140ee0bc875d082"
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "width": 390,
+      "height": 2338,
+      "sha256": "547171b78076c47932a5b9440ea1de195f7ea9f0ac01164f5a0c364caaf6e8a4"
+    },
+    {
+      "file": "after-mobile-light.png",
+      "width": 390,
+      "height": 2338,
+      "sha256": "cad7988dcce7cadf9e028933f49c6a42a0415f8b0eb67d933995da0fb477a1a1"
+    },
+    {
+      "file": "after-paused.png",
+      "width": 1440,
+      "height": 1216,
+      "sha256": "24bf98bc08ee44c76f52bfad06729958dac2f8413a9dbb8cc581c55de2f7c7d3"
+    },
+    {
+      "file": "after-plan-boundary.png",
+      "width": 1440,
+      "height": 1279,
+      "sha256": "211a49dde7c35c0130a3af6308271b9c9d06f3c1aa34539dfbd999bc0519379c"
+    },
+    {
+      "file": "before-changelog.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "79ba867ad857f206b4c5ceaf8f6dbd8b6d4097772515f1496262a1c7cae9a484"
+    },
+    {
+      "file": "before-entry.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "561972d44eaf979e74b82e9074f8ba290951db7cce0dc4ee582ef29c9b97f118"
+    },
+    {
+      "file": "peer-activity.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "2835bdbe4da11f6058803f82e8b6e436b89e4a07463fb221aaea5f5b9db88b8e"
+    },
+    {
+      "file": "reference-15s.png",
+      "width": 1080,
+      "height": 1080,
+      "sha256": "499782b1a11c9b9d03bda8cef5eb6af0cedbb9fbc7680dd33a0c89edd02e02cd"
+    },
+    {
+      "file": "reference-19s.png",
+      "width": 1080,
+      "height": 1080,
+      "sha256": "489ed16fb9b942ba4a0c2b19b373ce1d54abcb5bfb5f4e91a42303988a30e772"
+    },
+    {
+      "file": "reference-26s.png",
+      "width": 1080,
+      "height": 1080,
+      "sha256": "dd3da9d336f6a77a29d1c2f4c521853de17a4af3fb27661bbbf4ab9414119ce9"
+    },
+    {
+      "file": "reference-3s.png",
+      "width": 1080,
+      "height": 1080,
+      "sha256": "fe88d0cd5f51620af1a01701911e5d505fb417c29fea0097b867e93bce6e7c55"
+    },
+    {
+      "file": "reference-9s.png",
+      "width": 1080,
+      "height": 1080,
+      "sha256": "ac621a3a010eb99645ab238e93f5efe22d8472dfe36a1498754ad8efb96b28f4"
+    }
+  ]
+}
