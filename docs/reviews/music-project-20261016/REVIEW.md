@@ -58,7 +58,7 @@ The still reference was mapped to the product's existing tokens. Main page has a
 
 | State | Before | After |
 | --- | --- | --- |
-| New route / complete project | [Before entry](before-entry.png) | [Dark project](after-dark-v1.png); final capture below |
+| New route / complete project | [Before entry](before-entry.png) | [Final dark project](after-dark-final.png), [final light project](after-light-final.png) |
 | Playback / marker seeking | [Missing route recording](before-entry.mp4) | [Real browser recording](after-playback.mp4) |
 | Comments / resolve | No prior detail state | [Timestamp comments](after-comments.png) |
 | Version-specific emptiness | No prior detail state | [Empty v3 comments](after-empty-comments.png) |
@@ -73,3 +73,8 @@ Original captures are preserved. after-dark-initial.png is a superseded failed r
 Recordings use Playwriter's task-owned CDP Page.startScreencast because native recording is unavailable in the retained direct connection mode. after-playback.mp4: 1440×1080, 9.72s, 60 actual JPEG frames, timestamp intervals retained, final frame held 250ms. Original frames and timestamps are in playback-frames. Recording has no audio track; real media progression and controls were browser-verified separately. before-entry.mp4: 1440×1080, 15.60s, original static fallback held until actual stop time. Recovered from the unchanged previous task preview localhost:5263 at f5c6132, whose product source matches baseline merge 671dba9. It does not pretend there was an earlier music interaction.
 
 Known evidence gaps: no narrow baseline, transient metadata loading screenshot, every docs API screenshot, physical devices, other browser engines, full screen-reader navigation. Local fixtures do not prove real collaboration, audio upload to a server or production deployment.
+
+
+## Delivery
+
+[PR #92](https://github.com/oreo-design/oreo-ui/pull/92). Product source reviewed at `39e2ef954c4602d952fd82e60f1101aa807343b3`; follow-up contains the changelog entry and evidence metadata. Final merge uses the exact reviewed PR head, followed by remote readback. Files-tab download checksum matched the repository audio fixture: `339d94f71c7191eeabef756916c7258432ef331ffaa96b9a075057f9b0c7334a`. Resolve and Reopen were both exercised. Changelog [before](before-changelog.png) / [after](after-changelog.png); this pair covers changelog content, not the sidebar links already introduced earlier.
