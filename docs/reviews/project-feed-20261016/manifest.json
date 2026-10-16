@@ -30,7 +30,7 @@
     "src/components/project-activity/index.tsx": "4ef7bc02263ea2019b63efcaec5d6b0a2bd0e648bc99aa5df42a1bd541bd627e",
     "src/components/project-activity/model.ts": "5443c7c930749ea49b52789c898cc36874bc38a737837fb8924cde55ecbbae62",
     "src/components/project-activity/activity.css": "79c3a4b780538ee9f4e787e173639a36c45e0d5104822cd742941ae42e44aac1",
-    "src/patterns/project-feed/index.tsx": "4845978f945dfb0e0c4185354018ae50c4728307bba77eccb66c6b3dd5dcd4a7",
+    "src/patterns/project-feed/index.tsx": "468589a62c216fb10cb4ac6e22d0c851eb276ec16e6050045e5bf360fd4b81e1",
     "src/patterns/project-feed/data.ts": "1b4dd90c82eaa9828822dc60a5306e4f02f4fc5fd068ab545f3dae0584469655",
     "src/patterns/project-feed/workspace.css": "a88d6c202ddebd775c79f5cf1f24b29a8e8bf1e2e7eafe70f6b3744c1f6f1676"
   },
@@ -246,5 +246,6 @@
     "No source motion; no custom timed animation added.",
     "Local fixtures do not prove server persistence, notifications or production deployment.",
     "Peer empty/loading comparisons are source-level only."
-  ]
+  ],
+  "postCaptureCorrection": "Mobile All projects and Activity selections return focus to the heading after closing the inline navigation. Typecheck and focused browser checks repeated."
 }

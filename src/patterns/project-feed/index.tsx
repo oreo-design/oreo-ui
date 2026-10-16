@@ -157,6 +157,7 @@ export function ProjectFeedPage() {
               onClick={() => {
                 reset();
                 setNav(false);
+                if (nav) heading.current?.focus();
               }}
             >
               <Icon name="clock-history" size="sm" />
@@ -175,6 +176,7 @@ export function ProjectFeedPage() {
                 setProject("all");
                 setLimit(12);
                 setNav(false);
+                if (nav) heading.current?.focus();
               }}
             >
               <Icon name="folder" size="sm" />
