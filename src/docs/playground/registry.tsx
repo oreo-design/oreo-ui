@@ -1,3 +1,5 @@
+import { QueryFilterBar, TraceTable, TRACE_FIELDS, type QueryCondition } from "@/components/trace-query";
+import { SAMPLE_TRACES } from "@/patterns/trace-explorer/data";
 import { TaskStatusGroup, TaskListRow, GroupedTaskList } from "@/components/grouped-tasks";
 import { SAMPLE_TASKS, MEMBERS } from "@/patterns/grouped-tasks/data";
 import type { TaskStatus } from "@/components/task-row";
@@ -119,6 +121,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "trace-query": {QueryFilterBar,TraceTable},
  "grouped-tasks": {TaskStatusGroup,TaskListRow,GroupedTaskList},
   "support-console": { SpendLimitChart, SecretField, ApiKeyTable },
   "usage-forecast": { ForecastTimeline, UsageProjection, DailyUsagePace },
@@ -187,6 +190,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "query-filter-bar": {...define("Query Filter Bar",{conditions:text("[]"),disabled:toggle()},(v,set)=><div className="w-full p-4"><QueryFilterBar fields={TRACE_FIELDS} value={(()=>{try{const data=JSON.parse(v.conditions);return Array.isArray(data)?data.filter(c=>c&&typeof c.id==="string"&&typeof c.field==="string"&&typeof c.value==="string"&&["eq","neq","contains","gte","lte"].includes(c.operator)) as QueryCondition[]:[];}catch{return [];}})()} onChange={value=>set("conditions",JSON.stringify(value))} disabled={v.disabled}/></div>),source:"trace-query"},
+ "trace-table": {...define("Trace Table",{state:select(["ready","loading","refreshing","empty","error"],"ready"),selected:text("")},(v,set)=><div className="w-full min-w-0 p-4"><TraceTable traces={v.state==="ready"||v.state==="refreshing"?SAMPLE_TRACES.slice(0,5):[]} loading={v.state==="loading"||v.state==="refreshing"} error={v.state==="error"?"The trace service could not be reached.":undefined} selectedId={v.selected} onSelect={trace=>set("selected",trace.id)} onRetry={()=>set("state","ready")} onClear={()=>set("state","ready")}/>{v.selected&&<p className="mt-4 text-sm" role="status">Selected: {v.selected} · <a className="underline" href="/trace-explorer">Open complete template</a></p>}</div>),source:"trace-query"},
  "task-status-group": {...define("Task Status Group",{open:toggle(true),count:number(3,0,20,1)},(v,set)=><div className="w-full p-4"><TaskStatusGroup status="progress" count={v.count} open={v.open} onOpenChange={open=>set("open",open)}><p className="p-4 text-sm text-text-secondary">The host supplies the group contents.</p></TaskStatusGroup></div>),source:"grouped-tasks"},
  "task-list-row": {...define("Task List Row",{selected:toggle()},(v,set)=><div className="w-full min-w-0 p-4"><div className="gt-table-scroll"><table className="gt-table"><thead><tr>{["Name","Priority","List","Tag","Due date","Assignee"].map(t=><th key={t} scope="col">{t}</th>)}</tr></thead><tbody><TaskListRow task={SAMPLE_TASKS[0]} people={MEMBERS} onOpen={()=>set("selected",true)}/></tbody></table></div>{v.selected&&<p role="status" className="mt-4 text-sm">Selected: Craft user personas · <a className="underline" href="/grouped-tasks">Open editable template</a></p>}</div>),source:"grouped-tasks"},
  "grouped-task-list": {...define("Grouped Task List",{empty:toggle(),showEmpty:toggle(),collapsed:text(""),selected:text("")},(v,set)=><div className="w-full min-w-0 p-4"><GroupedTaskList tasks={v.empty?[]:SAMPLE_TASKS.slice(0,8)} people={MEMBERS} collapsed={v.collapsed.split(",").filter(Boolean) as TaskStatus[]} onCollapsedChange={statuses=>set("collapsed",statuses.join(","))} onTaskOpen={task=>set("selected",task.title)} showEmpty={v.showEmpty}/>{v.selected&&<p role="status" className="mt-4 text-sm">Selected: {v.selected} · <a className="underline" href="/grouped-tasks">Open editable template</a></p>}</div>),source:"grouped-tasks"},

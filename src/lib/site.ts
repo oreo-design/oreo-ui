@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "query-filter-bar": {title:"Query Filter Bar",description:"Composable field, condition and value filters with search and validation."},
+ "trace-table": {title:"Trace Table",description:"Dense trace results with selectable columns, status and host-owned details."},
+ "trace-explorer": {title:"Trace Explorer",description:"A local observability workspace with trace queries, saved filters, details and JSON export."},
  "task-status-group": {title:"Task Status Group",description:"Controlled, collapsible status headers with task counts and host-owned creation."},
  "task-list-row": {title:"Task List Row",description:"Dense task table rows with tags, priority, due date and multiple assignees."},
  "grouped-task-list": {title:"Grouped Task List",description:"Accessible status-grouped task tables with empty groups and controlled disclosure."},
