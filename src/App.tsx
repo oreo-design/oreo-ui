@@ -1,3 +1,5 @@
+import { GroupedTasksDocs } from "@/pages/GroupedTasksDocs";
+import { GroupedTasksPage } from "@/patterns/grouped-tasks";
 import { SupportConsoleDocs } from "@/pages/SupportConsoleDocs";
 import { SupportConsolePage } from "@/patterns/support-console";
 import { UsageForecastDocs } from "@/pages/UsageForecastDocs";
@@ -141,6 +143,10 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "task-status-group": GroupedTasksDocs,
+  "task-list-row": GroupedTasksDocs,
+  "grouped-task-list": GroupedTasksDocs,
+  "grouped-tasks": GroupedTasksPage,
   "spend-limit-chart": SupportConsoleDocs,
   "secret-field": SupportConsoleDocs,
   "api-key-table": SupportConsoleDocs,
