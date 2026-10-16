@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "music-project":{title:"Music Project",description:"An audio project workspace with timestamped comments, production tasks and mix versions."},
+ "annotated-waveform":{title:"Annotated Waveform",description:"An accessible track waveform with collaborator markers and timestamp navigation."},
+ "production-task-list":{title:"Production Task List",description:"Nested production checklists with derived completion and audio timestamp links."},
+ "mix-version-list":{title:"Mix Version List",description:"Controlled audio version selection with uploader, duration and latest metadata."},
  "voice-agent":{title:"Voice Agent",description:"A silent local voice-session replay with dual signal lanes, latency stages and turn inspection."},
  "voice-signal":{title:"Voice Signal",description:"Caller and agent signal lanes with seek position, phase and sample transcripts."},
  "voice-latency-breakdown":{title:"Voice Latency Breakdown",description:"Exact stage timings, total latency and an explicit budget marker."},

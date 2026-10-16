@@ -1,0 +1,155 @@
+{
+  "project": "On My Mind",
+  "localOnly": true,
+  "selectedVersion": "c2289b5a-5aec-4f57-9558-585db7631076",
+  "positionSeconds": 2,
+  "versions": [
+    {
+      "id": "c2289b5a-5aec-4f57-9558-585db7631076",
+      "title": "Mix v5",
+      "author": "Allagi",
+      "date": "Just added",
+      "duration": 2,
+      "note": "music-short.wav",
+      "source": "local file; not included"
+    },
+    {
+      "id": "v4",
+      "title": "Mix v4",
+      "author": "Kai Hoshino",
+      "date": "Oct 16",
+      "duration": 238,
+      "note": "Low-end balance and final automation",
+      "source": "/examples/music-workspace/mix-demo.wav"
+    },
+    {
+      "id": "v3",
+      "title": "Mix v3",
+      "author": "Allagi",
+      "date": "Oct 14",
+      "duration": 238,
+      "note": "Arrangement and transitions",
+      "source": "/examples/music-workspace/mix-demo.wav"
+    },
+    {
+      "id": "v2",
+      "title": "Mix v2",
+      "author": "Kai Hoshino",
+      "date": "Oct 12",
+      "duration": 238,
+      "note": "Vocal layers and texture",
+      "source": "/examples/music-workspace/mix-demo.wav"
+    },
+    {
+      "id": "v1",
+      "title": "Mix v1",
+      "author": "Allagi",
+      "date": "Oct 10",
+      "duration": 238,
+      "note": "First arrangement sketch",
+      "source": "/examples/music-workspace/mix-demo.wav"
+    }
+  ],
+  "comments": [
+    {
+      "id": "c1",
+      "versionId": "v4",
+      "author": "Kai Hoshino",
+      "seconds": 64,
+      "text": "The low end feels much cleaner here. Keep this balance.",
+      "resolved": false
+    },
+    {
+      "id": "c2",
+      "versionId": "v4",
+      "author": "Maya Chen",
+      "seconds": 116,
+      "text": "Could we leave a little more space before the drop?",
+      "resolved": false
+    },
+    {
+      "id": "1419212c-de4b-486c-8e07-fde960d16051",
+      "versionId": "v4",
+      "author": "Allagi",
+      "seconds": 112,
+      "text": "Leave more room before the drop.",
+      "resolved": true
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "title": "Fix low-end clash with the kick",
+      "done": false,
+      "assignee": "Maya Chen",
+      "due": "Oct 17"
+    },
+    {
+      "id": "t2",
+      "title": "Tighten breakdown transition at",
+      "seconds": 112,
+      "versionId": "v4",
+      "done": false,
+      "assignee": "Allagi",
+      "due": "Oct 19"
+    },
+    {
+      "id": "t3",
+      "title": "Bounce stems for mastering",
+      "done": false,
+      "assignee": "Kai Hoshino",
+      "due": "Oct 20",
+      "children": [
+        {
+          "id": "s1",
+          "title": "Drums stem",
+          "done": true,
+          "assignee": "Kai Hoshino",
+          "due": "Oct 20"
+        },
+        {
+          "id": "s2",
+          "title": "Bass stem",
+          "done": true,
+          "assignee": "Kai Hoshino",
+          "due": "Oct 20"
+        },
+        {
+          "id": "s3",
+          "title": "Vocals stem",
+          "done": false,
+          "assignee": "Kai Hoshino",
+          "due": "Oct 20"
+        },
+        {
+          "id": "s4",
+          "title": "FX + pads stem",
+          "done": false,
+          "assignee": "Kai Hoshino",
+          "due": "Oct 20"
+        }
+      ]
+    },
+    {
+      "id": "t4",
+      "title": "Approve Mix v4 for release",
+      "done": false,
+      "assignee": "Ravi Shah",
+      "due": "Oct 22"
+    },
+    {
+      "id": "t5",
+      "title": "Prepare artwork and track credits",
+      "done": false,
+      "assignee": "Maya Chen",
+      "due": "Oct 23"
+    },
+    {
+      "id": "t6",
+      "title": "Confirm arrangement",
+      "done": true,
+      "assignee": "Allagi",
+      "due": "Oct 15"
+    }
+  ]
+}

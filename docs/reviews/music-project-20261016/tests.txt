@@ -1,0 +1,13 @@
+✔ completing a parent cascades without mutating the previous state (0.429083ms)
+✔ child changes derive completion and reopening the parent clears children (0.0725ms)
+✔ unknown task IDs preserve values (0.327208ms)
+✔ seek bounds reject non-finite inputs and clamp against actual duration (0.162458ms)
+✔ comments require text, bounded size and a timestamp in the selected version (0.069292ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 70.730292
