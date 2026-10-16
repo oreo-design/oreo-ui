@@ -1,3 +1,5 @@
+import {IssueBrowserPage} from "@/patterns/issue-browser";
+import {IssueBrowserDocs} from "@/pages/IssueBrowserDocs";
 import {TaskBoardPage} from "@/patterns/task-board";
 import {TaskEditorDocs} from "@/pages/TaskEditorDocs";
 import {MusicProjectPage} from "@/patterns/music-project";
@@ -198,6 +200,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+ "issue-browser":IssueBrowserPage,"issue-row":IssueBrowserDocs,"issue-queue":IssueBrowserDocs,"issue-reader":IssueBrowserDocs,
  "task-board":TaskBoardPage,"task-properties":TaskEditorDocs,"task-subtasks":TaskEditorDocs,"task-detail-panel":TaskEditorDocs,
  "music-project":MusicProjectPage,"annotated-waveform":MusicProjectDocs,"production-task-list":MusicProjectDocs,"mix-version-list":MusicProjectDocs,
  "voice-agent":VoiceAgentPage,"voice-signal":VoiceTelemetryDocs,"voice-latency-breakdown":VoiceTelemetryDocs,"turn-latency-history":VoiceTelemetryDocs,

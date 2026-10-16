@@ -1,0 +1,408 @@
+.ib-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  font-size: 0.8125rem;
+  min-height: 4.25rem;
+}
+.ib-row:hover {
+  background: var(--color-state-hover);
+}
+.ib-row[aria-pressed="true"] {
+  background: var(--color-palette-purple-bg);
+  box-shadow: inset 3px 0 var(--color-palette-purple-text);
+}
+.ib-state {
+  color: var(--color-status-success);
+  flex-shrink: 0;
+}
+.ib-state[data-state="closed"] {
+  color: var(--color-palette-purple-text);
+}
+.ib-row-copy {
+  min-width: 0;
+  flex: 1;
+}
+.ib-row-title {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+.ib-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.375rem;
+  flex-wrap: wrap;
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+}
+.ib-labels {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.ib-row-count {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-text-secondary);
+  font-size: 0.6875rem;
+}
+.ib-row-age {
+  font-size: 0.6875rem;
+  color: var(--color-text-tertiary);
+  width: 2rem;
+  text-align: right;
+}
+.ib-queue {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.ib-queue > .fo-reveal {
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+}
+.ib-queue > .agent-workspace-state,
+.ib-queue .fo-content-layer > .agent-workspace-state {
+  min-height: 20rem;
+  height: 100%;
+}
+.ib-queue-footer {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-base);
+}
+.ib-queue-footer kbd {
+  padding: 0.125rem 0.3rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control-tiny);
+  font-family: inherit;
+}
+.ib-skeleton > div {
+  height: 4.25rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.ib-skeleton i {
+  display: block;
+  height: 0.75rem;
+  border-radius: var(--radius-control-tiny);
+  background: var(--color-palette-default-bg);
+}
+.ib-skeleton > div > i {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+.ib-skeleton span {
+  flex: 1;
+}
+.ib-skeleton span i:first-child {
+  width: 80%;
+  margin-bottom: 0.625rem;
+}
+.ib-skeleton span i:last-child {
+  width: 45%;
+}
+.ib-reader {
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--color-bg-base);
+  border-left: 1px solid var(--color-border-subtle);
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+}
+.ib-reader-header {
+  height: 3.25rem;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+}
+.ib-reader-header > span,
+.ib-reader-header > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ib-reader-header b {
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+}
+.ib-reader-scroll {
+  overflow: auto;
+  overscroll-behavior: contain;
+  flex: 1;
+  min-height: 0;
+  padding: 1.5rem;
+}
+.ib-reader h2 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+.ib-byline {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+}
+.ib-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--color-palette-mint-bg);
+  color: var(--color-palette-mint-text);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-capsule);
+}
+.ib-status[data-state="closed"] {
+  background: var(--color-palette-purple-bg);
+  color: var(--color-palette-purple-text);
+}
+.ib-properties {
+  padding: 1.25rem 0;
+  margin: 1.25rem 0;
+  border-block: 1px solid var(--color-border-subtle);
+  display: grid;
+  gap: 0.875rem;
+  font-size: 0.75rem;
+}
+.ib-properties > div {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 0.5rem;
+}
+.ib-properties dt {
+  color: var(--color-text-tertiary);
+}
+.ib-properties dd {
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+.ib-markdown {
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  color: var(--color-text-secondary);
+}
+.ib-markdown :is(h1, h2, h3) {
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  margin: 1.5rem 0 0.625rem;
+}
+.ib-markdown > :first-child {
+  margin-top: 0;
+}
+.ib-markdown p {
+  margin-bottom: 0.875rem;
+}
+.ib-markdown :is(ol, ul) {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+.ib-markdown ol {
+  list-style: decimal;
+}
+.ib-markdown ul {
+  list-style: disc;
+}
+.ib-markdown pre {
+  padding: 1rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  overflow: auto;
+  font-size: 0.75rem;
+  margin: 1rem 0;
+}
+.ib-markdown a {
+  text-decoration: underline;
+}
+.ib-markdown img {
+  max-width: 100%;
+}
+.ib-markdown table {
+  display: block;
+  max-width: 100%;
+  overflow: auto;
+}
+.ib-markdown th,
+.ib-markdown td {
+  border: 1px solid var(--color-border-subtle);
+  padding: 0.5rem;
+}
+.ib-comments {
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 1rem;
+}
+.ib-comments > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+.ib-comments h3 {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.ib-comments h3 span {
+  color: var(--color-text-tertiary);
+  font-weight: 400;
+  margin-left: 0.25rem;
+}
+.ib-comment {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  padding: 0.875rem;
+  margin-top: 0.75rem;
+  background: var(--color-bg-elevated);
+}
+.ib-comment header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.6875rem;
+}
+.ib-comment header b {
+  font-weight: 500;
+}
+.ib-comment header > span:last-child {
+  color: var(--color-text-tertiary);
+  margin-left: auto;
+}
+.ib-comment p {
+  margin-top: 0.75rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+.ib-composer {
+  border-top: 1px solid var(--color-border-subtle);
+  padding: 1rem 1.25rem;
+  flex-shrink: 0;
+  background: var(--color-bg-base);
+}
+.ib-composer label {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+.ib-composer > div {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.ib-composer textarea {
+  resize: vertical;
+  max-height: 8rem;
+  flex: 1;
+  min-width: 0;
+  line-height: 1.6;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+}
+.ib-composer small {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--color-text-tertiary);
+  font-size: 0.625rem;
+}
+.ib-muted {
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+:is(.ib-row, .ib-reader button, .ib-reader textarea):focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: -2px;
+}
+@media (max-width: 850px) {
+  .ib-reader {
+    border-left: 0;
+  }
+  .ib-row {
+    padding: 1rem;
+  }
+  .ib-reader-scroll {
+    padding: 1.25rem;
+  }
+  .ib-row-title {
+    white-space: normal;
+    line-height: 1.6;
+  }
+  .ib-row-age {
+    display: none;
+  }
+}
+/* The palette is saturated in the dark skin; mix its accent into the surface
+   for low-emphasis selection and tags, without introducing literal colors. */
+.theme-dark .ib-row[aria-pressed="true"] {
+  background: color-mix(
+    in srgb,
+    var(--color-palette-purple-bg) 18%,
+    var(--color-bg-base)
+  );
+  box-shadow: inset 3px 0 var(--color-palette-purple-bg);
+}
+.ib-status {
+  background: color-mix(
+    in srgb,
+    var(--color-status-success) 15%,
+    var(--color-bg-base)
+  );
+  color: var(--color-status-success);
+}
+.ib-status[data-state="closed"] {
+  background: color-mix(
+    in srgb,
+    var(--color-palette-purple-bg) 18%,
+    var(--color-bg-base)
+  );
+  color: var(--color-text-secondary);
+}
+.ib-row {
+  min-height: 4rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}

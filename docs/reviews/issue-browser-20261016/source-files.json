@@ -1,0 +1,10 @@
+{
+  "src/components/issue-browser/index.tsx": "81c5ea6ee1365a84d40df5fc98141bde8f38f9eafa68db796ca5c023a4d59761",
+  "src/components/issue-browser/model.test.ts": "e92867721cc4e3f08043a5c8ed249d4da4eaee7d06c28995d997b072b53e3f1e",
+  "src/components/issue-browser/model.ts": "a14736267425beb2012c62b74c57b073d0144fb287d8fdd9b81f23c2b6324a5a",
+  "src/components/issue-browser/issue-browser.css": "724cc4b53af740cfef30786b0c7e13ad471a81bdd6a47b32337218e239243ee1",
+  "src/patterns/issue-browser/index.tsx": "e2f04445fb1c170d0433598210966302b688c697388f79595cb061be3e9851fe",
+  "src/patterns/issue-browser/data.ts": "933a1d5d3646654ffb0a6e5ce6a88bdf778fe71e8e03fc70174a516b1362f8f8",
+  "src/patterns/issue-browser/issue-browser.css": "f0717c2256a4dae8821ba178cbffb82aa3ea22a957a7c87c8e65cc90ea2efe86",
+  "src/pages/IssueBrowserDocs.tsx": "a946ebdfe92646f934154ba4311266b6ace8abd21a116c62ebd2d1de849448a9"
+}

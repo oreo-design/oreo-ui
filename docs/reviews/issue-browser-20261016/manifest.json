@@ -1,0 +1,216 @@
+{
+  "baseline": "07b515e67db57d2d53e8ebb35a36b70eb8ac85a9",
+  "route": "http://localhost:5266/issue-browser",
+  "captures": [
+    {
+      "file": "after-comments.png",
+      "sha256": "323cabceafecbc4273fd52cef562eaae1497dd7022640d8ddacae5ba2220d8b7",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-created.png",
+      "sha256": "33df4832134cca4191e8c3a2c83539a3898de90b24506fb2c430a804952d3a68",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-dark-v2.png",
+      "sha256": "505e8f62e28651dcf9df82b39e65ec221a4aa762c95e24897fde0167c685af0b",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-dark-v3.png",
+      "sha256": "e5681439eb883c79c12e82a2223400103d2781a2fa0ce96c26e856c5492d1980",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-dark.png",
+      "sha256": "5356c8e974ab014e52fe8fb6d3a3eb884db8a8dbdf82404b2decec6739c3bce5",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-filter-empty.png",
+      "sha256": "6d42f724d0808a0c851ab4c49ccda83a857d931dba56ed545d20f92fa4978c44",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-light-final.png",
+      "sha256": "272f8a60e6618254f8159de7c8f48af77cb726736635a60c3a8796ee46877c84",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-light.png",
+      "sha256": "a79e0149cd3f8b07c0c00b05327306b40e69ceec4d68630e096d4addcb7eac8f",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-medium.png",
+      "sha256": "aec2751364d13f06346617b795be8d02e19f2d048f730626965b0eb7eba6f6d6",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-mobile-dark-detail.png",
+      "sha256": "3282b911cb4711a937e6a717f454f33538c9d270bd421681120f2332cef9c70b",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-mobile-dark-list.png",
+      "sha256": "3270098d26524e0059fe8d1c301e64f959b5bbd6b0938384baafb705f8474047",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-mobile-detail.png",
+      "sha256": "f6f301845ec6bab841522e5bde359fb17ca2fdb14956fd3cc78010167c2b0971",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-mobile-list.png",
+      "sha256": "67de69d022e2ca8d61050e170b8ad78c2d901b697fd617b7e925bf19cb1556f6",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "after-search.png",
+      "sha256": "cbe4b1b6bd0c86cb01ad4e2197f0060edcc45f3252eb104d14ca7cae827e60fe",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "before-route.png",
+      "sha256": "bee897e2adf4bd3c2e0374352d7591263160182aa4ed8448f4b7b1ad2956a31f",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "07b515e67db57d2d53e8ebb35a36b70eb8ac85a9"
+    },
+    {
+      "file": "docs-reader.png",
+      "sha256": "16b3aab90000ecd62415e1a36b8c0717d661f87c899133f163de795bf6d86bf5",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "final-dark.png",
+      "sha256": "6be53b7a7878bff08000a9ae027122826be51f0930accc6a6604c91004462e9d",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "final-light.png",
+      "sha256": "e5681439eb883c79c12e82a2223400103d2781a2fa0ce96c26e856c5492d1980",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "oreo-issue-reference-05.png",
+      "sha256": "4af4b0afd278784d62d99a7de9ca54cff4c118c0c3d9252a7ed4f102358d4c51",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "oreo-issue-reference-11.png",
+      "sha256": "232df8003adf02f91f03a8a8ee66df131e29eb5fb7ce6f1f48746f7338d06d18",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "oreo-issue-reference-17.png",
+      "sha256": "f6ccfdc59da2454071d922b3fd8ffea9967545d56c82b8b7d59ce9a484d91e5f",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "oreo-issue-reference.png",
+      "sha256": "16789d99d07c902b5aee9aeb8b6b4aa99cd2a676621cab23d392ba88463574ad",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "peer-review-workspace.png",
+      "sha256": "06b5dca1c0a4a59b3173e14558c7013c189f28a8910a96e8ad854477f14d8140",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "07b515e67db57d2d53e8ebb35a36b70eb8ac85a9"
+    },
+    {
+      "file": "peer-task-board.png",
+      "sha256": "2eef30a5a1e086b19a1ba1ebc2313ce6895e42fe972c8561d3ac27a7e7cf6dc0",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "07b515e67db57d2d53e8ebb35a36b70eb8ac85a9"
+    },
+    {
+      "file": "playground-error.png",
+      "sha256": "4166ef9346837e4e5983d6954bfa5d7ae08006682e75341569b72b57cbf0f874",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "playground-loading.png",
+      "sha256": "56f6bb688e59297aed4104ffa7476147a8a868eb49208f8abfd5eec7f72f6c67",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "playground-reader.png",
+      "sha256": "7bda2ec3c80c8047f7d075a78d5a53628765689fb87fd09faa539e334b0f342d",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "playground-refresh.png",
+      "sha256": "103f596b019e4c82b0da3bcf428da5e0534af3964fe40bc388795299926875df",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "playground-row.png",
+      "sha256": "2a33758e7026159e2ca8490915688344879b4e270641b43ba532a254d851a18f",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "state": "see REVIEW.md",
+      "revision": "task working tree; see source-files.json"
+    }
+  ],
+  "recording": {
+    "file": "interaction.mp4",
+    "width": 1440,
+    "height": 1080,
+    "duration": 45.72,
+    "originals": "interaction-frames/frames.json"
+  }
+}
