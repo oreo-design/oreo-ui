@@ -1,3 +1,5 @@
+import { CompanyDirectoryPage } from "@/patterns/company-directory";
+import { CompanyDocs } from "@/pages/CompanyDocs";
 import { ProjectFeedPage } from "@/patterns/project-feed";
 import { ProjectActivityDocs } from "@/pages/ProjectActivityDocs";
 import { AgentRunsPage } from "@/patterns/agent-runs";
@@ -162,6 +164,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "company-identity": CompanyDocs, "company-table": CompanyDocs, "company-directory": CompanyDirectoryPage,
   "activity-event-row": ProjectActivityDocs, "grouped-activity-feed": ProjectActivityDocs, "project-feed": ProjectFeedPage,
   "weekly-heatmap": AgentRunsDocs, "agent-runs-card": AgentRunsDocs, "agent-runs": AgentRunsPage,
   "progressive-steps": ProgressiveStepsDocs, "progressive-checkout": ProgressiveCheckoutPage,
