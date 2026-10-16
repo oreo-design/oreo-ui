@@ -1,3 +1,5 @@
+import {AgentInboxPage} from "@/patterns/agent-inbox";
+import {AgentInboxDocs} from "@/pages/AgentInboxDocs";
 import {ColorCalendarPage} from "@/patterns/color-calendar";
 import {ColorCalendarDocs} from "@/pages/ColorCalendarDocs";
 import {CrossCurrencyPage} from "@/patterns/cross-currency";
@@ -182,6 +184,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+ "agent-run-card":AgentInboxDocs,"agent-run-activity":AgentInboxDocs,"agent-inbox-board":AgentInboxDocs,"agent-inbox":AgentInboxPage,
  "calendar-event-block":ColorCalendarDocs,"calendar-color-picker":ColorCalendarDocs,"calendar-source-list":ColorCalendarDocs,"calendar-week-grid":ColorCalendarDocs,"color-calendar":ColorCalendarPage,
  "currency-balance-card": CurrencyFinanceDocs, "currency-balance-summary": CurrencyFinanceDocs, "money-activity-list": CurrencyFinanceDocs, "cash-flow-bars": CurrencyFinanceDocs, "cross-currency": CrossCurrencyPage,
  "stay-price-label": StayResultsDocs, "stay-result-card": StayResultsDocs, "stay-selection-card": StayResultsDocs, "landmark-stays": LandmarkStaysPage,

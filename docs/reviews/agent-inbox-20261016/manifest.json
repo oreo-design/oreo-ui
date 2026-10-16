@@ -1,0 +1,402 @@
+{
+  "baseline": "68c4987808dd119fc4ac82e70a944a371af7274a",
+  "pr": "https://github.com/oreo-design/oreo-ui/pull/86",
+  "preview": "http://localhost:5258/agent-inbox",
+  "source_sha256": {
+    "src/App.tsx": "fcbedaac6c827fc6ea42a9e62bd2ae33b3eef1b79537edd291ef815b1b2652eb",
+    "src/components/agent-inbox/agent-inbox.css": "940a7de141514e5ca13a51f14048faf359eb76169b30b2c868858164d8d03d5a",
+    "src/components/agent-inbox/index.tsx": "e3037b929b292caf53816873a9953cf1495b8bcf79ba72192c0f5651c34affd6",
+    "src/components/agent-inbox/model.test.mjs": "19bdbc735052b1cd592b1fe58062c32143d9c212bef155ff1a0dc634a65614fc",
+    "src/components/agent-inbox/model.ts": "2926d2ad0ae954028b8eee5a602a0571e5f5d3ad554a21dd56af6326f055a591",
+    "src/docs/Sidebar.tsx": "5c52e4c95478a3eaa95f56f93ab8c34aabeaa537d1ae1a984310bf50d7d59c63",
+    "src/docs/playground/registry.tsx": "86d01782379a5ae0941095e841e70635231696355cc634680d44927daa232edb",
+    "src/lib/site.ts": "a599cc6f63f5ece1ceb75dcea17eea3871aefe077c35fcaaebff503661b686d5",
+    "src/pages/AgentInboxDocs.tsx": "404b326af46570c9bbc24f80223598d262dc9f5065116a5f71252cf95ff2a976",
+    "src/patterns/agent-inbox/agent-inbox-page.css": "c0511a02fd2269b0d267504fcc105816ccf98686dad44c051846cbc5be183530",
+    "src/patterns/agent-inbox/data.ts": "b60ee6794bbc4cca715b872e544e8b4b900959d1b60b2696ed7f8a00d2e3acd2",
+    "src/patterns/agent-inbox/index.tsx": "609aca0a1475b4f0dc3f37a924a8974401a7b4f28dce3281cf241ea9472268a5",
+    "src/patterns/changelog/data.ts": "c97bfa75ef2d15ad8ce2fce2e7f5ce2a530abbea98244185ec73b756d6d45506"
+  },
+  "captures": [
+    {
+      "file": "after-board-light.png",
+      "sha256": "0e7f90a65f1658991b0e73ec3e3efa07901cdaf623db55c833cc2887f815292e",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:17:40.924617+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "after-changelog.png",
+      "sha256": "b5c86730faf2fb02e3f69b0d7526ede4f7f7044b914db57c5ea18e7be7d2a33f",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:19:07.222596+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "after-drag.png",
+      "sha256": "38d7381a41eca0cc75f61dbcf83cd2475b20eb06bcd114c6940a22ce7992ac9d",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:13:01.955670+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "after-empty-dark.png",
+      "sha256": "0421882a057c5109476bbdd5f884bbc80a6d1ff62b317473d44dcc5224e58382",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:12:18.089195+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "after-expanded-light.png",
+      "sha256": "782a71223a948601f8555a54fd6cd590cdece5c9e925206971c85f78a8e94316",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:17:54.042856+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "after-list-dark.png",
+      "sha256": "cd68261840a237f4e685b7c8110bff056ba849d8aaf004eb31aee6088a58dc7a",
+      "pixels": [
+        1440,
+        1755
+      ],
+      "captured_utc": "2026-10-16T12:12:03.716954+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "after-medium-dark-reduced.png",
+      "sha256": "cbbc1ed10fb3829ce29aeebb9485521f0d163d6e0a944b8acf57549da777ff2a",
+      "pixels": [
+        900,
+        1242
+      ],
+      "captured_utc": "2026-10-16T12:18:54.853704+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "sha256": "74beb6c265d369f48ec59cccedb601ebe54d7f589e8364f0aac5b5410630683f",
+      "pixels": [
+        390,
+        1782
+      ],
+      "captured_utc": "2026-10-16T12:18:18.686692+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "after-mobile-light.png",
+      "sha256": "4c098738d777e3cd87ea281cea96fc5713e1cee143206d4e119f0e448a3eaeeb",
+      "pixels": [
+        390,
+        1576
+      ],
+      "captured_utc": "2026-10-16T12:18:05.119954+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "before-changelog.png",
+      "sha256": "2f4d8da08d62f4a12ac2f0ee2f2eb4ec737168db6c04c8b1f83944c79991a5e6",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:09:11.306499+00:00",
+      "status": "baseline",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "before-entry.png",
+      "sha256": "561972d44eaf979e74b82e9074f8ba290951db7cce0dc4ee582ef29c9b97f118",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:06:05.228312+00:00",
+      "status": "baseline",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "componest-0.png",
+      "sha256": "43f4d75a68986a80ed456dfdb81044090c11884d5c9091685398c25e92743a20",
+      "pixels": [
+        1400,
+        1100
+      ],
+      "captured_utc": "2026-10-16T12:05:44.633721+00:00",
+      "status": "reference",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "componest-10.png",
+      "sha256": "1c80e45c6d8f25ab0ba71327659bcf69de99736ecb4c5f6387b5b5dbeb875a4a",
+      "pixels": [
+        1400,
+        1100
+      ],
+      "captured_utc": "2026-10-16T12:05:44.635326+00:00",
+      "status": "reference",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "componest-2.png",
+      "sha256": "e6914a0eb31eaa68e6ce726549e70c152cdc20ef1138b1df8b42cabcf83e6a88",
+      "pixels": [
+        1400,
+        1100
+      ],
+      "captured_utc": "2026-10-16T12:05:44.633940+00:00",
+      "status": "reference",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "componest-5.png",
+      "sha256": "4b32f9dd157fd6eab54f76cd02044ee1027d1c24968310395f4ef5df09773f2c",
+      "pixels": [
+        1400,
+        1100
+      ],
+      "captured_utc": "2026-10-16T12:05:44.634333+00:00",
+      "status": "reference",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "componest-reference.png",
+      "sha256": "89d486c7794ed85c720981ed711f0107c33d193dffb5e711e5a859c8dc2e8f2c",
+      "pixels": [
+        1400,
+        1100
+      ],
+      "captured_utc": "2026-10-16T12:05:44.632169+00:00",
+      "status": "reference",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "docs-activity.png",
+      "sha256": "f7d85f1644ccdc03123ae8a346787aa6e9ec4b5c2420871b44ec817adeb19b43",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:17:22.564845+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "docs-api.png",
+      "sha256": "3e5bf4743d6547b518dc8a16cadf7a8542c9695116503250821e32dc859d5102",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:15:40.288069+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "docs-board.png",
+      "sha256": "cd96caa22134561a135a78582d31c0720fbc60e7cc2271abfc393bb4c998da72",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:16:17.787353+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "docs-card.png",
+      "sha256": "d1cebae80c972dba6fb403a779e2867936f84e127b0f8e4ace31b1dc6e0ff0a0",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:17:01.916695+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "docs-error.png",
+      "sha256": "75f02f319370be0e20404fb66a8f094b90901dc0ac468475211ec2d4b6554425",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:15:04.967789+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "docs-loading.png",
+      "sha256": "bfdfdf3c56c8236e0b786a3bc5690d2757e208c6e94ffade746f09078685d13e",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:16:09.249954+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "drag-in-progress.png",
+      "sha256": "08f7edfb1434f4175d310cb01da66ae2bf97c3b4506296a21388add2690619be",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:12:47.175146+00:00",
+      "status": "evidence",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "peer-kanban.png",
+      "sha256": "cda4ec54c5e083a3f48d7db5ce0438007ae4475d799fd309bc57078dfbf4a587",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:06:12.843986+00:00",
+      "status": "peer",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "peer-studio-inbox.png",
+      "sha256": "3e7af2cf0c8bb0c30ff6383baefee703acb13d038c0d294b5bccf9d64477b274",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:06:46.311601+00:00",
+      "status": "peer",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "pre-final-after-board-light.png",
+      "sha256": "1c8c9a384d2e7a17a2326c0131424f5f55ba2c508730cec051a9eff0a4f85bd7",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:12:27.511812+00:00",
+      "status": "superseded",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "pre-final-after-expanded-light.png",
+      "sha256": "ae028c22ce3316012db2180266a9312fc5936e4b2b4ebb0c792beccfb5047e7e",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:12:38.891421+00:00",
+      "status": "superseded",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "pre-final-after-medium-dark-reduced.png",
+      "sha256": "1649e45c0cb3cbf9181bc220acff776f3e873c91ffe5390510e206932618ada0",
+      "pixels": [
+        900,
+        1242
+      ],
+      "captured_utc": "2026-10-16T12:13:52.185220+00:00",
+      "status": "superseded",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "pre-final-after-mobile-dark.png",
+      "sha256": "dcbccdd74f60c1e25f584bb4495aabc4a3bdcd934734ff22d962965c339fa309",
+      "pixels": [
+        390,
+        1806
+      ],
+      "captured_utc": "2026-10-16T12:13:23.968296+00:00",
+      "status": "superseded",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "pre-final-after-mobile-light.png",
+      "sha256": "064c6c398667a97e2130e09645e28dcf3b9e54621cc8372a58e46531f878f991",
+      "pixels": [
+        390,
+        1576
+      ],
+      "captured_utc": "2026-10-16T12:13:11.483938+00:00",
+      "status": "superseded",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "pre-final-docs-board.png",
+      "sha256": "7c4bc7c783093f102fd3c892e5ff01222c0da70bf88409d97da3ba265f7c150a",
+      "pixels": [
+        1440,
+        1452
+      ],
+      "captured_utc": "2026-10-16T12:15:17.445685+00:00",
+      "status": "superseded",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "pre-final-docs-loading.png",
+      "sha256": "54f960c5de031e0625ee9bf9fda1bac6ef469c8d54dd24b1c9f948704b71b276",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:14:53.171409+00:00",
+      "status": "superseded",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "superseded-after-board-light.png",
+      "sha256": "aa093725cba20dcf8af0062a7f9fe25f632176455ea6515a50483817b4750d31",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:11:05.028315+00:00",
+      "status": "superseded",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    },
+    {
+      "file": "superseded-after-expanded-light.png",
+      "sha256": "e95dac4bd6e113e009def1eac974f901ab54c1a289dfd8e41c97efcc6d69cc1d",
+      "pixels": [
+        1440,
+        1080
+      ],
+      "captured_utc": "2026-10-16T12:11:19.179937+00:00",
+      "status": "superseded",
+      "environment": "Playwriter session 10 Chromium local fixture; English; no real account/backend"
+    }
+  ],
+  "limits": [
+    "No continuous motion recording",
+    "No physical touch hardware",
+    "Local sample data only; no production deployment verified"
+  ],
+  "media_notes": "See REVIEW.md for capture state, theme, viewport and superseded history. Full-page pixel height can exceed viewport."
+}

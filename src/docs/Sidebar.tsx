@@ -111,6 +111,9 @@ const NAV: Group[] = [
       {label:"Calendar Color Picker",page:"calendar-color-picker"},
       {label:"Calendar Source List",page:"calendar-source-list"},
       {label:"Calendar Week Grid",page:"calendar-week-grid"},
+      {label:"Agent Run Card",page:"agent-run-card"},
+      {label:"Agent Run Activity",page:"agent-run-activity"},
+      {label:"Agent Inbox Board",page:"agent-inbox-board"},
       {label:"Currency Balance Card",page:"currency-balance-card"},
       {label:"Currency Balance Summary",page:"currency-balance-summary"},
       {label:"Money Activity List",page:"money-activity-list"},
@@ -224,6 +227,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Agent Inbox",page:"agent-inbox"},
       {label:"Color Calendar",page:"color-calendar"},
       {label:"Cross-Currency",page:"cross-currency"},
       {label:"Landmark Stays",page:"landmark-stays"},

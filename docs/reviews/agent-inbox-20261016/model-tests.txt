@@ -1,0 +1,13 @@
+✔ attention group includes both approval and failure; final states stay distinct (0.572417ms)
+✔ transitions preserve source snapshot and other runs; approval and retry are explicit demo history (0.174125ms)
+✔ unknown IDs and unchanged/invalid statuses are no-ops (0.043834ms)
+✔ search is trimmed/case insensitive across title, summary, model and displayed status (0.076958ms)
+✔ duration handles zero, minutes, hours and invalid telemetry safely (0.054541ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 75.972083
