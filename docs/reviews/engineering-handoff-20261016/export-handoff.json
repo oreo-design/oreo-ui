@@ -1,0 +1,41 @@
+{
+  "demo": true,
+  "issue": {
+    "id": "CORE-128",
+    "title": "Dashboard export returns a 500",
+    "status": "Done",
+    "priority": "High"
+  },
+  "comments": [],
+  "session": {
+    "id": "3f0ce806-0f76-4ae3-ac27-67bba02b96d3",
+    "attempt": 3,
+    "agentId": "codex",
+    "status": "completed",
+    "request": "Fix the export request",
+    "messages": [
+      {
+        "id": "3f0ce806-0f76-4ae3-ac27-67bba02b96d3-1",
+        "role": "agent",
+        "body": "The sample export runs inside the web request. Should we use the existing job queue or keep the current synchronous path? Add the constraints you want me to follow."
+      },
+      {
+        "id": "3f0ce806-0f76-4ae3-ac27-67bba02b96d3-2",
+        "role": "user",
+        "body": "Use the queue. Preserve permissions."
+      },
+      {
+        "id": "3f0ce806-0f76-4ae3-ac27-67bba02b96d3-3",
+        "role": "agent",
+        "body": "The sample patch is ready: exports use the existing queue, the request returns a job reference, and CSV/PDF cases are listed for review. Inspect the sample result before marking this work complete."
+      },
+      {
+        "id": "3f0ce806-0f76-4ae3-ac27-67bba02b96d3-4",
+        "role": "user",
+        "body": "Reviewed the sample result and marked this local work item complete."
+      }
+    ],
+    "failNext": false,
+    "resume": "analyzing"
+  }
+}

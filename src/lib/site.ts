@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "agent-mention-composer": {title:"Agent Mention Composer",description:"Caret-aware agent mentions for comments and engineering handoffs."},
+  "agent-session-card": {title:"Agent Session Card",description:"A controlled execution session with progress, clarification, recovery and results."},
+  "engineering-handoff": {title:"Engineering Handoff",description:"A local work item with agent delegation, clarification, sample patch review and completion."},
   "activity-event-row": {title:"Activity Event Row",description:"A compact project event with actor, action, subject, time and unread state."},
   "grouped-activity-feed": {title:"Grouped Activity Feed",description:"A chronological activity list with UTC date groups and empty, loading and error states."},
   "company-identity": {title:"Company Identity",description:"A compact company mark, name, domain and hot-account signal."},

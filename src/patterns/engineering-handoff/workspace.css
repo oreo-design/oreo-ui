@@ -1,0 +1,435 @@
+.eh-workspace {
+  --eh-rail: 72px;
+  min-height: 100dvh;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+}
+.eh-workspace * {
+  box-sizing: border-box;
+}
+.eh-workspace a {
+  color: inherit;
+}
+.eh-rail {
+  width: var(--eh-rail);
+  position: fixed;
+  inset: 0 auto 0 0;
+  background: var(--color-bg-elevated);
+  border-right: 1px solid var(--color-border-default);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 5);
+  padding: calc(var(--spacing) * 5) var(--spacing);
+  z-index: 10;
+}
+.eh-rail > a {
+  display: grid;
+  justify-items: center;
+  gap: var(--spacing);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-control);
+  padding: var(--spacing);
+}
+.eh-rail > a:hover {
+  background: var(--color-state-hover);
+}
+.eh-rail .eh-brand {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: calc(var(--spacing) * 3);
+}
+.eh-shell {
+  margin-left: var(--eh-rail);
+}
+.eh-top {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border-default);
+  padding: 0 calc(var(--spacing) * 6);
+  background: var(--color-bg-base);
+}
+.eh-top > div {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  min-width: 0;
+}
+.eh-top strong {
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+.eh-project-mark {
+  padding: var(--spacing);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control-tiny);
+}
+.eh-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  max-width: 1440px;
+  margin: auto;
+}
+.eh-layout > main {
+  max-width: 920px;
+  width: 100%;
+  padding: calc(var(--spacing) * 12) calc(var(--spacing) * 12)
+    calc(var(--spacing) * 20);
+  margin: auto;
+}
+.eh-title-meta {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  margin-bottom: calc(var(--spacing) * 4);
+}
+.eh-local {
+  margin-left: auto;
+}
+.eh-layout h1 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+  margin-bottom: calc(var(--spacing) * 5);
+}
+.eh-metadata {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 4);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.eh-metadata > span {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+}
+.eh-description {
+  padding: calc(var(--spacing) * 8) 0 calc(var(--spacing) * 10);
+  line-height: 1.9;
+  color: var(--color-text-secondary);
+}
+.eh-description h2 {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: calc(var(--spacing) * 5) 0 calc(var(--spacing) * 2);
+}
+.eh-description ul,
+.eh-result ul,
+.eh-dialog ul {
+  list-style: disc;
+  padding-left: calc(var(--spacing) * 5);
+}
+.eh-context {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 3);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  font-size: var(--text-xs);
+  margin-top: calc(var(--spacing) * 6);
+}
+.eh-context > span:nth-child(2) {
+  flex: 1;
+}
+.eh-context span span {
+  color: var(--color-text-tertiary);
+}
+.eh-activity > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 3);
+  border-bottom: 1px solid var(--color-border-default);
+  padding-bottom: calc(var(--spacing) * 3);
+  margin-bottom: calc(var(--spacing) * 5);
+}
+.eh-activity h2,
+.eh-demo h2 {
+  font-weight: 500;
+}
+.eh-filters {
+  display: flex;
+  gap: var(--spacing);
+}
+.eh-filters [aria-pressed="true"] {
+  background: var(--color-state-hover);
+  color: var(--color-text-primary);
+}
+.eh-created {
+  display: flex;
+  gap: calc(var(--spacing) * 3);
+  align-items: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  padding: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 6);
+}
+.eh-created strong {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+.eh-created span span {
+  color: var(--color-text-tertiary);
+}
+.eh-compose-wrap {
+  margin-top: calc(var(--spacing) * 6);
+}
+.eh-muted {
+  font-size: var(--text-xs);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-top: calc(var(--spacing) * 3);
+}
+.eh-result {
+  font-size: var(--text-sm);
+  line-height: 1.8;
+}
+.eh-result button {
+  margin-top: calc(var(--spacing) * 4);
+}
+.eh-layout > aside {
+  border-left: 1px solid var(--color-border-default);
+  padding: calc(var(--spacing) * 8) calc(var(--spacing) * 5);
+  min-width: 0;
+}
+.eh-layout summary {
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: calc(var(--spacing) * 5);
+}
+.eh-layout dl > div {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: calc(var(--spacing) * 3);
+  align-items: center;
+  min-height: 44px;
+  font-size: var(--text-xs);
+}
+.eh-layout dt {
+  color: var(--color-text-tertiary);
+}
+.eh-layout dd {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+}
+.eh-layout select {
+  width: 100%;
+  padding: var(--spacing) calc(var(--spacing) * 2);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control-tiny);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+.eh-demo {
+  border-top: 1px solid var(--color-border-default);
+  margin-top: calc(var(--spacing) * 6);
+  padding-top: calc(var(--spacing) * 6);
+  font-size: var(--text-xs);
+}
+.eh-demo > p {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin: calc(var(--spacing) * 2) 0;
+}
+.eh-demo label {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  margin: calc(var(--spacing) * 4) 0;
+}
+.eh-demo input {
+  accent-color: var(--color-text-primary);
+  width: 16px;
+  height: 16px;
+}
+.eh-demo > button {
+  margin: var(--spacing) 0;
+}
+.eh-source {
+  display: block;
+  margin-top: calc(var(--spacing) * 8);
+  font-size: var(--text-xs);
+  text-decoration: underline;
+  color: var(--color-text-tertiary) !important;
+}
+.eh-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--color-overlay-subtle);
+  z-index: 40;
+}
+.eh-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 41;
+  width: min(680px, calc(100vw - 32px));
+  max-height: calc(100dvh - 48px);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control-large);
+  box-shadow: var(--shadow-overlay);
+  overflow: hidden;
+}
+.eh-dialog > header {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 6);
+  border-bottom: 1px solid var(--color-border-default);
+  background: var(--color-bg-base);
+}
+.eh-dialog > header > div {
+  flex: 1;
+}
+.eh-dialog h2 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+.eh-dialog header p {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-top: var(--spacing);
+}
+.eh-dialog-scroll {
+  overflow: auto;
+  min-height: 0;
+  padding: calc(var(--spacing) * 6);
+  font-size: var(--text-sm);
+  line-height: 1.8;
+}
+.eh-dialog h3 {
+  font-weight: 500;
+  margin: calc(var(--spacing) * 5) 0 calc(var(--spacing) * 3);
+  overflow-wrap: anywhere;
+}
+.eh-dialog pre {
+  overflow: auto;
+  background: var(--color-bg-elevated);
+  padding: calc(var(--spacing) * 4);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  font-size: var(--text-xs);
+  line-height: 1.8;
+}
+.eh-dialog-scroll > p {
+  color: var(--color-text-secondary);
+  margin-top: calc(var(--spacing) * 4);
+}
+.eh-dialog > footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
+  border-top: 1px solid var(--color-border-default);
+  background: var(--color-bg-base);
+}
+.eh-workspace a:focus-visible,
+.eh-workspace select:focus-visible,
+.eh-workspace summary:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+@media (max-width: 1100px) {
+  .eh-layout {
+    grid-template-columns: minmax(0, 1fr) 250px;
+  }
+  .eh-layout > main {
+    padding: calc(var(--spacing) * 8) calc(var(--spacing) * 6);
+  }
+}
+@media (max-width: 800px) {
+  .eh-workspace {
+    --eh-rail: 56px;
+  }
+  .eh-rail span {
+    display: none;
+  }
+  .eh-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .eh-layout > aside {
+    border-left: 0;
+    border-top: 1px solid var(--color-border-default);
+    padding: calc(var(--spacing) * 6);
+  }
+  .eh-layout dl {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 calc(var(--spacing) * 6);
+  }
+  .eh-top {
+    padding: 0 calc(var(--spacing) * 4);
+  }
+  .eh-top > div {
+    gap: calc(var(--spacing) * 2);
+  }
+  .eh-project-mark {
+    display: none;
+  }
+  .eh-layout > main {
+    padding-bottom: calc(var(--spacing) * 8);
+  }
+}
+@media (max-width: 480px) {
+  .eh-top a:nth-of-type(2),
+  .eh-top a:nth-of-type(2) + span {
+    display: none;
+  }
+  .eh-top > div {
+    font-size: 11px;
+  }
+  .eh-layout > main {
+    padding: calc(var(--spacing) * 6) calc(var(--spacing) * 4);
+  }
+  .eh-layout h1 {
+    font-size: var(--text-xl);
+  }
+  .eh-layout dl {
+    display: block;
+  }
+  .eh-activity > header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .eh-metadata {
+    gap: calc(var(--spacing) * 3);
+  }
+  .eh-context span span {
+    display: block;
+  }
+  .eh-dialog > header,
+  .eh-dialog-scroll {
+    padding: calc(var(--spacing) * 4);
+  }
+  .eh-dialog > footer {
+    padding: calc(var(--spacing) * 3);
+  }
+  .eh-dialog > footer button {
+    font-size: var(--text-xs);
+  }
+  .eh-local {
+    font-size: 10px;
+  }
+}

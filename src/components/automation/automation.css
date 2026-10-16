@@ -27,6 +27,7 @@
 .agent-result-trigger { @apply flex min-h-16 w-full cursor-pointer items-center gap-3 px-4 py-3 text-sm font-medium hover:bg-state-hover; }
 .agent-result-mark { @apply grid size-8 shrink-0 place-items-center rounded-control bg-palette-mint-bg text-palette-mint-text; }
 .agent-result-dot { @apply size-2 shrink-0 rounded-capsule bg-status-progress ring-4 ring-status-progress-subtle; }
+.agent-result[data-status="reviewed"] .agent-result-dot { @apply bg-status-success ring-0; }
 .agent-result[data-status="error"] .agent-result-dot { @apply bg-status-error ring-0; }
 .agent-result[data-status="running"] .agent-result-dot { @apply bg-text-tertiary ring-0; }
 .agent-result-detail { @apply border-t border-border-subtle px-4 py-4 text-sm leading-6 text-text-secondary; }
