@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "storage-manager":{title:"Storage Manager",description:"A local storage workspace with module accounting, retention drafts, recycle-bin recovery and reviewed cleanup."},
+ "storage-usage-card":{title:"Storage Usage Card",description:"Segmented capacity with exact module totals and recycle-bin usage."},
+ "storage-module-table":{title:"Storage Module Table",description:"Selectable storage inventory with file counts, growth and occupied shares."},
+ "retention-policy-row":{title:"Retention Policy Row",description:"A reusable settings row with a controlled retention duration."},
  "dashboard-suite":{title:"Commerce Dashboard",description:"Pixel revenue charts and shared metrics in a local commerce dashboard."},
  "campaign-dashboard":{title:"Campaign Dashboard",description:"Layered metric cards and stacked audience revenue with local campaign records."},
  "crm-dashboard":{title:"CRM Dashboard",description:"Revenue trends, grouped audience activity and a local relationship workspace."},

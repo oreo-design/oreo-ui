@@ -334,34 +334,61 @@ export function MemberActivity({
 export type StorageSegment = {
   label: string;
   value: number;
-  tone: "photos" | "documents" | "video";
+  tone:
+    | "photos"
+    | "documents"
+    | "video"
+    | "mint"
+    | "yellow"
+    | "pink"
+    | "neutral";
 };
 const storageColors = {
   photos: "bg-status-progress",
   documents: "bg-palette-purple-text",
   video: "bg-palette-orange-text",
+  mint: "bg-status-success",
+  yellow: "bg-palette-brown-text",
+  pink: "bg-palette-pink-text",
+  neutral: "bg-text-tertiary",
 };
 export function DocumentStorage({
   segments,
   capacity,
+  detailed = false,
+  title = "Storage",
 }: {
   segments: StorageSegment[];
   capacity: number;
+  /** Opt-in wide management summary; default document widget stays compact. */
+  detailed?: boolean;
+  title?: string;
 }) {
   const safe = segments.map((segment) => ({
     ...segment,
     value: Number.isFinite(segment.value) ? Math.max(0, segment.value) : 0,
   }));
-  const used = safe.reduce((sum, segment) => sum + segment.value, 0);
+  const sum = safe.reduce((total, segment) => total + segment.value, 0);
+  const used = detailed ? Number(sum.toFixed(9)) : sum;
   const valid = Number.isFinite(capacity) && capacity > 0;
   const denominator = Math.max(used, valid ? capacity : 1);
   return (
-    <ActivityCard title="Storage">
+    <ActivityCard title={title}>
       <p className="-mt-3 mb-4 text-xs text-text-secondary">
         {valid
           ? `${Number(used.toFixed(1))} of ${capacity} GB${used > capacity ? " · Over capacity" : ""}`
           : "Capacity not set"}
       </p>
+      {detailed && valid && (
+        <p className="mb-5 flex flex-wrap justify-between gap-2 text-sm tabular-nums">
+          <strong>{Number(((used / capacity) * 100).toFixed(1))}% used</strong>
+          <span className="text-text-secondary">
+            {used > capacity
+              ? `${Number((used - capacity).toFixed(2))} GB over capacity`
+              : `${Number((capacity - used).toFixed(2))} GB remaining`}
+          </span>
+        </p>
+      )}
       <div
         role="meter"
         aria-label="Storage used"
@@ -391,6 +418,7 @@ export function DocumentStorage({
               className={cn("size-2 rounded-full", storageColors[segment.tone])}
             />
             {segment.label}
+            {detailed && `: ${Number(segment.value.toFixed(2))} GB`}
           </li>
         ))}
       </ul>

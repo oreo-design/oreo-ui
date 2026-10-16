@@ -1,0 +1,13 @@
+✔ module validation rejects inconsistent and duplicate data (0.424417ms)
+✔ cleanup estimate only includes selected modules (0.313875ms)
+✔ recycling preserves occupied capacity and cannot recycle twice (0.096417ms)
+✔ restoring exactly recovers module bytes and eligible files (0.092041ms)
+✔ purging frees exactly the recycled bytes and original snapshot supports undo (0.053625ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 67.662625

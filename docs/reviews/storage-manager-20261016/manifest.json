@@ -1,0 +1,162 @@
+{
+  "baseline": "2e97b4abf8b58b6f5e0f07ea34a402ad5c2155bd",
+  "implementationRevision": "edc8d82d0aae9629efa41160bcbf70968f0a1407",
+  "pr": "https://github.com/oreo-design/oreo-ui/pull/89",
+  "environment": "Local Chromium, localhost:5261, English, deterministic fixtures; viewport/theme per REVIEW.md",
+  "productSources": {
+    "src/App.tsx": "e125dcc6942ce2ad3a73fc36f18f2a0c98c4e883bf2ae0922e0e5ecaad3928eb",
+    "src/components/document-activity/index.tsx": "b460cf85d3634a7bf71f75c012377ac4378e254f3f70a9d8e764c82458369298",
+    "src/components/storage-management/index.tsx": "bfada826c222a1c4cdb4aad78c9db34b05bf19454849602fa7c62b6e42335b5f",
+    "src/components/storage-management/model.test.ts": "48ac18521959b4a4fce10590d461f60c647a54585b494d187c9f225ed466593f",
+    "src/components/storage-management/model.ts": "c30dafb582deecde5cde5042fe4cf6438662f89d1486f75c00deb4e96232a941",
+    "src/components/storage-management/storage-management.css": "ae6e82858663dfc60fb3ccdad8c35f3ef33565bbd96cfe227d0c119b895f3525",
+    "src/docs/Sidebar.tsx": "e65497734e2e2b9c146510168ed85edd5f131a75e78df29ccadf05a13b0062f4",
+    "src/docs/playground/registry.tsx": "481858ec11875403cb348dec01191f36aa67141b3f0fb2347ca1473e58d4df5d",
+    "src/lib/site.ts": "27a76acfdd3b3d803ab4ee5c9c882b030baf8407656eda066efade7e42acc1bb",
+    "src/pages/StorageManagementDocs.tsx": "781384a2745bf0cb689de6da383f11c0b22ade2a61e9a1a729b612fccad7e5f5",
+    "src/patterns/changelog/data.ts": "5f14ee3eab9b53895cfc7dde9ce040518e33ee6e33240f082989001405675d09",
+    "src/patterns/storage-manager/data.ts": "0337ccdaf8c98adf7d98e8bea99804e26978535e3491d5ced38ad8c0cb38aaaf",
+    "src/patterns/storage-manager/index.tsx": "09686e0572b844f7d6622cbb474d7d4c8df6fba35293eac8a84e900194fd686d",
+    "src/patterns/storage-manager/storage-manager.css": "91508f45cc65454dbe7dc95fbaf0119e0777169573aacc8d006cd69c65fc231c"
+  },
+  "captures": [
+    {
+      "file": "after-api-v2.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "b166863f3639500a338c5bba0cfad58bbaac061fd25ed19813a3e48908def80e"
+    },
+    {
+      "file": "after-api.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "a2245b3d3909720f77cd529512fb83ef66deadf2d5ebbd81d99286080ddc03ba"
+    },
+    {
+      "file": "after-capacity-mobile.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "b0efa708e48ec49db4ac9bff4f32e564b9feb8bd8f0d461bae65cce6a90e57df"
+    },
+    {
+      "file": "after-changelog.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "79ba867ad857f206b4c5ceaf8f6dbd8b6d4097772515f1496262a1c7cae9a484"
+    },
+    {
+      "file": "after-cleanup-review.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "c075088ce22de1afc0c13462065de0930a4e52abebb3476f340e913df495cb5e"
+    },
+    {
+      "file": "after-dark-v2.png",
+      "width": 1440,
+      "height": 1525,
+      "sha256": "da039c8df60733daa6b890dd50d4db31f6d97cd32fcfa352bf0dd7fa092321a5"
+    },
+    {
+      "file": "after-dark-v3.png",
+      "width": 1440,
+      "height": 1525,
+      "sha256": "f5012d1bfc474c61571af2ac23ce6996c2118556cf5da3889c7cca28fcb8514d"
+    },
+    {
+      "file": "after-dark.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "a12a62bf48e2856ee32708398401f983d0634866e7d0deee223e4acbd30bef42"
+    },
+    {
+      "file": "after-document-storage.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "a3239cd810352e191f4f24e434df7bf4812fc138735aa2757e73f3e12def7ba5"
+    },
+    {
+      "file": "after-empty.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "07cb0e36d3ee7386e356b80e6b7e2fbda3f4763d16da973ebcdf4a3f690d6b88"
+    },
+    {
+      "file": "after-light.png",
+      "width": 1440,
+      "height": 1525,
+      "sha256": "693ce5551bc8b6f0fb110ac5e241de5762c0f07274ed37d3eab7ac810a7374ed"
+    },
+    {
+      "file": "after-medium.png",
+      "width": 900,
+      "height": 1637,
+      "sha256": "bd9b3b0f45fe7babb72880e4864ef600598d6b26d61349ebd6b1dff70558e76e"
+    },
+    {
+      "file": "after-mobile-light.png",
+      "width": 390,
+      "height": 2284,
+      "sha256": "4f496cddd2f6423e87c6e07673bb56e3f156313988960912c67fbbdd2e107fdc"
+    },
+    {
+      "file": "after-mobile-over-capacity.png",
+      "width": 390,
+      "height": 2284,
+      "sha256": "20bed93a78216e3046b3cf1b6f27e2fa7f3b8c48822915189818addceff29ffc"
+    },
+    {
+      "file": "after-module-detail.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "3dde5fa64f4aff4dfac74e4b6bae2b80443e6f45e554390e564052d6a3d14141"
+    },
+    {
+      "file": "after-recycle-bin.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "09259a43c936fd3b25e4b2d1067d563be8c5c94631b66a5c32e67d416db44652"
+    },
+    {
+      "file": "after-table-playground.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "dabc86d4e8e10a88bb181c0da546371e99b29e972d24568537be71a3c81121ac"
+    },
+    {
+      "file": "after-usage-playground.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "393171ce6dbb80a548cdceb5ce296daa5ee4ca8e61a49c015ae4563c4810d7b4"
+    },
+    {
+      "file": "before-changelog.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "a90befce739fc356417c9baf49398e6e137be5c5de55ba4e7efa4c3c69b457b8"
+    },
+    {
+      "file": "before-document-storage.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "a3239cd810352e191f4f24e434df7bf4812fc138735aa2757e73f3e12def7ba5"
+    },
+    {
+      "file": "before-entry.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "561972d44eaf979e74b82e9074f8ba290951db7cce0dc4ee582ef29c9b97f118"
+    },
+    {
+      "file": "peer-settings.png",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "1be5234631a33453ccfa920f7579381e9e020c0ddd746600bc93e1323ff525c9"
+    },
+    {
+      "file": "reference.png",
+      "width": 2900,
+      "height": 2244,
+      "sha256": "5fdc45a5f8a12ed3f19a4b6d61aca202e5ccbf1eb55bfb8b38c60d9b96d2e1ab"
+    }
+  ]
+}
