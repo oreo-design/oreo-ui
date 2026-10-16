@@ -32,7 +32,7 @@ The reference's red active pill maps to Oreo's semantic foreground/background pa
 | Responsive / theme | No same-page baseline variants | `after-mobile.png` (390×844), `after-mobile-compact.png`, `after-tablet.png` (768×1024), `after-dark.png` (1440×1000). Document width matches each viewport. |
 | Component / docs | Missing route baseline above, not a separate captured baseline per docs state | `after-doc-expanded.png`, `after-doc-compact-six-v2.png`, `after-doc-api.png`; 4/6-step examples, variant controls, generated JSX inspected. |
 | Motion | Reference frames at 0.3, 4, 8 seconds; no previous local flow to record | `interaction-v2.mp4`, 1440×1000, 30fps, 11.67 seconds. Full checkout plus rapid return/forward transitions captured. Keyboard computed transition is 0s; reduced-motion pointer transition is 0s (`after-reduced-motion-v2.png`); ordinary pointer transition is 0.24s. |
-| Changelog | `before-changelog.png` | Capture added with actual PR number after creation. |
+| Changelog | `before-changelog.png` | `after-changelog.png` pairs with baseline; `after-changelog-entry.png` shows the complete new entry. |
 
 The recording contains actual Chrome screencast frames, with idle gaps capped at two seconds and a 40ms minimum frame duration for review. Original frame data/timestamps are retained in the matching `.json.xz` files. It is not a wall-clock benchmark. Decoded early/intermediate frames were inspected; the corrected indicator retains readable text throughout its movement. The supplied reference was inspected through its real media player, not re-created as evidence. No source video download was needed.
 
@@ -66,3 +66,7 @@ Superseded originals remain: `after-cart.png` exposed a class-name collision; `a
 - Browser: cart quantity/removal, invalid details/focus, sample details, saved method selection, edit/reconfirm, loading/empty/error/retry, order failure/success/restart, compact variant, 4/6-step playground, generated JSX, keyboard/reduced motion, responsive/light/dark. Interaction recording reported zero page errors.
 - Missing evidence: exact pre-change variants did not exist; other peer loading/empty runtime states were not separately recorded; no physical device testing, live billing or production deployment verification.
 - Review artifacts use local fixture data only. Primary dirty checkout and other preview servers are preserved.
+
+## Delivery
+
+[PR #72](https://github.com/oreo-design/oreo-ui/pull/72). Implementation commit: `980217d`. Exact reviewed source revision and remote merge result are reported in the final delivery. No deployment is implied.

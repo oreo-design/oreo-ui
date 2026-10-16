@@ -31,7 +31,8 @@
     "src/docs/playground/registry.tsx": "11a6acdf9cff59c6b07b9e1ba1b796e8b2e23694ffe4096decd0089096e85fd7",
     "src/docs/Sidebar.tsx": "6a5e2ac2eada7121db67a62407f7694b396e1af0e30a10adefd8bd5252a232aa",
     "src/App.tsx": "54b3897e217cfc0eb3af60f0b134524332fc01597fe947d6a4c50cfefa695b1a",
-    "src/lib/site.ts": "0040546dac6cd9d135142a76c6382f22bf0c80339c27ebbf29509fea048d717c"
+    "src/lib/site.ts": "0040546dac6cd9d135142a76c6382f22bf0c80339c27ebbf29509fea048d717c",
+    "src/patterns/changelog/data.ts": "ce87d227dcd52d1fae5c018cbe5a88697dc3ea3566a2aaf2c5c9dea53fdcd467"
   },
   "mediaSha256": {
     "after-doc-api.png": "38d414b0b54d7e37158ccaa8bb64024e276d35d76e3414d1dd2095bed069779e",
@@ -65,6 +66,10 @@
     "interaction-frames-v2.json.xz": "7c73017186001bb02a493832deb529f3d0e05241ae9f1f2e79b391a7475ad4cf",
     "after-mobile-compact.png": "0c1d9911d5dfc78432ab176e12ee13ca1e789370654cc71cc5d0e4ace764337e",
     "before-changelog.png": "c089d596c37713cf67790525c4d789d5d7ed8a5dd380b443b6272e5ca6de944a",
-    "after-payment.png": "d5a2d7d864cf74496039f7247a015251e5e5a0962755202acf3b1358ba3cc44f"
-  }
+    "after-payment.png": "d5a2d7d864cf74496039f7247a015251e5e5a0962755202acf3b1358ba3cc44f",
+    "after-changelog.png": "74dfb96948ec3e894bb4eb3bc52e1d77d0a25ae772827921ab5b2ef67cb16424",
+    "after-changelog-entry.png": "039a9bc0ed74cad9161c01425d6bb2c17d318346c013da8b9b0ab4d454e61dfd"
+  },
+  "implementationCommit": "980217d",
+  "pullRequest": "https://github.com/oreo-design/oreo-ui/pull/72"
 }
