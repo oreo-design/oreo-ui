@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "chain-token-badge": {title:"Chain Token Badge",description:"Overlapping chain and token identity marks with network labels."},
+  "token-amount-panel": {title:"Token Amount Panel",description:"A token amount surface with wallet context, balance, Max and network selection."},
+  "chain-token-picker": {title:"Chain Token Picker",description:"Searchable chain and token lists with balances, selection and recovery states."},
+  "token-bridge": {title:"Token Bridge",description:"A local cross-chain transfer simulation with exact amounts, sample quotes, review and history."},
   "agent-mention-composer": {title:"Agent Mention Composer",description:"Caret-aware agent mentions for comments and engineering handoffs."},
   "agent-session-card": {title:"Agent Session Card",description:"A controlled execution session with progress, clarification, recovery and results."},
   "engineering-handoff": {title:"Engineering Handoff",description:"A local work item with agent delegation, clarification, sample patch review and completion."},
