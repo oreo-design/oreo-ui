@@ -1,3 +1,5 @@
+import { AgentRunsPage } from "@/patterns/agent-runs";
+import { AgentRunsDocs } from "@/pages/AgentRunsDocs";
 import { ProgressiveStepsDocs } from "@/pages/ProgressiveStepsDocs";
 import { ProgressiveCheckoutPage } from "@/patterns/progressive-checkout";
 import { ModelUsageDocs } from "@/pages/ModelUsageDocs";
@@ -158,6 +160,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "weekly-heatmap": AgentRunsDocs, "agent-runs-card": AgentRunsDocs, "agent-runs": AgentRunsPage,
   "progressive-steps": ProgressiveStepsDocs, "progressive-checkout": ProgressiveCheckoutPage,
   "model-trend-chart": ModelUsageDocs, "model-usage-ring": ModelUsageDocs, "agent-usage-row": ModelUsageDocs, "model-costs": ModelCostsPage,
   "saved-payment-methods": CheckoutDocs, "discount-code-field": CheckoutDocs, "checkout-summary": CheckoutDocs, "plan-upgrade": PlanUpgradePage,

@@ -1,3 +1,5 @@
+import { WeeklyHeatmap, AgentRunsCard, type RunMetric } from "@/components/agent-runs";
+import { selectedWeek } from "@/patterns/agent-runs/data";
 import { ProgressiveSteps } from "@/components/progressive-steps";
 import { ModelTrendChart, ModelUsageRing, AgentUsageRow, type UsageMetric } from "@/components/model-usage";
 import { MODELS, sampleDays } from "@/patterns/model-costs/data";
@@ -133,6 +135,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+  "agent-runs": {WeeklyHeatmap,AgentRunsCard},
   "progressive-steps": {ProgressiveSteps},
  "model-usage": {ModelTrendChart,ModelUsageRing,AgentUsageRow},
  checkout: {SavedPaymentMethods,DiscountCodeField,CheckoutSummary},
@@ -210,6 +213,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "weekly-heatmap": {...define("Weekly Heatmap",{metric:select(["runs","credits","failures"],"runs"),slot:number(82,0,167,1),state:select(["ready","loading","empty","error"],"ready")},(v,set)=><div className="w-full p-6"><WeeklyHeatmap data={v.state==="ready"?selectedWeek():[]} metric={v.metric as RunMetric} value={Math.floor(v.slot)} onValueChange={i=>set("slot",i)} loading={v.state==="loading"} error={v.state==="error"?"Activity could not be loaded.":undefined} onRetry={()=>set("state","ready")}/></div>),source:"agent-runs"},
+ "agent-runs-card": {...define("Agent Runs Card",{metric:select(["runs","credits","failures"],"runs"),slot:number(82,0,167,1),agent:select(["all","triage","research","digest"],"all"),state:select(["ready","loading","empty","error"],"ready")},(v,set)=><div className="w-full p-6"><AgentRunsCard data={v.state==="ready"?selectedWeek(v.agent):[]} previousData={selectedWeek(v.agent,true)} description={`${v.agent === "all" ? "All agents" : v.agent} · Oct 5–11, 2026 · UTC`} metric={v.metric as RunMetric} onMetricChange={m=>set("metric",m)} value={Math.floor(v.slot)} onValueChange={i=>set("slot",i)} loading={v.state==="loading"} error={v.state==="error"?"Activity could not be loaded.":undefined} onRetry={()=>set("state","ready")}/></div>),source:"agent-runs"},
  "progressive-steps": {...define("Progressive Steps",{variant:select(["expanded","compact"],"expanded"),count:select(["4","6"],"4"),step:number(1,1,6,1),completed:toggle(),disabled:toggle(),empty:toggle()},(v,set)=>{const labels=v.count==="6"?["Profile","Email","Phone","ID photo","Selfie","Review"]:["Cart","Details","Payment","Review"];const index=Math.max(0,Math.min(labels.length-1,Math.floor(v.step)-1));const steps=labels.map((label,i)=>({id:String(i+1),label}));return <div className="w-full max-w-lg p-6"><ProgressiveSteps steps={v.empty?[]:steps} value={v.completed?"":String(index+1)} completed={steps.slice(0,v.completed?steps.length:index).map(s=>s.id)} variant={v.variant as "expanded"|"compact"} disabled={v.disabled} onValueChange={id=>set("step",Number(id))}/></div>;}),source:"progressive-steps"},
  "model-trend-chart": {...define("Model Trend Chart",{metric:select(["costCents","tokens","requests"],"costCents"),highlight:text(""),state:select(["ready","empty","loading","error"],"ready")},(v,set)=><div className="w-full max-w-3xl p-6"><ModelTrendChart days={v.state==="ready"?sampleDays("production"):[]} models={MODELS} metric={v.metric as UsageMetric} highlighted={v.highlight} onHighlight={id=>set("highlight",id)} loading={v.state==="loading"} error={v.state==="error"?"Sample usage is unavailable.":undefined} onRetry={()=>set("state","ready")}/></div>),source:"model-usage"},
  "model-usage-ring": {...define("Model Usage Ring",{highlight:text(""),empty:toggle()},(v,set)=><div className="w-full max-w-md p-6"><ModelUsageRing days={v.empty?[]:sampleDays("production")} models={MODELS} value={v.highlight} onValueChange={id=>set("highlight",id)}/></div>),source:"model-usage"},
