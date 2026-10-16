@@ -22,6 +22,10 @@
       "bytes": 132849,
       "sha256": "eab72847428e4690d7a40b61888005a218a53ef56db39af110e648c60a9e1360"
     },
+    "after-changelog.png": {
+      "bytes": 147039,
+      "sha256": "e2d3b034f29d98819f6ed127de4c914ef465c7798c2eb462e1dcea9c777c9835"
+    },
     "after-comments-files.png": {
       "bytes": 133542,
       "sha256": "c421e1319db4cb506a52aa339cbfa2864a8c656790255756c910f5758470d1f3"
@@ -49,6 +53,10 @@
     "after-interaction.mp4": {
       "bytes": 223712,
       "sha256": "fb63d0c5d19354bd65ba245542029561dff2e79f77025a34c785d2828f3b289c"
+    },
+    "after-light-default.png": {
+      "bytes": 133920,
+      "sha256": "fc7f55e28b3e85e9ec1331bc951022544051c300b9f117c54f45414818c7bbce"
     },
     "after-light-final.png": {
       "bytes": 133316,
@@ -414,5 +422,7 @@
       "bytes": 487,
       "sha256": "dba8d177a13ccd35293cd17b609ccd1b411c3f8ede315314cf19d5d664c704df"
     }
-  }
+  },
+  "productRevision": "1d1ffca11ac2422526c00aca134f061cd996b091",
+  "pullRequest": "https://github.com/oreo-design/oreo-ui/pull/93"
 }

@@ -18,7 +18,7 @@
 | Actions/icons | Button, IconButton, Avatar, Icon | Same role uses existing variants, tapScale=1 for frequent editing. CurrentColor and semantic label palette. |
 | Detail scroll | Existing panel header separation | Sticky opaque header protects independently scrolling panel; no redundant decorative fade. Desktop nonmodal region; mobile full-width inspector with Back, no focus trap. |
 
-Implementation and validation pending. No new animation planned for frequent edit/switch actions; inherited Kanban/InlineSearchSelect motion retains reduced-motion support. New fixtures are local only and reset on reload.
+Implementation plan recorded before editing. No new animation planned for frequent edit/switch actions; inherited Kanban/InlineSearchSelect motion retains reduced-motion support. New fixtures are local only and reset on reload.
 
 ## Implemented behavior and focused verification
 - Added TaskProperties, TaskSubtasks and TaskDetailPanel, plus /task-board. Reused KanbanBoard, TaskRow, InlineSearchSelect, AgentWorkspaceNav/State, Avatar, Icon and Button. Added optional KanbanBoard.selectedCardId in the canonical owner: border selection and aria-current; existing consumers omit it and retain their behavior.
@@ -52,7 +52,7 @@ Environment: local React fixtures, Chrome via Playwriter session 10, en-US brows
 
 | Scenario | Before / peer | After |
 |---|---|---|
-| New route / complete task workspace | before-entry.png (Button fallback, light) | after-dark-final.png; after-light-settled.png (light with edited task) |
+| New route / complete task workspace | before-entry.png (Button fallback, light) | after-dark-final.png; after-light-default.png (same default fixture, light); after-light-settled.png (edited task) |
 | Side-by-side inspector composition | reference.png; peer-feed.png; peer-kanban.png | after-dark-final.png |
 | Shared Kanban consumers | peer-kanban.png | peer-kanban-after.png |
 | Date validation and recovery | No equivalent task editor | after-date-error.png; recovery verified by exported due date |
@@ -62,9 +62,9 @@ Environment: local React fixtures, Chrome via Playwriter session 10, en-US brows
 | Medium layout | Medium route baseline not captured | after-medium-dark.png; 900px scroll width equals viewport |
 | Properties / generated code | New docs entry | after-properties-playground-final.png; generated import + API readback |
 | Interaction | No previous task interaction; before-entry.png records real fallback | after-interaction.mp4 + interaction-frames originals |
-| Changelog | before-changelog.png | Pending registration in final delivery commit |
+| Changelog | before-changelog.png | after-changelog.png |
 
 Historical captures preserved, not final evidence: after-initial.png precedes selected-card and icon refinements; after-light-final.png caught an in-flight theme transition (use after-light-settled.png); after-properties-playground.png caught closing picker (use final); after-mobile-dark.png and after-mobile-board.png were captured in light theme with cursor overlay despite the first filename; after-comments-files.png is an early top-of-panel capture (use after-discussion-final.png); after-activity.png predates human-readable property name correction. Final captures hide automation overlay. Narrow light/dark finals inspected. Baseline dark/narrow, full screen-reader audit, physical touch, other browsers and a pre-change motion clip remain evidence gaps. Media gaps do not change delivery authorization.
 
 ## Delivery
-Task-scoped PR and remote merge verification pending. No production deployment requested.
+PR: https://github.com/oreo-design/oreo-ui/pull/93. Product revision: 1d1ffca11ac2422526c00aca134f061cd996b091. Final follow-up only registers Changelog and updates evidence. Exact source review and remote merge verification are reported in the conversation after delivery. No production deployment requested.
