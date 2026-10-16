@@ -25,7 +25,7 @@ Captures: actual React components at http://localhost:5242 in Chromium through P
 | Empty / failure recovery | New states | [empty](after-source-empty.png), [failure](after-source-error.png), [initial loading fixture](after-source-loading.png). Clear filters and retry restore content; approvals and archive/undo verified. |
 | Mobile / tablet | No equivalent template | [light knowledge 390px](after-knowledge-mobile.png), [final dark dashboard 390px](after-dashboard-mobile-dark-final.png), [tablet](after-dashboard-tablet.png). Actual HTML client/scroll widths 390/390 and 960/960. Source table owns horizontal overflow. |
 | Public component docs | Routes absent at baseline; not individually recaptured | [source table Playground](after-source-playground.png), [activity Playground](after-activity-playground.png), [docs](after-docs.png). Native keyboard disclosure and exact chart selection values verified. |
-| Changelog | [before](before-changelog.png) | [matching entry point](after-changelog.png), [visible new entry](after-changelog-entry.png), linking PR #69. Existing release list reused. |
+| Changelog | [before](before-changelog.png) | [matching entry point after main sync](after-changelog-rebased.png), [complete new entry](after-changelog-entry-detail.png), linking PR #69. Existing release list reused. |
 
 [Interaction clip](interaction.mp4): actual local response approval and knowledge ask-on-use flow, 1440×1000, 5.64 seconds. Original 38 screencast events are preserved losslessly in `interaction-frames.json.xz`; viewing copy clamps long idle intervals to 2s and holds near-instant frames for 0.1s. It is an interaction illustration, not a timing/performance benchmark. Source images have no motion, and the previous route had no matching workflow. No new timed animation is introduced. Recording predates the final color-only correction; final screenshots show current styling.
 
@@ -54,3 +54,7 @@ External reference maps to data hierarchy and source-choice structure. Rejected 
 - Direct token scan found no unresolved color or radius variables in new CSS.
 - Development emitted transient hot-reload errors while new modules were being written. Fresh page loads after fixes rendered normally with no new page error in the observed verification logs.
 - Missing: individual prior screenshots for new component routes, real-service behavior (intentionally absent), physical-device testing and deployed-site validation. These are evidence limits, not claims of completion outside the local fixture.
+
+## Main synchronization
+
+Rebased onto `041e13c` (PR #66). Shared imports, route metadata, Playground registrations and Changelog insertions were combined mechanically, preserving both additions. No consulting component or template behavior changed. [Dashboard after synchronization](after-dashboard-rebased.png) and current Changelog captures were inspected; earlier Changelog originals remain historical. The original implementation commit `3bcaa22` is now `f20f3f4` after rebase. Final hashes below identify the synchronized product tree.
