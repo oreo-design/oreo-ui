@@ -1,0 +1,188 @@
+.stay-price-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-variant-numeric: tabular-nums;
+}
+.stay-price-label strong {
+  font-weight: 600;
+}
+.stay-price-name {
+  max-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.stay-illustration {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  --stay-art-bg: var(--color-palette-mint-bg);
+  --stay-art-ink: var(--color-palette-mint-text);
+}
+.stay-illustration[data-color="orange"] {
+  --stay-art-bg: var(--color-palette-orange-bg);
+  --stay-art-ink: var(--color-palette-orange-text);
+}
+.stay-illustration[data-color="purple"] {
+  --stay-art-bg: var(--color-palette-purple-bg);
+  --stay-art-ink: var(--color-palette-purple-text);
+}
+.stay-result-card {
+  display: block;
+  width: 14rem;
+  flex: 0 0 14rem;
+  padding: 0.375rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-base);
+  text-align: left;
+  color: var(--color-text-primary);
+}
+button.stay-result-card {
+  cursor: pointer;
+}
+.stay-result-card[aria-pressed="true"] {
+  border-color: var(--color-text-primary);
+  box-shadow: 0 0 0 1px var(--color-text-primary);
+}
+.stay-result-card:focus-visible {
+  outline: 3px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+.stay-result-art {
+  position: relative;
+  height: 7.5rem;
+  overflow: hidden;
+  border-radius: var(--radius-control);
+}
+.stay-star-badge,
+.stay-saved-badge {
+  position: absolute;
+  top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--color-bg-base);
+  border-radius: var(--radius-control);
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+.stay-star-badge {
+  left: 0.5rem;
+}
+.stay-saved-badge {
+  right: 0.5rem;
+}
+.stay-result-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 0.5rem 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.stay-result-body > strong {
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+.stay-result-price {
+  margin-top: 0.25rem;
+}
+.stay-result-price b {
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+}
+.stay-selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  box-shadow: var(--shadow-panel);
+}
+.stay-selection-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+}
+.stay-selection-main > .stay-illustration {
+  width: 7rem;
+  height: 6rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-control);
+}
+.stay-selection h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0.25rem 0;
+}
+.stay-selection p {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+.stay-selection p.stay-eyebrow {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+}
+.stay-selection-amenities,
+.stay-muted {
+  color: var(--color-text-secondary);
+}
+.stay-selection-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+.stay-pager,
+.stay-action-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.stay-pager {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+@media (hover: hover) {
+  button.stay-result-card:hover {
+    background: var(--color-bg-elevated);
+  }
+}
+@media (max-width: 700px) {
+  .stay-selection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .stay-selection-main > .stay-illustration {
+    width: 5rem;
+    height: 5rem;
+  }
+  .stay-selection-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .stay-price-name {
+    max-width: 4.5rem;
+  }
+  .stay-selection h3 {
+    font-size: 0.875rem;
+  }
+  .stay-selection-amenities {
+    display: none;
+  }
+}
+/* Large artwork uses muted accents, matching PlaceIllustration's dark treatment. */
+.theme-dark .stay-illustration { --stay-art-bg:color-mix(in srgb,var(--color-palette-mint-bg) 20%,var(--color-bg-base)); }
+.theme-dark .stay-illustration[data-color="orange"] { --stay-art-bg:color-mix(in srgb,var(--color-palette-orange-bg) 20%,var(--color-bg-base)); }
+.theme-dark .stay-illustration[data-color="purple"] { --stay-art-bg:color-mix(in srgb,var(--color-palette-purple-bg) 20%,var(--color-bg-base)); }

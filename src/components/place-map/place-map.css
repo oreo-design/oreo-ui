@@ -47,3 +47,6 @@
 .theme-dark .place-palette[data-map-style="midnight"] { --map-block:var(--color-code-bg); --map-road:color-mix(in srgb,var(--color-code-bg) 88%,var(--color-code-fg)); }
 .place-illustration { --place-art-warm:var(--color-palette-orange-bg); --place-art-cream:var(--color-palette-brown-bg); --place-art-blue:var(--color-palette-blue-bg); --place-art-green:var(--color-palette-mint-bg); --place-art-accent:var(--color-palette-orange-text); }
 .theme-dark .place-illustration { --place-art-warm:color-mix(in srgb,var(--color-palette-orange-bg) 25%,var(--color-bg-base)); --place-art-cream:color-mix(in srgb,var(--color-palette-brown-bg) 25%,var(--color-bg-base)); --place-art-blue:color-mix(in srgb,var(--color-palette-blue-bg) 25%,var(--color-bg-base)); --place-art-green:color-mix(in srgb,var(--color-status-success) 30%,var(--color-bg-base)); --place-art-accent:color-mix(in srgb,var(--color-palette-orange-text) 65%,var(--color-bg-base)); }
+
+.place-origin-labelled { z-index: 2; }
+.place-origin-labelled > span { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); white-space: nowrap; padding: .375rem .75rem; border-radius: var(--radius-control); background: var(--color-status-progress); color: var(--color-text-on-accent); font-size: .75rem; font-weight: 600; box-shadow: var(--shadow-panel); pointer-events: none; }

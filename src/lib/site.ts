@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "stay-price-label": {title:"Stay Price Label",description:"Compact nightly prices with selected hotel names for map marker buttons."},
+ "stay-result-card": {title:"Stay Result Card",description:"Accommodation results with star category, distance, price and controlled selection."},
+ "stay-selection-card": {title:"Stay Selection Card",description:"Selected accommodation details, pagination, save and room actions for map footers."},
+ "landmark-stays": {title:"Landmark Stays",description:"A local accommodation explorer with linked map markers, filters, room details and exportable shortlists."},
  "pixel-meter": {title:"Pixel Meter",description:"A compact dot-matrix meter with exact accessible values, unknown and overflow states."},
  "inference-chart": {title:"Inference Chart",description:"A zero-baseline dithered count chart with bucket inspection and exact values."},
  "regional-traffic": {title:"Regional Traffic",description:"Schematic world traffic with controlled region selection and precise counts."},

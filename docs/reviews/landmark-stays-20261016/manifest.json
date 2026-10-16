@@ -1,0 +1,271 @@
+{
+  "baseline": "6cd2197ce4d1610e528ed9a3f36ab07ed6a68602",
+  "implementation_commit": "c4f64db6a9d6b5e5c517f84822e3f8b41050aca5",
+  "environment": {
+    "url": "http://localhost:5255",
+    "browser": "Chromium, Playwriter direct session 10",
+    "locale": "en",
+    "desktop_viewport": [
+      1440,
+      1080
+    ],
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "data": "local fictional fixtures"
+  },
+  "capture_note": "Captured during implementation; superseded originals explicitly marked in REVIEW. Final source hashes identify reviewed code. Screenshots prove the recorded states, not continuous motion.",
+  "files": [
+    {
+      "file": "after-changelog.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "87b58382d3fd8a4c654c33f026b04124e4eeba6d1ddf6515b703443d104dbce7",
+      "captured_utc": "2026-10-16T11:20:15.643169+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-empty.png",
+      "dimensions": [
+        1440,
+        1137
+      ],
+      "sha256": "35de77bd5c991c0bf6cd6e658b6774c61136b23efbc07b91825a858e474a5632",
+      "captured_utc": "2026-10-16T11:14:57.249115+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-entry.png",
+      "dimensions": [
+        1440,
+        1661
+      ],
+      "sha256": "7bbbd0c911cad3a1c7da8790bb555dacb73bb754e164553026525dfed27cc1c3",
+      "captured_utc": "2026-10-16T11:15:32.031647+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-filter-empty.png",
+      "dimensions": [
+        1440,
+        1137
+      ],
+      "sha256": "7fa37c41ac4fa339e482e64c70e9bf03819375ed21ee907c7543dafab0c23c16",
+      "captured_utc": "2026-10-16T11:15:17.971889+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "dimensions": [
+        390,
+        1676
+      ],
+      "sha256": "04357fc25af3d4437a439056000948b997087fa3a792d98a7104d2af1fdfbe80",
+      "captured_utc": "2026-10-16T11:17:11.707093+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-mobile-room-dark.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "0fcf48a6eaf586c729fb3ae3d9e60607e043803a1d3b60017049008528c00958",
+      "captured_utc": "2026-10-16T11:17:11.605467+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-mobile.png",
+      "dimensions": [
+        390,
+        1676
+      ],
+      "sha256": "3166bc6f691872aa5cbd86efd49c0e838fa816a277ed130621cc732866ac9df1",
+      "captured_utc": "2026-10-16T11:16:13.502786+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-place-explorer.png",
+      "dimensions": [
+        1440,
+        1398
+      ],
+      "sha256": "f6c1128b61cb24b8fe37633f23e0db7efebca67db84ce587b3f8a7f8087688ac",
+      "captured_utc": "2026-10-16T11:17:12.748815+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-place-map.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "8e1d3f9e1927c09ac1d9e4ce660969e696d103ec8080204e18e0b0bf0c9667a4",
+      "captured_utc": "2026-10-16T11:17:39.244492+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-price-playground.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "dc97117c927f6d00173dff06a9a7fcae20e635028eb2881393f26fe8bf31dca7",
+      "captured_utc": "2026-10-16T11:18:07.954979+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-result-playground.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "71740e824531d3469fd31a31d70392652434b0c0a9448e845f9212971ffe749d",
+      "captured_utc": "2026-10-16T11:18:07.036771+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-room-saved.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "0e2ef7fc90916be048d8f64a3c775984306f21bcc029796172410869bbeb98ba",
+      "captured_utc": "2026-10-16T11:14:44.711751+00:00",
+      "superseded": false
+    },
+    {
+      "file": "after-selection-playground.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "53271d6ba65938e3aad0f6db5d67ee59ddba8a6ce96231b39257431a5e1fc2cf",
+      "captured_utc": "2026-10-16T11:17:50.272497+00:00",
+      "superseded": false
+    },
+    {
+      "file": "before-changelog.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "7b508896e917b821302c8e0e86e95fa3850a3e49106b0b27dc5acd4c399f63f3",
+      "captured_utc": "2026-10-16T11:05:42.990876+00:00",
+      "superseded": false
+    },
+    {
+      "file": "before-entry.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "561972d44eaf979e74b82e9074f8ba290951db7cce0dc4ee582ef29c9b97f118",
+      "captured_utc": "2026-10-16T11:04:24.706879+00:00",
+      "superseded": false
+    },
+    {
+      "file": "before-place-explorer.png",
+      "dimensions": [
+        1440,
+        1398
+      ],
+      "sha256": "4ab53584f1b1611f844ea8e0fed4b68c182d55141e6c265dc086cb03ee43a533",
+      "captured_utc": "2026-10-16T11:04:38.310301+00:00",
+      "superseded": false
+    },
+    {
+      "file": "before-place-map.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "1de19b2aa62d2599fd99954d724aa995d7f2aecae18323d6b09b6837ed46cfee",
+      "captured_utc": "2026-10-16T11:05:43.888768+00:00",
+      "superseded": false
+    },
+    {
+      "file": "reference-03s.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "f87fe4afb725db5f02c864789dacbfb29f22b09074da0efc8836a390087366a2",
+      "captured_utc": "2026-10-16T11:03:55.566525+00:00",
+      "superseded": false
+    },
+    {
+      "file": "reference-11s.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "403429efb7d9fbbbdf3062a81d2e309c6c29829fbb09fea732e36f822e4d5cb3",
+      "captured_utc": "2026-10-16T11:04:04.205076+00:00",
+      "superseded": false
+    },
+    {
+      "file": "reference-19s.png",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "sha256": "d77d52be7490fea9bbdeac3054f226ec8847171b46101113911d6b2bf48e26bf",
+      "captured_utc": "2026-10-16T11:04:24.621655+00:00",
+      "superseded": false
+    },
+    {
+      "file": "superseded-entry-01.png",
+      "dimensions": [
+        1440,
+        1661
+      ],
+      "sha256": "eced267c16640def499790cc0f32e06d0828648d0422b059f53b2f712a6bf165",
+      "captured_utc": "2026-10-16T11:13:36.918588+00:00",
+      "superseded": true
+    },
+    {
+      "file": "superseded-mobile-01.png",
+      "dimensions": [
+        390,
+        1583
+      ],
+      "sha256": "4a1c7e101355f8e7649d32e7989c6733edf249ab191218ec42bc925379fb9ae5",
+      "captured_utc": "2026-10-16T11:15:32.135632+00:00",
+      "superseded": true
+    },
+    {
+      "file": "superseded-mobile-dark-01.png",
+      "dimensions": [
+        390,
+        1676
+      ],
+      "sha256": "9cc74e37b60abb1e86dfc175a559b06b7b02a89540748dc851330134958f3c98",
+      "captured_utc": "2026-10-16T11:16:13.719167+00:00",
+      "superseded": true
+    },
+    {
+      "file": "superseded-mobile-room-dark-01.png",
+      "dimensions": [
+        390,
+        844
+      ],
+      "sha256": "e958a18e09cc5732e4aafe1a2e48c833f2bc755432db0c93b5065d22411f77e5",
+      "captured_utc": "2026-10-16T11:16:24.299612+00:00",
+      "superseded": true
+    }
+  ],
+  "source_sha256": {
+    "src/components/stay-results/index.tsx": "180872c81dee0f3e72cf9e69369019a1b2f255327298df2e07be817262cff533",
+    "src/components/stay-results/stay-results.css": "baee62fd16113f595b6e9a95a744f85f1b69401b59edb09352aaddbaf6edf02c",
+    "src/components/stay-results/model.ts": "9a1a883e3ef4de6da815e81c05d7c9b00b9e9026d6bb6fbf5a2fa8ba4764dd0b",
+    "src/patterns/landmark-stays/index.tsx": "fdbe4d0bc591fe362f795d3a621234651e4d1c08d4a15629be189856008fce6b",
+    "src/patterns/landmark-stays/data.ts": "1c84953c70b083f8ffabc30809814143f02e78345a00844a9af1cd64b9206f5b",
+    "src/patterns/landmark-stays/landmark-stays.css": "899a128dcc9dc96d8cf513f9bb8e3b58d5adc6fc52804dc7174fa5f83d551d46",
+    "src/components/place-map/index.tsx": "564f1b4f030fcee2e65a86928ca7b662ba65d7fb9922348c443054c6aa3181a9",
+    "src/components/place-map/place-map.css": "bf666ab8ed3a38bbc1d013f4efe19244f78abfa9e47e8785d2eba9d6c433746f"
+  }
+}

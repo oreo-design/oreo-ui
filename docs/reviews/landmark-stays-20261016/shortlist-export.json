@@ -1,0 +1,28 @@
+{
+  "demo": true,
+  "landmark": "Eiffel Tower",
+  "nights": 5,
+  "guests": 2,
+  "currency": "GBP",
+  "distance": "Illustrative straight-line distance",
+  "stays": [
+    {
+      "id": "jardin",
+      "name": "Maison Jardin",
+      "stars": 4,
+      "nightly": 143,
+      "point": {
+        "x": 23,
+        "y": 72
+      },
+      "amenities": [
+        "Kitchen",
+        "Wi-Fi",
+        "Garden"
+      ],
+      "color": "mint",
+      "total": 715,
+      "distanceKm": 0.971
+    }
+  ]
+}
