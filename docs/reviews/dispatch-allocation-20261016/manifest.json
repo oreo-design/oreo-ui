@@ -1,0 +1,61 @@
+{
+  "baseline": "1f6e834d55343d8e27331b2ee5479b35a54ef639",
+  "environment": "localhost:5253; Chromium Playwriter session 10; local sample data; en-US",
+  "viewports": {
+    "desktop": [
+      1440,
+      1080
+    ],
+    "tablet": [
+      768,
+      1024
+    ],
+    "mobile": [
+      390,
+      844
+    ]
+  },
+  "source": "https://x.com/maybepratikk/status/2110717643322015819",
+  "captures": [
+    "after-assigned.png",
+    "after-capacity-error.png",
+    "after-card-playground.png",
+    "after-changelog.png",
+    "after-conflict.png",
+    "after-dark-final.png",
+    "after-dark.png",
+    "after-desktop-final.png",
+    "after-desktop.png",
+    "after-dispatched.png",
+    "after-dragging.png",
+    "after-drop-settled.png",
+    "after-drop.png",
+    "after-empty-final.png",
+    "after-empty.png",
+    "after-filtered.png",
+    "after-load-error.png",
+    "after-loading.png",
+    "after-mobile-dark-final.png",
+    "after-mobile-dark.png",
+    "after-mobile-editor.png",
+    "after-mobile-light.png",
+    "after-tablet-dark.png",
+    "after-tablet-light.png",
+    "after-timeline-playground.png",
+    "before-changelog.png",
+    "before-entry.png",
+    "peer-fleet.png",
+    "peer-kanban.png",
+    "reference-after.png",
+    "reference-before.png",
+    "reference-drag.png"
+  ],
+  "limits": [
+    "No drag recording: extension timeout and direct headless tabCapture unavailable",
+    "No physical touch test",
+    "No matched tablet/mobile baseline",
+    "No production verification"
+  ],
+  "implementation_revision": "c5228fba7c0731f5576b3c73de638fe877e75d12",
+  "pr": "https://github.com/oreo-design/oreo-ui/pull/80"
+}

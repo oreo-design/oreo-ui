@@ -1,3 +1,5 @@
+import { RouteJobCard, AllocationTimeline } from "@/components/dispatch-allocation";
+import { RESOURCES, SAMPLE_JOBS, DEMO_DATE } from "@/patterns/dispatch-allocation/data";
 import {FolderEmptyState,FolderCollection} from "@/components/writing-folders";
 import {SAMPLE_FOLDER_ROWS} from "@/patterns/writing-folders/data";
 import {PerformanceScore,ReviewProgress,MemberPerformanceTable} from "@/components/team-performance";
@@ -147,6 +149,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "dispatch-allocation": {RouteJobCard,AllocationTimeline},
   "writing-folders": {FolderEmptyState,FolderCollection},
   "team-performance": {PerformanceScore,ReviewProgress,MemberPerformanceTable},
   "token-bridge": {ChainTokenBadge,TokenAmountPanel,ChainTokenPicker},
@@ -231,6 +234,8 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "route-job-card": {...define("Route Job Card", {category:select(["Private hire","Provisional","Contract"],"Private hire"), passengers:number(8,1,16)}, v=><div className="w-full max-w-sm p-4"><RouteJobCard job={{...SAMPLE_JOBS[0],category:v.category,passengers:v.passengers}}/></div>),source:"dispatch-allocation"},
+ "allocation-timeline": {...define("Allocation Timeline", {view:select(["driver","vehicle"],"driver"),state:select(["ready","loading","empty","filtered","error"],"ready")}, (v,set)=><div className="w-full"><AllocationTimeline jobs={v.state==="empty"||v.state==="loading"?[]:SAMPLE_JOBS} resources={RESOURCES} date={DEMO_DATE} resourceView={v.view} query={v.state==="filtered"?"no-match":""} loading={v.state==="loading"} error={v.state==="error"?"Sample schedule could not be loaded.":undefined} onRetry={()=>set("state","ready")} onClearFilters={()=>set("state","ready")}/></div>),source:"dispatch-allocation"},
  "folder-empty-state": {...define("Folder Empty State",{title:text("It’s empty here"),description:text("Create a folder to start organizing your writing."),created:toggle(false)},(v,set)=><div className="w-full"><FolderEmptyState title={v.title} description={v.description} onCreate={()=>set("created",true)}/>{v.created&&<p role="status" className="px-6 text-sm">Creation requested. Open the template to create a folder.</p>}</div>),source:"writing-folders"},
  "folder-collection": {...define("Folder Collection",{view:select(["list","grid"],"list"),state:select(["ready","loading","empty","filtered","error"],"ready"),opened:text("")},(v,set)=><div className="w-full p-4"><FolderCollection folders={v.state==="ready"?SAMPLE_FOLDER_ROWS:[]} view={v.view as "list"|"grid"} loading={v.state==="loading"} filtered={v.state==="filtered"} error={v.state==="error"?"Sample library unavailable.":undefined} onReset={()=>set("state","ready")} onCreate={()=>set("state","ready")} onOpen={f=>set("opened",f.name)}/>{v.opened&&<p role="status" className="mt-4 text-sm">Selected {v.opened}</p>}</div>),source:"writing-folders"},
  "performance-score": {...define("Performance Score",{value:number(94,0,100,1),label:text("Performance")},v=><PerformanceScore value={v.value} label={v.label}/>),source:"team-performance"},

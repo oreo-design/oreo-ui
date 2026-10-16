@@ -1,3 +1,5 @@
+import { DispatchAllocationPage } from "@/patterns/dispatch-allocation";
+import { DispatchAllocationDocs } from "@/pages/DispatchAllocationDocs";
 import {WritingFoldersPage} from "@/patterns/writing-folders";
 import {WritingFoldersDocs} from "@/pages/WritingFoldersDocs";
 import {TeamPerformancePage} from "@/patterns/team-performance";
@@ -172,6 +174,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+ "route-job-card": DispatchAllocationDocs, "allocation-timeline": DispatchAllocationDocs, "dispatch-allocation": DispatchAllocationPage,
   "folder-empty-state": WritingFoldersDocs, "folder-collection": WritingFoldersDocs, "writing-folders": WritingFoldersPage,
   "performance-score": TeamPerformanceDocs, "review-progress": TeamPerformanceDocs, "member-performance-table": TeamPerformanceDocs, "team-performance": TeamPerformancePage,
   "chain-token-badge": TokenBridgeDocs, "token-amount-panel": TokenBridgeDocs, "chain-token-picker": TokenBridgeDocs, "token-bridge": TokenBridgePage,

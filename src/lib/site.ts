@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "route-job-card": {title:"Route Job Card",description:"Transport route cards with pickup, destination and passenger metadata."},
+ "allocation-timeline": {title:"Allocation Timeline",description:"Controlled resource timelines with drag allocation and an unassigned job tray."},
+ "dispatch-allocation": {title:"Dispatch Allocation",description:"A local transport scheduler with drag allocation, conflict checks, dispatch review and undo."},
   "folder-empty-state": {title:"Folder Empty State",description:"Fading decorative folder rows with a clear creation action."},
   "folder-collection": {title:"Folder Collection",description:"Controlled list and grid folder browsing with counts and recovery states."},
   "writing-folders": {title:"Writing Folders",description:"A local writing library with folders, document editing and organization, undo and export."},
