@@ -1,3 +1,5 @@
+import { CheckoutDocs } from "@/pages/CheckoutDocs";
+import { PlanUpgradePage } from "@/patterns/plan-upgrade";
 import { IconRevealDocs } from "@/pages/IconRevealDocs";
 import { WordRollerDocs } from "@/pages/WordRollerDocs";
 import { LoadingSequenceDocs } from "@/pages/LoadingSequenceDocs";
@@ -152,6 +154,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "saved-payment-methods": CheckoutDocs, "discount-code-field": CheckoutDocs, "checkout-summary": CheckoutDocs, "plan-upgrade": PlanUpgradePage,
   "icon-reveal": IconRevealDocs,
   "word-roller": WordRollerDocs,
   "loading-sequence": LoadingSequenceDocs,

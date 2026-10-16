@@ -1,0 +1,175 @@
+.co-methods {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: calc(var(--spacing) * 4);
+  min-width: 0;
+  color: var(--color-text-primary);
+}
+.co-method {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-small);
+  background: var(--color-bg-base);
+  overflow: hidden;
+}
+.co-method[data-selected] {
+  background: var(--color-bg-elevated);
+  border-color: var(--color-text-secondary);
+}
+.co-method-choice {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 20px;
+  gap: calc(var(--spacing) * 3);
+  align-items: start;
+  padding: calc(var(--spacing) * 4);
+  cursor: pointer;
+}
+.co-method-choice input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-text-primary);
+  margin-top: 4px;
+}
+.co-method-choice strong {
+  font-weight: 600;
+  display: block;
+  overflow-wrap: anywhere;
+}
+.co-brand {
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-surface);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.co-muted {
+  color: var(--color-text-secondary);
+  display: block;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.co-method-actions {
+  display: flex;
+  gap: var(--spacing);
+  padding: 0 calc(var(--spacing) * 4) calc(var(--spacing) * 3)
+    calc(var(--spacing) * 17);
+}
+.co-skeleton {
+  height: 112px;
+  border-radius: var(--radius-card-small);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+}
+.co-discount label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: calc(var(--spacing) * 2);
+}
+.co-discount-input {
+  display: flex;
+  gap: calc(var(--spacing) * 2);
+}
+.co-discount-input input {
+  width: 100%;
+  min-width: 0;
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  color: var(--color-text-primary);
+}
+.co-discount p {
+  font-size: var(--text-xs);
+  margin-top: calc(var(--spacing) * 2);
+}
+.co-error {
+  color: var(--color-status-error);
+}
+.co-summary {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-small);
+  padding: calc(var(--spacing) * 5);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  min-width: 0;
+}
+.co-summary h2 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding-bottom: calc(var(--spacing) * 4);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.co-line {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 5) 0;
+}
+.co-line > strong {
+  white-space: nowrap;
+}
+.co-summary-middle {
+  border-top: 2px dotted var(--color-border-default);
+  border-bottom: 2px dotted var(--color-border-default);
+  padding: calc(var(--spacing) * 5) 0;
+}
+.co-totals {
+  display: grid;
+  gap: calc(var(--spacing) * 3);
+  padding-top: calc(var(--spacing) * 5);
+}
+.co-totals > div,
+.co-due {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 3);
+}
+.co-totals dd {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: var(--color-text-secondary);
+}
+.co-totals dt > span {
+  border: 1px solid var(--color-border-default);
+  padding: 0 var(--spacing);
+  margin-left: var(--spacing);
+  border-radius: var(--radius-control);
+  font-size: var(--text-xs);
+}
+.co-tax-note {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  margin: calc(var(--spacing) * 4) 0;
+}
+.co-due {
+  border-top: 2px dotted var(--color-border-default);
+  padding: calc(var(--spacing) * 5) 0;
+}
+.co-summary-action {
+  border-top: 2px dotted var(--color-border-default);
+  padding-top: calc(var(--spacing) * 5);
+}
+.co-summary-action > button {
+  width: 100%;
+}
+.co-methods:disabled {
+  opacity: 0.65;
+}
+.co-methods:disabled label {
+  cursor: default;
+}
+.co-method:focus-within {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 3px;
+}
+.co-discount-input input:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}

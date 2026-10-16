@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {quoteCheckout,validateMethod} from '../../src/components/checkout/model.ts';
+const q=quoteCheckout(11520,4,2000);assert.deepEqual([q.subtotal,q.discount,q.tax,q.total],[46080,9216,4608,41472]);
+assert.equal(quoteCheckout(11520,4,2000,1000,'discounted').total,40550);
+assert.equal(quoteCheckout(1200,1,0,0).total,1200);
+assert.equal(quoteCheckout(101,1,5000,0).total,50);
+assert.equal(quoteCheckout(100,100,10000,0).total,0);
+for(const args of [[-1,4],[100,0],[100,101],[100,1.5],[NaN,1],[100,1,-1],[100,1,10001],[100,1,0,-1],[1e11,1]]) assert.throws(()=>quoteCheckout(...args),RangeError);
+const now=new Date(2026,9,16);assert.equal(validateMethod('Alex','1234','10/2026',now),null);assert.ok(validateMethod('Alex','1234','09/2026',now));assert.ok(validateMethod('Alex','1234','13/2028',now));assert.ok(validateMethod('','1234','06/2028',now));assert.ok(validateMethod('Alex','12x4','06/2028',now));
+console.log('PASS: reference totals, tax basis, rounding, bounds and payment metadata validation');

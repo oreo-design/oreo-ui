@@ -5,6 +5,7 @@ export const REPOSITORY = "https://github.com/oreo-design/oreo-ui";
 /** Selected main-branch changes. Dates are merge dates in Asia/Shanghai, not package releases. */
 export const releases: Release[] = [
   { date: "2026-10-16", label: "October 16, 2026", title: "A clearer view of what comes next.", description: "Usage forecasts, payment drafts, sales and operational workspaces, built from reusable components.", changes: [
+    { id:"plan-upgrade", kind:"Added", title:"Plan Upgrade", description:"Saved payment methods, applied discount codes and checkout totals, composed into a local plan upgrade with seat counts, annual or monthly billing, metadata editing, undo and failure recovery.", page:"plan-upgrade", pr:70 },
     { id:"consulting-workspace", kind:"Added", title:"Consulting Workspace", description:"Client escalation cards, source conflict choices, knowledge tables and conversation activity, composed into a local advisory workspace with response review, source approval and advisor settings.", page:"consulting-workspace", pr:69 },
     { id:"icon-reveal", kind:"Added", title:"Icon Reveal", description:"An icon-texture wordmark with pointer spotlight, full keyboard reveal and touch support, using the existing theme and icon system.", page:"icon-reveal", pr:66 },
     { id:"word-roller", kind:"Added", title:"Word Roller", description:"A reusable word list with wheel and drag snapping, looping or finite boundaries, keyboard selection and standalone generated examples.", page:"word-roller", pr:66 },

@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "saved-payment-methods": {title:"Saved Payment Methods",description:"Selectable payment identities with edit and remove actions."},
+  "discount-code-field": {title:"Discount Code Field",description:"Explicit discount validation and applied-code status."},
+  "checkout-summary": {title:"Checkout Summary",description:"Clear line items, discount, tax basis and due-today totals."},
+  "plan-upgrade": {title:"Plan Upgrade",description:"A complete local upgrade flow with plans, saved payment methods and checkout review."},
   "icon-reveal": { title: "Icon Reveal", description: "An icon-texture wordmark revealed by a pointer spotlight, keyboard focus or touch." },
   "word-roller": { title: "Word Roller", description: "A draggable, scrollable word list with snapping, looping and keyboard selection." },
   "loading-sequence": { title: "Loading Sequence", description: "Four decorative page-entry sequences with pause, replay and reduced-motion support." },

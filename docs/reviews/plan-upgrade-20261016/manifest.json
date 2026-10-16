@@ -1,0 +1,77 @@
+{
+  "baseline": "0b4987091da75778dca674ca147757200b77ad3a",
+  "reference": "https://x.com/jordanphughes/status/2110767174008574457",
+  "environment": {
+    "url": "http://localhost:5243/plan-upgrade",
+    "browser": "Chromium / Playwriter session 1",
+    "locale": "English",
+    "fixture": "local sample metadata",
+    "desktop": [
+      1440,
+      1000
+    ],
+    "tablet": [
+      960,
+      1000
+    ],
+    "mobile": [
+      390,
+      844
+    ]
+  },
+  "source_sha256": {
+    "src/components/checkout/index.tsx": "0c8c422f59f9ed27dd88056ed37ebb071d92d6a2f1cf08b7bd0d10c432fe2d37",
+    "src/components/checkout/checkout.css": "5407316b83427344a0bc1a11541d43aecb3b5f153a06fdc9c7441e5f8acc8bd5",
+    "src/components/checkout/model.ts": "f3530e3196f433fa9c961a0c562d5549dbcf6fcd3778b709b4c7d3a76918995e",
+    "src/patterns/plan-upgrade/index.tsx": "a7411a492d13e7caccdfd1f3a90218feb00b4b5630f8d15254f793eed10e3e3e",
+    "src/patterns/plan-upgrade/data.ts": "fe588d3f3d2416e297662a8c94a4b3cf59df58c49f53a4ebf9a2f68d7439a262",
+    "src/patterns/plan-upgrade/upgrade.css": "cdeeb532aa9bd5d0b00eea7550fb975eb5bd1a40ea1150b4b2ce8b0d22148da8",
+    "src/pages/CheckoutDocs.tsx": "5084856843424f0015e49057dbb9a2d6578bb97af1caee1f14c214b8d7d8c4ee",
+    "src/App.tsx": "5ed9a1958583fd3f148d4f5010172317a06516d6d607434fcfe2e651706ece51",
+    "src/lib/site.ts": "13ec7b213a4691c821785174e62fdb956af7d4569b996245720b2200f46aeb9f",
+    "src/docs/Sidebar.tsx": "1a2083c310eeead0a85d750b4f8c7d60055ccdf26145bb7050b81fdbce578b6b",
+    "src/docs/playground/registry.tsx": "ea7c60733c570c26fe673eec2e6bc67d89fc105dc7982ce3a93b3824b239f5d1",
+    "src/patterns/changelog/data.ts": "339e8b300bd195a811a79442f90ac9513f6fc9163754df99adf3b8ce8e3b2d5a"
+  },
+  "media_sha256": {
+    "after-mobile-dark-settled.png": "fa3c86a3cc58b8ed08b54e160347b407be8509228eadfb4a7abfddef2fb3783e",
+    "after-method-error.png": "d9ceca1358775db73a121e26b618c5f76ac2ec73debee255d9f479a8965b4d4c",
+    "after-summary-playground.png": "8cdcf544ef4197be9175a51b2ca84c7f2a341473e9dc2c46376d4d83a846c40e",
+    "after-methods-loading.png": "3b4959962f1cb6449bdd108cc049fd1154368d2a3ac40537654b1d48a273a156",
+    "after-docs.png": "3bb1c8b57aac0f5fff880ffc991d25874e8f890e976890dc91f2ffde25414112",
+    "after-payment-dark-final.png": "401ed816a91ddb64ec64a32c9e1d338e872dbbd538a58f140a3d5613e0ed35f4",
+    "after-mobile-light-settled.png": "8ff572dfa63c034174fc757477e74f8caace9086d84681f1d2ce5b36e3081176",
+    "after-methods-error.png": "92c0b6d887cb162d7f8ce95a45c522920707333a2b921223f3c96833443cabb3",
+    "after-mobile-dark.png": "cc7cc5ddbcface3124fb0bd358467ddfd0df88db78b96ca9f880d1414b558aac",
+    "after-payment-v1.png": "3f9546cd4b6c76051cb2eabf607fed9a3897d4756acbbff65a041466ee882895",
+    "interaction.mp4": "a0b62e703baa8212c9b3e54d427adbc4d4daa4413ba5c900ce5386593019649b",
+    "after-failure.png": "24639acf7b485d8d2654bee328e2705e126328b19a4eb32ab1320641a3614a58",
+    "after-code-error.png": "1cc067b10c7979f292dbaede8c2045ed5fb984cb993fff1399b61c9939e80d95",
+    "peer-payment.png": "416f6c590628ba927045b1aba4dce9608fe7bc0452dc41a81ab5838bf9b73cc7",
+    "after-discount-playground.png": "629f08d36f22d41737c832901fa57a16d1b931bf2b2cca306f41bcf42daff943",
+    "before-entry.png": "2c5ec8c36973acfc67112edb3b2c57220c16d4234297c06ffeb25726c9d21c4d",
+    "after-plan.png": "901083f1f9c01bd4f4070a31464896fe4e75b2169d967c45273786122af4bf2e",
+    "after-complete.png": "10efbe92a7879e2159b3484d66aeb3b9aa1f8285717b1b0ed0dfd37c6e73da78",
+    "after-invalid-seats.png": "a69c827b3fc2e1c219cd340626214a352f849808d890823f841e29c99162d4cd",
+    "after-complete-final.png": "6df677c87fb0e745557629f4fb93f951e2c23eb42d6a831efe8eead072afa1c7",
+    "after-plan-mobile.png": "70a270f6665957cc07ab8c7c01398b5f35a15be7985e63fb270ac5cbe43f68de",
+    "reference-mobile.png": "d4c35ea3541934b3c508fba367edcb1f72dc8f8a68fcd9e1d7b43ef770fec65c",
+    "after-tablet.png": "a24ea1821ff2dd02d69c4403a55d6ca483c54f1155b5b19a958014700c173b22",
+    "after-payment-light.png": "fe5ec8d766082dd221f17f168b45bb4e5e98be521551ac6dc2b6ec51b7dd8a7e",
+    "after-payment-dark.png": "adc103a669804b278987d9d285a9183cc0e2a1b1b3d32d11f994119358a7624b",
+    "reference-desktop.png": "e098e2ba8df1f165f51349dd0c13487b3169e61a2593bcba47782e4144c9f15e",
+    "after-methods-playground.png": "6df855d891662f7022826ad6977c1a198ccb2d268c4f57221448ccde8965c72e",
+    "after-payment-light-settled.png": "18d6bf213c94b16fcadcf430fef871f2ea0ed43f774856368bb258e105415239",
+    "interaction-frames.json.xz": "83625748d7484cb6f9ac0d3217c2d5279b84b3caa0baef856d38de731e4263fa",
+    "after-mobile-light.png": "54c68149fd3091bb3c7bf0531b54c2ce6e733fa5cfcaf11abbf7580c6a41ad71",
+    "after-payment-dark-settled.png": "7915a82c35f19b24565ab46a9dd0d5d62007f16a0ac1cd466fa6bf9c77f0f29f",
+    "after-methods-empty.png": "c068fcb804128ecbb3ec6cd9b757a6cf0230d3667e0abe94dba81187b56c5a44",
+    "after-payment-light-final.png": "18d6bf213c94b16fcadcf430fef871f2ea0ed43f774856368bb258e105415239",
+    "before-changelog.png": "f6c698f3a89aef7768d6b32c668abdcefff5cfb43e82c3d87872d86d90dac4b3",
+    "after-changelog.png": "1cbd189a67b2e5218d8caffa20adc8a3bf5bebf7037c45a520f27ad772edd186",
+    "after-changelog-entry.png": "6b29e0132191290309274cc0744ca69b58eeac8d1db5438bce27a746aa7a8eea",
+    "after-methods-disabled-empty.png": "ed49a896b2036f50ec71fba70112f29d5a9a91e349483ee70ba75dc2d7c32b4a"
+  },
+  "pull_request": "https://github.com/oreo-design/oreo-ui/pull/70",
+  "implementation_commit": "41a0a1d"
+}
