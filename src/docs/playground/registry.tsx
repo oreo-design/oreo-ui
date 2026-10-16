@@ -1,3 +1,5 @@
+import {AnnotatedWaveform,ProductionTaskList,MixVersionList,toggleTask,type ProductionTask} from "@/components/music-project";
+import {MIX_SAMPLES,MIX_COMMENTS,MIX_TASKS,MIX_VERSIONS} from "@/patterns/music-project/data";
 import {VoiceSignal,VoiceLatencyBreakdown,TurnLatencyHistory} from "@/components/voice-telemetry";
 import {VOICE_TURNS} from "@/patterns/voice-agent/data";
 import {BudgetCapControl,BudgetOutcome,MonthlyBudgetCard} from "@/components/agent-budget";
@@ -169,6 +171,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "music-project":{AnnotatedWaveform,ProductionTaskList,MixVersionList},
  "voice-telemetry":{VoiceSignal,VoiceLatencyBreakdown,TurnLatencyHistory},
  "agent-budget":{BudgetCapControl,BudgetOutcome,MonthlyBudgetCard},
  "storage-management":{StorageUsageCard,StorageModuleTable,RetentionPolicyRow},
@@ -264,6 +267,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "annotated-waveform":{...define("Annotated Waveform",{position:number(84,0,238,1),markers:toggle(true),invalid:toggle(false),selected:text("")},(v,set)=><div className="w-full max-w-3xl p-6"><AnnotatedWaveform samples={v.invalid?[]:MIX_SAMPLES} duration={238} position={v.position} comments={v.markers?MIX_COMMENTS:[]} selectedId={v.selected} onSeek={n=>set("position",n)} onComment={id=>{set("selected",id);set("position",MIX_COMMENTS.find(c=>c.id===id)!.seconds);}}/></div>),source:"music-project"},
+ "production-task-list":{...define("Production Task List",{completed:text("s1,s2,t6"),empty:toggle(false)},(v,set)=>{const ids=v.completed.split(",");const restore=(list:ProductionTask[]):ProductionTask[]=>list.map(t=>({...t,done:ids.includes(t.id),children:t.children?restore(t.children):undefined}));const list=restore(MIX_TASKS);return <div className="w-full max-w-3xl p-6"><ProductionTaskList tasks={v.empty?[]:list} onToggle={(id,done)=>{const updated=toggleTask(list,id,done);const collect=(ts:ProductionTask[]):string[]=>ts.flatMap(t=>t.children?.length?collect(t.children):t.done?[t.id]:[]);set("completed",collect(updated).join(","));}}/></div>;}),source:"music-project"},
+ "mix-version-list":{...define("Mix Version List",{value:select(["v4","v3","v2","v1"],"v4"),empty:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-6"><MixVersionList versions={v.empty?[]:MIX_VERSIONS} value={v.value} onChange={id=>set("value",id as typeof v.value)}/></div>),source:"music-project"},
  "voice-signal":{...define("Voice Signal",{position:number(3800,0,8000,100),interrupted:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-6"><VoiceSignal turn={VOICE_TURNS[11]} position={v.position} interrupted={v.interrupted} onSeek={n=>set("position",n)}/></div>),source:"voice-telemetry"},
  "voice-latency-breakdown":{...define("Voice Latency Breakdown",{budget:number(800,200,1200,100),invalid:toggle(false)},v=><div className="w-full max-w-2xl p-6"><VoiceLatencyBreakdown stages={v.invalid?[{id:"bad",label:"Invalid",ms:-1,tone:"neutral"}]:VOICE_TURNS[11].stages} budget={v.budget} turnLabel="turn 12"/></div>),source:"voice-telemetry"},
  "turn-latency-history":{...define("Turn Latency History",{selectedId:number(12,1,12,1),budget:number(800,200,1200,100),empty:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-6"><TurnLatencyHistory turns={v.empty?[]:VOICE_TURNS} budget={v.budget} selectedId={v.selectedId} onSelect={n=>set("selectedId",n)}/></div>),source:"voice-telemetry"},

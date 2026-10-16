@@ -1,0 +1,221 @@
+.mp-waveform {
+  color: var(--color-text-primary);
+}
+.mp-markers {
+  height: 2.25rem;
+  position: relative;
+  margin: 0 1rem;
+}
+.mp-marker {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 999px;
+}
+.mp-marker[aria-pressed="true"] {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+  z-index: 2;
+}
+.mp-marker-line {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  height: 4rem;
+  width: 1px;
+  background: var(--color-status-progress);
+  pointer-events: none;
+  opacity: 0.6;
+}
+.mp-wave-track {
+  position: relative;
+  height: 4.5rem;
+  margin: 0 1rem;
+}
+.mp-wave-track svg {
+  width: 100%;
+  height: 100%;
+}
+.mp-unplayed {
+  stroke: var(--color-border-default);
+}
+.mp-played {
+  stroke: var(--color-status-progress);
+}
+.mp-wave-track input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: crosshair;
+}
+.mp-wave-track:focus-within {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 4px;
+  border-radius: var(--radius-control);
+}
+.mp-time-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+.mp-marker-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.mp-marker-links button {
+  font-size: 0.6875rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  padding: 0.25rem 0.5rem;
+  color: var(--color-text-secondary);
+}
+.mp-marker-links button[aria-pressed="true"] {
+  color: var(--color-status-progress);
+  background: var(--color-status-progress-subtle);
+}
+.mp-task-list {
+  padding: 0.5rem 1rem;
+  list-style: none;
+}
+.mp-task-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3.25rem;
+}
+.mp-task-row input {
+  appearance: auto;
+  accent-color: var(--color-status-progress);
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+.mp-task-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.mp-task-row[data-done="true"] > .mp-task-title {
+  color: var(--color-text-tertiary);
+  text-decoration: line-through;
+}
+.mp-task-date {
+  font-size: 0.6875rem;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
+}
+.mp-time-link {
+  margin-left: 0.35rem;
+  color: var(--color-status-progress);
+  text-decoration: none;
+}
+.mp-subtasks-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-text-tertiary);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+.mp-subtasks {
+  list-style: none;
+  padding-left: 2rem;
+}
+.mp-subtasks .mp-task-row {
+  min-height: 2.75rem;
+}
+.mp-subtasks .mp-task-date,
+.mp-subtasks .mp-task-row > [role="img"] {
+  display: none;
+}
+.mp-version-list {
+  display: grid;
+  gap: 0.5rem;
+}
+.mp-version {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.mp-version[aria-pressed="true"] {
+  background: var(--color-status-progress-subtle);
+  border-color: var(--color-status-progress);
+}
+.mp-version-icon {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-control);
+  flex-shrink: 0;
+}
+.mp-version-info {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.mp-version strong {
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.mp-version small {
+  margin-left: 0.5rem;
+  font-size: 0.625rem;
+  color: var(--color-status-progress);
+}
+.mp-waveform button:focus-visible,
+.mp-task-list button:focus-visible,
+.mp-task-list input:focus-visible,
+.mp-version:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mp-played {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .mp-task-row {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+  }
+  .mp-task-title {
+    flex-basis: calc(100% - 2rem);
+  }
+  .mp-task-date {
+    margin-left: 1.5rem;
+  }
+  .mp-subtasks {
+    padding-left: 1.5rem;
+  }
+  .mp-version {
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+}
