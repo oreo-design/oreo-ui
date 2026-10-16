@@ -1,3 +1,5 @@
+import {CalendarEventBlock,CalendarColorPicker,CalendarSourceList,CalendarWeekGrid,weekDates} from "@/components/color-calendar";
+import {INITIAL_EVENTS as COLOR_EVENTS,INITIAL_SOURCES as COLOR_SOURCES} from "@/patterns/color-calendar/data";
 import {CurrencyBalanceCard,CurrencyBalanceSummary,MoneyActivityList,CashFlowBars,cashFlowDays} from "@/components/currency-finance";
 import {INITIAL_WALLET} from "@/patterns/cross-currency/data";
 import {StayPriceLabel,StayResultCard,StaySelectionCard,distanceKm} from "@/components/stay-results";
@@ -155,6 +157,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "color-calendar":{CalendarEventBlock,CalendarColorPicker,CalendarSourceList,CalendarWeekGrid},
  "agent-observability": {PixelMeter,InferenceChart,RegionalTraffic,AgentHealthTable},
  "dispatch-allocation": {RouteJobCard,AllocationTimeline},
   "writing-folders": {FolderEmptyState,FolderCollection},
@@ -243,6 +246,10 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "calendar-event-block":{...define("Calendar Event Block",{selected:toggle(false),compact:toggle(false),color:select(["blue","mint","pink","purple","orange","brown","default"],"blue")},(v,set)=><div className="w-64 h-24"><CalendarEventBlock event={{...COLOR_EVENTS[0],color:v.color}} source={COLOR_SOURCES[2]} selected={v.selected} compact={v.compact} onOpen={()=>set("selected",!v.selected)}/></div>),source:"color-calendar"},
+ "calendar-color-picker":{...define("Calendar Color Picker",{color:select(["blue","mint","pink","purple","orange","brown","default"],"blue"),disabled:toggle(false)},(v,set)=><CalendarColorPicker value={v.color} disabled={v.disabled} onChange={color=>{if(color)set("color",color);}}/>),source:"color-calendar"},
+ "calendar-source-list":{...define("Calendar Source List",{work:toggle(true)},(v,set)=><div className="w-64"><CalendarSourceList sources={[{...COLOR_SOURCES[0],visible:v.work}]} onVisibilityChange={(_,visible)=>set("work",visible)}/></div>),source:"color-calendar"},
+ "calendar-week-grid":{...define("Calendar Week Grid",{state:select(["ready","loading","empty","error"],"ready"),day:toggle(false)},(v,set)=><div className="w-full"><CalendarWeekGrid dates={v.day?["2026-10-19"]:weekDates("2026-10-19",5)} events={v.state==="ready"?COLOR_EVENTS:[]} sources={COLOR_SOURCES} loading={v.state==="loading"} error={v.state==="error"?"The demo calendar could not be loaded.":undefined} onRetry={()=>set("state","ready")} onEmptyAction={()=>set("state","ready")}/></div>),source:"color-calendar"},
  "pixel-meter": {...define("Pixel Meter",{value:number(92.6,0,150,.1),max:number(100,1,200,1),label:text("Success rate"),tone:select(["success","warning","neutral"],"success"),unknown:toggle(false)},v=><PixelMeter value={v.unknown?-1:v.value} max={v.max} label={v.label} tone={v.tone}/>),source:"agent-observability"},
  "inference-chart": {...define("Inference Chart",{state:select(["ready","loading","empty","error","zero"],"ready")},(v,set)=><div className="w-full max-w-2xl p-6"><InferenceChart points={v.state==="ready"?inferenceSeries(118629,"Last 30 days"):v.state==="zero"?inferenceSeries(0,"Last 30 days"):[]} loading={v.state==="loading"} error={v.state==="error"?"Sample telemetry could not be loaded.":undefined} onRetry={()=>set("state","ready")}/></div>),source:"agent-observability"},
  "regional-traffic": {...define("Regional Traffic",{region:select(["all","us-east","eu-central","ap-south"],"all"),state:select(["ready","empty","invalid"],"ready")},(v,set)=><div className="w-full max-w-xl p-6"><RegionalTraffic regions={v.state==="empty"?[]:trafficRegions(OBSERVATORY_AGENTS).map(r=>({...r,requests:v.state==="invalid"?-1:r.requests}))} value={v.region} onValueChange={id=>set("region",id as "all")}/></div>),source:"agent-observability"},

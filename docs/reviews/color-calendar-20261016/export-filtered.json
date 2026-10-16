@@ -1,0 +1,64 @@
+{
+  "demo": true,
+  "timeBasis": "Fixed wall-clock demo time; no timezone conversion",
+  "dates": [
+    "2026-10-19",
+    "2026-10-20",
+    "2026-10-21",
+    "2026-10-22",
+    "2026-10-23",
+    "2026-10-24",
+    "2026-10-25"
+  ],
+  "query": "Weekend workshop",
+  "events": [
+    {
+      "id": "12e20905-3103-4c75-847f-a9386fa8835f",
+      "title": "Weekend workshop",
+      "date": "2026-10-24",
+      "start": 0,
+      "end": 1440,
+      "sourceId": "work",
+      "location": "",
+      "allDay": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "work",
+      "name": "Work",
+      "color": "orange",
+      "visible": true
+    },
+    {
+      "id": "family",
+      "name": "Family",
+      "color": "orange",
+      "visible": true
+    },
+    {
+      "id": "fitness",
+      "name": "Fitness",
+      "color": "mint",
+      "visible": true
+    },
+    {
+      "id": "personal",
+      "name": "Personal",
+      "color": "pink",
+      "visible": true
+    },
+    {
+      "id": "learning",
+      "name": "Learning",
+      "color": "purple",
+      "visible": true
+    },
+    {
+      "id": "friends",
+      "name": "Friends",
+      "color": "brown",
+      "visible": true
+    }
+  ]
+}

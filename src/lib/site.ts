@@ -18,6 +18,11 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "calendar-event-block":{title:"Calendar Event Block",description:"A compact calendar event with semantic color, timing and selection."},
+ "calendar-color-picker":{title:"Calendar Color Picker",description:"Accessible named calendar colors with inheritance support."},
+ "calendar-source-list":{title:"Calendar Source List",description:"Controlled calendar visibility and color actions."},
+ "calendar-week-grid":{title:"Calendar Week Grid",description:"A timed calendar with all-day events, overlap columns and sticky day labels."},
+ "color-calendar":{title:"Color Calendar",description:"A colorful local calendar with week/day views, editable events, source colors, undo and export."},
  "currency-balance-card": {title:"Currency Balance Card",description:"Currency identity, balance and controlled account selection."},
  "currency-balance-summary": {title:"Currency Balance Summary",description:"Combined account totals and controlled visibility with explicit illustrative conversion rates."},
  "money-activity-list": {title:"Money Activity List",description:"Currency-aware transaction and draft rows with details and recovery states."},
