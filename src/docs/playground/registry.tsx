@@ -1,3 +1,5 @@
+import {SegmentRuleBuilder,SegmentPreview,SubscriptionPlanPicker,RevenueTargetEditor,segmentFields} from "@/components/subscription-operations";
+import {CUSTOMERS as SUB_CUSTOMERS,PLANS as SUB_PLANS,LEGS as SUB_LEGS,INITIAL_SEGMENT as SUB_SEGMENT,TODAY as SUB_TODAY} from "@/patterns/subscription-workspace/data";
 import {IssueRow,IssueQueue,IssueReader} from "@/components/issue-browser";
 import {SAMPLE_ISSUES} from "@/patterns/issue-browser/data";
 import {TaskProperties,TaskSubtasks,TaskDetailPanel,type TaskDetails} from "@/components/task-editor";
@@ -175,6 +177,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "subscription-operations":{SegmentRuleBuilder,SegmentPreview,SubscriptionPlanPicker,RevenueTargetEditor},
  "issue-browser":{IssueRow,IssueQueue,IssueReader},
  "task-editor":{TaskProperties,TaskSubtasks,TaskDetailPanel},
  "music-project":{AnnotatedWaveform,ProductionTaskList,MixVersionList},
@@ -273,6 +276,10 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "segment-rule-builder":{...define("Segment Rule Builder",{mode:select(["all","any"],"all"),rules:text(JSON.stringify(SUB_SEGMENT.rules))},(v,set)=>{let rules:QueryCondition[];try{rules=JSON.parse(v.rules);if(!Array.isArray(rules)||rules.some(r=>typeof r.id!=="string"||typeof r.field!=="string"||typeof r.value!=="string"||typeof r.operator!=="string"))throw new Error();}catch{return <p role="alert">Enter an array of valid rule objects.</p>;}return <div className="w-full max-w-3xl p-4"><SegmentRuleBuilder fields={segmentFields(SUB_PLANS,SUB_LEGS)} rules={rules} mode={v.mode} onModeChange={mode=>set("mode",mode)} onRulesChange={rules=>set("rules",JSON.stringify(rules))}/></div>;}),source:"subscription-operations"},
+ "segment-preview":{...define("Segment Preview",{mode:select(["all","any"],"all"),empty:toggle(false)},v=><div className="w-full max-w-3xl p-4"><SegmentPreview customers={v.empty?[]:SUB_CUSTOMERS} plans={SUB_PLANS} legs={SUB_LEGS} segment={{...SUB_SEGMENT,mode:v.mode}} today={SUB_TODAY}/></div>),source:"subscription-operations"},
+ "subscription-plan-picker":{...define("Subscription Plan Picker",{plan:select(["essential","plus","family"],"plus"),disabled:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-4"><SubscriptionPlanPicker plans={SUB_PLANS} value={v.plan} onValueChange={plan=>set("plan",plan as "essential"|"plus"|"family")} disabled={v.disabled}/></div>),source:"subscription-operations"},
+ "revenue-target-editor":{...define("Revenue Target Editor",{amount:text("1800"),month:text("2026-10"),split:toggle(true),empty:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-4"><RevenueTargetEditor value={{amount:v.amount,month:v.month,split:v.split}} onChange={next=>{set("amount",next.amount);set("month",next.month);set("split",next.split);}} customers={v.empty?[]:SUB_CUSTOMERS} plans={SUB_PLANS} legs={SUB_LEGS} today={SUB_TODAY}/></div>),source:"subscription-operations"},
  "issue-row":{...define("Issue Row",{selected:toggle(true),state:select(["open","closed"],"open"),title:text(SAMPLE_ISSUES[0].title)},(v,set)=><div className="w-full max-w-2xl"><IssueRow issue={{...SAMPLE_ISSUES[0],title:v.title,state:v.state}} selected={v.selected} onSelect={()=>set("selected",!v.selected)}/></div>),source:"issue-browser"},
  "issue-queue":{...define("Issue Queue",{state:select(["ready","loading","refreshing","empty","filtered","error"],"ready"),selected:number(8428,8400,8500,1)},(v,set)=><div className="w-full max-w-2xl h-96"><IssueQueue issues={v.state==="ready"||v.state==="refreshing"?SAMPLE_ISSUES.slice(0,5):[]} selectedId={v.selected} onSelect={id=>set("selected",id)} loading={v.state==="loading"||v.state==="refreshing"} error={v.state==="error"?"The sample request failed. Try again to restore the list.":undefined} onRetry={()=>set("state","ready")} filtered={v.state==="filtered"} onClear={()=>set("state","ready")}/></div>),source:"issue-browser"},
  "issue-reader":{...define("Issue Reader",{draft:text(""),open:toggle(true),posted:text("")},(v,set)=>v.open?<div className="w-full max-w-md h-[38rem]"><IssueReader issue={{...SAMPLE_ISSUES[0],comments:[...SAMPLE_ISSUES[0].comments,...(v.posted?[{id:"local",author:"You",body:v.posted,date:"Just now"}]:[])]}} draft={v.draft} onDraftChange={draft=>set("draft",draft)} onComment={()=>{set("posted",v.draft.trim());set("draft","");}} onClose={()=>set("open",false)}/></div>:<Button onClick={()=>set("open",true)} tapScale={1}>Open issue reader</Button>),source:"issue-browser"},
