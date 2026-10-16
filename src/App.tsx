@@ -1,3 +1,5 @@
+import { ModelUsageDocs } from "@/pages/ModelUsageDocs";
+import { ModelCostsPage } from "@/patterns/model-costs";
 import { CheckoutDocs } from "@/pages/CheckoutDocs";
 import { PlanUpgradePage } from "@/patterns/plan-upgrade";
 import { IconRevealDocs } from "@/pages/IconRevealDocs";
@@ -154,6 +156,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "model-trend-chart": ModelUsageDocs, "model-usage-ring": ModelUsageDocs, "agent-usage-row": ModelUsageDocs, "model-costs": ModelCostsPage,
   "saved-payment-methods": CheckoutDocs, "discount-code-field": CheckoutDocs, "checkout-summary": CheckoutDocs, "plan-upgrade": PlanUpgradePage,
   "icon-reveal": IconRevealDocs,
   "word-roller": WordRollerDocs,
