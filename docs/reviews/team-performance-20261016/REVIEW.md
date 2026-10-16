@@ -19,7 +19,7 @@ HealthMeters (`src/components/operations/index.tsx`) is a single-value health me
 
 ## Verification / delivery
 
-Implementation and after-evidence pending. New component states have no prior equivalent route; baseline gaps will stay explicit. Static reference supplies no transition timing; no custom animation planned. Fixture edits do not affect actual employees or HR systems.
+Pre-edit status was implementation pending; final result and evidence follow below. New component states have no prior equivalent route; baseline gaps will stay explicit. Static reference supplies no transition timing; no custom animation planned. Fixture edits do not affect actual employees or HR systems.
 
 ## Implemented result and evidence
 
@@ -35,7 +35,7 @@ Three reusable components: PerformanceScore, ReviewProgress and MemberPerformanc
 | Mobile scrolling / focus | CompanyTable sticky-header source pattern | [Table scrolled to end](after-mobile-table-end.png), [mobile dialog](after-mobile-dialog.png). Escape returned to Olivia's row button; captured focus ring confirms return |
 | Docs / playground | New component routes, no separate baseline | [Table playground](after-table-playground.png), [progress playground](after-progress-playground.png), [API docs](after-docs.png) |
 | CSV | No prior export | [Actual downloaded Engineering CSV](export-engineering.csv), parsed: three rows, Ivan score 84.5, Completed, Sep 30 sample review date |
-| Changelog | [Before](before-changelog.png) | Pending PR-number entry |
+| Changelog | [Before](before-changelog.png) | [Updated page](after-changelog.png), [Team Performance entry](after-changelog-entry.png), PR #78 |
 
 All captures use actual local React fixtures in Chromium/Playwriter, en-US; 1440×1000 desktop, 1024×900 tablet, 390×844 mobile. Full-page images retain that viewport's layout but extend vertically. Desktop dark/tablet captures include the edited Ivan fixture; final desktop/mobile light are fresh initial records.
 
@@ -58,3 +58,7 @@ Historical captures retained: `after-desktop-light.png` captured the route fallb
 - Initial Vite/HMR import updates briefly produced an invalid-hook error and stale connection logs. Fresh reloads and subsequent mobile interactions had no new errors. Final document width was measured as 390px with no horizontal page overflow; the table alone scrolls horizontally.
 - Recording attempt blocked by `Extension has not been invoked for the current page (activeTab permission)`. No recording was produced. To enable a future recording, click Playwriter's extension icon on the local task tab once. Screenshots do not prove motion/timing. No custom animation was added.
 - No real employee records, HR integration, live messages, assistive-technology test, physical-device test or production-deployment claim. Edits are browser-local and reset on reload.
+
+## Source delivery
+
+PR: https://github.com/oreo-design/oreo-ui/pull/78. Implementation revision: `6f1bbefcf10bab4e9e43dfc27edd46dfe843e6de`. Final follow-up adds changelog and the [capture manifest](manifest.json); component behavior is unchanged. Exact pushed revision is reviewed before merge and the remote merge result is verified separately. No production deployment is implied.

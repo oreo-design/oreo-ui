@@ -1,0 +1,216 @@
+{
+  "baseline": "4019659e37d821ddfa58521c7ce9e61bf7082fc7",
+  "implementation": "6f1bbefcf10bab4e9e43dfc27edd46dfe843e6de",
+  "environment": "Chromium / Playwriter; en-US; localhost:5251; actual React fixture components",
+  "desktop": [
+    1440,
+    1000
+  ],
+  "tablet": [
+    1024,
+    900
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "reference": [
+    1440,
+    1080
+  ],
+  "recording": "Blocked by extension activeTab permission; no recording produced",
+  "files": [
+    {
+      "file": "after-changelog-entry.png",
+      "bytes": 143554,
+      "sha256": "42b39efe240b2ae82da14d67e0e4f950bcad6d48fe3f25229545f12eaae50a68",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-changelog.png",
+      "bytes": 129818,
+      "sha256": "9a7b0cb02ca41d4d1a146e25bc9b27baad5880d5fb29c26cb3abd6eabb0ae7b6",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-desktop-dark.png",
+      "bytes": 163071,
+      "sha256": "567d1249c882bf958cdd5a4f42499889ca2c7493fdbaf8d2ad4afea1b5e3264d",
+      "width": 1440,
+      "height": 1168
+    },
+    {
+      "file": "after-desktop-final.png",
+      "bytes": 164039,
+      "sha256": "77e8fdf236c0ef01688aa401ec1578491c3cdd57bdfbb518efec1fb28c00cd0a",
+      "width": 1440,
+      "height": 1168
+    },
+    {
+      "file": "after-desktop-light-ready.png",
+      "bytes": 151872,
+      "sha256": "2f8ebb228eb22b18bd9ef5d14a681edeccb335e5867b50d67cb4d3e29f3bf080",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-desktop-light.png",
+      "bytes": 96689,
+      "sha256": "9a7bb84ff2b65ea530e78c853528934a57b1f0aba032c0ac543964b810be7e1d",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-docs.png",
+      "bytes": 160009,
+      "sha256": "519e04fe1ee9ee74124b06235fd14dce07389ad228f0ae0e1cd784de2a685cff",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-empty-dark.png",
+      "bytes": 93984,
+      "sha256": "93b5fd2d4a1383a006880132b05ba74ac758a8168b0eebf3bd162482d7655e92",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-error-mobile.png",
+      "bytes": 38667,
+      "sha256": "086cac150a75ab99ce371669bfdd4ad0eeaedd3878d2302841f04eb001b2d717",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after-filtered-export.png",
+      "bytes": 129976,
+      "sha256": "4bb0924490820eed933a02f1dae9ea3186424ac7a5d9e050b0fd1a076987bb9c",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-loading-mobile.png",
+      "bytes": 27657,
+      "sha256": "8b532a3356e83dbe57986cec3993ba86be783a38dfd8cc3090f3ebef5bb9bb49",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after-mobile-dark-viewport.png",
+      "bytes": 50370,
+      "sha256": "8745cea2989e8813f94be7fd06c7e010e880209cd7ac64ce8cc75049ff6a7bc1",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after-mobile-dialog.png",
+      "bytes": 43824,
+      "sha256": "dec78c4de056fb8eab3f2a8653203a623e726aad97067ad21a16618c28db510a",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after-mobile-light-fixed.png",
+      "bytes": 99556,
+      "sha256": "278701938f21d37c7a5018440bdb95a67dedc1a7c70ee6366b576f376e426dbb",
+      "width": 390,
+      "height": 1744
+    },
+    {
+      "file": "after-mobile-light.png",
+      "bytes": 106574,
+      "sha256": "b9bd1e485eb885fecb47e5955a7873ad23acc353e765b5abd9aa38064c3251c2",
+      "width": 595,
+      "height": 1744
+    },
+    {
+      "file": "after-mobile-table-end.png",
+      "bytes": 53408,
+      "sha256": "1152b988d880e27623c23bb3d3a6d6db6a768792075390869465975d79bc926c",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "file": "after-progress-playground.png",
+      "bytes": 101583,
+      "sha256": "53c8cb9197410e435b1e501aa2527f41aee3500facd633ce3f461c2a82e0db31",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-review.png",
+      "bytes": 133251,
+      "sha256": "5dde189a2d4becc2ef561e8c78bdd72e0befc5d95f0c1fddde1df763deeab653",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-saved.png",
+      "bytes": 114514,
+      "sha256": "48b1342f1a6b89ff6923309ac883d19d52f9ba1f183d3f000aaccdb0006a631a",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-table-playground.png",
+      "bytes": 135352,
+      "sha256": "8aec33b96259604b0237be2ec783113640fe4db0e475947709af72d29de7a409",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "after-tablet-dark.png",
+      "bytes": 151466,
+      "sha256": "3877bfd64f30a3d892ee9d57e3dad44c9dbd1f33ced89932bb73cc280ac87250",
+      "width": 1024,
+      "height": 1379
+    },
+    {
+      "file": "after-validation.png",
+      "bytes": 138825,
+      "sha256": "31840d26a5700e0ad80b4dca5e00d786b03143bd04d74dfaec9b79e588560602",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "before-changelog.png",
+      "bytes": 129135,
+      "sha256": "0fd0c6ca99b6ca246b0b08ed10ac062cfe06c2361d844bc2579bf74beda333b0",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "before-entry.png",
+      "bytes": 96719,
+      "sha256": "de8d9e831ebd9be0a715d9ab27e97d35fb41e70c08ea190fc6bdaab35475928c",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "export-engineering.csv",
+      "bytes": 444,
+      "sha256": "6394cd6e2462b669f326cbf925203456be5c0e5ed537df8f5b7a2b9d29ef4c68"
+    },
+    {
+      "file": "peer-company.png",
+      "bytes": 153668,
+      "sha256": "d48aafa1c90520eaa264b5ad3db53ddcbce80fc4d7be9017cf52c680317bb5cb",
+      "width": 1440,
+      "height": 1000
+    },
+    {
+      "file": "reference.png",
+      "bytes": 771739,
+      "sha256": "11e0d02a4a20571a61a462112e1d891bab1ab691571d71aeb287763ddcec1e24",
+      "width": 1440,
+      "height": 1080
+    },
+    {
+      "file": "source.json",
+      "bytes": 4375,
+      "sha256": "1a5cde1619f3bd1baa832231ea4ea84db6b69c819f748eb5fa9f1e0c2bf8daae"
+    }
+  ]
+}
