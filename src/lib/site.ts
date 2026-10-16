@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+ "agent-inbox": {title:"Agent Inbox",description:"A local agent inbox with status groups, board/list views, activity, approval, retry and undo."},
+ "agent-run-card": {title:"Agent Run Card",description:"An expandable run summary with status, telemetry and host-owned actions."},
+ "agent-run-activity": {title:"Agent Run Activity",description:"A compact model activity timeline with readable event timestamps."},
+ "agent-inbox-board": {title:"Agent Inbox Board",description:"Controlled run grouping, board/list views, drag movement and accessible status selection."},
  "calendar-event-block":{title:"Calendar Event Block",description:"A compact calendar event with semantic color, timing and selection."},
  "calendar-color-picker":{title:"Calendar Color Picker",description:"Accessible named calendar colors with inheritance support."},
  "calendar-source-list":{title:"Calendar Source List",description:"Controlled calendar visibility and color actions."},

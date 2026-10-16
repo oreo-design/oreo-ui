@@ -1,3 +1,5 @@
+import {AgentRunCard,AgentRunActivity,AgentInboxBoard} from "@/components/agent-inbox";
+import {INITIAL_RUNS as INBOX_RUNS} from "@/patterns/agent-inbox/data";
 import {CalendarEventBlock,CalendarColorPicker,CalendarSourceList,CalendarWeekGrid,weekDates} from "@/components/color-calendar";
 import {INITIAL_EVENTS as COLOR_EVENTS,INITIAL_SOURCES as COLOR_SOURCES} from "@/patterns/color-calendar/data";
 import {CurrencyBalanceCard,CurrencyBalanceSummary,MoneyActivityList,CashFlowBars,cashFlowDays} from "@/components/currency-finance";
@@ -157,6 +159,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "agent-inbox":{AgentRunCard,AgentRunActivity,AgentInboxBoard},
  "color-calendar":{CalendarEventBlock,CalendarColorPicker,CalendarSourceList,CalendarWeekGrid},
  "agent-observability": {PixelMeter,InferenceChart,RegionalTraffic,AgentHealthTable},
  "dispatch-allocation": {RouteJobCard,AllocationTimeline},
@@ -246,6 +249,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "agent-run-card":{...define("Agent Run Card",{expanded:toggle(true),status:select(["waiting","failed","running","done"],"waiting")},(v,set)=><div className="w-full max-w-sm p-4"><AgentRunCard run={{...INBOX_RUNS[0],status:v.status}} expanded={v.expanded} onExpandedChange={open=>set("expanded",open)} onStatusChange={status=>set("status",status)}/></div>),source:"agent-inbox"},
+ "agent-run-activity":{...define("Agent Run Activity",{empty:toggle(false)},v=><div className="w-full max-w-sm p-6"><AgentRunActivity model={INBOX_RUNS[0].model} items={v.empty?[]:INBOX_RUNS[0].activity}/></div>),source:"agent-inbox"},
+ "agent-inbox-board":{...define("Agent Inbox Board",{state:select(["ready","loading","refreshing","empty","filtered","error"],"ready"),view:select(["board","list"],"board"),expanded:text(""),migration:{...select(["waiting","failed","running","done"],"waiting"),group:"Sample run status"},contacts:{...select(["waiting","failed","running","done"],"failed"),group:"Sample run status"},review:{...select(["waiting","failed","running","done"],"running"),group:"Sample run status"},release:{...select(["waiting","failed","running","done"],"running"),group:"Sample run status"},metrics:{...select(["waiting","failed","running","done"],"done"),group:"Sample run status"}},(v,set)=><div className="w-full p-4"><AgentInboxBoard runs={v.state==="ready"||v.state==="refreshing"?INBOX_RUNS.map(r=>({...r,status:v[r.id as "migration"]})):[]} view={v.view} onViewChange={view=>set("view",view)} expandedId={v.expanded} onExpandedChange={id=>set("expanded",id??"")} onStatusChange={(id,status)=>set(id as "migration",status)} loading={v.state==="loading"||v.state==="refreshing"} error={v.state==="error"?"Sample runs could not be loaded.":undefined} onRetry={()=>set("state","ready")} filtered={v.state==="filtered"} onClearFilters={()=>set("state","ready")}/></div>),source:"agent-inbox"},
  "calendar-event-block":{...define("Calendar Event Block",{selected:toggle(false),compact:toggle(false),color:select(["blue","mint","pink","purple","orange","brown","default"],"blue")},(v,set)=><div className="w-64 h-24"><CalendarEventBlock event={{...COLOR_EVENTS[0],color:v.color}} source={COLOR_SOURCES[2]} selected={v.selected} compact={v.compact} onOpen={()=>set("selected",!v.selected)}/></div>),source:"color-calendar"},
  "calendar-color-picker":{...define("Calendar Color Picker",{color:select(["blue","mint","pink","purple","orange","brown","default"],"blue"),disabled:toggle(false)},(v,set)=><CalendarColorPicker value={v.color} disabled={v.disabled} onChange={color=>{if(color)set("color",color);}}/>),source:"color-calendar"},
  "calendar-source-list":{...define("Calendar Source List",{work:toggle(true)},(v,set)=><div className="w-64"><CalendarSourceList sources={[{...COLOR_SOURCES[0],visible:v.work}]} onVisibilityChange={(_,visible)=>set("work",visible)}/></div>),source:"color-calendar"},

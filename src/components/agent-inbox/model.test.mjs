@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {groupForRun,filterRuns,transitionRun,durationLabel} from './model.ts';
+const run={id:'a',title:'Migrate users',summary:'Dry run passed',status:'waiting',elapsed:359,queries:9,tools:14,model:'Coding Pro',activity:[{id:'1',text:'Prepared',time:'1m ago'}]};
+test('attention group includes both approval and failure; final states stay distinct',()=>{assert.deepEqual(['waiting','failed','running','done'].map(groupForRun),['attention','attention','running','done']);});
+test('transitions preserve source snapshot and other runs; approval and retry are explicit demo history',()=>{const other={...run,id:'b',status:'failed'};const initial=[run,other];const next=transitionRun(initial,'a','running','2');assert.equal(initial[0].status,'waiting');assert.equal(initial[0].activity.length,1);assert.equal(next[1],other);assert.equal(next[0].status,'running');assert.match(next[0].activity.at(-1).text,/Approval.*demo/);const retry=transitionRun(next,'b','running','3');assert.match(retry[1].activity.at(-1).text,/Retry.*demo/);assert.equal(retry[1].elapsed,359);});
+test('unknown IDs and unchanged/invalid statuses are no-ops',()=>{const data=[run];assert.equal(transitionRun(data,'x','done','2'),data);assert.equal(transitionRun(data,'a','waiting','2'),data);assert.equal(transitionRun(data,'a','invalid','2'),data);});
+test('search is trimmed/case insensitive across title, summary, model and displayed status',()=>{const data=[run];for(const query of [' MIGRATE ','dry run','coding pro','Awaiting approval',''])assert.deepEqual(filterRuns(data,query),data);assert.deepEqual(filterRuns(data,'xyz'),[]);});
+test('duration handles zero, minutes, hours and invalid telemetry safely',()=>{assert.equal(durationLabel(359),'5m 59s');assert.equal(durationLabel(3600),'60m 0s');for(const value of [0,-4,NaN,Infinity])assert.equal(durationLabel(value),'0m 0s');});
