@@ -204,6 +204,22 @@
       "environment": "Chromium Playwriter session 10; local fixture; English",
       "state": "see REVIEW.md",
       "revision": "task working tree; see source-files.json"
+    },
+    {
+      "file": "final-mobile.png",
+      "sha256": "d72b577c6a38eb3d065d7c4cead0de4fd4f40dd59c785deb4ae21c061b9af1b8",
+      "revision": "ac0d027 + changelog-only follow-up",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "viewport": "390x844",
+      "theme": "dark"
+    },
+    {
+      "file": "changelog.png",
+      "sha256": "88a6edffb4ad5fb635ae55bcd9c6968c7037c4967c90f7bee66a05c6c2289d73",
+      "revision": "ac0d027 + changelog-only follow-up",
+      "environment": "Chromium Playwriter session 10; local fixture; English",
+      "viewport": "1440x1080",
+      "theme": "light"
     }
   ],
   "recording": {
@@ -212,5 +228,6 @@
     "height": 1080,
     "duration": 45.72,
     "originals": "interaction-frames/frames.json"
-  }
+  },
+  "implementationRevision": "ac0d027"
 }
