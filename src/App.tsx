@@ -1,3 +1,5 @@
+import {CrossCurrencyPage} from "@/patterns/cross-currency";
+import {CurrencyFinanceDocs} from "@/pages/CurrencyFinanceDocs";
 import { LandmarkStaysPage } from "@/patterns/landmark-stays";
 import { StayResultsDocs } from "@/pages/StayResultsDocs";
 import {AgentObservatoryPage} from "@/patterns/agent-observatory";
@@ -178,6 +180,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+ "currency-balance-card": CurrencyFinanceDocs, "currency-balance-summary": CurrencyFinanceDocs, "money-activity-list": CurrencyFinanceDocs, "cash-flow-bars": CurrencyFinanceDocs, "cross-currency": CrossCurrencyPage,
  "stay-price-label": StayResultsDocs, "stay-result-card": StayResultsDocs, "stay-selection-card": StayResultsDocs, "landmark-stays": LandmarkStaysPage,
  "pixel-meter": AgentObservabilityDocs, "inference-chart": AgentObservabilityDocs, "regional-traffic": AgentObservabilityDocs, "agent-health-table": AgentObservabilityDocs, "agent-observatory": AgentObservatoryPage,
  "route-job-card": DispatchAllocationDocs, "allocation-timeline": DispatchAllocationDocs, "dispatch-allocation": DispatchAllocationPage,

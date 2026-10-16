@@ -1,0 +1,382 @@
+{
+  "baseline": "a1ac01c4da35656d9744537a0fe46b8c64dd505a",
+  "environment": "localhost:5256; Playwriter session 10; local Chromium fixture; English",
+  "files": [
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-transaction-details.png",
+      "sha256": "caa97a23c5587c863b7fbb07dae023d253b14fd48c85b0289a61f498e9127857",
+      "bytes": 121076,
+      "modifiedUTC": "2026-10-16T11:40:34.215058+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-empty.png",
+      "sha256": "08162f6785dd184495f0056fcae38b7eb269e1402ab36998bb2664186145a730",
+      "bytes": 131028,
+      "modifiedUTC": "2026-10-16T11:32:44.260115+00:00",
+      "dimensions": [
+        1440,
+        1577
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-scheduled-review.png",
+      "sha256": "bcacaefd4dfeff5bc8a5ebf29fc29cb275d73f97f614d653c2a626e27e858e74",
+      "bytes": 129631,
+      "modifiedUTC": "2026-10-16T11:32:43.958730+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/model-tests.txt",
+      "sha256": "76c25da75f599b52defefe39f15242603abe46d1faaa2b422c76f1cb3b6b0ad4",
+      "bytes": 573,
+      "modifiedUTC": "2026-10-16T11:40:47.496236+00:00"
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/resized-from-desktop-after-mobile-dark.png",
+      "sha256": "764c545a4da715f43781b4dc32e522b284a920eb0e923037c1f17941404bc813",
+      "bytes": 128795,
+      "modifiedUTC": "2026-10-16T11:39:21.704443+00:00",
+      "dimensions": [
+        390,
+        2354
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-summary-playground.png",
+      "sha256": "a1ecae54b36f3340547078b27c54be75de736cb9064272421c044811c8079fb8",
+      "bytes": 104433,
+      "modifiedUTC": "2026-10-16T11:36:33.178896+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/superseded-after-mobile.png",
+      "sha256": "ee2b7c6d4dd4a018be7e0260a1c057b897ede72475fc94cae49d915672f56c98",
+      "bytes": 128211,
+      "modifiedUTC": "2026-10-16T11:35:26.897478+00:00",
+      "dimensions": [
+        390,
+        2354
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/initial-desktop.png",
+      "sha256": "67ebf162ab4269be92489f87349290cf0de5270ba860ff2968d0bffee7b2dd07",
+      "bytes": 144516,
+      "modifiedUTC": "2026-10-16T11:30:28.175611+00:00",
+      "dimensions": [
+        1440,
+        1595
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/source.json",
+      "sha256": "1229eca5e5f8108e88c33046a598c7dbdb557907bc6bd93dea12789e7093230b",
+      "bytes": 1954,
+      "modifiedUTC": "2026-10-16T11:22:45.990591+00:00"
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-mobile-dark.png",
+      "sha256": "97e72042e1c6673f4716d3c84ee07f0d54701dee41a3148122a0c5b8320b3640",
+      "bytes": 128775,
+      "modifiedUTC": "2026-10-16T11:39:40.355175+00:00",
+      "dimensions": [
+        390,
+        2354
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-chart-playground.png",
+      "sha256": "6d587c45e9142d201018e862a01454fc82eec20339227faf357d24ffc5120fcf",
+      "bytes": 101572,
+      "modifiedUTC": "2026-10-16T11:36:34.043081+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/reference.png",
+      "sha256": "3ca8ce1464470eadb99479682cc2d1dceb60d2c827ae7ced16e28b1bce70dc05",
+      "bytes": 621685,
+      "modifiedUTC": "2026-10-16T11:22:45.993674+00:00",
+      "dimensions": [
+        1600,
+        1200
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-validation.png",
+      "sha256": "7ef6866e69a28e02d7ccb18c80bb0401df87dcf85a36632bc7460135b03d14b3",
+      "bytes": 126006,
+      "modifiedUTC": "2026-10-16T11:31:32.546421+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-mobile-dark-review.png",
+      "sha256": "730dd74578a9dd69b18706c5619348fe012d77ba096f875f5555849577babed7",
+      "bytes": 52045,
+      "modifiedUTC": "2026-10-16T11:34:14.992242+00:00",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/before-entry.png",
+      "sha256": "561972d44eaf979e74b82e9074f8ba290951db7cce0dc4ee582ef29c9b97f118",
+      "bytes": 98649,
+      "modifiedUTC": "2026-10-16T11:23:05.505001+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/resized-from-desktop-after-mobile.png",
+      "sha256": "b3c21f926433eec792795fe50eda5fd41f58286270fed9f779536db76b12c149",
+      "bytes": 127761,
+      "modifiedUTC": "2026-10-16T11:39:21.592503+00:00",
+      "dimensions": [
+        390,
+        2354
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-card-playground.png",
+      "sha256": "3465f788724d0a4a7cba7517736041692a10636b5611af577ad2189d3e93189d",
+      "bytes": 97103,
+      "modifiedUTC": "2026-10-16T11:36:32.226724+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-activity-error.png",
+      "sha256": "a4208841967b9f8f1d83fdae7fa82f8344839c230e72f4409af67517a720aeb2",
+      "bytes": 96273,
+      "modifiedUTC": "2026-10-16T11:36:17.029740+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/initial-mobile.png",
+      "sha256": "0137654059467b77cbe587ae8d94206139350c60f5db61a42b4551b5c4aefed1",
+      "bytes": 128050,
+      "modifiedUTC": "2026-10-16T11:33:02.487880+00:00",
+      "dimensions": [
+        390,
+        2351
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-mobile.png",
+      "sha256": "4b6aebe1901bfa222c403456a40b78ae79d05a653e71eced47071bc5a0b000f9",
+      "bytes": 127807,
+      "modifiedUTC": "2026-10-16T11:39:40.241103+00:00",
+      "dimensions": [
+        390,
+        2354
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-entry.png",
+      "sha256": "d1d2b8a7d56d483c6127017c2ec95168e1bd5461fa8cfbe7398b436e55088d95",
+      "bytes": 141345,
+      "modifiedUTC": "2026-10-16T11:39:21.545428+00:00",
+      "dimensions": [
+        1440,
+        1595
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/export-filtered.json",
+      "sha256": "1afc258112844aa7291d0ad52f3a0115293a4b777b543c93b18e05261399fd17",
+      "bytes": 421,
+      "modifiedUTC": "2026-10-16T11:32:44.182960+00:00"
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/REVIEW.md",
+      "sha256": "002c4398a615c25562d9c5fddacf83e87f0c986b8d27a57254dbe4c6086b63a2",
+      "bytes": 9110,
+      "modifiedUTC": "2026-10-16T11:41:23.464950+00:00"
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/superseded-after-mobile-dark.png",
+      "sha256": "2dd0fcbb4d8c574620f2e50b2462b23b9b176dfb1091c83a5cf61d7de961375f",
+      "bytes": 129233,
+      "modifiedUTC": "2026-10-16T11:35:27.013912+00:00",
+      "dimensions": [
+        390,
+        2354
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-convert-review.png",
+      "sha256": "b920867562b4280697739f6ccd6bd064d0c9469ea3a892bb29595104b53e455e",
+      "bytes": 129947,
+      "modifiedUTC": "2026-10-16T11:31:32.726870+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/superseded-after-activity-loading.png",
+      "sha256": "e40e35405bc3c090780f3c05c6f6ada327d78b7ac1c7f084e8e27245c6c7b921",
+      "bytes": 90142,
+      "modifiedUTC": "2026-10-16T11:36:16.962678+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/superseded-after-entry.png",
+      "sha256": "d1d2b8a7d56d483c6127017c2ec95168e1bd5461fa8cfbe7398b436e55088d95",
+      "bytes": 141345,
+      "modifiedUTC": "2026-10-16T11:35:26.004524+00:00",
+      "dimensions": [
+        1440,
+        1595
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-activity-loading.png",
+      "sha256": "7bd97451e1061be256141cb9cc0dc51f618d616aa9661b42396a61d4c85b0c80",
+      "bytes": 91672,
+      "modifiedUTC": "2026-10-16T11:40:21.916721+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-converted.png",
+      "sha256": "cd98e9138718a4c7fa74ff6d2da419bb26bf92240e53b6f012e7b2adb80b0fe4",
+      "bytes": 147840,
+      "modifiedUTC": "2026-10-16T11:31:48.122619+00:00",
+      "dimensions": [
+        1440,
+        1609
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/mobile-dark-before-sticky-axis.png",
+      "sha256": "4338da40cb1ca52866b69f44ec68cd37e50b9af8e77ce50d06da391cd8ce204d",
+      "bytes": 127201,
+      "modifiedUTC": "2026-10-16T11:34:14.796794+00:00",
+      "dimensions": [
+        390,
+        2354
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-medium-dark.png",
+      "sha256": "31e11061974963f41cc741761f404a1815d4fdc395c3ed502d88bac11887758b",
+      "bytes": 134312,
+      "modifiedUTC": "2026-10-16T11:34:15.077155+00:00",
+      "dimensions": [
+        900,
+        1956
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/after-activity-playground.png",
+      "sha256": "842f4963a3740bae20895c5041f3747e3f0d0b4ae28b207f15464d1a2148c84c",
+      "bytes": 113239,
+      "modifiedUTC": "2026-10-16T11:36:17.294226+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/mobile-before-sticky-axis.png",
+      "sha256": "014d5c6ab684e65b976d2b630054e4c99dd36a7d957ed6b11c2ce59fb986533a",
+      "bytes": 126151,
+      "modifiedUTC": "2026-10-16T11:34:14.680015+00:00",
+      "dimensions": [
+        390,
+        2354
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/before-changelog.png",
+      "sha256": "87b58382d3fd8a4c654c33f026b04124e4eeba6d1ddf6515b703443d104dbce7",
+      "bytes": 144747,
+      "modifiedUTC": "2026-10-16T11:23:36.315650+00:00",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "docs/reviews/cross-currency-20261016/before-finance-peer.png",
+      "sha256": "3a93935a4f1284d1671c4e09af8e5be392e21c0bbbe63dd2ba32f098e6475b65",
+      "bytes": 258963,
+      "modifiedUTC": "2026-10-16T11:23:35.433072+00:00",
+      "dimensions": [
+        1440,
+        1928
+      ]
+    },
+    {
+      "path": "src/components/currency-finance/index.tsx",
+      "sha256": "9a353565aa26b4a7cc4c6030e98d888ace711baae85f69bf0e562ed9e3ad8411",
+      "bytes": 9532,
+      "modifiedUTC": "2026-10-16T11:36:16.722460+00:00"
+    },
+    {
+      "path": "src/components/currency-finance/model.ts",
+      "sha256": "891be083fc0209acdca4abbfb0d3271ef56adcbf6ad9cc19b1bb068304a0569d",
+      "bytes": 6298,
+      "modifiedUTC": "2026-10-16T11:33:58.635933+00:00"
+    },
+    {
+      "path": "src/components/currency-finance/currency-finance.css",
+      "sha256": "676ce85c8240329d27be9bc8b228f027dc4e4c74b3fadf40668f5ab94c6a7d15",
+      "bytes": 8154,
+      "modifiedUTC": "2026-10-16T11:40:13.114990+00:00"
+    },
+    {
+      "path": "src/patterns/cross-currency/index.tsx",
+      "sha256": "4c5e8a0145513c985f84ed35b02d7561cd0d6dc1bf39c771dfbd340ffad6e8f8",
+      "bytes": 25746,
+      "modifiedUTC": "2026-10-16T11:30:17.711114+00:00"
+    },
+    {
+      "path": "src/patterns/cross-currency/data.ts",
+      "sha256": "61d479ae1c252de239bb0fe3b71f88e3e201d2241798f12ec0731972662a05db",
+      "bytes": 1786,
+      "modifiedUTC": "2026-10-16T11:30:17.683961+00:00"
+    },
+    {
+      "path": "src/patterns/cross-currency/cross-currency.css",
+      "sha256": "221bba1e39a9dbd1926fecf0f66df728713526747831c08aed3c35c8188cc18e",
+      "bytes": 8950,
+      "modifiedUTC": "2026-10-16T11:30:17.680665+00:00"
+    },
+    {
+      "path": "src/pages/CurrencyFinanceDocs.tsx",
+      "sha256": "ed97b203676e598a443e866f9aac8e83cb3cd7524e3c7358991ce02497b5b97d",
+      "bytes": 7070,
+      "modifiedUTC": "2026-10-16T11:30:17.719416+00:00"
+    }
+  ]
+}

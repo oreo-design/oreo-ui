@@ -1,0 +1,20 @@
+{
+  "demo": true,
+  "asOf": "2026-10-16",
+  "amountUnits": "integer minor units (1/100 of the named currency)",
+  "scope": {
+    "account": "all",
+    "query": "Future Studio",
+    "period": "all"
+  },
+  "entries": [
+    {
+      "id": "demo-1792150363870",
+      "currency": "USD",
+      "amount": 1000,
+      "kind": "scheduled",
+      "description": "Scheduled for Future Studio",
+      "date": "2026-10-20"
+    }
+  ]
+}

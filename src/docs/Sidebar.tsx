@@ -107,6 +107,10 @@ const NAV: Group[] = [
       { label: "Hub Search Hero", page: "hub-search-hero" },
       { label: "Agent Category Grid", page: "agent-category-grid" },
       { label: "Integration Tile", page: "integration-tile" },
+      {label:"Currency Balance Card",page:"currency-balance-card"},
+      {label:"Currency Balance Summary",page:"currency-balance-summary"},
+      {label:"Money Activity List",page:"money-activity-list"},
+      {label:"Cash Flow Bars",page:"cash-flow-bars"},
       { label: "Stay Price Label", page: "stay-price-label" },
       { label: "Stay Result Card", page: "stay-result-card" },
       { label: "Stay Selection Card", page: "stay-selection-card" },
@@ -216,6 +220,7 @@ const NAV: Group[] = [
     items: [
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
+      {label:"Cross-Currency",page:"cross-currency"},
       {label:"Landmark Stays",page:"landmark-stays"},
       {label:"Agent Observatory",page:"agent-observatory"},
       {label:"Dispatch Allocation",page:"dispatch-allocation"},
