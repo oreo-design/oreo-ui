@@ -1,0 +1,204 @@
+.te-panel {
+  min-width: 0;
+  height: 100%;
+  overflow: auto;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  border-left: 1px solid var(--color-border-subtle);
+  overscroll-behavior: contain;
+}
+.te-panel-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--color-bg-base);
+  border-bottom: 1px solid var(--color-border-subtle);
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+.te-panel-header > span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: auto;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.te-panel-header i,
+.te-project-name i {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--color-palette-pink-text);
+  border-radius: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.te-panel-body {
+  padding: 1.5rem;
+}
+.te-panel-body > h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  margin-bottom: 0.75rem;
+}
+.te-panel-body > h2:focus {
+  outline: none;
+}
+.te-properties {
+  display: grid;
+  gap: 0.5rem;
+}
+.te-property {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  min-height: 2.5rem;
+}
+.te-property > span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-secondary);
+}
+.te-property > div {
+  min-width: 0;
+}
+.te-property .iss-anchor {
+  background: transparent;
+}
+.te-property .iss-trigger {
+  padding-right: 0.25rem;
+}
+.te-property input {
+  width: 100%;
+  min-width: 0;
+  background: var(--color-bg-elevated);
+  color: inherit;
+  padding: 0.5rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  color-scheme: light;
+}
+.theme-dark .te-property input {
+  color-scheme: dark;
+}
+.te-date-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+.te-project-name {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+}
+.te-labels {
+  display: flex;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+}
+.te-labels button {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+}
+.te-labels button[aria-pressed="true"] {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+.te-labels button:before {
+  content: "";
+  display: inline-block;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 2px;
+  margin-right: 0.375rem;
+  background: var(--color-palette-purple-text);
+}
+.te-labels button[data-color="orange"]:before {
+  background: var(--color-palette-orange-text);
+}
+.te-labels button[data-color="pink"]:before {
+  background: var(--color-palette-pink-text);
+}
+.te-section {
+  margin-top: 1.5rem;
+}
+.te-section h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.te-section h3 span {
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+  margin-left: 0.25rem;
+}
+.te-hint {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+.te-subtasks {
+  display: grid;
+  gap: 0.25rem;
+}
+.te-subtasks li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.te-subtasks label {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  flex: 1;
+  font-size: 0.8125rem;
+  min-width: 0;
+}
+.te-subtasks label span {
+  overflow-wrap: anywhere;
+}
+.te-subtasks [data-done] {
+  text-decoration: line-through;
+  color: var(--color-text-tertiary);
+}
+.te-subtasks input {
+  accent-color: var(--color-text-primary);
+}
+.te-add {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.te-add input {
+  flex: 1;
+  min-width: 0;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-control);
+  font-size: 0.8125rem;
+}
+.te-error {
+  font-size: 0.8125rem;
+  color: var(--color-status-error);
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+.te-panel :is(input, textarea, button):focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}

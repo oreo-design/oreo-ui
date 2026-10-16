@@ -14,13 +14,13 @@ import "./kanban.css";
 const settle = { type: "spring", duration: 0.4, bounce: 0.15 } as const;
 const zoneId = (column: string, lane?: string) => `zone:${JSON.stringify([column, lane ?? null])}`;
 
-function CardContent({ card, person, onOpen, handle }: { card: KanbanCard; person?: KanbanPerson; onOpen?: () => void; handle?: React.ReactNode }) {
+function CardContent({ card, person, onOpen, handle, selected }: { card: KanbanCard; person?: KanbanPerson; onOpen?: () => void; handle?: React.ReactNode; selected?: boolean }) {
   return <>
     <div className="mb-2 flex items-center justify-between gap-2 text-xs text-text-tertiary">
       <span className="flex items-center gap-1">{handle}<span className="truncate font-mono text-[11px]">{card.id}</span></span>
       {card.label && <span className="flex min-w-0 items-center gap-1.5"><span className="size-1.5 shrink-0 rounded-full" style={{ backgroundColor: `var(--color-palette-${card.label.color}-text)` }} /><span className="truncate">{card.label.name}</span></span>}
     </div>
-    <p className="text-sm font-medium leading-5 tracking-tight">{onOpen ? <button type="button" className="oreo-kanban-open w-full text-left" onClick={onOpen}>{card.title}</button> : card.title}</p>
+    <p className="text-sm font-medium leading-5 tracking-tight">{onOpen ? <button type="button" className="oreo-kanban-open w-full text-left" onClick={onOpen} aria-current={selected ? "true" : undefined}>{card.title}</button> : card.title}</p>
     <div className="mt-3 flex min-h-5 items-center gap-2.5 text-[11px] text-text-tertiary">
       {card.date && <span className="flex items-center gap-1"><Icon name="calendar" className="size-3" />{card.date}</span>}
       {card.checklist && <span className="flex items-center gap-1" aria-label={`${card.checklist.done} of ${card.checklist.total} subtasks complete`}><Icon name="list-checks" className="size-3" />{card.checklist.done}/{card.checklist.total}</span>}
@@ -30,7 +30,7 @@ function CardContent({ card, person, onOpen, handle }: { card: KanbanCard; perso
   </>;
 }
 
-function SortableCard({ card, person, reduce, keyboard, onCardOpen }: { card: KanbanCard; person?: KanbanPerson; reduce: boolean; keyboard: boolean; onCardOpen?: (card: KanbanCard) => void }) {
+function SortableCard({ card, person, reduce, keyboard, onCardOpen, selected }: { selected?: boolean; card: KanbanCard; person?: KanbanPerson; reduce: boolean; keyboard: boolean; onCardOpen?: (card: KanbanCard) => void }) {
   const { attributes, listeners, setNodeRef, setActivatorNodeRef, transform, transition, isDragging } = useSortable({
     id: card.id, data: { columnId: card.columnId, assigneeId: card.assigneeId },
     transition: reduce || keyboard ? null : { duration: 220, easing: "cubic-bezier(0.23, 1, 0.32, 1)" },
@@ -43,9 +43,9 @@ function SortableCard({ card, person, reduce, keyboard, onCardOpen }: { card: Ka
       style={{ touchAction: "pan-y" }}
       {...(onCardOpen ? {} : attributes)} {...(onCardOpen ? {} : listeners)}
       aria-label={onCardOpen ? undefined : `Drag ${card.id}: ${card.title}`}
-      data-testid={`kanban-card-${card.id}`}
+      data-testid={`kanban-card-${card.id}`} data-selected={selected || undefined}
     >
-      <div className={isDragging ? "invisible" : undefined}><CardContent card={card} person={person} onOpen={onCardOpen ? () => onCardOpen(card) : undefined} handle={onCardOpen ? <button type="button" className="oreo-kanban-handle" ref={setActivatorNodeRef} style={{touchAction:"none"}} {...attributes} {...listeners} aria-label={`Drag ${card.id}: ${card.title}`}><Icon name="grip-vertical" size="sm"/></button> : undefined} /></div>
+      <div className={isDragging ? "invisible" : undefined}><CardContent card={card} person={person} selected={selected} onOpen={onCardOpen ? () => onCardOpen(card) : undefined} handle={onCardOpen ? <button type="button" className="oreo-kanban-handle" ref={setActivatorNodeRef} style={{touchAction:"none"}} {...attributes} {...listeners} aria-label={`Drag ${card.id}: ${card.title}`}><Icon name="grip-vertical" size="sm"/></button> : undefined} /></div>
     </motion.div>
   </div>;
 }
@@ -69,7 +69,8 @@ function AddCard({ column, lane, onAdd, open, onOpenChange }: { column: KanbanCo
   </>;
 }
 
-function Cell({ column, cards, people, lane, compact, overLimit, reduce, keyboard, onAdd, adding, setAdding, onCardOpen }: {
+function Cell({ column, cards, people, lane, compact, overLimit, reduce, keyboard, onAdd, adding, setAdding, onCardOpen, selectedCardId }: {
+  selectedCardId?: string;
   column: KanbanColumn; cards: KanbanCard[]; people: KanbanPerson[]; lane?: string; compact: boolean; overLimit: boolean; reduce: boolean; keyboard: boolean;
   onCardOpen?: (card: KanbanCard) => void;
   onAdd: (title: string, column: string, lane?: string) => void; adding: string | null; setAdding: (zone: string | null) => void;
@@ -78,7 +79,7 @@ function Cell({ column, cards, people, lane, compact, overLimit, reduce, keyboar
   const { setNodeRef, isOver } = useDroppable({ id, data: { columnId: column.id, assigneeId: lane, zone: true } });
   return <section ref={setNodeRef} aria-label={`${column.title}${lane ? ` — ${people.find(p => p.id === lane)?.name ?? "Unassigned"}` : ""}`} data-testid={id} className={kanbanCell({ compact, overLimit, over: isOver })}>
     <SortableContext items={cards.map(c => c.id)} strategy={verticalListSortingStrategy}>
-      {cards.map(card => <SortableCard key={card.id} card={card} person={people.find(p => p.id === card.assigneeId)} reduce={reduce} keyboard={keyboard} onCardOpen={onCardOpen} />)}
+      {cards.map(card => <SortableCard key={card.id} card={card} person={people.find(p => p.id === card.assigneeId)} reduce={reduce} keyboard={keyboard} onCardOpen={onCardOpen} selected={selectedCardId === card.id} />)}
     </SortableContext>
     {(!compact || adding === id) && <AddCard column={column} lane={lane} onAdd={onAdd} open={adding === id} onOpenChange={open => setAdding(open ? id : null)} />}
     {cards.length === 0 && !compact && adding !== id && <p className="px-2 py-6 text-center text-xs text-text-tertiary">Drop a card here</p>}
@@ -86,7 +87,7 @@ function Cell({ column, cards, people, lane, compact, overLimit, reduce, keyboar
 }
 
 /** Controlled board. Drag previews are local; only a valid drop commits a change. */
-export function KanbanBoard({ title, cards, columns, people = [], onCardsChange, onCardOpen, defaultView = "status", className }: KanbanBoardProps) {
+export function KanbanBoard({ title, cards, columns, people = [], onCardsChange, onCardOpen, selectedCardId, defaultView = "status", className }: KanbanBoardProps) {
   const id = useId();
   const reduce = Boolean(useReducedMotion());
   const [view, setView] = useState<KanbanView>(defaultView);
@@ -172,7 +173,7 @@ export function KanbanBoard({ title, cards, columns, people = [], onCardsChange,
             {lanes.map(lane => <div key={lane?.id ?? "unassigned"}>
               {view === "swimlanes" && <div className="mb-3 flex items-center gap-2 px-2 text-sm"><Avatar name={lane?.name ?? "Unassigned"} src={lane?.avatar} color={lane?.color} size="xs" /><h3 className="font-medium">{lane?.name ?? "Unassigned"}</h3><span className="tabular-nums text-text-tertiary">{current.filter(c => lane ? c.assigneeId === lane.id : !people.some(p => p.id === c.assigneeId)).length}</span></div>}
               <div className="oreo-kanban-grid">
-                {columns.map(column => <Cell key={column.id} column={column} lane={lane?.id} cards={current.filter(c => c.columnId === column.id && (view === "status" || (lane ? c.assigneeId === lane.id : !people.some(p => p.id === c.assigneeId))))} people={people} compact={view === "swimlanes"} overLimit={overLimit(column)} reduce={reduce} keyboard={keyboard} onAdd={add} adding={adding} setAdding={setAdding} onCardOpen={onCardOpen} />)}
+                {columns.map(column => <Cell key={column.id} column={column} lane={lane?.id} cards={current.filter(c => c.columnId === column.id && (view === "status" || (lane ? c.assigneeId === lane.id : !people.some(p => p.id === c.assigneeId))))} people={people} compact={view === "swimlanes"} overLimit={overLimit(column)} reduce={reduce} keyboard={keyboard} onAdd={add} adding={adding} setAdding={setAdding} onCardOpen={onCardOpen} selectedCardId={selectedCardId} />)}
               </div>
             </div>)}
           </div>

@@ -1,3 +1,5 @@
+import {TaskProperties,TaskSubtasks,TaskDetailPanel,type TaskDetails} from "@/components/task-editor";
+import {CAMPAIGN_TASKS,TASK_PEOPLE} from "@/patterns/task-board/data";
 import {AnnotatedWaveform,ProductionTaskList,MixVersionList,toggleTask,type ProductionTask} from "@/components/music-project";
 import {MIX_SAMPLES,MIX_COMMENTS,MIX_TASKS,MIX_VERSIONS} from "@/patterns/music-project/data";
 import {VoiceSignal,VoiceLatencyBreakdown,TurnLatencyHistory} from "@/components/voice-telemetry";
@@ -171,6 +173,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "task-editor":{TaskProperties,TaskSubtasks,TaskDetailPanel},
  "music-project":{AnnotatedWaveform,ProductionTaskList,MixVersionList},
  "voice-telemetry":{VoiceSignal,VoiceLatencyBreakdown,TurnLatencyHistory},
  "agent-budget":{BudgetCapControl,BudgetOutcome,MonthlyBudgetCard},
@@ -267,6 +270,9 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "task-properties":{...define("Task Properties",{task:text(JSON.stringify(CAMPAIGN_TASKS[1]))},(v,set)=>{let task:TaskDetails;try{task=JSON.parse(v.task);if(!task||["id","title","status","priority","assigneeId","start","due","repeat","estimate","blockedBy"].some(k=>typeof task[k as keyof TaskDetails]!=="string")||!Array.isArray(task.labels)||task.labels.some((l:unknown)=>typeof l!=="string"))throw new Error();}catch{return <p role="alert">Enter a valid TaskDetails JSON object.</p>}return <div className="w-full max-w-md p-6"><TaskProperties task={task} people={TASK_PEOPLE} dependencies={CAMPAIGN_TASKS} onChange={patch=>set("task",JSON.stringify({...task,...patch}))}/></div>;}),source:"task-editor"},
+ "task-subtasks":{...define("Task Subtasks",{items:text(JSON.stringify(CAMPAIGN_TASKS[4].subtasks))},(v,set)=>{let items;try{items=JSON.parse(v.items);if(!Array.isArray(items)||items.some(x=>typeof x.id!=="string"||typeof x.title!=="string"||typeof x.done!=="boolean"))throw new Error();}catch{return <p role="alert">Enter a valid Subtask array.</p>}return <div className="w-full max-w-md p-6"><TaskSubtasks items={items} onChange={next=>set("items",JSON.stringify(next))}/></div>;}),source:"task-editor"},
+ "task-detail-panel":{...define("Task Detail Panel",{title:text("Paid social creatives"),complete:toggle(false),open:toggle(true)},(v,set)=>v.open?<div className="h-[32rem] w-full max-w-md"><TaskDetailPanel taskId="MKT-109" title={v.title} complete={v.complete} onComplete={()=>set("complete",!v.complete)} onClose={()=>set("open",false)}><p className="text-sm text-text-secondary">Compose task properties, checklists and discussions here.</p></TaskDetailPanel></div>:<Button type="secondary" onClick={()=>set("open",true)}>Open task details</Button>),source:"task-editor"},
  "annotated-waveform":{...define("Annotated Waveform",{position:number(84,0,238,1),markers:toggle(true),invalid:toggle(false),selected:text("")},(v,set)=><div className="w-full max-w-3xl p-6"><AnnotatedWaveform samples={v.invalid?[]:MIX_SAMPLES} duration={238} position={v.position} comments={v.markers?MIX_COMMENTS:[]} selectedId={v.selected} onSeek={n=>set("position",n)} onComment={id=>{set("selected",id);set("position",MIX_COMMENTS.find(c=>c.id===id)!.seconds);}}/></div>),source:"music-project"},
  "production-task-list":{...define("Production Task List",{completed:text("s1,s2,t6"),empty:toggle(false)},(v,set)=>{const ids=v.completed.split(",");const restore=(list:ProductionTask[]):ProductionTask[]=>list.map(t=>({...t,done:ids.includes(t.id),children:t.children?restore(t.children):undefined}));const list=restore(MIX_TASKS);return <div className="w-full max-w-3xl p-6"><ProductionTaskList tasks={v.empty?[]:list} onToggle={(id,done)=>{const updated=toggleTask(list,id,done);const collect=(ts:ProductionTask[]):string[]=>ts.flatMap(t=>t.children?.length?collect(t.children):t.done?[t.id]:[]);set("completed",collect(updated).join(","));}}/></div>;}),source:"music-project"},
  "mix-version-list":{...define("Mix Version List",{value:select(["v4","v3","v2","v1"],"v4"),empty:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-6"><MixVersionList versions={v.empty?[]:MIX_VERSIONS} value={v.value} onChange={id=>set("value",id as typeof v.value)}/></div>),source:"music-project"},

@@ -1,3 +1,5 @@
+import {TaskBoardPage} from "@/patterns/task-board";
+import {TaskEditorDocs} from "@/pages/TaskEditorDocs";
 import {MusicProjectPage} from "@/patterns/music-project";
 import {MusicProjectDocs} from "@/pages/MusicProjectDocs";
 import {VoiceAgentPage} from "@/patterns/voice-agent";
@@ -196,6 +198,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+ "task-board":TaskBoardPage,"task-properties":TaskEditorDocs,"task-subtasks":TaskEditorDocs,"task-detail-panel":TaskEditorDocs,
  "music-project":MusicProjectPage,"annotated-waveform":MusicProjectDocs,"production-task-list":MusicProjectDocs,"mix-version-list":MusicProjectDocs,
  "voice-agent":VoiceAgentPage,"voice-signal":VoiceTelemetryDocs,"voice-latency-breakdown":VoiceTelemetryDocs,"turn-latency-history":VoiceTelemetryDocs,
  "agent-budget":AgentBudgetPage,"budget-cap-control":AgentBudgetDocs,"budget-outcome":AgentBudgetDocs,"monthly-budget-card":AgentBudgetDocs,
