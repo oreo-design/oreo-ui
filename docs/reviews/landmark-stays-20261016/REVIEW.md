@@ -45,7 +45,7 @@ All screenshots are local fixture evidence, English. Desktop is 1440×1080 viewp
 | Room / save | No hotel state existed | [Saved room](after-room-saved.png) | Correct subtotal and saved toggle. |
 | Narrow viewport | No prior hotel page; desktop fallback baseline retained | [Light](after-mobile.png), [dark selected](after-mobile-dark.png), [dark room](after-mobile-room-dark.png) | Taller 1000/820 scene; compact prices prevent marker collisions; all actions reachable. |
 | Component previews | No prior hotel components | [Price](after-price-playground.png), [result](after-result-playground.png), [selection](after-selection-playground.png) | Canonical docs layout and working property controls. |
-| Changelog | [Before](before-changelog.png) | Pending PR-number entry capture | Delivery entry will link this PR. |
+| Changelog | [Before](before-changelog.png) | [After](after-changelog.png) | Entry links PR #83 and the new template. |
 | Export | No prior hotel export | [Actual downloaded JSON](shortlist-export.json) | One saved Maison Jardin; five nights; GBP 715; 0.971 km. |
 
 ### Corrections and limits
@@ -54,3 +54,6 @@ All screenshots are local fixture evidence, English. Desktop is 1440×1080 viewp
 - superseded-mobile-dark-01.png / superseded-mobile-room-dark-01.png: saturated illustration and unsettled theme transition; replaced by muted palette captures with finite animations completed.
 - No live accommodation provider, geographic map, payment, reservation or real-account flow was exercised. No loading/network error is claimed for this synchronous local fixture. New component docs have no independent pre-existing equivalent; existing map peer and missing-route baseline are retained instead.
 - Continuous interaction recording remains a gap: the available direct headless session lacks extension tabCapture. Interaction state checks and screenshots are not motion footage.
+
+## Delivery revision
+Implementation commit: c4f64db6a9d6b5e5c517f84822e3f8b41050aca5. Changelog delivery: [PR #83](https://github.com/oreo-design/oreo-ui/pull/83). See manifest.json for capture timestamps, sizes, SHA-256 hashes and final component-source hashes. Final exact-head review and remote merge verification are reported with delivery.
