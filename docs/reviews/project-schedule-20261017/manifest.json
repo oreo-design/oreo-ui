@@ -11,7 +11,8 @@
     "src/pages/TaskScheduleDocs.tsx": "8d476967f4274f1a0851214e9c1e57413c06d52bdfe439790d165fb3e5c5ec9a",
     "src/patterns/project-workspace/index.tsx": "a81f7b011c780e2463e45e356d0b6a3a14c22386c139a97297e313f66b24b572",
     "src/patterns/project-workspace/data.ts": "0803fd45ed3a472d2dbface3a6beb19173878de125bd93bfa468fe5531690ce1",
-    "src/patterns/project-workspace/project-workspace.css": "c290a545cb7a786833fa7cc16244599d92b2a49cd1098a2224ca50cc95652aab"
+    "src/patterns/project-workspace/project-workspace.css": "c290a545cb7a786833fa7cc16244599d92b2a49cd1098a2224ca50cc95652aab",
+    "src/patterns/changelog/data.ts": "a299874cc8c07e359c22083484c4c993e830ae62c49cc406552cb09c2c253a1d"
   },
   "media": [
     {
@@ -521,6 +522,24 @@
       "path": "final-scroll-frames/frames.json",
       "bytes": 452,
       "sha256": "37ba90182aa8f9cce6298d43da7b2f610f50eaf56777e69b5993501138f3e1a4"
+    },
+    {
+      "path": "after-changelog-final.png",
+      "bytes": 142058,
+      "sha256": "a1b5c862f7311b5dd3c452e27ffff396ccab8f1f4648bd76df49b904d034275e",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-changelog-stale-hmr.png",
+      "bytes": 147900,
+      "sha256": "7560ffd416e19e7fea1dedbdde93e6c3136f0a6405d6c5256c1d3b76c93e8063",
+      "dimensions": [
+        1440,
+        1080
+      ]
     }
   ]
 }

@@ -4,6 +4,9 @@ export type Release = { date: string; label: string; title: string; description:
 export const REPOSITORY = "https://github.com/oreo-design/oreo-ui";
 /** Selected main-branch changes. Dates are merge dates in Asia/Shanghai, not package releases. */
 export const releases: Release[] = [
+  { date: "2026-10-17", label: "October 17, 2026", title: "See the work across time.", description: "Shared tasks, with more ways to plan the next step.", changes: [
+    { id:"project-scheduling", kind:"Updated", title:"Project Workspace scheduling", description:"Reusable task chips, month/week calendars and project timelines, with shared editing, validated start and due dates, per-day creation and an unscheduled task tray.", page:"project-workspace", pr:97 },
+  ]},
   { date: "2026-10-16", label: "October 16, 2026", title: "A clearer view of what comes next.", description: "Usage forecasts, payment drafts, sales and operational workspaces, built from reusable components.", changes: [
     { id:"edge-observatory-motion", kind:"Updated", title:"Edge Observatory motion & routing review", description:"Nonblocking monitor reveals, regional spotlights and incident recommendations, composed into the existing observatory with responsive map details, reduced motion and an undoable local routing draft.", page:"edge-observatory", pr:96 },
     { id:"subscription-workspace", kind:"Added", title:"Subscription Workspace", description:"Typed segment rules, live audience summaries, subscription plan cards and exact revenue allocation, composed into a local workspace with customer/member creation, sponsor-derived legs, validation and undo.", page:"subscription-workspace", pr:95 },
