@@ -467,6 +467,60 @@
       "path": "source-metadata.json",
       "bytes": 8394,
       "sha256": "914d90758a24d7771871041178a84b35fb48c278796289d577d45166cb432ca7"
+    },
+    {
+      "path": "after-timeline-scroll-final.mp4",
+      "bytes": 184414,
+      "sha256": "eb841ea4ec804edcea322adccfce7c17f0e78c8849d5c353d8abf0377ada5b3a"
+    },
+    {
+      "path": "after-timeline-scroll-final.png",
+      "bytes": 114805,
+      "sha256": "1a7e37ba23961dc707e9656988ab9cec95b3e826e200056d1ff4cf63baf8ce83",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "final-scroll-frames/frame-00000.jpg",
+      "bytes": 118133,
+      "sha256": "46e80acf4971ec76c47df84f8b41319c6f1ba832433dd6f0cf529b73a92d0693"
+    },
+    {
+      "path": "final-scroll-frames/frame-00001.jpg",
+      "bytes": 122348,
+      "sha256": "311d3122951cdd502690284658efd40745cc0ea8421f5a234163d6193d368745"
+    },
+    {
+      "path": "final-scroll-frames/frame-00002.jpg",
+      "bytes": 116934,
+      "sha256": "7f2a918fab1b2b589d354f6b44c634f84c7bcef2ec2b5292948f507c6c03a12b"
+    },
+    {
+      "path": "final-scroll-frames/frame-00003.jpg",
+      "bytes": 116934,
+      "sha256": "7f2a918fab1b2b589d354f6b44c634f84c7bcef2ec2b5292948f507c6c03a12b"
+    },
+    {
+      "path": "final-scroll-frames/frame-00004.jpg",
+      "bytes": 116934,
+      "sha256": "7f2a918fab1b2b589d354f6b44c634f84c7bcef2ec2b5292948f507c6c03a12b"
+    },
+    {
+      "path": "final-scroll-frames/frame-00005.jpg",
+      "bytes": 114370,
+      "sha256": "707254111546ed616ab86c357877e43d8dcf0befc8c123d53ee9fec45f599a04"
+    },
+    {
+      "path": "final-scroll-frames/frames.ffconcat",
+      "bytes": 313,
+      "sha256": "07a62ca22d3c0c62884692835eae50064d26ae4dca9be4027ebd282b7c63bf2f"
+    },
+    {
+      "path": "final-scroll-frames/frames.json",
+      "bytes": 452,
+      "sha256": "37ba90182aa8f9cce6298d43da7b2f610f50eaf56777e69b5993501138f3e1a4"
     }
   ]
 }
