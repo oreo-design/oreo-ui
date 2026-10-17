@@ -1,3 +1,4 @@
+import {TaskScheduleDocs} from "@/pages/TaskScheduleDocs";
 import {EdgeMotionDocs} from "@/pages/EdgeMotionDocs";
 import {SubscriptionWorkspacePage} from "@/patterns/subscription-workspace";
 import {SubscriptionOperationsDocs} from "@/pages/SubscriptionOperationsDocs";
@@ -276,6 +277,7 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   changelog: ChangelogPage, "release-entry": ReleaseEntryDocs, "upgrade-prompt": UpgradePromptDocs,
   "brand-guide": BrandGuidePage, "brand-swatch": BrandSwatchDocs, "type-scale": TypeScaleDocs, "email-signature": EmailSignatureDocs,
   "project-summary": ProjectSummaryDocs,
+  "task-schedule-chip":TaskScheduleDocs,"task-calendar":TaskScheduleDocs,"task-timeline":TaskScheduleDocs,
   "task-row": TaskRowDocs,
   "project-workspace": ProjectWorkspacePage,
   "tree-stepper": TreeStepperDocs,

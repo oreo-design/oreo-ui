@@ -165,6 +165,7 @@ const NAV: Group[] = [
       { label: "Email Signature", page: "email-signature" },
       { label: "Project Summary", page: "project-summary" },
       { label: "Task Row", page: "task-row" },
+      {label:"Task Schedule Chip",page:"task-schedule-chip"},{label:"Task Calendar",page:"task-calendar"},{label:"Task Timeline",page:"task-timeline"},
       { label: "Task Status Group", page: "task-status-group" },
       { label: "Task List Row", page: "task-list-row" },
       { label: "Grouped Task List", page: "grouped-task-list" },

@@ -1,3 +1,9 @@
+import {
+  TaskCalendar,
+  TaskTimeline,
+  type ScheduleProject,
+} from "@/components/task-schedule";
+import { scheduleError, addDays } from "@/components/task-schedule/model";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -29,7 +35,17 @@ const COLUMNS = Object.entries(TASK_STATUS).map(([id, title]) => ({
 export function ProjectWorkspace() {
   const [tasks, setTasks] = useState(INITIAL_TASKS),
     [screen, setScreen] = useState("home"),
-    [view, setView] = useState<"list" | "board">("list");
+    [view, setView] = useState<"list" | "board" | "calendar" | "timeline">(
+      "list",
+    );
+  const [calendarDate, setCalendarDate] = useState(SAMPLE_TODAY),
+    [calendarMode, setCalendarMode] = useState<"month" | "week">("month");
+  const [timelineDate, setTimelineDate] = useState(addDays(SAMPLE_TODAY, -3)),
+    [timelineDays, setTimelineDays] = useState<14 | 28>(14);
+  const scheduleProjects: ScheduleProject[] = PROJECTS.map((p) => ({
+    ...p,
+    color: p.id === "website" ? "purple" : p.id === "mobile" ? "blue" : "mint",
+  }));
   const [dark, setDark] = useState(false),
     [navOpen, setNavOpen] = useState(false),
     [query, setQuery] = useState(""),
@@ -38,6 +54,7 @@ export function ProjectWorkspace() {
     [sort, setSort] = useState("manual");
   const [draft, setDraft] = useState<Task | null>(null),
     [error, setError] = useState(""),
+    [dateError, setDateError] = useState(""),
     [subtask, setSubtask] = useState(""),
     [notice, setNotice] = useState(""),
     [archived, setArchived] = useState<Task | null>(null);
@@ -49,7 +66,8 @@ export function ProjectWorkspace() {
   const projectSection = useRef<HTMLElement>(null);
   const newButton = useRef<HTMLButtonElement>(null),
     returnTo = useRef<HTMLElement | null>(null),
-    titleInput = useRef<HTMLInputElement>(null);
+    titleInput = useRef<HTMLInputElement>(null),
+    dueInput = useRef<HTMLInputElement>(null);
   const project = PROJECTS.find((p) => p.id === screen);
   const completed = tasks.filter((t) => t.status === "done").length;
   const overdue = tasks.filter(
@@ -96,7 +114,7 @@ export function ProjectWorkspace() {
     setSort("manual");
     setNavOpen(false);
   }
-  function open(task?: Task) {
+  function open(task?: Task, due = "") {
     returnTo.current =
       document.activeElement instanceof HTMLElement
         ? document.activeElement
@@ -111,12 +129,14 @@ export function ProjectWorkspace() {
             status: "todo",
             priority: "Medium",
             assigneeId: "alex",
-            due: "",
+            due,
+            start: "",
             description: "",
             subtasks: [],
           },
     );
     setError("");
+    setDateError("");
     setSubtask("");
   }
   function complete(task: Task, done: boolean) {
@@ -133,6 +153,12 @@ export function ProjectWorkspace() {
     if (!draft.title.trim()) {
       setError("Give this task a title before saving.");
       titleInput.current?.focus();
+      return;
+    }
+    const invalidDates = scheduleError(draft.start, draft.due);
+    if (invalidDates) {
+      setDateError(invalidDates);
+      dueInput.current?.focus();
       return;
     }
     const next = { ...draft, title: draft.title.trim() };
@@ -536,20 +562,36 @@ export function ProjectWorkspace() {
             <>
               <div className="pw-view-bar">
                 <div role="group" aria-label="Task view">
-                  {(["list", "board"] as const).map((v) => (
-                    <button
-                      type="button"
-                      key={v}
-                      aria-pressed={view === v}
-                      onClick={() => setView(v)}
-                    >
-                      <Icon
-                        name={v === "list" ? "list" : "columns"}
-                        size="sm"
-                      />
-                      {v === "list" ? "List" : "Board"}
-                    </button>
-                  ))}
+                  {(["list", "board", "calendar", "timeline"] as const).map(
+                    (v) => (
+                      <button
+                        type="button"
+                        key={v}
+                        aria-pressed={view === v}
+                        onClick={() => setView(v)}
+                      >
+                        <Icon
+                          name={
+                            v === "list"
+                              ? "list"
+                              : v === "board"
+                                ? "columns"
+                                : v === "calendar"
+                                  ? "calendar"
+                                  : "chart-bar"
+                          }
+                          size="sm"
+                        />
+                        {v === "list"
+                          ? "List"
+                          : v === "board"
+                            ? "Board"
+                            : v === "calendar"
+                              ? "Calendar"
+                              : "Timeline"}
+                      </button>
+                    ),
+                  )}
                 </div>
                 <span>
                   {scoped.length} tasks
@@ -646,6 +688,35 @@ export function ProjectWorkspace() {
                       : "Create a task"}
                   </Button>
                 </div>
+              ) : view === "calendar" ? (
+                <TaskCalendar
+                  tasks={visible}
+                  projects={
+                    project
+                      ? scheduleProjects.filter((p) => p.id === project.id)
+                      : scheduleProjects
+                  }
+                  people={PEOPLE}
+                  today={SAMPLE_TODAY}
+                  date={calendarDate}
+                  mode={calendarMode}
+                  onDateChange={setCalendarDate}
+                  onModeChange={setCalendarMode}
+                  onOpen={(t) => open(tasks.find((item) => item.id === t.id))}
+                  onCreate={(date) => open(undefined, date)}
+                />
+              ) : view === "timeline" ? (
+                <TaskTimeline
+                  tasks={visible}
+                  projects={scheduleProjects}
+                  people={PEOPLE}
+                  today={SAMPLE_TODAY}
+                  date={timelineDate}
+                  days={timelineDays}
+                  onDateChange={setTimelineDate}
+                  onDaysChange={setTimelineDays}
+                  onOpen={(t) => open(tasks.find((item) => item.id === t.id))}
+                />
               ) : view === "list" ? (
                 <div className="pw-task-groups">
                   {COLUMNS.filter((c) =>
@@ -812,13 +883,34 @@ export function ProjectWorkspace() {
                         </select>
                       </label>
                       <label>
+                        Start date
+                        <input
+                          type="date"
+                          value={draft.start ?? ""}
+                          aria-invalid={Boolean(dateError)}
+                          aria-describedby={
+                            dateError ? "pw-date-error" : undefined
+                          }
+                          onChange={(e) => {
+                            setDateError("");
+                            setDraft({ ...draft, start: e.target.value });
+                          }}
+                        />
+                      </label>
+                      <label>
                         Due date
                         <input
                           type="date"
                           value={draft.due}
-                          onChange={(e) =>
-                            setDraft({ ...draft, due: e.target.value })
+                          ref={dueInput}
+                          aria-invalid={Boolean(dateError)}
+                          aria-describedby={
+                            dateError ? "pw-date-error" : undefined
                           }
+                          onChange={(e) => {
+                            setDateError("");
+                            setDraft({ ...draft, due: e.target.value });
+                          }}
                         />
                       </label>
                       <label>
@@ -837,6 +929,11 @@ export function ProjectWorkspace() {
                         </select>
                       </label>
                     </div>
+                    {dateError && (
+                      <p id="pw-date-error" role="alert" className="pw-error">
+                        {dateError}
+                      </p>
+                    )}
                     <label className="pw-description">
                       Description
                       <textarea

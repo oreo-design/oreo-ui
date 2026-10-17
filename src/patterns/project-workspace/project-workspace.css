@@ -786,3 +786,6 @@
     line-height: 1.65;
   }
 }
+
+.pw-view-bar { flex-wrap: wrap; gap: .75rem; }
+.pw-view-bar > div { flex-wrap: wrap; }
