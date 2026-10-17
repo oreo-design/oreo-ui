@@ -15,6 +15,7 @@ export type Task = {
   priority: TaskPriority;
   assigneeId: string;
   due: string;
+  start?: string;
   description: string;
   subtasks: { id: string; title: string; done: boolean }[];
 };
@@ -193,6 +194,14 @@ export const INITIAL_TASKS: Task[] = seed.map(
     priority,
     assigneeId,
     due,
+    start: (
+      {
+        "WEB-102": "2026-10-12",
+        "WEB-103": "2026-10-13",
+        "WEB-104": "2026-10-15",
+        "WEB-105": "2026-10-19",
+      } as Record<string, string>
+    )[id],
     description: `Bring the ${PROJECTS.find((p) => p.id === projectId)!.name.toLowerCase()} work one step closer to ready. Capture the key decisions, check the edge cases, and share a clear handoff with the team.`,
     subtasks: [
       { id: `${id}-1`, title: "Review the current experience", done: true },

@@ -1,0 +1,472 @@
+{
+  "baseline": "3d8cd7a1605fac413658f490b358b53a039d799c",
+  "fixture": "ProjectWorkspace local React fixtures, sample today 2026-10-15, English; no backend",
+  "preview": "http://localhost:5269/project-workspace",
+  "captureTool": "Playwriter; original session 10, resumed headless session 1",
+  "source_sha256": {
+    "src/components/task-schedule/index.tsx": "5ecbcb4df9bcc0711e7c84328f92f5fe1232a0946823c691c9ed3b15ca3a3d49",
+    "src/components/task-schedule/model.test.ts": "a1ccb95edcf72ac9b6ad308aeddf69bc1ba1d4b43c4a15ec56ee235d7c5a936b",
+    "src/components/task-schedule/model.ts": "ecd9512a7ff6f29266be485f52821221e7861c66f419f541333e57006c1e83a9",
+    "src/components/task-schedule/task-schedule.css": "6c4d4ffd67265dadb48bcf257c2da97e1f7dab3467cb60107d9cb94c71c0f896",
+    "src/pages/TaskScheduleDocs.tsx": "8d476967f4274f1a0851214e9c1e57413c06d52bdfe439790d165fb3e5c5ec9a",
+    "src/patterns/project-workspace/index.tsx": "a81f7b011c780e2463e45e356d0b6a3a14c22386c139a97297e313f66b24b572",
+    "src/patterns/project-workspace/data.ts": "0803fd45ed3a472d2dbface3a6beb19173878de125bd93bfa468fe5531690ce1",
+    "src/patterns/project-workspace/project-workspace.css": "c290a545cb7a786833fa7cc16244599d92b2a49cd1098a2224ca50cc95652aab"
+  },
+  "media": [
+    {
+      "path": "after-calendar-api.png",
+      "bytes": 170495,
+      "sha256": "e17d661e263b4f4dd354daa012754e393f3ec876c56a32a39126f1b9a4f1e6a5",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-calendar-dark-final.png",
+      "bytes": 109948,
+      "sha256": "cb7982fd58db57d2c20b493901e69289704bb63c9180800a9043bf8bdb4dccb3",
+      "dimensions": [
+        1440,
+        1339
+      ]
+    },
+    {
+      "path": "after-calendar-dark.png",
+      "bytes": 103840,
+      "sha256": "5b739f50d4761df8776f30edd086e264f58376bd64268a6858e4ef0b25e6ed4c",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-calendar-docs.png",
+      "bytes": 120126,
+      "sha256": "9810de100c4e2b619a24114d34280c09e4c7eb151cdf4a1d9ab7301f21f7b563",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-calendar-expanded.png",
+      "bytes": 106369,
+      "sha256": "5621b34731169810bda929eebfa39884a9822f38a8e4f0781f352d0de7bd6495",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-calendar-initial.png",
+      "bytes": 102370,
+      "sha256": "a9cb88b833f651d339f542fab5f7e39887f3d67839062d092f019c170ec9b35e",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-calendar-invalid-docs.png",
+      "bytes": 104337,
+      "sha256": "1b890d759e660a71ced1b1d57ea12060f528cc3519cd53498ec1a902a4de9240",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-calendar-light-complete.png",
+      "bytes": 110716,
+      "sha256": "84383428e12ef0b2fa7e48d809b28020f8dfb63696ac1189349d36985ae28a91",
+      "dimensions": [
+        1440,
+        1339
+      ]
+    },
+    {
+      "path": "after-calendar-light-final.png",
+      "bytes": 102416,
+      "sha256": "6c87a055f85d513217081f0e0d0869524957678ce8d557ce5edcea62c8caac21",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-chip-docs.png",
+      "bytes": 103094,
+      "sha256": "89fd330c333e8c656f2f35c826a88f3c66aae858cacbbdaeaab77970c2761ab9",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-date-error.png",
+      "bytes": 135287,
+      "sha256": "cd0bf00eced7c778bad53504d14f115fbf87c61a6c9ff174a4f31efdd089940f",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-empty-period-medium.png",
+      "bytes": 76450,
+      "sha256": "2f80c2b00bc68c2ac078c3c95f1c518378f1a1d1a9a1aa374de89d090eadd2b7",
+      "dimensions": [
+        900,
+        1000
+      ]
+    },
+    {
+      "path": "after-filter-empty.png",
+      "bytes": 66926,
+      "sha256": "af9b0d6b039b70b5b5e72d52954f3f0b0e08f9b9e730a8c7340611b841a349fa",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-interaction.mp4",
+      "bytes": 256574,
+      "sha256": "871740a73bfd15c145266ac4a01e40a5d7bcefdf60dfecc91193637a9f3c9098"
+    },
+    {
+      "path": "after-list-light-final.png",
+      "bytes": 114566,
+      "sha256": "42f51047a128bb1ba299be05fb473105dbb2c2f3d02675a9dab2cbc222bea33e",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-medium-calendar-light-final.png",
+      "bytes": 81035,
+      "sha256": "ad043c77bd6afebfe549ae4d12e0fbf3df12dee755d9e4c67f7e6910a759b8ba",
+      "dimensions": [
+        900,
+        1000
+      ]
+    },
+    {
+      "path": "after-medium-timeline-light-final.png",
+      "bytes": 106489,
+      "sha256": "525d5a14335760f2eb7319fe2dca4bcf4e84ecc2e6023509945581eab53e8005",
+      "dimensions": [
+        900,
+        1000
+      ]
+    },
+    {
+      "path": "after-medium-timeline-light.png",
+      "bytes": 110699,
+      "sha256": "3440220921635959bae9e01a7fd0651ac99369deda3a25c61a646b7ffde8ccb5",
+      "dimensions": [
+        900,
+        1000
+      ]
+    },
+    {
+      "path": "after-mobile-calendar-dark.png",
+      "bytes": 42367,
+      "sha256": "4740136debaa4b0ce3652bbd63fc7aaf9d4c419d27396818195b8eedf53b5288",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "after-mobile-calendar-light-final.png",
+      "bytes": 34845,
+      "sha256": "4514625b54b382f809ba5e6d9b0505ce0f06cee0c6d1633bd80e0e5c142b7f61",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "after-mobile-editor-dark.png",
+      "bytes": 37771,
+      "sha256": "e5ffb78c5bc91bb2d08e7c8dd684cf58c469b17b17421dc7713dc4d6612fdfd5",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "after-mobile-timeline-dark-final.png",
+      "bytes": 47219,
+      "sha256": "246c87ac5d20b907f2b6958bb9368f26a3c812dd34e4ad9355b8da96d38a1bed",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "after-mobile-timeline-dark.png",
+      "bytes": 51610,
+      "sha256": "402dfe63225366627f7d83f8fbcdf405c2a1ce0e16e82a7ed3479da389b68910",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "after-mobile-timeline-light-settled.png",
+      "bytes": 47863,
+      "sha256": "c87484c7c07d4d2e57cf4842f79df55ec694730e77b05592a766bb504fd32d14",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "after-mobile-timeline-light.png",
+      "bytes": 47563,
+      "sha256": "13d6fe840fbafc67bd651bbf3f7588b796be93763efc4db63100c28c1707df72",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "path": "after-timeline-28-light-final.png",
+      "bytes": 121126,
+      "sha256": "9202e1447401c23428edb6a89f03fecdee4f4a4ccfdaa9770cb8711d03ef6a56",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-timeline-dark-final.png",
+      "bytes": 123736,
+      "sha256": "8812ffc5982b74681e715d962ca0598d3df71a937eaaa8c92e3801a767679d8b",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-timeline-dark.png",
+      "bytes": 128246,
+      "sha256": "c2cab684d90ac9af012ac9b866e68512f880cf03351630443e380f3e4fa0cc19",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-timeline-docs.png",
+      "bytes": 152659,
+      "sha256": "41161349e5391699721a54d771786e50f8fe40794a01c2c0da696458b7eccb56",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-timeline-empty-docs.png",
+      "bytes": 110239,
+      "sha256": "855a2aa9ca6f537ce88231e6955d4eeca871432107a985ac71e9afacfc296305",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-timeline-light-final.png",
+      "bytes": 123670,
+      "sha256": "dc743e0c685a7e31d491c188ec7aa871b249c3ff841b049a5a58d2f7a1bed8ac",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-timeline-light.png",
+      "bytes": 125289,
+      "sha256": "7e4df01cf3374125b5f007a5c9d1554b6169b92d4c2dd999fb558f36074456ce",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-timeline-scroll.png",
+      "bytes": 119427,
+      "sha256": "e3908632341f36b9a1e9824c42823395c3d0747da70a9267513bbe802d2347a7",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "after-week-unscheduled.png",
+      "bytes": 98061,
+      "sha256": "c860bd99732295838a1f599e4059f38d6e1a3cbea0d057c74097ad780c639667",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "before-changelog.png",
+      "bytes": 147735,
+      "sha256": "addce428a5d1077f8df559085b65ef8fd4c3a9ae8260fd4c9ff974a0b733b6e2",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "before-overview.png",
+      "bytes": 135776,
+      "sha256": "46d17c53ec3d2b78b6be9e82b8fc34b73d538a28f973d30ba665f86710942240",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "before-tasks-dark.png",
+      "bytes": 113572,
+      "sha256": "3067e555b7f220b8321e524e68f8837ca2eab0678ff744fb40fbc62b40a08d18",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "before-tasks.png",
+      "bytes": 113429,
+      "sha256": "d95f5f9dab547c36df0f10d8f619d4b31c2dc46947fcbf6e94c7d8dbdf76f5bf",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "interaction-frames/frame-00000.jpg",
+      "bytes": 92044,
+      "sha256": "a6387bf7c4ba0c0abb4fe88724fb5e244d085ebf8f58680e5047ff0f886f6d19"
+    },
+    {
+      "path": "interaction-frames/frame-00001.jpg",
+      "bytes": 107564,
+      "sha256": "5d23d2a7fb340d685499e0d636ea33edc7338f69dc823c132dae07934e0ba9fe"
+    },
+    {
+      "path": "interaction-frames/frame-00002.jpg",
+      "bytes": 108301,
+      "sha256": "a5d954e423046f037396b1befa0754579b15f6622a344674d9ec367297bbf932"
+    },
+    {
+      "path": "interaction-frames/frame-00003.jpg",
+      "bytes": 108301,
+      "sha256": "a5d954e423046f037396b1befa0754579b15f6622a344674d9ec367297bbf932"
+    },
+    {
+      "path": "interaction-frames/frames.ffconcat",
+      "bytes": 231,
+      "sha256": "a75a4ba9433a354e19642268795f38d0ef38a96428b94f5daa54688cd71d5b1d"
+    },
+    {
+      "path": "interaction-frames/frames.json",
+      "bytes": 302,
+      "sha256": "b805f8de199b36d24afc2f99c3834b24de71a26371b8cd879d9057923875668b"
+    },
+    {
+      "path": "oreo-zahra-board.png",
+      "bytes": 188960,
+      "sha256": "14e11aaf93945e3555a760cf00d890eeb62edc0c2f69f0cd8f82e89e57faa532",
+      "dimensions": [
+        1440,
+        1001
+      ]
+    },
+    {
+      "path": "oreo-zahra-calendar-settled.png",
+      "bytes": 198187,
+      "sha256": "6b7e685f32530bfeed5b892f493ef80e8c745b1faabe6ac4eaaa6dbe2af026d7",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "oreo-zahra-calendar.png",
+      "bytes": 81936,
+      "sha256": "652e25ca3ff62bd4120f299a4b8dc7134f064d2ba198ab4156951006b9e2de52",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "oreo-zahra-detail.png",
+      "bytes": 226458,
+      "sha256": "35c1a12f4e700df60238ccf6b24239bcba76a79902d88bdfc1e1e197f9c49b56",
+      "dimensions": [
+        1440,
+        1001
+      ]
+    },
+    {
+      "path": "oreo-zahra-home.png",
+      "bytes": 257506,
+      "sha256": "b49fc13d77798a4003b7af4cbdd31a406d2c10a12f0d1c37be223448bcc826c9",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "oreo-zahra-reference.png",
+      "bytes": 630139,
+      "sha256": "29861041e9b966943e4d56dfc2dc45b40fa9d04aae7c3974271686956b8b23bd",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "oreo-zahra-timeline-settled.png",
+      "bytes": 218841,
+      "sha256": "4be38e75f3feb56836ecd1e0bbe7153624324ec83e32325faac61741d8d3078e",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "oreo-zahra-timeline.png",
+      "bytes": 84681,
+      "sha256": "f52136e913a50be7606c6aa153f2ff21769f1e6a264d0000aaa7bad2fa5a922c",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "peer-color-calendar.png",
+      "bytes": 147699,
+      "sha256": "c1c8bef95499220fb40ac7a120b3856d9d6609bf1d6ae58ffc9acfbe3aee6990",
+      "dimensions": [
+        1440,
+        1080
+      ]
+    },
+    {
+      "path": "source-metadata.json",
+      "bytes": 8394,
+      "sha256": "914d90758a24d7771871041178a84b35fb48c278796289d577d45166cb432ca7"
+    }
+  ]
+}
