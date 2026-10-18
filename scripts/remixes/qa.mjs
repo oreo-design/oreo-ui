@@ -10,10 +10,10 @@ import { resolve } from "node:path";
 const origin = process.env.REMIX_URL || "http://127.0.0.1:5198";
 if (!["127.0.0.1", "localhost"].includes(new URL(origin).hostname)) throw new Error("Use a local preview URL");
 const baseline = process.argv.includes("--baseline");
-const out = "artifacts/ai-remixes";
+const out = process.env.REMIX_EVIDENCE || "artifacts/ai-remixes";
 await mkdir(out, { recursive: true });
 const sourceCheckout = baseline ? resolve(process.env.BASELINE_DIR || "../oreo-ui-baseline") : process.cwd();
-const report = { generatedAt: new Date().toISOString(), sourceCheckout, revision: execFileSync("git", ["rev-parse", "HEAD"], { cwd: sourceCheckout, encoding: "utf8" }).trim(), diffSha256: createHash("sha256").update(execFileSync("git", ["diff", "--binary", "HEAD"], { cwd: sourceCheckout })).digest("hex"), buildIndexSha256: createHash("sha256").update(readFileSync(resolve(sourceCheckout, "dist/index.html"))).digest("hex"), baseline, locale: "en-US", origin, matrix: [], checks: [], errors: [], blockedRequests: [] };
+const report = { generatedAt: new Date().toISOString(), sourceCheckout, revision: execFileSync("git", ["rev-parse", "HEAD"], { cwd: sourceCheckout, encoding: "utf8" }).trim(), diffSha256: createHash("sha256").update(execFileSync("git", ["diff", "--binary", "HEAD"], { cwd: sourceCheckout })).digest("hex"), buildIndexSha256: createHash("sha256").update(readFileSync(resolve(sourceCheckout, process.env.REMIX_BUILD_DIR || "dist", "index.html"))).digest("hex"), baseline, locale: "en-US", origin, matrix: [], checks: [], errors: [], blockedRequests: [] };
 const browser = await chromium.launch({ headless: true, chromiumSandbox: true });
 const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: "reduce", locale: "en-US" });
 // Fixtures should not depend on analytics or other remote calls.
@@ -29,7 +29,7 @@ const slugs = ["prompt-box", "attachment", "confirmation", "plan", "sources"];
 async function go(slug, options = "") {
   await page.goto(`${origin}/${slug}?view=remixes${options}`);
   await page.evaluate(() => document.fonts.ready);
-  await page.getByRole("heading", { name: "AI remixes" }).waitFor();
+  await page.getByRole("region", { name: "Remixed component", exact: true }).waitFor();
 }
 const remixed = () => page.getByRole("region", { name: "Remixed component", exact: true });
 async function check(name, run) {
@@ -64,9 +64,9 @@ try {
     }
     await check("Entry and exit preserve the original playground", async () => {
       await page.goto(`${origin}/prompt-box`);
-      await page.getByRole("button", { name: "AI remixes", exact: true }).click();
-      await page.getByRole("heading", { name: "AI remixes" }).waitFor();
-      await page.getByRole("button", { name: "Playground", exact: true }).click();
+      await page.getByRole("navigation", { name: "Page view" }).getByRole("link", { name: "AI remixes", exact: true }).click();
+      await page.getByRole("region", { name: "Remixed component", exact: true }).waitFor();
+      await page.getByRole("navigation", { name: "Page view" }).getByRole("link", { name: "Playground", exact: true }).click();
       assert(await page.getByRole("main", { name: "Prompt Box playground" }).isVisible());
     });
     await check("Prompt queue: keyboard, pause, edit, remove, retry and empty state", async () => {

@@ -16,7 +16,7 @@ try {
  for (const width of [390, 900, 1440]) for (const dark of [false, true]) {
   await page.setViewportSize({ width, height: 1000 });
   const response = await page.goto(`${origin}/ai-remixes${dark ? "?dark" : ""}`); assert.equal(response.status(), 200);
-  await page.getByRole("heading", { name: "Beyond the original." }).waitFor();
+  await page.getByRole("heading", { name: "AI remixes" }).waitFor();
   assert.equal(await page.locator(".remix-gallery-card").count(), 5);
   assert.equal(await page.locator('.remix-gallery-links a[href*="view=remixes"]').count(), 10);
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
@@ -32,19 +32,19 @@ try {
    await page.getByRole("region", { name:"Remixed component" }).waitFor();
    assert(new URL(page.url()).searchParams.get("remix") === mode);
    assert(await page.getByRole("region", { name:"Original component" }).isVisible());
-   await page.getByRole("link", { name:"All experiments", exact:true }).click();
-   await page.getByRole("heading", { name:"Beyond the original." }).waitFor();
+   await page.getByRole("link", { name:"All remixes", exact:true }).click();
+   await page.getByRole("heading", { name:"AI remixes" }).waitFor();
    checks.push(`${slug} ${mode} keyboard link and return`);
   }
   await page.locator(`.remix-gallery-links a[href="/${slug}?view=docs"]`).click();
-  await page.getByRole("button", { name:"Explore AI remixes" }).waitFor();
+  await page.getByRole("navigation", { name: "Page view" }).getByRole("link", { name: "AI remixes", exact: true }).waitFor();
   checks.push(`${slug} original docs`);
  }
  await page.goto(`${origin}/button`);
  await page.getByRole("link", { name:"AI Remixes", exact:true }).click();
- await page.getByRole("heading", { name:"Beyond the original." }).waitFor();
+ await page.getByRole("heading", { name:"AI remixes" }).waitFor();
  await page.goBack(); assert(new URL(page.url()).pathname === "/button");
- await page.goForward(); await page.getByRole("heading", { name:"Beyond the original." }).waitFor();
+ await page.goForward(); await page.getByRole("heading", { name:"AI remixes" }).waitFor();
  checks.push("sidebar and history navigation");
  assert.deepEqual(errors, []);
 } finally {

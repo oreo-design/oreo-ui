@@ -30,7 +30,7 @@ A small, copy-paste React component library that reproduces the **Oreo UI** desi
 - **Page Loader** — story-driven page loading sized to the wait: six storylines (snake / breakout / runner / fishing / orbit / kitchen), each at three tiers — a glyph loop under 5s, a CSS ambient scene to 30s, and a playable canvas minigame beyond, with `tierForEstimate` mapping an estimate to a tier.
 - **Settings pattern** — a configurable settings-page framework (`/settings`): three appearance axes (background hierarchy · card style · nav icons) expressed through a local `--settings-*` variable layer, a full row vocabulary (setting / link-out / stat / meter / entity picker / editor / callout), a filtering nav rail that collapses into a drawer, and a six-page showcase with a floating axis switcher.
 - **Icon** — thin adapter over [Phosphor](https://phosphoricons.com) that drives size/color via tokens and `currentColor`.
-- **Docs app** — three-column layout (component nav · content · on-this-page scrollspy) with Preview/Code tabs, an API table, and a floating **"Make them yours"** panel that drives theme, radius, and the press spring live across every preview.
+- **Docs app** — three-column layout (component nav · content · on-this-page scrollspy) with Preview/Code tabs, an API table, and a collapsed **Appearance** panel that drives theme, radius, and the press spring live across every preview.
 
 Design tokens are extracted 1:1 from the Oreo UI Figma file; switching theme or radius only changes CSS variables — components are never touched. The palette tones used by Tag and the Avatar "alphabet" type ship with both light and dark skins.
 
