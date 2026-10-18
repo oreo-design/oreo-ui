@@ -85,4 +85,9 @@ Extension recording was unavailable because this task-owned tab had not been gra
 - Browser: happy path through merged, resolving cancellation and no delayed advance, failed-check blocks merge, retry to ready, commit details and close, change disclosure, mention, local note, file-name attachment/remove, keyboard Enter disclosure, reduced-motion spinner (`animation-name: none`), five playgrounds and JSX exports.
 - Responsive and theme captures above inspected; body horizontal size equals viewport at 390px.
 
-Delivery: local implementation and verification complete; task-scoped PR / remote main verification recorded below when completed.
+## Delivery and source review
+- Implementation source reviewed: `f92deaa8d73eca54a52440195882cd6bd1a94588`.
+- [PR #101](https://github.com/oreo-design/oreo-ui/pull/101) contains only the new component family, template, documentation/registration and this task's evidence. Original checkout WIP was preserved.
+- Source hashes in manifest.json were checked against the committed files. Focused checks above passed; GitHub reported no remote status checks and a clean, mergeable PR.
+- This review-record update changes documentation only. Final merge status and merge revision are available in the linked PR; remote main is verified after merge and reported with delivery.
+
