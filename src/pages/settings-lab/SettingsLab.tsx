@@ -43,7 +43,7 @@ export function SettingsLab({ nav }: { nav: DocsNav }) {
     </header>
     <div className="lab-content">
       <div className="lab-intro">
-        <div><p className="lab-eyebrow">EXPERIMENT 001 · SETTINGS</p><h1>让打磨，留在每次变化里。</h1><p className="lab-subtitle">同一个 Settings 蓝本，三种变化，一次迁移验证。亲手试一试，哪些细节可以继承，哪些需要重新判断。</p></div>
+        <div><h1>Settings Pattern Lab</h1><p className="lab-subtitle">比较内容替换、结构组合、边界扩展与数据导出。</p></div>
         <button className="lab-notes-toggle" aria-expanded={showNotes} onClick={() => setShowNotes(v => !v)}>实验说明 <Icon name={showNotes ? "chevron-down" : "arrow-out"} size="sm" /></button>
       </div>
       <div className="lab-case-tabs" role="group" aria-label="实验场景">
@@ -80,11 +80,11 @@ export function SettingsLab({ nav }: { nav: DocsNav }) {
         </div>
       </div>
       {showNotes && <section className="lab-notes">
-        <h2>保存结果，也保存变化的边界。</h2>
+        <h2>实验说明</h2>
         <div className="lab-note-grid"><div><h3>01 · 继承实现</h3><p>直接使用原版按钮、开关、菜单、标题和卡片。设置行的文字与分隔线来自同一份实现。</p></div><div><h3>02 · 开放组合</h3><p>内容、顺序和控件由产品决定。媒体、操作和详情通过明确插槽进入，布局关系由扩展行负责。</p></div><div><h3>03 · 审阅变化</h3><p>新增窄容器换行与连接交互单独检查。原版页面做回归比较，不能用「源码没改」代替结果检查。</p></div></div>
         <p className="lab-method-note">这里比较的是同一作者写的两种实现，不是独立模型的 A/B 生成实验。可重复检查证明的是这些场景的表现；设计品质与跨模型稳定性仍需要分别判断。</p>
       </section>}
-      <footer className="lab-footer"><span>OREO UI / DESIGN LANGUAGE STUDIES</span><a href="/settings">查看原版 Settings ↗</a></footer>
+      <footer className="lab-footer"><a href="/settings">查看原版 Settings ↗</a></footer>
     </div>
   </div>;
 }

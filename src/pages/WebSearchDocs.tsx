@@ -115,10 +115,6 @@ export function WebSearchDocs({ nav }: { nav: DocsNav }) {
           <Section id="api" title="API Reference">
             <PropsTable rows={PROPS} />
           </Section>
-
-          <footer className="border-t border-[var(--color-border-subtle)] py-8 text-[12px] text-[var(--color-text-secondary)]">
-            Oreo UI — Base UI · tailwind-variants · Motion. Built as a design-system reference.
-          </footer>
         </>
       )}
     </DocsPage>

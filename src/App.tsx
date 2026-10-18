@@ -1,3 +1,5 @@
+import { MobileNavigation } from "@/docs/Sidebar";
+import "@/docs/site.css";
 import { RemixGallery } from "@/docs/remixes/RemixGallery";
 import {TaskScheduleDocs} from "@/pages/TaskScheduleDocs";
 import {EdgeMotionDocs} from "@/pages/EdgeMotionDocs";
@@ -415,5 +417,5 @@ export default function App() {
   };
 
   const Page = PAGES[page];
-  return <Page key={page} nav={nav} />;
+  return <><MobileNavigation nav={nav} /><Page key={page} nav={nav} /></>;
 }

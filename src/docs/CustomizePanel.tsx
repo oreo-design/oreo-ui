@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Slider, Segmented } from "./primitives";
 import { Icon, ICON_LIBRARIES, ICON_WEIGHTS, type IconLibrary, type IconWeight } from "@/components/icon";
@@ -36,7 +36,16 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: (v: 
 }
 
 export function CustomizePanel(s: CustomizeState) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
+  const id = useId();
+  const panel = useRef<HTMLDivElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const wasOpen = useRef(false);
+  useEffect(() => {
+    if (open) panel.current?.focus();
+    else if (wasOpen.current) trigger.current?.focus();
+    wasOpen.current = open;
+  }, [open]);
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -44,20 +53,26 @@ export function CustomizePanel(s: CustomizeState) {
         {open ? (
           <motion.div
             key="panel"
+            ref={panel}
+            id={id}
+            role="region"
+            aria-label="Appearance controls"
+            tabIndex={-1}
+            onKeyDown={event => { if (event.key === "Escape") { event.stopPropagation(); setOpen(false); } }}
             initial={{ opacity: 0, scale: 0.9, y: 8 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 8 }}
             transition={{ type: "spring", bounce: 0.3, duration: 0.35 }}
-            style={{ transformOrigin: "bottom right", boxShadow: "var(--shadow-panel)" }}
-            className="w-[288px] overflow-hidden rounded-2xl bg-[var(--color-bg-base)] text-[var(--color-text-primary)]"
+            style={{ transformOrigin: "bottom right" }}
+            className="w-72 max-w-[calc(100vw-3rem)] max-h-[calc(100dvh-3rem)] overflow-y-auto rounded-lg border border-[var(--color-border-subtle)] bg-[var(--color-bg-base)] text-[var(--color-text-primary)]"
           >
             <div className="flex items-center justify-between border-b border-[var(--color-border-subtle)] px-4 py-3">
               <span className="flex items-center gap-2 text-[13px] font-semibold">
-                <Icon name="sliders" size="sm" /> Make them yours
+                <Icon name="sliders" size="sm" /> Appearance
               </span>
               <button
                 onClick={() => setOpen(false)}
-                aria-label="Collapse"
+                aria-label="Close appearance"
                 className="grid size-6 place-items-center rounded-md text-[var(--color-text-secondary)] transition-colors hover:bg-[var(--color-state-hover)] hover:text-[var(--color-text-primary)]"
               >
                 <Icon name="x" className="size-3" />
@@ -95,16 +110,18 @@ export function CustomizePanel(s: CustomizeState) {
         ) : (
           <motion.button
             key="fab"
+            ref={trigger}
+            aria-controls={id}
+            aria-expanded={open}
             onClick={() => setOpen(true)}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ type: "spring", bounce: 0.4, duration: 0.3 }}
             whileTap={{ scale: 0.94 }}
-            style={{ boxShadow: "var(--shadow-panel)" }}
-            className="flex items-center gap-2 rounded-full bg-[var(--color-bg-inverse)] px-4 py-2.5 text-[13px] font-medium text-[var(--color-text-on-inverse)]"
+            className="flex items-center gap-2 rounded-md border border-[var(--color-border-subtle)] bg-[var(--color-bg-base)] px-4 py-2.5 text-[13px] font-medium text-[var(--color-text-primary)]"
           >
-            <Icon name="sliders" size="sm" /> Make them yours
+            <Icon name="sliders" size="sm" /> Appearance
           </motion.button>
         )}
       </AnimatePresence>

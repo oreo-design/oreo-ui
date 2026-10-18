@@ -5,7 +5,7 @@ import { ComponentPlayground } from "./playground/ComponentPlayground";
 import { RemixExamples } from "./remixes/RemixExamples";
 import { hasRemix } from "./remixes/model";
 import { playgrounds } from "./playground/registry";
-import { Button } from "@/components/button";
+import { PageViews } from "./PageViews";
 import type { TocItem } from "./OnThisPage";
 import { ICON_WEIGHTS, IconLibraryProvider, type IconLibrary, type IconWeight } from "@/components/icon";
 
@@ -17,8 +17,7 @@ export type DocsNav = { active: string; onNavigate: (id: string) => void };
 
 /**
  * Reusable component-docs shell. Owns the live controls (theme / radius /
- * press-spring), renders the three-column layout + the floating "Make them
- * yours" panel, and hands the live control values to the page body via a
+ * press-spring), renders the three-column layout + the collapsible appearance panel, and hands the live control values to the page body via a
  * render prop so every preview can stay in sync.
  */
 export function DocsPage({
@@ -73,8 +72,7 @@ export function DocsPage({
     <IconLibraryProvider library={library}>
       <div className={dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"} style={wrapStyle}>
         {view === "remixes" && hasRemix(nav.active) ? <RemixExamples slug={nav.active} nav={nav} dark={dark} setDark={setDark} onPlayground={() => changeView("playground")} onDocumentation={() => changeView("docs")} /> : spec && view === "playground" ? <ComponentPlayground spec={spec} nav={nav} breadcrumb={breadcrumb} appearance={appearance} onDocumentation={() => changeView("docs")} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : <>
-        <DocsLayout toc={toc} breadcrumb={breadcrumb} nav={nav}>
-          {(spec || hasRemix(nav.active)) && <div className="mb-6 flex flex-wrap gap-2">{spec && <Button type="secondary" size="sm" onClick={() => changeView("playground")}>Open playground</Button>}{hasRemix(nav.active) && <Button type="secondary" size="sm" onClick={() => changeView("remixes")}>Explore AI remixes</Button>}</div>}
+        <DocsLayout toc={toc} breadcrumb={breadcrumb} nav={nav} views={(spec || hasRemix(nav.active)) ? <PageViews slug={nav.active} active="docs" onPlayground={spec ? () => changeView("playground") : undefined} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : undefined}>
           {children(controls)}
         </DocsLayout>
 

@@ -1,14 +1,16 @@
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
+import { Icon } from "@/components/icon";
 import { OreoLogo } from "./OreoLogo";
 import type { DocsNav } from "./DocsPage";
 
-type Item = { label: string; page?: string; soon?: boolean };
+type Item = { label: string; page: string };
 type Group = { title: string; items: Item[] };
 
 const NAV: Group[] = [
   {
     title: "Getting Started",
-    items: [{ label: "AI Remixes", page: "ai-remixes" }, { label: "Changelog", page: "changelog" }, { label: "Introduction", soon: true }, { label: "Tokens", soon: true }],
+    items: [{ label: "AI Remixes", page: "ai-remixes" }, { label: "Changelog", page: "changelog" }],
   },
   {
     title: "Components",
@@ -196,8 +198,6 @@ const NAV: Group[] = [
       { label: "Activity", page: "activity-components" },
       { label: "Connections", page: "connection-components" },
       { label: "Connection State", page: "connection-state" },
-      { label: "Select", soon: true },
-      { label: "Dialog", soon: true },
     ],
   },
   {
@@ -315,64 +315,64 @@ const NAV: Group[] = [
   },
 ];
 
-export function Sidebar({ nav }: { nav: DocsNav }) {
-  return (
-    <aside className="sticky top-0 hidden h-screen w-60 shrink-0 overflow-y-auto border-r border-[var(--color-border-subtle)] px-4 py-6 lg:block">
-      <div className="flex items-center gap-2.5 px-2">
-        <OreoLogo className="h-[15px] w-auto text-[var(--color-text-primary)]" />
-        <span className="text-[15px] font-semibold tracking-tight">Oreo UI</span>
-      </div>
+function Directory({ nav, onNavigate }: { nav: DocsNav; onNavigate?: () => void }) {
+  const [query, setQuery] = useState("");
+  const list = useRef<HTMLElement>(null);
+  const groups = NAV.map(group => ({ ...group, items: group.items.filter(item => item.page && `${group.title} ${item.label}`.toLowerCase().includes(query.trim().toLowerCase())) })).filter(group => group.items.length);
+  useEffect(() => {
+    list.current?.querySelector('[aria-current="page"]')?.scrollIntoView({ block: "nearest" });
+  }, [nav.active]);
+  return <>
+    <div className="site-directory-search"><label className="sr-only" htmlFor={onNavigate ? "mobile-page-search" : "page-search"}>Find a page</label><input id={onNavigate ? "mobile-page-search" : "page-search"} type="search" placeholder="Find a page…" value={query} onChange={event => setQuery(event.target.value)} /></div>
+    <nav ref={list} className="site-directory" aria-label="Site navigation">
+      {groups.map(group => <section key={group.title}><h2>{group.title}</h2><ul>{group.items.map(item => <li key={item.page}><a href={`/${item.page}`} aria-current={nav.active === item.page ? "page" : undefined} className={cn("site-directory-link", nav.active === item.page && "is-active")} onClick={event => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+        event.preventDefault(); nav.onNavigate(item.page!); onNavigate?.();
+      }}>{item.label}</a></li>)}</ul></section>)}
+      {!groups.length && <div className="site-directory-empty" role="status"><Icon name="search" /><p>No matching pages</p><button type="button" className="site-action" onClick={() => setQuery("")}>Clear search</button></div>}
+    </nav>
+  </>;
+}
 
-      <nav className="mt-7 space-y-6">
-        {NAV.map((group) => (
-          <div key={group.title}>
-            <div className="px-2 text-[11px] font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
-              {group.title}
-            </div>
-            <ul className="mt-2 space-y-0.5">
-              {group.items.map((item) => {
-                const active = item.page != null && item.page === nav.active;
-                const itemClass = cn(
-                  "flex w-full items-center justify-between rounded-lg px-2 py-1.5 text-left text-[13px] transition-colors",
-                  active
-                    ? "bg-[var(--color-state-press)] font-medium text-[var(--color-text-primary)]"
-                    : "text-[var(--color-text-secondary)] hover:bg-[var(--color-state-hover)] hover:text-[var(--color-text-primary)]",
-                  item.soon && "pointer-events-none opacity-50",
-                );
-                return (
-                  <li key={item.label}>
-                    {item.page ? (
-                      // Real links so pages can be opened in new tabs and shared;
-                      // plain clicks stay client-side via pushState.
-                      <a
-                        href={`/${item.page}`}
-                        onClick={(e) => {
-                          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-                          e.preventDefault();
-                          nav.onNavigate(item.page!);
-                        }}
-                        aria-current={active ? "page" : undefined}
-                        className={itemClass}
-                      >
-                        {item.label}
-                      </a>
-                    ) : (
-                      <button type="button" disabled className={itemClass}>
-                        {item.label}
-                        {item.soon && (
-                          <span className="rounded-full border border-[var(--color-border-default)] px-1.5 py-px text-[10px] font-normal">
-                            soon
-                          </span>
-                        )}
-                      </button>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        ))}
-      </nav>
-    </aside>
-  );
+function Brand() {
+  return <a href="/" className="site-brand" aria-label="Oreo UI home"><OreoLogo className="h-4 w-auto" /><span>Oreo UI</span></a>;
+}
+
+export function Sidebar({ nav }: { nav: DocsNav }) {
+  return <aside className="site-sidebar"><Brand /><Directory nav={nav} /></aside>;
+}
+
+/** The same directory is available on every route, including standalone templates. */
+export function MobileNavigation({ nav }: { nav: DocsNav }) {
+  const shell = useRef<HTMLDivElement>(null);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const [dark, setDark] = useState(false);
+  // Pages own their preview theme. Mirror only the page root, never nested specimens.
+  useLayoutEffect(() => {
+    const pageRoot = shell.current?.nextElementSibling;
+    const root = document.documentElement;
+    const sync = () => setDark(root.classList.contains("theme-dark") || Boolean(pageRoot?.classList.contains("theme-dark")));
+    const observer = new MutationObserver(sync);
+    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
+    if (pageRoot) observer.observe(pageRoot, { attributes: true, attributeFilter: ["class"] });
+    sync();
+    return () => observer.disconnect();
+  }, [nav.active]);
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const media = window.matchMedia("(min-width: 1024px)");
+    const closeOnDesktop = () => { if (media.matches) dialog.current?.close(); };
+    media.addEventListener("change", closeOnDesktop);
+    return () => { document.body.style.overflow = previous; media.removeEventListener("change", closeOnDesktop); };
+  }, [open]);
+  return <div ref={shell} className={cn("site-mobile-nav", dark && "theme-dark")}>
+    <div className="site-mobile-bar"><Brand /><button type="button" className="site-action" aria-haspopup="dialog" aria-expanded={open} onClick={() => { dialog.current?.showModal(); setOpen(true); }}>Browse pages</button></div>
+    <dialog ref={dialog} className="site-navigation-dialog" aria-label="Browse pages" onClose={() => setOpen(false)}>
+      <div className="site-mobile-bar"><span className="text-sm font-medium">Browse pages</span><button type="button" className="site-action" onClick={() => dialog.current?.close()}>Close</button></div>
+      {open && <Directory nav={nav} onNavigate={() => dialog.current?.close()} />}
+    </dialog>
+  </div>;
 }

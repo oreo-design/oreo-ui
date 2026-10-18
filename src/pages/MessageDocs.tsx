@@ -142,10 +142,6 @@ export function MessageDocs({ nav }: { nav: DocsNav }) {
           <Section id="api" title="API Reference" description="Message extends native <div> props. MessageContent / MessageActions must live inside a Message.">
             <PropsTable rows={PROPS} />
           </Section>
-
-          <footer className="border-t border-[var(--color-border-subtle)] py-8 text-[12px] text-[var(--color-text-secondary)]">
-            Oreo UI — Base UI · tailwind-variants · Motion. Built as a design-system reference.
-          </footer>
         </>
       )}
     </DocsPage>

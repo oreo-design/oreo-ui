@@ -316,10 +316,6 @@ export function ContextBarDocs({ nav }: { nav: DocsNav }) {
           <Section id="api" title="API Reference" description="All parts extend native element props.">
             <PropsTable rows={PROPS} />
           </Section>
-
-          <footer className="border-t border-[var(--color-border-subtle)] py-8 text-[12px] text-[var(--color-text-secondary)]">
-            Oreo UI — Base UI · tailwind-variants · Motion. Built as a design-system reference.
-          </footer>
         </>
       )}
     </DocsPage>
