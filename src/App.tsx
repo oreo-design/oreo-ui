@@ -1,3 +1,5 @@
+import { MergeWorkspacePage } from "@/patterns/merge-workspace";
+import { MergeReviewDocs } from "@/pages/MergeReviewDocs";
 import { MobileNavigation } from "@/docs/Sidebar";
 import "@/docs/site.css";
 import { RemixGallery } from "@/docs/remixes/RemixGallery";
@@ -207,6 +209,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "merge-workspace": MergeWorkspacePage, "branch-history": MergeReviewDocs, "merge-status-badge": MergeReviewDocs, "merge-checks": MergeReviewDocs, "change-summary": MergeReviewDocs, "pull-request-card": MergeReviewDocs,
   "ai-remixes": RemixGallery,
  "subscription-workspace":SubscriptionWorkspacePage,"segment-rule-builder":SubscriptionOperationsDocs,"segment-preview":SubscriptionOperationsDocs,"subscription-plan-picker":SubscriptionOperationsDocs,"revenue-target-editor":SubscriptionOperationsDocs,
  "issue-browser":IssueBrowserPage,"issue-row":IssueBrowserDocs,"issue-queue":IssueBrowserDocs,"issue-reader":IssueBrowserDocs,

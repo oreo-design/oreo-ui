@@ -18,6 +18,12 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "merge-workspace": {title:"Merge Workspace",description:"A conversational pull request template with branch history, conflict resolution, checks and local merge simulation."},
+  "branch-history": {title:"Branch History",description:"A compact commit graph with caller-owned lanes, branch labels and conflict markers."},
+  "merge-status-badge": {title:"Merge Status Badge",description:"A semantic PR status capsule for creating, conflicts, checks and completion."},
+  "merge-checks": {title:"Merge Checks",description:"Compact check statuses with keyboard-accessible detail disclosures."},
+  "change-summary": {title:"Change Summary",description:"Addition and deletion counts with a compact change disclosure."},
+  "pull-request-card": {title:"Pull Request Card",description:"A controlled PR card composing commit history, conflict progress, checks and merge actions."},
   "ai-remixes": { title: "AI Remix Experiments", description: "Five Oreo UI components, ten interactive adaptations. Compare original components with new capabilities and independent Claude-inspired treatments." },
  "subscription-workspace":{title:"Subscription Workspace",description:"Customer segments, revenue goals and local customer/member enrollment in one workspace."},
  "segment-rule-builder":{title:"Segment Rule Builder",description:"Inline typed rules with match-all or match-any semantics."},

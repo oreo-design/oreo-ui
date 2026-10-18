@@ -1,0 +1,342 @@
+.mr-card {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-base);
+  padding: var(--space-x8);
+  color: var(--color-text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.mr-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.mr-card-header h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+.mr-open-state {
+  color: var(--mr-success, var(--color-palette-mint-text));
+  font-size: 12px;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+.mr-card[data-phase="merged"] .mr-open-state {
+  color: var(--color-palette-purple-text);
+}
+.mr-muted,
+.mr-number {
+  color: var(--color-text-secondary);
+}
+.mr-target {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 36px;
+  color: var(--color-text-secondary);
+  padding: 0 8px;
+}
+.mr-target > span:last-child {
+  margin-left: auto;
+  font-size: 12px;
+}
+.mr-card[data-phase="conflicts"] .mr-target > svg,
+.mr-card[data-phase="conflicts"] .mr-target > span:last-child {
+  color: var(--color-palette-orange-text);
+}
+.mr-card[data-phase="ready"] .mr-target > svg,
+.mr-card[data-phase="ready"] .mr-target > span:last-child {
+  color: var(--mr-success, var(--color-palette-mint-text));
+}
+.mr-card[data-phase="merged"] .mr-target {
+  color: var(--color-palette-purple-text);
+}
+.mr-history {
+  position: relative;
+  min-width: 0;
+}
+.mr-graph {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+.mr-commit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mr-commit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 42px;
+  width: 100%;
+  padding: 0 8px 0 var(--graph-width);
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  text-align: left;
+  color: var(--color-text-secondary);
+  font: inherit;
+}
+.mr-commit-copy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+.mr-commit-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mr-commit-list [data-conflict="true"] .mr-commit-title {
+  color: var(--color-palette-orange-text);
+}
+button.mr-commit {
+  cursor: pointer;
+}
+button.mr-commit:hover,
+button.mr-commit[aria-pressed="true"] {
+  background: var(--color-bg-elevated);
+}
+.mr-commit-meta {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+}
+.mr-commit-meta code {
+  margin-right: 4px;
+}
+.mr-branch {
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: var(--radius-control-tiny);
+  background: var(--color-bg-elevated);
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mr-conflict-count {
+  display: grid;
+  place-items: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: var(--radius-capsule);
+  font-size: 11px;
+  color: var(--color-palette-orange-text);
+  background: var(--color-palette-orange-bg);
+}
+.mr-conflict-count[data-resolved="true"] {
+  color: var(--color-palette-mint-text);
+  background: var(--color-palette-mint-bg);
+}
+.mr-badge,
+.mr-change-summary > summary,
+.mr-check > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 30px;
+  padding: 4px 10px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-capsule);
+  background: var(--color-bg-base);
+  font-size: 12px;
+  line-height: 1.5;
+  list-style: none;
+}
+.mr-badge {
+  color: var(--color-text-secondary);
+}
+.mr-badge[data-phase="conflicts"] {
+  color: var(--color-palette-orange-text);
+}
+.mr-badge[data-phase="ready"] {
+  color: var(--mr-success, var(--color-palette-mint-text));
+}
+.mr-badge[data-phase="merged"] {
+  color: var(--color-palette-purple-text);
+}
+.mr-badge[data-phase="error"] {
+  color: var(--color-status-error);
+}
+.mr-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 4px;
+}
+.mr-check {
+  position: relative;
+}
+.mr-check > summary,
+.mr-change-summary > summary {
+  cursor: pointer;
+  user-select: none;
+}
+.mr-check > summary::-webkit-details-marker,
+.mr-change-summary > summary::-webkit-details-marker {
+  display: none;
+}
+.mr-check[data-state="passed"] svg {
+  color: var(--mr-success, var(--color-palette-mint-text));
+}
+.mr-check[data-state="failed"] svg {
+  color: var(--color-status-error);
+}
+.mr-check-detail {
+  max-width: 280px;
+  margin-top: 6px;
+  padding: 10px 12px;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+.mr-change-summary {
+  max-width: 100%;
+}
+.mr-change-detail {
+  padding-top: 12px;
+  width: min(640px, 100%);
+}
+.mr-added {
+  color: var(--mr-success, var(--color-palette-mint-text));
+}
+.mr-removed {
+  color: var(--color-status-error);
+}
+.mr-diff-blocks {
+  display: flex;
+  gap: 2px;
+}
+.mr-diff-blocks i {
+  width: 6px;
+  height: 7px;
+  border-radius: 1px;
+  background: var(--color-border-default);
+}
+.mr-diff-blocks [data-tone="add"] {
+  background: var(--color-status-success);
+}
+.mr-diff-blocks [data-tone="remove"] {
+  background: var(--color-status-error);
+}
+.mr-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 40px;
+  margin-top: 12px;
+}
+.mr-footer-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  min-width: 0;
+}
+.mr-card[data-phase="merged"] .mr-footer-status {
+  color: var(--color-palette-purple-text);
+}
+.mr-card[data-phase="ready"] .mr-footer-status {
+  color: var(--mr-success, var(--color-palette-mint-text));
+}
+.mr-error {
+  font-size: 12px;
+  color: var(--color-status-error);
+  margin: 8px 0 0;
+}
+.mr-spin {
+  animation: mr-spin 1s linear infinite;
+}
+.mr-skeleton {
+  display: grid;
+  gap: 18px;
+  padding: 16px 8px;
+  min-height: 250px;
+}
+.mr-skeleton > div {
+  height: 18px;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-control);
+  animation: mr-pulse 1.5s ease-in-out infinite;
+}
+.mr-commit:focus-visible,
+.mr-check > summary:focus-visible,
+.mr-change-summary > summary:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 3px;
+}
+@keyframes mr-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes mr-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+@media (max-width: 700px) {
+  .mr-commit-meta {
+    display: none;
+  }
+  .mr-branch {
+    max-width: 110px;
+    font-size: 9px;
+  }
+  .mr-commit {
+    font-size: 12px;
+    gap: 4px;
+  }
+  .mr-commit-copy {
+    gap: 5px;
+  }
+  .mr-card {
+    padding: 12px;
+  }
+  .mr-card-header h2 {
+    font-size: 14px;
+  }
+  .mr-card-footer {
+    flex-wrap: wrap;
+  }
+  .mr-card-footer > button {
+    margin-left: auto;
+  }
+  .mr-check > summary {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mr-spin,
+  .mr-skeleton > div {
+    animation: none;
+  }
+}
+
+/* Palette text is paired with a saturated tag fill. Bare status text needs the status token on dark surfaces. */
+.theme-dark :is(.mr-card, .mr-badge, .mr-checks, .mr-change-summary) {
+  --mr-success: var(--color-status-success);
+}
+.theme-dark .mr-history {
+  --mr-feature: var(--color-palette-blue-bg);
+}

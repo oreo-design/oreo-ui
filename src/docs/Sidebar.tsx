@@ -219,6 +219,7 @@ const NAV: Group[] = [
     // Agentic semantics — what the assistant is doing, not just saying.
     title: "Agent",
     items: [
+      {label:"Branch History",page:"branch-history"},{label:"Merge Status Badge",page:"merge-status-badge"},{label:"Merge Checks",page:"merge-checks"},{label:"Change Summary",page:"change-summary"},{label:"Pull Request Card",page:"pull-request-card"},
       { label: "Automation", page: "automation-components" },
       { label: "Prompt Box", page: "prompt-box" },
       { label: "Keyword Tag", page: "keyword-tag" },
@@ -250,6 +251,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      {label:"Merge Workspace",page:"merge-workspace"},
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},
       {label:"Subscription Workspace",page:"subscription-workspace"},
