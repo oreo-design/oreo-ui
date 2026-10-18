@@ -51,16 +51,14 @@ export function SettingsPage({ nav }: { nav: DocsNav }) {
 
   return (
     <div className={dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"}>
-      <div className="mx-auto flex max-w-[1400px] bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]">
+      <div className="mx-auto flex bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]">
         <Sidebar nav={nav} />
         <main className="min-w-0 flex-1 px-6 py-10 md:px-10">
-          <header className="mb-7 flex items-start justify-between gap-4">
+          <header className="mb-7 flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h1 className="text-[28px] font-semibold tracking-tight">Settings</h1>
+              <h1 className="text-2xl font-semibold tracking-tight">Settings</h1>
               <p className="mt-2 max-w-prose text-[14px] leading-6 text-[var(--color-text-secondary)]">
-                A configurable settings-page framework. Three axes — background hierarchy, card style, nav icons —
-                cover ChatGPT's desktop settings, macOS System Settings and Claude's modal from one set of parts. Flip
-                them live from the panel, or from the Appearance page inside the frame itself.
+                Preview background, card, and navigation options.
               </p>
             </div>
             <div className="flex shrink-0 items-center gap-2">

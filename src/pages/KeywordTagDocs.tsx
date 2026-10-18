@@ -204,10 +204,6 @@ export function KeywordTagDocs({ nav }: { nav: DocsNav }) {
           <Section id="api" title="API Reference" description="KeywordTag extends native <span> props — onClick passes through. The kit's small glyphs (PlusGlyph, CodeGlyph, LinkGlyph, TextGlyph, FolderGlyph) ship alongside and paint with the text color.">
             <PropsTable rows={PROPS} />
           </Section>
-
-          <footer className="border-t border-[var(--color-border-subtle)] py-8 text-[12px] text-[var(--color-text-secondary)]">
-            Oreo UI — Base UI · tailwind-variants · Motion. Built as a design-system reference.
-          </footer>
         </>
       )}
     </DocsPage>

@@ -39,12 +39,12 @@ export function KanbanDocs({ nav }: { nav: DocsNav }) {
   const [cards, setCards] = useState(INITIAL);
   const [resetKey, setResetKey] = useState(0);
   return <div className={dark ? "theme-dark min-h-screen bg-bg-elevated" : "min-h-screen bg-bg-elevated"}>
-    <div className="mx-auto flex max-w-[1600px] bg-bg-elevated text-text-primary">
+    <div className="mx-auto flex bg-bg-elevated text-text-primary">
       <Sidebar nav={nav} />
       <main className="min-w-0 flex-1 px-4 py-8 sm:px-8 lg:px-10">
         <div className="mb-6 text-xs text-text-secondary">Components <span className="px-1">/</span> <span className="text-text-primary">Kanban</span></div>
         <header className="mb-8 flex flex-wrap items-start justify-between gap-4">
-          <div><h1 className="text-[32px] font-semibold tracking-tight">Kanban</h1><p className="mt-2 max-w-xl text-sm leading-6 text-text-secondary">A little structure. A lot of flow. Pick up a card, move it forward, or see the work through each person’s lane.</p></div>
+          <div><h1 className="text-2xl font-semibold tracking-tight">Kanban</h1><p className="mt-2 max-w-xl text-sm leading-6 text-text-secondary">Drag cards between columns or group tasks by assignee.</p></div>
           <div className="flex items-center gap-2">
             <Button type="tertiary" size="sm" leadingIcon={<Icon name="reset" size="sm" />} onClick={() => { setCards(INITIAL); setResetKey(k => k + 1); }}>Reset demo</Button>
             <Button type="secondary" size="sm" aria-label={dark ? "Switch to light theme" : "Switch to dark theme"} leadingIcon={<Icon name={dark ? "sun" : "moon"} size="sm" />} onClick={() => setDark(d => !d)}>{dark ? "Light" : "Dark"}</Button>
@@ -53,11 +53,11 @@ export function KanbanDocs({ nav }: { nav: DocsNav }) {
         <KanbanBoard key={resetKey} title="Billing v2" columns={COLUMNS} cards={cards} people={PEOPLE} onCardsChange={setCards} />
         <div className="mb-10 mt-4 flex flex-wrap justify-between gap-2 text-xs leading-5 text-text-tertiary"><p>Drag to reorder · Space to pick up · Arrows to move · Esc to cancel</p><p>Demo changes stay on this page.</p></div>
         <div className="max-w-3xl">
-          <Section id="interaction" title="Keep the work moving" description="Switch between a status board and assignee swimlanes without losing your place.">
+          <Section id="interaction" title="Interaction" description="Switch between a status board and assignee swimlanes without losing your place.">
             <div className="grid gap-5 text-sm leading-6 text-text-secondary sm:grid-cols-3">
-              <p><strong className="block font-medium text-text-primary">Pick up, place, settle.</strong>Cards lift from the board, leave a quiet placeholder, and make room as you move. Escape restores the original order.</p>
-              <p><strong className="block font-medium text-text-primary">Limits, with a little give.</strong>Going over a column’s limit adds a gentle warning. It never blocks the move. Counts follow the drag preview.</p>
-              <p><strong className="block font-medium text-text-primary">A different point of view.</strong>Swimlanes group the same cards by person. Moving between lanes updates the assignee as well as the status.</p>
+              <p><strong className="block font-medium text-text-primary">Drag and drop.</strong>Cards lift from the board, leave a quiet placeholder, and make room as you move. Escape restores the original order.</p>
+              <p><strong className="block font-medium text-text-primary">Soft limits.</strong>Going over a column’s limit adds a gentle warning. It never blocks the move. Counts follow the drag preview.</p>
+              <p><strong className="block font-medium text-text-primary">Assignee swimlanes.</strong>Swimlanes group the same cards by person. Moving between lanes updates the assignee as well as the status.</p>
             </div>
           </Section>
           <Section id="usage" title="Usage" description="A controlled component. You own the cards; the board owns the interaction.">

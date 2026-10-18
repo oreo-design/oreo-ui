@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useCopy } from "@/lib/use-copy";
 import { cn } from "@/lib/cn";
 
 /* ------------------------------ Section ------------------------------ */
@@ -30,17 +31,13 @@ export function Section({
 
 /* ----------------------------- CodeBlock ----------------------------- */
 export function CodeBlock({ code, lang = "tsx" }: { code: string; lang?: string }) {
-  const [copied, setCopied] = useState(false);
+  const { copied, copy } = useCopy();
   return (
-    <div className="relative overflow-hidden rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-code-bg)] text-[var(--color-code-fg)]">
+    <div className="relative overflow-hidden rounded-lg border border-[var(--color-border-subtle)] bg-[var(--color-code-bg)] text-[var(--color-code-fg)]">
       <div className="flex items-center justify-between border-b border-white/10 px-3 py-1.5">
         <span className="text-[11px] uppercase tracking-wider text-[var(--color-code-fg)]/50">{lang}</span>
         <button
-          onClick={() => {
-            navigator.clipboard?.writeText(code);
-            setCopied(true);
-            setTimeout(() => setCopied(false), 1200);
-          }}
+          onClick={() => copy(code)}
           className="rounded-md px-2 py-0.5 text-[11px] text-[var(--color-code-fg)]/70 transition-colors hover:bg-white/10 hover:text-[var(--color-code-fg)]"
         >
           {copied ? "Copied" : "Copy"}
@@ -57,11 +54,12 @@ export function CodeBlock({ code, lang = "tsx" }: { code: string; lang?: string 
 export function PreviewTabs({ preview, code }: { preview: React.ReactNode; code: string }) {
   const [tab, setTab] = useState<"preview" | "code">("preview");
   return (
-    <div className="overflow-hidden rounded-2xl border border-[var(--color-border-subtle)]">
+    <div className="overflow-hidden rounded-lg border border-[var(--color-border-subtle)]">
       <div className="flex gap-1 border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-base)] p-1.5">
         {(["preview", "code"] as const).map((t) => (
           <button
             key={t}
+            aria-pressed={tab === t}
             onClick={() => setTab(t)}
             className={cn(
               "rounded-lg px-3 py-1 text-[12.5px] font-medium capitalize transition-colors",
@@ -75,7 +73,7 @@ export function PreviewTabs({ preview, code }: { preview: React.ReactNode; code:
         ))}
       </div>
       {tab === "preview" ? (
-        <div className="preview-grid grid min-h-[180px] place-items-center bg-[var(--color-bg-base)] p-10">{preview}</div>
+        <div className="grid min-h-[180px] place-items-center bg-[var(--color-bg-base)] p-10">{preview}</div>
       ) : (
         <div className="p-1.5">
           <CodeBlock code={code} />
@@ -90,8 +88,8 @@ export type PropRow = { prop: string; type: string; def?: string; desc: string }
 
 export function PropsTable({ rows }: { rows: PropRow[] }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-[var(--color-border-subtle)]">
-      <table className="w-full border-collapse text-left text-[13px]">
+    <div className="overflow-x-auto rounded-lg border border-[var(--color-border-subtle)]">
+      <table className="w-full min-w-140 border-collapse text-left text-[13px]">
         <thead>
           <tr className="bg-[var(--color-bg-base)] text-[var(--color-text-secondary)]">
             <th className="px-4 py-2.5 font-medium">Prop</th>

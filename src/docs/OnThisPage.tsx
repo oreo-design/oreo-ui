@@ -25,7 +25,7 @@ export function OnThisPage({ items }: { items: TocItem[] }) {
 
   return (
     <aside className="sticky top-0 hidden h-screen w-52 shrink-0 overflow-y-auto py-10 pl-6 xl:block">
-      <div className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
+      <div className="text-xs font-medium text-[var(--color-text-secondary)]">
         On this page
       </div>
       <ul className="mt-3 space-y-1.5 border-l border-[var(--color-border-subtle)]">

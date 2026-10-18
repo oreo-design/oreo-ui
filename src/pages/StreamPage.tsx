@@ -18,17 +18,14 @@ export function StreamPage({ nav }: { nav: DocsNav }) {
 
   return (
     <div className={dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"}>
-      <div className="mx-auto flex max-w-[1400px] bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]">
+      <div className="mx-auto flex bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]">
         <Sidebar nav={nav} />
         <main className="min-w-0 flex-1 px-6 py-10 md:px-10">
-          <header className="mb-10 flex items-start justify-between gap-4">
+          <header className="mb-8 flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h1 className="text-[28px] font-semibold tracking-tight">Inbox Stream</h1>
+              <h1 className="text-2xl font-semibold tracking-tight">Inbox Stream</h1>
               <p className="mt-2 max-w-prose text-[14px] leading-6 text-[var(--color-text-secondary)]">
-                A feed of dismissable cards in two urgency tiers, with filter chips, a skeleton
-                and an empty state. Cards are generic shells — any content grafts in. The point is
-                the choreography: inject a card, mark one read, then mark everything read and
-                watch the exits cascade.
+                Add cards, mark them read, and compare loading and empty states.
               </p>
             </div>
             <div className="flex shrink-0 items-center gap-2">

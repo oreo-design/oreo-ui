@@ -26,9 +26,7 @@ export function Changelog({ nav, data = releases }: { nav: DocsNav; data?: Relea
           <a href="/button" className="text-text-secondary underline underline-offset-4">Browse components</a>
           <Button type="tertiary" size="sm" tapScale={1} onClick={() => setDark(value => !value)}>{dark ? "Light theme" : "Dark theme"}</Button>
         </div>
-        <p className="mb-3 text-xs font-medium uppercase tracking-widest text-text-secondary">The library, in motion</p>
         <h1 className="text-4xl font-semibold tracking-tight">Changelog</h1>
-        <p className="mt-4 max-w-lg text-base leading-7 text-text-secondary">New components. Thoughtful updates.<br />A running record of what’s taking shape in Oreo UI.</p>
         <p className="mt-4 text-xs leading-5 text-text-tertiary">Selected updates merged to main · Dates in Asia/Shanghai.<br />Code availability and website deployment may differ.</p>
         <div className="mt-6 flex flex-wrap gap-5 text-xs">
           <a className="underline underline-offset-4" href={`data:text/markdown;charset=utf-8,${encodeURIComponent(changesMarkdown(data))}`} download="oreo-ui-changelog.md">Download Markdown <span aria-hidden="true">↗</span></a>
@@ -56,7 +54,7 @@ export function Changelog({ nav, data = releases }: { nav: DocsNav; data?: Relea
           {change.preview === "result" && <AgentResultCard title="A result that starts open" defaultOpen><p className="text-sm leading-6">This is the real AgentResultCard, with defaultOpen enabled. Collapse it and open it again.</p></AgentResultCard>}
         </ReleaseEntry>)}
       </section>)}
-      <footer className="border-t border-border-subtle py-8 text-xs leading-6 text-text-secondary">Built from Oreo components. <a className="underline underline-offset-4" href="/upgrade-prompt">Explore Upgrade Prompt</a> · <a className="underline underline-offset-4" href="https://www.fluidfunctionalism.com/changelog">Layout inspiration by Micka</a></footer>
+      <footer className="border-t border-border-subtle py-8 text-xs leading-6 text-text-secondary"><a className="underline underline-offset-4" href="/upgrade-prompt">Explore Upgrade Prompt</a> · <a className="underline underline-offset-4" href="https://www.fluidfunctionalism.com/changelog">Layout inspiration by Micka</a></footer>
     </DocsLayout>
   </div>;
 }

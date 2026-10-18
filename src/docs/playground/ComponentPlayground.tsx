@@ -8,7 +8,7 @@ import { CodeBlock } from "@/components/code-block";
 import { PropertyControl } from "./PropertyControl";
 import { defaultsFor, resolveControl, updateValues, select, toggle, number, type PlaygroundSpec, type Values } from "./schema";
 import { playgroundCode } from "./code";
-import { playgrounds } from "./registry";
+import { PageViews } from "@/docs/PageViews";
 import { useDemo } from "./useDemo";
 
 export function ComponentPlayground({ spec, nav, breadcrumb, appearance, onDocumentation, onRemixes }: { spec: PlaygroundSpec; nav: DocsNav; breadcrumb: string[]; appearance: CustomizeState; onDocumentation: () => void; onRemixes?: () => void }) {
@@ -49,15 +49,7 @@ export function ComponentPlayground({ spec, nav, breadcrumb, appearance, onDocum
           <nav aria-label="Breadcrumb" className="mb-1 text-xs text-[var(--color-text-secondary)]">{breadcrumb.join(" / ")}</nav>
           <h1 className="text-xl font-semibold tracking-tight">{spec.title}</h1>
         </div>
-        <div className="flex items-center gap-1 rounded-lg bg-[var(--color-state-press)] p-1" aria-label="Page view">
-          <span aria-current="page" className="rounded-md bg-[var(--color-bg-base)] px-3 py-1.5 text-xs font-medium shadow-sm">Playground</span>
-          <button type="button" onClick={onDocumentation} className="rounded-md px-3 py-1.5 text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] focus-visible:ring-2">Documentation</button>
-          {onRemixes && <button type="button" onClick={onRemixes} className="rounded-md px-3 py-1.5 text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] focus-visible:ring-2">AI remixes</button>}
-        </div>
-        <a className="text-xs underline underline-offset-4 lg:hidden" href="/changelog">Changelog</a>
-        <label className="flex w-full items-center gap-3 text-xs lg:hidden">Component
-          <select aria-label="Component" value={nav.active} onChange={e => nav.onNavigate(e.target.value)} className="min-w-0 flex-1 rounded-lg border border-[var(--color-border-subtle)] bg-[var(--color-bg-base)] p-2">{Object.entries(playgrounds).map(([slug, entry]) => <option key={slug} value={slug}>{entry.title}</option>)}</select>
-        </label>
+        <PageViews slug={nav.active} active="playground" onDocumentation={onDocumentation} onRemixes={onRemixes} />
       </header>
       <div className="flex flex-col md:flex-row">
         <main className="min-w-0 flex-1" aria-label={`${spec.title} playground`}>
@@ -72,7 +64,6 @@ export function ComponentPlayground({ spec, nav, breadcrumb, appearance, onDocum
           </div>
           {demo.player && <div className="flex flex-wrap items-center justify-between gap-2 px-5 text-xs text-[var(--color-text-secondary)] md:px-8">
             <span role="status">{demo.status === "idle" ? "Automatic demo" : `${demo.label} · ${demo.status === "playing" ? "Playing" : demo.status === "paused" ? "Paused" : "Complete"}`}</span>
-            <span>Edit any property to take over.</span>
           </div>}
           <div hidden={showCode}>
             <div className="flex min-h-96 items-center justify-center overflow-x-auto px-5 py-12 md:min-h-128 md:px-8" aria-label="Component preview" role="region" onPointerDownCapture={() => demo.player?.stop()} onKeyDownCapture={() => demo.player?.stop()}>
@@ -80,18 +71,18 @@ export function ComponentPlayground({ spec, nav, breadcrumb, appearance, onDocum
             </div>
           </div>
           {showCode && <section aria-label="Generated code" className="min-h-96 space-y-3 px-5 pb-8 md:px-8">
-            <div className="flex items-center justify-between gap-3"><p className="text-xs text-[var(--color-text-secondary)]">Starting JSX with your current properties.</p><Button type="secondary" size="sm" onClick={() => void copy(code, "Code")}>Copy code</Button></div>
+            <div className="flex items-center justify-between gap-3"><p className="text-xs text-[var(--color-text-secondary)]">JSX</p><Button type="secondary" size="sm" onClick={() => void copy(code, "Code")}>Copy code</Button></div>
             <CodeBlock code={code} language="tsx" copyable={false} wrap />
           </section>}
           <footer className="mx-5 space-y-3 border-t border-[var(--color-border-subtle)] py-6 md:mx-8">
-            <div className="flex items-center justify-between gap-4"><h2 className="text-xs font-medium">Use this component</h2><Button type="tertiary" size="sm" onClick={() => void copy(install, "Command")}>Copy command</Button></div>
-            <code className="block overflow-x-auto rounded-lg bg-[var(--color-state-press)] px-4 py-3 text-xs">{install}</code>
+            <div className="flex items-center justify-between gap-4"><h2 className="text-xs font-medium">Install</h2><Button type="tertiary" size="sm" onClick={() => void copy(install, "Command")}>Copy command</Button></div>
+            <code className="block overflow-x-auto rounded border border-[var(--color-border-subtle)] px-4 py-3 text-xs">{install}</code>
             <p className="text-xs text-[var(--color-text-secondary)]">Or copy <code>src/components/{source}/*</code> into your project.</p>
             <p role="status" className="min-h-4 text-xs text-[var(--color-text-secondary)]">{copyStatus}</p>
           </footer>
         </main>
-        <aside aria-label="Component properties" className="w-full shrink-0 border-t border-[var(--color-border-subtle)] bg-[var(--color-bg-base)] md:sticky md:top-0 md:max-h-screen md:w-72 md:overflow-y-auto md:border-t-0 md:border-l xl:w-80">
-          <div className="flex items-center justify-between border-b border-[var(--color-border-subtle)] px-5 py-4"><h2 className="flex items-center gap-2 text-sm font-semibold"><Icon name="sliders" size="sm" />Properties</h2><Button type="tertiary" size="sm" onClick={reset}>Reset</Button></div>
+        <aside aria-label="Component properties" className="w-full shrink-0 border-t border-[var(--color-border-subtle)] bg-[var(--color-bg-elevated)] md:sticky md:top-0 md:max-h-screen md:w-72 md:overflow-y-auto md:border-t-0 md:border-l xl:w-80">
+          <div className="sticky top-0 z-10 flex items-center justify-between bg-[var(--color-bg-elevated)] border-b border-[var(--color-border-subtle)] px-5 py-4"><h2 className="flex items-center gap-2 text-sm font-semibold"><Icon name="sliders" size="sm" />Properties</h2><Button type="tertiary" size="sm" onClick={reset}>Reset</Button></div>
           {groups.map(group => <details key={group} open={group !== "Press spring"} className="border-b border-[var(--color-border-subtle)] px-5 py-4">
             <summary className="cursor-pointer text-xs font-semibold">{group}</summary>
             <div className="mt-5 space-y-4">{Object.entries(spec.controls).filter(([, control]) => (control.group ?? spec.title) === group).map(([key, control]) => <PropertyControl key={`${revision}-${key}`} name={key} control={resolveControl(control, values)} value={values[key]} onChange={value => set(key, value)} />)}</div>

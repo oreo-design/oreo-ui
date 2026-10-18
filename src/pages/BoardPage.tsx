@@ -22,15 +22,14 @@ export function BoardPage({ nav }: { nav: DocsNav }) {
 
   return (
     <div className={dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"}>
-      <div className="mx-auto flex max-w-[1400px] bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]">
+      <div className="mx-auto flex bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]">
         <Sidebar nav={nav} />
         <main className="min-w-0 flex-1 px-6 py-10 md:px-10">
-          <header className="mb-7 flex items-start justify-between gap-4">
+          <header className="mb-7 flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h1 className="text-[28px] font-semibold tracking-tight">Onboarding Board</h1>
+              <h1 className="text-2xl font-semibold tracking-tight">Onboarding Board</h1>
               <p className="mt-2 max-w-prose text-[14px] leading-6 text-[var(--color-text-secondary)]">
-                A starter checklist for new contributors. Drag cards between columns, click any title or note to edit
-                inline, and add tasks from the box at the bottom of each column. Changes are saved to your browser.
+                Drag tasks, edit notes, and add cards. Changes are saved in this browser.
               </p>
             </div>
             <div className="flex shrink-0 items-center gap-2">

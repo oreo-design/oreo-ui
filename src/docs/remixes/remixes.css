@@ -1,32 +1,27 @@
 .remix-layout { display:flex; min-height:100vh; background:var(--color-bg-elevated); color:var(--color-text-primary); }
 .remix-main { flex:1; min-width:0; }
 .remix-header { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; padding:26px 32px; border-bottom:1px solid var(--color-border-subtle); }
-.remix-header h1 { font-size:23px; font-weight:600; letter-spacing:-.7px; margin-top:5px; }
-.remix-header h1 > span { margin-left:14px; font-family:monospace; font-size:11px; font-weight:400; letter-spacing:0; color:var(--color-text-secondary); }
-.remix-page-nav { display:flex; flex-wrap:wrap; gap:2px; background:var(--color-state-press); padding:4px; border-radius:9px; font-size:12px; }
-.remix-page-nav > * { padding:6px 10px; border-radius:6px; }
-.remix-page-nav [aria-current] { background:var(--color-bg-base); box-shadow:0 1px 2px #0000000d; }
+.remix-header h1 { font-size:20px; font-weight:600; letter-spacing:-.025em; margin-top:5px; }
 .remix-main main { max-width:1320px; margin:0 auto; padding:0 32px; }
 .remix-component-nav { display:flex; gap:24px; flex-wrap:wrap; border-bottom:1px solid var(--color-border-subtle); padding:20px 0; font-size:12px; }
 .remix-component-nav a { display:flex; align-items:center; gap:7px; color:var(--color-text-secondary); }
-.remix-component-nav a > span { font:10px monospace; opacity:.65; }
 .remix-component-nav [aria-current] { color:var(--color-text-primary); font-weight:600; }
-.remix-intro { padding:38px 0 28px; max-width:660px; }
-.remix-intro h2 { font-size:clamp(24px, 3vw, 35px); font-weight:550; line-height:1.2; letter-spacing:-1.2px; margin:10px 0 12px; text-wrap:balance; }
+.remix-intro { padding:24px 0; max-width:660px; }
+.remix-intro h2 { font-size:24px; font-weight:550; line-height:1.2; letter-spacing:-.025em; margin:10px 0 12px; text-wrap:balance; }
 .remix-intro > p:last-child { color:var(--color-text-secondary); font-size:14px; line-height:1.7; }
 .remix-eyebrow { font-size:10px; line-height:1.5; letter-spacing:.09em; font-weight:500; color:var(--color-text-secondary); text-transform:uppercase; }
 .remix-toolbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; padding-bottom:16px; }
-.remix-mode { display:flex; gap:4px; padding:4px; border:1px solid var(--color-border-subtle); border-radius:10px; }
-.remix-mode button { padding:8px 12px; border-radius:7px; font-size:10px; color:var(--color-text-secondary); }
-.remix-mode button span { margin-left:6px; font-size:12px; }
-.remix-mode [aria-pressed="true"] { background:var(--color-bg-inverse); color:var(--color-text-on-inverse); }
+.remix-mode { display:flex; gap:16px; }
+.remix-mode button { padding:8px 0; border-bottom:1px solid transparent; font-size:12px; color:var(--color-text-secondary); }
+.remix-mode button span { font-size:12px; }
+.remix-mode [aria-pressed="true"] { border-color:currentColor; color:var(--color-text-primary); }
 .remix-tools, .remix-tools label { display:flex; align-items:center; gap:8px; }
 .remix-tools { flex-wrap:wrap; gap:14px; font-size:11px; color:var(--color-text-secondary); }
 .remix-layout input[type="checkbox"] { width:14px; height:14px; accent-color:var(--color-text-primary); flex-shrink:0; }
 .remix-comparison { display:grid; grid-template-columns:minmax(260px, .8fr) minmax(340px, 1.2fr); gap:16px; align-items:start; }
-.remix-specimen { min-width:0; border:1px solid var(--color-border-subtle); border-radius:14px; background:var(--color-bg-base); overflow:hidden; }
+.remix-specimen { min-width:0; border:1px solid var(--color-border-subtle); border-radius:var(--radius-control); background:var(--color-bg-base); overflow:hidden; }
 .remix-specimen-label { display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-bottom:1px solid var(--color-border-subtle); font-size:12px; font-weight:500; }
-.remix-specimen-label span:last-child { color:var(--color-text-secondary); font-size:9px; letter-spacing:.06em; font-weight:400; }
+.remix-specimen-label span + span { color:var(--color-text-secondary); font-size:9px; letter-spacing:.06em; font-weight:400; }
 .remix-stage { min-height:300px; padding:28px 20px; background:var(--color-bg-elevated); overflow-wrap:anywhere; }
 .remix-baseline { padding:16px 18px; font-size:11px; line-height:1.7; color:var(--color-text-secondary); border-top:1px solid var(--color-border-subtle); }
 .remix-stack { display:flex; flex-direction:column; gap:16px; min-width:0; }
@@ -101,13 +96,12 @@
 .remix-gallery-legend { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:0 0 32px; padding:20px 0; border-block:1px solid var(--color-border-subtle); color:var(--color-text-secondary); font-size:13px; line-height:1.65; }
 .remix-gallery-legend strong { display:block; margin-bottom:6px; color:var(--color-text-primary); font-size:12px; }
 .remix-gallery-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
-.remix-gallery-card { display:flex; flex-direction:column; border:1px solid var(--color-border-subtle); border-radius:16px; overflow:hidden; background:var(--color-bg-base); }
+.remix-gallery-card { display:flex; flex-direction:column; border:1px solid var(--color-border-subtle); border-radius:var(--radius-control); overflow:hidden; background:transparent; }
 .remix-gallery-card-heading { padding:24px 24px 0; }
-.remix-gallery-card-heading h3 { margin:10px 0 6px; font-size:22px; font-weight:600; letter-spacing:-.035em; }
-.remix-gallery-card-heading p { color:var(--color-text-secondary); font-size:12px; }
+.remix-gallery-card-heading h3 { margin:10px 0 6px; font-size:18px; font-weight:600; letter-spacing:-.035em; }
 .remix-gallery-baseline { padding:16px 24px 24px; color:var(--color-text-secondary); font-size:13px; line-height:1.65; flex:1; }
 .remix-gallery-links a { position:relative; display:block; padding:16px 48px 16px 24px; border-top:1px solid var(--color-border-subtle); text-decoration:none; color:var(--color-text-primary); font-size:12px; }
-.remix-gallery-links small { display:block; margin-bottom:7px; color:var(--color-text-secondary); font-size:10px; letter-spacing:.07em; }
+.remix-gallery-links small { display:block; margin-bottom:7px; color:var(--color-text-secondary); font-size:12px; }
 .remix-gallery-links strong { font-size:14px; font-weight:500; }
 .remix-gallery-links span { position:absolute; right:24px; top:50%; transform:translateY(-50%); }
 .remix-gallery a:focus-visible { outline:2px solid var(--color-text-primary); outline-offset:-3px; }
