@@ -1,0 +1,707 @@
+{
+  "generatedAt": "2026-10-18T06:54:18.699Z",
+  "revision": "9feb03c5bc88124e14c8e169932c546fa9d0d598",
+  "diffSha256": "1112b2d27b8c6dd110750b31d61ec878b1181b4b3e9062a28c7268c274f997f7",
+  "buildIndexSha256": "ec65640b04adf3332ed9b6428e438eaa849a9d14e34a79ad22720bab02567c39",
+  "baseline": false,
+  "locale": "en-US",
+  "origin": "http://127.0.0.1:5200",
+  "matrix": [
+    {
+      "slug": "prompt-box",
+      "mode": "capability",
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-capability-390-light.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "capability",
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-capability-390-dark.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "capability",
+      "width": 900,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-capability-900-light.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "capability",
+      "width": 900,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-capability-900-dark.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "capability",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-capability-1440-light.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "capability",
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-capability-1440-dark.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "style",
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-style-390-light.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "style",
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-style-390-dark.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "style",
+      "width": 900,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-style-900-light.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "style",
+      "width": 900,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-style-900-dark.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "style",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-style-1440-light.png"
+    },
+    {
+      "slug": "prompt-box",
+      "mode": "style",
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "prompt-box-style-1440-dark.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "capability",
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-capability-390-light.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "capability",
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-capability-390-dark.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "capability",
+      "width": 900,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-capability-900-light.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "capability",
+      "width": 900,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-capability-900-dark.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "capability",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-capability-1440-light.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "capability",
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-capability-1440-dark.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "style",
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-style-390-light.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "style",
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-style-390-dark.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "style",
+      "width": 900,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-style-900-light.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "style",
+      "width": 900,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-style-900-dark.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "style",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-style-1440-light.png"
+    },
+    {
+      "slug": "attachment",
+      "mode": "style",
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "attachment-style-1440-dark.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "capability",
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-capability-390-light.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "capability",
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-capability-390-dark.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "capability",
+      "width": 900,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-capability-900-light.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "capability",
+      "width": 900,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-capability-900-dark.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "capability",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-capability-1440-light.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "capability",
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-capability-1440-dark.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "style",
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-style-390-light.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "style",
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-style-390-dark.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "style",
+      "width": 900,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-style-900-light.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "style",
+      "width": 900,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-style-900-dark.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "style",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-style-1440-light.png"
+    },
+    {
+      "slug": "confirmation",
+      "mode": "style",
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "confirmation-style-1440-dark.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "capability",
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-capability-390-light.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "capability",
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-capability-390-dark.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "capability",
+      "width": 900,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-capability-900-light.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "capability",
+      "width": 900,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-capability-900-dark.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "capability",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-capability-1440-light.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "capability",
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-capability-1440-dark.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "style",
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-style-390-light.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "style",
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-style-390-dark.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "style",
+      "width": 900,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-style-900-light.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "style",
+      "width": 900,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-style-900-dark.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "style",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-style-1440-light.png"
+    },
+    {
+      "slug": "plan",
+      "mode": "style",
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "plan-style-1440-dark.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "capability",
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-capability-390-light.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "capability",
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-capability-390-dark.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "capability",
+      "width": 900,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-capability-900-light.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "capability",
+      "width": 900,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-capability-900-dark.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "capability",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-capability-1440-light.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "capability",
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-capability-1440-dark.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "style",
+      "width": 390,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-style-390-light.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "style",
+      "width": 390,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-style-390-dark.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "style",
+      "width": 900,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-style-900-light.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "style",
+      "width": 900,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-style-900-dark.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "style",
+      "width": 1440,
+      "height": 1000,
+      "theme": "light",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-style-1440-light.png"
+    },
+    {
+      "slug": "sources",
+      "mode": "style",
+      "width": 1440,
+      "height": 1000,
+      "theme": "dark",
+      "reducedMotion": true,
+      "stress": true,
+      "overflow": false,
+      "capture": "sources-style-1440-dark.png"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Entry and exit preserve the original playground",
+      "pass": true
+    },
+    {
+      "name": "Prompt queue: keyboard, pause, edit, remove, retry and empty state",
+      "pass": true
+    },
+    {
+      "name": "Attachment: invalid range, navigation and explicit inclusion",
+      "pass": true
+    },
+    {
+      "name": "Confirmation: no selection, selective execution, undo and denial",
+      "pass": true
+    },
+    {
+      "name": "Plan: dependencies, failure, retry, completion and reset",
+      "pass": true
+    },
+    {
+      "name": "Sources: keyboard selection, empty query recovery, retained inclusion",
+      "pass": true
+    },
+    {
+      "name": "Style adaptations preserve their original interactions",
+      "pass": true
+    },
+    {
+      "name": "Reduced-motion disables CSS transitions and animations in the affected view",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "blockedRequests": []
+}

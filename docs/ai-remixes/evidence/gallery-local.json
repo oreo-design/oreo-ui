@@ -1,0 +1,29 @@
+{
+  "origin": "http://127.0.0.1:5200",
+  "timestamp": "2026-10-18T06:54:55.395Z",
+  "checks": [
+    "gallery 390 light",
+    "gallery 390 dark",
+    "gallery 900 light",
+    "gallery 900 dark",
+    "gallery 1440 light",
+    "gallery 1440 dark",
+    "prompt-box capability keyboard link and return",
+    "prompt-box style keyboard link and return",
+    "prompt-box original docs",
+    "attachment capability keyboard link and return",
+    "attachment style keyboard link and return",
+    "attachment original docs",
+    "confirmation capability keyboard link and return",
+    "confirmation style keyboard link and return",
+    "confirmation original docs",
+    "plan capability keyboard link and return",
+    "plan style keyboard link and return",
+    "plan original docs",
+    "sources capability keyboard link and return",
+    "sources style keyboard link and return",
+    "sources original docs",
+    "sidebar and history navigation"
+  ],
+  "errors": []
+}

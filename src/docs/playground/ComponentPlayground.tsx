@@ -11,7 +11,7 @@ import { playgroundCode } from "./code";
 import { playgrounds } from "./registry";
 import { useDemo } from "./useDemo";
 
-export function ComponentPlayground({ spec, nav, breadcrumb, appearance, onDocumentation }: { spec: PlaygroundSpec; nav: DocsNav; breadcrumb: string[]; appearance: CustomizeState; onDocumentation: () => void }) {
+export function ComponentPlayground({ spec, nav, breadcrumb, appearance, onDocumentation, onRemixes }: { spec: PlaygroundSpec; nav: DocsNav; breadcrumb: string[]; appearance: CustomizeState; onDocumentation: () => void; onRemixes?: () => void }) {
   const [values, setValues] = useState(() => defaultsFor(spec));
   const [revision, setRevision] = useState(0);
   const [showCode, setShowCode] = useState(false);
@@ -52,6 +52,7 @@ export function ComponentPlayground({ spec, nav, breadcrumb, appearance, onDocum
         <div className="flex items-center gap-1 rounded-lg bg-[var(--color-state-press)] p-1" aria-label="Page view">
           <span aria-current="page" className="rounded-md bg-[var(--color-bg-base)] px-3 py-1.5 text-xs font-medium shadow-sm">Playground</span>
           <button type="button" onClick={onDocumentation} className="rounded-md px-3 py-1.5 text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] focus-visible:ring-2">Documentation</button>
+          {onRemixes && <button type="button" onClick={onRemixes} className="rounded-md px-3 py-1.5 text-xs text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] focus-visible:ring-2">AI remixes</button>}
         </div>
         <a className="text-xs underline underline-offset-4 lg:hidden" href="/changelog">Changelog</a>
         <label className="flex w-full items-center gap-3 text-xs lg:hidden">Component

@@ -1,3 +1,4 @@
+import { RemixGallery } from "@/docs/remixes/RemixGallery";
 import {TaskScheduleDocs} from "@/pages/TaskScheduleDocs";
 import {EdgeMotionDocs} from "@/pages/EdgeMotionDocs";
 import {SubscriptionWorkspacePage} from "@/patterns/subscription-workspace";
@@ -204,6 +205,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "ai-remixes": RemixGallery,
  "subscription-workspace":SubscriptionWorkspacePage,"segment-rule-builder":SubscriptionOperationsDocs,"segment-preview":SubscriptionOperationsDocs,"subscription-plan-picker":SubscriptionOperationsDocs,"revenue-target-editor":SubscriptionOperationsDocs,
  "issue-browser":IssueBrowserPage,"issue-row":IssueBrowserDocs,"issue-queue":IssueBrowserDocs,"issue-reader":IssueBrowserDocs,
  "task-board":TaskBoardPage,"task-properties":TaskEditorDocs,"task-subtasks":TaskEditorDocs,"task-detail-panel":TaskEditorDocs,
