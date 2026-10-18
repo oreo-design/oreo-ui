@@ -270,3 +270,7 @@ Lumeo Studio reference: [fleet, ML pipeline and incident monitoring](https://x.c
 - `/loading-sequence`: four decorative page-entry sequences (typography, aperture, wordmark, curtain), with pause/resume, replay, custom artwork and reduced motion. These are presentation effects, not network progress indicators.
 
 Each route includes an editable playground, generated starting JSX and API docs (`?view=docs`). Copy its component folder and referenced Oreo dependencies. Existing APIs and motion are preserved; LoadingSequence does not add CutReveal's skip control. [Integration review and evidence](docs/reviews/motion-integration-20261016/REVIEW.md).
+
+## Merge Workspace
+
+Inspired by [Phil Pitus’s merge conflict video](https://x.com/pitus_/status/2111519352503873866), `/merge-workspace` follows a local pull request through branch history, conflict resolution, checks and explicit merge. Five reusable components — `BranchHistory`, `MergeStatusBadge`, `ChangeSummary`, `MergeChecks` and `PullRequestCard` — each include a Playground and docs. The template supports failed-check recovery, cancellation, commit details, light/dark themes and narrow screens. No live repository operations occur. See the [component map and integration guide](src/patterns/merge-workspace/README.md).

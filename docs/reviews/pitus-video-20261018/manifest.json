@@ -1,0 +1,43 @@
+{
+  "baseline": "00f5790314b6cf03b12ea6d2fc445521322590e5",
+  "reference": "https://x.com/pitus_/status/2111519352503873866",
+  "environment": {
+    "browser": "Chrome via Playwriter session 5",
+    "origin": "http://localhost:5182",
+    "locale": "en",
+    "data": "local fixture",
+    "viewports": [
+      [
+        1440,
+        1000
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "recordingViewport": [
+      1440,
+      1440
+    ]
+  },
+  "sourceSha256": {
+    "src/App.tsx": "c5a9e5455787fb1b4b15fe738a2e82d183dcea9c0f1db6b17c9d1c6b7da0a8f6",
+    "src/lib/site.ts": "86798d9506b28cc48744b52608677d14085aef4543fb66daf43bb98996d7eeaf",
+    "src/docs/Sidebar.tsx": "3044cd6be705497e0ce26a7a462f2d71a93e4f4bd405deefbeea92a97741958b",
+    "src/docs/playground/registry.tsx": "d62da32e358d5b39ce70d0d094e6d442721ee00c9b6ce8e861f3b158fac88f05",
+    "src/pages/MergeReviewDocs.tsx": "9d346f893273db416d72edc160207ae3d89413e658d70e0c867bc8cb5dfe67bf",
+    "src/components/merge-review/index.tsx": "566a361321eee9200bf5a4a54efdf9825e40dfdebba189b479bc912708bb41ba",
+    "src/components/merge-review/merge-review.css": "39c9973b3ddbd1ba2107d71d84036b94fc4cc1bf99c7d1f3dff41dc383b3daa3",
+    "src/components/merge-review/model.test.ts": "3530bc946cb09f569fe64bc3cfe6af7b7d749e79b13943e12a59972afbcacf29",
+    "src/components/merge-review/model.ts": "1bcb8a413672e7e9d45c2e3f0df983ba5c41606098a168f58fed2b81e76f4294",
+    "src/patterns/merge-workspace/index.tsx": "4d7288006e4e674ac2fb7f828c8d94f4d96d2e57e8ddc632f4c88b3183b8b87c",
+    "src/patterns/merge-workspace/data.ts": "324908ffb5962c1d1f7204d93f1c51959c799a0f9c82b3f0d79fe790d39b5c28",
+    "src/patterns/merge-workspace/README.md": "28cf879bbb883bdc157a1d30a5738f4adcf343f79234560db4e1701f3a241e26",
+    "src/patterns/merge-workspace/workspace.css": "9412d535c556323927c361a6a3cc72d34c2fc03c7c8e0938f4b6240320db8020"
+  }
+}

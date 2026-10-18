@@ -1,3 +1,5 @@
+import { BranchHistory, MergeStatusBadge, MergeChecks, ChangeSummary, PullRequestCard, initialMergeRun } from "@/components/merge-review";
+import { COMMITS as MERGE_COMMITS, MERGE_TITLE, SAMPLE_DIFF as MERGE_DIFF, commitsFor, checksFor } from "@/patterns/merge-workspace/data";
 import {TaskScheduleChip,TaskCalendar,TaskTimeline} from "@/components/task-schedule";
 import {INITIAL_TASKS as SCHEDULE_TASKS,PROJECTS as SCHEDULE_PROJECTS,PEOPLE as SCHEDULE_PEOPLE} from "@/patterns/project-workspace/data";
 import {MonitorReveal} from "@/components/monitor-reveal";
@@ -180,6 +182,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "merge-review": { BranchHistory, MergeStatusBadge, MergeChecks, ChangeSummary, PullRequestCard },
  "subscription-operations":{SegmentRuleBuilder,SegmentPreview,SubscriptionPlanPicker,RevenueTargetEditor},
  "issue-browser":{IssueRow,IssueQueue,IssueReader},
  "task-editor":{TaskProperties,TaskSubtasks,TaskDetailPanel},
@@ -281,6 +284,12 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 export const playgrounds: Record<string, PlaygroundSpec> = {
+  "branch-history": {...define("Branch History", {empty:toggle(false),merged:toggle(false),selected:text("")}, (v,set)=><div className="w-full max-w-3xl p-4"><BranchHistory commits={v.empty?[]:MERGE_COMMITS} merged={v.merged} selectedId={v.selected} onSelect={commit=>set("selected",commit.id)}/></div>),source:"merge-review"},
+  "merge-status-badge": {...define("Merge Status Badge", {phase:select(["creating","conflicts","resolving","checking","ready","merging","merged","error"],"conflicts"),number:number(128,1,9999),conflicts:number(3,0,99)},v=><MergeStatusBadge phase={v.phase} number={v.number} conflicts={v.conflicts}/>),source:"merge-review"},
+  "merge-checks": {...define("Merge Checks", {phase:select(["checking","ready","error"],"ready")},v=><MergeChecks checks={checksFor({...initialMergeRun,phase:v.phase,checksPassed:v.phase==="ready"?4:1,resolved:3})}/>),source:"merge-review"},
+  "change-summary": {...define("Change Summary", {additions:number(48,0,999),deletions:number(7,0,999),disclosure:toggle(true)},v=><div className="w-full max-w-2xl p-4"><ChangeSummary additions={v.additions} deletions={v.deletions}>{v.disclosure?<CodeDiff title="middleware.ts · sample excerpt" lines={MERGE_DIFF}/>:undefined}</ChangeSummary></div>),source:"merge-review"},
+  "pull-request-card": {...define("Pull Request Card", {title:text(MERGE_TITLE),phase:select(["conflicts","creating","resolving","checking","ready","merging","merged","error"],"conflicts")},(v,set)=>{const run={...initialMergeRun,phase:v.phase,resolved:["checking","ready","merging","merged","error"].includes(v.phase)?3:0,checksPassed:["ready","merging","merged"].includes(v.phase)?4:v.phase==="error"?1:0};return <div className="w-full max-w-3xl p-4"><PullRequestCard title={v.title} number={128} phase={v.phase} commits={commitsFor(run)} checks={checksFor(run)} resolved={run.resolved} onResolve={()=>set("phase","ready")} onMerge={()=>set("phase","merged")} onRetry={()=>set("phase","ready")} onCancel={()=>set("phase","conflicts")}/></div>;}),source:"merge-review"},
+
  "segment-rule-builder":{...define("Segment Rule Builder",{mode:select(["all","any"],"all"),rules:text(JSON.stringify(SUB_SEGMENT.rules))},(v,set)=>{let rules:QueryCondition[];try{rules=JSON.parse(v.rules);if(!Array.isArray(rules)||rules.some(r=>typeof r.id!=="string"||typeof r.field!=="string"||typeof r.value!=="string"||typeof r.operator!=="string"))throw new Error();}catch{return <p role="alert">Enter an array of valid rule objects.</p>;}return <div className="w-full max-w-3xl p-4"><SegmentRuleBuilder fields={segmentFields(SUB_PLANS,SUB_LEGS)} rules={rules} mode={v.mode} onModeChange={mode=>set("mode",mode)} onRulesChange={rules=>set("rules",JSON.stringify(rules))}/></div>;}),source:"subscription-operations"},
  "segment-preview":{...define("Segment Preview",{mode:select(["all","any"],"all"),empty:toggle(false)},v=><div className="w-full max-w-3xl p-4"><SegmentPreview customers={v.empty?[]:SUB_CUSTOMERS} plans={SUB_PLANS} legs={SUB_LEGS} segment={{...SUB_SEGMENT,mode:v.mode}} today={SUB_TODAY}/></div>),source:"subscription-operations"},
  "subscription-plan-picker":{...define("Subscription Plan Picker",{plan:select(["essential","plus","family"],"plus"),disabled:toggle(false)},(v,set)=><div className="w-full max-w-2xl p-4"><SubscriptionPlanPicker plans={SUB_PLANS} value={v.plan} onValueChange={plan=>set("plan",plan as "essential"|"plus"|"family")} disabled={v.disabled}/></div>),source:"subscription-operations"},

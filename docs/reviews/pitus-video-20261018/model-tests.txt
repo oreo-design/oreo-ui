@@ -1,0 +1,12 @@
+✔ merge requires every check and a separate explicit action (0.350708ms)
+✔ failure blocks merge and retry reruns the checks (0.0595ms)
+✔ cancel and reset invalidate stale work across repeated attempts (0.047834ms)
+✔ creating can be cancelled; double create and merge are idempotent (0.034166ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 59.776458
