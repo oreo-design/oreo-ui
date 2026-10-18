@@ -4,6 +4,8 @@ A small, copy-paste React component library that reproduces the **Oreo UI** desi
 
 **[Live demo →](https://oreo-ui-preview.vercel.app)**
 
+**[AI remix experiments →](https://oreo-ui-preview.vercel.app/ai-remixes)** — five original components, five new capabilities and five independent Claude-inspired adaptations. All actions use identifiable browser-local demo data.
+
 ## Stack
 
 | Layer | Choice |

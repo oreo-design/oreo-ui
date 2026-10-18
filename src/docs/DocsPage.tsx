@@ -2,6 +2,8 @@ import { useState, type CSSProperties } from "react";
 import { DocsLayout } from "./DocsLayout";
 import { CustomizePanel } from "./CustomizePanel";
 import { ComponentPlayground } from "./playground/ComponentPlayground";
+import { RemixExamples } from "./remixes/RemixExamples";
+import { hasRemix } from "./remixes/model";
 import { playgrounds } from "./playground/registry";
 import { Button } from "@/components/button";
 import type { TocItem } from "./OnThisPage";
@@ -31,17 +33,21 @@ export function DocsPage({
   children: (controls: DocsControls) => React.ReactNode;
 }) {
   const spec = playgrounds[nav.active];
-  const [view, setView] = useState<"playground" | "docs">(() => window.location.hash || new URLSearchParams(window.location.search).get("view") === "docs" ? "docs" : "playground");
-  const changeView = (next: "playground" | "docs") => {
+  const [view, setView] = useState<"playground" | "docs" | "remixes">(() => {
+    const requested = new URLSearchParams(window.location.search).get("view");
+    if (requested === "remixes" && hasRemix(nav.active)) return "remixes";
+    return window.location.hash || requested === "docs" ? "docs" : "playground";
+  });
+  const changeView = (next: "playground" | "docs" | "remixes") => {
     setView(next);
     const url = new URL(window.location.href);
     url.hash = "";
-    if (next === "docs") url.searchParams.set("view", "docs");
+    if (next !== "playground") url.searchParams.set("view", next);
     else url.searchParams.delete("view");
     window.history.replaceState(null, "", url);
     window.scrollTo({ top: 0 });
   };
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(() => new URLSearchParams(window.location.search).get("view") === "remixes" && new URLSearchParams(window.location.search).has("dark"));
   const [radius, setRadius] = useState(8);
   const [bounce, setBounce] = useState(0.4);
   const [duration, setDuration] = useState(0.3);
@@ -66,9 +72,9 @@ export function DocsPage({
   return (
     <IconLibraryProvider library={library}>
       <div className={dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"} style={wrapStyle}>
-        {spec && view === "playground" ? <ComponentPlayground spec={spec} nav={nav} breadcrumb={breadcrumb} appearance={appearance} onDocumentation={() => changeView("docs")} /> : <>
+        {view === "remixes" && hasRemix(nav.active) ? <RemixExamples slug={nav.active} nav={nav} dark={dark} setDark={setDark} onPlayground={() => changeView("playground")} onDocumentation={() => changeView("docs")} /> : spec && view === "playground" ? <ComponentPlayground spec={spec} nav={nav} breadcrumb={breadcrumb} appearance={appearance} onDocumentation={() => changeView("docs")} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : <>
         <DocsLayout toc={toc} breadcrumb={breadcrumb} nav={nav}>
-          {spec && <div className="mb-6"><Button type="secondary" size="sm" onClick={() => changeView("playground")}>Open playground</Button></div>}
+          {(spec || hasRemix(nav.active)) && <div className="mb-6 flex flex-wrap gap-2">{spec && <Button type="secondary" size="sm" onClick={() => changeView("playground")}>Open playground</Button>}{hasRemix(nav.active) && <Button type="secondary" size="sm" onClick={() => changeView("remixes")}>Explore AI remixes</Button>}</div>}
           {children(controls)}
         </DocsLayout>
 

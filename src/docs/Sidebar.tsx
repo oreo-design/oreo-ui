@@ -8,7 +8,7 @@ type Group = { title: string; items: Item[] };
 const NAV: Group[] = [
   {
     title: "Getting Started",
-    items: [{ label: "Changelog", page: "changelog" }, { label: "Introduction", soon: true }, { label: "Tokens", soon: true }],
+    items: [{ label: "AI Remixes", page: "ai-remixes" }, { label: "Changelog", page: "changelog" }, { label: "Introduction", soon: true }, { label: "Tokens", soon: true }],
   },
   {
     title: "Components",

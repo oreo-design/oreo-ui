@@ -18,6 +18,7 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "ai-remixes": { title: "AI Remix Experiments", description: "Five Oreo UI components, ten interactive adaptations. Compare original components with new capabilities and independent Claude-inspired treatments." },
  "subscription-workspace":{title:"Subscription Workspace",description:"Customer segments, revenue goals and local customer/member enrollment in one workspace."},
  "segment-rule-builder":{title:"Segment Rule Builder",description:"Inline typed rules with match-all or match-any semantics."},
  "segment-preview":{title:"Segment Preview",description:"Live customer counts, revenue, tenure and per-leg distribution."},
