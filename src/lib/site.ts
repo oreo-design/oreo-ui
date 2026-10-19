@@ -18,6 +18,11 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "agent-task-queue": { title: "Agent Task Queue", description: "Continuous agent tasks with reordering, pause, context and non-blocking clarification." },
+  "queue-task-row": { title: "Queue Task Row", description: "Continuous agent tasks with reordering, pause, context and non-blocking clarification." },
+  "task-clarification": { title: "Task Clarification", description: "Continuous agent tasks with reordering, pause, context and non-blocking clarification." },
+  "queued-request-stack": { title: "Queued Request Stack", description: "Continuous agent tasks with reordering, pause, context and non-blocking clarification." },
+  "agent-queue-workspace": { title: "Agent Queue Workspace", description: "Continuous agent tasks with reordering, pause, context and non-blocking clarification." },
   "linked-documents": { title: "Linked Documents", description: "Linked document selection, inline unlinking and recoverable review workflows." },
   "linked-document-row": { title: "Linked Document Row", description: "Linked document selection, inline unlinking and recoverable review workflows." },
   "linked-documents-selector": { title: "Linked Documents Selector", description: "Linked document selection, inline unlinking and recoverable review workflows." },

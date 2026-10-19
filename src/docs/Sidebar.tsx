@@ -151,6 +151,10 @@ const NAV: Group[] = [
       {label:"Agent Run Card",page:"agent-run-card"},
       {label:"Agent Run Activity",page:"agent-run-activity"},
       {label:"Agent Inbox Board",page:"agent-inbox-board"},
+      {label:"Agent Task Queue",page:"agent-task-queue"},
+      {label:"Queue Task Row",page:"queue-task-row"},
+      {label:"Task Clarification",page:"task-clarification"},
+      {label:"Queued Request Stack",page:"queued-request-stack"},
       {label:"Linked Documents",page:"linked-documents"},
       {label:"Linked Document Row",page:"linked-document-row"},
       {label:"Linked Documents Selector",page:"linked-documents-selector"},
@@ -274,6 +278,7 @@ const NAV: Group[] = [
     title: "Templates",
     items: [
       {label:"Workflow Directory",page:"workflow-directory"},
+      {label:"Agent Queue Workspace",page:"agent-queue-workspace"},
       {label:"Document Review",page:"unlink-documents-workspace"},
       {label:"Agent Lanes Workspace",page:"agent-lanes-workspace"},
       {label:"Adaptive Issues",page:"adaptive-issues"},

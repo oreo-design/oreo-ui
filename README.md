@@ -292,3 +292,7 @@ Time-based agent activity from [Flo’s reference](https://x.com/flohoeller/stat
 ### Document Review · linked documents
 
 Kevin’s [Unlink Documents](https://x.com/kvnkld/status/2111826634902741219) extracted into four reusable components and a full local review template: animated unlinking, stable preview selection, LIFO undo, metadata and loading/error/empty states. See [integration notes](src/patterns/unlink-documents/README.md) and [review evidence](docs/reviews/unlink-documents-20261019/REVIEW.md). Preview `/unlink-documents-workspace`.
+
+### Continuous Agent Queue
+
+[Isaiah’s reference](https://x.com/eyexayuh/status/2112042083536236933) becomes four reusable components and `/agent-queue-workspace`: append, reorder, pause, inline context and stepped clarification while other tasks continue. Local single-agent execution fixture with deletion/undo and recovery states. [Component contracts](src/patterns/agent-task-queue/README.md) · [Visual review](docs/reviews/agent-task-queue-20261019/REVIEW.md).

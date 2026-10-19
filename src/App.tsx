@@ -1,3 +1,5 @@
+import { AgentQueueWorkspace } from "@/patterns/agent-task-queue";
+import { AgentTaskQueueDocs } from "@/pages/AgentTaskQueueDocs";
 import { UnlinkDocumentsPage } from "@/patterns/unlink-documents";
 import { LinkedDocumentsDocs } from "@/pages/LinkedDocumentsDocs";
 import { AgentLanesPage } from "@/patterns/agent-lanes";
@@ -220,6 +222,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "agent-queue-workspace": AgentQueueWorkspace, "agent-task-queue": AgentTaskQueueDocs, "queue-task-row": AgentTaskQueueDocs, "task-clarification": AgentTaskQueueDocs, "queued-request-stack": AgentTaskQueueDocs,
   "unlink-documents-workspace": UnlinkDocumentsPage, "linked-documents": LinkedDocumentsDocs, "linked-document-row": LinkedDocumentsDocs, "linked-documents-selector": LinkedDocumentsDocs, "linked-document-details": LinkedDocumentsDocs,
   "agent-lanes-workspace": AgentLanesPage, "agent-lanes": AgentLanesDocs, "agent-lane-identity": AgentLanesDocs, "agent-task-bar": AgentLanesDocs, "agent-timeline-axis": AgentLanesDocs,
   "adaptive-issues": AdaptiveIssuesPage, "adaptive-issue-table": AdaptiveIssuesDocs, "adaptive-issue-row": AdaptiveIssuesDocs, "pull-request-pill": AdaptiveIssuesDocs, "resize-frame": AdaptiveIssuesDocs,
