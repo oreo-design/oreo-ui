@@ -1,0 +1,22 @@
+{
+  "sourceRevision": "e693ac4d73ac01676d93db6302cb71e5ccb8cad1",
+  "baseline": "4c62bfeed431c293d0be7e8027e5d3ac0b9de3a7",
+  "files": {
+    "README.md": "41163711167dced69cb4f0b53470e3b1cc178177bf3160612e703c7340e3010c",
+    "src/App.tsx": "dee286ac428fa26e7ab83c4ec18f13461ec9ccf8ca8e195bd6a12cd043c402b7",
+    "src/components/agent-lanes/index.tsx": "006adc30c7098e425683c7a020183658efffe04fbd4fa513f5e85829b52b49d9",
+    "src/components/agent-lanes/lanes.css": "aea8f9a3b7a64b881f95e9c6a5367abe9de6f0943b65b754e55d672499cfb169",
+    "src/components/agent-lanes/model.test.mjs": "393cc6175f987405b4b7b638f440fbe15556710eb3f037964741c17f3dbd6544",
+    "src/components/agent-lanes/model.ts": "0c4ae0851d270b5bc1b4afffe0ca3c09b2d8c4ed9c5d072013acd7e572835174",
+    "src/docs/Sidebar.tsx": "eb7e475369ed8fc7a42c1a279a4b9e2c4d91508e68644652721fe4bf7b91f929",
+    "src/docs/playground/registry.tsx": "fff41c60fc74bc2c2ca2824c31d4edeba81679c6e1771ff5d873f17311ce768e",
+    "src/lib/site.ts": "5556bef89fab21e201240038566c25fe08e7bb1de6f0c47f0a800c08c70e51a5",
+    "src/pages/AgentLanesDocs.tsx": "e0d9aff5a669a71a412d721f6c2ec8eb3da39a6bd12555a774120771c5a60cfc",
+    "src/patterns/agent-lanes/README.md": "2ebe0b11b2dcd5effd549f7b86f96d104174085f5db7dc54421e3f106abb4a0e",
+    "src/patterns/agent-lanes/data.ts": "2822d9ebe5bbd261c221814219887d50c266eb61d760df1c6ed3c0d1b48d729e",
+    "src/patterns/agent-lanes/index.tsx": "3a893c71e6f86dd4211610097c73e695ec0dc62ae6d6591f8f7fb0e2f804aed2",
+    "src/patterns/agent-lanes/model.test.mjs": "13918170fbf233410d4e2781195be6e59fe23c269c042ff3b8ebb7899acced30",
+    "src/patterns/agent-lanes/model.ts": "c0420fe5a273e4720052074d18af4aa2abeeeaf40436832c87aea989adb8d045",
+    "src/patterns/agent-lanes/workspace.css": "044071d7255ad2779e5e6431c486029b9f4d048d25e8bed693d0f8f787d6c64d"
+  }
+}
