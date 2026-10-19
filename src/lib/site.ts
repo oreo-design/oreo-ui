@@ -18,6 +18,8 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  spacing: { title: "Spacing Playground", description: "Tune five layers of layout spacing, highlight their boundaries and compare a frozen baseline with your current recipe." },
+  "spacing-guide": { title: "Spacing Guide", description: "Oreo layout spacing roles, scoped tokens and composition rules for readable pages." },
   "merge-workspace": {title:"Merge Workspace",description:"A conversational pull request template with branch history, conflict resolution, checks and local merge simulation."},
   "branch-history": {title:"Branch History",description:"A compact commit graph with caller-owned lanes, branch labels and conflict markers."},
   "merge-status-badge": {title:"Merge Status Badge",description:"A semantic PR status capsule for creating, conflicts, checks and completion."},

@@ -1,0 +1,29 @@
+/* Opt-in layout layer, on the same 4px scale as Tailwind's page utilities.
+   Controls retain the finer --space-x* scale. No global density override. */
+.oreo-layout {
+  --layout-sidebar: 240px;
+  --layout-page: 32px;
+  --layout-section: 40px;
+  --layout-grid: 16px;
+  --layout-card: 24px;
+}
+.oreo-layout-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--layout-section);
+  min-width: 0;
+}
+.oreo-layout-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: var(--layout-grid);
+  min-width: 0;
+}
+.oreo-layout-card {
+  min-width: 0;
+  padding: var(--layout-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
