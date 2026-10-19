@@ -1,0 +1,158 @@
+.ldoc-selector {
+  min-width: 0;
+  max-width: 100%;
+}
+.ldoc-trigger {
+  max-width: 100%;
+  gap: calc(var(--spacing) * 2);
+}
+.ldoc-trigger-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+.ldoc-count {
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.ldoc-positioner {
+  z-index: 60;
+  outline: none;
+}
+.ldoc-popup {
+  width: calc(var(--spacing) * 104);
+  max-width: calc(100vw - var(--spacing) * 6);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  box-shadow: 0 8px 24px #00000012;
+  overflow: hidden;
+  outline: none;
+}
+.ldoc-popup > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+.ldoc-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0 calc(var(--spacing) * 2);
+  max-height: min(55vh, calc(var(--spacing) * 100));
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.ldoc-rows > li {
+  overflow: hidden;
+}
+.ldoc-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+  min-height: calc(var(--spacing) * 10);
+  border-radius: var(--radius-control);
+  padding: var(--spacing);
+}
+.ldoc-row:hover,
+.ldoc-row[data-selected] {
+  background: var(--color-bg-surface);
+}
+.ldoc-number {
+  width: calc(var(--spacing) * 5);
+  flex-shrink: 0;
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+.ldoc-name {
+  min-width: 0;
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: var(--spacing) 0;
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+.ldoc-row button {
+  flex-shrink: 0;
+}
+.ldoc-row .ldoc-name {
+  flex-shrink: 1;
+}
+.ldoc-list {
+  outline: none;
+}
+.ldoc-list:focus-visible,
+.ldoc-name:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: -2px;
+}
+.ldoc-list-footer {
+  border-top: 1px solid var(--color-border-subtle);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  display: flex;
+  gap: calc(var(--spacing) * 2);
+  align-items: center;
+  justify-content: space-between;
+}
+.ldoc-tooltip {
+  background: var(--color-text-primary);
+  color: var(--color-bg-base);
+  padding: var(--spacing) calc(var(--spacing) * 2);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-control);
+  z-index: 70;
+}
+.ldoc-loading {
+  padding: calc(var(--spacing) * 4);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+.ldoc-skeleton {
+  height: calc(var(--spacing) * 7);
+  margin-top: calc(var(--spacing) * 3);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-surface);
+}
+.ldoc-details h3 {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 6);
+}
+.ldoc-details dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 3) 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-size: var(--text-sm);
+}
+.ldoc-details dt {
+  color: var(--color-text-secondary);
+}
+.ldoc-details dd {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+/* Button owns the text wrapper; keep the selector contents on one line. */
+.ldoc-trigger > span {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  min-width: 0;
+}
+.ldoc-trigger svg,
+.ldoc-trigger .ldoc-count {
+  flex-shrink: 0;
+}

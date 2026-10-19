@@ -1,0 +1,14 @@
+✔ unlinking another document preserves active preview and immutable source (0.7175ms)
+✔ active removal chooses next, then previous, then null (0.073833ms)
+✔ rapid removal and reverse undo restore exact original order (0.071334ms)
+✔ undo preserves current selection and does not duplicate files (0.063584ms)
+✔ stale events do not alter state (0.09ms)
+✔ reset clears history and empty fixtures remain valid (0.044583ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 100.820791

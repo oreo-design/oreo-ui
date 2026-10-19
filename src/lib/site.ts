@@ -18,6 +18,11 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "linked-documents": { title: "Linked Documents", description: "Linked document selection, inline unlinking and recoverable review workflows." },
+  "linked-document-row": { title: "Linked Document Row", description: "Linked document selection, inline unlinking and recoverable review workflows." },
+  "linked-documents-selector": { title: "Linked Documents Selector", description: "Linked document selection, inline unlinking and recoverable review workflows." },
+  "linked-document-details": { title: "Linked Document Details", description: "Linked document selection, inline unlinking and recoverable review workflows." },
+  "unlink-documents-workspace": { title: "Document Review", description: "Linked document selection, inline unlinking and recoverable review workflows." },
   "agent-lanes": {title:"Agent Lanes",description:"Composable agent timelines with task states, relative time and cross-agent handoffs."},
   "agent-lane-identity": {title:"Agent Lane Identity",description:"Composable agent timelines with task states, relative time and cross-agent handoffs."},
   "agent-task-bar": {title:"Agent Task Bar",description:"Composable agent timelines with task states, relative time and cross-agent handoffs."},
