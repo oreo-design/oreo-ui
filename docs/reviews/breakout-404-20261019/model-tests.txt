@@ -1,0 +1,18 @@
+✔ unique destination IDs produce independent target groups (0.817916ms)
+✔ configuration is bounded and empty groups are complete (0.081166ms)
+✔ paused frames and invalid deltas cannot advance the ball (0.148ms)
+✔ launch and pause preserve velocity and target state (0.094958ms)
+✔ paddle is clamped and ready ball follows it (0.048542ms)
+✔ side walls reflect without leaving bounds (0.081333ms)
+✔ paddle reflection goes upward and depends on landing position (0.344167ms)
+✔ miss preserves target progress, stops ball and requires explicit relaunch (0.073625ms)
+✔ small substeps hit tiny targets and completion stops simulation (0.081042ms)
+✔ large frame gap is capped, and only one target can count once (0.097542ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 87.790625

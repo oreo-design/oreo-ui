@@ -92,6 +92,8 @@ export function GameStage({
   onPointerDown,
   hint,
   label,
+  responsive = false,
+  onFocusLost,
 }: {
   width: number;
   height: number;
@@ -102,6 +104,8 @@ export function GameStage({
   onPointerDown?: (x: number, y: number) => void;
   hint: string;
   label: string;
+  responsive?: boolean;
+  onFocusLost?: (event: React.FocusEvent<HTMLCanvasElement>) => void;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const keys = useRef(new Set<string>());
@@ -135,17 +139,17 @@ export function GameStage({
 
   const point = (e: React.PointerEvent<HTMLCanvasElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    return { x: (e.clientX - rect.left) * width / rect.width, y: (e.clientY - rect.top) * height / rect.height };
   };
 
   return (
-    <figure className="m-0 flex flex-col items-center gap-2.5">
+    <figure className={`m-0 flex flex-col items-center gap-2.5 ${responsive ? "w-full" : ""}`}>
       <canvas
         ref={canvasRef}
         role="img"
         aria-label={label}
         tabIndex={0}
-        style={{ width, height }}
+        style={responsive ? { width: "100%", height: "auto", aspectRatio: `${width} / ${height}` } : { width, height }}
         className="touch-none rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-bg-surface)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-status-progress)]"
         onKeyDown={(e) => {
           if (CAPTURED.has(e.key)) e.preventDefault();
@@ -153,7 +157,7 @@ export function GameStage({
           if (!e.repeat) onKey?.(e.key);
         }}
         onKeyUp={(e) => keys.current.delete(e.key)}
-        onBlur={() => keys.current.clear()}
+        onBlur={(event) => { keys.current.clear(); onFocusLost?.(event); }}
         onPointerMove={(e) => {
           const p = point(e);
           onPointerMove?.(p.x, p.y);

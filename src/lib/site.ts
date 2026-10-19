@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "breakout-navigator": { title: "Breakout Navigator", description: "Playable navigation targets with keyboard, pointer and touch steering." },
+  "destination-progress": { title: "Destination Progress", description: "Accessible navigation links with controlled target progress." },
+  "recovery-message": { title: "Recovery Message", description: "Centered missing-page copy with a direct recovery link." },
+  "breakout-404": { title: "Breakout 404", description: "A playful missing-page template with a direct way home." },
   "agent-task-queue": { title: "Agent Task Queue", description: "Continuous agent tasks with reordering, pause, context and non-blocking clarification." },
   "queue-task-row": { title: "Queue Task Row", description: "Continuous agent tasks with reordering, pause, context and non-blocking clarification." },
   "task-clarification": { title: "Task Clarification", description: "Continuous agent tasks with reordering, pause, context and non-blocking clarification." },
