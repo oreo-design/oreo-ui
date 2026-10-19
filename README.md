@@ -280,3 +280,7 @@ Inspired by [Phil Pitus’s merge conflict video](https://x.com/pitus_/status/21
 - **Test Workspace** — streamed agent test results, file groups, failures, stack traces, filters and local recovery. [Composition and source breakdown](src/patterns/test-workspace/README.md).
 
 - **Adaptive Issues** — [template](/adaptive-issues), adaptive issue table/row, PR pills and keyboard-accessible resize frames. Inspired by Componest / @haaarshsingh. See `src/patterns/adaptive-issues/README.md`.
+
+### 官网效果参考
+
+[参考收藏](docs/references/website-effects.md)：Details.so 效果库与 Segerman 页面转场案例，供后续官网工作选用。
