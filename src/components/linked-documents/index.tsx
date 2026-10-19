@@ -1,7 +1,12 @@
 import { useRef, useState, type ReactNode } from "react";
 import { Popover } from "@base-ui-components/react/popover";
 import { Tooltip } from "@base-ui-components/react/tooltip";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  useIsPresent,
+} from "motion/react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
 import { DocumentEmpty } from "@/components/document-activity";
@@ -90,6 +95,22 @@ export function LinkedDocumentRow({
     </div>
   );
 }
+function AnimatedDocumentRow({ children }: { children: ReactNode }) {
+  const present = useIsPresent(),
+    reduce = useReducedMotion();
+  return (
+    <motion.li
+      inert={!present}
+      aria-hidden={!present || undefined}
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: "auto", opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      transition={{ duration: reduce ? 0 : 0.2, ease: [0.2, 0.8, 0.2, 1] }}
+    >
+      {children}
+    </motion.li>
+  );
+}
 export function LinkedDocumentsList({
   documents,
   selectedId,
@@ -111,12 +132,13 @@ export function LinkedDocumentsList({
   onRetry?: () => void;
   footer?: ReactNode;
 }) {
-  const root = useRef<HTMLDivElement>(null),
-    reduce = useReducedMotion();
+  const root = useRef<HTMLDivElement>(null);
   function unlink(id: string) {
     const buttons = Array.from(
         root.current?.querySelectorAll<HTMLButtonElement>("[data-unlink]") ??
           [],
+      ).filter((button) =>
+        documents.some((document) => document.id === button.dataset.unlink),
       ),
       index = buttons.findIndex((b) => b.dataset.unlink === id),
       hadFocus = buttons[index] === window.document.activeElement;
@@ -155,16 +177,7 @@ export function LinkedDocumentsList({
         <ol className="ldoc-rows">
           <AnimatePresence initial={false}>
             {documents.map((document, index) => (
-              <motion.li
-                key={document.id}
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{
-                  duration: reduce ? 0 : 0.2,
-                  ease: [0.2, 0.8, 0.2, 1],
-                }}
-              >
+              <AnimatedDocumentRow key={document.id}>
                 <LinkedDocumentRow
                   document={document}
                   index={index}
@@ -173,7 +186,7 @@ export function LinkedDocumentsList({
                   onUnlink={unlink}
                   onInfo={onInfo}
                 />
-              </motion.li>
+              </AnimatedDocumentRow>
             ))}
           </AnimatePresence>
         </ol>
