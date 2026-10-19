@@ -149,3 +149,11 @@ All seven playground routes rendered, Preview/Code toggles exposed the expected 
 - Chrome emits pre-existing wallet/session extension errors on reference, baseline and new routes. This was not a clean-profile run. Desktop viewport simulation does not prove physical mobile behavior. No production serving, real workflow execution, external integration or persistence is claimed.
 
 Implementation source hashes and environment are in manifest.json. Exact commit review, PR and remote main result are recorded during delivery below.
+
+## Source review and integration
+
+Reviewed implementation commit: `3a23dd6bcb9ed345314975aa0209fbf7650c70ff` on main baseline `b99f9068e7bfb494ae17aad8d5e4b9e86b3f13b8` (spacing pages). Rebase conflicts were additive imports/routes in App.tsx and site.ts; both sets were retained. Only those integration files plus the sidebar differ from captured source hashes; new component/template source is unchanged. Rebased TypeScript/build passed. The final browser pass verified pause/resume, fixture test failure, current-version dialog, restore/undo, and fresh entry.
+
+![After rebasing onto current main](/Users/ziye/Documents/Project/Research/oreo-ui-jubayer-20261019/docs/reviews/jubayer-table-20261019/after-rebased.png)
+
+The exported CSV preserves real CRLF bytes, with a scoped Git whitespace attribute. This documentation-only record does not alter UI behavior. PR and remote status are linked below once created.
