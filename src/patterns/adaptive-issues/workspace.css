@@ -338,3 +338,23 @@
     display: none;
   }
 }
+
+.adws-overview progress {
+  appearance: none;
+  border: 0;
+  border-radius: var(--radius-capsule);
+  overflow: hidden;
+  background: var(--color-palette-default-bg);
+}
+.adws-overview progress::-webkit-progress-bar {
+  background: var(--color-palette-default-bg);
+  border-radius: var(--radius-capsule);
+}
+.adws-overview progress::-webkit-progress-value {
+  background: var(--color-status-success);
+  border-radius: var(--radius-capsule);
+}
+.adws-overview progress::-moz-progress-bar {
+  background: var(--color-status-success);
+  border-radius: var(--radius-capsule);
+}

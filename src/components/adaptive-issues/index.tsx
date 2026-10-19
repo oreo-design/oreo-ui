@@ -195,7 +195,11 @@ export function AdaptiveIssueTable({
           skeleton={
             <div className="adapt-skeleton">
               {Array.from({ length: 8 }, (_, i) => (
-                <i key={i} />
+                <div key={i}>
+                  <i />
+                  <i />
+                  <i />
+                </div>
               ))}
             </div>
           }

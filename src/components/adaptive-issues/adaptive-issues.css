@@ -155,14 +155,31 @@ button.adapt-row:hover {
   outline-offset: 2px;
 }
 .adapt-skeleton {
-  display: grid;
-  gap: calc(var(--spacing) * 3);
-  padding: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+}
+.adapt-skeleton > div {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 5);
+  height: calc(var(--spacing) * 12);
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 .adapt-skeleton i {
-  height: calc(var(--spacing) * 9);
-  background: var(--color-bg-elevated);
-  border-radius: var(--radius-control);
+  display: block;
+  height: calc(var(--spacing) * 3);
+  background: var(--color-palette-default-bg);
+  border-radius: var(--radius-control-tiny);
+}
+.adapt-skeleton i:first-child {
+  flex: 1;
+}
+.adapt-skeleton i:nth-child(2) {
+  width: calc(var(--spacing) * 16);
+}
+.adapt-skeleton i:last-child {
+  width: calc(var(--spacing) * 6);
+  height: calc(var(--spacing) * 6);
+  border-radius: var(--radius-capsule);
 }
 @container adaptive-issues (min-width:650px) {
   .adapt-row {
