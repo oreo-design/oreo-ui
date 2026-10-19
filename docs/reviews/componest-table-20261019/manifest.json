@@ -1,0 +1,473 @@
+{
+  "baseline": "a150cb3f927f3de0dcdb7b8c71127f7cd251c9ef",
+  "implementation": "9a1f59212e666992ee9a82955230794880938238",
+  "finalSource": "cfdf3a006db1e61a2095c23fa564e7717a63c276",
+  "reference": "https://x.com/componest/status/2112057747739172953",
+  "referenceFramesSeconds": [
+    1,
+    4,
+    8,
+    11,
+    12.5
+  ],
+  "environment": {
+    "browser": "Chrome via Playwriter session 16",
+    "locale": "en-US",
+    "url": "http://localhost:5186/adaptive-issues",
+    "viewports": [
+      [
+        1440,
+        1100
+      ],
+      [
+        1440,
+        1200
+      ],
+      [
+        800,
+        1000
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "fixtures": "local ADAPTIVE_ISSUES; changes reset on reload",
+    "capture": "r3 stills fast-forward finite CSS animations; movie actual CDP timestamps"
+  },
+  "validation": {
+    "typecheck": "passed",
+    "build": "passed, existing chunk size warning",
+    "modelTests": 3,
+    "browser": "See REVIEW.md for exact exercised states and limits"
+  },
+  "sourceSha256": {
+    "README.md": "8339deaf30f13e07d1069ac5791f87fc0ef091d4561f6ae9ae32bc49b118d584",
+    "src/App.tsx": "5f246da29e7af010b8e438cd92f67b775ff17e0c4393c8a010d345bdd71e98fa",
+    "src/components/adaptive-issues/adaptive-issues.css": "64ba8f99dd720475854804e11c2b1fc26157aad3f9ba07bef4de6ced707e2ed8",
+    "src/components/adaptive-issues/index.tsx": "74563ec0fab74cd6168e314bf0da3d95aa1c767d63c26c14221c27a355e90eb6",
+    "src/components/adaptive-issues/model.test.ts": "7a6b086da0f9de9bf689c97c23fc79e5be4067cbe6337f5dba9f05c124f54811",
+    "src/components/adaptive-issues/model.ts": "231b9c4f4f4fb0d46e698baf02703756d8f6499404c6be7b97add6c6ce7c4993",
+    "src/components/grouped-tasks/index.tsx": "f39c47866e7abb21510ac5a1ba793d810ce84c98bc3cae9807e7880597d8d41e",
+    "src/docs/Sidebar.tsx": "1d906466c1512b3eb4385c11c5144de4a2d177cdbcaca1782ba4f0910972be42",
+    "src/docs/playground/registry.tsx": "67b1e5966548d959e0be7a9b7eca7ce2c4d0993e69432fee05125727eef8e5a6",
+    "src/lib/site.ts": "1d0c042532bf8c5622a1d909ca48cb76f78e78f3798808bb3a4d764867711199",
+    "src/pages/AdaptiveIssuesDocs.tsx": "1079c0417905d39bac99ae9f76ee3fd76274459bc808828567e4209db68783da",
+    "src/patterns/adaptive-issues/README.md": "6549fe25cb904519d412a109cb53112367f31c58b3d7f2986396ba368f03fcb3",
+    "src/patterns/adaptive-issues/data.ts": "f7541916539721873deaec578656ab312fbe7eecf9cf35a3fdeeb8372a9e22f8",
+    "src/patterns/adaptive-issues/index.tsx": "19af1d528c1e62b662c497ff32070ecf671fc6275f468e280f7302d2639ad55c",
+    "src/patterns/adaptive-issues/workspace.css": "33172b575ff14420e71e617276f7540dc7f39c1fb5e85f39bca3d84fc0ea20c1"
+  },
+  "media": [
+    {
+      "file": "after-activity.png",
+      "bytes": 60500,
+      "sha256": "73b13255df74a0695cc93f364e4fa90900f4997208328bf01d07ac825f6c9864",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-compact-r3.png",
+      "bytes": 116348,
+      "sha256": "6ccc512bd9a2047b2024627ff1589fd913ab9100252c82ba40f52104473b1b80",
+      "dimensions": [
+        1440,
+        1248
+      ]
+    },
+    {
+      "file": "after-compact.png",
+      "bytes": 106844,
+      "sha256": "82f8672c5f7dc0bb44e8b84a8515e88f81d91368fc2e25b8f1d9c813cbf633fb",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-component.png",
+      "bytes": 160459,
+      "sha256": "27f8ffbe2053e1e838c6cf73b431c76dfe984e40c13a8a30a57cebf93b72d7eb",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-desktop-dark-r2.png",
+      "bytes": 116182,
+      "sha256": "b5514024a52833112544d531e408ebe73e29fb8427986c80e0eff05f7296d993",
+      "dimensions": [
+        1440,
+        1248
+      ]
+    },
+    {
+      "file": "after-desktop-dark-r3.png",
+      "bytes": 131092,
+      "sha256": "8853d1b7a3cb4e0926468225b9cc091a70e0cd64281a0aa9d684325ce27717e8",
+      "dimensions": [
+        1440,
+        1248
+      ]
+    },
+    {
+      "file": "after-desktop-first.png",
+      "bytes": 121148,
+      "sha256": "d23ee2af9d7a97d59c4fd3c8cee95033dfb04cc99fe409c9c16f1d8cb90d55e3",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-desktop-light-r2.png",
+      "bytes": 117400,
+      "sha256": "39f1c63763e2d4fff01154e49ea5d5bb7389e30db5204b936063d8698fbce606",
+      "dimensions": [
+        1440,
+        1248
+      ]
+    },
+    {
+      "file": "after-desktop-light-r3.png",
+      "bytes": 126968,
+      "sha256": "0939c9ccc834ef9b36abc3dbb5d2f006524efa52bd6a4417a103b79e62d08c35",
+      "dimensions": [
+        1440,
+        1248
+      ]
+    },
+    {
+      "file": "after-desktop-light.png",
+      "bytes": 120816,
+      "sha256": "d898919f248dbd5a20ea05e6de349b21ad0c671d1cad6892a2cfd73ecd31859a",
+      "dimensions": [
+        1440,
+        1248
+      ]
+    },
+    {
+      "file": "after-error.png",
+      "bytes": 59174,
+      "sha256": "46dbb882cf3d174b4766cd34f96cef25c265339ae6b5a8a0012d767cd7909e92",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-expanded-recording.png",
+      "bytes": 132061,
+      "sha256": "82f92e30ed2ab1c4ce36b3f360ad5ed8f01bd6c7c25f3396f192cfda15ba9967",
+      "dimensions": [
+        1440,
+        1200
+      ]
+    },
+    {
+      "file": "after-loading-r2.png",
+      "bytes": 95384,
+      "sha256": "63aea976a1cf26f6699074b70a48f777e580e0a1a4fd66810508dc63c566157f",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-loading-r3.png",
+      "bytes": 99289,
+      "sha256": "cf6760fb637f8bece917b5b3659961e8415e680f2f29a86f6c1f592e18abefcc",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-loading.png",
+      "bytes": 95384,
+      "sha256": "63aea976a1cf26f6699074b70a48f777e580e0a1a4fd66810508dc63c566157f",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-medium-dark.png",
+      "bytes": 103306,
+      "sha256": "00106f95c7e8ab5f879522a501215294dfec2d1ae88578bec7a14ea4215393fe",
+      "dimensions": [
+        800,
+        1281
+      ]
+    },
+    {
+      "file": "after-medium-light.png",
+      "bytes": 103156,
+      "sha256": "e4a84e80dd34ad2f2e532bb74298f66c2d3d4302fdd696a9e6d570f46d7c9e6c",
+      "dimensions": [
+        800,
+        1281
+      ]
+    },
+    {
+      "file": "after-mobile-dark-r2.png",
+      "bytes": 77296,
+      "sha256": "859562bd91f029191da30bb9b3ef60ad772f20d1d16c111c6baf755691038094",
+      "dimensions": [
+        390,
+        1386
+      ]
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "bytes": 76759,
+      "sha256": "85d195871044c9fa3eaee98b9ebf307e3e74c895d763cbd12140db8f9c344137",
+      "dimensions": [
+        390,
+        1386
+      ]
+    },
+    {
+      "file": "after-mobile-detail-r2.png",
+      "bytes": 50153,
+      "sha256": "7857417f776e575055f23ffc47869a21651d990edfe27e3d8bdb09f3edbb1c60",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "after-mobile-detail.png",
+      "bytes": 50153,
+      "sha256": "7857417f776e575055f23ffc47869a21651d990edfe27e3d8bdb09f3edbb1c60",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "after-mobile-light-r2.png",
+      "bytes": 76602,
+      "sha256": "90ca1874e260a60938a63c6f37594e47c254915802a6a38c535692625c956bc0",
+      "dimensions": [
+        390,
+        1386
+      ]
+    },
+    {
+      "file": "after-mobile-light.png",
+      "bytes": 76441,
+      "sha256": "cdcdf5cd45b4a66f3ecddae9658e9a1c448b2c91121afa80b4ba0fc15346e812",
+      "dimensions": [
+        390,
+        1386
+      ]
+    },
+    {
+      "file": "after-mobile-scroll-end.png",
+      "bytes": 45039,
+      "sha256": "c8cbf575160a68c8d4be7a3de1758b5eef349d870f3331bc78d6c0a0d7973ed2",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "after-overview-r2.png",
+      "bytes": 68283,
+      "sha256": "77bdd5062eb9800a4822d3be88c94818dadb16451938682090ab38e002b97d32",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-overview.png",
+      "bytes": 68986,
+      "sha256": "ab99f24bdffbd9e280b3f8b854ee5a1ddbc3e29b5724e32d897cf7d4e08cc553",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-pr-pill.png",
+      "bytes": 93234,
+      "sha256": "524ce42335bc31e19c4cd5e98666c9fcb484e2c1209d367c4d08cd492399f7a8",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-resize-frame.png",
+      "bytes": 96453,
+      "sha256": "053b6c3bf396204093a5874f856f879e834de892a3960a0b084c8c118852b49a",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-row.png",
+      "bytes": 100309,
+      "sha256": "4b749848f98e9d419aa5807ab9c664f914c916f6697e72e4f58bda73ce79ed21",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "after-search-empty.png",
+      "bytes": 54373,
+      "sha256": "3611098b7371aaddeb4f2eb133a180dc38db7a2fa277dbf19224e4b1b75ae1dd",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "before-component.png",
+      "bytes": 99034,
+      "sha256": "3d085f5af85b78826d62feb4ff24098b5e3a22eaedc559da116f52e4f1df8e18",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "before-entry.png",
+      "bytes": 99034,
+      "sha256": "3d085f5af85b78826d62feb4ff24098b5e3a22eaedc559da116f52e4f1df8e18",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "before-mobile.png",
+      "bytes": 23830,
+      "sha256": "1cb26ed44a04ed7c321d9090798375442d5d778eb52153ce9c27af41e768c9c3",
+      "dimensions": [
+        390,
+        844
+      ]
+    },
+    {
+      "file": "interaction-clean.mp4",
+      "bytes": 523643,
+      "sha256": "344ff959f04d2dbfeff44262f749e3c6ca1568a6476c2bd1b47d65777e730e32",
+      "video": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 1440,
+            "height": 1072
+          }
+        ],
+        "format": {
+          "duration": "8.733333"
+        }
+      }
+    },
+    {
+      "file": "interaction-contact-sheet.png",
+      "bytes": 115410,
+      "sha256": "8c0cf76b3f5a4dbef890a352fabbcc50c150a0dfb8d01e913d485b56bf1d34d9",
+      "dimensions": [
+        1440,
+        714
+      ]
+    },
+    {
+      "file": "interaction-original.mp4",
+      "bytes": 600150,
+      "sha256": "50f98ca5926d6bb93fb406484fefc9c5da3e4220bb4a1c1876bbd59ae3ff61e8",
+      "video": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "width": 1440,
+            "height": 1200
+          }
+        ],
+        "format": {
+          "duration": "8.733333"
+        }
+      }
+    },
+    {
+      "file": "peer-grouped-tasks-after.png",
+      "bytes": 120422,
+      "sha256": "02b280a329bbb506e61ec9d995a38656a7f8703aacf0155fb80dde6f0e46fc73",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "peer-grouped-tasks.png",
+      "bytes": 120422,
+      "sha256": "02b280a329bbb506e61ec9d995a38656a7f8703aacf0155fb80dde6f0e46fc73",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "peer-workflow.png",
+      "bytes": 143530,
+      "sha256": "b51a191b9779c35cb07ab064c80a8c31bc786d2b10b024da127e2fa63ac898c9",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "reference-compact.png",
+      "bytes": 211115,
+      "sha256": "3aae7d024bfdc3c4b4f764fbde976a143030a4bb016605380cc57582e861d561",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "reference-final.png",
+      "bytes": 252060,
+      "sha256": "9268ad34133a112f97bdcef6f29b204c0e69b230edab6dc49ee8c7f7a9be02b9",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "reference-start.png",
+      "bytes": 192228,
+      "sha256": "2aa1b5dfcbdea9a7099740b9deb9a9cfb418301f6781e7aeda24e60f88a74112",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    },
+    {
+      "file": "reference-wide.png",
+      "bytes": 259865,
+      "sha256": "a756b4a6395df61ecc5b368d3e70ff40a2367011e2f4411b2564b1df5f3c3b73",
+      "dimensions": [
+        1440,
+        1100
+      ]
+    }
+  ],
+  "history": "Originals retained. r2/r3 supersede transition captures. after-loading-r3 and after-overview-r2 are final corrective captures. Movie source 9a1f592; subsequent changes affect only loading/progress styles, not recorded interactions."
+}
