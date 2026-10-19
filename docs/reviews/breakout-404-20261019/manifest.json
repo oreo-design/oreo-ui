@@ -1,0 +1,534 @@
+{
+  "reference": "https://x.com/abhisek_im/status/2112015149569888373",
+  "baseline": "899d2848c27ba44ed27f8c0262dae7bbc168f13c",
+  "source": "7c56bb11bccc99b02bde0587befb0112b61f73ff",
+  "environment": "Chrome/Playwriter session 8; localhost:5192 production build; English local fixture",
+  "source_files": {
+    "README.md": "a4f771330b16e4eba02be4b2cacc005b4ee7d27744d2e75a4da386e8681bddac",
+    "src/App.tsx": "16a4eddbbd4d8ed3441affe8aa0aceea20b5ff775383105b7cc69302d6674e30",
+    "src/components/breakout-navigation/breakout.css": "74bc485cf9ca75a434a321eae8ebb60c4ab45393d99c09777030790559d37b85",
+    "src/components/breakout-navigation/index.tsx": "5ed9ace84f3e04f94900ea827eafc9b10ef9c15131260e520edf43cefed381b9",
+    "src/components/breakout-navigation/model.test.mjs": "96c524f76ef7ae8b0eeacaa0bd3de396c7ab4edb3f49ffb22db3e40ba2714e08",
+    "src/components/breakout-navigation/model.ts": "8060baaa1ce72aaa7b3cffba19c26ca161b50b5d55cb5e6c3aa2d2f0bc3c8482",
+    "src/components/page-loader/stage.tsx": "447e930375a92fb655f76892827ee1749b6f48a91914d0e0df3ef47d19d7f94a",
+    "src/docs/Sidebar.tsx": "930202979747d5b5160174e9df3f90f47732791107acb07c185cd7e0a20623d6",
+    "src/docs/playground/registry.tsx": "9f7a319e0cf5bc887e678101f460620c96f411e9b27eafe1a5a7a31c7af5dedc",
+    "src/lib/site.ts": "29aa8e2a05962d4b9af45d3be4d5499c58a6604a6396a247c351bd45f8a7e3dd",
+    "src/pages/BreakoutNavigationDocs.tsx": "001e80bb2d24d67bdd83e5aa54ef87b7c75ccf0fe16df3d8870eab928da5e335",
+    "src/patterns/breakout-404/README.md": "f6e37ff4c571d751919d4973c2d75f8cf4574531eff8099d4d1c28ceaa006235",
+    "src/patterns/breakout-404/index.tsx": "2963ea16dbe12ef43cc6248af023b1186dd75bf36be5d1223a47b0abeeec95b0",
+    "src/patterns/breakout-404/page.css": "5bd2f512e1666d02dab0ec6f96fd12584a5cdfecaadfab29783a389565ef6870"
+  },
+  "media": [
+    {
+      "file": "after-medium-dark.png",
+      "sha256": "6639a93d8068164fb8a7b9b58032918fee61350ca7edec97bea5a2478a8f3866",
+      "bytes": 62520,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 900,
+          "height": 1056
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "after-medium.png",
+      "sha256": "cc734f79ce037e45bf3bd3839d681203a8150e1f6e912be80be096f45286c955",
+      "bytes": 62112,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 900,
+          "height": 1056
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "after-narrow-dark.png",
+      "sha256": "ba0b4ae0fc8067f446e32b47cc11eba1427b9231b80d5ebaaf9a3f398fd22a11",
+      "bytes": 46051,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 922
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "after-narrow.png",
+      "sha256": "4773c096066c3c6f8d4e8a0cfc2aaae4607c18b9dbfbb66e734f075c76b98a51",
+      "bytes": 45501,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 922
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "after-wide-dark.png",
+      "sha256": "f2179a1f632d38bdb1deba16a9fdde98da652b7efab70129f0c83f8cbff65dde",
+      "bytes": 64851,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "after-wide.png",
+      "sha256": "921a4b616ae33968d7617f0cba387a3bbba2d31eb44773fb9393e230df2df38f",
+      "bytes": 64755,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "before-narrow.png",
+      "sha256": "1cb26ed44a04ed7c321d9090798375442d5d778eb52153ce9c27af41e768c9c3",
+      "bytes": 23830,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "before-wide.png",
+      "sha256": "418a79ca63932022736b78a4f4788594e75d93e466c36ba19e69ace24b9e5a69",
+      "bytes": 93555,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "code-destination-progress.png",
+      "sha256": "f4eeaab6435bd17b448cfe169f7f12e585fcf36956913ca448b183c70f57c7da",
+      "bytes": 170675,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "code-recovery-message.png",
+      "sha256": "b1183378ef49903c9a9731dc091cb2399f4a6507a0862945f0639f7babca8899",
+      "bytes": 147874,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "docs-destination-progress.png",
+      "sha256": "e259307c86506ea468959247308c59bf58c62e299c2964f555e6c714f93d9a9b",
+      "bytes": 324159,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 2428
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "docs-recovery-message.png",
+      "sha256": "36554d59435b3aedad65673ff45532c24f7a53b477708007cbb42931483271db",
+      "bytes": 323485,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 2267
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "empty-destinations.png",
+      "sha256": "aee5d160cc20f07a7633848a0182f2a7da68d6f564cdd6c6e3091234a08a7ac2",
+      "bytes": 112886,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-narrow.png",
+      "sha256": "4773c096066c3c6f8d4e8a0cfc2aaae4607c18b9dbfbb66e734f075c76b98a51",
+      "bytes": 45501,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 922
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-playground-narrow.png",
+      "sha256": "26935420dea3aae50767fc2dc93f0111d168731d7e8f8182cac93ef568ea70f4",
+      "bytes": 79358,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 900,
+          "height": 1144
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-wide.png",
+      "sha256": "a3838eb19d95af5120606667540d44f48b6eabae79534a990821d6c540f3ac6d",
+      "bytes": 64559,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "initial-wide.png",
+      "sha256": "a3838eb19d95af5120606667540d44f48b6eabae79534a990821d6c540f3ac6d",
+      "bytes": 64559,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "interaction-original.mp4",
+      "sha256": "6726d4a69f0dd8728f43466089e0b98c1876b3397d8d3b1b344bf2c9f2ed44b2",
+      "bytes": 79323,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {
+        "duration": "8.166667"
+      }
+    },
+    {
+      "file": "interaction.mp4",
+      "sha256": "b660af67adfe90d204428cb0e257cb315d0b7103c575ea67e8c6f9aeb9e197e6",
+      "bytes": 74236,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 904
+        }
+      ],
+      "format": {
+        "duration": "8.166667"
+      }
+    },
+    {
+      "file": "miss-retains-progress.png",
+      "sha256": "82663da40b0a6b15020190ebde55fa74706c87c8da9bf7f00e1ad18878301c1b",
+      "bytes": 64428,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "motion-contact-sheet.jpg",
+      "sha256": "749fd778234334601fdd4570a91dadd7723e2f02620112988dd34cc8f969db34",
+      "bytes": 44617,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 903
+        }
+      ],
+      "format": {
+        "duration": "0.040000"
+      }
+    },
+    {
+      "file": "paused-wide.png",
+      "sha256": "d112a54448877f38d99ecc8dcbcfaae88d9e3231204268fe57ff1eb7213f69d2",
+      "bytes": 66027,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "peer-page-loader-after.png",
+      "sha256": "57dfe04bd0c4c2b1c3cdad49b483f953a0905966ba57f1bc060b667a50ecedf3",
+      "bytes": 37889,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 672,
+          "height": 733
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "peer-page-loader-breakout.png",
+      "sha256": "c3c7a8f8ed8cfe7cbd0132618413510d5454d65eb380c4178904efbcc2b0715d",
+      "bytes": 39936,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 672,
+          "height": 733
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "peer-recovery-state.png",
+      "sha256": "f4955eff41ca9b2c468665b41593ae91c07ba1cac100e47d3547d1d4efaad5d6",
+      "bytes": 92777,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "playground-destination-progress.png",
+      "sha256": "4fe925d9a72573e5c6ac14e496624eb20309516bcb0ef167a16e40f3addb7def",
+      "bytes": 111732,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "playground-recovery-message.png",
+      "sha256": "90c7dff8c49b5262c82b3e252b7c6fa612084191535a51419c6dabba241f6106",
+      "bytes": 120781,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reduced-motion-playing.png",
+      "sha256": "d5776feab80a492a8521925dafbd92af34aeca287e5eccafc91a87bd56cafeb4",
+      "bytes": 64732,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-site-playing.png",
+      "sha256": "c2f11d3be8b81aaecf0a0e48078e235e1dd05a83cfc1b5fea3de68f3b3b9973d",
+      "bytes": 28608,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-site.png",
+      "sha256": "e4016cf96f1cf8b7f0803c2443171756d19f504cca809df0d57211e8ae63fdb9",
+      "bytes": 28578,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-video-02.png",
+      "sha256": "32085392cf98723fabe8cdc5d8fe25d0d486c5d0b96a28660d2a8a4421a991fe",
+      "bytes": 168770,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 2544,
+          "height": 1624
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-video-13.png",
+      "sha256": "ce622690cd9febee46f8e30d40035a3a3da9dd935e987dd42d6269d68a0f7a77",
+      "bytes": 150973,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 2544,
+          "height": 1624
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-video-19.png",
+      "sha256": "4fb9bc38524465bf44d3c7d80932e4a3a64951d9256b0a34b5db9d78a9f66243",
+      "bytes": 113206,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 2544,
+          "height": 1624
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-video-7.png",
+      "sha256": "e76e3bcc71da7b1e3afff14213da2979aa7fcd622450e48ada134fa245e401d3",
+      "bytes": 160002,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 2544,
+          "height": 1624
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "touch-narrow-paused.png",
+      "sha256": "d8cd9c209157eabf04386f6539a0af511b7e1d0f09e1ec96c80ed27e0d35b077",
+      "bytes": 46466,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 922
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "won-playground.png",
+      "sha256": "2b5a45c515fca16298020efe38a9d6acbe7854ce329f6bbe88080d3375893521",
+      "bytes": 125275,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    }
+  ]
+}
