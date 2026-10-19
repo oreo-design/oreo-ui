@@ -1,0 +1,20 @@
+✔ only one task runs and missing input is skipped (0.842166ms)
+✔ all blocked requests leave the session available for new work (0.082584ms)
+✔ pause and reset reject stale clock ticks, including after restart (0.052708ms)
+✔ pausing an active task schedules the next runnable task without losing progress (0.079875ms)
+✔ answering a blocked task does not preempt active work (0.089375ms)
+✔ partial or oversized answers cannot release a blocked task (0.055292ms)
+✔ reordering preserves task states, context and running identity (0.071083ms)
+✔ removing active work invalidates stale ticks; undo never creates two runners (0.102792ms)
+✔ remove and reverse undo restore exact order (0.091541ms)
+✔ add rejects duplicate IDs including undo history and invalid titles (0.090167ms)
+✔ context edits preserve pause state and queued work (0.055083ms)
+✔ stale IDs and impossible transitions are no-ops (0.035875ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 74.475
