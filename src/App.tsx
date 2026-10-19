@@ -1,3 +1,4 @@
+import { SpacingPage } from "@/pages/spacing/SpacingPage";
 import { MergeWorkspacePage } from "@/patterns/merge-workspace";
 import { MergeReviewDocs } from "@/pages/MergeReviewDocs";
 import { MobileNavigation } from "@/docs/Sidebar";
@@ -209,6 +210,8 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  spacing: SpacingPage,
+  "spacing-guide": SpacingPage,
   "merge-workspace": MergeWorkspacePage, "branch-history": MergeReviewDocs, "merge-status-badge": MergeReviewDocs, "merge-checks": MergeReviewDocs, "change-summary": MergeReviewDocs, "pull-request-card": MergeReviewDocs,
   "ai-remixes": RemixGallery,
  "subscription-workspace":SubscriptionWorkspacePage,"segment-rule-builder":SubscriptionOperationsDocs,"segment-preview":SubscriptionOperationsDocs,"subscription-plan-picker":SubscriptionOperationsDocs,"revenue-target-editor":SubscriptionOperationsDocs,

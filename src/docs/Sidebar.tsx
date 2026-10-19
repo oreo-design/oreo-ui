@@ -10,7 +10,7 @@ type Group = { title: string; items: Item[] };
 const NAV: Group[] = [
   {
     title: "Getting Started",
-    items: [{ label: "AI Remixes", page: "ai-remixes" }, { label: "Changelog", page: "changelog" }],
+    items: [{ label: "Spacing Playground", page: "spacing" }, { label: "Spacing Guide", page: "spacing-guide" }, { label: "AI Remixes", page: "ai-remixes" }, { label: "Changelog", page: "changelog" }],
   },
   {
     title: "Components",
