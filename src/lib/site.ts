@@ -18,6 +18,12 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "adaptive-issues": {title:"Adaptive Issues",description:"Container-aware issue views with compact metadata, aligned columns and accessible resizing."},
+  "adaptive-issue-table": {title:"Adaptive Issue Table",description:"Container-aware issue views with compact metadata, aligned columns and accessible resizing."},
+  "adaptive-issue-row": {title:"Adaptive Issue Row",description:"Container-aware issue views with compact metadata, aligned columns and accessible resizing."},
+  "pull-request-pill": {title:"Pull Request Pill",description:"Container-aware issue views with compact metadata, aligned columns and accessible resizing."},
+  "resize-frame": {title:"Resize Frame",description:"Container-aware issue views with compact metadata, aligned columns and accessible resizing."},
+
   "test-workspace": {title:"Test Workspace",description:"A complete agent test session with streamed results, failure inspection, local fixes and reruns."},
   "test-results": {title:"Test Results",description:"Composable test execution results with Oreo controls and accessible recovery."},
   "test-run-summary": {title:"Test Run Summary",description:"Composable test execution results with Oreo controls and accessible recovery."},

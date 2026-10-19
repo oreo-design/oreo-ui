@@ -1,3 +1,5 @@
+import {AdaptiveIssueTable,AdaptiveIssueRow,PullRequestPill,ResizeFrame} from "@/components/adaptive-issues";
+import {ADAPTIVE_ISSUES} from "@/patterns/adaptive-issues/data";
 import {TestResults,TestRunSummary,TestResultFilters,TestFileGroup,TestFailureDetail,TestStackTrace} from "@/components/test-results";
 import {SAMPLE_TESTS as RESULT_TESTS,COMPLETED_RUN as RESULT_RUN} from "@/patterns/test-workspace/data";
 import { DataFilterPopover, DataSortMenu, RowActionMenu, BulkActionBar, type FilterValues } from "@/components/data-operations";
@@ -187,6 +189,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "adaptive-issues": {AdaptiveIssueTable,AdaptiveIssueRow,PullRequestPill,ResizeFrame},
  "data-operations": { DataFilterPopover, DataSortMenu, RowActionMenu, BulkActionBar },
  "workflow-table": { WorkflowStatusBadge, WorkflowRunBars, WorkflowTable },
  "test-results": {TestResults,TestRunSummary,TestResultFilters,TestFileGroup,TestFailureDetail,TestStackTrace},
@@ -293,6 +296,10 @@ const promptText = "Help me design a thoughtful workspace.";
 
 function parseFilters(raw: string): FilterValues { try { const value = JSON.parse(raw); return value && typeof value === "object" && !Array.isArray(value) ? Object.fromEntries(Object.entries(value).filter((entry): entry is [string, string[]] => Array.isArray(entry[1]) && entry[1].every(v => typeof v === "string"))) : {}; } catch { return {}; } }
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "pull-request-pill": {...define("Pull Request Pill",{state:select(["open","draft","closed","merged"],"open"),number:number(1184,1,99999,1)},v=><PullRequestPill number={v.number} state={v.state}/>),source:"adaptive-issues"},
+ "adaptive-issue-row": {...define("Adaptive Issue Row",{width:number(840,320,1120,10),selected:toggle(false)},(v,set)=><ResizeFrame width={v.width} onWidthChange={w=>set("width",w)}><div className="adapt-table"><ul className="adapt-rows"><AdaptiveIssueRow issue={ADAPTIVE_ISSUES[0]} selected={v.selected} onOpen={()=>set("selected",!v.selected)}/></ul></div></ResizeFrame>),source:"adaptive-issues"},
+ "adaptive-issue-table": {...define("Adaptive Issue Table",{width:number(1120,320,1120,10),scenario:select(["ready","loading","empty","error"],"ready")},(v,set)=><div className="w-full p-4"><ResizeFrame width={v.width} onWidthChange={w=>set("width",w)}><AdaptiveIssueTable issues={v.scenario==="empty"||v.scenario==="loading"?[]:ADAPTIVE_ISSUES} loading={v.scenario==="loading"} error={v.scenario==="error"?"Sample connection interrupted.":undefined} onRetry={()=>set("scenario","ready")}/></ResizeFrame></div>),source:"adaptive-issues"},
+ "resize-frame": {...define("Resize Frame",{width:number(640,320,1120,10)},(v,set)=><div className="w-full p-4"><ResizeFrame width={v.width} onWidthChange={w=>set("width",w)}><div className="rounded-xl border border-border-default p-8 text-sm">Drag the right edge, or focus it and use arrow keys. Requested width: {v.width}px.</div></ResizeFrame></div>),source:"adaptive-issues"},
  "test-results": {...define("Test Results",{scenario:select(["failed","passed","empty","error"],"failed")},v=><div className="w-full max-w-3xl p-4"><TestResults key={v.scenario} run={{...RESULT_RUN,phase:v.scenario==="error"?"error":"complete",error:"Sample runner disconnected.",tests:v.scenario==="empty"?[]:v.scenario==="passed"?RESULT_TESTS.map(t=>t.status==="failed"?{...t,status:"passed",failure:undefined}:t):RESULT_TESTS}}/></div>),source:"test-results"},
  "test-run-summary": {...define("Test Run Summary",{running:toggle(true)},v=><div className="w-full max-w-2xl p-4"><TestRunSummary run={{...RESULT_RUN,phase:v.running?"running":"complete",tests:v.running?RESULT_TESTS.map((t,i)=>i<8?t:{...t,status:i===8?"running":"queued",durationMs:undefined,failure:undefined}):RESULT_TESTS}}/></div>),source:"test-results"},
  "test-result-filters": {...define("Test Result Filters",{filter:select(["all","failed","skipped","slow"],"all")},(v,set)=><TestResultFilters tests={RESULT_TESTS} value={v.filter} onChange={next=>set("filter",next)}/>),source:"test-results"},
