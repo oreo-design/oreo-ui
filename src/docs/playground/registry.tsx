@@ -1,5 +1,4 @@
 import { LinkedDocumentRow, LinkedDocumentsList, LinkedDocumentsSelector, LinkedDocumentDetails } from "@/components/linked-documents";
-import { LinkedDocumentsExample, LinkedDocumentRowExample } from "@/pages/LinkedDocumentsDocs";
 import { SAMPLE_DOCUMENTS } from "@/patterns/unlink-documents/data";
 import { AgentLanes, AgentLaneIdentity, AgentTaskBar, AgentTimelineAxis } from "@/components/agent-lanes";
 import { LANE_AGENTS, LANE_TASKS } from "@/patterns/agent-lanes/data";
@@ -302,11 +301,23 @@ const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, du
 const promptText = "Help me design a thoughtful workspace.";
 
 function parseFilters(raw: string): FilterValues { try { const value = JSON.parse(raw); return value && typeof value === "object" && !Array.isArray(value) ? Object.fromEntries(Object.entries(value).filter((entry): entry is [string, string[]] => Array.isArray(entry[1]) && entry[1].every(v => typeof v === "string"))) : {}; } catch { return {}; } }
+function linkedDocumentPlayground(selector = false): PlaygroundSpec {
+  return {...define(selector ? "Linked Documents Selector" : "Linked Documents", {
+    scenario:select(["ready","loading","error","empty"],"ready"),selected:text("statement"),unlinked:text("")
+  },(v,set)=>{
+    const removed=v.unlinked.split(",").filter(Boolean), documents=SAMPLE_DOCUMENTS.filter(document=>!removed.includes(document.id));
+    const Component=selector?LinkedDocumentsSelector:LinkedDocumentsList;
+    return <div className="w-full max-w-md p-4"><Component documents={v.scenario==="empty"?[]:documents} selectedId={v.selected}
+      onSelect={id=>set("selected",id)} onUnlink={id=>{set("unlinked",[...removed,id].join(","));if(v.selected===id){const i=documents.findIndex(d=>d.id===id),remaining=documents.filter(d=>d.id!==id);set("selected",remaining[Math.min(i,remaining.length-1)]?.id??"");}}}
+      loading={v.scenario==="loading"} error={v.scenario==="error"?"Sample connection interrupted.":undefined} onRetry={()=>set("scenario","ready")}
+      footer={<><span>Original files are kept</span><Button type="tertiary" size="sm" onClick={()=>{if(removed.length){set("unlinked",removed.slice(0,-1).join(","));if(!v.selected)set("selected",removed.at(-1)!);}else{set("selected","statement");set("unlinked","");set("scenario","ready");}}}>{removed.length?"Undo unlink":"Reset"}</Button></>}/></div>;
+  }),source:"linked-documents"};
+}
 export const playgrounds: Record<string, PlaygroundSpec> = {
- "linked-document-row":{...define("Linked Document Row",{name:text("Bank-Statement_1026.pdf"),selected:toggle(true)},v=><LinkedDocumentRowExample name={v.name} selected={v.selected}/>),source:"linked-documents"},
+ "linked-document-row":{...define("Linked Document Row",{name:text("Bank-Statement_1026.pdf"),selected:toggle(true),unlinked:toggle(false)},(v,set)=><div className="w-full max-w-md p-4">{v.unlinked?<div role="status" className="flex items-center justify-between gap-3 text-sm"><span>Document unlinked.</span><Button type="secondary" size="sm" onClick={()=>set("unlinked",false)}>Undo unlink</Button></div>:<LinkedDocumentRow document={{...SAMPLE_DOCUMENTS[0],name:v.name}} index={0} selected={v.selected} onSelect={()=>set("selected",true)} onUnlink={()=>set("unlinked",true)}/>}</div>),source:"linked-documents"},
  "linked-document-details":{...define("Linked Document Details",{name:text("Bank-Statement_1026.pdf")},v=><div className="w-full max-w-sm p-6"><LinkedDocumentDetails document={{...SAMPLE_DOCUMENTS[0],name:v.name}}/></div>),source:"linked-documents"},
- "linked-documents":{...define("Linked Documents",{scenario:select(["ready","loading","error","empty"],"ready")},v=><LinkedDocumentsExample scenario={v.scenario}/>),source:"linked-documents"},
- "linked-documents-selector":{...define("Linked Documents Selector",{scenario:select(["ready","loading","error","empty"],"ready")},v=><LinkedDocumentsExample selector scenario={v.scenario}/>),source:"linked-documents"},
+ "linked-documents":linkedDocumentPlayground(),
+ "linked-documents-selector":linkedDocumentPlayground(true),
  "agent-lane-identity":{...define("Agent Lane Identity",{name:text("Researcher"),model:text("Research model"),status:select(["running","waiting","idle"],"running")},v=><div className="p-6"><AgentLaneIdentity agent={{id:"research",name:v.name,model:v.model}} status={v.status}/></div>),source:"agent-lanes"},
  "agent-task-bar":{...define("Agent Task Bar",{status:select(["running","waiting","done","failed"],"running"),selected:toggle(false),title:text("Customer interviews")},(v,set)=><div className="w-full max-w-lg p-6"><AgentTaskBar task={{...LANE_TASKS[1],title:v.title,status:v.status}} now={0} selected={v.selected} onSelect={()=>set("selected",!v.selected)}/></div>),source:"agent-lanes"},
  "agent-timeline-axis":{...define("Agent Timeline Axis",{minutes:number(30,5,120,5)},v=><div className="w-full pt-12 pr-8"><AgentTimelineAxis minutes={v.minutes}/></div>),source:"agent-lanes"},
