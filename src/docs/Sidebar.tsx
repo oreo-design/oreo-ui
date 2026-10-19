@@ -16,6 +16,14 @@ const NAV: Group[] = [
     title: "Components",
     items: [
       { label: "Button", page: "button" },
+      { label: "Data Filter Popover", page: "data-filter-popover" },
+      { label: "Data Sort Menu", page: "data-sort-menu" },
+      { label: "Row Action Menu", page: "row-action-menu" },
+      { label: "Bulk Action Bar", page: "bulk-action-bar" },
+      { label: "Workflow Status Badge", page: "workflow-status-badge" },
+      { label: "Workflow Run Bars", page: "workflow-run-bars" },
+      { label: "Workflow Table", page: "workflow-table" },
+
       { label: "Release Entry", page: "release-entry" },
       { label: "Upgrade Prompt", page: "upgrade-prompt" },
       { label: "Icon Button", page: "icon-button" },
@@ -251,6 +259,7 @@ const NAV: Group[] = [
   {
     title: "Templates",
     items: [
+      {label:"Workflow Directory",page:"workflow-directory"},
       {label:"Merge Workspace",page:"merge-workspace"},
       { label: "Support Console", page: "support-console" },
       {label:"Project Feed",page:"project-feed"},

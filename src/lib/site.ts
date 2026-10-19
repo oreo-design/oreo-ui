@@ -20,6 +20,15 @@ export type PageMeta = { title: string; description: string };
 export const PAGE_META = {
   spacing: { title: "Spacing Playground", description: "Tune five layers of layout spacing, highlight their boundaries and compare a frozen baseline with your current recipe." },
   "spacing-guide": { title: "Spacing Guide", description: "Oreo layout spacing roles, scoped tokens and composition rules for readable pages." },
+  "data-filter-popover": {title:"Data Filter Popover",description:"A draft filter form with grouped checkboxes, pills, owner selection and explicit apply."},
+  "data-sort-menu": {title:"Data Sort Menu",description:"Field and direction selection with an accessible anchored menu."},
+  "row-action-menu": {title:"Row Action Menu",description:"Composable row actions with nested groups and semantic destructive items."},
+  "bulk-action-bar": {title:"Bulk Action Bar",description:"A selection toolbar with an explicit select-all-matching action."},
+  "workflow-status-badge": {title:"Workflow Status Badge",description:"Text and icon status for live, degraded, failing, draft, paused and archived workflows."},
+  "workflow-run-bars": {title:"Workflow Run Bars",description:"Compact seven-day run bars with a readable count."},
+  "workflow-table": {title:"Workflow Table",description:"A selectable automation table with metrics, owners, actions and loading or empty states."},
+  "workflow-directory": {title:"Workflow Directory",description:"A complete local workflow management template with filters, sorting, nested actions and bulk updates."},
+
   "merge-workspace": {title:"Merge Workspace",description:"A conversational pull request template with branch history, conflict resolution, checks and local merge simulation."},
   "branch-history": {title:"Branch History",description:"A compact commit graph with caller-owned lanes, branch labels and conflict markers."},
   "merge-status-badge": {title:"Merge Status Badge",description:"A semantic PR status capsule for creating, conflicts, checks and completion."},
