@@ -296,3 +296,7 @@ Kevin’s [Unlink Documents](https://x.com/kvnkld/status/2111826634902741219) ex
 ### Continuous Agent Queue
 
 [Isaiah’s reference](https://x.com/eyexayuh/status/2112042083536236933) becomes four reusable components and `/agent-queue-workspace`: append, reorder, pause, inline context and stepped clarification while other tasks continue. Local single-agent execution fixture with deletion/undo and recovery states. [Component contracts](src/patterns/agent-task-queue/README.md) · [Visual review](docs/reviews/agent-task-queue-20261019/REVIEW.md).
+
+### Breakout 404
+
+[Abhisek Mishra’s interactive 404](https://x.com/abhisek_im/status/2112015149569888373) becomes BreakoutNavigator, DestinationProgress and RecoveryMessage plus `/breakout-404`. Play with keyboard, pointer or touch, clear navigation targets, pause/relaunch and take a direct recovery link anytime. [Component contracts](src/patterns/breakout-404/README.md) · [Visual review](docs/reviews/breakout-404-20261019/REVIEW.md).

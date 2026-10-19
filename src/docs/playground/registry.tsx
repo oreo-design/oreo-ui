@@ -1,3 +1,4 @@
+import { BreakoutNavigator, DestinationProgress, RecoveryMessage, BREAKOUT_DESTINATIONS } from "@/components/breakout-navigation";
 import { AgentTaskQueue, QueueTaskRow, TaskClarification, QueuedRequestStack } from "@/components/agent-task-queue";
 import { QUEUE_TASKS, QUEUE_QUESTIONS } from "@/patterns/agent-task-queue/data";
 import { LinkedDocumentRow, LinkedDocumentsList, LinkedDocumentsSelector, LinkedDocumentDetails } from "@/components/linked-documents";
@@ -195,6 +196,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "breakout-navigation": {BreakoutNavigator,DestinationProgress,RecoveryMessage},
  "agent-task-queue": {AgentTaskQueue,QueueTaskRow,TaskClarification,QueuedRequestStack},
  "linked-documents": {LinkedDocumentRow,LinkedDocumentsList,LinkedDocumentsSelector,LinkedDocumentDetails},
  "agent-lanes": {AgentLanes,AgentLaneIdentity,AgentTaskBar,AgentTimelineAxis},
@@ -318,6 +320,9 @@ function linkedDocumentPlayground(selector = false): PlaygroundSpec {
 }
 function queueAnswers(raw:string):Record<string,string>{try{const value=JSON.parse(raw);return value&&typeof value==="object"&&!Array.isArray(value)?Object.fromEntries(Object.entries(value).filter((entry):entry is [string,string]=>typeof entry[1]==="string")):{};}catch{return {};}}
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "breakout-navigator":{...define("Breakout Navigator",{goal:number(8,1,12,1),speed:select(["calm","brisk"],"calm"),trail:toggle(true),count:number(6,0,6,1),resetKey:number(0,0,99,1)},v=><div className="w-full p-5"><BreakoutNavigator destinations={BREAKOUT_DESTINATIONS.slice(0,v.count)} goal={v.goal} speed={v.speed} trail={v.trail} resetKey={v.resetKey}/></div>),source:"breakout-navigation"},
+ "destination-progress":{...define("Destination Progress",{hits:number(3,0,8,1),goal:number(8,1,12,1),compact:toggle(false),count:number(6,0,6,1)},v=><div className="w-full max-w-md p-6"><DestinationProgress destinations={BREAKOUT_DESTINATIONS.slice(0,v.count)} hits={Object.fromEntries(BREAKOUT_DESTINATIONS.map(d=>[d.id,v.hits]))} goal={v.goal} compact={v.compact}/></div>),source:"breakout-navigation"},
+ "recovery-message":{...define("Recovery Message",{title:text("Breakout of the 404 maze"),description:text("This page is missing. Take a detour, or go straight to"),linkLabel:text("components"),eyebrow:text("404 · PAGE NOT FOUND")},v=><div className="w-full p-8"><RecoveryMessage title={v.title} description={v.description} href="/button" linkLabel={v.linkLabel} eyebrow={v.eyebrow}/></div>),source:"breakout-navigation"},
  "queue-task-row":{...define("Queue Task Row",{title:text(QUEUE_TASKS[0].title),status:select(["queued","running","paused","needs-context","done"],"running"),expanded:toggle(false),suspended:toggle(false),removed:toggle(false)},(v,set)=><div className="w-full max-w-xl p-6">{v.removed?<Button type="secondary" onClick={()=>set("removed",false)}>Undo removal</Button>:<QueueTaskRow task={{...QUEUE_TASKS[0],title:v.title,status:v.status}} expanded={v.expanded} suspended={v.suspended} onToggle={()=>set("expanded",!v.expanded)} onPause={()=>set("status","paused")} onResume={()=>set("status","queued")} onRemove={()=>set("removed",true)}><p className="text-sm text-text-secondary">Context is supplied by the host application.</p></QueueTaskRow>}</div>),source:"agent-task-queue"},
  "queued-request-stack":{...define("Queued Request Stack",{expanded:toggle(false),count:number(5,0,5,1)},(v,set)=><div className="w-full max-w-lg p-6"><QueuedRequestStack requests={QUEUE_TASKS.slice(0,v.count)} expanded={v.expanded} onExpandedChange={value=>set("expanded",value)}/></div>),source:"agent-task-queue"},
  "task-clarification":{...define("Task Clarification",{step:number(0,0,2,1),answers:text("{}",true),pending:toggle(false),error:text(""),saved:toggle(false)},(v,set)=><div className="w-full max-w-md p-6"><TaskClarification questions={QUEUE_QUESTIONS} answers={queueAnswers(v.answers)} step={v.step} onChange={answers=>{set("answers",JSON.stringify(answers));set("saved",false);}} onStepChange={step=>set("step",step)} onSubmit={()=>set("saved",true)} pending={v.pending} error={v.error}/>{v.saved&&<p role="status" className="text-sm mt-3">Answers saved in this local preview.</p>}</div>),source:"agent-task-queue"},
