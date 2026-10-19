@@ -1,3 +1,5 @@
+import { AuroraFaq } from "@/patterns/aurora-faq";
+import { AuroraAccordionDocs } from "@/pages/AuroraAccordionDocs";
 import { OutlineBrandFooter } from "@/patterns/outline-brand-footer";
 import { OutlineWordmarkDocs } from "@/pages/OutlineWordmarkDocs";
 import { Breakout404Page } from "@/patterns/breakout-404";
@@ -226,6 +228,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "aurora-faq": AuroraFaq, "aurora-accordion": AuroraAccordionDocs, "aurora-surface": AuroraAccordionDocs,
   "outline-brand-footer": OutlineBrandFooter, "outline-wordmark": OutlineWordmarkDocs, "path-glyph": OutlineWordmarkDocs, "footer-link-groups": OutlineWordmarkDocs,
   "breakout-404": Breakout404Page, "breakout-navigator": BreakoutNavigationDocs, "destination-progress": BreakoutNavigationDocs, "recovery-message": BreakoutNavigationDocs,
   "agent-queue-workspace": AgentQueueWorkspace, "agent-task-queue": AgentTaskQueueDocs, "queue-task-row": AgentTaskQueueDocs, "task-clarification": AgentTaskQueueDocs, "queued-request-stack": AgentTaskQueueDocs,

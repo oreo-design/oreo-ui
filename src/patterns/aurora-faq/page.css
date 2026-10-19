@@ -1,0 +1,83 @@
+.aurora-faq {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+}
+.aurora-faq a:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 4px;
+}
+.aurora-faq-header,
+.aurora-faq-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 6) calc(var(--spacing) * 10);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+.aurora-faq-header a:hover,
+.aurora-faq-footer a:hover {
+  color: var(--color-text-primary);
+}
+.aurora-faq-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--spacing) * 16) calc(var(--spacing) * 6);
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--color-border-subtle) 40%, transparent) 0.75px,
+    transparent 0.75px
+  );
+  background-size: 24px 24px;
+}
+.aurora-faq-intro {
+  text-align: center;
+  margin-bottom: calc(var(--spacing) * 10);
+  max-width: 28rem;
+}
+.aurora-faq-intro h1 {
+  font-size: var(--text-4xl);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-block: calc(var(--spacing) * 4);
+}
+.aurora-faq-intro p {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+.aurora-faq-note {
+  margin-top: calc(var(--spacing) * 10);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  text-align: center;
+  line-height: 1.8;
+}
+.aurora-faq-note a {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 640px) {
+  .aurora-faq-header,
+  .aurora-faq-footer {
+    padding: calc(var(--spacing) * 5);
+  }
+  .aurora-faq-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .aurora-faq-stage {
+    padding: calc(var(--spacing) * 10) calc(var(--spacing) * 5);
+  }
+  .aurora-faq-intro h1 {
+    font-size: var(--text-3xl);
+  }
+}

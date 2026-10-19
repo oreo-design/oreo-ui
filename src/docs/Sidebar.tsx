@@ -151,6 +151,8 @@ const NAV: Group[] = [
       {label:"Agent Run Card",page:"agent-run-card"},
       {label:"Agent Run Activity",page:"agent-run-activity"},
       {label:"Agent Inbox Board",page:"agent-inbox-board"},
+      {label:"Aurora Accordion",page:"aurora-accordion"},
+      {label:"Aurora Surface",page:"aurora-surface"},
       {label:"Outline Wordmark",page:"outline-wordmark"},
       {label:"Path Glyph",page:"path-glyph"},
       {label:"Footer Link Groups",page:"footer-link-groups"},
@@ -284,6 +286,7 @@ const NAV: Group[] = [
     title: "Templates",
     items: [
       {label:"Workflow Directory",page:"workflow-directory"},
+      {label:"Aurora FAQ",page:"aurora-faq"},
       {label:"Outline Brand Footer",page:"outline-brand-footer"},
       {label:"Breakout 404",page:"breakout-404"},
       {label:"Agent Queue Workspace",page:"agent-queue-workspace"},

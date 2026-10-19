@@ -18,6 +18,9 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "aurora-faq": { title: "Aurora FAQ", description: "A complete studio FAQ with softly lit, separating answer cards." },
+  "aurora-accordion": { title: "Aurora Accordion", description: "Single-open answers with joined rows and a softly lit active card." },
+  "aurora-surface": { title: "Aurora Surface", description: "An independent, theme-aware multicolor edge surface." },
   "outline-brand-footer": { title: "Outline Brand Footer", description: "A complete footer with interactive vector lettering and grouped navigation." },
   "outline-wordmark": { title: "Outline Wordmark", description: "Independent contour-letter highlights for pointer, keyboard and touch." },
   "path-glyph": { title: "Path Glyph", description: "A vector glyph with contour nodes and independent highlight properties." },
