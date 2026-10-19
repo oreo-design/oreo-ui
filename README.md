@@ -300,3 +300,7 @@ Kevin’s [Unlink Documents](https://x.com/kvnkld/status/2111826634902741219) ex
 ### Breakout 404
 
 [Abhisek Mishra’s interactive 404](https://x.com/abhisek_im/status/2112015149569888373) becomes BreakoutNavigator, DestinationProgress and RecoveryMessage plus `/breakout-404`. Play with keyboard, pointer or touch, clear navigation targets, pause/relaunch and take a direct recovery link anytime. [Component contracts](src/patterns/breakout-404/README.md) · [Visual review](docs/reviews/breakout-404-20261019/REVIEW.md).
+
+### Outline brand footer
+
+`/outline-brand-footer` composes OutlineWordmark, PathGlyph and FooterLinkGroups. Contour nodes, per-letter hover/focus/touch highlights, quiet release fades and real footer navigation. Independent Playgrounds and four-part component docs; reference by @creativestefan via uiinspoo.

@@ -1,0 +1,814 @@
+{
+  "reference": "https://x.com/uiinspoo/status/2112107576234295718",
+  "baseline": "c8f995763d0f2772f3d42d4bd50c42bd45d4b2f3",
+  "source": "1c03fe3d98b67e8bcaf45693594e0d5a7dbb96c2",
+  "source_files": {
+    "README.md": "5ce72dce52f306771d08b9cb1ead905923c2c9807380e79256a57713eb58ffa1",
+    "src/App.tsx": "2333056f1fe2892ffa9baff6cfff2392594cf98b82f7f03359c99306cfd4e70d",
+    "src/components/outline-wordmark/FONT-LICENSE.txt": "3b0a5fca3d17942cde889069889dedbbbd075e9b599968c82a95f4d944e9b345",
+    "src/components/outline-wordmark/glyphs.ts": "4ab76b5142a38262e4673a482814e50ae9ccec8dfb21e4ae62c2a90efd6e55fd",
+    "src/components/outline-wordmark/index.tsx": "46038df44c1052ca341fc07ca1c5bca9236a11f82bb13fc19c2017bb5eb2c3bb",
+    "src/components/outline-wordmark/outline-wordmark.css": "415b90dd23211a19a99e749364bb75e97b17f0edee6511f7a547c62d6ebc7570",
+    "src/components/outline-wordmark/types.ts": "d144d0fc3ce16bb6dd849326186e8b3e9e8af374a140083d850ce66ebaa7fa2b",
+    "src/docs/Sidebar.tsx": "a4083a8c21bd89195528f3c1a2daf3e3a28a15fc8cbec1661ebe2a0fdda228ed",
+    "src/docs/playground/registry.tsx": "14d3318fd2df5f06b0c51cb441e243673c6a43771255bb58c1f53a99b4a6ebcc",
+    "src/lib/site.ts": "ceff14eebcc92e8036b1223c3e31506aebbf1089890e60f65b6fb6d9b00cc777",
+    "src/pages/OutlineWordmarkDocs.tsx": "6e9fa72ea0c6345a8d7b40248dc93b7622e5802d94273605c80f9c75808973a2",
+    "src/patterns/outline-brand-footer/README.md": "f959cf5604fb6b8bab86dc76dfbcd726f51728d4ddf10fef4e3f75be22926240",
+    "src/patterns/outline-brand-footer/index.tsx": "5dc14afce328af78c660897a21dc1ba48f087e2d753b74ccb50897411ac3de72",
+    "src/patterns/outline-brand-footer/page.css": "714e3027a0ca4cb6d5286235cede6715e0b7ec8b6efe080d68cfcf71329f1113"
+  },
+  "environment": "Chrome, Playwriter 9, local English fixture, final production localhost:5193; baseline source-equivalent localhost:5192",
+  "media": [
+    {
+      "file": "after-medium-dark.png",
+      "sha256": "5bbffc5e22d93a94eea33f338ca73f64f142074f9d4133ed6bf29822a345fe4d",
+      "bytes": 60561,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 900,
+          "height": 1056
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "after-medium-light.png",
+      "sha256": "369df839b8ce5b073e9c06c57f2e6b83c64a6ca7c9f1f526d3f0ca09442ea1f8",
+      "bytes": 60747,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 900,
+          "height": 1056
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "after-narrow-dark.png",
+      "sha256": "51668fbbe6b860f1618400d8676ccd9689a7c393f88b359261c755ef4f4dd777",
+      "bytes": 46112,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 900
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "after-narrow-light.png",
+      "sha256": "902fe51c9ae331cc6cad36a142c408668269fadb6db0b5fbbc2147d3dbc7d8d2",
+      "bytes": 46570,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 900
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "after-wide-dark.png",
+      "sha256": "f4f8627b2b14db6cf5fba09b91335f9d43b30bb153b106ec84d8f17eb02d33b9",
+      "bytes": 64481,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "after-wide-light.png",
+      "sha256": "5f614bc8a7bc409384110d094caae0e718bc8e313594eaa639865c775b9948a9",
+      "bytes": 64688,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "baseline-production-narrow.png",
+      "sha256": "2dd2264f463ce472ed3eabde85fb536ef4140dc42c5f8b4fd9195d50e66a75ea",
+      "bytes": 46589,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 1594
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "baseline-production-wide.png",
+      "sha256": "a607a1f398f28f10d6a6af2fb638963a9679c2d2d26ae498be3175f8e6c676ee",
+      "bytes": 93550,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "before-narrow.png",
+      "sha256": "4368792cceee895ef4d9064b63a527e02aaa6a08d34dcaf4cab103689a629331",
+      "bytes": 46724,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 1594
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "before-wide.png",
+      "sha256": "f92767b6377601e8f26b848dc1bf38c3c985d2d3edddca94e61fe52580724c4d",
+      "bytes": 93756,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "code-footer-link-groups.png",
+      "sha256": "f4d0ab27b794630a916504975877246f6f15430588eb1a4d56719677cda1e172",
+      "bytes": 153300,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "code-outline-wordmark.png",
+      "sha256": "b9016d5ede0180446f6407dd4904a7a37380559081d808f543864aecf7e6e084",
+      "bytes": 654510,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 2712
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "code-path-glyph.png",
+      "sha256": "4d521d66a4f5ae993c95dd3e15a82338408bc85031c5951c91060ab774475568",
+      "bytes": 126375,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "compact-footer-links.png",
+      "sha256": "30ffc69e4b6a17ed30522c37325880e9a9856fc8b5d4fc410bb7917c0bdaeae0",
+      "bytes": 107777,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "docs-footer-link-groups.png",
+      "sha256": "2b933de635fa6341821cbeefef2ad19452ae42623d02935860c754b160b8f38f",
+      "bytes": 366915,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 2564
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "docs-outline-wordmark.png",
+      "sha256": "e068e2df6ba864558cb4fa0c559e3738ff35c02293d65c631f7b701879420053",
+      "bytes": 370012,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 2600
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "docs-path-glyph.png",
+      "sha256": "21c9ed40ac2c11984764b781b124a3b66cc4cb2fd106a4e9aabebc34a8243fc0",
+      "bytes": 360747,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 2623
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "empty-wordmark.png",
+      "sha256": "bac7f4fe005151d8b8edb3431f45c61e1ca051864720c345c2c108c8dbad7576",
+      "bytes": 113809,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-empty-wordmark.png",
+      "sha256": "18d1313e7734f0ae3bde6c5021c560b03a67849091cf21219d17958b878827f3",
+      "bytes": 115190,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-hover.png",
+      "sha256": "148538e6bcfc6d6de2bb34add851c3a66ff5a92a904bc6eb8c00d047da184e65",
+      "bytes": 62173,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-medium-dark.png",
+      "sha256": "4cbaced85865684633b94ea386318fa6e0c2e294a834e3c99e82ff59f56050f4",
+      "bytes": 59347,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 900,
+          "height": 1056
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-medium-light.png",
+      "sha256": "7be0fe5c769468a5609904213d2de702e1cd95d7e2f0519f321c897bb653f6f8",
+      "bytes": 59497,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 900,
+          "height": 1056
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-narrow-dark.png",
+      "sha256": "9c708fca9c0a9c154113fde77572c52da3902438b735bdc28c6f396f2e3f4b1c",
+      "bytes": 46584,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 900
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-narrow-light.png",
+      "sha256": "ae5c6772365d89cc5983f27ac2de8e7dd70058553737e3434c9c48a67498f3e0",
+      "bytes": 46126,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 900
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-path-glyph.png",
+      "sha256": "0300a961b7dba28a05c99ed5cdc8c4da31ca878bb16d7d7011ee930e871c284f",
+      "bytes": 93453,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-reduced-motion.png",
+      "sha256": "148538e6bcfc6d6de2bb34add851c3a66ff5a92a904bc6eb8c00d047da184e65",
+      "bytes": 62173,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-studio-revealed.png",
+      "sha256": "f27ad0e91f79a5f9560ed8369e794a67d6c74d4e8d8467e9257499ca6c14cd13",
+      "bytes": 118497,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-studio.png",
+      "sha256": "9f97d173cd4446421b834b9169fd68304996212128e22332e0b1d1eedbd2023f",
+      "bytes": 120801,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-wide-dark.png",
+      "sha256": "14a9dc96099873f45ca4b0d2a075b322d3365846c9988a239a0448c34c28093b",
+      "bytes": 62812,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "final-wide-light.png",
+      "sha256": "6f4f3e0d51d639c14d37211473109aa52551c36acf059d4aa1936090dc52580e",
+      "bytes": 63067,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "held-wide.png",
+      "sha256": "007ae897cdfe934cfdd360cc0ed2c19313ad2f0b15a12dd62a142de03d329a0a",
+      "bytes": 66553,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "initial-hover.png",
+      "sha256": "be535de958ba0973372dc933662ebd999333091cab199da05877bd5fd161edbc",
+      "bytes": 63386,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "initial-wide.png",
+      "sha256": "645c73008bd886e63f8f1cda7feaadf4ef144ab616a92c1c19b100f03f165ce9",
+      "bytes": 64022,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "interaction-original.mp4",
+      "sha256": "1c870a343e595fb789ce23f9806c1081a74d730d6a55c552edf95a6ca7aa9c4b",
+      "bytes": 224206,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {
+        "duration": "6.766667"
+      }
+    },
+    {
+      "file": "interaction.mp4",
+      "sha256": "678479c86dc5d5fecbf3665ca8200afbc45d35ed246d34bcf0ff6b196ed4d020",
+      "bytes": 219916,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 904
+        }
+      ],
+      "format": {
+        "duration": "6.766667"
+      }
+    },
+    {
+      "file": "keyboard-wide.png",
+      "sha256": "1374b450bf8b11cd779a0b7d27dceedb3ce75533a8675858d1f0078d6ad49a34",
+      "bytes": 66892,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "motion-contact-sheet.jpg",
+      "sha256": "cb5c8aba78683d1ae8a4456935a5a48569bf69d6227ac240e56ee8658cd44417",
+      "bytes": 69631,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1204
+        }
+      ],
+      "format": {
+        "duration": "0.040000"
+      }
+    },
+    {
+      "file": "peer-brand-guide.png",
+      "sha256": "e1bef07b39176ce23c754c399ffbf53488e7602a4ad49b11ba6c845c93cd71ec",
+      "bytes": 409789,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 5353
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "peer-icon-footer.png",
+      "sha256": "cc7236ebce811cd09fba196973c5babb82b3c89ac41da1aa81bfa89066461c09",
+      "bytes": 27089,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 672,
+          "height": 548
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "playground-footer-link-groups.png",
+      "sha256": "1f96672f3ad2098a663eb4c6d26c6ec06350a40743672d924cbeaf53ec03096b",
+      "bytes": 106039,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "playground-outline-wordmark.png",
+      "sha256": "518718a9598bab05f5c3667ed3957d33f75c12932ea172b0c018d7b1973ddc50",
+      "bytes": 117748,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "playground-path-glyph.png",
+      "sha256": "bc7bdce54e5c42c97d4ef448a7e39592a15c76bf2084fad28b556010e8a72990",
+      "bytes": 116503,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1312
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reduced-motion-corrected.png",
+      "sha256": "10e8c0cd7064ba276e407de5c825ee8798fafaf5b1b15f0087730416f4613841",
+      "bytes": 62398,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reduced-motion-hover.png",
+      "sha256": "31c158571068314c99d828eb54797b6185ebbe374b5911166e09a27f24dd5760",
+      "bytes": 63565,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reduced-motion-rest.png",
+      "sha256": "acc0d74ad7355b482179ba175024c962d615cde4743d7f7de635ad3c10999bd0",
+      "bytes": 64198,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-0-7.png",
+      "sha256": "4b6675a81e3ed854a7b54aabe40ab8b2164c1a052239675550e88f366ee4ebc1",
+      "bytes": 130827,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1200,
+          "height": 850
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-0.png",
+      "sha256": "e136d91557fd022c0778b2b18a899b6e1fe001f19277d6b52b421a536c6ac121",
+      "bytes": 128769,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1200,
+          "height": 850
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-1-5.png",
+      "sha256": "70de20c0d6784f520114ed104d4fb1c9370753c6e750add866270b48dce2ed69",
+      "bytes": 144320,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1200,
+          "height": 850
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-10.png",
+      "sha256": "3a6bd444376eb15a2cee3fab6e12cfd4bb1aa0b5bd1d2e5a6132d2801d8169ee",
+      "bytes": 130933,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1200,
+          "height": 850
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-2-5.png",
+      "sha256": "af458dc2bf44b3b2f55841168a6957a57d38b6f55053c41d7b5af51cc3506505",
+      "bytes": 146346,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1200,
+          "height": 850
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-4.png",
+      "sha256": "6d725edae7e9c54d7b45f54caa53ef4d642a2d65dafeedd96aaa86d6d71d0bce",
+      "bytes": 140831,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1200,
+          "height": 850
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-6.png",
+      "sha256": "8bc5de228b1e70e941dd33327ce43fd20536a38cd824a5e1bc9e0123334189b9",
+      "bytes": 141302,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1200,
+          "height": 850
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "reference-8.png",
+      "sha256": "2a4155811a198c9716aa4164342caaa37c254d7a457522c76db06e8554327a45",
+      "bytes": 145439,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1200,
+          "height": 850
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "revealed-studio.png",
+      "sha256": "bc5f144f25bb4cde0b401d822196a1f1921d2d731de8e9ea58ea4a0c2206ae80",
+      "bytes": 116102,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "studio-artwork.png",
+      "sha256": "2fac9bd56c48ba671805e6239bc73430d1e230a7b6e8ff848c63ea636bae9b05",
+      "bytes": 118902,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1440,
+          "height": 1000
+        }
+      ],
+      "format": {}
+    },
+    {
+      "file": "touch-narrow.png",
+      "sha256": "921f92ebeaf5b96a2ef092b23dc92cfdf399bb89ee2d517c366eabf51dd14699",
+      "bytes": 45939,
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 390,
+          "height": 900
+        }
+      ],
+      "format": {}
+    }
+  ]
+}
