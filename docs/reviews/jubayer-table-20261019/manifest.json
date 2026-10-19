@@ -1,0 +1,47 @@
+{
+  "reference": "https://x.com/jubayer6910/status/2111721342316020098",
+  "baseline": "b89172c92fbd2f4043f8b988dd2dfad18bbd2c09",
+  "captureDate": "2026-10-19",
+  "environment": {
+    "preview": "http://localhost:5183/workflow-directory",
+    "browser": "Chrome via Playwriter session 12",
+    "locale": "en-US",
+    "fixtures": "WORKFLOWS; browser-local mutations only",
+    "viewports": [
+      "1440x1000",
+      "1440x1360 recording",
+      "768x1024",
+      "390x844"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ]
+  },
+  "sourceHashes": {
+    "src/App.tsx": "07b6cbb37661dbb61be7913735b33e6a6c2fa970e65cfdd85084bdcdf71ba967",
+    "src/docs/Sidebar.tsx": "e7783699afe221d7f0ade330e164963443a7102413d040bc90592ae9a04b9439",
+    "src/docs/playground/registry.tsx": "162d039c87f31c36158a1a815237df8b0967ab8a2418486c62b4458fe57fe5f2",
+    "src/lib/site.ts": "c3a92286ae4047f3ca5cb4ac388a674d899cc212fd62447b5f21d1db8786e32d",
+    "src/pages/DataOperationsDocs.tsx": "3127a32e339c01d35e5c0790869f0113c01d96d72e1853c7f7d869c87df86908",
+    "src/components/data-operations/index.tsx": "430702bc694719f368a20be3ef5aabf9342cb11f4ed8b47cd09d4a9279180865",
+    "src/components/data-operations/data-operations.css": "56751e1907f02cd390283566787b368ad2dd5593662dd2a42d787cbccf4f7b1f",
+    "src/components/workflow-table/index.tsx": "44b58ea11e899ad96be531cf8ac692d3a4919397806cedc641804cf481dcbef3",
+    "src/components/workflow-table/model.test.ts": "649dff2c70293451ac05d821ab5a30243ad7520ef1d3cac882ed41970bb4a1d3",
+    "src/components/workflow-table/workflow-table.css": "5f8e8772c5b766bba1f12069e4cb41c9149d13d7f163aeaa7d7007a8e69a137c",
+    "src/components/workflow-table/model.ts": "c7c07b5f8644664d8fa911bdcdca567e397a26e00386c814e5ac6a74f36dc7bc",
+    "src/patterns/workflow-directory/index.tsx": "0dfb9f0159c0977ab120d5e8ba8b8bced991946fd04e14d42c2eda42d6f789a3",
+    "src/patterns/workflow-directory/data.ts": "f644ec537e4ce1a7d44f31c76401dd45084ab1bee2888d0ecc02de61f035f950",
+    "src/patterns/workflow-directory/README.md": "5dfc75aa664fdbf1a4ca1efeb86d1347e3a6642150cf9a12c08b043581081edd",
+    "src/patterns/workflow-directory/workspace.css": "66aab5a304653c20de548e2b3e15287b9670f7594e0078be8703ce58783af82e"
+  },
+  "recording": {
+    "original": "interaction-original.mp4",
+    "final": "interaction-clean.mp4",
+    "originalDimensions": "1440x1360",
+    "finalDimensions": "1440x1232",
+    "durationSeconds": 8.066667,
+    "fps": 30,
+    "crop": "Top 128px removed to exclude automation toolbar and its shadow; original retained. No retiming."
+  }
+}

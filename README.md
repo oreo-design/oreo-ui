@@ -18,6 +18,8 @@ A small, copy-paste React component library that reproduces the **Oreo UI** desi
 
 ## What's inside
 
+- **Data operations + Workflow Directory** — draft filters, sorting, nested row actions, cross-page bulk selection, workflow status/run metrics and a complete local management template. [Composition and source breakdown](src/patterns/workflow-directory/README.md).
+
 - **Connection State + Calendar Sync** — a reusable integration stack, controlled empty/sync/success/error states, grouped meeting disclosures and a complete first-connection template. [Composition and source breakdown](src/patterns/calendar-sync/README.md).
 
 - **Button** — `primary` / `secondary` / `tertiary` variants, `danger` flag, leading/trailing icons, Material-style state-layer hover/press, and a tunable Motion spring on press.

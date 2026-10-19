@@ -1,3 +1,6 @@
+import { DataFilterPopover, DataSortMenu, RowActionMenu, BulkActionBar, type FilterValues } from "@/components/data-operations";
+import { WorkflowStatusBadge, WorkflowRunBars, WorkflowTable, workflowRows } from "@/components/workflow-table";
+import { WORKFLOWS, SORT_OPTIONS, workflowFilterGroups, FOLDERS } from "@/patterns/workflow-directory/data";
 import { BranchHistory, MergeStatusBadge, MergeChecks, ChangeSummary, PullRequestCard, initialMergeRun } from "@/components/merge-review";
 import { COMMITS as MERGE_COMMITS, MERGE_TITLE, SAMPLE_DIFF as MERGE_DIFF, commitsFor, checksFor } from "@/patterns/merge-workspace/data";
 import {TaskScheduleChip,TaskCalendar,TaskTimeline} from "@/components/task-schedule";
@@ -182,6 +185,8 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "data-operations": { DataFilterPopover, DataSortMenu, RowActionMenu, BulkActionBar },
+ "workflow-table": { WorkflowStatusBadge, WorkflowRunBars, WorkflowTable },
  "merge-review": { BranchHistory, MergeStatusBadge, MergeChecks, ChangeSummary, PullRequestCard },
  "subscription-operations":{SegmentRuleBuilder,SegmentPreview,SubscriptionPlanPicker,RevenueTargetEditor},
  "issue-browser":{IssueRow,IssueQueue,IssueReader},
@@ -283,7 +288,15 @@ const color = select(PALETTE, "default");
 const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, duration: { ...number(.3, .1, 1, .05), group: "Press spring" }, tapScale: { ...number(.96, .8, 1, .01), group: "Press spring" } };
 const promptText = "Help me design a thoughtful workspace.";
 
+function parseFilters(raw: string): FilterValues { try { const value = JSON.parse(raw); return value && typeof value === "object" && !Array.isArray(value) ? Object.fromEntries(Object.entries(value).filter((entry): entry is [string, string[]] => Array.isArray(entry[1]) && entry[1].every(v => typeof v === "string"))) : {}; } catch { return {}; } }
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "data-filter-popover": {...define("Data Filter Popover", {selection:text("{}")}, (v,set)=><DataFilterPopover groups={workflowFilterGroups(WORKFLOWS)} value={parseFilters(v.selection)} onApply={next=>set("selection",JSON.stringify(next))} resultCount={draft=>workflowRows(WORKFLOWS,{filters:draft}).length}/>),source:"data-operations"},
+ "data-sort-menu": {...define("Data Sort Menu", {field:select(["edited","name","runs","success","owner"],"edited"),direction:select(["asc","desc"],"desc")},(v,set)=><DataSortMenu options={SORT_OPTIONS} value={{key:v.field,direction:v.direction}} onChange={s=>{set("field",s.key as "edited" | "name" | "runs" | "success" | "owner");set("direction",s.direction);}}/>),source:"data-operations"},
+ "row-action-menu": {...define("Row Action Menu", {lastAction:text("None")},(v,set)=><div className="flex items-center gap-4"><span className="text-sm text-text-secondary">Last action: {v.lastAction}</span><RowActionMenu label="Workflow actions" actions={[{id:"open",label:"Open workflow",icon:"columns"},{id:"duplicate",label:"Duplicate",icon:"copy"},{id:"move",label:"Move to folder",icon:"folder",children:FOLDERS.map(f=>({id:f,label:f,icon:"folder" as const}))},{id:"archive",label:"Archive",icon:"folder",danger:true,separatorBefore:true}]} onAction={id=>set("lastAction",id)}/></div>),source:"data-operations"},
+ "bulk-action-bar": {...define("Bulk Action Bar", {count:number(3,0,15),notice:text("")},(v,set)=><div className="p-4"><BulkActionBar count={v.count} total={15} onSelectAll={()=>set("count",15)} onClear={()=>set("count",0)}><Button type="secondary" size="sm" onClick={()=>set("notice","Paused selected sample rows")}>Pause</Button><Button type="secondary" danger size="sm" onClick={()=>{set("count",0);set("notice","Archived selected sample rows");}}>Archive</Button></BulkActionBar><p role="status" className="mt-3 text-xs text-text-secondary">{v.notice}</p></div>),source:"data-operations"},
+ "workflow-status-badge": {...define("Workflow Status Badge",{status:select(["Live","Degraded","Failing","Draft","Paused","Archived"],"Live")},v=><WorkflowStatusBadge status={v.status}/>),source:"workflow-table"},
+ "workflow-run-bars": {...define("Workflow Run Bars",{total:number(4812,0,10000),failing:toggle(false)},v=><WorkflowRunBars values={[4,6,7,6,8,7,10]} total={v.total} failing={v.failing}/>),source:"workflow-table"},
+ "workflow-table": {...define("Workflow Table",{state:select(["ready","loading","empty","error"],"ready"),selection:text("")},(v,set)=><div className="w-full p-4"><WorkflowTable rows={v.state==="ready"?WORKFLOWS.slice(0,5):[]} selected={v.selection.split(",").filter(Boolean)} onSelectionChange={ids=>set("selection",ids.join(","))} loading={v.state==="loading"} error={v.state==="error"?"Sample request failed.":undefined} onReset={()=>set("state","ready")}/></div>),source:"workflow-table"},
   "branch-history": {...define("Branch History", {empty:toggle(false),merged:toggle(false),selected:text("")}, (v,set)=><div className="w-full max-w-3xl p-4"><BranchHistory commits={v.empty?[]:MERGE_COMMITS} merged={v.merged} selectedId={v.selected} onSelect={commit=>set("selected",commit.id)}/></div>),source:"merge-review"},
   "merge-status-badge": {...define("Merge Status Badge", {phase:select(["creating","conflicts","resolving","checking","ready","merging","merged","error"],"conflicts"),number:number(128,1,9999),conflicts:number(3,0,99)},v=><MergeStatusBadge phase={v.phase} number={v.number} conflicts={v.conflicts}/>),source:"merge-review"},
   "merge-checks": {...define("Merge Checks", {phase:select(["checking","ready","error"],"ready")},v=><MergeChecks checks={checksFor({...initialMergeRun,phase:v.phase,checksPassed:v.phase==="ready"?4:1,resolved:3})}/>),source:"merge-review"},

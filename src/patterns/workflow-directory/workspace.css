@@ -1,0 +1,339 @@
+.wdir-page {
+  min-height: 100dvh;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  padding-bottom: calc(var(--spacing) * 28);
+}
+.wdir-top {
+  height: calc(var(--spacing) * 18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 calc(var(--spacing) * 8);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.wdir-brand,
+.wdir-top > div,
+.wdir-top a {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+}
+.wdir-brand {
+  font-weight: 600;
+}
+.wdir-brand span {
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+  border-left: 1px solid var(--color-border-default);
+  padding-left: calc(var(--spacing) * 3);
+}
+.wdir-top > div > a {
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+}
+.wdir-page main {
+  max-width: 1600px;
+  padding: calc(var(--spacing) * 10) calc(var(--spacing) * 8);
+  margin: auto;
+}
+.wdir-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 8);
+}
+.wdir-eyebrow {
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  margin-bottom: calc(var(--spacing) * 3);
+}
+.wdir-heading h1 {
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: calc(var(--spacing) * 2);
+}
+.wdir-heading p:not(.wdir-eyebrow) {
+  color: var(--color-text-secondary);
+}
+.wdir-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+  flex-wrap: wrap;
+}
+.wdir-tabs {
+  display: flex;
+  gap: var(--spacing);
+  padding: var(--spacing);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-control-large);
+  max-width: 100%;
+  overflow-x: auto;
+}
+.wdir-tabs button {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  white-space: nowrap;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  border-radius: var(--radius-control);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: var(--text-xs);
+}
+.wdir-tabs button[aria-pressed="true"] {
+  background: var(--color-bg-surface);
+  box-shadow: 0 0 0 1px var(--color-border-subtle);
+  color: var(--color-text-primary);
+}
+.wdir-tabs span {
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+.wdir-tools {
+  display: flex;
+  gap: calc(var(--spacing) * 2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.wdir-search {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  color: var(--color-text-tertiary);
+}
+.wdir-search input {
+  min-width: 0;
+  width: calc(var(--spacing) * 40);
+  outline: none;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-size: var(--text-xs);
+}
+.wdir-search:focus-within {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}
+.wdir-search kbd {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control-tiny);
+  padding-inline: var(--spacing);
+  font-size: var(--text-xs);
+}
+.wdir-context {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4) 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+.wdir-context label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+  color: var(--color-text-secondary);
+}
+.wdir-context select {
+  background: transparent;
+  color: var(--color-text-secondary);
+  max-width: calc(var(--spacing) * 40);
+}
+.wdir-context option {
+  background: var(--color-bg-base);
+}
+.wdir-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 4) 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+.wdir-pagination > div {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+}
+.wdir-notice {
+  min-height: calc(var(--spacing) * 10);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.wdir-footer {
+  margin-top: calc(var(--spacing) * 4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+.wdir-footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.wdir-bulk {
+  position: fixed;
+  bottom: calc(var(--spacing) * 6);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+}
+.wdir-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--color-border-default);
+  backdrop-filter: blur(4px);
+  z-index: 60;
+}
+.wdir-dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 61;
+  width: calc(var(--spacing) * 112);
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  box-shadow: var(--shadow-overlay);
+  padding: calc(var(--spacing) * 6);
+  outline: none;
+}
+.wdir-dialog header,
+.wdir-dialog footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+}
+.wdir-dialog h2 {
+  font-weight: 600;
+  font-size: var(--text-lg);
+}
+.wdir-description {
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  margin: calc(var(--spacing) * 3) 0;
+}
+.wdir-dialog form,
+.wdir-detail {
+  display: grid;
+  gap: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 5);
+}
+.wdir-dialog label {
+  display: grid;
+  gap: calc(var(--spacing) * 2);
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+.wdir-dialog input,
+.wdir-dialog select {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-weight: 400;
+}
+.wdir-detail {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+.wdir-detail > span {
+  justify-self: start;
+}
+.wdir-detail > p {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.wdir-page :focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}
+.wdir-page h1:focus {
+  outline: none;
+}
+@media (max-width: 900px) {
+  .wdir-page main {
+    padding: calc(var(--spacing) * 6) calc(var(--spacing) * 5);
+  }
+  .wdir-top {
+    padding-inline: calc(var(--spacing) * 5);
+  }
+  .wdir-toolbar {
+    align-items: stretch;
+  }
+  .wdir-tools {
+    width: 100%;
+  }
+  .wdir-search {
+    flex: 1;
+  }
+  .wdir-search input {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .wdir-top {
+    height: calc(var(--spacing) * 15);
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .wdir-top > div > a,
+  .wdir-brand span {
+    display: none;
+  }
+  .wdir-page main {
+    padding: calc(var(--spacing) * 6) calc(var(--spacing) * 4);
+  }
+  .wdir-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: calc(var(--spacing) * 6);
+  }
+  .wdir-heading h1 {
+    font-size: var(--text-2xl);
+  }
+  .wdir-search {
+    flex-basis: 100%;
+  }
+  .wdir-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .wdir-pagination > div {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .wdir-context {
+    flex-wrap: wrap;
+  }
+  .wdir-bulk {
+    bottom: calc(var(--spacing) * 3);
+  }
+  .wdir-page:has(.data-bulk-bar) {
+    padding-bottom: calc(var(--spacing) * 60);
+  }
+}

@@ -1,4 +1,6 @@
 import { SpacingPage } from "@/pages/spacing/SpacingPage";
+import { WorkflowDirectoryPage } from "@/patterns/workflow-directory";
+import { DataOperationsDocs } from "@/pages/DataOperationsDocs";
 import { MergeWorkspacePage } from "@/patterns/merge-workspace";
 import { MergeReviewDocs } from "@/pages/MergeReviewDocs";
 import { MobileNavigation } from "@/docs/Sidebar";
@@ -212,6 +214,7 @@ import { applyRouteMeta } from "@/lib/head";
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   spacing: SpacingPage,
   "spacing-guide": SpacingPage,
+  "workflow-directory": WorkflowDirectoryPage, "data-filter-popover": DataOperationsDocs, "data-sort-menu": DataOperationsDocs, "row-action-menu": DataOperationsDocs, "bulk-action-bar": DataOperationsDocs, "workflow-status-badge": DataOperationsDocs, "workflow-run-bars": DataOperationsDocs, "workflow-table": DataOperationsDocs,
   "merge-workspace": MergeWorkspacePage, "branch-history": MergeReviewDocs, "merge-status-badge": MergeReviewDocs, "merge-checks": MergeReviewDocs, "change-summary": MergeReviewDocs, "pull-request-card": MergeReviewDocs,
   "ai-remixes": RemixGallery,
  "subscription-workspace":SubscriptionWorkspacePage,"segment-rule-builder":SubscriptionOperationsDocs,"segment-preview":SubscriptionOperationsDocs,"subscription-plan-picker":SubscriptionOperationsDocs,"revenue-target-editor":SubscriptionOperationsDocs,

@@ -1,0 +1,198 @@
+.workflow-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing);
+  white-space: nowrap;
+}
+.workflow-table-scroll {
+  overflow: auto;
+  max-height: calc(100dvh - 320px);
+  min-height: 240px;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small);
+  overscroll-behavior: contain;
+  background: var(--color-bg-base);
+}
+.workflow-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  white-space: nowrap;
+  text-align: left;
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+}
+.workflow-table th,
+.workflow-table td {
+  height: calc(var(--spacing) * 17);
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  font-weight: 400;
+  background: var(--color-bg-base);
+}
+.workflow-table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.workflow-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: calc(var(--spacing) * 11);
+  background: var(--color-bg-elevated);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.workflow-table tr[data-selected] > * {
+  background: color-mix(
+    in srgb,
+    var(--color-status-progress) 7%,
+    var(--color-bg-base)
+  );
+}
+.workflow-table tbody tr:hover > * {
+  background: var(--color-bg-elevated);
+}
+.workflow-table tbody tr[data-selected]:hover > * {
+  background: color-mix(
+    in srgb,
+    var(--color-status-progress) 10%,
+    var(--color-bg-base)
+  );
+}
+.workflow-table .workflow-check {
+  padding-right: 0;
+  width: calc(var(--spacing) * 9);
+}
+.workflow-table input {
+  width: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 4);
+  accent-color: var(--color-status-progress);
+  cursor: pointer;
+  vertical-align: middle;
+}
+.workflow-identity {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  min-width: calc(var(--spacing) * 60);
+}
+.workflow-identity button,
+.workflow-identity strong {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-align: left;
+}
+.workflow-identity button {
+  cursor: pointer;
+}
+.workflow-identity button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.workflow-identity small {
+  display: block;
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+  margin-top: var(--spacing);
+}
+.workflow-connector {
+  display: grid;
+  place-items: center;
+  width: calc(var(--spacing) * 8);
+  height: calc(var(--spacing) * 8);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-surface);
+  flex-shrink: 0;
+}
+.workflow-runs {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-secondary);
+}
+.workflow-bars {
+  height: calc(var(--spacing) * 5);
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  width: calc(var(--spacing) * 14);
+  color: var(--color-status-progress);
+}
+.workflow-bars i {
+  flex: 1;
+  min-height: 2px;
+  background: currentColor;
+  border-radius: 2px 2px 0 0;
+}
+.workflow-bars[data-failing],
+.workflow-success[data-failing] {
+  color: var(--color-status-error);
+}
+.workflow-success {
+  color: color-mix(
+    in srgb,
+    var(--color-status-success) 75%,
+    var(--color-text-primary)
+  );
+  font-variant-numeric: tabular-nums;
+}
+.workflow-owner {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+}
+.workflow-table .workflow-edited {
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+}
+.workflow-skeleton {
+  padding: calc(var(--spacing) * 4);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small);
+}
+.workflow-skeleton > div {
+  display: flex;
+  gap: calc(var(--spacing) * 6);
+  height: calc(var(--spacing) * 17);
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.workflow-skeleton span,
+.workflow-skeleton i {
+  height: calc(var(--spacing) * 3);
+  flex: 1;
+  border-radius: var(--radius-control-tiny);
+  background: var(--color-state-hover);
+}
+.workflow-skeleton i {
+  height: calc(var(--spacing) * 8);
+  flex: 0 0 calc(var(--spacing) * 8);
+}
+.workflow-table-scroll:focus-visible,
+.workflow-table :focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: -2px;
+}
+@media (max-width: 600px) {
+  .workflow-table-scroll {
+    max-height: 65dvh;
+  }
+  .workflow-table th,
+  .workflow-table td {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+}
+
+.workflow-bars[data-empty],
+.workflow-success[data-empty] {
+  color: var(--color-text-tertiary);
+}
+.workflow-table { color-scheme: light; }
+.theme-dark .workflow-table { color-scheme: dark; }

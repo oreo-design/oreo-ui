@@ -1,0 +1,12 @@
+✔ filters OR within groups, AND across groups; archived rows stay out of All (5.388125ms)
+✔ numeric sorting is stable and missing metrics remain last both ways (0.101041ms)
+✔ visible selection preserves other pages, deduplicates and toggles only visible IDs (0.073541ms)
+✔ CSV escapes quotes/newlines and neutralizes spreadsheet formula fields (0.143417ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 86.642542
