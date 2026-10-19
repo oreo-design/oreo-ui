@@ -18,6 +18,12 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "agent-lanes": {title:"Agent Lanes",description:"Composable agent timelines with task states, relative time and cross-agent handoffs."},
+  "agent-lane-identity": {title:"Agent Lane Identity",description:"Composable agent timelines with task states, relative time and cross-agent handoffs."},
+  "agent-task-bar": {title:"Agent Task Bar",description:"Composable agent timelines with task states, relative time and cross-agent handoffs."},
+  "agent-timeline-axis": {title:"Agent Timeline Axis",description:"Composable agent timelines with task states, relative time and cross-agent handoffs."},
+  "agent-lanes-workspace": {title:"Agent Lanes Workspace",description:"Composable agent timelines with task states, relative time and cross-agent handoffs."},
+
   "adaptive-issues": {title:"Adaptive Issues",description:"Container-aware issue views with compact metadata, aligned columns and accessible resizing."},
   "adaptive-issue-table": {title:"Adaptive Issue Table",description:"Container-aware issue views with compact metadata, aligned columns and accessible resizing."},
   "adaptive-issue-row": {title:"Adaptive Issue Row",description:"Container-aware issue views with compact metadata, aligned columns and accessible resizing."},

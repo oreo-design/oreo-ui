@@ -151,6 +151,11 @@ const NAV: Group[] = [
       {label:"Agent Run Card",page:"agent-run-card"},
       {label:"Agent Run Activity",page:"agent-run-activity"},
       {label:"Agent Inbox Board",page:"agent-inbox-board"},
+      {label:"Agent Lanes",page:"agent-lanes"},
+      {label:"Agent Lane Identity",page:"agent-lane-identity"},
+      {label:"Agent Task Bar",page:"agent-task-bar"},
+      {label:"Agent Timeline Axis",page:"agent-timeline-axis"},
+
       {label:"Currency Balance Card",page:"currency-balance-card"},
       {label:"Currency Balance Summary",page:"currency-balance-summary"},
       {label:"Money Activity List",page:"money-activity-list"},
@@ -265,6 +270,7 @@ const NAV: Group[] = [
     title: "Templates",
     items: [
       {label:"Workflow Directory",page:"workflow-directory"},
+      {label:"Agent Lanes Workspace",page:"agent-lanes-workspace"},
       {label:"Adaptive Issues",page:"adaptive-issues"},
       {label:"Test Workspace",page:"test-workspace"},
       {label:"Merge Workspace",page:"merge-workspace"},
