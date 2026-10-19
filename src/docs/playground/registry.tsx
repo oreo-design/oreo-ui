@@ -1,3 +1,4 @@
+import { OutlineWordmark, PathGlyph, FooterLinkGroups, OREO_WORDMARK, STUDIO_WORDMARK, FOOTER_LINK_GROUPS } from "@/components/outline-wordmark";
 import { BreakoutNavigator, DestinationProgress, RecoveryMessage, BREAKOUT_DESTINATIONS } from "@/components/breakout-navigation";
 import { AgentTaskQueue, QueueTaskRow, TaskClarification, QueuedRequestStack } from "@/components/agent-task-queue";
 import { QUEUE_TASKS, QUEUE_QUESTIONS } from "@/patterns/agent-task-queue/data";
@@ -196,6 +197,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "outline-wordmark": {OutlineWordmark,PathGlyph,FooterLinkGroups},
  "breakout-navigation": {BreakoutNavigator,DestinationProgress,RecoveryMessage},
  "agent-task-queue": {AgentTaskQueue,QueueTaskRow,TaskClarification,QueuedRequestStack},
  "linked-documents": {LinkedDocumentRow,LinkedDocumentsList,LinkedDocumentsSelector,LinkedDocumentDetails},
@@ -320,6 +322,9 @@ function linkedDocumentPlayground(selector = false): PlaygroundSpec {
 }
 function queueAnswers(raw:string):Record<string,string>{try{const value=JSON.parse(raw);return value&&typeof value==="object"&&!Array.isArray(value)?Object.fromEntries(Object.entries(value).filter((entry):entry is [string,string]=>typeof entry[1]==="string")):{};}catch{return {};}}
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "outline-wordmark": {...define("Outline Wordmark",{artwork:select(["oreo","studio"],"oreo"),accent:select(["amber","mint","neutral"],"amber"),nodes:toggle(true),animated:toggle(true),release:number(700,0,1500,50),revealed:toggle(false),empty:toggle(false),resetKey:number(0,0,99,1)},v=><div className="w-full p-8"><OutlineWordmark glyphs={v.empty?[]:v.artwork==="oreo"?OREO_WORDMARK:STUDIO_WORDMARK} label={v.artwork} accent={v.accent} nodes={v.nodes} animated={v.animated} release={v.release} revealed={v.revealed} resetKey={v.resetKey}/></div>),source:"outline-wordmark"},
+ "path-glyph": {...define("Path Glyph",{active:toggle(false),nodes:toggle(true),accent:select(["amber","mint","neutral"],"amber"),animated:toggle(true),release:number(700,0,1500,50)},v=><div className="w-56 p-8"><PathGlyph active={v.active} nodes={v.nodes} accent={v.accent} animated={v.animated} release={v.release}/></div>),source:"outline-wordmark"},
+ "footer-link-groups": {...define("Footer Link Groups",{compact:toggle(false),groups:number(2,0,2,1),label:text("Footer navigation")},v=><div className="w-full p-8"><FooterLinkGroups groups={FOOTER_LINK_GROUPS.slice(0,v.groups)} compact={v.compact} label={v.label}/></div>),source:"outline-wordmark"},
  "breakout-navigator":{...define("Breakout Navigator",{goal:number(8,1,12,1),speed:select(["calm","brisk"],"calm"),trail:toggle(true),count:number(6,0,6,1),resetKey:number(0,0,99,1)},v=><div className="w-full p-5"><BreakoutNavigator destinations={BREAKOUT_DESTINATIONS.slice(0,v.count)} goal={v.goal} speed={v.speed} trail={v.trail} resetKey={v.resetKey}/></div>),source:"breakout-navigation"},
  "destination-progress":{...define("Destination Progress",{hits:number(3,0,8,1),goal:number(8,1,12,1),compact:toggle(false),count:number(6,0,6,1)},v=><div className="w-full max-w-md p-6"><DestinationProgress destinations={BREAKOUT_DESTINATIONS.slice(0,v.count)} hits={Object.fromEntries(BREAKOUT_DESTINATIONS.map(d=>[d.id,v.hits]))} goal={v.goal} compact={v.compact}/></div>),source:"breakout-navigation"},
  "recovery-message":{...define("Recovery Message",{title:text("Breakout of the 404 maze"),description:text("This page is missing. Take a detour, or go straight to"),linkLabel:text("components"),eyebrow:text("404 · PAGE NOT FOUND")},v=><div className="w-full p-8"><RecoveryMessage title={v.title} description={v.description} href="/button" linkLabel={v.linkLabel} eyebrow={v.eyebrow}/></div>),source:"breakout-navigation"},

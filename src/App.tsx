@@ -1,3 +1,5 @@
+import { OutlineBrandFooter } from "@/patterns/outline-brand-footer";
+import { OutlineWordmarkDocs } from "@/pages/OutlineWordmarkDocs";
 import { Breakout404Page } from "@/patterns/breakout-404";
 import { BreakoutNavigationDocs } from "@/pages/BreakoutNavigationDocs";
 import { AgentQueueWorkspace } from "@/patterns/agent-task-queue";
@@ -224,6 +226,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "outline-brand-footer": OutlineBrandFooter, "outline-wordmark": OutlineWordmarkDocs, "path-glyph": OutlineWordmarkDocs, "footer-link-groups": OutlineWordmarkDocs,
   "breakout-404": Breakout404Page, "breakout-navigator": BreakoutNavigationDocs, "destination-progress": BreakoutNavigationDocs, "recovery-message": BreakoutNavigationDocs,
   "agent-queue-workspace": AgentQueueWorkspace, "agent-task-queue": AgentTaskQueueDocs, "queue-task-row": AgentTaskQueueDocs, "task-clarification": AgentTaskQueueDocs, "queued-request-stack": AgentTaskQueueDocs,
   "unlink-documents-workspace": UnlinkDocumentsPage, "linked-documents": LinkedDocumentsDocs, "linked-document-row": LinkedDocumentsDocs, "linked-documents-selector": LinkedDocumentsDocs, "linked-document-details": LinkedDocumentsDocs,

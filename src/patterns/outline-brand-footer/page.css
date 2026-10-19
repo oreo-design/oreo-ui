@@ -1,0 +1,98 @@
+.obf-page {
+  min-height: 100dvh;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--spacing) * 7) calc(var(--spacing) * 8);
+}
+.obf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+.obf-footer {
+  width: 100%;
+  max-width: calc(var(--spacing) * 260);
+  margin: auto;
+  padding-top: calc(var(--spacing) * 20);
+}
+.obf-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: calc(var(--spacing) * 12);
+}
+.obf-brand {
+  max-width: calc(var(--spacing) * 90);
+}
+.obf-brand > a {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  font-size: var(--text-base);
+}
+.obf-brand p {
+  margin-top: calc(var(--spacing) * 6);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+.obf-note {
+  margin-top: calc(var(--spacing) * 20);
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+  line-height: 1.6;
+}
+.obf-note p {
+  max-width: calc(var(--spacing) * 220);
+}
+.obf-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 4);
+}
+.obf-footer > .ow-wordmark {
+  margin-top: calc(var(--spacing) * 7);
+}
+.obf-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 4);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  margin: calc(var(--spacing) * 6) 0 calc(var(--spacing) * 2);
+  flex-wrap: wrap;
+}
+.obf-caption a:hover,
+.obf-header a:hover {
+  color: var(--color-text-primary);
+}
+.obf-page a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+@media (max-width: 640px) {
+  .obf-page {
+    padding: calc(var(--spacing) * 4);
+  }
+  .obf-footer {
+    padding-top: calc(var(--spacing) * 12);
+  }
+  .obf-top {
+    flex-direction: column;
+    gap: calc(var(--spacing) * 10);
+  }
+  .obf-note {
+    margin-top: calc(var(--spacing) * 12);
+  }
+  .obf-caption {
+    line-height: 1.7;
+  }
+}

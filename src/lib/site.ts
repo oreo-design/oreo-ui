@@ -18,6 +18,10 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "outline-brand-footer": { title: "Outline Brand Footer", description: "A complete footer with interactive vector lettering and grouped navigation." },
+  "outline-wordmark": { title: "Outline Wordmark", description: "Independent contour-letter highlights for pointer, keyboard and touch." },
+  "path-glyph": { title: "Path Glyph", description: "A vector glyph with contour nodes and independent highlight properties." },
+  "footer-link-groups": { title: "Footer Link Groups", description: "Responsive semantic navigation groups for a product footer." },
   "breakout-navigator": { title: "Breakout Navigator", description: "Playable navigation targets with keyboard, pointer and touch steering." },
   "destination-progress": { title: "Destination Progress", description: "Accessible navigation links with controlled target progress." },
   "recovery-message": { title: "Recovery Message", description: "Centered missing-page copy with a direct recovery link." },
