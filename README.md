@@ -284,3 +284,7 @@ Inspired by [Phil Pitus’s merge conflict video](https://x.com/pitus_/status/21
 ### 官网效果参考
 
 [参考收藏](docs/references/website-effects.md)：Details.so 效果库与 Segerman 页面转场案例，供后续官网工作选用。
+
+### Agent Lanes
+
+Time-based agent activity from [Flo’s reference](https://x.com/flohoeller/status/2111405211478900836): four reusable components and the complete `/agent-lanes-workspace` template. [Pattern guide](src/patterns/agent-lanes/README.md) · [Visual review](docs/reviews/agent-lanes-20261019/REVIEW.md).

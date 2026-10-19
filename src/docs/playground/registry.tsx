@@ -1,3 +1,5 @@
+import { AgentLanes, AgentLaneIdentity, AgentTaskBar, AgentTimelineAxis } from "@/components/agent-lanes";
+import { LANE_AGENTS, LANE_TASKS } from "@/patterns/agent-lanes/data";
 import {AdaptiveIssueTable,AdaptiveIssueRow,PullRequestPill,ResizeFrame} from "@/components/adaptive-issues";
 import {ADAPTIVE_ISSUES} from "@/patterns/adaptive-issues/data";
 import {TestResults,TestRunSummary,TestResultFilters,TestFileGroup,TestFailureDetail,TestStackTrace} from "@/components/test-results";
@@ -189,6 +191,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "agent-lanes": {AgentLanes,AgentLaneIdentity,AgentTaskBar,AgentTimelineAxis},
  "adaptive-issues": {AdaptiveIssueTable,AdaptiveIssueRow,PullRequestPill,ResizeFrame},
  "data-operations": { DataFilterPopover, DataSortMenu, RowActionMenu, BulkActionBar },
  "workflow-table": { WorkflowStatusBadge, WorkflowRunBars, WorkflowTable },
@@ -296,6 +299,10 @@ const promptText = "Help me design a thoughtful workspace.";
 
 function parseFilters(raw: string): FilterValues { try { const value = JSON.parse(raw); return value && typeof value === "object" && !Array.isArray(value) ? Object.fromEntries(Object.entries(value).filter((entry): entry is [string, string[]] => Array.isArray(entry[1]) && entry[1].every(v => typeof v === "string"))) : {}; } catch { return {}; } }
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "agent-lane-identity":{...define("Agent Lane Identity",{name:text("Researcher"),model:text("Research model"),status:select(["running","waiting","idle"],"running")},v=><div className="p-6"><AgentLaneIdentity agent={{id:"research",name:v.name,model:v.model}} status={v.status}/></div>),source:"agent-lanes"},
+ "agent-task-bar":{...define("Agent Task Bar",{status:select(["running","waiting","done","failed"],"running"),selected:toggle(false),title:text("Customer interviews")},(v,set)=><div className="w-full max-w-lg p-6"><AgentTaskBar task={{...LANE_TASKS[1],title:v.title,status:v.status}} now={0} selected={v.selected} onSelect={()=>set("selected",!v.selected)}/></div>),source:"agent-lanes"},
+ "agent-timeline-axis":{...define("Agent Timeline Axis",{minutes:number(30,5,120,5)},v=><div className="w-full pt-12 pr-8"><AgentTimelineAxis minutes={v.minutes}/></div>),source:"agent-lanes"},
+ "agent-lanes":{...define("Agent Lanes",{scenario:select(["ready","loading","refreshing","empty","error"],"ready"),minutes:number(30,15,60,15),now:number(0,0,15,1),selected:text("")},(v,set)=><div className="w-full p-4"><AgentLanes agents={LANE_AGENTS} tasks={v.scenario==="empty"||v.scenario==="loading"?[]:LANE_TASKS} now={v.now} minutes={v.minutes} selectedId={v.selected} onSelect={id=>set("selected",id)} loading={v.scenario==="loading"||v.scenario==="refreshing"} error={v.scenario==="error"?"Sample connection interrupted.":undefined} onRetry={()=>set("scenario","ready")}/></div>),source:"agent-lanes"},
  "pull-request-pill": {...define("Pull Request Pill",{state:select(["open","draft","closed","merged"],"open"),number:number(1184,1,99999,1)},v=><PullRequestPill number={v.number} state={v.state}/>),source:"adaptive-issues"},
  "adaptive-issue-row": {...define("Adaptive Issue Row",{width:number(840,320,1120,10),selected:toggle(false)},(v,set)=><ResizeFrame width={v.width} onWidthChange={w=>set("width",w)}><div className="adapt-table"><ul className="adapt-rows"><AdaptiveIssueRow issue={ADAPTIVE_ISSUES[0]} selected={v.selected} onOpen={()=>set("selected",!v.selected)}/></ul></div></ResizeFrame>),source:"adaptive-issues"},
  "adaptive-issue-table": {...define("Adaptive Issue Table",{width:number(1120,320,1120,10),scenario:select(["ready","loading","empty","error"],"ready")},(v,set)=><div className="w-full p-4"><ResizeFrame width={v.width} onWidthChange={w=>set("width",w)}><AdaptiveIssueTable issues={v.scenario==="empty"||v.scenario==="loading"?[]:ADAPTIVE_ISSUES} loading={v.scenario==="loading"} error={v.scenario==="error"?"Sample connection interrupted.":undefined} onRetry={()=>set("scenario","ready")}/></ResizeFrame></div>),source:"adaptive-issues"},

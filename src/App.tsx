@@ -1,3 +1,5 @@
+import { AgentLanesPage } from "@/patterns/agent-lanes";
+import { AgentLanesDocs } from "@/pages/AgentLanesDocs";
 import { AdaptiveIssuesPage } from "@/patterns/adaptive-issues";
 import { AdaptiveIssuesDocs } from "@/pages/AdaptiveIssuesDocs";
 import { TestResultsDocs } from "@/pages/TestResultsDocs";
@@ -216,6 +218,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "agent-lanes-workspace": AgentLanesPage, "agent-lanes": AgentLanesDocs, "agent-lane-identity": AgentLanesDocs, "agent-task-bar": AgentLanesDocs, "agent-timeline-axis": AgentLanesDocs,
   "adaptive-issues": AdaptiveIssuesPage, "adaptive-issue-table": AdaptiveIssuesDocs, "adaptive-issue-row": AdaptiveIssuesDocs, "pull-request-pill": AdaptiveIssuesDocs, "resize-frame": AdaptiveIssuesDocs,
   "test-workspace": TestWorkspacePage, "test-results": TestResultsDocs, "test-run-summary": TestResultsDocs, "test-result-filters": TestResultsDocs, "test-file-group": TestResultsDocs, "test-failure-detail": TestResultsDocs, "test-stack-trace": TestResultsDocs,
   spacing: SpacingPage,

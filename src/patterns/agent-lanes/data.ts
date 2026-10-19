@@ -1,0 +1,82 @@
+import type { LaneAgent, LaneTask } from "../../components/agent-lanes/model";
+export const LANE_AGENTS: LaneAgent[] = [
+  { id: "research", name: "Researcher", model: "Research model" },
+  { id: "writer", name: "Writer", model: "Writing model" },
+  { id: "review", name: "Reviewer", model: "Code model" },
+  { id: "ops", name: "Ops", model: "Operations model" },
+];
+export const LANE_TASKS: LaneTask[] = [
+  {
+    id: "pricing",
+    agentId: "research",
+    title: "Competitor pricing",
+    start: -28,
+    end: -17,
+    status: "done",
+    tools: ["Web", "Docs"],
+    notes: [
+      "Compared 8 pricing pages",
+      "Prepared a feature and pricing matrix",
+    ],
+  },
+  {
+    id: "interviews",
+    agentId: "research",
+    title: "Customer interviews",
+    start: -9,
+    end: null,
+    status: "running",
+    tools: ["Docs", "Messages"],
+    notes: ["Read 14 interview notes", "Grouping quotes by theme"],
+  },
+  {
+    id: "draft",
+    agentId: "writer",
+    title: "Draft pricing page",
+    start: -16,
+    end: null,
+    status: "running",
+    tools: ["Design", "Docs"],
+    notes: [
+      "Using the competitor pricing matrix",
+      "Drafting the plan comparison section",
+    ],
+    dependsOn: "pricing",
+  },
+  {
+    id: "billing",
+    agentId: "review",
+    title: "PR #482 billing",
+    start: -30,
+    end: -20,
+    status: "done",
+    tools: ["Repository", "Issues"],
+    notes: ["Reviewed webhook changes", "Checks passed; review shared"],
+  },
+  {
+    id: "crm",
+    agentId: "ops",
+    title: "Sync CRM",
+    start: -28,
+    end: -22,
+    status: "failed",
+    tools: ["CRM"],
+    notes: [
+      "The sample API rate limit was reached",
+      "No contacts were changed",
+    ],
+  },
+  {
+    id: "keys",
+    agentId: "ops",
+    title: "Rotate API keys",
+    start: -12,
+    end: null,
+    status: "waiting",
+    tools: ["Secrets", "Repository"],
+    notes: [
+      "A new sample key is prepared",
+      "Waiting for approval before the simulated rotation",
+    ],
+  },
+];
