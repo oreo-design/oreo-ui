@@ -1,3 +1,6 @@
+import { LinkedDocumentRow, LinkedDocumentsList, LinkedDocumentsSelector, LinkedDocumentDetails } from "@/components/linked-documents";
+import { LinkedDocumentsExample, LinkedDocumentRowExample } from "@/pages/LinkedDocumentsDocs";
+import { SAMPLE_DOCUMENTS } from "@/patterns/unlink-documents/data";
 import { AgentLanes, AgentLaneIdentity, AgentTaskBar, AgentTimelineAxis } from "@/components/agent-lanes";
 import { LANE_AGENTS, LANE_TASKS } from "@/patterns/agent-lanes/data";
 import {AdaptiveIssueTable,AdaptiveIssueRow,PullRequestPill,ResizeFrame} from "@/components/adaptive-issues";
@@ -191,6 +194,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "linked-documents": {LinkedDocumentRow,LinkedDocumentsList,LinkedDocumentsSelector,LinkedDocumentDetails},
  "agent-lanes": {AgentLanes,AgentLaneIdentity,AgentTaskBar,AgentTimelineAxis},
  "adaptive-issues": {AdaptiveIssueTable,AdaptiveIssueRow,PullRequestPill,ResizeFrame},
  "data-operations": { DataFilterPopover, DataSortMenu, RowActionMenu, BulkActionBar },
@@ -299,6 +303,10 @@ const promptText = "Help me design a thoughtful workspace.";
 
 function parseFilters(raw: string): FilterValues { try { const value = JSON.parse(raw); return value && typeof value === "object" && !Array.isArray(value) ? Object.fromEntries(Object.entries(value).filter((entry): entry is [string, string[]] => Array.isArray(entry[1]) && entry[1].every(v => typeof v === "string"))) : {}; } catch { return {}; } }
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "linked-document-row":{...define("Linked Document Row",{name:text("Bank-Statement_1026.pdf"),selected:toggle(true)},v=><LinkedDocumentRowExample name={v.name} selected={v.selected}/>),source:"linked-documents"},
+ "linked-document-details":{...define("Linked Document Details",{name:text("Bank-Statement_1026.pdf")},v=><div className="w-full max-w-sm p-6"><LinkedDocumentDetails document={{...SAMPLE_DOCUMENTS[0],name:v.name}}/></div>),source:"linked-documents"},
+ "linked-documents":{...define("Linked Documents",{scenario:select(["ready","loading","error","empty"],"ready")},v=><LinkedDocumentsExample scenario={v.scenario}/>),source:"linked-documents"},
+ "linked-documents-selector":{...define("Linked Documents Selector",{scenario:select(["ready","loading","error","empty"],"ready")},v=><LinkedDocumentsExample selector scenario={v.scenario}/>),source:"linked-documents"},
  "agent-lane-identity":{...define("Agent Lane Identity",{name:text("Researcher"),model:text("Research model"),status:select(["running","waiting","idle"],"running")},v=><div className="p-6"><AgentLaneIdentity agent={{id:"research",name:v.name,model:v.model}} status={v.status}/></div>),source:"agent-lanes"},
  "agent-task-bar":{...define("Agent Task Bar",{status:select(["running","waiting","done","failed"],"running"),selected:toggle(false),title:text("Customer interviews")},(v,set)=><div className="w-full max-w-lg p-6"><AgentTaskBar task={{...LANE_TASKS[1],title:v.title,status:v.status}} now={0} selected={v.selected} onSelect={()=>set("selected",!v.selected)}/></div>),source:"agent-lanes"},
  "agent-timeline-axis":{...define("Agent Timeline Axis",{minutes:number(30,5,120,5)},v=><div className="w-full pt-12 pr-8"><AgentTimelineAxis minutes={v.minutes}/></div>),source:"agent-lanes"},

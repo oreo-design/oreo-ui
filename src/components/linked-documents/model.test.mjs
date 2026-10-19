@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {linkReducer} from './model.ts';
+const documents=['a','b','c'].map(id=>({id,name:id,kind:'PDF',size:'1 KB',added:'Today',owner:'Sample'}));
+const initial=()=>({documents,selectedId:'b',removed:[],notice:''});
+test('unlinking another document preserves active preview and immutable source',()=>{const s=linkReducer(initial(),{type:'unlink',id:'a'});assert.equal(s.selectedId,'b');assert.deepEqual(s.documents.map(d=>d.id),['b','c']);assert.equal(documents.length,3);});
+test('active removal chooses next, then previous, then null',()=>{let s=initial();for(const [id,next] of [['b','c'],['c','a'],['a',null]]){s=linkReducer(s,{type:'unlink',id});assert.equal(s.selectedId,next);}});
+test('rapid removal and reverse undo restore exact original order',()=>{let s=initial();for(const id of ['b','a','c'])s=linkReducer(s,{type:'unlink',id});for(let i=0;i<3;i++)s=linkReducer(s,{type:'undo'});assert.deepEqual(s.documents,documents);assert.equal(s.selectedId,'c');assert.equal(s.removed.length,0);});
+test('undo preserves current selection and does not duplicate files',()=>{let s=linkReducer(initial(),{type:'unlink',id:'a'});s=linkReducer(s,{type:'select',id:'c'});s=linkReducer(s,{type:'undo'});assert.equal(s.selectedId,'c');assert.equal(linkReducer(s,{type:'undo'}),s);});
+test('stale events do not alter state',()=>{const s=linkReducer(initial(),{type:'unlink',id:'b'});assert.equal(linkReducer(s,{type:'unlink',id:'b'}),s);assert.equal(linkReducer(s,{type:'select',id:'b'}),s);});
+test('reset clears history and empty fixtures remain valid',()=>{const s=linkReducer(initial(),{type:'reset',documents:[]});assert.equal(s.selectedId,null);assert.deepEqual(s.removed,[]);assert.equal(linkReducer(s,{type:'undo'}),s);});

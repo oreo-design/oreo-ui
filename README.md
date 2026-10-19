@@ -288,3 +288,7 @@ Inspired by [Phil Pitus’s merge conflict video](https://x.com/pitus_/status/21
 ### Agent Lanes
 
 Time-based agent activity from [Flo’s reference](https://x.com/flohoeller/status/2111405211478900836): four reusable components and the complete `/agent-lanes-workspace` template. [Pattern guide](src/patterns/agent-lanes/README.md) · [Visual review](docs/reviews/agent-lanes-20261019/REVIEW.md).
+
+### Document Review · linked documents
+
+Kevin’s [Unlink Documents](https://x.com/kvnkld/status/2111826634902741219) extracted into four reusable components and a full local review template: animated unlinking, stable preview selection, LIFO undo, metadata and loading/error/empty states. See [integration notes](src/patterns/unlink-documents/README.md) and [review evidence](docs/reviews/unlink-documents-20261019/REVIEW.md). Preview `/unlink-documents-workspace`.
