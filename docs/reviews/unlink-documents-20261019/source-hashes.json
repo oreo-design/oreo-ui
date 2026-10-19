@@ -1,0 +1,19 @@
+{
+  "source_revision": "40fca08453a38c5e7a62b974e63a3026b22feb9a",
+  "files": {
+    "README.md": "e60959f4965aa854bfd218260763101a2c4a89aa98d6b8aacd5c294d59c1a9f9",
+    "src/App.tsx": "bab91776c4f3fff064d710621453e8e65fd72579d7aef978fa465e646b7600d7",
+    "src/components/linked-documents/index.tsx": "0f71011da18ae01a152579677df043b5f393556c5c0f271b3c016f2f4566f660",
+    "src/components/linked-documents/linked-documents.css": "048024fccc7cbcd48864d069e3385389cc790bffa18682b786eb8d2dfe2d4b25",
+    "src/components/linked-documents/model.test.mjs": "0aa89a136c57bf975b4d032b742832cc1579bb82b6ea097213b1296a443706af",
+    "src/components/linked-documents/model.ts": "573b985403e3f9f6c3154bb380b1adefb8a7543e2651019d302640f256e8ac86",
+    "src/docs/Sidebar.tsx": "87f612a8b61b4b1707b1c312c536ebfb1df38cf06cdadcc2314f16c99109e98b",
+    "src/docs/playground/registry.tsx": "9bf3ab782b16612271c678e881652076cdd5cba5984686123e3b6382c7ef3927",
+    "src/lib/site.ts": "8e0633ed31b3c4cbb3f9ad3ac2dc914bb3f0f59bd8c9b5f41ac50a869c8edb05",
+    "src/pages/LinkedDocumentsDocs.tsx": "61caad3abe9abdf5f466826959266ad3dcb09f8cb1c3c6a61242924e5c17cbe7",
+    "src/patterns/unlink-documents/README.md": "6331f1ff4717ff93c92744f46e23fdcbcf502010e15d5b00c0caeaed4c1e02a5",
+    "src/patterns/unlink-documents/data.ts": "4cb01edfdd99c258fde86608c466c1a2e92dbdbd60ea17455db7f90a391a0ad4",
+    "src/patterns/unlink-documents/index.tsx": "f6c2243a803d1a4ce8a13c7286e35073ab15cbc9bd5a8ccd73dff4369c5dd7bd",
+    "src/patterns/unlink-documents/workspace.css": "408c80e440271c090fc071607c49814dfc12ecc4c87b6227d34b0a640e7c28dd"
+  }
+}
