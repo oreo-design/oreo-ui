@@ -106,7 +106,7 @@
   border-radius: var(--radius-card-medium);
   overflow: hidden;
   background: var(--color-bg-base);
-  box-shadow: 0 8px 32px #00000008;
+  box-shadow: var(--shadow-default);
 }
 .aq-window-bar {
   display: flex;

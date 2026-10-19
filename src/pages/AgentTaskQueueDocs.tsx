@@ -44,7 +44,10 @@ export function AgentTaskQueueDocs({ nav }: { nav: DocsNav }) {
           questions={QUEUE_QUESTIONS}
           answers={answers}
           step={step}
-          onChange={setAnswers}
+          onChange={(value) => {
+            setAnswers(value);
+            setSaved(false);
+          }}
           onStepChange={setStep}
           onSubmit={() => setSaved(true)}
         />
@@ -125,7 +128,13 @@ export function AgentTaskQueueDocs({ nav }: { nav: DocsNav }) {
                 </div>
               }
               code={
-                "<AgentTaskQueue tasks={tasks} expandedId={expandedId}\n onExpand={setExpanded} onMove={moveTask} onPause={pauseTask}\n onResume={resumeTask} onRemove={removeTask} renderDetail={renderContext} />"
+                nav.active === "queue-task-row"
+                  ? "<QueueTaskRow task={task} expanded={expanded} onToggle={toggle} onPause={pauseTask} onResume={resumeTask}>{context}</QueueTaskRow>"
+                  : nav.active === "task-clarification"
+                    ? "<TaskClarification questions={questions} answers={answers} step={step} onChange={setAnswers} onStepChange={setStep} onSubmit={saveAnswers} />"
+                    : nav.active === "queued-request-stack"
+                      ? "<QueuedRequestStack requests={requests} expanded={expanded} onExpandedChange={setExpanded} />"
+                      : "<AgentTaskQueue tasks={tasks} expandedId={expandedId}\n onExpand={setExpanded} onMove={moveTask} onPause={pauseTask}\n onResume={resumeTask} onRemove={removeTask} renderDetail={renderContext} />"
               }
             />
             <CodeBlock

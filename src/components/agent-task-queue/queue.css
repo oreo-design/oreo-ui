@@ -142,7 +142,7 @@ button.aq-title {
 .aq-dragging {
   background: var(--color-bg-elevated);
   border-radius: var(--radius-card-small);
-  box-shadow: 0 8px 24px #00000012;
+  box-shadow: var(--shadow-panel);
 }
 .aq-dragging .aq-row-actions {
   opacity: 1;
@@ -293,6 +293,10 @@ button.aq-title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.aq-request-stack > button[aria-expanded="true"] > span:first-child {
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 .aq-request-stack > button > span:last-child {
   font-size: var(--text-xs);
