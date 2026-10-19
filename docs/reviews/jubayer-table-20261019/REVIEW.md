@@ -156,4 +156,4 @@ Reviewed implementation commit: `3a23dd6bcb9ed345314975aa0209fbf7650c70ff` on ma
 
 ![After rebasing onto current main](/Users/ziye/Documents/Project/Research/oreo-ui-jubayer-20261019/docs/reviews/jubayer-table-20261019/after-rebased.png)
 
-The exported CSV preserves real CRLF bytes, with a scoped Git whitespace attribute. This documentation-only record does not alter UI behavior. PR and remote status are linked below once created.
+The exported CSV preserves real CRLF bytes, with a scoped Git whitespace attribute. This documentation-only record does not alter UI behavior. [PR #103](https://github.com/oreo-design/oreo-ui/pull/103) tracks delivery and its final merge revision. Exact pushed head `e2959a895ea8f5d832a70a9d7c3947c8c75fe4ca` was reviewed: task-only files, source hashes match, clean mergeability, no remote status checks reported. This final link update changes only the review record.
