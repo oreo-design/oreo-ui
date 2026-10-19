@@ -276,3 +276,5 @@ Each route includes an editable playground, generated starting JSX and API docs 
 ## Merge Workspace
 
 Inspired by [Phil Pitus’s merge conflict video](https://x.com/pitus_/status/2111519352503873866), `/merge-workspace` follows a local pull request through branch history, conflict resolution, checks and explicit merge. Five reusable components — `BranchHistory`, `MergeStatusBadge`, `ChangeSummary`, `MergeChecks` and `PullRequestCard` — each include a Playground and docs. The template supports failed-check recovery, cancellation, commit details, light/dark themes and narrow screens. No live repository operations occur. See the [component map and integration guide](src/patterns/merge-workspace/README.md).
+
+- **Test Workspace** — streamed agent test results, file groups, failures, stack traces, filters and local recovery. [Composition and source breakdown](src/patterns/test-workspace/README.md).

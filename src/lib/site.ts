@@ -18,6 +18,14 @@ export type PageMeta = { title: string; description: string };
 
 /** Every route lives at /<slug>. Order here is the sitemap order. */
 export const PAGE_META = {
+  "test-workspace": {title:"Test Workspace",description:"A complete agent test session with streamed results, failure inspection, local fixes and reruns."},
+  "test-results": {title:"Test Results",description:"Composable test execution results with Oreo controls and accessible recovery."},
+  "test-run-summary": {title:"Test Run Summary",description:"Composable test execution results with Oreo controls and accessible recovery."},
+  "test-result-filters": {title:"Test Result Filters",description:"Composable test execution results with Oreo controls and accessible recovery."},
+  "test-file-group": {title:"Test File Group",description:"Composable test execution results with Oreo controls and accessible recovery."},
+  "test-failure-detail": {title:"Test Failure Detail",description:"Composable test execution results with Oreo controls and accessible recovery."},
+  "test-stack-trace": {title:"Test Stack Trace",description:"Composable test execution results with Oreo controls and accessible recovery."},
+
   spacing: { title: "Spacing Playground", description: "Tune five layers of layout spacing, highlight their boundaries and compare a frozen baseline with your current recipe." },
   "spacing-guide": { title: "Spacing Guide", description: "Oreo layout spacing roles, scoped tokens and composition rules for readable pages." },
   "data-filter-popover": {title:"Data Filter Popover",description:"A draft filter form with grouped checkboxes, pills, owner selection and explicit apply."},

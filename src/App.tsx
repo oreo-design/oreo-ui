@@ -1,3 +1,5 @@
+import { TestResultsDocs } from "@/pages/TestResultsDocs";
+import { TestWorkspacePage } from "@/patterns/test-workspace";
 import { SpacingPage } from "@/pages/spacing/SpacingPage";
 import { WorkflowDirectoryPage } from "@/patterns/workflow-directory";
 import { DataOperationsDocs } from "@/pages/DataOperationsDocs";
@@ -212,6 +214,7 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "test-workspace": TestWorkspacePage, "test-results": TestResultsDocs, "test-run-summary": TestResultsDocs, "test-result-filters": TestResultsDocs, "test-file-group": TestResultsDocs, "test-failure-detail": TestResultsDocs, "test-stack-trace": TestResultsDocs,
   spacing: SpacingPage,
   "spacing-guide": SpacingPage,
   "workflow-directory": WorkflowDirectoryPage, "data-filter-popover": DataOperationsDocs, "data-sort-menu": DataOperationsDocs, "row-action-menu": DataOperationsDocs, "bulk-action-bar": DataOperationsDocs, "workflow-status-badge": DataOperationsDocs, "workflow-run-bars": DataOperationsDocs, "workflow-table": DataOperationsDocs,

@@ -1,0 +1,149 @@
+Console output:
+[log]           - role=button[name="Use dark theme"i]
+          - heading "From failure to clarity."
+            - heading "Ready when you are"
+            - role=button[name="Run test suite"i]
+          - role=button[name="Reset demo"i]
+    - role=button[name="Copy Locator"i]:
+    - role=button[name="Record Skill Record a skill"i]
+    - role=button[name="Start remote control"i]:
+    - role=button[name="Hide toolbar"i]
+[log]               - role=button[name="Running Running tests · 0 of 20"i]:
+            - status:
+                - role=button[name="All 20"i]
+                - role=button[name="Failed 0"i]
+                - role=button[name="Skipped 0"i]
+                - role=button[name="Slow 0"i]
+              - role=button[name="Running src/cart/pricing.test.ts 0 of 4 tests Queued"i]:
+                - heading "pricing"
+              - role=button[name="Queued src/cart/checkout.test.ts 0 of 4 tests Queued"i]:
+              - role=button[name="Queued src/cart/sync.test.ts 0 of 4 tests Queued"i]:
+              - role=button[name="Queued src/lib/money.test.ts 0 of 4 tests Queued"i]:
+              - role=button[name="Queued src/ui/summary.test.tsx 0 of 4 tests Queued"i]:
+              - role=button[name="Stop run"i]
+          - role=button[name="Reset demo"i]
+    - role=button[name="Copy Locator"i]:
+    - role=button[name="Record Skill Record a skill"i]
+    - role=button[name="Start remote control"i]:
+    - role=button[name="Hide toolbar"i]
+[log]               - role=button[name="Running Running tests · 3 of 20"i]:
+            - status:
+                - role=button[name="All 20"i]
+                - role=button[name="Failed 1"i]
+                - role=button[name="Skipped 0"i]
+                - role=button[name="Slow 0"i]
+                - role=button[name="Copy failures"i]
+              - role=button[name="Running src/cart/pricing.test.ts 1 failed · 3 of 4 tests 42ms"i]:
+              - role=button[name="Queued src/cart/checkout.test.ts 0 of 4 tests Queued"i]:
+              - role=button[name="Queued src/cart/sync.test.ts 0 of 4 tests Queued"i]:
+              - role=button[name="Queued src/lib/money.test.ts 0 of 4 tests Queued"i]:
+              - role=button[name="Queued src/ui/summary.test.tsx 0 of 4 tests Queued"i]:
+              - role=button[name="Stop run"i]
+          - role=button[name="Reset demo"i]
+    - role=button[name="Copy Locator"i]:
+    - role=button[name="Record Skill Record a skill"i]
+    - role=button[name="Start remote control"i]:
+    - role=button[name="Hide toolbar"i]
+[log]                 - role=button[name="Copy failures"i]
+              - role=button[name="Failed src/cart/pricing.test.ts 1 failed · 4 tests 78ms"i]:
+              - role=button[name="Passed src/cart/checkout.test.ts 4 tests 146ms"i]:
+              - role=button[name="Failed src/cart/sync.test.ts 1 failed · 4 tests 5.2s"i]:
+                - heading "cart sync"
+                            - role=button[name="Copy failure: syncs between tabs"i]
+                          - role=button[name="Ask to fix"i]
+              - role=button[name="Passed src/lib/money.test.ts 4 tests 142ms"i]:
+              - role=button[name="Passed src/ui/summary.test.tsx 4 tests 709ms"i]:
+              - role=button[name="Run all tests"i]
+              - role=button[name="Rerun failed"i]
+              - role=button[name="Ask to fix failures"i]
+          - status:
+          - role=button[name="Reset demo"i]
+    - role=button[name="Copy Locator"i]:
+    - role=button[name="Record Skill Record a skill"i]
+    - role=button[name="Start remote control"i]:
+    - role=button[name="Hide toolbar"i]
+[log] Manual file remains collapsed: false
+[log]                             - role=button[name="Copy failure: applies a coupon only once"i]
+                          - role=button[name="Ask to fix"i] >> nth=0
+              - role=button[name="Passed src/cart/checkout.test.ts 4 tests 146ms"i]:
+              - role=button[name="Failed src/cart/sync.test.ts 1 failed · 4 tests 5.2s"i]:
+                - heading "cart sync"
+                            - role=button[name="Copy failure: syncs between tabs"i]
+                          - role=button[name="Ask to fix"i] >> nth=1
+              - role=button[name="Passed src/lib/money.test.ts 4 tests 142ms"i]:
+              - role=button[name="Passed src/ui/summary.test.tsx 4 tests 709ms"i]:
+              - role=button[name="Run all tests"i]
+              - role=button[name="Rerun failed"i]
+              - role=button[name="Ask to fix failures"i]
+          - status:
+          - role=button[name="Reset demo"i]
+    - role=button[name="Copy Locator"i]:
+    - role=button[name="Record Skill Record a skill"i]
+    - role=button[name="Start remote control"i]:
+    - role=button[name="Hide toolbar"i]
+[log]                 - role=button[name="Copy failures"i]
+              - role=button[name="Failed src/cart/pricing.test.ts 1 failed · 4 tests 78ms"i]:
+                - heading "pricing"
+                            - role=button[name="Copy failure: applies a coupon only once"i]
+                          - role=button[name="Ask to fix"i] >> nth=0
+              - role=button[name="Failed src/cart/sync.test.ts 1 failed · 4 tests 5.2s"i]:
+                - heading "cart sync"
+                            - role=button[name="Copy failure: syncs between tabs"i]
+                          - role=button[name="Ask to fix"i] >> nth=1
+              - role=button[name="Run all tests"i]
+              - role=button[name="Rerun failed"i]
+              - role=button[name="Ask to fix failures"i]
+          - status:
+          - role=button[name="Reset demo"i]
+    - role=button[name="Copy Locator"i]:
+    - role=button[name="Record Skill Record a skill"i]
+    - role=button[name="Start remote control"i]:
+    - role=button[name="Hide toolbar"i]
+[log]                             - role=button[name="Copy failure: applies a coupon only once"i]
+                          - role=button[name="Ask to fix"i] >> nth=0
+              - role=button[name="Failed src/cart/sync.test.ts 1 failed · 4 tests 5.2s"i]:
+                - heading "cart sync"
+                            - role=button[name="Copy failure: syncs between tabs"i]
+                          - role=button[name="Ask to fix"i] >> nth=1
+              - role=button[name="Run all tests"i]
+              - role=button[name="Rerun failed"i]
+              - role=button[name="Ask to fix failures"i]
+            - heading "A focused fix"
+              - role=button[name="Apply sample fix & rerun"i]
+              - role=button[name="Dismiss"i]
+          - status:
+          - role=button[name="Reset demo"i]
+    - role=button[name="Copy Locator"i]:
+    - role=button[name="Record Skill Record a skill"i]
+    - role=button[name="Start remote control"i]:
+    - role=button[name="Hide toolbar"i]
+[log]               - role=button[name="Running Running tests · 18 of 20"i]:
+            - status:
+                - role=button[name="All 20"i]
+                - role=button[name="Failed 0"i]
+                - role=button[name="Skipped 1"i]
+                - role=button[name="Slow 1"i]
+              - role=button[name="Running src/cart/pricing.test.ts 3 of 4 tests 64ms"i]:
+                - heading "pricing"
+              - role=button[name="Passed src/cart/checkout.test.ts 4 tests 146ms"i]:
+              - role=button[name="Queued src/cart/sync.test.ts 3 of 4 tests 155ms"i]:
+              - role=button[name="Passed src/lib/money.test.ts 4 tests 142ms"i]:
+              - role=button[name="Passed src/ui/summary.test.tsx 4 tests 709ms"i]:
+              - role=button[name="Stop run"i]
+          - role=button[name="Reset demo"i]
+    - role=button[name="Copy Locator"i]:
+    - role=button[name="Record Skill Record a skill"i]
+    - role=button[name="Start remote control"i]:
+    - role=button[name="Hide toolbar"i]
+[log]           - role=button[name="Use dark theme"i]
+          - heading "From failure to clarity."
+              - role=button[name="Passed 19 passed, 1 skipped in 24ms"i]:
+            - status:
+              - role=button[name="Run all tests"i]
+          - status:
+          - role=button[name="Reset demo"i]
+    - role=button[name="Copy Locator"i]:
+    - role=button[name="Record Skill Record a skill"i]
+    - role=button[name="Start remote control"i]:
+    - role=button[name="Hide toolbar"i]
+[log] Frames: 672

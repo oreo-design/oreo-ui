@@ -1,0 +1,329 @@
+.test-results {
+  width: 100%;
+  min-width: 0;
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+}
+.tres-summary-trigger,
+.tres-file-trigger,
+.tres-test-failure > summary,
+.tres-test-row {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2.5);
+  width: 100%;
+  min-width: 0;
+  text-align: left;
+}
+.tres-summary-trigger,
+.tres-file-trigger {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border-radius: var(--radius-control);
+}
+.tres-summary-trigger {
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 2);
+  color: var(--color-text-secondary);
+}
+.tres-summary-label {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.6;
+}
+.tres-status {
+  flex-shrink: 0;
+}
+.tres-status[data-test-status="passed"] {
+  color: var(--color-status-success);
+}
+.tres-status[data-test-status="failed"] {
+  color: var(--color-status-error);
+}
+.tres-status[data-test-status="running"] {
+  color: var(--color-status-progress);
+}
+.tres-status[data-test-status="queued"],
+.tres-status[data-test-status="skipped"] {
+  color: var(--color-text-tertiary);
+}
+.tres-count {
+  display: inline-grid;
+  position: relative;
+  overflow: hidden;
+  vertical-align: bottom;
+  font-variant-numeric: tabular-nums;
+  min-width: 2ch;
+}
+.tres-count > span {
+  grid-area: 1/1;
+  display: inline-block;
+}
+.tres-progress {
+  display: flex;
+  height: calc(var(--spacing) * 0.75);
+  border-radius: var(--radius-capsule);
+  background: var(--color-bg-elevated);
+  overflow: hidden;
+  margin: 0 calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+}
+.tres-progress > span {
+  height: 100%;
+  transition: width 0.25s ease-out;
+}
+.tres-progress > [data-kind="passed"] {
+  background: var(--color-status-success);
+}
+.tres-progress > [data-kind="failed"] {
+  background: var(--color-status-error);
+}
+.tres-progress > [data-kind="skipped"] {
+  background: var(--color-text-tertiary);
+}
+.tres-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2)
+    calc(var(--spacing) * 3);
+  flex-wrap: wrap;
+}
+.tres-filters {
+  display: flex;
+  gap: calc(var(--spacing) * 1);
+  flex-wrap: wrap;
+}
+.tres-filters button {
+  font-size: var(--text-xs);
+}
+.tres-filter-count {
+  color: var(--color-text-tertiary);
+  margin-left: calc(var(--spacing) * 1);
+  font-variant-numeric: tabular-nums;
+}
+.tres-file-trigger {
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 2);
+  font-size: var(--text-xs);
+}
+.tres-file-trigger code {
+  flex: 1;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.tres-file-trigger:hover,
+.tres-summary-trigger:hover {
+  background: var(--color-bg-surface);
+}
+.tres-file-count,
+.tres-duration {
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.tres-file-count {
+  color: var(--color-text-secondary);
+}
+.tres-file-body {
+  margin: 0 0 calc(var(--spacing) * 3) calc(var(--spacing) * 4);
+  padding-left: calc(var(--spacing) * 4);
+  border-left: 1px solid var(--color-border-subtle);
+}
+.tres-file-body[hidden],
+.test-results [hidden] {
+  display: none;
+}
+.tres-test-group h3 {
+  font-weight: 500;
+  font-size: var(--text-xs);
+  padding: calc(var(--spacing) * 2) 0;
+}
+.tres-test-group ul,
+.tres-stack ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tres-test-failure > summary,
+.tres-test-row {
+  padding: calc(var(--spacing) * 2) 0;
+  line-height: 1.7;
+}
+.tres-test-row {
+  color: var(--color-text-secondary);
+}
+.tres-test-failure > summary {
+  list-style: none;
+  cursor: pointer;
+  border-radius: var(--radius-control);
+}
+.tres-test-failure > summary::-webkit-details-marker,
+.tres-framework > summary::-webkit-details-marker {
+  display: none;
+}
+.tres-test-failure > summary > span:not(.tres-duration),
+.tres-test-row > span:not(.tres-duration) {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.tres-test-failure[open] > summary > svg:last-child {
+  transform: rotate(180deg);
+}
+.tres-failure {
+  padding: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 4)
+    calc(var(--spacing) * 6);
+  min-width: 0;
+}
+.tres-error-kind {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  margin: 0 0 calc(var(--spacing) * 2);
+}
+.tres-error-message {
+  margin: 0 0 calc(var(--spacing) * 3);
+  font-size: var(--text-xs);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.tres-comparison {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-small);
+  overflow: hidden;
+  margin-bottom: calc(var(--spacing) * 4);
+}
+.tres-comparison > div {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  font-size: var(--text-xs);
+}
+.tres-comparison > div > span {
+  font-size: var(--text-xs);
+  font-weight: 500;
+}
+.tres-comparison pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: calc(var(--spacing) * 1) 0 0;
+  font-family: var(--font-mono);
+  line-height: 1.7;
+}
+.tres-comparison [data-kind="expected"] {
+  background: var(--color-palette-mint-bg);
+  color: var(--color-palette-mint-text);
+}
+.tres-comparison [data-kind="received"] {
+  background: color-mix(
+    in srgb,
+    var(--color-status-error) 9%,
+    var(--color-bg-base)
+  );
+  color: var(--color-text-primary);
+}
+.tres-comparison [data-kind="received"] > span {
+  color: var(--color-status-error);
+}
+.tres-frame-location {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: var(--text-xs);
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 2);
+}
+.tres-stack {
+  min-width: 0;
+}
+.tres-stack li > div {
+  max-width: 100%;
+}
+.tres-framework > summary {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  list-style: none;
+  padding: calc(var(--spacing) * 3) 0;
+}
+.tres-framework[open] > summary svg {
+  transform: rotate(90deg);
+}
+.tres-failure-actions,
+.tres-actions {
+  display: flex;
+  gap: calc(var(--spacing) * 2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tres-actions {
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 2)
+    calc(var(--spacing) * 1);
+}
+.tres-copy {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 1);
+  position: relative;
+}
+.tres-copy-feedback,
+.tres-copy-error {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.tres-copy-error {
+  max-width: calc(var(--spacing) * 48);
+}
+.test-results button:focus-visible,
+.test-results summary:focus-visible {
+  outline: 2px solid var(--color-status-progress);
+  outline-offset: 2px;
+}
+@media (max-width: 600px) {
+  .tres-file-trigger {
+    flex-wrap: wrap;
+    gap: calc(var(--spacing) * 2);
+  }
+  .tres-file-trigger code {
+    flex-basis: calc(100% - var(--spacing) * 8);
+  }
+  .tres-file-count {
+    margin-left: calc(var(--spacing) * 6);
+  }
+  .tres-file-trigger > svg:last-child {
+    margin-left: auto;
+  }
+  .tres-file-body {
+    margin-left: calc(var(--spacing) * 2);
+    padding-left: calc(var(--spacing) * 3);
+  }
+  .tres-failure {
+    padding-left: calc(var(--spacing) * 1);
+  }
+  .tres-test-failure > summary,
+  .tres-test-row {
+    align-items: flex-start;
+  }
+  .tres-toolbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .tres-filters {
+    gap: 0;
+  }
+  .tres-actions {
+    padding-left: 0;
+  }
+  .tres-duration {
+    padding-top: calc(var(--spacing) * 0.5);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tres-progress > span {
+    transition: none;
+  }
+  .test-results * {
+    scroll-behavior: auto !important;
+  }
+}
