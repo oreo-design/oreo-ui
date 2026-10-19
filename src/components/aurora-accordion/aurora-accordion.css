@@ -1,0 +1,176 @@
+.aurora-surface {
+  position: relative;
+  isolation: isolate;
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  --aurora-start: var(--color-palette-blue-text);
+  --aurora-end: var(--color-palette-orange-text);
+}
+.aurora-surface[data-tone="mint"] {
+  --aurora-start: var(--color-palette-mint-text);
+  --aurora-end: var(--color-palette-mint-text);
+}
+.aurora-surface[data-tone="neutral"] {
+  --aurora-start: var(--color-text-tertiary);
+  --aurora-end: var(--color-text-tertiary);
+}
+.aurora-surface::before,
+.aurora-surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: -1;
+}
+.aurora-surface::before {
+  border: 1px solid var(--color-border-subtle);
+}
+.aurora-surface::after {
+  opacity: 0;
+  background: linear-gradient(
+    130deg,
+    color-mix(in srgb, var(--aurora-start) 8%, transparent),
+    transparent 45%,
+    color-mix(in srgb, var(--aurora-end) 9%, transparent)
+  );
+  box-shadow:
+    -1px -1px 0 color-mix(in srgb, var(--aurora-start) 30%, transparent),
+    1px 1px 0 color-mix(in srgb, var(--aurora-end) 30%, transparent),
+    0 4px 24px color-mix(in srgb, var(--aurora-end) 5%, transparent);
+  transition: opacity 200ms var(--ease-out);
+}
+.aurora-surface[data-active]::after {
+  opacity: 1;
+}
+.aurora-accordion {
+  width: 100%;
+  max-width: 28rem;
+  margin-inline: auto;
+}
+.aurora-item {
+  border-radius: 0;
+  transition:
+    margin 220ms var(--ease-out),
+    border-radius 200ms var(--ease-out);
+}
+.aurora-item::before {
+  border-block: 0;
+}
+.aurora-item:first-child,
+.aurora-item[data-open] + .aurora-item {
+  border-start-start-radius: var(--radius-card-medium);
+  border-start-end-radius: var(--radius-card-medium);
+}
+.aurora-item:last-child,
+.aurora-item:has(+ .aurora-item[data-open]) {
+  border-end-start-radius: var(--radius-card-medium);
+  border-end-end-radius: var(--radius-card-medium);
+}
+.aurora-item:first-child::before,
+.aurora-item[data-open] + .aurora-item::before {
+  border-top-width: 1px;
+}
+.aurora-item:last-child::before,
+.aurora-item:has(+ .aurora-item[data-open])::before {
+  border-bottom-width: 1px;
+}
+.aurora-item[data-open] {
+  border-radius: var(--radius-card-medium);
+  margin-block: calc(var(--spacing) * 4);
+}
+.aurora-item[data-open]::before {
+  border-block-width: 1px;
+}
+.aurora-item[data-open]:first-child {
+  margin-top: 0;
+}
+.aurora-item[data-open]:last-child {
+  margin-bottom: 0;
+}
+.aurora-heading {
+  margin: 0;
+  font: inherit;
+}
+.aurora-trigger {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  width: 100%;
+  min-height: calc(var(--spacing) * 14);
+  padding: calc(var(--spacing) * 4);
+  text-align: left;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.5;
+  border-radius: inherit;
+  cursor: pointer;
+}
+.aurora-heading {
+  border-radius: inherit;
+}
+.aurora-trigger:hover:not(:disabled) {
+  background: var(--color-state-hover);
+}
+.aurora-trigger:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 3px;
+}
+.aurora-trigger:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.aurora-question {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.aurora-topic-icon,
+.aurora-plus {
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+.aurora-plus {
+  transition: transform 200ms var(--ease-out);
+}
+.aurora-trigger[data-panel-open] .aurora-plus {
+  transform: rotate(45deg);
+}
+.aurora-panel {
+  height: var(--accordion-panel-height);
+  overflow: hidden;
+  opacity: 1;
+  transition:
+    height 220ms var(--ease-out),
+    opacity 180ms var(--ease-out);
+}
+.aurora-panel[data-starting-style],
+.aurora-panel[data-ending-style] {
+  height: 0;
+  opacity: 0;
+}
+.aurora-answer {
+  padding: 0 calc(var(--spacing) * 4) calc(var(--spacing) * 4);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+.aurora-answer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.aurora-accordion[data-keyboard] *,
+.aurora-accordion[data-keyboard] *::after,
+.aurora-accordion[data-animated="false"] *,
+.aurora-accordion[data-animated="false"] *::after,
+.aurora-surface[data-animated="false"]::after {
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurora-accordion *,
+  .aurora-surface::after {
+    transition: none;
+  }
+}

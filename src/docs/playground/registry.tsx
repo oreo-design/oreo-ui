@@ -1,3 +1,4 @@
+import { AuroraAccordion, AuroraSurface, AURORA_QUESTIONS } from "@/components/aurora-accordion";
 import { OutlineWordmark, PathGlyph, FooterLinkGroups, OREO_WORDMARK, STUDIO_WORDMARK, FOOTER_LINK_GROUPS } from "@/components/outline-wordmark";
 import { BreakoutNavigator, DestinationProgress, RecoveryMessage, BREAKOUT_DESTINATIONS } from "@/components/breakout-navigation";
 import { AgentTaskQueue, QueueTaskRow, TaskClarification, QueuedRequestStack } from "@/components/agent-task-queue";
@@ -197,6 +198,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "aurora-accordion": {AuroraAccordion,AuroraSurface},
  "outline-wordmark": {OutlineWordmark,PathGlyph,FooterLinkGroups},
  "breakout-navigation": {BreakoutNavigator,DestinationProgress,RecoveryMessage},
  "agent-task-queue": {AgentTaskQueue,QueueTaskRow,TaskClarification,QueuedRequestStack},
@@ -322,6 +324,8 @@ function linkedDocumentPlayground(selector = false): PlaygroundSpec {
 }
 function queueAnswers(raw:string):Record<string,string>{try{const value=JSON.parse(raw);return value&&typeof value==="object"&&!Array.isArray(value)?Object.fromEntries(Object.entries(value).filter((entry):entry is [string,string]=>typeof entry[1]==="string")):{};}catch{return {};}}
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "aurora-accordion": {...define("Aurora Accordion",{tone:select(["spectrum","mint","neutral"],"spectrum"),animated:toggle(true),disabled:toggle(false),empty:toggle(false),label:text("Frequently asked questions")},v=><div className="w-full p-8"><AuroraAccordion items={v.empty?[]:AURORA_QUESTIONS} tone={v.tone} animated={v.animated} disabled={v.disabled} label={v.label}/></div>),source:"aurora-accordion"},
+ "aurora-surface": {...define("Aurora Surface",{active:toggle(true),tone:select(["spectrum","mint","neutral"],"spectrum"),animated:toggle(true),title:text("A little atmosphere"),description:text("Soft color. Quiet detail.")},v=><div className="w-full p-8"><AuroraSurface active={v.active} tone={v.tone} animated={v.animated} className="mx-auto max-w-sm p-6"><h3 className="font-medium">{v.title}</h3><p className="mt-2 text-sm text-text-secondary">{v.description}</p></AuroraSurface></div>),source:"aurora-accordion"},
  "outline-wordmark": {...define("Outline Wordmark",{artwork:select(["oreo","studio"],"oreo"),accent:select(["amber","mint","neutral"],"amber"),nodes:toggle(true),animated:toggle(true),release:number(700,0,1500,50),revealed:toggle(false),empty:toggle(false),resetKey:number(0,0,99,1)},v=><div className="w-full p-8"><OutlineWordmark glyphs={v.empty?[]:v.artwork==="oreo"?OREO_WORDMARK:STUDIO_WORDMARK} label={v.artwork} accent={v.accent} nodes={v.nodes} animated={v.animated} release={v.release} revealed={v.revealed} resetKey={v.resetKey}/></div>),source:"outline-wordmark"},
  "path-glyph": {...define("Path Glyph",{active:toggle(false),nodes:toggle(true),accent:select(["amber","mint","neutral"],"amber"),animated:toggle(true),release:number(700,0,1500,50)},v=><div className="w-56 p-8"><PathGlyph active={v.active} nodes={v.nodes} accent={v.accent} animated={v.animated} release={v.release}/></div>),source:"outline-wordmark"},
  "footer-link-groups": {...define("Footer Link Groups",{compact:toggle(false),groups:number(2,0,2,1),label:text("Footer navigation")},v=><div className="w-full p-8"><FooterLinkGroups groups={FOOTER_LINK_GROUPS.slice(0,v.groups)} compact={v.compact} label={v.label}/></div>),source:"outline-wordmark"},
