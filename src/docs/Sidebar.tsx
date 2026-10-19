@@ -15,6 +15,10 @@ const NAV: Group[] = [
   {
     title: "Components",
     items: [
+      {label:"Adaptive Issue Table",page:"adaptive-issue-table"},
+      {label:"Adaptive Issue Row",page:"adaptive-issue-row"},
+      {label:"Pull Request Pill",page:"pull-request-pill"},
+      {label:"Resize Frame",page:"resize-frame"},
       { label: "Button", page: "button" },
       { label: "Data Filter Popover", page: "data-filter-popover" },
       { label: "Data Sort Menu", page: "data-sort-menu" },
@@ -261,6 +265,7 @@ const NAV: Group[] = [
     title: "Templates",
     items: [
       {label:"Workflow Directory",page:"workflow-directory"},
+      {label:"Adaptive Issues",page:"adaptive-issues"},
       {label:"Test Workspace",page:"test-workspace"},
       {label:"Merge Workspace",page:"merge-workspace"},
       { label: "Support Console", page: "support-console" },

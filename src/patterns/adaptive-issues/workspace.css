@@ -1,0 +1,340 @@
+.adaptive-workspace {
+  min-height: 100dvh;
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  color-scheme: light;
+}
+.adaptive-workspace.theme-dark {
+  color-scheme: dark;
+}
+.adws-header {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+  height: calc(var(--spacing) * 18);
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: 0 calc(var(--spacing) * 8);
+}
+.adws-brand {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+}
+.adws-muted {
+  color: var(--color-text-tertiary);
+  margin: 0 calc(var(--spacing) * 2);
+}
+.adws-header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+}
+.adws-header-actions a {
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+}
+.adws-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: calc(var(--spacing) * 10) calc(var(--spacing) * 8)
+    calc(var(--spacing) * 6);
+}
+.adws-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 8);
+}
+.adws-eyebrow {
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+  margin: 0 0 calc(var(--spacing) * 3);
+}
+.adws-intro h1 {
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+  margin: 0 0 calc(var(--spacing) * 3);
+}
+.adws-intro p:last-child {
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+.adws-tools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 3);
+  margin-bottom: calc(var(--spacing) * 5);
+}
+.adws-search {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  width: 280px;
+  color: var(--color-text-tertiary);
+}
+.adws-search input {
+  width: 100%;
+  min-width: 0;
+  outline: none;
+  color: var(--color-text-primary);
+  background: transparent;
+}
+.adws-search:focus-within {
+  outline: 2px solid var(--color-text-secondary);
+  outline-offset: 2px;
+}
+.adws-presets {
+  display: flex;
+  gap: var(--spacing);
+  margin-left: auto;
+  border: 1px solid var(--color-border-subtle);
+  padding: var(--spacing);
+  border-radius: var(--radius-control);
+}
+.adws-presets [aria-pressed="true"] {
+  background: var(--color-bg-elevated);
+}
+.adws-panel {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-medium);
+  background: var(--color-bg-surface);
+  overflow: hidden;
+}
+.adws-panel-head {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
+  background: var(--color-bg-surface);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.adws-panel-head [role="tablist"] {
+  display: flex;
+  gap: var(--spacing);
+}
+.adws-panel-head [role="tab"] {
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  border-radius: var(--radius-capsule);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: var(--text-xs);
+}
+.adws-panel-head [aria-selected="true"] {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+.adws-count {
+  margin-left: auto;
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+}
+.adws-content {
+  max-height: 760px;
+  overflow-y: auto;
+  min-height: 360px;
+  scrollbar-width: thin;
+}
+.adws-feedback {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  min-height: calc(var(--spacing) * 12);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+}
+.adws-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing) * 4);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: calc(var(--spacing) * 4);
+}
+.adws-footer label {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+}
+.adws-footer select,
+.adws-detail select {
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2);
+  background: var(--color-bg-surface);
+  color: var(--color-text-secondary);
+}
+.adws-create,
+.adws-detail {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 5);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-card-small);
+  background: var(--color-bg-surface);
+}
+.adws-create label {
+  flex: 1;
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.adws-create input {
+  display: block;
+  width: 100%;
+  margin-top: var(--spacing);
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2);
+  color: var(--color-text-primary);
+}
+.adws-detail > div {
+  flex: 1;
+  min-width: 0;
+}
+.adws-detail h2 {
+  font-size: var(--text-base);
+  font-weight: 500;
+  margin: var(--spacing) 0 calc(var(--spacing) * 2);
+  overflow-wrap: anywhere;
+}
+.adws-detail-meta {
+  display: inline;
+  margin-left: calc(var(--spacing) * 2);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  overflow-wrap: anywhere;
+}
+.adws-detail label {
+  display: grid;
+  gap: var(--spacing);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.adws-overview {
+  padding: calc(var(--spacing) * 8);
+}
+.adws-overview h2 {
+  font-size: var(--text-xl);
+  font-weight: 500;
+}
+.adws-overview p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: calc(var(--spacing) * 3) 0;
+}
+.adws-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(var(--spacing) * 3);
+  margin: calc(var(--spacing) * 8) 0;
+}
+.adws-metrics button {
+  text-align: left;
+  padding: calc(var(--spacing) * 4);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-card-small);
+  cursor: pointer;
+}
+.adws-metrics strong {
+  display: block;
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  margin-bottom: var(--spacing);
+}
+.adws-metrics span {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.adws-overview progress {
+  width: 100%;
+  height: calc(var(--spacing) * 2);
+  accent-color: var(--color-text-primary);
+  margin-top: calc(var(--spacing) * 4);
+}
+.adws-activity {
+  list-style: none;
+  margin: 0;
+  padding: calc(var(--spacing) * 6);
+}
+.adws-activity li {
+  display: flex;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4) 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+  line-height: 1.6;
+}
+.adws-activity svg {
+  flex: none;
+  margin-top: var(--spacing);
+  color: var(--color-text-tertiary);
+}
+.adaptive-workspace :focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 3px;
+}
+@media (max-width: 800px) {
+  .adws-main {
+    padding: calc(var(--spacing) * 6) calc(var(--spacing) * 4);
+  }
+  .adws-header {
+    padding: 0 calc(var(--spacing) * 4);
+  }
+  .adws-intro > div:last-child:not(:first-child) {
+    display: none;
+  }
+  .adws-intro h1 {
+    font-size: var(--text-2xl);
+  }
+  .adws-presets {
+    margin-left: 0;
+    order: 3;
+  }
+  .adws-search {
+    flex: 1;
+    width: auto;
+    min-width: 170px;
+  }
+  .adws-detail {
+    flex-wrap: wrap;
+  }
+  .adws-detail > div {
+    flex-basis: 100%;
+  }
+  .adws-create {
+    flex-wrap: wrap;
+  }
+  .adws-create label {
+    flex-basis: 100%;
+  }
+  .adws-header-actions a {
+    display: none;
+  }
+  .adws-footer label {
+    margin-left: 0;
+  }
+  .adws-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .adws-overview {
+    padding: calc(var(--spacing) * 4);
+  }
+  .adws-count {
+    display: none;
+  }
+}

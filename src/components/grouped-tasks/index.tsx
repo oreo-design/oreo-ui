@@ -28,6 +28,7 @@ export function TaskStatusGroup({
   open,
   onOpenChange,
   onAdd,
+  tone = "status",
   children,
 }: {
   status: TaskStatus;
@@ -35,6 +36,8 @@ export function TaskStatusGroup({
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onAdd?: () => void;
+  /** Neutral group bands for dense adaptive layouts. */
+  tone?: "status" | "neutral";
   children: ReactNode;
 }) {
   const id = useId();
@@ -44,7 +47,7 @@ export function TaskStatusGroup({
       onOpenChange={onOpenChange}
       className="gt-group"
     >
-      <div className={`gt-group-heading ${paletteSurface[stageColor[status]]}`}>
+      <div className={`gt-group-heading ${paletteSurface[tone === "neutral" ? "default" : stageColor[status]]}`}>
         <h2 id={id}>
           <Collapsible.Trigger className="gt-group-trigger">
             <Icon name={open ? "chevron-down" : "chevron-right"} size="sm" />
