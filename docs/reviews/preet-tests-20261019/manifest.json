@@ -465,6 +465,15 @@
         1100,
         1100
       ]
+    },
+    {
+      "file": "after-component-empty-r3.png",
+      "sha256": "3768726e330f7dbaed5cda3c86702b5407082e61ac143dce5090f3ebe005a968",
+      "bytes": 84241,
+      "dimensions": [
+        1440,
+        1000
+      ]
     }
   ],
   "video": {
@@ -486,5 +495,7 @@
     "typescript": "passed",
     "vite_build": "passed with existing chunk-size warning",
     "git_diff_check": "passed"
-  }
+  },
+  "pull_request": "https://github.com/oreo-design/oreo-ui/pull/104",
+  "final_preview": "Vite production preview localhost:5185"
 }

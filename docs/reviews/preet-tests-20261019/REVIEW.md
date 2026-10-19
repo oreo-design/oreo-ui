@@ -1,7 +1,7 @@
 # Test Results — review index
 
 Implementation source: `5c0688b0bd2b72b34e62f9e5687ccd5d649ec544`. Baseline: `26aeb33c972e5531571ef56c5b3c0538e3dfa552`.
-Delivery: implemented and locally validated; PR / main integration recorded below when complete. This index is the single evidence location.
+Delivery: implemented and locally validated. [PR #104](https://github.com/oreo-design/oreo-ui/pull/104) is the task-scoped integration record; its GitHub state is authoritative for merge status. This index is the single evidence location.
 
 ## Reference and scope
 
@@ -73,7 +73,7 @@ All new test-result states have **no equivalent pre-change page**; the actual en
 | Tablet | after-tablet.png | 768 px; no page horizontal overflow |
 | Reduced motion | after-reduced-motion.png | Progress transition-duration 0s; shared StatusIcon and count honor reduced motion |
 | Keyboard | browser QA | File trigger Enter closed (false) then reopened (true) |
-| Component empty/error | after-component-empty-r2.png / after-component-error.png | Explicit state; no action rendered without host callback |
+| Component empty/error | after-component-empty-r3.png / after-component-error.png | Explicit state; no action rendered without host callback |
 | Playground / docs / export | after-playground.png / after-api.png | Six component routes; generated import and Code copied feedback |
 
 ### Mobile and dark
@@ -108,9 +108,11 @@ No pre-existing execution interaction existed to record. Source streaming screen
 
 ## Historical captures
 
-Originals are preserved. `before-*.png` without `-r2` have the original fallback font. `after-idle.png`, `after-failures.png`, `after-mobile.png`, `after-mobile-dark-r1.png`, `after-failures-r2.png`, `after-mobile-r2.png`, `after-mobile-dark-r2.png`, `after-dark-r2.png` and early filter stills are superseded for visual acceptance by r3 images; some r2 images caught in-progress state. `after-component-empty.png` is superseded by `after-component-empty-r2.png` (clearer no-tests summary). `after-fix-proposal.png` is superseded by r3 (correct illustrative function parameter). Source `source-running.png` is the pre-run moment, `source-running-r2.png` shows streamed items. `source-collapsed.png` caught the author demo’s automatic follow-up, so it is not evidence of a purely collapsed final state.
+Originals are preserved. `before-*.png` without `-r2` have the original fallback font. `after-idle.png`, `after-failures.png`, `after-mobile.png`, `after-mobile-dark-r1.png`, `after-failures-r2.png`, `after-mobile-r2.png`, `after-mobile-dark-r2.png`, `after-dark-r2.png` and early filter stills are superseded for visual acceptance by r3 images; some r2 images caught in-progress state. `after-component-empty.png` and `after-component-empty-r2.png` are superseded by `after-component-empty-r3.png` (clearer no-tests summary). `after-fix-proposal.png` is superseded by r3 (correct illustrative function parameter). Source `source-running.png` is the pre-run moment, `source-running-r2.png` shows streamed items. `source-collapsed.png` caught the author demo’s automatic follow-up, so it is not evidence of a purely collapsed final state.
 
 ## Source preview captures
 
 ![Author preview — summary and failure context](/Users/ziye/Documents/Project/Research/oreo-ui-test-results-20261019/docs/reviews/preet-tests-20261019/source-summary.png)
 ![Author preview — streamed files](/Users/ziye/Documents/Project/Research/oreo-ui-test-results-20261019/docs/reviews/preet-tests-20261019/source-running-r2.png)
+
+Final browser smoke check used the production build at localhost:5185 to avoid development-cache artifacts: the empty suite correctly shows “No tests found”, and a fresh full run reaches 17 passed / 2 failed / 1 skipped. The r3 empty-state capture is from that exact build.
