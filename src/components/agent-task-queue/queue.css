@@ -184,13 +184,13 @@ button.aq-title {
   width: calc(var(--spacing) * 4);
   height: calc(var(--spacing) * 4);
   border-radius: var(--radius-capsule);
-  background: var(--color-bg-surface);
+  background: var(--color-border-default);
 }
 .aq-skeleton i {
   height: calc(var(--spacing) * 6);
   width: 80%;
   border-radius: var(--radius-control);
-  background: var(--color-bg-surface);
+  background: var(--color-border-default);
 }
 .aq-clarification {
   padding: calc(var(--spacing) * 4);
