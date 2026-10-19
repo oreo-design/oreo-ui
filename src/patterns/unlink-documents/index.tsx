@@ -151,7 +151,7 @@ export function UnlinkDocumentsPage() {
                         <div className="uld-balances">
                           {[
                             ["Opening balance", "$28,740.00"],
-                            ["Money in", "$14,430.22"],
+                            ["Money in", "$14,736.84"],
                             ["Closing balance", "$42,810.22"],
                           ].map(([label, value]) => (
                             <div key={label}>
