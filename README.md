@@ -4,6 +4,10 @@ A small, copy-paste React component library that reproduces the **Oreo UI** desi
 
 **[Live demo →](https://oreo-ui-preview.vercel.app)**
 
+## Research & references
+
+[参考资料库 / Research library](docs/references/README.md) collects prior video, product and design-system analyses, their original sources, adoption status and portable evidence. Start here before repeating research; existing component/template reviews are linked from the same index.
+
 **[AI remix experiments →](https://oreo-ui-preview.vercel.app/ai-remixes)** — five original components, five new capabilities and five independent Claude-inspired adaptations. All actions use identifiable browser-local demo data.
 
 ## Stack
@@ -304,7 +308,3 @@ Kevin’s [Unlink Documents](https://x.com/kvnkld/status/2111826634902741219) ex
 ### Outline brand footer
 
 `/outline-brand-footer` composes OutlineWordmark, PathGlyph and FooterLinkGroups. Contour nodes, per-letter hover/focus/touch highlights, quiet release fades and real footer navigation. Independent Playgrounds and four-part component docs; reference by @creativestefan via uiinspoo.
-
-## Research & references
-
-[参考资料库 / Research library](docs/references/README.md) collects prior video, product and design-system analyses, their original sources, adoption status and portable evidence. Start here before repeating research; existing component/template reviews are linked from the same index.

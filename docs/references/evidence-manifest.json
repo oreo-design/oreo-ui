@@ -1027,6 +1027,33 @@
       "sha256": "393ff769acac894077622a1130be03d9d1ce3bef2b8f273fce7c13273455c1a9",
       "bytes": 3316694,
       "transformation": "byte-identical copy"
+    },
+    {
+      "path": "evidence/spacing-20261019/checks.json",
+      "sourceBundle": "spacing-20261019",
+      "sourceRelativePath": "checks.json",
+      "sourceSha256": "149d3acdeef6ad5f6538c6078216942b18b67d6fc22a37ce7db539580bf8481c",
+      "sha256": "149d3acdeef6ad5f6538c6078216942b18b67d6fc22a37ce7db539580bf8481c",
+      "bytes": 511,
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "evidence/spacing-20261019/manifest.json",
+      "sourceBundle": "spacing-20261019",
+      "sourceRelativePath": "manifest.json",
+      "sourceSha256": "9d6dbd1d38eacfc0573eeda13ab41c53d78dac860df0d3e72abfb105fe59634b",
+      "sha256": "9d6dbd1d38eacfc0573eeda13ab41c53d78dac860df0d3e72abfb105fe59634b",
+      "bytes": 5690,
+      "transformation": "byte-identical copy"
+    },
+    {
+      "path": "evidence/cosign-20261020/manifest.json",
+      "sourceBundle": "cosign-20261020",
+      "sourceRelativePath": "manifest.json",
+      "sourceSha256": "6b896fa26cf04413322b8265a28047a5c029fc4870f05c27fad739982a7325cf",
+      "sha256": "6b896fa26cf04413322b8265a28047a5c029fc4870f05c27fad739982a7325cf",
+      "bytes": 954,
+      "transformation": "byte-identical copy"
     }
   ]
 }

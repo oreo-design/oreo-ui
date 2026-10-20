@@ -1,0 +1,193 @@
+{
+  "baseline": "b89172c92fbd2f4043f8b988dd2dfad18bbd2c09",
+  "source": "67fcbe1cf95612ac276c250ef7a6821be62e7ecc",
+  "environment": "Chrome / Playwriter 9; localhost:5184; local real components with static fixture; English",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "breakpoint_checks": [
+    1199,
+    1200
+  ],
+  "artifacts": [
+    {
+      "file": "after-compare.png",
+      "width": 1440,
+      "height": 1732,
+      "sha256": "79a42ca764d17661e549d980257032f48c651ee9b8a5a45005d9e4e6d1be65e4"
+    },
+    {
+      "file": "after-copy-recovery.png",
+      "width": 1440,
+      "height": 1503,
+      "sha256": "e6c5d859b2dc1ea7f73d744dbac9a04cacf006fa32bd6764761a6623107ce27f"
+    },
+    {
+      "file": "after-dark-final.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "772ed18cc5080c02e07b3d5f9dae56fa7411e84037103e5035fe4be8958f9793"
+    },
+    {
+      "file": "after-dark-r2.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "45e007e704ab342c710e548ca6cb494323aea074f11df50ca8dd738aec7ad8b0"
+    },
+    {
+      "file": "after-dark.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "269ba9661e252ef8000692bd56791771513166e2b5d27e29b742713265edc377"
+    },
+    {
+      "file": "after-desktop-r1.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "120686cc9f0606321b2c850d2d4a2a9f39bde48248b60a72fc7bbc7e4039a8d4"
+    },
+    {
+      "file": "after-desktop.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "120686cc9f0606321b2c850d2d4a2a9f39bde48248b60a72fc7bbc7e4039a8d4"
+    },
+    {
+      "file": "after-entry.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "7bcbc854c05a6385d61aec02337da906d36fd833798db259b7d6686f9a7c87f0"
+    },
+    {
+      "file": "after-guide-mobile.png",
+      "width": 390,
+      "height": 4201,
+      "sha256": "96c77d3fe4ec7e10e8a43f080bb5dd88f71629021e49d75f0aa107d00dbb2e44"
+    },
+    {
+      "file": "after-guide.png",
+      "width": 1440,
+      "height": 3307,
+      "sha256": "0199142cea22d337b5c075eac5673bc9eec1de52ef6916bccf785291ba6b0fb4"
+    },
+    {
+      "file": "after-highlight-final.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "1b1f3e7832bec34ad05b9185b849bc2b893c6c61aa2f1819619f555bdd6ac88d"
+    },
+    {
+      "file": "after-highlight.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "5f8b7ef572e16566ec81b3d39497a227c40f8ab103cb3f1dacd04248119f668c"
+    },
+    {
+      "file": "after-long-content.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "a3d29e4e466c40aab198720fc3283ca45e1b8f9461cbfe0a38886cbef6910d64"
+    },
+    {
+      "file": "after-mobile-dark-r2.png",
+      "width": 390,
+      "height": 2471,
+      "sha256": "dc38884e432a85b72ccfc101fa61080fb2282d54141df31e6aa872aabe33dcc7"
+    },
+    {
+      "file": "after-mobile.png",
+      "width": 390,
+      "height": 2905,
+      "sha256": "40e8264c0fdd3b2fb28fd3cf8f4dff18d62006c87d7c83094b2cc3331010e04f"
+    },
+    {
+      "file": "after-tablet-dark-r2.png",
+      "width": 768,
+      "height": 1934,
+      "sha256": "eb94d3eb9d56b780fa5eea87614fbd4d4f114a86dd93285cdb04ef0bae5a09b4"
+    },
+    {
+      "file": "after-tablet-dark.png",
+      "width": 768,
+      "height": 2332,
+      "sha256": "206d7317dc00a959934e45d62c46c879a77bc30fbffc5e5b927deea40606a4b5"
+    },
+    {
+      "file": "after-tablet-light.png",
+      "width": 768,
+      "height": 1934,
+      "sha256": "a9f8ce6af5ec21a7c1c44454150e3a02fb271bdde213591e6b000d2085070ccc"
+    },
+    {
+      "file": "before-entry.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "af9ebaefae72a83cd6f7e216c78a1b48f9e8c98200488be22c79f8717e8e5108"
+    },
+    {
+      "file": "before-missing-route.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "af9ebaefae72a83cd6f7e216c78a1b48f9e8c98200488be22c79f8717e8e5108"
+    },
+    {
+      "file": "final-playground.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "120686cc9f0606321b2c850d2d4a2a9f39bde48248b60a72fc7bbc7e4039a8d4"
+    },
+    {
+      "file": "peer-settings.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "9ebcd8b2f11d306e9ad6dca0f187fc2fdab73748ffb00cf57a9dafef057939ff"
+    },
+    {
+      "file": "reference/video-0.png",
+      "width": 1134,
+      "height": 854,
+      "sha256": "8bb0742cd5597cf46c2e5560a979d379027e1963a782bad76582147c57c07930"
+    },
+    {
+      "file": "reference/video-3.png",
+      "width": 1134,
+      "height": 854,
+      "sha256": "8dab8a87caaac91225ffc152049550817c14847d8eb6a6be78fbb9db2cac0466"
+    },
+    {
+      "file": "reference/video-6.png",
+      "width": 1134,
+      "height": 854,
+      "sha256": "cdb9df10a247b49fbec356213e9fe97dbc741cae680283dcf1014bafde56238e"
+    },
+    {
+      "file": "reference/video-9.png",
+      "width": 1134,
+      "height": 854,
+      "sha256": "bf8fa42dfae0b2a7bdea3dcb3f5d97003eeb32c846726812b204121148bccf2e"
+    }
+  ],
+  "recording": "Unavailable: extension activeTab capture not granted. Click the Playwriter extension icon once on the task-owned localhost:5184/spacing tab to enable recording. No timing/motion verification claim.",
+  "superseded": [
+    "after-desktop-r1.png",
+    "after-dark.png",
+    "after-dark-final.png",
+    "after-tablet-dark.png",
+    "after-long-content.png"
+  ],
+  "pull_request": "https://github.com/oreo-design/oreo-ui/pull/102",
+  "merge_commit": "b99f9068e7bfb494ae17aad8d5e4b9e86b3f13b8",
+  "verified_remote_tree": "19b610634814d84f394cbb86773fc05be0230df4",
+  "delivery": "Merged; GitHub main tree exactly matches reviewed source tree; live serving not checked"
+}

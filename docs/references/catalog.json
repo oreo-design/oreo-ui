@@ -26,7 +26,7 @@
       ],
       "status": "已有历史调研，收录索引；本次不重新核实竞争判断或当前差距。",
       "limits": "原文价格、数量、技术债和对社会证明的判断均为 2026-07-27 的历史记录；本次未重新审计。",
-      "evidence": "../legacy/beui-20260727.md",
+      "evidence": "legacy/beui-20260727.md",
       "path": "records/2026-07-27-beui.md"
     },
     {
@@ -77,7 +77,7 @@
       ],
       "status": "邻近产品研究；Oreo 映射为归档整理时的关联，不代表既定路线。",
       "limits": "公开页面与工具界面已看；生成成功率、导出、账号流程、商用许可未验证。",
-      "evidence": "../evidence/brik-20261009/REVIEW.md",
+      "evidence": "evidence/brik-20261009/REVIEW.md",
       "path": "records/2026-10-09-brik.md"
     },
     {
@@ -156,7 +156,7 @@
       ],
       "status": "源码分析和动态化建议；该线程没有实现动态版。",
       "limits": "未验证账号保存、发布、移动端或社区作品商用许可；原分析未看到代码/视频导出。",
-      "evidence": "../evidence/mmeshy-20261013/README.md",
+      "evidence": "evidence/mmeshy-20261013/README.md",
       "path": "records/2026-10-13-mmeshy.md"
     },
     {
@@ -184,7 +184,7 @@
       ],
       "status": "该轮为只读差距分析。后续 Playground 工作是否已覆盖每项，需看其实施记录；本档不将旧差距当作当前缺陷。",
       "limits": "未运行复制出的安装命令；未完整覆盖移动端、深色主题、慢网和所有组件。",
-      "evidence": "../evidence/fluid-playground-20261014/REVIEW.md",
+      "evidence": "evidence/fluid-playground-20261014/REVIEW.md",
       "path": "records/2026-10-14-fluid-playground.md"
     },
     {
@@ -213,7 +213,7 @@
       ],
       "status": "研究建议；不代表真实 Agent 执行、邮件投递或整个工作流已完成。",
       "limits": "视频采样而非完整音轨转写；Confirmation 当时只验证 pending，后续受控属性操作超时。",
-      "evidence": "../evidence/agent-native-20261015/REVIEW.md",
+      "evidence": "evidence/agent-native-20261015/REVIEW.md",
       "path": "records/2026-10-15-agent-native.md"
     },
     {
@@ -240,7 +240,7 @@
       ],
       "status": "该轮为分析。仓库另有 quartz 命名的实现审查，必须核对其具体来源，不能仅凭同名认定本研究已全部落地。",
       "limits": "未安装外部 skill、执行 lint 或验证其误报；没有生产率提升证据。",
-      "evidence": "../evidence/agent-native-20261015/REVIEW.md",
+      "evidence": "evidence/agent-native-20261015/REVIEW.md",
       "path": "records/2026-10-15-quartz.md"
     },
     {
@@ -264,7 +264,7 @@
       ],
       "status": "建议先完善一个完整工作流契约，再推广；该轮没有改库。",
       "limits": "作者收入/规模案例不是独立验证的阈值。视频无法证明可访问性、真实 AI 状态覆盖或交付成本下降。",
-      "evidence": "../evidence/agent-native-20261015/REVIEW.md",
+      "evidence": "evidence/agent-native-20261015/REVIEW.md",
       "path": "records/2026-10-15-disha-product-decisions.md"
     },
     {
@@ -292,7 +292,7 @@
       ],
       "status": "识别产品与分发机制；未安装或接入 PanelUI。",
       "limits": "没有组件运行测试、性能/a11y 审计或 Logo 动画制作工具证据；历史组件数未当作当前数量。",
-      "evidence": "../evidence/agent-native-20261015/REVIEW.md",
+      "evidence": "evidence/agent-native-20261015/REVIEW.md",
       "path": "records/2026-10-15-panelui.md"
     },
     {
@@ -317,7 +317,7 @@
       ],
       "status": "用户明确提出功能方向；该线程只完成分析，没有实现或交付证明。",
       "limits": "现有截图证明参考与当时预览；不能证明 hover、键盘、焦点、动效或全库适用。",
-      "evidence": "../evidence/annotation-20261015/REVIEW.md",
+      "evidence": "evidence/annotation-20261015/REVIEW.md",
       "path": "records/2026-10-15-annotation.md"
     },
     {
@@ -388,7 +388,7 @@
       ],
       "status": "历史交付记录确认 PR #102 已合并，merge b99f9068e7bfb494ae17aad8d5e4b9e86b3f13b8；本次归档基线包含相应源文件。未核实当前线上部署。",
       "limits": "原录屏因浏览器扩展 capture 权限缺失；截图与交互断言不代替动效证明。复用完整原审查记录并保留该缺口。",
-      "evidence": "../evidence/spacing-20261019/REVIEW.md",
+      "evidence": "evidence/spacing-20261019/REVIEW.md",
       "path": "records/2026-10-19-spacing.md"
     },
     {
@@ -419,7 +419,7 @@
       ],
       "status": "本次只完成分析与归档；建议未作为 UI 修复实施。",
       "limits": "原帖另一段 32 秒视频未全量逐帧分析；Oreo 为在线 fixture，未测真实网络、全部键盘状态、跨页持久性和部署 SHA。截图是参考/现状，不是修复前后。",
-      "evidence": "../evidence/cosign-20261020/REVIEW.md",
+      "evidence": "evidence/cosign-20261020/REVIEW.md",
       "path": "records/2026-10-20-cosign.md"
     }
   ],
@@ -1021,5 +1021,6 @@
       "hasMore": false,
       "turnsRead": 4
     }
-  ]
+  ],
+  "pathConvention": "All path and evidence fields are relative to docs/references/catalog.json."
 }

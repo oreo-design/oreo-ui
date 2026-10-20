@@ -1,0 +1,11 @@
+[
+  "Reference values match all five controls",
+  "Preset changes current only; baseline remains frozen",
+  "Capture baseline copies values; reset preserves baseline",
+  "Numeric inputs clamp, snap and recover from empty input",
+  "Keyboard slider increments by 4",
+  "CSS actual clipboard attempt: CSS copied.",
+  "Clipboard-denied recovery retains selectable exact CSS",
+  "Desktop 1440, tablet 768 dark, mobile 390 light rendered; preview overflow scoped",
+  "Guide direct navigation and playground return"
+]
