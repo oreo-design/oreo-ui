@@ -15,3 +15,37 @@ Focused numeric checks: `node --test src/docs/playground/schema.test.ts`. Build:
 Optional `spec.demo(reducedMotion)` supplies timestamped property patches and a total duration. Prompt Box's new sequence lives in `prompt-box.demo.ts`: Play demo runs once, Pause/Resume preserves elapsed time, Replay starts over, and Reset or manual property/preview interaction cancels playback. Code view and background tabs pause. Playback is opt-in; reduced motion replaces typewriter ticks with one complete-text update. Existing component transitions remain responsible for presentation. A demo never sends a real prompt or records microphone audio.
 
 The earlier requested Prompt Box script could not be located in local source, worktrees, reachable/unreachable Git history, or related local conversation records; this sequence is newly authored, not a recovered version. Player checks: `node --test src/docs/playground/demo.test.ts src/docs/playground/schema.test.ts`.
+
+## Playground shell (Figma 48:6)
+
+The full-screen shell reuses the directory in `Sidebar`, registered component
+adapters, `PropertyControl`, Oreo switches/buttons, Base UI tooltip/dialog focus
+handling, and the existing `DemoPlayer`. The shell uses Mona Sans; component
+previews retain Inter. Toolbar SVGs are original Figma exports, rendered through
+masks so they inherit semantic icon colors. Hairline separators use
+`--color-border-default` at 0.5px.
+
+- Preview, Annotation and Code share the current controlled configuration.
+- Inspect measures actual DOM bounds and computed styles. Button and Prompt Box
+  have named anatomy; other components expose their root and arbitrary elements
+  through Inspect. Portaled content outside the preview is not measured.
+- Device controls constrain the preview container to desktop, 768px or 375px;
+  they do not emulate an operating system or change browser media queries.
+- Compare offers independent interactive specimens. Apply copies the chosen
+  values. Randomize stays inside the current schema; text remains locked by
+  default. Unlocking text restores text fields to their component defaults.
+- Up to 12 named presets per component are stored locally. Storage failures are
+  surfaced without blocking the preview. Presets restore values and appearance.
+- Share generates versioned configuration links, JSX and an agent prompt from
+  the current adapter. External configurations are validated against the live
+  schema. Clipboard failure provides selectable text. Shared text is part of
+  the URL, so it must not contain secrets.
+- Preview values survive a trip to Documentation in the current tab. Reloads
+  start at defaults unless the URL contains a shared configuration.
+- At narrow widths, the breadcrumb replaces the global mobile navigation bar;
+  properties move into a keyboard-accessible dialog. Other site pages retain
+  their existing navigation.
+
+Focused state tests: `node --test src/docs/playground/{schema,demo,configuration}.test.ts`.
+Visual implementation evidence continues in the existing task index at
+`/Users/ziye/Documents/Project/Research/output/playground-figma-20261019/REVIEW.md`.
