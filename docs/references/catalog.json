@@ -1,0 +1,1025 @@
+{
+  "schemaVersion": 1,
+  "archivedAt": "2026-10-20",
+  "baselineRevision": "229636a63080c0197fb373549f98205a51c8bc58",
+  "coverage": "Recovered relevant conversations and existing repository research; not a complete account export.",
+  "records": [
+    {
+      "id": "2026-07-27-beui",
+      "title": "beUI：产品分层、源码分发与可操作的设计语言",
+      "date": "2026-07-27",
+      "category": "定位与分发",
+      "sources": [
+        "https://beui.dev/",
+        "https://pro.beui.dev/"
+      ],
+      "thread": null,
+      "summary": "现有竞品调研比较免费组件、页面区块、完整模板和私有 registry。Oreo 的参考价值在于可安装、可理解、可修改的设计语言，以及组件与完整组合的关系。",
+      "observations": [
+        "免费与付费内容按不同粒度组织，提供 Preview / Usage / Code 与 registry 安装路径。",
+        "调参工具可以作用于真实设计 token；展示效果工具与产品设计系统解决不同问题。"
+      ],
+      "lessons": [
+        "分开组织基础组件、组合模式、完整模板，写清各自责任和安装依赖。",
+        "把可用示例、用法、共享 motion token 与 Reduce Motion 作为交付内容。",
+        "价格、内容数、源码缺口和竞品判断保留原日期；不能作为当前产品事实。"
+      ],
+      "status": "已有历史调研，收录索引；本次不重新核实竞争判断或当前差距。",
+      "limits": "原文价格、数量、技术债和对社会证明的判断均为 2026-07-27 的历史记录；本次未重新审计。",
+      "evidence": "../legacy/beui-20260727.md",
+      "path": "records/2026-07-27-beui.md"
+    },
+    {
+      "id": "2026-10-09-eval-hillclimbing",
+      "title": "Eval 与 hillclimbing：如何验证设计规则是否真的有用",
+      "date": "2026-10-09",
+      "category": "规则与评测",
+      "sources": [
+        "https://claude.dev/blog/automating-eval-design-and-hillclimbing/"
+      ],
+      "thread": "01a11fe2-ee7d-7d92-99cb-22d0b0acbb75",
+      "summary": "规则、skill 和示例能否改善 AI 产出，需要用真实任务、可信评分与独立验证来判断，不能用单次漂亮结果或已有实现的回归测试代替。",
+      "observations": [
+        "从真实任务分布选题，先验证评分器是否识别真正的失败。",
+        "迭代时控制模型、任务、预算与变化因素；重复运行区分改进与随机波动。",
+        "最终留出集与用于调参的样本分离；评分规则变化后重跑基线。"
+      ],
+      "lessons": [
+        "用同一 Settings brief 比较“仅源码”与“源码加设计规则”，记录任务完成、设计偏移和人工修正。",
+        "区分可自动判断的结构/交互违规和需要人审的视觉质量。",
+        "12–20 个任务可作为试点，但不能据此声称统计代表性或普遍生产率提升。"
+      ],
+      "status": "评测方案建议；历史 Settings 实验已有文档，但独立生成对照实验未在该轮执行。",
+      "limits": "已有布局检查通过，不证明 AI 在新任务中理解了设计语言。本次没有重新运行实验。",
+      "path": "records/2026-10-09-eval-hillclimbing.md"
+    },
+    {
+      "id": "2026-10-09-brik",
+      "title": "Brik：从视觉素材到可调节、可复用的小工具",
+      "date": "2026-10-09",
+      "category": "邻近参考",
+      "sources": [
+        "https://brik.space/home",
+        "https://brik.space/gallery",
+        "https://brik.space/product"
+      ],
+      "thread": "01a11ece-e18e-7b53-90f4-39ac65b7988e",
+      "summary": "首页、工具库、主题合集和编辑器形成“发现效果→打开真实工具→调参数→产出”的路线。原分析面向 Offloop、产品视频与 Voxel Icon；归入 Oreo 邻近参考，不把它改写成已批准的 Oreo 方向。",
+      "observations": [
+        "实际打开 Image Motion Lab：中央画布，右侧分组参数，Motion / Presets 与 Remix / Export。",
+        "作品库按用途和视觉行为筛选；主题合集帮助没有明确目标的用户探索。",
+        "点击 Export 出现登录要求，未验证导出质量或 AI 生成效果。"
+      ],
+      "lessons": [
+        "Oreo Playground 可以让用户操控真实组件，并把当前配置作为可复用产物。",
+        "自然语言适合描述意图，结构化控件适合重复精调。",
+        "用途导航、组件目录和主题模板服务不同的发现任务。"
+      ],
+      "status": "邻近产品研究；Oreo 映射为归档整理时的关联，不代表既定路线。",
+      "limits": "公开页面与工具界面已看；生成成功率、导出、账号流程、商用许可未验证。",
+      "evidence": "../evidence/brik-20261009/REVIEW.md",
+      "path": "records/2026-10-09-brik.md"
+    },
+    {
+      "id": "2026-10-12-disha-design-rules",
+      "title": "Disha Shah：让人和 AI 都能使用的设计规则",
+      "date": "2026-10-12",
+      "category": "规则与评测",
+      "sources": [
+        "https://x.com/dishashah66/status/2108935662934315473"
+      ],
+      "thread": "01a12e8b-c395-7b02-a3fc-4c2eea419539",
+      "summary": "组件 API 之外，还要记录选择条件、反例、替代方案、原因与检查方法，让规则能指导真实任务。",
+      "observations": [
+        "原分析强调用实际使用者和任务验证文档，而非仅增加说明篇幅。",
+        "用户随后说“行，你试试”，该轮尝试的是 Offloop 的五张规则卡：页面切换、禁用说明、Settings 分组、菜单新条目、卡片高度。"
+      ],
+      "lessons": [
+        "Oreo 规则卡应包含适用情境、推荐组合、反例、替代方案、原因和验证方法。",
+        "将规则链接到真实组件及完整模板；同一规则维护一个权威来源。",
+        "方法可以复用，Offloop 的具体布局与控件约定不能直接成为 Oreo 标准。"
+      ],
+      "status": "用户授权过 Offloop 文档试写；不等于授权或完成 Oreo 全库规则改造。",
+      "limits": "历史输出为另一项目的 design-rules.md，当时未提交/合并；本次未核实其最新状态，也不复制跨项目私有文档。",
+      "path": "records/2026-10-12-disha-design-rules.md"
+    },
+    {
+      "id": "2026-10-12-hairline",
+      "title": "Hairline：清楚的发现、使用与扩展路径",
+      "date": "2026-10-12",
+      "category": "定位与分发",
+      "sources": [
+        "https://hairline.lucasmarkes.com/",
+        "https://hairline.lucasmarkes.com/figures",
+        "https://hairline.lucasmarkes.com/docs",
+        "https://hairline.lucasmarkes.com/skill",
+        "https://hairline.lucasmarkes.com/inspo"
+      ],
+      "thread": "01a12e28-36df-7560-8fd7-df830e6f193d",
+      "summary": "Home 解释是什么，Figures 帮助浏览，Docs 负责接入，Skill 支持扩展，Inspo 展示创作过程。用户明确评价“它做得就很好很清晰”。",
+      "observations": [
+        "信息架构围绕找、用、扩展组织，而非把所有内容堆进组件目录。",
+        "统一的配置选项减少展示、文档与生成指引之间的偏差。"
+      ],
+      "lessons": [
+        "让 Oreo 用户先理解用途，再找组件/模板，再接入或扩展。",
+        "展示配置、代码、安装说明和 AI 指引应引用同一个配置事实来源。",
+        "找不到适用项时应有清楚的扩展路径，而非只增加更多分类。"
+      ],
+      "status": "用户认可参考的清晰度；具体网站重组是建议，未在该分析中实施。",
+      "limits": "首页有实际视觉检查；部分子页因访问超时仅读取文本，不能声称整站交互验证。",
+      "path": "records/2026-10-12-hairline.md"
+    },
+    {
+      "id": "2026-10-13-mmeshy",
+      "title": "mmeshy：颜色影响场、shader 与可调视觉工具",
+      "date": "2026-10-13",
+      "category": "邻近参考",
+      "sources": [
+        "https://mmeshy.com/",
+        "https://mmeshy.com/src/shader.js",
+        "https://mmeshy.com/src/renderer.js",
+        "https://mmeshy.com/src/view.js"
+      ],
+      "thread": "01a134cd-b9d0-74f3-9fee-15cc1a60a310",
+      "summary": "核心画面由 WebGL / GLSL 逐像素计算颜色影响场；SVG 用于编辑手柄和辅助线。原分析包含源码原理与动态化路线，属于视觉工具技术参考。",
+      "observations": [
+        "节点位置、形状、颜色、宽度、硬度等传入 GPU；全屏矩形的片元 shader 计算距离、权重和混色。",
+        "普通节点权重大致为 (1 / (1 + d²))^k，归一化加权混色形成光束、柔光和明暗折面；这不等于真实三维光照。",
+        "遮挡节点单独使用 smoothstep 羽化与透明覆盖；最后调色，再用坐标哈希生成颗粒。",
+        "当时实测无需登录导出 PNG；当前版本与授权未重新核查。"
+      ],
+      "lessons": [
+        "动效可先逐帧更新位置、角度和宽度等参数，保留固定颗粒以减少闪烁。",
+        "分开原始设计状态、动画临时状态与自动保存，避免每帧触发持久化。",
+        "Oreo 如加入此类工具，应作为有明确用途的素材/效果工作台；不据此改变基础组件定位。"
+      ],
+      "status": "源码分析和动态化建议；该线程没有实现动态版。",
+      "limits": "未验证账号保存、发布、移动端或社区作品商用许可；原分析未看到代码/视频导出。",
+      "evidence": "../evidence/mmeshy-20261013/README.md",
+      "path": "records/2026-10-13-mmeshy.md"
+    },
+    {
+      "id": "2026-10-14-fluid-playground",
+      "title": "Fluid Functionalism：可分享配置与 AI 接入上下文",
+      "date": "2026-10-14",
+      "category": "Playground",
+      "sources": [
+        "https://x.com/alibey_10/status/2110028700313948603",
+        "https://www.fluidfunctionalism.com/docs/command-menu",
+        "https://www.fluidfunctionalism.com/docs/input-message"
+      ],
+      "thread": "01a139d5-aef2-7012-8cf4-3ad5fd24bde3",
+      "summary": "把 Playground 的当前状态变成可恢复、可安装、可解释的交付物。参考的 Copy prompt 不只是复制一段 JSX。",
+      "observations": [
+        "CommandMenu 调整 Filters 后 URL preset 改变，刷新仍保留配置。",
+        "Copy prompt 包含 preset 安装 URL、组合用法、API、依赖条件和回链。",
+        "InputMessage 支持合法配置随机化，Inspect 显示标尺；对照 Oreo Button / Prompt Box 的真实预览。"
+      ],
+      "lessons": [
+        "优先统一配置序列化与校验，支持分享/恢复，再生成当前配置的 prompt。",
+        "使用现有 schema 的合法选项随机化；条件控制项应随父选项隐藏或禁用。",
+        "标尺、密度、窄屏与命名场景预设分开评估；命名预设是建议，不冒充已验证参考功能。",
+        "公共 owner 应是 ComponentPlayground / PropertyControl / schema，避免每个组件重复实现。"
+      ],
+      "status": "该轮为只读差距分析。后续 Playground 工作是否已覆盖每项，需看其实施记录；本档不将旧差距当作当前缺陷。",
+      "limits": "未运行复制出的安装命令；未完整覆盖移动端、深色主题、慢网和所有组件。",
+      "evidence": "../evidence/fluid-playground-20261014/REVIEW.md",
+      "path": "records/2026-10-14-fluid-playground.md"
+    },
+    {
+      "id": "2026-10-15-agent-native",
+      "title": "Agent-Native：人和 Agent 操作同一份工作对象",
+      "date": "2026-10-15",
+      "category": "Agent 工作流",
+      "sources": [
+        "https://x.com/Steve8708/status/2110401500044472729",
+        "https://github.com/BuilderIO/agent-native",
+        "https://www.builder.io/blog/introducing-agent-native",
+        "https://www.agent-native.com/docs/context-awareness/"
+      ],
+      "thread": "01a13dc1-a414-7491-8f2e-73f5deac5435",
+      "summary": "人类直接编辑与 Agent 委托围绕同一数据、动作和上下文协作；Oreo 应区分构建时 AI 使用设计系统与运行时人机协作。",
+      "observations": [
+        "视频 30–45 秒展示幻灯片与 Agent 活动，用户可直接改标题；50–55 秒的 UI 任务带溢出尺寸和画布上下文。",
+        "同一动作可由 UI、Agent、API、CLI、MCP 等调用；框架自己也有 UI Toolkit。",
+        "实际查看 Oreo ReviewWorkspace 和 Confirmation 的本地组件 fixture；未调用邮件或模型服务。"
+      ],
+      "lessons": [
+        "使用 ContextBar / PromptBox 传递选中对象与作用范围，让可编辑产物成为主工作区。",
+        "Confirmation 管许可，ToolCall / Plan 展示执行，业务层协调状态；允许执行不等于执行成功。",
+        "以“选对象→生成→人工修改→局部重写→确认→执行结果/恢复”的完整模板验证组合价值。",
+        "保留人工编辑，并明确取消、部分完成与结果未知的处理；不强塞成一个万能组件。"
+      ],
+      "status": "研究建议；不代表真实 Agent 执行、邮件投递或整个工作流已完成。",
+      "limits": "视频采样而非完整音轨转写；Confirmation 当时只验证 pending，后续受控属性操作超时。",
+      "evidence": "../evidence/agent-native-20261015/REVIEW.md",
+      "path": "records/2026-10-15-agent-native.md"
+    },
+    {
+      "id": "2026-10-15-quartz",
+      "title": "Quartz：把设计决策与组件一起交给 Agent",
+      "date": "2026-10-15",
+      "category": "规则与评测",
+      "sources": [
+        "https://x.com/arlanoska/status/2110425467996209244",
+        "https://design.how/systems/quartz",
+        "https://github.com/arla6ka/skills/tree/main/systems/quartz"
+      ],
+      "thread": "01a13dc1-a414-7491-8f2e-73f5deac5435",
+      "summary": "组件、theme、规则、工作流与有限的 lint 一起分发，支持 Agent 在构建时沿用设计系统。",
+      "observations": [
+        "读过公开 skill、lint 配置、审批示例与 registry；查看 Workspace、Agent run、Live activity 的实物。",
+        "主题 registry 引用 skill 与 portal；审批示例以 timeout 模拟完成，不能证明真实退款。"
+      ],
+      "lessons": [
+        "交付源码时补齐选择理由、组合方式、状态行为与实际预览证据；短 agent 入口指向权威文档。",
+        "继续利用 Oreo Settings 实验中的设计关系与扩展记录，不为追随参考新造一套页面语言。",
+        "Quartz 对 pill、居中空状态、shimmer 等限制是它的风格，不是跨产品定律。",
+        "用独立生成对照实验评估规则，而非看到 lint 文件就宣称设计已可自动验证。"
+      ],
+      "status": "该轮为分析。仓库另有 quartz 命名的实现审查，必须核对其具体来源，不能仅凭同名认定本研究已全部落地。",
+      "limits": "未安装外部 skill、执行 lint 或验证其误报；没有生产率提升证据。",
+      "evidence": "../evidence/agent-native-20261015/REVIEW.md",
+      "path": "records/2026-10-15-quartz.md"
+    },
+    {
+      "id": "2026-10-15-disha-product-decisions",
+      "title": "Disha Shah：设计系统保存产品决策与理由",
+      "date": "2026-10-15",
+      "category": "规则与评测",
+      "sources": [
+        "https://x.com/dishashah66/status/2110344368141869345"
+      ],
+      "thread": "01a13dc1-a414-7491-8f2e-73f5deac5435",
+      "summary": "组件库能表达外观和交互，但产品情境、允许的组合和选择理由也需要可复用记录。",
+      "observations": [
+        "三段视频展示导航折叠/展开与状态组合、基础控件、Tooltip 在折叠侧栏的真实使用。",
+        "文档包含 owner、版本、Figma、API、tokens 和 Built from；不仅是孤立的组件图片。"
+      ],
+      "lessons": [
+        "区分 primitive 通用保证、pattern 任务组合、host 产品权限和业务规则。",
+        "规则应说明何时使用、为何如此、什么组合非法、替代方案是什么。",
+        "AI 审批/执行的连接规则属于工作流；一个 primitive 缺少枚举不自动构成全局 bug。"
+      ],
+      "status": "建议先完善一个完整工作流契约，再推广；该轮没有改库。",
+      "limits": "作者收入/规模案例不是独立验证的阈值。视频无法证明可访问性、真实 AI 状态覆盖或交付成本下降。",
+      "evidence": "../evidence/agent-native-20261015/REVIEW.md",
+      "path": "records/2026-10-15-disha-product-decisions.md"
+    },
+    {
+      "id": "2026-10-15-panelui",
+      "title": "PanelUI：API 事实生成、版本化 skill 与分发入口",
+      "date": "2026-10-15",
+      "category": "定位与分发",
+      "sources": [
+        "https://x.com/KhalidDevLog/status/2110385439219581365",
+        "https://panelui.dev/",
+        "https://panelui.dev/docs/skills",
+        "https://github.com/panel-ui/PanelUI"
+      ],
+      "thread": "01a13dc1-a414-7491-8f2e-73f5deac5435",
+      "summary": "原帖视频是 Logo 几何构造动画；真正的组件与分发信息来自官网及源码文档。",
+      "observations": [
+        "约 29 秒动画由参考线、几何轮廓到填色标志与字标，不能据此判断使用了哪个制作工具。",
+        "文档介绍从 TypeScript 生成组件 API、版本化插件、任务组合和读取 registry 的 MCP。",
+        "原生库与 Web 集合范围不同，开源库与托管 Studio 也需区分。"
+      ],
+      "lessons": [
+        "让 API 事实尽量从类型/源码生成；设计理由与选择边界仍由人维护。",
+        "组件代码、文档、skill 和 registry 用版本关联，减少 Agent 读取旧接口。",
+        "提供完整使用任务，不用组件数量或“AI ready”口号代替可用性证明。"
+      ],
+      "status": "识别产品与分发机制；未安装或接入 PanelUI。",
+      "limits": "没有组件运行测试、性能/a11y 审计或 Logo 动画制作工具证据；历史组件数未当作当前数量。",
+      "evidence": "../evidence/agent-native-20261015/REVIEW.md",
+      "path": "records/2026-10-15-panelui.md"
+    },
+    {
+      "id": "2026-10-15-annotation",
+      "title": "Annotation 模式：让预览解释组件的构成",
+      "date": "2026-10-15",
+      "category": "Playground",
+      "sources": [
+        "https://x.com/roohbuilds/status/2110355509622837281"
+      ],
+      "thread": "01a13dc8-0e18-7f23-9f65-50a213c94a96",
+      "summary": "用户提出把视频中的标注模式加入 Oreo：在真实预览上指出各部分名称、作用及其代码关系。",
+      "observations": [
+        "参考用编号、边界和说明解释界面结构；已有 Oreo Preview / Code 是最接近的承载面。",
+        "分析比较了参考画面与 Oreo 当前组件截图，并保留证据。"
+      ],
+      "lessons": [
+        "Preview / Annotation / Code 共享当前配置；部位与说明双向高亮。",
+        "进入标注模式可暂停自动演示，保留当前状态，避免说明对象在讲解时移动。",
+        "共享 overlay 承担定位，组件提供 parts 定义；处理嵌套、重叠标签、popover 与 resize。",
+        "先以 PromptBox 等组合组件验证，再扩展；隐藏部位要说明前置条件，不伪造可见元素。"
+      ],
+      "status": "用户明确提出功能方向；该线程只完成分析，没有实现或交付证明。",
+      "limits": "现有截图证明参考与当时预览；不能证明 hover、键盘、焦点、动效或全库适用。",
+      "evidence": "../evidence/annotation-20261015/REVIEW.md",
+      "path": "records/2026-10-15-annotation.md"
+    },
+    {
+      "id": "2026-10-15-imperfection",
+      "title": "Mamuso《Imperfection》：设计个性与制作过程",
+      "date": "2026-10-15",
+      "category": "邻近参考",
+      "sources": [
+        "https://mamuso.dev/note/imperfection",
+        "https://mamuso.dev/"
+      ],
+      "thread": "01a13f0f-d0e7-7440-b032-1aaf83a9428b",
+      "summary": "原请求为文章意译与个人网站信息介绍。卡带隐喻、个人作品和制作过程体现作者的个性；这是创作参考，不是 Oreo 的产品规则。",
+      "observations": [
+        "文章描述从 Blender 模型到网页卡带、材质与动画试验，再面对模型优化和真实设备表现。",
+        "个人网站结合履历、业余工具、文章与摄影；查看时卡带详情未成功展开。"
+      ],
+      "lessons": [
+        "可以在展示页记录设计缘由、试验和迭代，使成品更易理解。",
+        "个性化展示仍需照顾阅读、交互、设备性能与 Reduce Motion；不能把“不完美”解释为允许产品故障。"
+      ],
+      "status": "邻近创作材料；没有用户批准的 Oreo 功能或视觉改造。",
+      "limits": "本档仅保存摘要和来源，不复制用户粘贴文章的长篇译文；未核实当前履历或交互详情。",
+      "path": "records/2026-10-15-imperfection.md"
+    },
+    {
+      "id": "2026-10-16-geo",
+      "title": "GEO：可引用、可验证的内容与发现实验",
+      "date": "2026-10-16",
+      "category": "定位与分发",
+      "sources": [
+        "https://developers.google.com/search/docs/appearance/ai-features"
+      ],
+      "thread": "01a14323-3b30-7070-9a1c-cbbb1741f4c0",
+      "summary": "原始输入为用户提供的《GEO_8个实用技巧与实验策略(1).pdf》。面向 Oreo 的启发是用明确问题、可运行示例和可核查证据帮助发现与引用。",
+      "observations": [
+        "原分析区分用户问题、场景指南、完整模板、组件采用和设计服务线索等不同目标。",
+        "需要先检查抓取与索引；不能仅因页面用 JavaScript 就判定搜索不可见。"
+      ],
+      "lessons": [
+        "围绕真实任务写指南，连接完整模板、组件实现与验证结果。",
+        "发布原创实验时保留方法、样本、失败和范围；外部引用不能用自造社会证明代替。",
+        "20 个问题、3 篇指南、4–6 周观测只是试验方案，未获得效果数据。"
+      ],
+      "status": "内容与测量方案建议；未执行 GEO 增长实验。",
+      "limits": "私人 PDF 未复制进仓库，未保留私人附件目录。公开 Google 链接是补充核查来源，不冒充 PDF 原始出处。",
+      "path": "records/2026-10-16-geo.md"
+    },
+    {
+      "id": "2026-10-19-spacing",
+      "title": "Spacing：用间距表达层级与归属",
+      "date": "2026-10-19",
+      "category": "布局与交互",
+      "sources": [
+        "https://x.com/recentdesign/status/2111763882507149567",
+        "https://github.com/oreo-design/oreo-ui/pull/102"
+      ],
+      "thread": "01a152a6-2f05-7533-809d-d1bebc046aec",
+      "summary": "参考同时放大页面与区块间距、缩小卡片之间的距离，说明重点是关系和层级，而非所有地方都增加留白。",
+      "observations": [
+        "视频中 sidebar 184→248、page inset 20→40、section gap 20→48、card gap 20→12、card padding 12→24。数值只是该参考的一组示例。",
+        "用户授权规则和 Playground；已有记录给出 /spacing、/spacing-guide 和 reusable LayoutScope / LayoutSection / LayoutGrid / LayoutCard。"
+      ],
+      "lessons": [
+        "区分控件内部间距、组内关系、区块关系和页面边界；不要使用一个全局 density 控制一切。",
+        "把参考数字标为示例预设；实际值映射到 Oreo tokens/Tailwind scale。",
+        "固定对照基线、长内容、间距高亮和 CSS 导出让规则可以被体验和检验。"
+      ],
+      "status": "历史交付记录确认 PR #102 已合并，merge b99f9068e7bfb494ae17aad8d5e4b9e86b3f13b8；本次归档基线包含相应源文件。未核实当前线上部署。",
+      "limits": "原录屏因浏览器扩展 capture 权限缺失；截图与交互断言不代替动效证明。复用完整原审查记录并保留该缺口。",
+      "evidence": "../evidence/spacing-20261019/REVIEW.md",
+      "path": "records/2026-10-19-spacing.md"
+    },
+    {
+      "id": "2026-10-20-cosign",
+      "title": "Cosign：稳定加载、局部反馈与录屏时间轴审查",
+      "date": "2026-10-20",
+      "category": "布局与交互",
+      "sources": [
+        "https://x.com/andrewqu/status/2112292205696344120",
+        "https://x.com/andrewqu/status/2111493582540710124",
+        "https://cosign-ui-review-2.vercel.app/",
+        "https://github.com/rauchg/skills/tree/main/skills/ui-recording-timeline"
+      ],
+      "thread": "01a15801-eb27-7141-b7ca-2cfa5ebb600c",
+      "summary": "静态壳层保持稳定，个性化数据局部补齐；等待期间应减少无意义换形和布局挤动。录屏审查把视觉变化标在时间轴上，帮助发现问题。",
+      "observations": [
+        "审查页的 9.433 秒录屏有 22 条标注。7.100 秒四列骨架、7.433 秒五列人物骨架、8.167 秒内容、8.600 秒补操作并挤动工具栏。",
+        "刷新到视觉完整 feed 3.28 秒；列表 URL 改变到视觉完整 1.72 秒。这些不是 LCP/INP 或网络瀑布。",
+        "ffmpeg/ffprobe 抽帧与时间戳，Python 找变化候选，Agent/人工判读；模板匹配区分移动与新内容。静态 HTML/JS 用 currentTime、缩略图、归一化矩形与 ResizeObserver 组织审查。",
+        "Oreo CompanyDirectory fixture 保留标题/筛选/侧栏，CompanyTable loading 分支移除表头与排序入口；空、错误与重试展示已查。"
+      ],
+      "lessons": [
+        "优先复用稳定壳层，操作立即反映选择，仅加载受影响的内容；初次 loading 与同查询刷新分开。",
+        "CompanyTable 作为共享 owner 保留表结构和排序；骨架与最终几何对齐，晚到图片和操作预留空间。",
+        "PageLoader 的长任务体验、LoadingSequence 的装饰开场和数据骨架不是同一种状态。",
+        "完整异步模板需覆盖初次进入、筛选、刷新、空结果、失败重试与快速切换；请求排序/取消属于数据层。",
+        "将可点击时间轴补充进已有任务 REVIEW；可考虑 TimelineTrack / FilmstripPreview / ChangeOverlay，不必先重写媒体分析算法。"
+      ],
+      "status": "本次只完成分析与归档；建议未作为 UI 修复实施。",
+      "limits": "原帖另一段 32 秒视频未全量逐帧分析；Oreo 为在线 fixture，未测真实网络、全部键盘状态、跨页持久性和部署 SHA。截图是参考/现状，不是修复前后。",
+      "evidence": "../evidence/cosign-20261020/REVIEW.md",
+      "path": "records/2026-10-20-cosign.md"
+    }
+  ],
+  "implementationReviews": [
+    {
+      "title": "Access Workspace — review record",
+      "path": "../reviews/access-workspace-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/marcelkargul/status/2110467790343737666"
+      ]
+    },
+    {
+      "title": "Agent Budget — reference and UI review",
+      "path": "../reviews/agent-budget-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/HeyAnantJ/status/2110652330110779622"
+      ]
+    },
+    {
+      "title": "Agent Hub — reference to Oreo UI",
+      "path": "../reviews/agent-hub-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/Karthik_designs/status/2110370046073581998"
+      ]
+    },
+    {
+      "title": "Agent Inbox — reference, consistency and visual evidence",
+      "path": "../reviews/agent-inbox-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/componest/status/2110750797755773328"
+      ]
+    },
+    {
+      "title": "Agent lanes — reference, implementation and review",
+      "path": "../reviews/agent-lanes-20261019/REVIEW.md",
+      "sources": [
+        "https://x.com/flohoeller/status/2111405211478900836"
+      ]
+    },
+    {
+      "title": "Agent Runs — review record",
+      "path": "../reviews/agent-runs-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/shokhnur_says/status/2110657757850263727"
+      ]
+    },
+    {
+      "title": "Continuous Agent Queue — review record",
+      "path": "../reviews/agent-task-queue-20261019/REVIEW.md",
+      "sources": [
+        "https://x.com/eyexayuh/status/2112042083536236933"
+      ]
+    },
+    {
+      "title": "Agent Connections — reference implementation and review",
+      "path": "../reviews/agents-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/Priyank/status/2110430943270052172"
+      ]
+    },
+    {
+      "title": "Analytics Assistant — review record",
+      "path": "../reviews/analytics-assistant-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/HeyAnantJ/status/2110408357488333059"
+      ]
+    },
+    {
+      "title": "Edge Monitor / Edge Observatory review",
+      "path": "../reviews/august-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/augustasdesign/status/2110393766754341153"
+      ]
+    },
+    {
+      "title": "Aurora Accordion — review record",
+      "path": "../reviews/aurora-accordion-20261019/REVIEW.md",
+      "sources": [
+        "https://x.com/CollectUI/status/2112000783440814422"
+      ]
+    },
+    {
+      "title": "Tree Stepper / Security Review",
+      "path": "../reviews/branch-stepper-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/FaizalSukaimi/status/2110366307787108463"
+      ]
+    },
+    {
+      "title": "Brand Guide review",
+      "path": "../reviews/brand-guide-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/sofianedesign/status/2110254882808807837"
+      ]
+    },
+    {
+      "title": "Breakout 404 — review record",
+      "path": "../reviews/breakout-404-20261019/REVIEW.md",
+      "sources": [
+        "https://x.com/abhisek_im/status/2112015149569888373"
+      ]
+    },
+    {
+      "title": "Browser Agent — Yogesh reference delivery",
+      "path": "../reviews/browser-agent-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/yogesharc/status/2110796597454102593"
+      ]
+    },
+    {
+      "title": "Callback Workspace — implementation and visual review",
+      "path": "../reviews/callback-workspace-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/nizamdesign/status/2110279441683235256"
+      ]
+    },
+    {
+      "title": "Oreo Changelog — review index",
+      "path": "../reviews/changelog-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/micka_design/status/2110389160062390442"
+      ]
+    },
+    {
+      "title": "Client Workspace — review index",
+      "path": "../reviews/client-workspace-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/Tanjim38/status/2110407786957795338"
+      ]
+    },
+    {
+      "title": "Color Calendar review",
+      "path": "../reviews/color-calendar-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/yishanzh/status/2110495231972090314"
+      ]
+    },
+    {
+      "title": "Command Dashboard — review record",
+      "path": "../reviews/command-dashboard-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/efferdco/status/2110449789066490250"
+      ]
+    },
+    {
+      "title": "Company Directory — review record",
+      "path": "../reviews/company-directory-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/eliakuratli/status/2110823532917862573"
+      ]
+    },
+    {
+      "title": "Adaptive issues — Componest reference",
+      "path": "../reviews/componest-table-20261019/REVIEW.md",
+      "sources": [
+        "https://x.com/componest/status/2112057747739172953"
+      ]
+    },
+    {
+      "title": "Consulting Workspace — Nizam reference",
+      "path": "../reviews/consulting-workspace-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/nizamdesign/status/2110792824627360225"
+      ]
+    },
+    {
+      "title": "Cross-Currency review",
+      "path": "../reviews/cross-currency-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/heisjoss/status/2110675076677042291"
+      ]
+    },
+    {
+      "title": "Dashboard Suite — review index",
+      "path": "../reviews/dashboard-suite-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/efferdco/status/2110800367026118933"
+      ]
+    },
+    {
+      "title": "Dispatch Allocation review",
+      "path": "../reviews/dispatch-allocation-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/maybepratikk/status/2110717643322015819"
+      ]
+    },
+    {
+      "title": "Edge Observatory motion follow-up",
+      "path": "../reviews/edge-motion-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/augustasdesign/status/2110944321184620815"
+      ]
+    },
+    {
+      "title": "Engineering Handoff — review record",
+      "path": "../reviews/engineering-handoff-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/planepowers/status/2110763968792780851"
+      ]
+    },
+    {
+      "title": "Experiment Workspace — review index",
+      "path": "../reviews/experiments-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/PostiauxCharles/status/2110321094301479197"
+      ]
+    },
+    {
+      "title": "Finance Overview — skeleton to data",
+      "path": "../reviews/finance-overview-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/hakimhn_/status/2110770755713814650"
+      ]
+    },
+    {
+      "title": "Usage Forecast — nyx reference",
+      "path": "../reviews/forecast-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/Niyxuis/status/2110504674143150148"
+      ]
+    },
+    {
+      "title": "Toggle Composer / Composer Studio review",
+      "path": "../reviews/greg-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/gregmwashington/status/2110188748994675112"
+      ]
+    },
+    {
+      "title": "Grouped Tasks — implementation and visual review",
+      "path": "../reviews/grouped-tasks-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/startupvisuals/status/2110803178811990300"
+      ]
+    },
+    {
+      "title": "Invoice Workspace — review record",
+      "path": "../reviews/invoice-workspace-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/louisnstudio/status/2110442646607122924"
+      ]
+    },
+    {
+      "title": "Issue Browser — review index",
+      "path": "../reviews/issue-browser-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/kapish_dima/status/2110801612520255802"
+      ]
+    },
+    {
+      "title": "Workflow directory — Jubayer reference",
+      "path": "../reviews/jubayer-table-20261019/REVIEW.md",
+      "sources": [
+        "https://x.com/jubayer6910/status/2111721342316020098"
+      ]
+    },
+    {
+      "title": "Landmark Stays review",
+      "path": "../reviews/landmark-stays-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/pitus_/status/2110709524504199488"
+      ]
+    },
+    {
+      "title": "Outline brand footer — review record",
+      "path": "../reviews/logo-reveal-20261019/REVIEW.md",
+      "sources": [
+        "https://x.com/uiinspoo/status/2112107576234295718"
+      ]
+    },
+    {
+      "title": "Model Costs — reference, reuse and visual review",
+      "path": "../reviews/model-costs-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/imimran04/status/2110703416976748572"
+      ]
+    },
+    {
+      "title": "Model Router — implementation and visual review",
+      "path": "../reviews/model-router-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/disarto_max/status/2110043485743055211"
+      ]
+    },
+    {
+      "title": "Motion components integration — 2026-10-16",
+      "path": "../reviews/motion-integration-20261016/REVIEW.md",
+      "sources": []
+    },
+    {
+      "title": "Music Project review",
+      "path": "../reviews/music-project-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/designflyio/status/2110867727741341732"
+      ]
+    },
+    {
+      "title": "Noman meeting components — review",
+      "path": "../reviews/noman-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/noman_huge/status/2110294792034996359"
+      ]
+    },
+    {
+      "title": "Lumeo Studio operations suite — review index",
+      "path": "../reviews/operations-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/lumeodstudio/status/2110370181365076323"
+      ]
+    },
+    {
+      "title": "Agent Observatory review",
+      "path": "../reviews/overseer-dashboard-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/adeebrq/status/2110891362103267793"
+      ]
+    },
+    {
+      "title": "Merge Workspace — reference and review",
+      "path": "../reviews/pitus-video-20261018/REVIEW.md",
+      "sources": [
+        "https://x.com/pitus_/status/2111519352503873866"
+      ]
+    },
+    {
+      "title": "Place Explorer — reference to Oreo UI",
+      "path": "../reviews/place-map-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/pitus_/status/2110421626873643338"
+      ]
+    },
+    {
+      "title": "Plan Upgrade — Jordan Hughes reference",
+      "path": "../reviews/plan-upgrade-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/jordanphughes/status/2110767174008574457"
+      ]
+    },
+    {
+      "title": "Finance Workspace — UI review",
+      "path": "../reviews/portfolio-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/OrbixStudio/status/2110413863568969740"
+      ]
+    },
+    {
+      "title": "Test Results — review index",
+      "path": "../reviews/preet-tests-20261019/REVIEW.md",
+      "sources": [
+        "https://x.com/preetsuthar17/status/2111694212857266430"
+      ]
+    },
+    {
+      "title": "Presence Room — review index",
+      "path": "../reviews/presence-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/eliakuratli/status/2110376615595409417"
+      ]
+    },
+    {
+      "title": "Progressive checkout — task review",
+      "path": "../reviews/progressive-checkout-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/uiinspoo/status/2110595633120002332"
+      ]
+    },
+    {
+      "title": "Project Board — review index",
+      "path": "../reviews/project-board-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/sterlynavneet/status/2110264347595583949"
+      ]
+    },
+    {
+      "title": "Project Feed — review",
+      "path": "../reviews/project-feed-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/zahragr8r/status/2110632965361529237"
+      ]
+    },
+    {
+      "title": "Project scheduling follow-up",
+      "path": "../reviews/project-schedule-20261017/REVIEW.md",
+      "sources": [
+        "https://x.com/zahragr8r/status/2110776888050524179"
+      ]
+    },
+    {
+      "title": "Project Workspace review",
+      "path": "../reviews/project-tasks-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/zahragr8r/status/2110262138124320955"
+      ]
+    },
+    {
+      "title": "Quartz reference — Support Console",
+      "path": "../reviews/quartz-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/arlanoska/status/2110824051912683637"
+      ]
+    },
+    {
+      "title": "Payment Workspace — Atikh Bana recipient flow",
+      "path": "../reviews/recipients-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/tikhbana/status/2110486416086159469"
+      ]
+    },
+    {
+      "title": "Rico canvas navigation — review record",
+      "path": "../reviews/rico-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/_heyrico/status/2110408550845702320"
+      ]
+    },
+    {
+      "title": "Sales Workspace — Wuraola reference",
+      "path": "../reviews/sales-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/Wuraoladesigns/status/2110621316835573992"
+      ]
+    },
+    {
+      "title": "Document Activity / Document Workspace review",
+      "path": "../reviews/samo-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/samosemudiamhe/status/2110304795869524372"
+      ]
+    },
+    {
+      "title": "Stretch Switch / Preference Studio review",
+      "path": "../reviews/samo-stretch-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/samosemudiamhe/status/2110425458806235278"
+      ]
+    },
+    {
+      "title": "Shawn text toolbar — review record",
+      "path": "../reviews/shawn-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/zzzzshawn/status/2110512054851526682"
+      ]
+    },
+    {
+      "title": "Storage Manager — review index",
+      "path": "../reviews/storage-manager-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/Tanjim38/status/2110794332525715550"
+      ]
+    },
+    {
+      "title": "Studio Inbox — review record",
+      "path": "../reviews/studio-inbox-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/designflyio/status/2110486258640372119"
+      ]
+    },
+    {
+      "title": "Subscription Workspace — review index",
+      "path": "../reviews/subscription-workspace-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/jubayer6910/status/2110770177428058596"
+      ]
+    },
+    {
+      "title": "Task Board / inline task editor",
+      "path": "../reviews/task-editor-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/zahragr8r/status/2110679274848154096"
+      ]
+    },
+    {
+      "title": "Team Performance — review record",
+      "path": "../reviews/team-performance-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/vektorastudio/status/2110661960425787787"
+      ]
+    },
+    {
+      "title": "Thinking State / Thinking Workspace review",
+      "path": "../reviews/thinking-workspace-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/purpose_walker/status/2110382989414740308"
+      ]
+    },
+    {
+      "title": "Timeframe + inline search / Position Studio",
+      "path": "../reviews/timeframe-search-20261015/REVIEW.md",
+      "sources": [
+        "https://x.com/rndr_realm/status/2110457217451462693"
+      ]
+    },
+    {
+      "title": "Token Bridge — review record",
+      "path": "../reviews/token-bridge-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/vanjek/status/2110693639664050203"
+      ]
+    },
+    {
+      "title": "Trace Explorer — review record",
+      "path": "../reviews/trace-explorer-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/calcsam/status/2110759787814375721"
+      ]
+    },
+    {
+      "title": "Unlink Documents — continuous review",
+      "path": "../reviews/unlink-documents-20261019/REVIEW.md",
+      "sources": [
+        "https://x.com/kvnkld/status/2111826634902741219"
+      ]
+    },
+    {
+      "title": "Voice Agent — UI evidence",
+      "path": "../reviews/voice-agent-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/disarto_max/status/2110815271078559764"
+      ]
+    },
+    {
+      "title": "Writing Folders — review record",
+      "path": "../reviews/writing-folders-20261016/REVIEW.md",
+      "sources": [
+        "https://x.com/goutham/status/2110710268540117089"
+      ]
+    }
+  ],
+  "conversationsRead": [
+    {
+      "id": "01a13dc1-a414-7491-8f2e-73f5deac5435",
+      "title": "解析视频概念及 Oreo UI 启发",
+      "hasMore": false,
+      "turnsRead": 4
+    },
+    {
+      "id": "01a152a6-2f05-7533-809d-d1bebc046aec",
+      "title": "分析视频对 Oreo UI 的帮助",
+      "hasMore": false,
+      "turnsRead": 2
+    },
+    {
+      "id": "01a143ba-dd8d-7468-83cc-5f0778541027",
+      "title": "梳理 Oreo UI 方向参考",
+      "hasMore": false,
+      "turnsRead": 1
+    },
+    {
+      "id": "01a12e8b-c395-7b02-a3fc-4c2eea419539",
+      "title": "分析这条 X 帖子的价值",
+      "hasMore": false,
+      "turnsRead": 3
+    },
+    {
+      "id": "01a12e28-36df-7560-8fd7-df830e6f193d",
+      "title": "分析 Hairline npm 库网站结构",
+      "hasMore": false,
+      "turnsRead": 1
+    },
+    {
+      "id": "01a139d5-aef2-7012-8cf4-3ad5fd24bde3",
+      "title": "对比 X 功能与 Playground",
+      "hasMore": false,
+      "turnsRead": 1
+    },
+    {
+      "id": "01a13dc8-0e18-7f23-9f65-50a213c94a96",
+      "title": "将视频模式加入 Oreo annotation",
+      "hasMore": false,
+      "turnsRead": 1
+    },
+    {
+      "id": "01a11fe2-ee7d-7d92-99cb-22d0b0acbb75",
+      "title": "总结评测设计与爬山优化",
+      "hasMore": false,
+      "turnsRead": 2
+    },
+    {
+      "id": "01a14323-3b30-7070-9a1c-cbbb1741f4c0",
+      "title": "梳理 Oreo 的帮助",
+      "hasMore": false,
+      "turnsRead": 1
+    },
+    {
+      "id": "01a11ece-e18e-7b53-90f4-39ac65b7988e",
+      "title": "分析 Brik Space 网站",
+      "hasMore": false,
+      "turnsRead": 1
+    },
+    {
+      "id": "01a134cd-b9d0-74f3-9fee-15cc1a60a310",
+      "title": "研究 Meshy 工具",
+      "hasMore": false,
+      "turnsRead": 3
+    },
+    {
+      "id": "01a13f0f-d0e7-7440-b032-1aaf83a9428b",
+      "title": "翻译 Mamuso 的 Imperfection 笔记",
+      "hasMore": false,
+      "turnsRead": 4
+    }
+  ]
+}
