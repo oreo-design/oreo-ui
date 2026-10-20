@@ -7,7 +7,7 @@ import type { DocsNav } from "./DocsPage";
 type Item = { label: string; page: string };
 type Group = { title: string; items: Item[] };
 
-const NAV: Group[] = [
+export const NAV: Group[] = [
   {
     title: "Getting Started",
     items: [{ label: "Spacing Playground", page: "spacing" }, { label: "Spacing Guide", page: "spacing-guide" }, { label: "AI Remixes", page: "ai-remixes" }, { label: "Changelog", page: "changelog" }],

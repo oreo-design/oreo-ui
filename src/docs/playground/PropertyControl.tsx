@@ -21,19 +21,19 @@ function NumericInput({ control, value, onChange, id, label }: { control: Extrac
 
 export function PropertyControl({ name, control, value, onChange }: { name: string; control: Control; value: string | boolean | number; onChange: (value: string | boolean | number) => void }) {
   const id = useId();
-  const label = control.label ?? name;
-  if (control.kind === "boolean") return <div className="flex min-h-8 items-center justify-between gap-4">
+  const label = control.label ?? name.replace(/([a-z])([A-Z])/g, (_, first, second: string) => `${first} ${second.toLowerCase()}`).replace(/^./, first => first.toUpperCase());
+  if (control.kind === "boolean") return <div className="pg-boolean flex min-h-8 items-center justify-between gap-4">
     <label htmlFor={id} className="cursor-pointer text-xs">{label}</label><Switch id={id} checked={Boolean(value)} onCheckedChange={onChange} aria-label={label} />
   </div>;
-  return <div className="space-y-2">
+  return <div className="pg-field space-y-2">
     <label id={`${id}-label`} htmlFor={id} className="block text-xs text-[var(--color-text-secondary)]">{label}</label>
     {control.kind === "text" && (control.multiline ? <textarea id={id} className={cn(inputClass, "min-h-20 resize-y leading-5")} value={String(value)} onChange={e => onChange(e.target.value)} /> : <input id={id} className={inputClass} value={String(value)} onChange={e => onChange(e.target.value)} />)}
     {control.kind === "number" && <NumericInput id={id} label={label} control={control} value={Number(value)} onChange={onChange} />}
     {control.kind === "select" && (control.options.length <= 3 && control.options.join("").length < 26 ?
-      <div role="radiogroup" aria-labelledby={`${id}-label`} className="flex rounded border border-[var(--color-border-subtle)] p-0.5">
+      <div role="radiogroup" aria-labelledby={`${id}-label`} className="pg-segment flex rounded border border-[var(--color-border-subtle)] p-0.5">
         {control.options.map(option => <label key={option} className="relative min-w-0 flex-1 cursor-pointer text-center">
           <input type="radio" className="peer sr-only" name={id} value={option} checked={value === option} onChange={() => onChange(option)} />
-          <span className={cn("block rounded-sm px-2 py-1.5 text-xs capitalize peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--color-text-tertiary)]", value === option ? "bg-[var(--color-state-press)]" : "text-[var(--color-text-secondary)]")}>{option}</span>
+          <span className={cn("block rounded-sm px-2 py-1.5 text-xs capitalize peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--color-text-tertiary)]", value === option ? "bg-[var(--color-state-press)]" : "text-[var(--color-text-secondary)]")}>{({ sm: "Small", md: "Medium", lg: "Large" } as Record<string, string>)[option] ?? option}</span>
         </label>)}
       </div> : <select id={id} className={inputClass} value={String(value)} onChange={e => onChange(e.target.value)}>{control.options.map(option => <option key={option} value={option}>{option}</option>)}</select>)}
     {control.description && <p className="text-xs leading-5 text-[var(--color-text-tertiary)]">{control.description}</p>}
