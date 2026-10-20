@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-20",
+  "scope": "read-only research",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "theme": "light",
+  "locale": "en",
+  "reference": "https://cosign-ui-review-2.vercel.app/",
+  "oreoSourceSnapshot": "229636a63080c0197fb373549f98205a51c8bc58",
+  "remoteRefresh": "failed TLS; cached ref not asserted current",
+  "liveDeploymentRevision": "unknown",
+  "captures": [
+    "oreo-directory-loading.png",
+    "oreo-directory-empty.png",
+    "frame-7.15.png",
+    "frame-7.5.png",
+    "oreo-directory-ready.png",
+    "oreo-directory-recovered.png",
+    "frame-1.9.png",
+    "oreo-table-loading.png",
+    "timeline-start.png",
+    "oreo-page-loader.png",
+    "oreo-table-ready.png",
+    "frame-8.2.png",
+    "oreo-directory-error.png",
+    "frame-8.65.png"
+  ],
+  "limitations": [
+    "Selected frames reviewed, not all source frames",
+    "Oreo public fixture states, not live network requests",
+    "No product edits"
+  ]
+}

@@ -27,3 +27,7 @@ Invoke-only (they never trigger on their own — run them by name):
 Upstream updates: `npx skills@latest add emilkowalski/skills`, then copy the refreshed folders into `.claude/skills/`.
 
 Everything else under `.claude/` stays git-ignored; only `skills/` is committed.
+
+## Research continuity
+
+Start reference research from [docs/references/README.md](docs/references/README.md). Keep user-requested analyses in that tracked archive with source URLs, dates, evidence limits and adoption status; link an existing task REVIEW instead of duplicating its authority. Historical suggestions are not automatically current requirements or implemented features.
