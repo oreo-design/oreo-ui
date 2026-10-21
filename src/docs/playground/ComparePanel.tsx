@@ -96,7 +96,7 @@ export function ComparePanel({
         Randomization uses valid options and bounds. Reset restores component
         defaults.
       </p>
-      <section className="pg-card">
+      <section className="pg-card oreo-squircle">
         <strong>Presets</strong>
         <div className="pg-presets">
           <button onClick={() => onApply(defaultsFor(spec))}>Default</button>
@@ -178,7 +178,7 @@ function Comparison({
   const [values, setValues] = useState(initial);
   useEffect(() => setValues(initial), [initial]);
   return (
-    <section className="pg-card">
+    <section className="pg-card oreo-squircle">
       <strong>{label}</strong>
       <div className="pg-compare-preview" style={themeStyle}>
         {spec.render(values, (key, value) =>

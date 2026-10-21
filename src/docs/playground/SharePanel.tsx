@@ -52,12 +52,13 @@ export function SharePanel({
         .filter(Boolean)
         .join(" · ")}
     >
-      <div role="tablist" aria-label="Share format" className="pg-tabs">
+      <div role="tablist" aria-label="Share format" className="pg-tabs oreo-squircle">
         {["Copy prompt", "Share link", "Code"].map((name) => (
           <button
             key={name}
             id={`${id}-${name}`}
             role="tab"
+            className="oreo-squircle oreo-state-layer"
             aria-controls={`${id}-panel`}
             tabIndex={tab === name ? 0 : -1}
             aria-selected={tab === name}

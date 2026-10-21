@@ -260,7 +260,7 @@ export function ComponentPlayground({
           </div>
           <div className="pg-install">
             <p className="pg-caption">Install</p>
-            <div>
+            <div className="oreo-squircle">
               <code>{install}</code>
               <Tool
                 label="Copy install command"
@@ -380,8 +380,8 @@ export function ComponentPlayground({
                 ))}
               </div>
               <details className="pg-more-tools" ref={moreTools}>
-                <summary className="pg-tool" aria-label="More tools" title="More tools"><Glyph name="dots" /></summary>
-                <div className="pg-toolgroup pg-more-popover">
+                <summary className="pg-tool oreo-squircle oreo-state-layer" aria-label="More tools" title="More tools"><Glyph name="dots" /></summary>
+                <div className="pg-toolgroup pg-more-popover oreo-squircle">
                 <Tool label="Randomize properties" icon="randomize" onClick={() => apply(randomValues(spec, values))} />
                 <Tool label="Reset properties" icon="reset" onClick={reset} />
                 <Tool
@@ -443,6 +443,7 @@ export function ComponentPlayground({
             </div>
           <nav aria-label="Page view">
             <a
+              className="oreo-state-layer"
               aria-current="page"
               href={`/${nav.active}`}
               onClick={(event) => {
@@ -458,6 +459,7 @@ export function ComponentPlayground({
               Playground
             </a>
             <a
+              className="oreo-state-layer"
               href={`/${nav.active}?view=docs`}
               onClick={(event) => {
                 if (
@@ -475,6 +477,7 @@ export function ComponentPlayground({
             </a>
             {onRemixes && (
               <a
+                className="oreo-state-layer"
                 href={`/${nav.active}?view=remixes`}
                 onClick={(event) => {
                   if (

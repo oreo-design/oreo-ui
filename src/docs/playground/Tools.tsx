@@ -23,7 +23,7 @@ export function Tool({
             type="button"
             aria-label={label}
             aria-pressed={active}
-            className={`pg-tool ${className}`}
+            className={`pg-tool oreo-squircle oreo-state-layer ${className}`}
           >
             <Glyph name={icon} />
           </button>
@@ -66,10 +66,10 @@ export function Modal({
       <Dialog.Portal>
         <Dialog.Backdrop className="pg-backdrop" />
         <Dialog.Viewport className="pg-modal-viewport">
-          <Dialog.Popup className={`pg-modal ${className}`}>
+          <Dialog.Popup className={`pg-modal oreo-squircle ${className}`}>
             <header className="pg-row">
               <Dialog.Title>{title}</Dialog.Title>
-              <Dialog.Close className="pg-tool" aria-label={`Close ${title}`}>
+              <Dialog.Close className="pg-tool oreo-squircle oreo-state-layer" aria-label={`Close ${title}`}>
                 <Glyph name="x" />
               </Dialog.Close>
             </header>
