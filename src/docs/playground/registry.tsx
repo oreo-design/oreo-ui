@@ -1,3 +1,4 @@
+import { PlaygroundIcon, Icon } from "@/components/icon";
 import { AuroraAccordion, AuroraSurface, AURORA_QUESTIONS } from "@/components/aurora-accordion";
 import { OutlineWordmark, PathGlyph, FooterLinkGroups, OREO_WORDMARK, STUDIO_WORDMARK, FOOTER_LINK_GROUPS } from "@/components/outline-wordmark";
 import { BreakoutNavigator, DestinationProgress, RecoveryMessage, BREAKOUT_DESTINATIONS } from "@/components/breakout-navigation";
@@ -165,7 +166,6 @@ import { statusIconDemo } from "./status-icon.demo";
 import { StatusIcon, STATUS_ICON_STATES, STATUS_ICON_PROGRESS } from "@/components/status-icon";
 import { promptBoxDemo } from "./prompt-box.demo";
 import { Button, IconButton } from "@/components/button";
-import { Icon } from "@/components/icon";
 import { Chip } from "@/components/chip";
 import { Tag } from "@/components/tag";
 import { Shortcut } from "@/components/shortcut";
@@ -294,7 +294,7 @@ export const componentModules = {
   "skill-card": { SkillCard, SkillProviderBadge },
   "feature-cards": { InvoicePreview, UsageSummary },
   "status-icon": { StatusIcon },
-  button: { Button, IconButton }, icon: { Icon }, chip: { Chip }, tag: { Tag }, shortcut: { Shortcut }, avatar: { Avatar },
+  button: { Button, IconButton }, icon: { Icon, PlaygroundIcon }, chip: { Chip }, tag: { Tag }, shortcut: { Shortcut }, avatar: { Avatar },
   attachment: { Attachment, AttachmentBar }, "prompt-box": { PromptBox, PromptBoxModelSelect, PromptBoxDictation }, "keyword-tag": { KeywordTag },
   "context-bar": { ContextBar, ContextBarLabel }, "tool-call": { ToolCall, ToolCallRow }, reasoning: { Reasoning }, plan: { Plan, PlanStep },
   sources: { Sources, Source }, confirmation: { Confirmation }, "web-search": { WebSearch, WebSearchResult, WebSearchAnswer, WebSearchCitation, WebSearchSourceCard, WebSearchSourceStack }, "code-diff": { CodeDiff },
@@ -606,7 +606,7 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     demo: statusIconDemo,
   },
   button: define("Button", { children: { ...text("Continue"), label: "Label" }, type: emphasis, size: sizes, danger: toggle(), disabled: toggle(), leadingIcon: toggle(true), trailingIcon: toggle(), ...spring }, (v) =>
-    <Button type={v.type} size={v.size} danger={v.danger} disabled={v.disabled} leadingIcon={v.leadingIcon ? <Icon name="sparkle" weight="fill" /> : undefined} trailingIcon={v.trailingIcon ? <Icon name="chevron-right" /> : undefined} bounce={v.bounce} duration={v.duration} tapScale={v.tapScale}>{v.children}</Button>),
+    <Button type={v.type} size={v.size} danger={v.danger} disabled={v.disabled} leadingIcon={v.leadingIcon ? <PlaygroundIcon name="sparkles" /> : undefined} trailingIcon={v.trailingIcon ? <Icon name="chevron-right" /> : undefined} bounce={v.bounce} duration={v.duration} tapScale={v.tapScale}>{v.children}</Button>),
   "icon-button": define("Icon Button", { type: emphasis, size: sizes, shape: select(["rounded", "rectangle"], "rounded"), floating: toggle(), danger: toggle(), disabled: toggle(), ...spring }, v =>
     <IconButton aria-label="Add item" icon={<Icon name="plus" />} {...v} />),
   chip: define("Chip", { children: { ...text("Summarize this page"), label: "Label" }, size: select(["sm", "md"], "md"), selected: toggle(), disabled: toggle(), icon: toggle(true), ...spring }, (v, set) =>
@@ -663,7 +663,7 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     footer={v.footer ? <ContextBar position="footer"><ContextBarLabel muted>Connected to your workspace</ContextBarLabel></ContextBar> : undefined}
     inset={v.inset} bounce={v.bounce} duration={v.duration} tapScale={v.tapScale}
   />),
-  attachment: define("Attachment", { label: text("Design brief.pdf"), type: select(["image", "video", "doc", "text", "code", "json", "music", "unknown", "link", "pdf"], "pdf"), size: select(["md", "sm"], "md"), loading: toggle() }, v => <Attachment {...v} src={v.type === "image" || v.type === "video" ? new URL("../../components/prompt-box/assets/figma-color.svg", import.meta.url).href : undefined} />),
+  attachment: define("Attachment", { label: text("Design brief.pdf"), type: select(["image", "video", "doc", "text", "code", "json", "music", "unknown", "link", "pdf"], "pdf"), size: select(["md", "sm"], "md"), loading: toggle() }, v => <Attachment {...v} src={v.type === "image" || v.type === "video" ? new URL("../../components/icon/assets/brands/figma-color.svg", import.meta.url).href : undefined} />),
   "keyword-tag": define("Keyword Tag", { children: { ...text("Create image"), label: "Label" }, color: select(["surface", "mint", "pink", "blue", "purple", "orange"], "purple"), icon: toggle(true) }, v => <KeywordTag color={v.color} icon={v.icon ? <Icon name="sparkle" /> : undefined}>{v.children}</KeywordTag>),
   "context-bar": define("Context Bar", { children: { ...text("Reviewing your workspace"), label: "Label" }, status: select(["default", "progress", "loading", "waiting", "done", "queue"], "default"), muted: toggle(), position: select(["detached", "header", "footer"], "detached") }, v =>
     <ContextBar position={v.position}><ContextBarLabel status={v.status} muted={v.muted}>{v.children}</ContextBarLabel></ContextBar>),

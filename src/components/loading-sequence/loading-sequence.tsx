@@ -1,3 +1,4 @@
+import { LoadingMark } from "@/components/icon";
 import { useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import "./loading-sequence.css";
@@ -24,9 +25,7 @@ export type LoadingSequenceProps = {
 
 const durations: Record<LoadingSequenceVariant, number> = { typography: 3.2, aperture: 4.6, wordmark: 8.7, curtain: 4.5 };
 
-function Mark() {
-  return <svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M10 6H22V26H10V6ZM6 10H26M6 22H26M14 6V26M18 6V26" stroke="currentColor" strokeWidth="1.25" /></svg>;
-}
+
 
 /** A decorative page intro. Content stays mounted and becomes interactive only
  * after the reveal. Data fetching and readiness belong to the consuming app. */
@@ -55,7 +54,7 @@ function SequenceRun({ variant, seconds, playing = true, brand = "OREO", headlin
       })}</div>)}</div></div>}
       {variant === "aperture" && <div className="ols-loader"><span className="ols-spinner" /><span className="ols-loading-label">Loading</span></div>}
       {variant === "wordmark" && <div className="ols-brand" aria-label={brand}>{Array.from(brand).map((letter, i, letters) => <span key={i} style={{ "--letter-delay": `${i / Math.max(1, letters.length) * seconds * .16}s` } as CSSProperties}>{letter === " " ? "\u00a0" : letter}</span>)}</div>}
-      {variant === "curtain" && <div className="ols-curtain"><div className="ols-mark">{logo ?? <Mark />}</div></div>}
+      {variant === "curtain" && <div className="ols-curtain"><div className="ols-mark">{logo ?? <LoadingMark />}</div></div>}
     </div>
     <span className="ols-clock" aria-hidden="true" onAnimationEnd={event => {
       if (event.target !== event.currentTarget || event.animationName !== "ols-clock" || completed.current) return;

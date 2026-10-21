@@ -1,4 +1,13 @@
 import {
+  File,
+  Cpu,
+  GitMerge,
+  GitPullRequest,
+  GitPullRequestClosed,
+  Pause,
+  Play,
+  Unlink,
+  Zap,
   Truck,
   Hand,
   Columns3,
@@ -80,15 +89,22 @@ import {
   Trash2,
   X,
 } from "lucide-react";
-// Lucide dropped brand marks, so these two keep borrowing Phosphor's. Swap them
-// for local SVG assets (see `keyword-tag/assets`) if the Phosphor dependency
-// ever needs to go away entirely.
-import { AppleLogo, GithubLogo } from "@phosphor-icons/react";
+import { AppleLogo, GithubLogo } from "./brand-glyphs";
 import type { IconGlyph } from "./types";
 import type { IconName } from "./names";
 
 /** Lucide's answer for every name in the Oreo vocabulary. */
 export const lucideGlyphs: Record<IconName, IconGlyph> = {
+  file: File,
+  "unlink": Unlink,
+  "play": Play,
+  "pause": Pause,
+  "cpu": Cpu,
+  "lightning": Zap,
+  "git-merge": GitMerge,
+  "git-pull-request": GitPullRequest,
+  "git-pull-request-closed": GitPullRequestClosed,
+
   "hand": Hand,
   "columns": Columns3,
   "info": Info,

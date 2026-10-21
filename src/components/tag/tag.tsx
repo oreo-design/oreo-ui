@@ -1,3 +1,4 @@
+import { Icon } from "@/components/icon";
 import * as React from "react";
 import { cn } from "@/lib/cn";
 import { tag, type TagVariants } from "./tag.variants";
@@ -13,15 +14,6 @@ export type TagProps = {
   removeLabel?: string;
 } & TagVariants &
   React.ComponentPropsWithoutRef<"span">;
-
-/** A crisp 12px "×" for the remove affordance — keeps Tag icon-lib agnostic. */
-function RemoveGlyph() {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" aria-hidden>
-      <path d="M4 4l8 8M12 4l-8 8" />
-    </svg>
-  );
-}
 
 export function Tag({
   color,
@@ -48,7 +40,7 @@ export function Tag({
           aria-label={removeLabel ?? `Remove ${typeof children === "string" ? children : "tag"}`}
           className="-mr-0.5 ml-0.5 inline-flex items-center justify-center rounded-full p-0.5 opacity-60 transition-opacity hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none [&_svg]:size-3"
         >
-          <RemoveGlyph />
+          <Icon name="x" size="sm" />
         </button>
       )}
     </span>

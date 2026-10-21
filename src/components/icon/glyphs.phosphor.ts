@@ -1,4 +1,12 @@
 import {
+  File,
+  Cpu,
+  GitMerge,
+  GitPullRequest,
+  Lightning,
+  LinkBreak,
+  Pause,
+  Play,
   Truck,
   Hand,
   Columns,
@@ -89,6 +97,16 @@ import type { IconName } from "./names";
 
 /** Phosphor's answer for every name in the Oreo vocabulary. */
 export const phosphorGlyphs: Record<IconName, IconGlyph> = {
+  file: File,
+  "unlink": LinkBreak,
+  "play": Play,
+  "pause": Pause,
+  "cpu": Cpu,
+  "lightning": Lightning,
+  "git-merge": GitMerge,
+  "git-pull-request": GitPullRequest,
+  "git-pull-request-closed": GitPullRequest,
+
   "hand": Hand,
   "columns": Columns,
   "info": Info,

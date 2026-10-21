@@ -5,7 +5,7 @@ import { Icon, type IconName } from "@/components/icon";
 import { cn } from "@/lib/cn";
 import "./review-workspace.css";
 import { DraftMessage } from "./DraftMessage";
-import claudeMark from "@/components/prompt-box/assets/claude-color.svg";
+import claudeMark from "@/components/icon/assets/brands/claude-color.svg";
 
 export type SignalLevel = 1 | 2 | 3;
 export function SignalStrength({ value, label = "Signal strength" }: { value: SignalLevel; label?: string }) {

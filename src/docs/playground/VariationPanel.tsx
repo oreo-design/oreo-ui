@@ -1,5 +1,6 @@
 import { useEffect, useState, useId } from "react";
 import { PropertyControl } from "./PropertyControl";
+import { PlaygroundIcon } from "@/components/icon";
 import { Tool } from "./Tools";
 import { number, select } from "./schema";
 import { useVariation, patchTheme, setTheme } from "./useVariation";
@@ -23,7 +24,7 @@ export function VariationPanel() {
       {themeNames.map(name => <label key={name} className="pg-theme-option">
         <input type="radio" name={`${id}-theme-preset`} value={name} checked={v.preset === name} onChange={() => setTheme(presetAppearance(name, theme.dark))} />
         <span className={`pg-theme-swatch pg-theme-swatch-${name}`} style={{ background: themePresets[name].accent ?? "var(--color-text-primary)" }} aria-hidden="true" />
-        <span>{themePresets[name].label}</span><span className="pg-theme-selection" aria-hidden="true">{v.preset === name ? "✓" : ""}</span>
+        <span>{themePresets[name].label}</span><span className="pg-theme-selection" aria-hidden="true">{v.preset === name ? <PlaygroundIcon name="check" /> : null}</span>
       </label>)}
     </fieldset>
     <div className="pg-row pg-fine"><span>Variation</span><span aria-live="polite">{isCustomized(theme) ? "Custom" : themePresets[v.preset].label}</span></div>
@@ -35,7 +36,6 @@ export function VariationPanel() {
       <div className="pg-color-field"><input aria-label="Choose theme color" type="color" value={color} onChange={e => patchTheme({ variation: { ...v, accent: e.target.value } })} /><input id={`${id}-accent-hex`} aria-label="Theme color hex" value={draft} spellCheck={false} maxLength={7} aria-invalid={invalid} aria-describedby={invalid ? `${id}-color-error` : undefined} onChange={e => { setDraft(e.target.value); setInvalid(false); }} onBlur={commitColor} onKeyDown={e => { if (e.key === "Enter") commitColor(); }} /></div>
       {invalid && <p id={`${id}-color-error`} role="alert" className="pg-fine">Use a six-digit hex color, such as #6550b9.</p>}
     </div>
-    <PropertyControl name="Icon library" control={select(["phosphor", "lucide"], "phosphor")} value={theme.library} onChange={value => patchTheme({ library: value as typeof theme.library })} />
     {storageError && <div role="alert" className="pg-theme-error"><p>{storageError}</p><button onClick={() => setTheme(theme)}>Retry saving</button></div>}
   </div>;
 }

@@ -1,7 +1,7 @@
+import { IntegrationSyncGlyph, Icon } from "@/components/icon";
 import { useId, type MouseEvent, type ReactNode } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Button } from "@/components/button";
-import { Icon } from "@/components/icon";
 import { Avatar, AvatarGroup } from "@/components/avatar";
 import { cn } from "@/lib/cn";
 import { easeOut } from "@/lib/motion";
@@ -20,7 +20,7 @@ export function IntegrationStack({ status = "idle", provider = <Icon name="calen
   return <div className="integration-stack" data-status={status} data-instant={instant} aria-hidden="true">
     <div className="integration-tile integration-provider">{provider}</div>
     <div className="integration-tile integration-status">
-      {status === "syncing" ? <svg viewBox="0 0 32 32" className="size-8"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 4" /><path className="integration-sweep" d="M16 16V7a9 9 0 0 1 9 9Z" fill="currentColor" /></svg> : status === "success" ? <span className="flex size-8 items-center justify-center rounded-capsule bg-status-success text-bg-base"><Icon name="check" weight="bold" /></span> : <Icon name={status === "error" ? "warning-circle" : "plug"} size="xl" />}
+      {status === "syncing" ? <IntegrationSyncGlyph /> : status === "success" ? <span className="flex size-8 items-center justify-center rounded-capsule bg-status-success text-bg-base"><Icon name="check" weight="bold" /></span> : <Icon name={status === "error" ? "warning-circle" : "plug"} size="xl" />}
     </div>
     <div className="integration-tile integration-destination">{destination}</div>
   </div>;

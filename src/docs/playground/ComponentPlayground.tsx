@@ -16,7 +16,8 @@ import {
 import { withAppearance } from "./exportAppearance";
 import { playgroundCode } from "./code";
 import { useDemo } from "./useDemo";
-import { Glyph, Tool, Modal } from "./Tools";
+import { PlaygroundIcon as Glyph } from "@/components/icon";
+import { Tool, Modal } from "./Tools";
 import { ComponentPicker } from "./ComponentPicker";
 import { PreviewStage, partsFor } from "./PreviewStage";
 import { SharePanel } from "./SharePanel";
@@ -381,7 +382,7 @@ export function ComponentPlayground({
               </div>
               <span className="pg-divider" />
               <div className="pg-toolgroup">
-                {["desktop", "tablet", "mobile"].map((device) => (
+                {(["desktop", "tablet", "mobile"] as const).map((device) => (
                   <Tool
                     key={device}
                     icon={device}

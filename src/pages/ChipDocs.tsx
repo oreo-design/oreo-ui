@@ -1,3 +1,4 @@
+import { Icon } from "@/components/icon";
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock, type PropRow } from "@/docs/primitives";
@@ -5,7 +6,6 @@ import type { TocItem } from "@/docs/OnThisPage";
 import type { SpringProps } from "@/docs/DocsPage";
 import type { IconName, IconWeight } from "@/components/icon";
 import { Chip, ChipGroup } from "@/components/chip";
-import { Icon } from "@/components/icon";
 
 const TOC: TocItem[] = [
   { id: "chip", label: "Introduction" },
@@ -26,7 +26,6 @@ const PROPS: PropRow[] = [
 ];
 
 const CODE_STATES = `import { Chip } from "@/components/chip";
-import { Icon } from "@/components/icon";
 
 <Chip icon={<Icon name="plane" />}>Plan a trip</Chip>
 <Chip icon={<Icon name="plane" />} selected>Plan a trip</Chip>

@@ -1,3 +1,4 @@
+import { PlaygroundIcon } from "@/components/icon";
 import { useState } from "react";
 import { NAV } from "@/docs/Sidebar";
 import type { DocsNav } from "@/docs/DocsPage";
@@ -60,7 +61,7 @@ export function ComponentPicker({
                 >
                   {item.label}
                   <span aria-hidden="true">
-                    {item.page === nav.active ? "✓" : "↗"}
+                    <PlaygroundIcon name={item.page === nav.active ? "check" : "arrow-out"} />
                   </span>
                 </a>
               ))}

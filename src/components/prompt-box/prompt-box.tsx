@@ -1,9 +1,9 @@
+import { StopGlyph, AudioWaveGlyph, Icon } from "@/components/icon";
 import * as React from "react";
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
 import { easeOut } from "@/lib/motion";
 import { PromptReveal, PromptSwap, PromptPresenceContent, promptTransition } from "./prompt-box.motion";
-import { Icon } from "@/components/icon";
 import { IconButton } from "@/components/button";
 import { Shortcut } from "@/components/shortcut";
 import { ShimmerText } from "@/components/activity-label";
@@ -321,7 +321,7 @@ export function PromptBox({
         "bg-[var(--color-bg-inverse)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
       )}
     >
-      <span className="size-2.5 rounded-[1px] bg-[var(--color-text-on-inverse)]" />
+      <StopGlyph />
     </motion.button>
   );
 
@@ -446,18 +446,5 @@ export function PromptBox({
         <PromptReveal edge="footer">{footer != null && <div className={cn("transition-[padding] duration-200 ease-[var(--ease-out)] motion-reduce:transition-none", inset && "px-[var(--space-x6)]")}>{footer}</div>}</PromptReveal>
       </div>
     </LayoutGroup>
-  );
-}
-
-/** The kit's Icon/Audio glyph (exported union, 15.4×14.6 in a 20px box). */
-function AudioWaveGlyph({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" aria-hidden className={className}>
-      <path
-        transform="translate(2.292 2.708)"
-        fill="currentColor"
-        d="M6.29102 0C6.63609 0 6.91584 0.279972 6.91602 0.625V13.959C6.91584 14.304 6.63609 14.584 6.29102 14.584C5.9461 14.5838 5.66619 14.3039 5.66602 13.959V0.625C5.66619 0.28008 5.9461 0.000176004 6.29102 0ZM11.958 1.48145C12.303 1.48149 12.5828 1.76148 12.583 2.10645V11.7363C12.5829 12.0814 12.3031 12.3613 11.958 12.3613C11.6129 12.3613 11.3331 12.0814 11.333 11.7363V2.10645C11.3332 1.76148 11.613 1.48149 11.958 1.48145ZM3.45801 2.22266C3.8031 2.2227 4.08293 2.50257 4.08301 2.84766V10.9951C4.08301 11.3403 3.80315 11.6201 3.45801 11.6201C3.11287 11.6201 2.83301 11.3403 2.83301 10.9951V2.84766C2.83308 2.50257 3.11291 2.2227 3.45801 2.22266ZM9.125 3.7041C9.47 3.70428 9.74995 3.98407 9.75 4.3291V9.51367C9.75 9.85874 9.47003 10.1385 9.125 10.1387C8.77982 10.1387 8.5 9.85885 8.5 9.51367V4.3291C8.50005 3.98397 8.77985 3.7041 9.125 3.7041ZM0.625 5.18555C0.970013 5.18572 1.24998 5.4655 1.25 5.81055V8.03223C1.25 8.3773 0.970028 8.65705 0.625 8.65723C0.279822 8.65723 0 8.3774 0 8.03223V5.81055C2.44804e-05 5.46539 0.279837 5.18555 0.625 5.18555ZM14.791 5.18555C15.1362 5.18555 15.416 5.46539 15.416 5.81055V8.03223C15.416 8.3774 15.1362 8.65723 14.791 8.65723C14.446 8.65705 14.166 8.3773 14.166 8.03223V5.81055C14.166 5.4655 14.446 5.18572 14.791 5.18555Z"
-      />
-    </svg>
   );
 }

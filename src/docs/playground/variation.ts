@@ -14,7 +14,7 @@ export const themePresets = {
 } as const;
 export function presetAppearance(preset: ThemeName, dark = false): ThemeAppearance {
   const p = themePresets[preset];
-  return { dark, radius: p.radius, library: "phosphor", variation: { preset, density: p.density, accent: p.accent } };
+  return { dark, radius: p.radius, library: "lucide", variation: { preset, density: p.density, accent: p.accent } };
 }
 export function parseVariation(value: unknown): Variation {
   if (!value || typeof value !== "object") throw new Error("This theme configuration is not supported. Reset to continue.");
@@ -25,7 +25,7 @@ export function parseVariation(value: unknown): Variation {
 }
 export function isCustomized(a: ThemeAppearance) {
   const v = a.variation ?? defaultVariation, p = themePresets[v.preset];
-  return a.library !== "phosphor" || a.radius !== p.radius || v.density !== p.density || v.accent !== p.accent;
+  return a.library !== "lucide" || a.radius !== p.radius || v.density !== p.density || v.accent !== p.accent;
 }
 /** Choose black/white by WCAG relative luminance; arbitrary accent inputs stay readable. */
 export function accentForeground(hex: string) {

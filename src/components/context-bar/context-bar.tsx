@@ -1,7 +1,7 @@
+import { StepDots, Icon } from "@/components/icon";
 import * as React from "react";
 import { Collapsible } from "@base-ui-components/react/collapsible";
 import { cn } from "@/lib/cn";
-import { Icon } from "@/components/icon";
 import { SpinnerDots } from "@/components/attachment";
 import { contextBar } from "./context-bar.variants";
 
@@ -48,27 +48,6 @@ export function ContextBarIconButton({ icon, className, ...rest }: ContextBarIco
     >
       {icon}
     </button>
-  );
-}
-
-/**
- * The kit's 3-dot "in progress" step indicator (16px box). Only the leading dot
- * is inked; the two ahead of it sit at the waiting tone, so the glyph reads as
- * "one of three" rather than a dimmed ellipsis.
- */
-function StepDots({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden className={className}>
-      {[3.33, 8, 12.67].map((x, i) => (
-        <circle
-          key={i}
-          cx={x}
-          cy="8"
-          r="1.33"
-          fill={i === 0 ? "currentColor" : "var(--color-text-waiting)"}
-        />
-      ))}
-    </svg>
   );
 }
 

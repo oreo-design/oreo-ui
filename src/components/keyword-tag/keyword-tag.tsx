@@ -1,3 +1,4 @@
+import { CloseGlyph } from "@/components/icon";
 import * as React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/cn";
@@ -13,20 +14,6 @@ export type KeywordTagProps = {
   onRemove?: () => void;
 } & KeywordTagVariants &
   React.ComponentPropsWithoutRef<"span">;
-
-/** The × glyph from the kit; geometry is the 9×9 union centered in a 16 box. */
-function CloseGlyph({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden className={className}>
-      <path
-        transform="translate(3.5 3.5)"
-        fill="currentColor"
-        d="M8.14645 0.146447C8.34171 -0.0488155 8.65822 -0.0488153 8.85348 0.146447C9.0487 0.341712 9.04873 0.658228 8.85348 0.853478L5.20699 4.49996L8.85348 8.14645C9.0487 8.34171 9.04873 8.65823 8.85348 8.85348C8.65823 9.04873 8.34171 9.0487 8.14645 8.85348L4.49996 5.20699L0.853478 8.85348C0.658228 9.04873 0.341712 9.0487 0.146447 8.85348C-0.0488153 8.65822 -0.0488155 8.34171 0.146447 8.14645L3.79293 4.49996L0.146447 0.853478C-0.0488155 0.658216 -0.0488155 0.341709 0.146447 0.146447C0.341709 -0.0488155 0.658216 -0.0488155 0.853478 0.146447L4.49996 3.79293L8.14645 0.146447Z"
-      />
-    </svg>
-  );
-}
-
 
 /**
  * Inline keyword chip for composers and context rows ("Figma", "Create

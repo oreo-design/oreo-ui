@@ -1,18 +1,19 @@
+import { SpinnerDots, CloseGlyph } from "@/components/icon";
 import * as React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/cn";
 import { pressSpring } from "@/lib/motion";
 import { ShimmerText } from "@/components/activity-label";
 import { attachment } from "./attachment.variants";
-import docIcon from "./assets/doc.svg";
-import textIcon from "./assets/text.svg";
-import codeIcon from "./assets/code.svg";
-import jsonIcon from "./assets/json.svg";
-import musicIcon from "./assets/music.svg";
-import unknownIcon from "./assets/unknown.svg";
-import linkIcon from "./assets/link.svg";
-import pdfIcon from "./assets/pdf.svg";
-import playIcon from "./assets/play.svg";
+import docIcon from "../icon/assets/attachments/doc.svg";
+import textIcon from "../icon/assets/attachments/text.svg";
+import codeIcon from "../icon/assets/attachments/code.svg";
+import jsonIcon from "../icon/assets/attachments/json.svg";
+import musicIcon from "../icon/assets/attachments/music.svg";
+import unknownIcon from "../icon/assets/attachments/unknown.svg";
+import linkIcon from "../icon/assets/attachments/link.svg";
+import pdfIcon from "../icon/assets/attachments/pdf.svg";
+import playIcon from "../icon/assets/attachments/play.svg";
 
 export type AttachmentType =
   | "image"
@@ -51,42 +52,6 @@ export type AttachmentProps = {
   /** When set, the chip grows its remove affordance on hover. */
   onRemove?: () => void;
 } & Omit<React.ComponentPropsWithoutRef<"div">, "children">;
-
-/** The × glyph from the kit; geometry is the 9×9 union centered in a 16 box. */
-function CloseGlyph({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden className={className}>
-      <path
-        transform="translate(3.5 3.5)"
-        fill="currentColor"
-        d="M8.14645 0.146447C8.34171 -0.0488155 8.65822 -0.0488153 8.85348 0.146447C9.0487 0.341712 9.04873 0.658228 8.85348 0.853478L5.20699 4.49996L8.85348 8.14645C9.0487 8.34171 9.04873 8.65823 8.85348 8.85348C8.65823 9.04873 8.34171 9.0487 8.14645 8.85348L4.49996 5.20699L0.853478 8.85348C0.658228 9.04873 0.341712 9.0487 0.146447 8.85348C-0.0488153 8.65822 -0.0488155 8.34171 0.146447 8.14645L3.79293 4.49996L0.146447 0.853478C-0.0488155 0.658216 -0.0488155 0.341709 0.146447 0.146447C0.341709 -0.0488155 0.658216 -0.0488155 0.853478 0.146447L4.49996 3.79293L8.14645 0.146447Z"
-      />
-    </svg>
-  );
-}
-
-/** Eight-bar dot spinner (Figma Spinner-Dots), stepped like a clock.
- * Shared with Context Bar's loading rows — spin it with
- * `animate-[spin_0.8s_steps(8)_infinite]`. */
-export function SpinnerDots({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 16 16" aria-hidden className={className}>
-      {Array.from({ length: 8 }, (_, i) => (
-        <rect
-          key={i}
-          x="7.333"
-          y="0"
-          width="1.333"
-          height="4"
-          rx="0.667"
-          fill="currentColor"
-          transform={`rotate(${i * 45} 8 8)`}
-        />
-      ))}
-    </svg>
-  );
-}
-
 
 export function Attachment({
   label,
@@ -184,3 +149,5 @@ export function Attachment({
 export function AttachmentBar({ className, ...rest }: React.ComponentPropsWithoutRef<"div">) {
   return <div className={cn("flex flex-wrap items-center gap-[var(--space-x4)]", className)} {...rest} />;
 }
+
+export { SpinnerDots } from "@/components/icon";

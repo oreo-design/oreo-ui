@@ -16,12 +16,12 @@ function initialize() {
     if (!raw) return;
     const a = JSON.parse(raw) as ThemeAppearance;
     if (typeof a.dark !== "boolean" || !Number.isFinite(a.radius) || a.radius < 0 || a.radius > 999 || !["phosphor", "lucide"].includes(a.library)) throw new Error();
-    theme = { dark: a.dark, radius: a.radius, library: a.library, variation: parseVariation(a.variation) };
+    theme = { dark: a.dark, radius: a.radius, library: "lucide", variation: parseVariation(a.variation) };
     snapshot = { theme, storageError };
   } catch { storageError = "Saved theme could not be loaded. Using Oreo Default."; snapshot = { theme, storageError }; }
 }
 export function setTheme(next: ThemeAppearance) {
-  theme = { ...next, variation: next.variation ?? { ...defaultVariation } };
+  theme = { ...next, library: "lucide", variation: next.variation ?? { ...defaultVariation } };
   try { localStorage.setItem(key, JSON.stringify(theme)); storageError = ""; }
   catch { storageError = "Theme works for this session, but could not be saved. Retry or use Share to keep it."; }
   publish();

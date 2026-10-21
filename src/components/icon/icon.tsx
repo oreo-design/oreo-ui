@@ -12,7 +12,7 @@ import type { IconName } from "./names";
  *   <Icon name="chevron-down" weight="bold" />
  *
  * The name resolves through the registry using the library from
- * `IconLibraryProvider` (Phosphor by default), so swapping the whole system
+ * `IconLibraryProvider` (Lucide by default), so swapping the whole system
  * over to Lucide is one prop on one provider.
  *
  * Sizing and color are driven by Tailwind tokens (via `currentColor`) rather

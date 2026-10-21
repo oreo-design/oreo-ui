@@ -1,0 +1,72 @@
+{
+  "chevron": {
+    "fileKey": "ggZtFaQyWGGWYLVdFlez1N",
+    "nodeId": "94:343",
+    "referenceFrame": "94:169",
+    "downloaded": "2026-10-21",
+    "sha256": "78602ab0d4c8a6b9f4df1c474698063f3abc2d0ff697266458ce1c54db1beec4"
+  },
+  "preview": {
+    "fileKey": "ggZtFaQyWGGWYLVdFlez1N",
+    "nodeId": "94:532",
+    "referenceFrame": "94:169",
+    "downloaded": "2026-10-21",
+    "sha256": "0ce7e9fb55176be8cd9fb063643face5543cddd2241eae1599bb3a46931f2e48"
+  },
+  "annotation": {
+    "fileKey": "ggZtFaQyWGGWYLVdFlez1N",
+    "nodeId": "94:693",
+    "referenceFrame": "94:169",
+    "downloaded": "2026-10-21",
+    "sha256": "e4541edfddb871bf8f9717f654b5e73106b93fd8fd55cbac67d5a023731df070"
+  },
+  "code": {
+    "fileKey": "ggZtFaQyWGGWYLVdFlez1N",
+    "nodeId": "94:544",
+    "referenceFrame": "94:169",
+    "downloaded": "2026-10-21",
+    "sha256": "95506db25bf85c40a80652fe0c8fb9edf516653c83ab705b9460714fc613391c"
+  },
+  "desktop": {
+    "fileKey": "ggZtFaQyWGGWYLVdFlez1N",
+    "nodeId": "94:551",
+    "referenceFrame": "94:169",
+    "downloaded": "2026-10-21",
+    "sha256": "7f89b79b76a8de47ff7693d923c13987ae4291856305f1a30a5dc0455680fb9f"
+  },
+  "tablet": {
+    "fileKey": "ggZtFaQyWGGWYLVdFlez1N",
+    "nodeId": "94:557",
+    "referenceFrame": "94:169",
+    "downloaded": "2026-10-21",
+    "sha256": "59b89015f2480c8946d79ec35a67ca8dc52ab92ae28c9f6251c27ccabcd386fe"
+  },
+  "sparkles": {
+    "fileKey": "ggZtFaQyWGGWYLVdFlez1N",
+    "nodeId": "I94:414;23:11390",
+    "referenceFrame": "94:169",
+    "downloaded": "2026-10-21",
+    "sha256": "def91fb31e9cc11e59e5a6757adf705e10a973c140e0545d2355e0a1991d25bf"
+  },
+  "copy": {
+    "fileKey": "ggZtFaQyWGGWYLVdFlez1N",
+    "nodeId": "94:425",
+    "referenceFrame": "94:169",
+    "downloaded": "2026-10-21",
+    "sha256": "9057958fe1427ecf16c7ec0067b25f86b247eb2cd2ccfe687762471ff549285a"
+  },
+  "randomize": {
+    "fileKey": "ggZtFaQyWGGWYLVdFlez1N",
+    "nodeId": "94:433",
+    "referenceFrame": "94:169",
+    "downloaded": "2026-10-21",
+    "sha256": "a00fc30bc12d0f0987fecf97330c762c6a113253e0ed3e842853858139c560fa"
+  },
+  "reset": {
+    "fileKey": "ggZtFaQyWGGWYLVdFlez1N",
+    "nodeId": "94:438",
+    "referenceFrame": "94:169",
+    "downloaded": "2026-10-21",
+    "sha256": "eed7e120b86d0f64fb0059281e29d0afb679e5e5917f7079d8885f4534713fba"
+  }
+}

@@ -4,3 +4,8 @@ export { ICON_GLYPHS, ICON_LIBRARIES, ICON_WEIGHTS, LUCIDE_STROKE, IconLibraryPr
 export { ICON_NAMES } from "./names";
 export type { IconName } from "./names";
 export type { IconGlyph, IconLibrary, IconWeight } from "./types";
+export { PlaygroundIcon, FIGMA_ICONS, PLAYGROUND_ICON_NAMES } from "./playground-icon";
+export type { PlaygroundIconName } from "./playground-icon";
+export { CloseGlyph, SpinnerDots, AudioWaveGlyph, StepDots, PlusGlyph, CodeGlyph, LinkGlyph, TextGlyph, FolderGlyph } from "./kit-glyphs";
+export { OreoLogo } from "./oreo-logo";
+export { CutScissors, LoadingMark, IntegrationSyncGlyph, TriangleMark, StopGlyph } from "./custom-glyphs";
