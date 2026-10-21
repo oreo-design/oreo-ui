@@ -1,3 +1,4 @@
+import { ThemeIllustration } from "@/lib/theme/ThemeIllustration";
 import { Sidebar } from "./Sidebar";
 import { OnThisPage, type TocItem } from "./OnThisPage";
 import type { DocsNav } from "./DocsPage";
@@ -16,7 +17,7 @@ export function DocsLayout({
   views?: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto flex min-h-screen gap-0 bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]">
+    <div className="oreo-document-frame mx-auto flex min-h-screen gap-0 bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]">
       <Sidebar nav={nav} />
       <main className="min-w-0 flex-1 px-6 py-10 md:px-12">
         <div className="site-docs-content mx-auto max-w-2xl">
@@ -30,6 +31,7 @@ export function DocsLayout({
               </span>
             ))}
           </nav>{views}</div>
+          <ThemeIllustration />
           {children}
         </div>
       </main>

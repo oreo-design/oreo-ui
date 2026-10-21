@@ -15,7 +15,7 @@ export const promptBox = tv({
     headerSlot: "z-[1] -mb-4 w-full",
     footerSlot: "z-[1] -mt-4 w-full",
     card: [
-      "z-[2] flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x8)]",
+      "oreo-composer z-[2] flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x8)]",
       "rounded-[var(--radius-card-medium)] bg-[var(--color-bg-base)] p-[var(--space-x6)]",
       "border-[0.5px] border-[var(--color-border-default)] shadow-[var(--shadow-default)]",
     ],
@@ -26,7 +26,7 @@ export const promptBox = tv({
       "outline-none placeholder:text-transparent",
     ],
     placeholder: [
-      "pointer-events-none absolute top-0 left-0 flex items-center gap-[var(--space-x3)]",
+      "oreo-technical pointer-events-none absolute top-0 left-0 flex items-center gap-[var(--space-x3)]",
       "text-[14px] leading-5 whitespace-nowrap text-[var(--color-text-placeholder)]",
     ],
     tags: "absolute -top-[2px] left-0 z-[1] flex items-center gap-[var(--space-x4)]",

@@ -1,0 +1,103 @@
+/* Shared role recipes. Every switch is a token, so nested exports/comparisons
+   can reset it without inheriting a root [data-site-theme] selector. */
+.oreo-technical { font-family: var(--font-technical, inherit); }
+.oreo-card-title {
+  font-family: var(--font-display, inherit);
+  font-size: var(--theme-card-title-size, 14px);
+  font-weight: var(--theme-title-weight, 500);
+}
+.pg-modal.oreo-paper-card { border: var(--theme-panel-border-width, 0px) solid var(--color-border-default); }
+.oreo-keycap {
+  --squircle-radius: var(--radius-keycap, var(--radius-control-tiny));
+  font-family: var(--font-technical, var(--font-sans));
+}
+.oreo-model-selector {
+  --squircle-radius: var(--radius-model-selector, var(--radius-control));
+  font-family: var(--font-technical, inherit);
+}
+.oreo-composer {
+  position: relative;
+  background-color: var(--color-bg-composer, var(--color-bg-base));
+  box-shadow: var(--theme-composer-shadow, var(--composer-rest-shadow, var(--shadow-default)));
+}
+.oreo-composer::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  opacity: var(--theme-frame-marks, 0);
+  /* Four registration marks, not resize affordances. 4px intrinsic drawing. */
+  background: linear-gradient(var(--color-frame-mark), var(--color-frame-mark)) top left / 4px 4px,
+    linear-gradient(var(--color-frame-mark), var(--color-frame-mark)) top right / 4px 4px,
+    linear-gradient(var(--color-frame-mark), var(--color-frame-mark)) bottom left / 4px 4px,
+    linear-gradient(var(--color-frame-mark), var(--color-frame-mark)) bottom right / 4px 4px;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
+/* Structural rails belong to existing page boundaries, never overlay content. */
+.pg-header { border-bottom: var(--theme-rail-width, 0px) solid var(--color-border-default); }
+.pg-main { border-inline: var(--theme-rail-width, 0px) solid var(--color-border-default); }
+.pg-stage { background-image: var(--theme-hatch, none); }
+.pg-frame { background-color: var(--color-bg-elevated); }
+.oreo-document-frame > main {
+  background-image: var(--theme-hatch, none);
+}
+.oreo-document-frame .site-docs-content {
+  background-color: var(--color-bg-elevated);
+  border-inline: var(--theme-rail-width, 0px) solid var(--color-border-default);
+  padding-inline: calc(var(--theme-rail-width, 0px) * 48);
+}
+.pg-modal > header > .pg-tool {
+  border: var(--theme-rail-width, 0px) solid var(--color-border-default);
+  background-color: var(--color-state-hover);
+}
+/* Actual Figma graphic: native SVG dimensions are preserved, layers positioned
+   in the original 216×120 coordinate space. This is decorative, not an icon. */
+.oreo-theme-illustration {
+  display: var(--theme-art-display, none);
+  position: relative;
+  width: 100%;
+  height: calc(var(--spacing) * 50);
+  margin-block: calc(var(--spacing) * 8);
+  overflow: hidden;
+  background: var(--color-bg-illustration);
+  border-bottom: .5px solid var(--color-border-default);
+}
+.oreo-theme-illustration::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: calc(var(--spacing) * 16);
+  background: linear-gradient(transparent, var(--color-bg-illustration));
+  pointer-events: none;
+}
+.oreo-theme-illustration-art {
+  position: absolute;
+  width: 216px;
+  height: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: var(--theme-art-filter, none);
+}
+.oreo-theme-illustration-art img { position: absolute; max-width: none; }
+.oreo-theme-illustration-art img:nth-child(1) { left: -3.135px; top: 0; }
+.oreo-theme-illustration-art img:nth-child(2) { left: -.799px; top: 40px; }
+.oreo-theme-illustration-art img:nth-child(3) { left: -3.125px; top: 80.01px; }
+@media (max-width: 1199px) { .pg-main { border-left-width: 0; } }
+@media (max-width: 767px) {
+  .pg-main { border-right-width: 0; }
+  .oreo-document-frame .site-docs-content { padding-inline: 0; border-inline: 0; }
+}
+
+.oreo-notice-body {
+  padding: var(--theme-card-padding, calc(var(--spacing) * 3.5)) var(--theme-card-padding, calc(var(--spacing) * 4)) 0;
+  gap: var(--theme-card-copy-gap, var(--spacing));
+}
+.oreo-notice-footer { padding: var(--theme-card-padding, calc(var(--spacing) * 3) calc(var(--spacing) * 4)); }
+.oreo-notice-actions { gap: var(--theme-card-action-gap, calc(var(--spacing) * 2)); }
+.oreo-notice-actions > button { height: var(--theme-card-action-height, calc(var(--spacing) * 7)); }
+
+.oreo-media-fill {
+  --squircle-rendered-radius: max(0px, min(calc(var(--radius-media, var(--radius-control)) * var(--oreo-corner-scale)), calc(var(--spacing) * 4.5)) - .5px);
+}

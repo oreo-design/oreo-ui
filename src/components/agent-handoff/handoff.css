@@ -1,8 +1,9 @@
 .ah-composer {
+  --composer-rest-shadow: none;
   position: relative;
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control-large);
-  background: var(--color-bg-base);
+  background: var(--color-bg-composer, var(--color-bg-base));
   color: var(--color-text-primary);
 }
 .ah-composer-input {

@@ -551,9 +551,10 @@
   box-shadow: var(--shadow-overlay);
 }
 .pg-modal > header h2 {
-  font-size: 22px;
+  font-family: var(--font-display, inherit);
+  font-size: var(--theme-dialog-title-size, 22px);
   line-height: 1.4;
-  font-weight: 500;
+  font-weight: var(--theme-title-weight, 500);
 }
 .pg-modal input:not([type="range"], [type="radio"]),
 .pg-modal textarea {

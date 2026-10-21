@@ -12,7 +12,7 @@ export const shortcutCap = tv({
     "inline-flex items-center justify-center shrink-0",
     "bg-[var(--color-bg-base)] text-[var(--color-text-secondary)]",
     "border-[0.5px] border-[var(--color-border-subtle)]",
-    "rounded-[var(--radius-control-tiny)] font-medium leading-none whitespace-nowrap select-none",
+    "oreo-keycap oreo-squircle font-medium leading-none whitespace-nowrap select-none",
   ],
   variants: {
     size: {

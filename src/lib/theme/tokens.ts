@@ -57,6 +57,31 @@ export function variationTokens(a: ThemeAppearance): Record<string, string> {
     "--font-shell": v.preset === "ascii" ? '"Inter Variable", Inter, sans-serif' : '"Mona Sans Variable", sans-serif',
     "--font-display": v.preset === "ascii" ? '"Source Serif 4 Variable", Georgia, serif' : "initial",
     "--font-input": v.preset === "ascii" ? '"Geist Mono Variable", ui-monospace, monospace' : 'initial',
+    // Semantic exceptions from all three ASCII reference frames. Other presets
+    // resolve these at their own boundary, including nested exports/comparisons.
+    "--radius-keycap": `${v.preset === "ascii" ? 4 + a.radius / 2 : a.radius / 2}px`,
+    "--radius-model-selector": `${v.preset === "ascii" ? 12 + a.radius : a.radius}px`,
+    "--radius-media": `${v.preset === "ascii" ? 8 + a.radius : a.radius}px`,
+    "--radius-media-thumb": `${v.preset === "ascii" ? 8 + a.radius / 2 : a.radius / 2}px`,
+    "--font-technical": v.preset === "ascii" ? '"Geist Mono Variable", ui-monospace, monospace' : "initial",
+    "--theme-rail-width": v.preset === "ascii" ? "0.5px" : "0px",
+    "--theme-frame-marks": v.preset === "ascii" && a.radius === 0 ? "1" : "0",
+    "--theme-art-display": v.preset === "ascii" ? "block" : "none",
+    "--theme-art-filter": v.preset === "ascii" && a.dark ? "invert(1)" : "none",
+    "--theme-card-padding": v.preset === "ascii" ? "calc(var(--spacing) * 5)" : "initial",
+    "--theme-card-copy-gap": v.preset === "ascii" ? "calc(var(--spacing) * 2)" : "initial",
+    "--theme-card-action-gap": v.preset === "ascii" ? "calc(var(--spacing) * 4)" : "initial",
+    "--theme-card-action-height": v.preset === "ascii" ? "calc(var(--spacing) * 8)" : "initial",
+    "--theme-card-title-size": v.preset === "ascii" ? "var(--text-base)" : "initial",
+    "--theme-dialog-title-size": v.preset === "ascii" ? "var(--text-2xl)" : "initial",
+    "--theme-title-weight": v.preset === "ascii" ? "600" : "initial",
+    "--theme-panel-border-width": v.preset === "ascii" ? "1px" : "0px",
+    "--theme-action-border-width": v.preset === "ascii" ? "0.5px" : "1px",
+    "--theme-composer-shadow": v.preset === "ascii" ? "none" : "initial",
+    "--theme-hatch": v.preset === "ascii" ? "repeating-linear-gradient(135deg, transparent 0 8px, color-mix(in srgb, var(--color-border-default) 30%, transparent) 8px 8.5px, transparent 8.5px 9px)" : "none",
+    "--color-bg-composer": v.preset === "ascii" ? (a.dark ? "#242421cc" : "#ffffffcc") : "var(--color-bg-base)",
+    "--color-bg-illustration": v.preset === "ascii" ? (a.dark ? "#302e23" : "#fffbed") : "var(--color-bg-elevated)",
+    "--color-frame-mark": v.preset === "ascii" ? (a.dark ? "#777770" : "#bbbbbb") : "transparent",
     "--radius-control": `${a.radius}px`,
     "--radius-control-tiny": `${a.radius / 2}px`,
     "--radius-control-large": `${a.radius * 1.25}px`,
@@ -89,9 +114,14 @@ export function variationTokens(a: ThemeAppearance): Record<string, string> {
     "--color-bg-inverse": "#f5f4f0", "--color-text-on-inverse": "#1b1b19",
     "--color-accent": "#f5f4f0", "--color-accent-subtle": "#f5f4f01f", "--color-accent-foreground": "#1b1b19",
   } : {
-    "--color-bg-base": "#fdfdfc", "--color-bg-elevated": "#f5f4f0", "--color-bg-surface": "#fdfdfc",
+    "--color-bg-base": "#ffffff", "--color-bg-elevated": "#f5f4f0", "--color-bg-surface": "#ffffff",
     "--color-bg-inverse": "#000000", "--color-text-on-inverse": "#ffffff",
     "--color-accent": "#000000", "--color-accent-subtle": "#0000001f", "--color-accent-foreground": "#ffffff",
+  });
+  if (v.preset === "ascii") Object.assign(tokens, {
+    "--color-overlay-subtle": a.dark ? "#00000070" : "#00000030",
+    "--shadow-panel": a.dark ? "0 8px 16px #00000040" : "0 8px 16px #0000000a",
+    "--shadow-overlay": a.dark ? "0 8px 16px #00000040" : "0 8px 16px #0000000a",
   });
   if (v.accent) Object.assign(tokens, {
     "--color-theme-accent": v.accent,

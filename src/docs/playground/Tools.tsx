@@ -66,7 +66,7 @@ export function Modal({
       <Dialog.Portal>
         <Dialog.Backdrop className="pg-backdrop" />
         <Dialog.Viewport className="pg-modal-viewport">
-          <Dialog.Popup className={`pg-modal oreo-squircle ${className}`}>
+          <Dialog.Popup className={`pg-modal oreo-paper-card oreo-squircle ${className}`}>
             <header className="pg-row">
               <Dialog.Title>{title}</Dialog.Title>
               <Dialog.Close className="pg-tool oreo-squircle oreo-state-layer" aria-label={`Close ${title}`}>

@@ -23,7 +23,7 @@ export const typeVariants = {
   ],
   secondary: [
     "bg-[var(--color-bg-base)] text-[var(--color-text-primary)]",
-    "ring-1 ring-inset ring-[var(--color-border-default)]",
+    "ring-[length:var(--theme-action-border-width,1px)] ring-inset ring-[var(--color-border-default)]",
     "hover:after:bg-[var(--color-state-hover)]",
     "active:after:bg-[var(--color-state-press)]",
   ],

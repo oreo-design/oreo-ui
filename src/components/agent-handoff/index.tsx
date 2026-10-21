@@ -102,7 +102,7 @@ export function AgentMentionComposer({
   }
   return (
     <form
-      className="ah-composer"
+      className="ah-composer oreo-composer"
       aria-label="Comment or delegate"
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget)) {
