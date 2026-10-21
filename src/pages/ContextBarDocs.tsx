@@ -36,7 +36,7 @@ const PROPS: PropRow[] = [
 
 function Agents() {
   return (
-    <AvatarGroup size="xs" className="-space-x-[7.5px]">
+    <AvatarGroup size="xs" className="-space-x-[calc(var(--spacing)*1.875)]">
       <Avatar agent="flare" className="size-5" />
       <Avatar agent="void" className="size-5" />
       <Avatar agent="bloom" className="size-5" />

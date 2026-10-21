@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { FeaturesShowcase } from "@/patterns/features-showcase";
 import { Button } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -6,7 +6,7 @@ import { OreoLogo } from "@/docs/OreoLogo";
 import type { DocsNav } from "@/docs/DocsPage";
 
 export function FeaturesShowcasePage({ nav: _nav }: { nav: DocsNav }) {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   return <div className={`${dark ? "theme-dark " : ""}min-h-dvh bg-bg-elevated text-text-primary`}>
     <header className="flex flex-wrap items-center justify-between gap-4 border-b border-border-subtle px-6 py-4 text-xs sm:px-10">
       <a href="/feature-cards" className="flex items-center gap-2 text-text-secondary"><OreoLogo className="h-3 w-5" />Oreo UI <span className="text-text-tertiary">/ Templates /</span> <span className="text-text-primary">Features</span></a>

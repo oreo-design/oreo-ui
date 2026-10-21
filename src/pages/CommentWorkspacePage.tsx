@@ -1,18 +1,10 @@
-import { useEffect, useState } from "react";
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { MotionConfig } from "motion/react";
 import type { DocsNav } from "@/docs/DocsPage";
 import { OreoLogo } from "@/docs/OreoLogo";
 import { CommentWorkspace } from "@/patterns/comment-workspace";
 export function CommentWorkspacePage(_: { nav: DocsNav }) {
-  const [dark, setDark] = useState(true);
-  useEffect(() => {
-    const root = document.documentElement;
-    const previous = root.classList.contains("theme-dark");
-    root.classList.toggle("theme-dark", dark);
-    return () => {
-      root.classList.toggle("theme-dark", previous);
-    };
-  }, [dark]);
+  const [dark, setDark] = useThemeMode(true);
   return (
     <MotionConfig reducedMotion="user">
       <div className="min-h-dvh bg-bg-elevated text-text-primary">

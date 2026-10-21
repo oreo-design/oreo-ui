@@ -5,10 +5,10 @@
 }
 .dispatch-nav {
   height: 72px;
-  padding: 0 32px;
+  padding: 0 calc(var(--spacing) * 8);
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: calc(var(--spacing) * 12);
   border-bottom: 1px solid var(--color-border-default);
   background: var(--color-bg-base);
 }
@@ -17,14 +17,14 @@
   place-items: center;
   width: 32px;
   height: 32px;
-  border-radius: 8px;
+  border-radius: var(--radius-control);
   background: var(--color-bg-inverse);
   color: var(--color-text-on-inverse);
 }
 .dispatch-nav nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: calc(var(--spacing) * 6);
   flex: 1;
   font-size: 13px;
   color: var(--color-text-secondary);
@@ -36,18 +36,18 @@
 .dispatch-main {
   max-width: 1600px;
   margin: auto;
-  padding: 40px 32px 24px;
+  padding: calc(var(--spacing) * 10) calc(var(--spacing) * 8) calc(var(--spacing) * 6);
 }
 .dispatch-intro {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 32px;
-  margin-bottom: 32px;
+  gap: calc(var(--spacing) * 8);
+  margin-bottom: calc(var(--spacing) * 8);
 }
 .dispatch-summary {
   display: flex;
-  gap: 40px;
+  gap: calc(var(--spacing) * 10);
 }
 .dispatch-summary strong {
   font-size: 28px;
@@ -56,7 +56,7 @@
 }
 .dispatch-summary span {
   display: block;
-  margin-top: 4px;
+  margin-top: var(--spacing);
   font-size: 11px;
   color: var(--color-text-tertiary);
   font-weight: 400;
@@ -64,24 +64,24 @@
 }
 .dispatch-panel {
   border: 1px solid var(--color-border-default);
-  border-radius: 16px;
+  border-radius: calc(var(--radius-control) * 2);
   overflow: hidden;
   background: var(--color-bg-base);
 }
 .dispatch-panel-title {
-  padding: 24px;
+  padding: calc(var(--spacing) * 6);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .dispatch-toolbar {
-  padding: 16px 24px;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: calc(var(--spacing) * 3);
   flex-wrap: wrap;
 }
 .dispatch-workspace input,
@@ -91,17 +91,17 @@
   background: var(--color-bg-base);
   color: var(--color-text-primary);
   border: 1px solid var(--color-border-default);
-  border-radius: 8px;
-  padding: 8px 12px;
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   min-height: 36px;
 }
 .dispatch-search {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
   border: 1px solid var(--color-border-default);
-  border-radius: 8px;
-  padding-left: 12px;
+  border-radius: var(--radius-control);
+  padding-left: calc(var(--spacing) * 3);
   color: var(--color-text-tertiary);
 }
 .dispatch-search input {
@@ -111,30 +111,30 @@
   width: 220px;
 }
 .dispatch-panel-footer {
-  padding: 16px 24px;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   border-top: 1px solid var(--color-border-subtle);
   display: flex;
   justify-content: space-between;
-  gap: 16px;
+  gap: calc(var(--spacing) * 4);
   color: var(--color-text-tertiary);
   font-size: 11px;
 }
 .dispatch-status {
   min-height: 48px;
-  padding: 16px 4px;
+  padding: calc(var(--spacing) * 4) var(--spacing);
   font-size: 12px;
   color: var(--color-text-secondary);
 }
 .dispatch-footer {
   display: flex;
-  gap: 20px;
+  gap: calc(var(--spacing) * 5);
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 11px;
   color: var(--color-text-tertiary);
 }
 .dispatch-feedback {
-  padding: 12px 24px;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
   font-size: 13px;
   border-top: 1px solid var(--color-border-subtle);
 }
@@ -155,7 +155,7 @@
   overflow: auto;
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-default);
-  border-radius: 16px;
+  border-radius: calc(var(--radius-control) * 2);
   color: var(--color-text-primary);
   box-shadow: var(--shadow-overlay);
   z-index: 51;
@@ -168,22 +168,22 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 6);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .dispatch-dialog-body {
-  padding: 20px 24px;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 6);
 }
 .dispatch-fields {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 20px;
+  gap: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 5);
 }
 .dispatch-fields label {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
   font-size: 12px;
   color: var(--color-text-secondary);
 }
@@ -196,14 +196,14 @@
   background: var(--color-bg-base);
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
-  padding: 16px 24px;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   border-top: 1px solid var(--color-border-subtle);
 }
 @media (max-width: 760px) {
   .dispatch-nav {
-    padding: 0 16px;
-    gap: 20px;
+    padding: 0 calc(var(--spacing) * 4);
+    gap: calc(var(--spacing) * 5);
   }
   .dispatch-nav nav {
     justify-content: flex-end;
@@ -212,7 +212,7 @@
     display: none;
   }
   .dispatch-main {
-    padding: 24px 16px;
+    padding: calc(var(--spacing) * 6) calc(var(--spacing) * 4);
   }
   .dispatch-intro {
     display: block;
@@ -221,16 +221,16 @@
     font-size: 24px;
   }
   .dispatch-summary {
-    margin-top: 24px;
-    gap: 32px;
+    margin-top: calc(var(--spacing) * 6);
+    gap: calc(var(--spacing) * 8);
   }
   .dispatch-panel-title {
-    padding: 16px;
+    padding: calc(var(--spacing) * 4);
     align-items: flex-start;
     flex-direction: column;
   }
   .dispatch-toolbar {
-    padding: 16px;
+    padding: calc(var(--spacing) * 4);
   }
   .dispatch-panel-footer {
     flex-direction: column;
@@ -239,19 +239,19 @@
     width: 160px;
   }
   .dispatch-footer {
-    gap: 12px;
+    gap: calc(var(--spacing) * 3);
   }
   .allocation-backlog {
-    padding: 16px;
+    padding: calc(var(--spacing) * 4);
   }
   .allocation-backlog-heading {
-    padding: 16px;
+    padding: calc(var(--spacing) * 4);
   }
   .dispatch-dialog-actions {
-    padding: 16px;
+    padding: calc(var(--spacing) * 4);
   }
   .dispatch-dialog-body {
-    padding: 16px;
+    padding: calc(var(--spacing) * 4);
   }
 }
 

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -21,7 +22,7 @@ export function DispatchAllocationPage() {
     [query, setQuery] = useState(""),
     [category, setCategory] = useState("All types"),
     [resourceView, setResourceView] = useState<"driver" | "vehicle">("driver"),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [editor, setEditor] = useState<RouteJob | null>(null),
     [confirm, setConfirm] = useState(false),
     [error, setError] = useState(""),

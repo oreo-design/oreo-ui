@@ -10,22 +10,22 @@
   flex-shrink: 0;
   background: var(--color-bg-elevated);
   border-right: 1px solid var(--color-border-subtle);
-  padding: 1.5rem 1rem;
+  padding: calc(var(--spacing) * 6) calc(var(--spacing) * 4);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .cl-brand {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   align-items: center;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .cl-month-heading {
   display: flex;
-  gap: 0.25rem;
+  gap: var(--spacing);
   align-items: center;
 }
 .cl-month-heading strong {
@@ -36,14 +36,14 @@
 .cl-mini-month {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
+  gap: calc(var(--spacing) * 0.5);
   font-size: 0.6875rem;
   text-align: center;
 }
 .cl-mini-month > span {
   color: var(--color-text-tertiary);
   font-size: 0.625rem;
-  padding: 0.25rem 0;
+  padding: var(--spacing) 0;
 }
 .cl-mini-month button {
   height: 1.75rem;
@@ -68,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
 }
 .cl-sources-heading h2 {
   font-size: 0.75rem;
@@ -88,13 +88,13 @@
   color: var(--color-text-secondary);
 }
 .cl-main {
-  padding: 1.5rem 1.5rem 1rem;
+  padding: calc(var(--spacing) * 6) calc(var(--spacing) * 6) calc(var(--spacing) * 4);
   min-width: 0;
   flex: 1;
 }
 .cl-toolbar {
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: center;
   justify-content: space-between;
 }
@@ -107,11 +107,11 @@
 .cl-toolbar p {
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .cl-toolbar-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
   flex-wrap: wrap;
 }
@@ -119,25 +119,25 @@
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
-  padding: 0.375rem 0.5rem;
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
   font-size: 0.75rem;
   color: var(--color-text-primary);
 }
 .cl-filters {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin: 1rem 0;
+  gap: calc(var(--spacing) * 4);
+  margin: calc(var(--spacing) * 4) 0;
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
 }
 .cl-search {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
-  padding: 0.5rem 0.75rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   width: 15rem;
 }
 .cl-search input {
@@ -153,7 +153,7 @@
 .cl-check {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .cl-root input[type="checkbox"],
 .cl-root input[type="radio"] {
@@ -161,7 +161,7 @@
 }
 .cl-notice {
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: center;
   justify-content: space-between;
   min-height: 3rem;
@@ -171,7 +171,7 @@
 .cl-footer {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   font-size: 0.625rem;
   color: var(--color-text-tertiary);
 }
@@ -199,14 +199,14 @@
   width: min(31rem, calc(100vw - 2rem));
   max-height: calc(100dvh - 2rem);
   overflow: auto;
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
   box-shadow: var(--shadow-overlay);
 }
 .cl-dialog-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .cl-dialog-heading h2 {
   font-size: 1.125rem;
@@ -216,14 +216,14 @@
   font-size: 0.75rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
-  margin: 0.75rem 0 1.5rem;
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 6);
 }
 .cl-field {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
   min-width: 0;
   flex: 1;
 }
@@ -231,7 +231,7 @@
 .cl-field select {
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
-  padding: 0.5rem 0.75rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   min-width: 0;
   width: 100%;
   height: 2.5rem;
@@ -241,17 +241,17 @@
 }
 .cl-form-row {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
 }
 .cl-check {
   font-size: 0.75rem;
-  margin: 0 0 1rem;
+  margin: 0 0 calc(var(--spacing) * 4);
 }
 .cl-form-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   justify-content: flex-end;
-  margin-top: 1.5rem;
+  margin-top: calc(var(--spacing) * 6);
   flex-wrap: wrap;
 }
 .cl-form-actions > button:first-child:nth-last-child(3) {
@@ -261,10 +261,10 @@
   font-size: 0.75rem;
   line-height: 1.5;
   color: var(--color-status-error);
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
 }
 .cl-color-preview {
-  margin: 1.5rem 0;
+  margin: calc(var(--spacing) * 6) 0;
   height: 5rem;
 }
 .cl-delete-title {
@@ -283,10 +283,10 @@
 @media (max-width: 1100px) {
   .cl-sidebar {
     width: 13rem;
-    padding: 1rem 0.75rem;
+    padding: calc(var(--spacing) * 4) calc(var(--spacing) * 3);
   }
   .cl-main {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .cl-toolbar {
     align-items: flex-start;
@@ -306,8 +306,8 @@
     border-bottom: 1px solid var(--color-border-subtle);
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 0.5rem 1rem;
-    padding: 1rem;
+    gap: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+    padding: calc(var(--spacing) * 4);
   }
   .cl-brand {
     margin: 0;
@@ -321,26 +321,26 @@
     grid-column: 2;
     grid-row: 1;
     margin: 0;
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
   .cl-sources-heading {
-    margin: 0.5rem 0 0;
+    margin: calc(var(--spacing) * 2) 0 0;
     grid-column: 1/-1;
   }
   .cl-sidebar > .ce-sources {
     grid-column: 1/-1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 1rem;
+    column-gap: calc(var(--spacing) * 4);
   }
   .cl-toolbar-actions {
-    gap: 0.375rem;
+    gap: calc(var(--spacing) * 1.5);
   }
   .cl-toolbar h1 {
     font-size: 1.25rem;
   }
   .cl-filters {
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
   .cl-search {
     width: 100%;
@@ -348,19 +348,19 @@
   }
   .cl-footer {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
     line-height: 1.6;
   }
   .cl-notice {
     align-items: flex-start;
-    gap: 0.5rem;
-    padding: 0.75rem 0;
+    gap: calc(var(--spacing) * 2);
+    padding: calc(var(--spacing) * 3) 0;
   }
   .cl-dialog {
-    padding: 1.25rem;
+    padding: calc(var(--spacing) * 5);
   }
   .cl-form-row {
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
 }
 .theme-dark .cl-root {

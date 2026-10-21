@@ -2,7 +2,7 @@
   min-height: 100dvh;
   background: var(--color-bg-base);
   color: var(--color-text-primary);
-  padding: 0 2rem;
+  padding: 0 calc(var(--spacing) * 8);
   --settings-hairline: var(--color-border-subtle);
 }
 .preference-topbar {
@@ -11,32 +11,32 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.5rem 0;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 6) 0;
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .preference-heading {
   max-width: 70rem;
-  margin: 3rem auto 2.5rem;
+  margin: calc(var(--spacing) * 12) auto calc(var(--spacing) * 10);
 }
 .preference-grid {
   max-width: 70rem;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 4rem;
+  gap: calc(var(--spacing) * 16);
   align-items: start;
 }
 .preference-controls {
   display: grid;
-  gap: 1.75rem;
+  gap: calc(var(--spacing) * 7);
   min-width: 0;
 }
 .preference-section-title {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: calc(var(--spacing) * 3);
   color: var(--color-text-secondary);
   font-size: 0.875rem;
   font-weight: 500;
@@ -46,7 +46,7 @@
   height: 1rem;
 }
 .preference-card {
-  padding: 0 1rem;
+  padding: 0 calc(var(--spacing) * 4);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-base);
@@ -70,8 +70,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 6);
   background: var(--color-bg-base);
   border-bottom: 1px solid var(--color-border-subtle);
 }
@@ -86,18 +86,18 @@
   color: var(--color-text-on-inverse);
 }
 .preference-preview-intro {
-  padding: 2rem 1.5rem 1.25rem;
+  padding: calc(var(--spacing) * 8) calc(var(--spacing) * 6) calc(var(--spacing) * 5);
 }
 .preference-feed {
-  margin: 0 1.25rem 1.25rem;
+  margin: 0 calc(var(--spacing) * 5) calc(var(--spacing) * 5);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
 }
 .preference-feed-item {
   display: flex;
-  gap: 0.75rem;
-  padding: 1.5rem 1rem;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 6) calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .preference-feed-item:last-child {
@@ -117,19 +117,19 @@
   font-weight: 600;
 }
 .preference-preview[data-compact="true"] .preference-feed-item {
-  padding: 0.75rem 1rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
 }
 .preference-preview[data-compact="true"] .preference-feed-item h4 {
-  margin-top: 0.375rem;
+  margin-top: calc(var(--spacing) * 1.5);
 }
 .preference-preview[data-compact="true"] .preference-feed-item p {
   margin-top: 0;
 }
 .preference-preview-footer {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: flex-start;
-  padding: 1rem 1.5rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   border-top: 1px solid var(--color-border-subtle);
   color: var(--color-text-tertiary);
   font-size: 0.75rem;
@@ -140,35 +140,35 @@
 }
 .preference-footer {
   max-width: 70rem;
-  margin: 3rem auto 0;
-  padding: 2rem 0;
+  margin: calc(var(--spacing) * 12) auto 0;
+  padding: calc(var(--spacing) * 8) 0;
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   border-top: 1px solid var(--color-border-subtle);
   color: var(--color-text-tertiary);
   font-size: 0.75rem;
 }
 @media (max-width: 900px) {
   .preference-grid {
-    gap: 2rem;
+    gap: calc(var(--spacing) * 8);
     grid-template-columns: 1fr 1fr;
   }
 }
 @media (max-width: 700px) {
   .preference-studio {
-    padding: 0 1rem;
+    padding: 0 calc(var(--spacing) * 4);
   }
   .preference-grid {
     grid-template-columns: 1fr;
   }
   .preference-heading {
-    margin: 2rem auto;
+    margin: calc(var(--spacing) * 8) auto;
   }
   .preference-footer {
     flex-direction: column;
   }
   .preference-preview-header {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
 }

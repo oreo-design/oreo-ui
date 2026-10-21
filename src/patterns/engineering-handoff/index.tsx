@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useReducer, useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -28,7 +29,7 @@ export function EngineeringHandoffPage() {
   const [run, dispatch] = useReducer(handoffReducer, emptyRun),
     [agentId, setAgentId] = useState(""),
     [notes, setNotes] = useState<ThreadComment[]>([]),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [filter, setFilter] = useState("all"),
     [connected, setConnected] = useState(true),
     [failNext, setFailNext] = useState(false),

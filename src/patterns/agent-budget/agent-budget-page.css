@@ -7,7 +7,7 @@
 .ab-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-weight: 500;
 }
 .ab-brand span {
@@ -16,16 +16,16 @@
 }
 .ab-nav-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .ab-nav {
   display: flex;
-  gap: 1.5rem;
+  gap: calc(var(--spacing) * 6);
   flex-wrap: wrap;
   font-size: 0.8125rem;
 }
 .ab-nav a {
-  padding: 1rem 0;
+  padding: calc(var(--spacing) * 4) 0;
   color: var(--color-text-secondary);
 }
 .ab-nav a[aria-current] {
@@ -35,15 +35,15 @@
 .ab-page-title {
   display: flex;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: calc(var(--spacing) * 6);
   align-items: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: calc(var(--spacing) * 10);
 }
 .ab-eyebrow {
   font-size: 0.6875rem;
   letter-spacing: 0.1em;
   color: var(--color-text-secondary);
-  margin-bottom: 0.75rem;
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .ab-page-title h1 {
   font-size: 2rem;
@@ -54,7 +54,7 @@
 .ab-page-title h1 + p {
   color: var(--color-text-secondary);
   font-size: 0.875rem;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
 }
 .ab-plan {
   font-size: 0.75rem;
@@ -64,18 +64,18 @@
 .ab-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 2rem;
+  gap: calc(var(--spacing) * 8);
   align-items: start;
 }
 .ab-side {
   display: grid;
-  gap: 1.5rem;
+  gap: calc(var(--spacing) * 6);
 }
 .ab-run-status {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
-  margin: 1rem 0;
+  margin: calc(var(--spacing) * 4) 0;
   font-size: 0.8125rem;
 }
 .ab-small,
@@ -86,17 +86,17 @@
   color: var(--color-text-secondary);
 }
 .ab-small {
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
 }
 .ab-local-note {
-  margin: 1rem 0 0.5rem;
+  margin: calc(var(--spacing) * 4) 0 calc(var(--spacing) * 2);
 }
 .ab-feedback {
   min-height: 2rem;
   color: var(--color-text-primary);
 }
 .ab-policy {
-  padding: 0 0.25rem;
+  padding: 0 var(--spacing);
 }
 .ab-policy h2,
 .ab-history h2 {
@@ -105,40 +105,40 @@
 }
 .ab-policy select {
   border: 1px solid var(--color-border-subtle);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-control);
   background: var(--color-bg-base);
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
   color: inherit;
   font-size: 0.75rem;
   max-width: 100%;
 }
 .ab-history {
   border-top: 1px solid var(--color-border-subtle);
-  padding-top: 1.5rem;
-  margin-top: 2rem;
+  padding-top: calc(var(--spacing) * 6);
+  margin-top: calc(var(--spacing) * 8);
 }
 .ab-history > div:first-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .ab-history > p {
   font-size: 0.8125rem;
   text-align: center;
   color: var(--color-text-secondary);
-  padding: 2rem;
+  padding: calc(var(--spacing) * 8);
 }
 .ab-history ol {
   display: grid;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 4);
   max-height: 12rem;
   overflow: auto;
 }
 .ab-history li {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   font-size: 0.8125rem;
   align-items: center;
 }
@@ -149,11 +149,11 @@
 .ab-bottom {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   flex-wrap: wrap;
   font-size: 0.75rem;
   color: var(--color-text-secondary);
-  margin-top: 2rem;
+  margin-top: calc(var(--spacing) * 8);
 }
 .ab-page button:focus-visible,
 .ab-page a:focus-visible,
@@ -177,7 +177,7 @@
   .ab-page-title {
     align-items: flex-start;
     flex-direction: column;
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
   }
   .ab-side {
     grid-template-columns: 1fr 1fr;
@@ -191,16 +191,16 @@
     font-size: 1.75rem;
   }
   .ab-layout {
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
   }
   .ab-nav {
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
   }
   .ab-page .activity-root main {
-    padding-top: 2rem;
+    padding-top: calc(var(--spacing) * 8);
   }
   .ab-policy > div {
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: calc(var(--spacing) * 3);
   }
 }

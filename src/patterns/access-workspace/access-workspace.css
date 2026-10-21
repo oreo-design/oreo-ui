@@ -2,7 +2,7 @@
   background: var(--color-bg-elevated);
   color: var(--color-text-primary);
   min-height: 100vh;
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
   font-family: var(--font-sans);
   --settings-hairline: var(--color-border-subtle);
   color-scheme: light;
@@ -16,7 +16,7 @@
   min-height: calc(100vh - 3rem);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-default);
-  border-radius: 1.25rem;
+  border-radius: calc(var(--radius-control) * 2.5);
   overflow: hidden;
   box-shadow: 0 1rem 4rem #00000006;
 }
@@ -24,8 +24,8 @@
   height: 3.5rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  padding: 0 calc(var(--spacing) * 6);
   border-bottom: 1px solid var(--color-border-subtle);
   font-size: 0.75rem;
 }
@@ -38,7 +38,7 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   color: var(--color-text-secondary);
 }
 .aw-layout {
@@ -49,22 +49,22 @@
 .aw-sidebar {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 0.875rem 1rem;
+  padding: calc(var(--spacing) * 6) calc(var(--spacing) * 3.5) calc(var(--spacing) * 4);
   background: var(--color-bg-elevated);
   border-right: 1px solid var(--color-border-subtle);
 }
 .aw-brand {
   display: flex;
-  gap: 0.625rem;
+  gap: calc(var(--spacing) * 2.5);
   align-items: center;
-  padding: 0 0.375rem 2rem;
+  padding: 0 calc(var(--spacing) * 1.5) calc(var(--spacing) * 8);
 }
 .aw-brand-mark {
   display: grid;
   place-items: center;
   width: 2.25rem;
   height: 2.25rem;
-  border-radius: 0.625rem;
+  border-radius: calc(var(--radius-control) * 1.25);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-default);
 }
@@ -78,25 +78,25 @@
   display: block;
   font-size: 0.625rem;
   color: var(--color-text-secondary);
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .aw-nav-label {
   font-size: 0.625rem;
   letter-spacing: 0.12em;
   color: var(--color-text-tertiary);
-  padding: 0 0.75rem;
-  margin-bottom: 0.75rem;
+  padding: 0 calc(var(--spacing) * 3);
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .aw-sidebar nav {
   display: grid;
-  gap: 0.25rem;
+  gap: var(--spacing);
 }
 .aw-sidebar nav button {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   align-items: center;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
+  padding: calc(var(--spacing) * 3);
+  border-radius: var(--radius-control);
   cursor: pointer;
   text-align: left;
   font-size: 0.8125rem;
@@ -116,45 +116,45 @@
 }
 .aw-sidebar-foot {
   margin-top: auto;
-  padding: 3rem 0.75rem 1.5rem;
+  padding: calc(var(--spacing) * 12) calc(var(--spacing) * 3) calc(var(--spacing) * 6);
   color: var(--color-text-secondary);
 }
 .aw-sidebar-foot p {
   font-size: 0.75rem;
   line-height: 1.7;
-  margin: 0.75rem 0 1rem;
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 4);
 }
 .aw-sidebar-foot a {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--spacing);
   font-size: 0.625rem;
 }
 .aw-profile {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 0.5rem 0;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 3.5) calc(var(--spacing) * 2) 0;
   border-top: 1px solid var(--color-border-default);
 }
 .aw-main {
   min-width: 0;
-  padding: 2rem;
+  padding: calc(var(--spacing) * 8);
 }
 .aw-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .aw-breadcrumb {
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: calc(var(--spacing) * 6);
 }
 .aw-breadcrumb span {
-  margin: 0 0.5rem;
+  margin: 0 calc(var(--spacing) * 2);
   color: var(--color-text-tertiary);
 }
 .aw-heading h1 {
@@ -166,12 +166,12 @@
 .aw-heading p {
   font-size: 0.8125rem;
   color: var(--color-text-secondary);
-  margin-top: 0.5rem;
+  margin-top: calc(var(--spacing) * 2);
   line-height: 1.6;
 }
 .aw-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   flex-shrink: 0;
 }
 .aw-notice {
@@ -179,18 +179,18 @@
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
   overflow-wrap: anywhere;
 }
 .aw-overview {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
   align-items: center;
 }
 .aw-overview > span {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
   font-size: 0.75rem;
 }
@@ -198,68 +198,68 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border: 1px solid var(--color-border-default);
-  border-radius: 1rem;
+  border-radius: calc(var(--radius-control) * 2);
   overflow: hidden;
-  margin-bottom: 1.5rem;
+  margin-bottom: calc(var(--spacing) * 6);
 }
 .aw-metrics .workspace-metric {
   border: 0;
   border-radius: 0;
   border-right: 1px solid var(--color-border-subtle);
   box-shadow: none;
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
 }
 .aw-metrics .workspace-metric:last-child {
   border: 0;
 }
 .aw-panel {
   border: 1px solid var(--color-border-default);
-  border-radius: 1rem;
+  border-radius: calc(var(--radius-control) * 2);
   background: var(--color-bg-base);
-  margin-bottom: 1.5rem;
+  margin-bottom: calc(var(--spacing) * 6);
   min-width: 0;
   overflow: hidden;
 }
 .aw-setup-panel {
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
 }
 .aw-dashboard-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 0.9fr;
-  gap: 1.25rem;
+  gap: calc(var(--spacing) * 5);
 }
 .aw-list-panel {
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
 }
 .aw-panel-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .aw-panel-title h2 {
   font-size: 0.875rem;
   font-weight: 500;
 }
 .aw-panel-title h2 span {
-  margin-left: 0.5rem;
+  margin-left: calc(var(--spacing) * 2);
   color: var(--color-text-secondary);
   font-size: 0.75rem;
 }
 .aw-panel-title > button {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--spacing);
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
   cursor: pointer;
 }
 .aw-activity-person {
   display: flex;
-  gap: 0.625rem;
+  gap: calc(var(--spacing) * 2.5);
   align-items: center;
-  padding: 1rem 0;
+  padding: calc(var(--spacing) * 4) 0;
 }
 .aw-activity-person + .aw-activity-person {
   border-top: 1px solid var(--color-border-subtle);
@@ -275,7 +275,7 @@
   display: block;
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .aw-online {
   margin-left: auto;
@@ -285,12 +285,12 @@
   border-radius: 50%;
 }
 .aw-attention {
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
   background: var(--color-bg-elevated);
 }
 .aw-attention-icon {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .aw-attention h2 {
   font-size: 1.125rem;
@@ -303,19 +303,19 @@
   font-size: 0.75rem;
   color: var(--color-text-secondary);
   line-height: 1.8;
-  margin: 0.75rem 0 1.25rem;
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 5);
 }
 .aw-pad {
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
   margin: 0;
 }
 .aw-search {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
   border: 1px solid var(--color-border-default);
-  border-radius: 0.5rem;
-  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
 }
 .aw-search input {
   font-size: 0.75rem;
@@ -330,8 +330,8 @@
 .aw-pending {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 0;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4) 0;
   border-top: 1px solid var(--color-border-subtle);
 }
 .aw-pending-copy {
@@ -341,8 +341,8 @@
 .aw-audit li {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 0;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4) 0;
   border-top: 1px solid var(--color-border-subtle);
   font-size: 0.8125rem;
 }
@@ -360,42 +360,42 @@
   color: var(--color-text-tertiary);
 }
 .aw-settings {
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
   max-width: 56rem;
 }
 .aw-settings-note {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 2rem;
-  padding: 1rem;
+  gap: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 8);
+  padding: calc(var(--spacing) * 4);
   background: var(--color-bg-elevated);
-  border-radius: 0.75rem;
+  border-radius: calc(var(--radius-control) * 1.5);
   color: var(--color-text-secondary);
   font-size: 0.75rem;
   line-height: 1.8;
 }
 .aw-settings-note svg {
   flex-shrink: 0;
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .aw-footer {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   color: var(--color-text-tertiary);
   font-size: 0.625rem;
-  margin-top: 2rem;
+  margin-top: calc(var(--spacing) * 8);
 }
 .aw-footer a {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--spacing);
 }
 .access-workspace select,
 .aw-dialog input:not([type="checkbox"]) {
   border: 1px solid var(--color-border-default);
-  border-radius: 0.5rem;
-  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   background: var(--color-bg-base);
   font-size: 0.8125rem;
   color: var(--color-text-primary);
@@ -424,7 +424,7 @@
   max-height: calc(100dvh - 2rem);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-default);
-  border-radius: 1rem;
+  border-radius: calc(var(--radius-control) * 2);
   color: var(--color-text-primary);
   box-shadow: 0 2rem 5rem #0003;
   overflow: hidden;
@@ -435,9 +435,9 @@
   max-height: calc(100dvh - 2rem);
 }
 .aw-dialog header {
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: flex-start;
   border-bottom: 1px solid var(--color-border-subtle);
 }
@@ -449,32 +449,32 @@
   font-size: 0.75rem;
   line-height: 1.7;
   color: var(--color-text-secondary);
-  margin-top: 0.5rem;
+  margin-top: calc(var(--spacing) * 2);
 }
 .aw-dialog header > button {
   margin-left: auto;
   flex-shrink: 0;
 }
 .aw-dialog-body {
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
   overflow: auto;
   display: grid;
-  gap: 1.25rem;
+  gap: calc(var(--spacing) * 5);
 }
 .aw-dialog-body > label {
   display: grid;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.8125rem;
 }
 .aw-dialog fieldset legend {
   font-size: 0.8125rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: calc(var(--spacing) * 2);
 }
 .aw-check {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 0;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 3) 0;
   font-size: 0.8125rem;
   cursor: pointer;
 }
@@ -487,26 +487,26 @@
   display: block;
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
-  margin-top: 0.125rem;
+  margin-top: calc(var(--spacing) * 0.5);
 }
 .aw-dialog footer {
   display: flex;
   justify-content: flex-end;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   border-top: 1px solid var(--color-border-subtle);
 }
 .aw-error {
   font-size: 0.8125rem;
   color: var(--color-text-primary);
-  padding: 0.75rem;
+  padding: calc(var(--spacing) * 3);
   border: 1px solid var(--color-border-default);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-control);
   background: var(--color-bg-elevated);
 }
 @media (max-width: 1200px) {
   .aw-main {
-    padding: 1.5rem;
+    padding: calc(var(--spacing) * 6);
   }
   .aw-dashboard-grid {
     grid-template-columns: 1fr 1fr;
@@ -541,7 +541,7 @@
     display: block;
   }
   .aw-sidebar {
-    padding: 0.75rem;
+    padding: calc(var(--spacing) * 3);
     border-right: 0;
     border-bottom: 1px solid var(--color-border-default);
   }
@@ -558,35 +558,35 @@
   .aw-sidebar nav button {
     white-space: nowrap;
     font-size: 0.75rem;
-    padding: 0.625rem;
+    padding: calc(var(--spacing) * 2.5);
     flex-shrink: 0;
   }
   .aw-chrome {
-    padding: 0 1rem;
+    padding: 0 calc(var(--spacing) * 4);
   }
   .aw-chrome-right {
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
   .aw-chrome-right > span {
     display: none;
   }
   .aw-main {
-    padding: 1.25rem 1rem;
+    padding: calc(var(--spacing) * 5) calc(var(--spacing) * 4);
   }
   .aw-breadcrumb {
-    margin-bottom: 1rem;
+    margin-bottom: calc(var(--spacing) * 4);
   }
   .aw-dashboard-grid {
     grid-template-columns: 1fr;
   }
   .aw-metrics .workspace-metric {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .aw-metrics .workspace-metric strong {
     font-size: 1.75rem;
   }
   .aw-setup-panel {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .aw-pad {
     align-items: flex-start;
@@ -610,7 +610,7 @@
   .aw-settings > div:not(.aw-panel-title):not(.aw-settings-note) {
     align-items: flex-start;
     flex-direction: column;
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
   }
   .aw-settings > div > div:last-child {
     width: 100%;
@@ -622,6 +622,6 @@
     flex-wrap: wrap;
   }
   .aw-list-panel .wa-tool-action {
-    margin-left: 3rem;
+    margin-left: calc(var(--spacing) * 12);
   }
 }

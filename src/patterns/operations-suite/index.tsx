@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState, type ReactNode } from "react";
 import { Tabs } from "@base-ui-components/react/tabs";
 import { Button, IconButton } from "@/components/button";
@@ -44,7 +45,7 @@ function Shell({
   children: ReactNode;
   tools?: ReactNode;
 }) {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useThemeMode(true);
   return (
     <div className={`operations-suite ${dark ? "theme-dark" : ""}`}>
       <header className="os-topbar">

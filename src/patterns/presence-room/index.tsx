@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { PresenceStack, PresenceBadge, presenceLabels, type PresencePerson, type PresenceStatus } from "@/components/presence";
 import { ChatBubble, CollaborationComposer, TypingPresence, type ChatDraft } from "@/components/project-chat";
@@ -11,7 +12,7 @@ import "./presence-room.css";
 
 type RoomMessage = { id: string; text: string; files: string[] };
 export function PresenceRoom() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const [people, setPeople] = useState(() => ROOM_PEOPLE.slice(0,5));
   const [brief, setBrief] = useState(INITIAL_BRIEF);
   const [tasks, setTasks] = useState(INITIAL_TASKS);

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState } from "react";
 import { KanbanBoard, type KanbanCard, type KanbanColumn, type KanbanPerson } from "@/components/kanban";
 import { Sidebar } from "@/docs/Sidebar";
@@ -35,7 +36,7 @@ const INITIAL: KanbanCard[] = [
 ];
 
 export function KanbanDocs({ nav }: { nav: DocsNav }) {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const [cards, setCards] = useState(INITIAL);
   const [resetKey, setResetKey] = useState(0);
   return <div className={dark ? "theme-dark min-h-screen bg-bg-elevated" : "min-h-screen bg-bg-elevated"}>

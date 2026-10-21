@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState } from "react";
 import {
   OutlineWordmark,
@@ -8,7 +9,7 @@ import { Icon } from "@/components/icon";
 import { OreoLogo } from "@/docs/OreoLogo";
 import "./page.css";
 export function OutlineBrandFooter() {
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [reset, setReset] = useState(0);
   return (
     <div className={dark ? "theme-dark" : ""}>

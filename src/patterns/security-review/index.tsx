@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -16,7 +17,7 @@ const INITIAL: Record<string, ReviewAnswer> = {
 };
 const STEPS = getTreeSteps(REVIEW_TREE);
 export function SecurityReview() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useThemeMode(true);
   const [value, setValue] = useState("suspicious");
   const [answers, setAnswers] = useState<Record<string, ReviewAnswer>>(INITIAL);
   const [drafts, setDrafts] = useState<Record<string, Partial<ReviewAnswer>>>(

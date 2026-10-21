@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -24,7 +25,7 @@ export function ModelCostsPage() {
   const root = useRef<HTMLDivElement>(null),
     returnTo = useRef<HTMLElement | null>(null),
     heading = useRef<HTMLHeadingElement>(null);
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [env, setEnv] = useState<"production" | "staging">("production"),
     [period, setPeriod] = useState("7"),
     [metric, setMetric] = useState<UsageMetric>("costCents"),

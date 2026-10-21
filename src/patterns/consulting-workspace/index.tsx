@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type ChangeEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -33,7 +34,7 @@ export function ConsultingWorkspacePage() {
     returnTo = useRef<HTMLElement | null>(null),
     upload = useRef<HTMLInputElement>(null),
     counter = useRef(1);
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [view, setView] = useState<"dashboard" | "knowledge">("dashboard"),
     [query, setQuery] = useState(""),
     [queue, setQueue] = useState<EscalationStatus>("needs-you"),

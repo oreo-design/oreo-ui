@@ -161,13 +161,13 @@
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 2px;
+  padding: calc(var(--spacing) * 0.5);
 }
 .mc-segment button {
   font-size: var(--text-xs);
   padding: calc(var(--spacing) * 2);
   color: var(--color-text-secondary);
-  border-radius: calc(var(--radius-control) - 2px);
+  border-radius: calc(var(--radius-control) - calc(var(--radius-control) * 0.25));
   cursor: pointer;
   white-space: nowrap;
 }

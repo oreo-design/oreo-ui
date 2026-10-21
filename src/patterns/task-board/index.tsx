@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -282,7 +283,7 @@ function Editor({
 export function TaskBoardPage() {
   const [tasks, setTasks] = useState(CAMPAIGN_TASKS),
     [selected, setSelected] = useState<string | null>("MKT-109"),
-    [dark, setDark] = useState(true),
+    [dark, setDark] = useThemeMode(true),
     [view, setView] = useState("board"),
     [query, setQuery] = useState(""),
     [priority, setPriority] = useState("all"),

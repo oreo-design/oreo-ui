@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState, useRef, type FormEvent } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -10,7 +11,7 @@ import "./place-explorer.css";
 
 export function PlaceExplorer(){
   const savedFilter=useRef<HTMLButtonElement>(null);
-  const [dark,setDark]=useState(false), [style,setStyle]=useState<MapStyle>("meadow");
+  const [dark,setDark]=useThemeMode(false), [style,setStyle]=useState<MapStyle>("meadow");
   const [selected,setSelected]=useState("lakehouse"), [instant,setInstant]=useState(true);
   const [filter,setFilter]=useState<PlaceFilter>("all"), [saved,setSaved]=useState<string[]>([]);
   const [draft,setDraft]=useState(""), [query,setQuery]=useState("");

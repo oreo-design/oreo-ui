@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { OreoLogo } from "@/docs/OreoLogo";
 import { useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
@@ -36,7 +37,7 @@ const NAV: { id: string; label: string; icon: IconName }[] = [
 const change = (value: number, previous: number) =>
   `${value >= previous ? "+" : "−"}${Math.abs((value / previous - 1) * 100).toFixed(1)}%`;
 export function FinanceWorkspace() {
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [period, setPeriod] = useState<FinancePeriod>("month");
   const [goals, setGoals] = useState(SAVINGS),
     [newGoal, setNewGoal] = useState(false),

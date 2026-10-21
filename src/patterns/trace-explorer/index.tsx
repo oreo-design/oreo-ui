@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -45,7 +46,7 @@ export function TraceExplorerPage() {
   const root = useRef<HTMLDivElement>(null),
     returnTo = useRef<HTMLElement | null>(null),
     heading = useRef<HTMLHeadingElement>(null);
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [query, setQuery] = useState<Query>(initial),
     [columns, setColumns] = useState<TraceColumn[]>(DEFAULT_TRACE_COLUMNS),
     [page, setPage] = useState(0),

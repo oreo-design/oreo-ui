@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -34,7 +35,7 @@ export function WorkflowDirectoryPage() {
     search = useRef<HTMLInputElement>(null),
     returnTo = useRef<HTMLElement | null>(null);
   const [rows, setRows] = useState(WORKFLOWS),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [query, setQuery] = useState(""),
     [view, setView] = useState("All"),
     [folder, setFolder] = useState("");

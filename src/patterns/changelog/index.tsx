@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState } from "react";
 import { DocsLayout } from "@/docs/DocsLayout";
 import type { DocsNav } from "@/docs/DocsPage";
@@ -11,7 +12,7 @@ import { changesMarkdown, releases, REPOSITORY, upgradePrompt, type Release } fr
 
 /** Reuse with your own verified release data; the website passes Oreo's curated history. */
 export function Changelog({ nav, data = releases }: { nav: DocsNav; data?: Release[] }) {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const [query, setQuery] = useState("");
   const [kind, setKind] = useState<"All" | ChangeKind>("All");
   const [checks, setChecks] = useState(2);

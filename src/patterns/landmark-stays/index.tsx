@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -105,7 +106,7 @@ export function LandmarkStaysPage() {
     heading = useRef<HTMLHeadingElement>(null),
     lastTrigger = useRef<HTMLElement | null>(null),
     savedButton = useRef<HTMLButtonElement>(null);
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [style, setStyle] = useState<MapStyle>("meadow");
   const [landmarkId, setLandmarkId] = useState("tower"),
     [selected, setSelected] = useState("atelier"),

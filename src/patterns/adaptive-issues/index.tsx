@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useLayoutEffect, useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -22,7 +23,7 @@ export function AdaptiveIssuesPage() {
   const createButton = useRef<HTMLButtonElement>(null);
   const [issues, setIssues] = useState(ADAPTIVE_ISSUES),
     [width, setWidth] = useState(1120),
-    [dark, setDark] = useState(true),
+    [dark, setDark] = useThemeMode(true),
     [tab, setTab] = useState("Issues"),
     [query, setQuery] = useState(""),
     [selected, setSelected] = useState<number>(),

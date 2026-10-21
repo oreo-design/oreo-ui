@@ -7,19 +7,19 @@
 .va-actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .va-brand span {
   color: var(--color-text-secondary);
 }
 .va-nav {
   display: flex;
-  gap: 1.5rem;
+  gap: calc(var(--spacing) * 6);
   flex-wrap: wrap;
   font-size: 0.8125rem;
 }
 .va-nav a {
-  padding: 1rem 0;
+  padding: calc(var(--spacing) * 4) 0;
   color: var(--color-text-secondary);
 }
 .va-nav a[aria-current] {
@@ -30,14 +30,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  gap: calc(var(--spacing) * 6);
+  margin-bottom: calc(var(--spacing) * 10);
 }
 .va-eyebrow {
   font-size: 0.6875rem;
   letter-spacing: 0.1em;
   color: var(--color-text-tertiary);
-  margin-bottom: 0.75rem;
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .va-title h1 {
   font-size: 2rem;
@@ -47,7 +47,7 @@
 }
 .va-title h1 + p {
   font-size: 0.875rem;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
   color: var(--color-text-secondary);
 }
 .va-title > span {
@@ -57,7 +57,7 @@
 .va-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 3rem;
+  gap: calc(var(--spacing) * 12);
   align-items: start;
 }
 .va-console {
@@ -73,14 +73,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
-  padding: 1rem;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 4);
 }
 .va-console-header h2 {
   font-size: 0.875rem;
   font-weight: 500;
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
   flex-wrap: wrap;
 }
@@ -91,23 +91,23 @@
 }
 .va-signal-panel,
 .va-latency-panel {
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-elevated);
 }
 .va-latency-panel {
-  margin-top: 2px;
+  margin-top: calc(var(--spacing) * 0.5);
 }
 .va-latency-panel .vt-history {
-  margin-top: 1.5rem;
+  margin-top: calc(var(--spacing) * 6);
 }
 .va-console-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 4);
   flex-wrap: wrap;
 }
 .va-console-footer > span {
@@ -118,8 +118,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 4);
 }
 .va-transport > span {
   font-size: 0.6875rem;
@@ -129,7 +129,7 @@
 }
 .va-feedback {
   min-height: 3rem;
-  padding-top: 0.75rem;
+  padding-top: calc(var(--spacing) * 3);
   font-size: 0.75rem;
   line-height: 1.5;
 }
@@ -139,12 +139,12 @@
 }
 .va-inspector {
   display: grid;
-  gap: 1.75rem;
+  gap: calc(var(--spacing) * 7);
 }
 .va-inspector h2 {
   font-size: 0.875rem;
   font-weight: 500;
-  margin-bottom: 0.75rem;
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .va-inspector section > p {
   font-size: 0.75rem;
@@ -157,25 +157,25 @@
   color: var(--color-text-primary);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
   font-size: 0.75rem;
 }
 .va-overview {
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-small);
   background: var(--color-bg-base);
 }
 .va-overview dl {
   display: grid;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   font-size: 0.8125rem;
-  margin: 1rem 0;
+  margin: calc(var(--spacing) * 4) 0;
 }
 .va-overview dl > div {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .va-overview dt {
   color: var(--color-text-secondary);
@@ -184,7 +184,7 @@
   font-variant-numeric: tabular-nums;
 }
 .va-meaning p + p {
-  margin-top: 0.5rem;
+  margin-top: calc(var(--spacing) * 2);
 }
 .va-meaning strong {
   color: var(--color-text-primary);
@@ -193,11 +193,11 @@
 .va-bottom {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   flex-wrap: wrap;
   font-size: 0.75rem;
   color: var(--color-text-secondary);
-  margin-top: 2rem;
+  margin-top: calc(var(--spacing) * 8);
 }
 .va-page a:focus-visible,
 .va-page button:focus-visible,
@@ -217,12 +217,12 @@
 @media (max-width: 1000px) {
   .va-layout {
     grid-template-columns: minmax(0, 1fr);
-    gap: 2rem;
+    gap: calc(var(--spacing) * 8);
   }
   .va-title {
     align-items: flex-start;
     flex-direction: column;
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
   }
   .va-inspector {
     grid-template-columns: 1fr 1fr;
@@ -242,10 +242,10 @@
   }
   .va-signal-panel,
   .va-latency-panel {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .va-title {
-    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--spacing) * 6);
   }
   .va-console-footer .va-actions {
     width: 100%;
@@ -253,13 +253,13 @@
   }
   .va-inspector section > div {
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: calc(var(--spacing) * 3);
   }
   .va-nav {
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
   }
   .va-page .activity-root main {
-    padding-top: 2rem;
+    padding-top: calc(var(--spacing) * 8);
   }
 }
 

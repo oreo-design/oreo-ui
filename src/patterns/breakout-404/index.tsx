@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import {
   BreakoutNavigator,
   RecoveryMessage,
@@ -8,7 +8,7 @@ import { Icon } from "@/components/icon";
 import { OreoLogo } from "@/docs/OreoLogo";
 import "./page.css";
 export function Breakout404Page() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   return (
     <div className={dark ? "theme-dark" : ""}>
       <div className="bn-page">

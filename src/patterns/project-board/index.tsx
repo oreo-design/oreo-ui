@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -28,7 +29,7 @@ export function ProjectBoardPage() {
     [category, setCategory] = useState("All projects"),
     [query, setQuery] = useState(""),
     [priority, setPriority] = useState("All priorities"),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [expanded, setExpanded] = useState(true);
   const [draft, setDraft] = useState<BoardProject | null>(null),
     [mode, setMode] = useState<"edit" | "archive" | "activity" | null>(null),

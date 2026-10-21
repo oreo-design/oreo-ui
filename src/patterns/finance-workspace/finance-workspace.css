@@ -2,7 +2,7 @@
   min-height: 100dvh;
   background: var(--color-bg-elevated);
   color: var(--color-text-primary);
-  padding: 0 1rem 1rem;
+  padding: 0 calc(var(--spacing) * 4) calc(var(--spacing) * 4);
 }
 .finance-workspace :is(button, a, input, select):focus-visible {
   outline: 2px solid var(--color-status-progress);
@@ -15,14 +15,14 @@
   justify-content: space-between;
   align-items: center;
   min-height: 4rem;
-  gap: 1rem;
-  padding: 0 0.5rem;
+  gap: calc(var(--spacing) * 4);
+  padding: 0 calc(var(--spacing) * 2);
 }
 .fw-top a,
 .fw-top > div {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   font-size: 0.8125rem;
 }
 .fw-top a span {
@@ -39,25 +39,25 @@
   overflow: clip;
 }
 .fw-sidebar {
-  padding: 2rem 1rem;
+  padding: calc(var(--spacing) * 8) calc(var(--spacing) * 4);
   border-right: 1px solid var(--color-border-subtle);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: calc(var(--spacing) * 8);
 }
 .fw-brand {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.04em;
-  padding: 0 0.5rem;
+  padding: 0 calc(var(--spacing) * 2);
 }
 .fw-brand > span {
   width: 100%;
-  padding-left: 2rem;
+  padding-left: calc(var(--spacing) * 8);
   font-weight: 400;
   font-size: 0.6875rem;
   letter-spacing: 0;
@@ -66,14 +66,14 @@
 .fw-sidebar nav {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .fw-sidebar nav a {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   align-items: center;
   font-size: 0.8125rem;
-  padding: 0.75rem;
+  padding: calc(var(--spacing) * 3);
   border-radius: var(--radius-control);
   color: var(--color-text-secondary);
 }
@@ -82,27 +82,27 @@
   margin-top: auto;
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-small);
-  padding: 1rem;
+  padding: calc(var(--spacing) * 4);
   color: var(--color-text-secondary);
   font-size: 0.75rem;
   line-height: 1.7;
 }
 .fw-sidebar-note strong {
   display: block;
-  margin: 0.75rem 0 0.375rem;
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 1.5);
   font-weight: 500;
   color: var(--color-text-primary);
 }
 .fw-sidebar-note a {
   display: flex;
   align-items: center;
-  margin-top: 1rem;
-  gap: 0.25rem;
+  margin-top: calc(var(--spacing) * 4);
+  gap: var(--spacing);
   text-decoration: underline;
 }
 .fw-main {
   min-width: 0;
-  padding: 2rem;
+  padding: calc(var(--spacing) * 8);
   background: var(--color-bg-elevated);
 }
 .fw-heading {
@@ -110,8 +110,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 8);
 }
 .fw-heading p {
   font-size: 0.625rem;
@@ -122,7 +122,7 @@
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: -0.055em;
-  margin: 0.5rem 0;
+  margin: calc(var(--spacing) * 2) 0;
 }
 .fw-heading span {
   font-size: 0.8125rem;
@@ -131,11 +131,11 @@
 .fw-period {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   background: var(--color-bg-surface);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 0.625rem 0.75rem;
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   font-size: 0.8125rem;
 }
 .fw-period select {
@@ -149,11 +149,11 @@
 .fw-metrics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: calc(var(--spacing) * 3);
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .fw-metrics .prospect-metric {
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
   background: var(--color-bg-surface);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-small);
@@ -168,19 +168,19 @@
 .fw-dashboard {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 20rem;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: start;
 }
 .fw-primary,
 .fw-secondary {
   min-width: 0;
   display: grid;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .fw-bottom {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .fw-bottom > section > .activity-card {
   height: 100%;
@@ -189,11 +189,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   font-size: 1.875rem;
   letter-spacing: -0.04em;
   font-weight: 500;
-  margin: -0.5rem 0 1rem;
+  margin: calc(var(--spacing) * -2) 0 calc(var(--spacing) * 4);
 }
 .fw-balance-value span {
   font-size: 0.75rem;
@@ -206,8 +206,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 6);
 }
 .fw-section-row > strong {
   font-size: 1.5rem;
@@ -218,28 +218,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
   color: var(--color-text-secondary);
 }
 .fw-card-select select {
   max-width: 100%;
-  padding: 0.25rem;
+  padding: var(--spacing);
   background: var(--color-bg-surface);
   color: var(--color-text-primary);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control-tiny);
 }
 .fw-facts {
-  margin: 0.75rem 0;
+  margin: calc(var(--spacing) * 3) 0;
 }
 .fw-facts > div {
   display: flex;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   font-size: 0.75rem;
-  padding: 0.75rem 0;
+  padding: calc(var(--spacing) * 3) 0;
 }
 .fw-facts dt {
   color: var(--color-text-secondary);
@@ -249,17 +249,17 @@
   font-variant-numeric: tabular-nums;
 }
 .fw-form {
-  padding-top: 1rem;
-  margin-top: 1rem;
+  padding-top: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 4);
   border-top: 1px solid var(--color-border-subtle);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .fw-form label {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
   color: var(--color-text-secondary);
 }
@@ -268,14 +268,14 @@
   min-width: 0;
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
-  padding: 0.625rem 0.75rem;
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   color: var(--color-text-primary);
   background: var(--color-bg-surface);
   font-size: 0.875rem;
 }
 .fw-form > div {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   flex-wrap: wrap;
 }
 .fw-form > p {
@@ -286,14 +286,14 @@
 .fw-contacts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
 }
 .fw-contacts button {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 0.5rem 0.25rem;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 2) var(--spacing);
   border: 1px solid transparent;
   border-radius: var(--radius-control);
   font-size: 0.6875rem;
@@ -309,18 +309,18 @@
   font-size: 0.75rem;
   line-height: 1.7;
   color: var(--color-text-secondary);
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
 }
 .fw-transactions {
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
 }
 .fw-search {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 0.625rem 0.75rem;
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   max-width: 22rem;
   color: var(--color-text-secondary);
 }
@@ -333,8 +333,8 @@
 .fw-transactions li {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 0;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4) 0;
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .fw-transactions li:last-child {
@@ -364,7 +364,7 @@
   display: block;
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .fw-transactions b {
   font-size: 0.8125rem;
@@ -375,7 +375,7 @@
   font-size: 0.75rem;
   line-height: 1.6;
   color: var(--color-text-secondary);
-  margin-top: 1.25rem;
+  margin-top: calc(var(--spacing) * 5);
   min-height: 1.25rem;
 }
 .finance-workspace section[id] {
@@ -392,7 +392,7 @@
     grid-template-columns: 10rem minmax(0, 1fr);
   }
   .fw-main {
-    padding: 1.5rem;
+    padding: calc(var(--spacing) * 6);
   }
   .fw-dashboard {
     grid-template-columns: minmax(0, 1fr) 18rem;
@@ -409,7 +409,7 @@
     grid-template-columns: 1fr;
   }
   .fw-sidebar {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
     border-right: 0;
     border-bottom: 1px solid var(--color-border-subtle);
   }
@@ -420,18 +420,18 @@
   .fw-sidebar nav {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0.25rem;
+    gap: var(--spacing);
   }
   .fw-sidebar nav a {
-    padding: 0.5rem 0.75rem;
+    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   }
 }
 @media (max-width: 767px) {
   .finance-workspace {
-    padding: 0 0.5rem 0.5rem;
+    padding: 0 calc(var(--spacing) * 2) calc(var(--spacing) * 2);
   }
   .fw-main {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .fw-dashboard {
     grid-template-columns: 1fr;
@@ -449,15 +449,15 @@
     display: none;
   }
   .fw-heading {
-    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--spacing) * 6);
   }
   .fw-contacts {
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 0.25rem;
+    gap: var(--spacing);
   }
   .fw-sidebar nav a {
     font-size: 0.75rem;
-    padding: 0.5rem;
+    padding: calc(var(--spacing) * 2);
   }
   .fw-sidebar nav svg {
     width: 1rem;

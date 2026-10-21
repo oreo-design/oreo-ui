@@ -7,9 +7,9 @@
 .neutomni-wordmark { display: block; width: 100%; height: auto; overflow: hidden; }
 .neutomni-wordmark--inverse { color: var(--cut-ink); }
 .neutomni-hero { position: relative; aspect-ratio: 1.48; padding: 1.5%; overflow: hidden; background: var(--cut-ink); }
-.neutomni-nav { display: grid; grid-template-columns: 50% 1fr auto; gap: 16px; margin-top: -1%; font-size: clamp(7px, .9cqw, 14px); }
+.neutomni-nav { display: grid; grid-template-columns: 50% 1fr auto; gap: calc(var(--spacing) * 4); margin-top: -1%; font-size: clamp(7px, .9cqw, 14px); }
 .neutomni-nav p { margin: 0; }
-.neutomni-nav nav { display: flex; gap: 10px; }
+.neutomni-nav nav { display: flex; gap: calc(var(--spacing) * 2.5); }
 .neutomni-email { font-family: "Neutomni Editorial", Georgia, serif; font-style: italic; }
 .neutomni-intro a:focus-visible, .neutomni-showreel button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 .neutomni-statement { margin: 12.5% 0 0 50%; }
@@ -18,19 +18,19 @@
 .neutomni-showreel { position: relative; width: 41.25%; margin: 8.4% auto 0; aspect-ratio: 1.8; overflow: hidden; background: var(--color-code-bg); }
 .neutomni-showreel > img, .neutomni-showreel > video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .neutomni-showreel button { position: absolute; bottom: 12px; right: 12px; width: 32px; height: 32px; border-radius: 50%; color: var(--color-code-fg); background: var(--color-code-bg); cursor: pointer; font-size: 12px; }
-.neutomni-media-fallback { position: absolute; left: 8px; bottom: 8px; background: var(--color-code-bg); color: var(--color-code-fg); font-size: 10px; padding: 4px; }
+.neutomni-media-fallback { position: absolute; left: 8px; bottom: 8px; background: var(--color-code-bg); color: var(--color-code-fg); font-size: 10px; padding: var(--spacing); }
 .neutomni-footer { position: absolute; inset: auto 1.5% 1.5%; display: flex; justify-content: space-between; align-items: end; font: clamp(7px, .9cqw, 12px)/1.5 monospace; text-transform: uppercase; }
 @media (hover: hover) and (pointer: fine) { .neutomni-nav a:hover { text-decoration: underline; text-underline-offset: 3px; } }
 @media (max-width: 700px) {
-  .neutomni-hero { min-height: 640px; aspect-ratio: auto; padding: 16px; }
-  .neutomni-nav { grid-template-columns: 1fr; gap: 12px; font-size: 11px; }
-  .neutomni-nav nav { gap: 16px; flex-wrap: wrap; }
+  .neutomni-hero { min-height: 640px; aspect-ratio: auto; padding: calc(var(--spacing) * 4); }
+  .neutomni-nav { grid-template-columns: 1fr; gap: calc(var(--spacing) * 3); font-size: 11px; }
+  .neutomni-nav nav { gap: calc(var(--spacing) * 4); flex-wrap: wrap; }
   .neutomni-email { display: none; }
-  .neutomni-statement { margin: 72px 0 0 12%; }
+  .neutomni-statement { margin: calc(var(--spacing) * 18) 0 0 12%; }
   .neutomni-statement h1 { font-size: clamp(26px, 6vw, 40px); }
-  .neutomni-showreel { width: 80%; margin-top: 64px; }
+  .neutomni-showreel { width: 80%; margin-top: calc(var(--spacing) * 16); }
   .neutomni-footer { inset-inline: 16px; }
-  .neutomni-intro .cut-reveal__wordmark { margin: 16px; }
+  .neutomni-intro .cut-reveal__wordmark { margin: calc(var(--spacing) * 4); }
 }
 
 /* Source choreography: center-out logo paths, then line-by-line hero entry.

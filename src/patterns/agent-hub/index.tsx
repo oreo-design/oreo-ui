@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent, type MouseEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { HubSearchHero, AgentCategoryGrid, IntegrationTile, type HubIntegration } from "@/components/agent-hub";
@@ -13,7 +14,7 @@ type Detail = { kind:"agent"; id:string } | { kind:"integration"; id:string } | 
 const views: { id:View; label:string; icon:IconName }[] = [{id:"explore",label:"Explore",icon:"globe"},{id:"agents",label:"Agents",icon:"assistant"},{id:"integrations",label:"Integrations",icon:"plug"}];
 
 export function AgentHub() {
-  const [dark,setDark] = useState(true);
+  const [dark,setDark] = useThemeMode(true);
   const [view,setView] = useState<View>("explore");
   const [query,setQuery] = useState("");
   const [category,setCategory] = useState("all");

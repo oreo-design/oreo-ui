@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Tabs } from "@base-ui-components/react/tabs";
@@ -26,7 +27,7 @@ export function SupportConsolePage() {
   const root = useRef<HTMLDivElement>(null),
     createTrigger = useRef<HTMLButtonElement>(null),
     budgetTrigger = useRef<HTMLButtonElement>(null);
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [tab, setTab] = useState("Inbox"),
     [selected, setSelected] = useState("screen");
   const [drafts, setDrafts] = useState<Record<string, EmailDraftValue>>({}),

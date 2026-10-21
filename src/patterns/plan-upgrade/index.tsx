@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -17,7 +18,7 @@ import {
 import { SAMPLE_METHODS } from "./data";
 import "./upgrade.css";
 export function PlanUpgradePage() {
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [step, setStep] = useState(1),
     [cycle, setCycle] = useState("annual"),
     [seats, setSeats] = useState("4"),

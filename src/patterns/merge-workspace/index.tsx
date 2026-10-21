@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useReducer, useRef, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { Button, IconButton } from "@/components/button";
@@ -19,7 +20,7 @@ import "./workspace.css";
 
 export function MergeWorkspacePage() {
   const [run, dispatch] = useReducer(mergeReducer, initialMergeRun);
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [failNext, setFailNext] = useState(false),
     [draft, setDraft] = useState("");
   const [selected, setSelected] = useState<BranchCommit | null>(null),

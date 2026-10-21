@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useReducer, useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -29,7 +30,7 @@ export function TokenBridgePage() {
     [fromId, setFromId] = useState("eth-usdc"),
     [toId, setToId] = useState("sol-usdc"),
     [amount, setAmount] = useState("200"),
-    [dark, setDark] = useState(true),
+    [dark, setDark] = useThemeMode(true),
     [connected, setConnected] = useState(true),
     [fast, setFast] = useState(false),
     [failNext, setFailNext] = useState(false),

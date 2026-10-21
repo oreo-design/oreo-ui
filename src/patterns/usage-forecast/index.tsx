@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -16,7 +17,7 @@ import {
 import { USAGE_ACCOUNTS, FORECAST_NOW } from "./data";
 import "./workspace.css";
 export function UsageForecastPage() {
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [view, setView] = useState<"Forecast" | "Table">("Forecast"),
     [query, setQuery] = useState(""),
     [filter, setFilter] = useState("All accounts"),

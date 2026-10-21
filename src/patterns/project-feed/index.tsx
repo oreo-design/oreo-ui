@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Avatar } from "@/components/avatar";
@@ -19,7 +20,7 @@ export function ProjectFeedPage() {
   const root = useRef<HTMLDivElement>(null),
     heading = useRef<HTMLHeadingElement>(null),
     returnTo = useRef<HTMLElement | null>(null);
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [nav, setNav] = useState(false),
     [events, setEvents] = useState(FEED_EVENTS),
     [read, setRead] = useState(INITIAL_READ),

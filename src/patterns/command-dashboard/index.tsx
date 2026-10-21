@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import {
   CommandSearch,
@@ -73,7 +74,7 @@ const pages: {
   },
 ];
 export function CommandDashboard() {
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [page, setPage] = useState<Page>("overview"),
     [workspace, setWorkspace] = useState("Oreo Studio"),
     [workspaceDraft, setWorkspaceDraft] = useState("Oreo Studio");

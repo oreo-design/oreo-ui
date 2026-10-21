@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -24,7 +25,7 @@ type SavedPayment = {
   note: string;
 };
 export function PaymentWorkspacePage() {
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [recipients, setRecipients] = useState(SAMPLE_RECIPIENTS),
     [selectedId, setSelectedId] = useState<string>(),
     [query, setQuery] = useState(""),

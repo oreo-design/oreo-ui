@@ -13,15 +13,15 @@
 .edge-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 1.5rem 0.875rem;
+  gap: calc(var(--spacing) * 8);
+  padding: calc(var(--spacing) * 6) calc(var(--spacing) * 3.5);
   border-right: 1px solid var(--color-border-subtle);
 }
 .edge-brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0 0.375rem;
+  gap: calc(var(--spacing) * 3);
+  padding: 0 calc(var(--spacing) * 1.5);
 }
 .edge-brand strong {
   font-size: 0.875rem;
@@ -31,7 +31,7 @@
   display: block;
   color: var(--color-text-tertiary);
   font-size: 0.6875rem;
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .edge-brand-mark {
   display: grid;
@@ -50,13 +50,13 @@
 .edge-navigation {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: var(--spacing);
 }
 .edge-navigation button {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
-  padding: 0.625rem 0.75rem;
+  gap: calc(var(--spacing) * 2.5);
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   border-radius: var(--radius-control);
   text-align: left;
   cursor: pointer;
@@ -70,8 +70,8 @@
 .edge-projects {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 0 0.75rem;
+  gap: calc(var(--spacing) * 4);
+  padding: 0 calc(var(--spacing) * 3);
   font-size: 0.75rem;
 }
 .edge-projects p {
@@ -79,7 +79,7 @@
 }
 .edge-quota {
   margin-top: auto;
-  padding: 1rem 0.75rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 3);
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-small);
@@ -102,28 +102,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   min-height: 4rem;
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .edge-content {
   max-width: 100rem;
   margin: auto;
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
 }
 .edge-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   flex-wrap: wrap;
 }
 .edge-environment {
   display: inline-flex;
   align-items: center;
   border: 1px solid var(--color-border-default);
-  padding: 0.25rem 0.5rem;
+  padding: var(--spacing) calc(var(--spacing) * 2);
   border-radius: var(--radius-capsule);
   font-size: 0.6875rem;
 }
@@ -131,11 +131,11 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .edge-controls select {
   max-width: 11rem;
-  padding: 0.5rem 0.625rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 2.5);
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
@@ -143,7 +143,7 @@
   cursor: pointer;
 }
 .edge-snapshot-label {
-  margin: 1rem 0;
+  margin: calc(var(--spacing) * 4) 0;
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
 }
@@ -153,7 +153,7 @@
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-elevated);
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
   overflow: hidden;
 }
 .edge-metric + .edge-metric {
@@ -162,30 +162,30 @@
 .edge-dashboard-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(20rem, 1fr);
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: start;
 }
 .edge-primary-stack,
 .edge-secondary-stack {
   display: grid;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   min-width: 0;
 }
 .edge-map-legend {
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: calc(var(--spacing) * 1.5);
   font-size: 0.625rem;
   color: var(--color-text-tertiary);
 }
 .edge-map-legend .edge-health {
-  margin: 0 0 0 0.25rem;
+  margin: 0 0 0 var(--spacing);
   width: 0.25rem;
   height: 0.25rem;
 }
 .edge-incident {
-  margin: 0.75rem;
-  padding: 0.875rem;
+  margin: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 3.5);
   background: color-mix(
     in srgb,
     var(--color-status-error) 8%,
@@ -198,7 +198,7 @@
 .edge-incident p {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
   font-weight: 500;
 }
@@ -206,7 +206,7 @@
   color: var(--color-status-error);
 }
 .edge-incident > div {
-  margin: 0.5rem 0 0.75rem;
+  margin: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 3);
   font-size: 0.6875rem;
   line-height: 1.6;
   color: var(--color-text-secondary);
@@ -214,24 +214,24 @@
 .edge-regions-view {
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(20rem, 1fr);
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: start;
 }
 .edge-log-tools {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .edge-search {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   flex: 1;
   min-width: 12rem;
-  padding: 0.5rem 0.75rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
   background: var(--color-bg-base);
@@ -257,17 +257,17 @@
 .edge-table-scroll th {
   font-weight: 400;
   color: var(--color-text-tertiary);
-  padding: 1rem;
+  padding: calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .edge-table-scroll td {
-  padding: 0.75rem 1rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
   font-family: monospace;
 }
 .edge-log-status {
   display: inline-block;
-  padding: 0.125rem 0.375rem;
+  padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 1.5);
   border-radius: var(--radius-control-tiny);
   background: var(--color-state-press);
   color: var(--color-text-secondary);
@@ -276,12 +276,12 @@
   color: var(--color-status-error);
 }
 .edge-log-count {
-  padding: 1rem;
+  padding: calc(var(--spacing) * 4);
   font-size: 0.75rem;
   color: var(--color-text-secondary);
 }
 .edge-notice {
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
   min-height: 1.25rem;
   font-size: 0.75rem;
   color: var(--color-text-secondary);
@@ -290,10 +290,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 4);
   border-top: 1px solid var(--color-border-subtle);
-  padding-top: 1rem;
+  padding-top: calc(var(--spacing) * 4);
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
 }
@@ -307,7 +307,7 @@
   max-width: 28rem;
   max-height: 85dvh;
   overflow: auto;
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-surface);
@@ -315,13 +315,13 @@
   box-shadow: var(--shadow-overlay);
 }
 .edge-deployment-facts {
-  margin: 1.25rem 0;
+  margin: calc(var(--spacing) * 5) 0;
 }
 .edge-deployment-facts > div {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0.75rem 0;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 3) 0;
   border-bottom: 1px solid var(--color-border-subtle);
   font-size: 0.8125rem;
 }
@@ -340,7 +340,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .edge-metric {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .edge-sparkbars {
     width: 3rem;
@@ -353,8 +353,8 @@
   .edge-sidebar {
     border-right: 0;
     border-bottom: 1px solid var(--color-border-subtle);
-    padding: 1rem;
-    gap: 1rem;
+    padding: calc(var(--spacing) * 4);
+    gap: calc(var(--spacing) * 4);
   }
   .edge-brand {
     max-width: 12rem;
@@ -368,10 +368,10 @@
     display: none;
   }
   .edge-content {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .edge-topbar {
-    padding: 0.75rem 1rem;
+    padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
   }
   .edge-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -408,15 +408,15 @@
     gap: 0;
   }
   .edge-navigation button {
-    padding: 0.625rem;
+    padding: calc(var(--spacing) * 2.5);
     font-size: 0.75rem;
-    gap: 0.375rem;
+    gap: calc(var(--spacing) * 1.5);
   }
   .edge-sparkbars {
     width: 2.5rem;
   }
   .edge-metric {
-    padding: 0.875rem;
+    padding: calc(var(--spacing) * 3.5);
   }
   .edge-metric > div:last-child {
     flex-wrap: wrap;
@@ -431,18 +431,18 @@
   .edge-navigation button {
     flex-direction: column;
     align-items: center;
-    gap: 0.375rem;
-    padding: 0.5rem 0.25rem;
+    gap: calc(var(--spacing) * 1.5);
+    padding: calc(var(--spacing) * 2) var(--spacing);
     font-size: 0.6875rem;
   }
 }
 .edge-routing-saved {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   justify-content: space-between;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 4);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-card-small);
   background: var(--color-bg-elevated);
@@ -469,8 +469,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.25rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 5);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .edge-routing-dialog h2 {
@@ -479,7 +479,7 @@
 }
 .edge-routing-body {
   overflow: auto;
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
   font-size: 0.8125rem;
   line-height: 1.6;
 }
@@ -490,8 +490,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
-  margin: 1.5rem 0;
+  gap: calc(var(--spacing) * 4);
+  margin: calc(var(--spacing) * 6) 0;
 }
 .edge-routing-share input {
   width: 100%;
@@ -504,8 +504,8 @@
 .edge-routing-facts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin: 1.25rem 0;
+  gap: calc(var(--spacing) * 4);
+  margin: calc(var(--spacing) * 5) 0;
 }
 .edge-routing-facts dt {
   font-size: 0.6875rem;
@@ -519,8 +519,8 @@
 .edge-routing-dialog > footer {
   display: flex;
   justify-content: flex-end;
-  gap: 0.5rem;
-  padding: 1rem 1.25rem;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5);
   border-top: 1px solid var(--color-border-subtle);
 }
 @media (max-width: 600px) {

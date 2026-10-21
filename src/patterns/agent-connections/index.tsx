@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -9,7 +10,7 @@ import "./agent-connections.css";
 
 type SavedConnection = { client: string; scopes: string[] };
 export function AgentConnections() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const [client, setClient] = useState("desktop"), [scopes, setScopes] = useState(["balances", "transactions"]);
   const [connections, setConnections] = useState<SavedConnection[]>([]);
   const [query, setQuery] = useState(""), [error, setError] = useState(""), [notice, setNotice] = useState("");

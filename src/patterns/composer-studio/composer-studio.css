@@ -2,7 +2,7 @@
   min-height: 100dvh;
   background: var(--color-bg-base);
   color: var(--color-text-primary);
-  padding: 0 2rem;
+  padding: 0 calc(var(--spacing) * 8);
 }
 .composer-studio-header {
   max-width: 72rem;
@@ -12,25 +12,25 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--color-border-subtle);
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .composer-studio-heading {
   max-width: 72rem;
-  margin: 3.5rem auto 2.5rem;
+  margin: calc(var(--spacing) * 14) auto calc(var(--spacing) * 10);
 }
 .composer-studio-grid {
   max-width: 72rem;
   margin: auto;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 3rem;
+  gap: calc(var(--spacing) * 12);
   align-items: start;
 }
 .composer-stage {
   min-height: 27rem;
   display: flex;
   align-items: center;
-  padding: 2rem;
+  padding: calc(var(--spacing) * 8);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-elevated);
   background-size: cover;
@@ -41,22 +41,22 @@
 }
 .composer-preview {
   min-height: 27rem;
-  padding: 2rem;
+  padding: calc(var(--spacing) * 8);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   overflow-wrap: anywhere;
 }
 .composer-drafts {
   max-width: 72rem;
-  margin: 3rem auto;
+  margin: calc(var(--spacing) * 12) auto;
 }
 .composer-footer {
   max-width: 72rem;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 2rem 0;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 8) 0;
   border-top: 1px solid var(--color-border-subtle);
   color: var(--color-text-tertiary);
   font-size: 0.75rem;
@@ -67,22 +67,22 @@
 }
 @media (max-width: 800px) {
   .composer-studio {
-    padding: 0 1rem;
+    padding: 0 calc(var(--spacing) * 4);
   }
   .composer-studio-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: calc(var(--spacing) * 6);
   }
   .composer-stage {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
     min-height: 22rem;
   }
   .composer-studio-heading {
-    margin-top: 2rem;
+    margin-top: calc(var(--spacing) * 8);
   }
   .composer-preview {
     min-height: 20rem;
-    padding: 1.5rem;
+    padding: calc(var(--spacing) * 6);
   }
   .composer-footer {
     flex-direction: column;

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import {
@@ -14,7 +15,7 @@ import "./analytics-assistant.css";
 
 type SavedInsight = Extract<AnalyticsRequest, { status: "success" }>;
 export function AnalyticsAssistant() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const [view, setView] = useState<"overview" | "saved">("overview");
   const [value, setValue] = useState("");
   const [request, setRequest] = useState<AnalyticsRequest>({ status: "idle" });

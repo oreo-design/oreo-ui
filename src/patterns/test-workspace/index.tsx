@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useReducer, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -18,7 +19,7 @@ export function TestWorkspacePage() {
     SAMPLE_TESTS,
     initialTestRun,
   );
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [unavailable, setUnavailable] = useState(false),
     [fixed, setFixed] = useState<string[]>([]),
     [proposal, setProposal] = useState<readonly TestCase[]>([]);

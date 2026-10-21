@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -18,7 +19,7 @@ export function AgentInboxPage() {
     [view, setView] = useState<"board" | "list">("board"),
     [expanded, setExpanded] = useState<string | null>(null),
     [query, setQuery] = useState(""),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [notice, setNotice] = useState("");
   const visible = filterRuns(runs, query);
   function change(id: string, status: RunStatus) {

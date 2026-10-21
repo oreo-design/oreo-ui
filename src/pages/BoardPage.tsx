@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState } from "react";
 import { Sidebar } from "@/docs/Sidebar";
 import { Board } from "@/patterns/board";
@@ -11,7 +12,7 @@ import type { DocsNav } from "@/docs/DocsPage";
  * local dark toggle that reuses the global `.theme-dark` token skin.
  */
 export function BoardPage({ nav }: { nav: DocsNav }) {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   // Bump this to force a fresh <Board> mount after resetting the board.
   const [resetKey, setResetKey] = useState(0);
 

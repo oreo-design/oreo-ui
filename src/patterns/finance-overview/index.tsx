@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -32,7 +33,7 @@ export function FinanceOverviewPage() {
     [loading, setLoading] = useState(true),
     [error, setError] = useState(""),
     [query, setQuery] = useState(""),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [selection, setSelection] = useState<Selection>(null),
     [undo, setUndo] = useState<Data | null>(null),
     [notice, setNotice] = useState(""),

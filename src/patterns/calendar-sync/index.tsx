@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ConnectionState, MeetingGroup, type ConnectionStatus } from "@/components/connection-state";
@@ -43,7 +44,7 @@ export function CalendarSyncDemo({ compact = false }: { compact?: boolean }) {
   </div>;
 }
 export function CalendarSyncWorkspace() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   return <div className={dark ? "theme-dark" : ""}><div className="min-h-screen bg-bg-elevated text-text-primary">
     <header className="flex min-h-16 items-center justify-between gap-4 border-b border-border-subtle bg-bg-base px-5 sm:px-8"><a href="/connection-state" className="flex items-center gap-3 text-sm"><OreoLogo className="h-4 w-6" /><span className="text-text-tertiary">/</span><span>Calendar Sync</span></a><IconButton type="tertiary" tapScale={1} aria-label={dark ? "Switch to light theme" : "Switch to dark theme"} onClick={() => setDark(value => !value)} icon={<Icon name={dark ? "sun" : "moon"} />} /></header>
     <main className="mx-auto max-w-5xl px-4 py-8 sm:px-8 sm:py-12"><div className="mb-6 flex items-end justify-between gap-3"><div><p className="mb-2 text-xs text-text-tertiary">YOUR WORK, IN SYNC</p><h1 className="text-2xl font-semibold tracking-tight">Meetings</h1></div><a href="/connection-state" className="text-xs text-text-secondary underline underline-offset-4">Explore components ↗</a></div><div className="overflow-hidden rounded-card-medium border border-border-subtle bg-bg-base shadow-[var(--shadow-default)]"><CalendarSyncDemo /></div></main>

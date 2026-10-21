@@ -1,4 +1,5 @@
-import { useLayoutEffect, useState } from "react";
+import { useThemeMode } from "@/lib/theme/useThemeMode";
+import { useState } from "react";
 import { Button } from "@/components/button";
 import { Icon } from "@/components/icon";
 import { OreoLogo } from "@/docs/OreoLogo";
@@ -22,13 +23,7 @@ export function SettingsLab({ nav }: { nav: DocsNav }) {
   const [inherited, setInherited] = useState(params.get("mode") !== "original");
   const [stress, setStress] = useState(params.has("stress"));
   const [narrow, setNarrow] = useState(params.has("narrow"));
-  const [dark, setDark] = useState(params.has("dark"));
-  useLayoutEffect(() => {
-    const root = document.documentElement;
-    const previous = root.classList.contains("theme-dark");
-    root.classList.toggle("theme-dark", dark);
-    return () => { root.classList.toggle("theme-dark", previous); };
-  }, [dark]);
+  const [dark, setDark] = useThemeMode(params.has("dark"));
   const [fail, setFail] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [appearance, setAppearance] = useState<SettingsAppearance>(DEFAULT_SETTINGS_APPEARANCE);

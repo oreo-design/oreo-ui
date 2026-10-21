@@ -7,8 +7,8 @@
 .mw-header {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 18px 32px;
+  gap: calc(var(--spacing) * 5);
+  padding: calc(var(--spacing) * 4.5) calc(var(--spacing) * 8);
   border-bottom: 1px solid var(--color-border-subtle);
   color: var(--color-text-secondary);
   font-size: 12px;
@@ -23,11 +23,11 @@
 .mw-header > div {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--spacing) * 3);
 }
 .mw-repository {
   display: inline-flex;
-  gap: 7px;
+  gap: calc(var(--spacing) * 1.75);
   align-items: center;
 }
 .mw-slash {
@@ -43,15 +43,15 @@
 .mw-local {
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-capsule);
-  padding: 3px 8px;
+  padding: calc(var(--spacing) * 0.75) calc(var(--spacing) * 2);
 }
 .mw-main {
   width: min(100% - 40px, 740px);
   margin: 0 auto;
-  padding: 56px 0 32px;
+  padding: calc(var(--spacing) * 14) 0 calc(var(--spacing) * 8);
 }
 .mw-intro {
-  margin-bottom: 40px;
+  margin-bottom: calc(var(--spacing) * 10);
 }
 .mw-eyebrow {
   font-size: 10px;
@@ -62,7 +62,7 @@
   font-size: 30px;
   font-weight: 500;
   letter-spacing: -0.04em;
-  margin: 12px 0 6px;
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 1.5);
 }
 .mw-intro p {
   color: var(--color-text-tertiary);
@@ -75,25 +75,25 @@
   min-height: 320px;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: calc(var(--spacing) * 6);
 }
 .mw-user-message {
   width: fit-content;
-  margin: 0 0 24px auto;
-  padding: 10px 16px;
+  margin: 0 0 calc(var(--spacing) * 6) auto;
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 4);
   border-radius: var(--radius-capsule);
   background: var(--color-bg-elevated);
   font-size: 13px;
 }
 .mw-worked {
-  margin: 0 0 20px;
+  margin: 0 0 calc(var(--spacing) * 5);
   color: var(--color-text-tertiary);
   font-size: 12px;
 }
 .mw-worked > summary {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--spacing) * 3);
   list-style: none;
   cursor: pointer;
 }
@@ -104,12 +104,12 @@
   transform: rotate(90deg);
 }
 .mw-worked p {
-  padding: 12px 24px;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
   line-height: 1.7;
   color: var(--color-text-secondary);
 }
 .mw-explanation {
-  margin: 20px 0 0;
+  margin: calc(var(--spacing) * 5) 0 0;
   font-size: 14px;
   line-height: 1.85;
   color: var(--color-text-secondary);
@@ -120,55 +120,55 @@
 }
 .mw-explanation code {
   font-size: 12px;
-  padding: 1px 4px;
+  padding: calc(var(--spacing) * 0.25) var(--spacing);
   background: var(--color-bg-elevated);
   border-radius: var(--radius-control-tiny);
 }
 .mw-composer {
-  margin-top: 32px;
+  margin-top: calc(var(--spacing) * 8);
 }
 .mw-context {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 6px;
-  margin-bottom: 8px;
+  gap: calc(var(--spacing) * 1.5);
+  margin-bottom: calc(var(--spacing) * 2);
 }
 .mw-context:has(.mr-change-summary[open]) {
   display: block;
 }
 .mw-context:has(.mr-change-summary[open]) > .mr-badge {
-  margin-bottom: 8px;
+  margin-bottom: calc(var(--spacing) * 2);
 }
 .mw-context .mr-change-summary[open] {
-  margin-bottom: 8px;
+  margin-bottom: calc(var(--spacing) * 2);
 }
 .mw-composer-context {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: calc(var(--spacing) * 1.5);
   font-size: 11px;
   color: var(--color-text-secondary);
 }
 .mw-composer-context > span {
-  margin-left: 4px;
+  margin-left: var(--spacing);
   border: 1px solid var(--color-border-subtle);
-  padding: 3px 8px;
+  padding: calc(var(--spacing) * 0.75) calc(var(--spacing) * 2);
   border-radius: var(--radius-capsule);
 }
 .mw-demo-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  margin-top: 12px;
+  gap: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 3);
   color: var(--color-text-tertiary);
   font-size: 11px;
 }
 .mw-demo-controls label {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: calc(var(--spacing) * 1.75);
 }
 .mw-demo-controls input {
   accent-color: var(--color-text-primary);
@@ -176,10 +176,10 @@
 .mw-disclaimer {
   font-size: 10px;
   color: var(--color-text-tertiary);
-  margin-top: 12px;
+  margin-top: calc(var(--spacing) * 3);
 }
 .mw-attribution {
-  padding: 20px 24px 32px;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 6) calc(var(--spacing) * 8);
   text-align: center;
   font-size: 11px;
   color: var(--color-text-tertiary);
@@ -190,15 +190,15 @@
   color: inherit;
 }
 .mw-commit-detail {
-  margin-top: 12px;
+  margin-top: calc(var(--spacing) * 3);
   border-top: 1px solid var(--color-border-subtle);
-  padding-top: 12px;
+  padding-top: calc(var(--spacing) * 3);
 }
 .mw-commit-detail > div:first-child {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: calc(var(--spacing) * 3);
 }
 .mw-commit-detail strong {
   font-size: 12px;
@@ -206,11 +206,11 @@
 .mw-commit-detail p {
   font-size: 11px;
   color: var(--color-text-secondary);
-  margin: 8px 0;
+  margin: calc(var(--spacing) * 2) 0;
 }
 .mw-note {
-  margin-top: 20px;
-  padding: 12px 16px;
+  margin-top: calc(var(--spacing) * 5);
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
   border-radius: var(--radius-card-small);
   background: var(--color-bg-elevated);
   overflow-wrap: anywhere;
@@ -232,11 +232,11 @@
 }
 @media (max-width: 700px) {
   .mw-header {
-    padding: 12px 16px;
-    gap: 12px;
+    padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
+    gap: calc(var(--spacing) * 3);
   }
   .mw-header > div {
-    gap: 8px;
+    gap: calc(var(--spacing) * 2);
   }
   .mw-header .mw-slash,
   .mw-header .mw-slash + span,
@@ -245,21 +245,21 @@
   }
   .mw-main {
     width: calc(100% - 24px);
-    padding: 32px 0 16px;
+    padding: calc(var(--spacing) * 8) 0 calc(var(--spacing) * 4);
   }
   .mw-intro {
-    margin-bottom: 28px;
-    padding: 0 4px;
+    margin-bottom: calc(var(--spacing) * 7);
+    padding: 0 var(--spacing);
   }
   .mw-intro h1 {
     font-size: 26px;
   }
   .mw-empty {
-    padding: 12px;
+    padding: calc(var(--spacing) * 3);
     min-height: 280px;
   }
   .mw-composer {
-    margin-top: 24px;
+    margin-top: calc(var(--spacing) * 6);
   }
   .mw-explanation {
     font-size: 13px;
@@ -272,17 +272,17 @@
 .mw-files {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  padding: 8px;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 2);
 }
 .mw-files > span {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: calc(var(--spacing) * 1.5);
   font-size: 11px;
   background: var(--color-bg-elevated);
   border-radius: var(--radius-control);
-  padding-left: 8px;
+  padding-left: calc(var(--spacing) * 2);
   overflow-wrap: anywhere;
 }
 .mw-files small {

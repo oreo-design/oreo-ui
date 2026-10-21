@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import * as React from "react";
 import { Sidebar } from "@/docs/Sidebar";
 import { Button } from "@/components/button";
@@ -11,17 +12,16 @@ import type { DocsNav } from "@/docs/DocsPage";
 
 const STORAGE_KEY = "oreo-settings-frame";
 
-type FrameState = { appearance: SettingsAppearance; dark: boolean };
+type FrameState = { appearance: SettingsAppearance };
 
 function loadFrameState(): FrameState {
-  const fallback: FrameState = { appearance: DEFAULT_SETTINGS_APPEARANCE, dark: false };
+  const fallback: FrameState = { appearance: DEFAULT_SETTINGS_APPEARANCE };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return fallback;
     const parsed = JSON.parse(raw) as Partial<FrameState>;
     return {
       appearance: { ...DEFAULT_SETTINGS_APPEARANCE, ...parsed.appearance },
-      dark: Boolean(parsed.dark),
     };
   } catch {
     return fallback;
@@ -34,19 +34,19 @@ function loadFrameState(): FrameState {
  * that flips its three appearance axes live.
  */
 export function SettingsPage({ nav }: { nav: DocsNav }) {
-  const [{ appearance, dark }, setFrame] = React.useState(loadFrameState);
+  const [{ appearance }, setFrame] = React.useState(loadFrameState);
+  const [dark, setDark] = useThemeMode();
   const [page, setPage] = React.useState<DemoPageId>(DEFAULT_DEMO_PAGE);
 
   React.useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ appearance, dark }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ appearance }));
     } catch {
       /* storage may be unavailable; the frame still works */
     }
-  }, [appearance, dark]);
+  }, [appearance]);
 
   const setAppearance = (next: SettingsAppearance) => setFrame((s) => ({ ...s, appearance: next }));
-  const setDark = (next: boolean) => setFrame((s) => ({ ...s, dark: next }));
   const frame: DemoFrame = { appearance, setAppearance, dark, setDark };
 
   return (
@@ -66,7 +66,7 @@ export function SettingsPage({ nav }: { nav: DocsNav }) {
                 type="tertiary"
                 size="sm"
                 leadingIcon={<Icon name="reset" size="sm" />}
-                onClick={() => setFrame({ appearance: DEFAULT_SETTINGS_APPEARANCE, dark: false })}
+                onClick={() => { setFrame({ appearance: DEFAULT_SETTINGS_APPEARANCE }); setDark(false); }}
               >
                 Reset
               </Button>

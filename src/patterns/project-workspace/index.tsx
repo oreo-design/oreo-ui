@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import {
   TaskCalendar,
   TaskTimeline,
@@ -46,7 +47,7 @@ export function ProjectWorkspace() {
     ...p,
     color: p.id === "website" ? "purple" : p.id === "mobile" ? "blue" : "mint",
   }));
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [navOpen, setNavOpen] = useState(false),
     [query, setQuery] = useState(""),
     [status, setStatus] = useState("all"),

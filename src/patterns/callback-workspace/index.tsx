@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import {
@@ -52,7 +53,7 @@ export function CallbackWorkspace() {
   const [grouped, setGrouped] = useState(false),
     [layout, setLayout] = useState("board"),
     [sort, setSort] = useState("default"),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [navOpen, setNavOpen] = useState(false);
   const [draft, setDraft] = useState<Callback | null>(null),
     [cost, setCost] = useState(""),

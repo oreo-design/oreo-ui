@@ -3,7 +3,7 @@
   grid-template-columns: 17rem minmax(0, 1fr);
   min-height: 52rem;
   border: 1px solid var(--color-border-default);
-  border-radius: 1.5rem;
+  border-radius: calc(var(--radius-control) * 3);
   background: var(--color-bg-base);
   overflow: hidden;
   box-shadow: var(--shadow-default);
@@ -13,7 +13,7 @@
   flex-direction: column;
   background: var(--color-bg-elevated);
   border-right: 1px solid var(--color-border-subtle);
-  padding: 1.5rem 0.75rem;
+  padding: calc(var(--spacing) * 6) calc(var(--spacing) * 3);
 }
 .kb-main {
   min-width: 0;
@@ -21,27 +21,27 @@
 .kb-breadcrumb {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   min-height: 5rem;
   border-bottom: 1px solid var(--color-border-subtle);
-  padding: 1rem 2rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 8);
   font-size: 0.875rem;
 }
 .kb-content {
-  padding: 2rem;
+  padding: calc(var(--spacing) * 8);
 }
 .kb-folder-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 6);
 }
 .kb-nav-link {
   display: flex;
   align-items: center;
-  gap: 0.875rem;
+  gap: calc(var(--spacing) * 3.5);
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
   border-radius: var(--radius-control);
   font-size: 0.875rem;
   color: var(--color-text-secondary);
@@ -65,13 +65,13 @@
     grid-template-columns: 15rem minmax(0, 1fr);
   }
   .kb-content {
-    padding: 1.5rem;
+    padding: calc(var(--spacing) * 6);
   }
   .kb-folder-grid {
-    gap: 0.25rem;
+    gap: var(--spacing);
   }
   .kb-folder-grid .kb-folder-card {
-    padding: 0.75rem 0.25rem 1rem;
+    padding: calc(var(--spacing) * 3) var(--spacing) calc(var(--spacing) * 4);
   }
   .kb-folder-grid .kb-updated {
     display: none;
@@ -86,7 +86,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
     border-bottom: 1px solid var(--color-border-subtle);
   }
   .kb-sidebar {
@@ -99,19 +99,19 @@
   }
   .kb-breadcrumb {
     min-height: 4rem;
-    padding: 1rem 1.5rem;
+    padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   }
 }
 @media (max-width: 639px) {
   .kb-content {
-    padding: 1.25rem;
+    padding: calc(var(--spacing) * 5);
   }
   .kb-folder-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
   }
   .kb-folder-grid .kb-folder-card {
-    padding: 1rem 1.5rem 1.5rem;
+    padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6) calc(var(--spacing) * 6);
   }
   .kb-folder-grid .kb-updated {
     display: inline;

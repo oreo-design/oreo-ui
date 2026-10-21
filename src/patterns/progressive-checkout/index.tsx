@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -20,7 +21,7 @@ import {
 } from "./model";
 import "./checkout.css";
 export function ProgressiveCheckoutPage() {
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [step, setStep] = useState("cart"),
     [completed, setCompleted] = useState<string[]>([]),
     [quantity, setQuantity] = useState(1),

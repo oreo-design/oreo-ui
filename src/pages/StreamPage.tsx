@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { Sidebar } from "@/docs/Sidebar";
 import { Stream, useStream } from "@/patterns/stream";
 import { Button } from "@/components/button";
@@ -13,7 +13,7 @@ import type { DocsNav } from "@/docs/DocsPage";
  * tier collapse → empty-state fade), toggle the skeleton.
  */
 export function StreamPage({ nav }: { nav: DocsNav }) {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const state = useStream();
 
   return (

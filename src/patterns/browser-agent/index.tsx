@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -17,7 +18,7 @@ import {
 import { ARTICLES, SCENARIOS, type ScenarioId } from "./data";
 import "./workspace.css";
 export function BrowserAgentPage() {
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [scenario, setScenario] = useState<ScenarioId>("research"),
     [run, setRun] = useState(INITIAL_RUN),
     [active, setActive] = useState("chat"),
