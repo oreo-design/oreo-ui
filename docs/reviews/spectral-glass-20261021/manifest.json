@@ -246,5 +246,272 @@
       "capturedAt": "2026-10-21T16:34:47.173984+08:00",
       "sourceType": "reference X page"
     }
-  ]
+  ],
+  "currentRound": 2,
+  "historicalRootFields": "Top-level baseline, finalSource, limits, motion and captures describe round 1. Current evidence is round2.",
+  "round2": {
+    "baseline": "93926a8",
+    "finalSource": "eeee854d1a5fd898116c5cb8c30a887c949f20ce",
+    "base": "444f88792bd38701cf4cfb7cf1dd7f453d71259a",
+    "preview": "http://localhost:5235/spectral-glass-studio?revision=eeee854",
+    "capture": "Chrome via Playwriter session 8, real component fixture, en-US",
+    "pr": "https://github.com/oreo-design/oreo-ui/pull/124",
+    "validation": [
+      "production build and typecheck passed",
+      "12 existing tests passed",
+      "diff check passed",
+      "actual context loss and retry passed"
+    ],
+    "limits": [
+      "Bounded RGB transport; no full spectral integration or AI denoise",
+      "Reference has finer spectral gradients, edges and scratches",
+      "No production deployment or physical-device performance verification",
+      "Exact loop seam not numerically measured"
+    ],
+    "motion": {
+      "frames": 740,
+      "sourceTimestampSpanSeconds": 40.28514909744263,
+      "videoDurationSeconds": 40.32,
+      "originalDimensions": [
+        1440,
+        1000
+      ],
+      "outputDimensions": [
+        1440,
+        984
+      ],
+      "transform": "top 16 px automation tab crop only; original timestamp timing preserved",
+      "rawDirectory": "motion-originals/r2-final-loop"
+    },
+    "captures": [
+      {
+        "file": "r2-after-amber.png",
+        "sha256": "95eb1811c582bb5d838bea7b2138d52ef87424d2f8f15efe9b07d2b43a09e03f",
+        "capturedAt": "2026-10-21T18:06:52.837393+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-after-dark.png",
+        "sha256": "82f90cff7a59d4f1700b48bc036901a50a4202410f6a58c735b5255a43a8be62",
+        "capturedAt": "2026-10-21T18:06:52.847516+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-after-desktop.png",
+        "sha256": "48c2a190b1e47369726571d5f303be4c4fc7ed9bf6086c4687f31a81886e313e",
+        "capturedAt": "2026-10-21T18:06:52.852024+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-after-error.png",
+        "sha256": "112871524134c37f1837e185041b05f86d68963757f626cfc482a79eb9e36b42",
+        "capturedAt": "2026-10-21T18:06:52.855351+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-after-mobile-dark.png",
+        "sha256": "97f6912edd2068d63df661ddd88ffd0c7afb8a1b9ae9918cb8fbd4aed346fb9c",
+        "capturedAt": "2026-10-21T18:06:52.863425+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-after-mobile-light.png",
+        "sha256": "1d6841c7d37ec5c6cfa95dc1bca867d26dca0d04ef72468d2b70c428941459df",
+        "capturedAt": "2026-10-21T18:06:52.873099+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-after-orbit.png",
+        "sha256": "bada586a35ca7fee76ab4eb0278a47434e95a0807fef8e0647011dc18d7f9b01",
+        "capturedAt": "2026-10-21T18:06:52.885978+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-after-recovered.png",
+        "sha256": "a2d9b056a8e798d88c112a732ae6369b1142153b1d7e62face62de53f1d27228",
+        "capturedAt": "2026-10-21T18:06:52.904515+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-after-single.png",
+        "sha256": "16ed9b9ce91e97a0874cf940cacbdcea54946e19848a049db7491d2c9e74abc0",
+        "capturedAt": "2026-10-21T18:06:52.916343+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-after-tablet.png",
+        "sha256": "46e0a34b700878b46088a832fe0134ae301db9b8861d7bc2da964a4a04056e47",
+        "capturedAt": "2026-10-21T18:06:52.928051+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-before-desktop.png",
+        "sha256": "66ba614a084294285ee951cef7935b7a641e49c0af074c3fc4280da1eeedfea6",
+        "capturedAt": "2026-10-21T18:06:52.978980+08:00",
+        "status": "baseline"
+      },
+      {
+        "file": "r2-built-amber.png",
+        "sha256": "80e7d60abaa110921ae19d42879d86d6579744bf3f590afa2e1078705e959c81",
+        "capturedAt": "2026-10-21T18:10:17.839641+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-artwork.png",
+        "sha256": "ef4d3b606d4d6f0540d41933be784dd5438e16f41d882b3e1f6d516873676bb8",
+        "capturedAt": "2026-10-21T18:09:25.714808+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-dark.png",
+        "sha256": "f642d129fe1f41d7f3e5b8583946be5252f5497a1831bd94b199ec54ec03e5e0",
+        "capturedAt": "2026-10-21T18:10:15.557772+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-desktop.png",
+        "sha256": "384033b92d60b01d76b5c8f248643f530c3a8ba9a06713008f284b52cc94f840",
+        "capturedAt": "2026-10-21T18:09:24.962378+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-docs.png",
+        "sha256": "2090821e5a1b3d81679f09ddf36a757737190b7f6fd99483dbafe1b4904dd4db",
+        "capturedAt": "2026-10-21T18:14:43.689583+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-error.png",
+        "sha256": "e575444856db51d357ea5fd7965ef5cbb9ce8fea961526a084666f738975f1e0",
+        "capturedAt": "2026-10-21T18:10:19.872955+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-mobile-dark.png",
+        "sha256": "d2d9b4b069d2497beccae028240ae36cdb2c772f844337c99eaa1f5e4f1b85e9",
+        "capturedAt": "2026-10-21T18:10:18.939306+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-mobile-light.png",
+        "sha256": "1513a58da9d6ccbff0929034f293c41d6915ad2df312ed92dae59f440d478237",
+        "capturedAt": "2026-10-21T18:10:19.280851+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-motion.mp4",
+        "sha256": "304bdd5ae463bb1404dd48bb9959b00ba82d95e954862311f53b91a0ab94c312",
+        "capturedAt": "2026-10-21T18:13:54.042987+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-orbit.png",
+        "sha256": "38eb2b5baf7c58209ed59427474e1b6d0124a70410b409a0ddd2b0023e9ddfec",
+        "capturedAt": "2026-10-21T18:10:16.230865+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-paused.png",
+        "sha256": "7d27793ac3bbddbe2d2027f98340e6df5bc5611f7285e29f5305ed9b1afca0bc",
+        "capturedAt": "2026-10-21T18:13:58.285867+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-playground.png",
+        "sha256": "9b6a431570411266265c5c14597e53cb0ceece55a66ebc54f94f8cbc767cc815",
+        "capturedAt": "2026-10-21T18:14:38.034568+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-recovered.png",
+        "sha256": "384033b92d60b01d76b5c8f248643f530c3a8ba9a06713008f284b52cc94f840",
+        "capturedAt": "2026-10-21T18:10:21.052290+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-single.png",
+        "sha256": "37f90e76f89d5131ffca752b8874fc9969a95c585b6e468845a15771d72fa5d0",
+        "capturedAt": "2026-10-21T18:10:16.973076+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-built-tablet.png",
+        "sha256": "e866a79ac0ceb8eac2356c3fc519295490dbd17321a47e647c19c17a57e29396",
+        "capturedAt": "2026-10-21T18:10:19.509877+08:00",
+        "status": "final built source"
+      },
+      {
+        "file": "r2-final-desktop.png",
+        "sha256": "88caca1382b85a151d4062b097a75b7b919ecf4b415b7aefa21a0f1a300a34ad",
+        "capturedAt": "2026-10-21T18:06:52.989755+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-loop.mp4",
+        "sha256": "84956f2bb1efdbc3e4ce5326fbb9daf22633572cc7cd7578a551f4c4a06dd94d",
+        "capturedAt": "2026-10-21T18:06:53.090801+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-single-trial.png",
+        "sha256": "61f71eceef87d2b77b5d2270253f98c7056c738a419780367a6a7623ae8b73aa",
+        "capturedAt": "2026-10-21T18:06:53.113803+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-thickness-max.png",
+        "sha256": "0c5b5ade28529b7ba8fe027503eadff6f8ba5a5dbe9fa9ea12a69c07d47f69b1",
+        "capturedAt": "2026-10-21T18:06:53.121282+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-trial-01.png",
+        "sha256": "407519ce59d3c542bf28d18a6c89ab3a827768139b79ce7606714efac70fd5cc",
+        "capturedAt": "2026-10-21T18:06:53.153330+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-trial-02.png",
+        "sha256": "eb271f9e54b14d9d8baead1253b5f990dbb5f4f79f7cfd6bd46457020f821ca1",
+        "capturedAt": "2026-10-21T18:06:53.162426+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-trial-03.png",
+        "sha256": "f0f8e663f642542d320653946e9ef5c2277d5389e4b2829b9224bf4a2e652a01",
+        "capturedAt": "2026-10-21T18:06:53.167315+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-trial-04.png",
+        "sha256": "d7958071afb3ece9d35bb34aeaeae89b032c547b87fb83e03a8d41ce42c4bd1f",
+        "capturedAt": "2026-10-21T18:06:53.167831+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-trial-05.png",
+        "sha256": "1a073da0294ad6a545895dd6618bb05cfa5fb84b0ea7c6024be267bfd902f587",
+        "capturedAt": "2026-10-21T18:06:53.179137+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-trial-06.png",
+        "sha256": "11ba38c4df751c3d5a8670f57900b727c44db4296c0ccff08c64aef47acbd70b",
+        "capturedAt": "2026-10-21T18:06:53.203113+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-trial-07.png",
+        "sha256": "768002770f7b5254318c8357f3351610f4a27c26569d2c2e22b6fdf10039c8a2",
+        "capturedAt": "2026-10-21T18:06:53.236544+08:00",
+        "status": "superseded intermediate"
+      },
+      {
+        "file": "r2-trial-08.png",
+        "sha256": "62f8130392f7f4ca33e28e18e108a7c469eae02026913a05932f77c2f2a534e1",
+        "capturedAt": "2026-10-21T18:06:53.312793+08:00",
+        "status": "superseded intermediate"
+      }
+    ]
+  }
 }
