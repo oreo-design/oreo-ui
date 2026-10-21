@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./lib/surfaces.css";
 
 /* ----------------------------------------------------------------------------
  * Design tokens — extracted 1:1 from the Oreo UI Figma variables.

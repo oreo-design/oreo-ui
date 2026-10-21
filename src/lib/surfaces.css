@@ -1,0 +1,32 @@
+/* Shared surface geometry. Tokens stay unscaled; compensate exactly once. */
+:root {
+  --oreo-corner-scale: 1;
+  --oreo-corner-shape: round;
+}
+@supports (corner-shape: superellipse(1.5)) {
+  :root {
+    --oreo-corner-scale: 1.25;
+    --oreo-corner-shape: superellipse(1.5);
+  }
+}
+.oreo-squircle {
+  border-radius: var(--squircle-rendered-radius, calc(var(--squircle-radius, 0px) * var(--oreo-corner-scale)));
+  corner-shape: var(--oreo-corner-shape);
+}
+
+/* A single translucent layer above the current base, below content. Unlike a
+   background shorthand this preserves selected/semantic backgrounds and rings.
+   Use on surfaces without their own background image or existing state layer. */
+.oreo-state-layer {
+  user-select: none;
+  --surface-feedback: transparent;
+  background-image: linear-gradient(var(--surface-feedback), var(--surface-feedback));
+}
+@media (hover: hover) {
+  .oreo-state-layer:hover:not(:disabled, [aria-disabled="true"]):not(:has(input:disabled)):not(input:disabled + *) {
+    --surface-feedback: var(--surface-hover, var(--color-state-hover));
+  }
+}
+.oreo-state-layer:active:not(:disabled, [aria-disabled="true"]):not(:has(input:disabled)):not(input:disabled + *) {
+  --surface-feedback: var(--surface-press, var(--color-state-press));
+}

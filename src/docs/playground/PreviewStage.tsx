@@ -272,7 +272,7 @@ export function PreviewStage({
           {parts.map((part, index) => (
             <button
               key={part.name}
-              className="pg-card"
+              className="pg-card oreo-squircle oreo-state-layer"
               aria-pressed={selected === index}
               onMouseEnter={() => {
                 if (!locked) onSelect(index);
@@ -299,7 +299,7 @@ export function PreviewStage({
       {mode === "inspect" && (
         <>
           <div className="pg-inspect-details">
-            <section className="pg-card">
+            <section className="pg-card oreo-squircle">
               <strong>{measurement?.tag ?? "Select an element"}</strong>
               <p>
                 Height {Math.round(measurement?.height ?? 0)} · Radius{" "}
@@ -308,7 +308,7 @@ export function PreviewStage({
                 Padding {measurement?.padding} · Gap {measurement?.gap}
               </p>
             </section>
-            <section className="pg-card">
+            <section className="pg-card oreo-squircle">
               <strong>Semantic styles</strong>
               <p>
                 {measurement?.backgroundToken} / {measurement?.colorToken}

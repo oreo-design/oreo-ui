@@ -42,6 +42,7 @@ export function ComponentPicker({
               <h2>{group.title}</h2>
               {group.items.map((item) => (
                 <a
+                  className="oreo-squircle oreo-state-layer"
                   key={item.page}
                   href={`/${item.page}`}
                   aria-current={item.page === nav.active ? "page" : undefined}
