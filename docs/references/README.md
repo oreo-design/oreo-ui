@@ -29,7 +29,7 @@
 
 | 日期 | 参考 | 重点 |
 | --- | --- | --- |
-| 2026-10-21 | [Animate UI：全站主题过渡](records/2026-10-21-animate-ui-theme-transition.md) | 整页快照覆盖侧栏、预览和弹层；短过渡、连续切换与减少动态效果。 |
+| 2026-10-21 | [Animate UI：全站主题过渡](records/2026-10-21-animate-ui-theme-transition.md) | 已按反馈改为真实属性过渡，覆盖侧栏、预览和弹层；连续切换与减少动态效果。 |
 | 2026-10-14 | [Fluid Functionalism：可分享配置与 AI 接入上下文](records/2026-10-14-fluid-playground.md) | 把 Playground 的当前状态变成可恢复、可安装、可解释的交付物。 |
 | 2026-10-15 | [Annotation 模式：让预览解释组件的构成](records/2026-10-15-annotation.md) | 用户提出把视频中的标注模式加入 Oreo：在真实预览上指出各部分名称、作用及其代码关系。 |
 

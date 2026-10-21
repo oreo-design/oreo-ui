@@ -3,63 +3,51 @@ export type ThemeTransition = {
   dispose: () => void;
 };
 
-type SnapshotTransition = {
-  ready: Promise<void>;
-  finished: Promise<void>;
-  skipTransition: () => void;
-};
+export const themeTransitionDuration = 280;
 
 type TransitionHost = {
-  start?: (update: () => void) => SnapshotTransition;
   canAnimate: () => boolean;
+  /** Enable CSS transitions and resolve the current styles before changing tokens. */
+  prepare: () => void;
+  finish: () => void;
   flush: (commit: () => void) => void;
+  /** Resolve the new styles so the transition clock starts before cleanup is scheduled. */
+  measure: () => void;
+  schedule: (finish: () => void, delay: number) => () => void;
 };
 
-/** One document snapshot, including portals. Only the latest requested update may commit. */
+/** Actual element properties interpolate; there are no document snapshots or delayed commits. */
 export function createThemeTransition(host: TransitionHost): ThemeTransition {
   let generation = 0;
-  let active: SnapshotTransition | undefined;
-  let pending: (() => void) | undefined;
-
+  let cancelCleanup: (() => void) | undefined;
   function cancel() {
-    active?.skipTransition();
-    active = undefined;
+    ++generation;
+    cancelCleanup?.();
+    cancelCleanup = undefined;
   }
-
   return {
     run(commit, animate) {
-      const request = ++generation;
       cancel();
-      pending = commit;
-      const apply = () => {
-        if (request !== generation || !pending) return;
-        pending = undefined;
-        host.flush(commit);
-      };
-      if (!animate || !host.start || !host.canAnimate()) {
-        pending = undefined;
+      if (!animate || !host.canAnimate()) {
+        host.finish();
         commit();
         return;
       }
-      try {
-        const transition = host.start(apply);
-        active = transition;
-        // A skipped/hidden document rejects ready; the update must still complete.
-        void transition.ready.catch(() => {});
-        void transition.finished.catch(() => {}).then(() => {
-          if (active === transition) active = undefined;
-        });
-      } catch {
-        apply();
-      }
+      // Keep the scope enabled on interruption: CSS retargets from the rendered
+      // intermediate values instead of jumping to the previous destination.
+      host.prepare();
+      host.flush(commit);
+      host.measure();
+      const request = generation;
+      cancelCleanup = host.schedule(() => {
+        if (request !== generation) return;
+        host.finish();
+        cancelCleanup = undefined;
+      }, themeTransitionDuration + 50);
     },
     dispose() {
-      ++generation;
       cancel();
-      const commit = pending;
-      pending = undefined;
-      // Cleanup may run during a React commit, where flushSync is inappropriate.
-      commit?.();
+      host.finish();
     },
   };
 }

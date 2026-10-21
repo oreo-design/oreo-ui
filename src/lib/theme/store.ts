@@ -28,7 +28,7 @@ export function createThemeStore(storage: () => Pick<Storage, "getItem" | "setIt
     const changed = JSON.stringify(theme) !== JSON.stringify(getSnapshot().theme);
     requestedTheme = theme;
     const commit = () => { snapshot = { theme, storageError }; initialized = true; publish(); };
-    if (transition) transition.run(commit, animate && changed);
+    if (transition && changed) transition.run(commit, animate);
     else commit();
   }
   const setTheme = (next: ThemeAppearance, animate = true) => {
@@ -42,9 +42,9 @@ export function createThemeStore(storage: () => Pick<Storage, "getItem" | "setIt
     patchTheme: (patch: Partial<ThemeAppearance>) => {
       getSnapshot();
       const next = { ...requestedTheme, ...patch };
-      // Continuous adjustments must remain under the pointer, not queue snapshots.
-      const animate = next.dark !== requestedTheme.dark || next.variation?.preset !== requestedTheme.variation?.preset;
-      setTheme(next, animate);
+      // The control value commits immediately; every appearance edit can retarget
+      // the rendered properties without queuing a page snapshot.
+      setTheme(next);
     },
     refresh: () => {
       getSnapshot();

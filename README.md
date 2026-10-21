@@ -311,24 +311,29 @@ Kevin’s [Unlink Documents](https://x.com/kvnkld/status/2111826634902741219) ex
 
 ### Playground variations
 
-The Playground's left **Style** panel owns a shared theme; the right panel owns
-component properties. Oreo Default, Claude, OpenAI and Material are editable
-Oreo style presets (not official vendor implementations). Change spacing,
-corner radius, accent, light/dark mode and icon library independently. Manual
-changes are marked Custom. Reset theme and Reset properties are independent.
-Themes persist across component navigation and reloads in this browser; Share
-and code export include the current token overrides. Old configuration links
-remain valid. Storage failures leave the editor usable and offer Retry saving.
+The Playground's left **Style** panel owns the document theme; the right panel
+owns component properties. Oreo Default, Claude, OpenAI and ASCII are editable
+Oreo style presets (not official vendor implementations). Spacing, corner radius,
+accent and light/dark mode affect the site, including sidebars, templates and body
+portals, through `src/lib/theme`. Reset theme and Reset properties are independent.
+Themes persist across navigation and reloads. Share and code export include the
+current token overrides; old configuration links remain valid. Storage failures
+leave the editor usable and offer Retry saving.
 
-Preview tokens are owned by `src/docs/playground/variation.ts`; shell controls
-retain their geometry so theme editing remains usable. Density affects Oreo's
-spacing scale and Tailwind spacing-based geometry. Components that explicitly
-fix their own sizes or colors retain those local choices; semantic error/success
-colors are not replaced by an accent. Portaled components receive the same root
-tokens while the Playground is mounted. Exports include the preview wrapper;
-when portaling in another app, put these tokens on that app's theme/portal root.
-On narrower screens, Variation and Properties open separate keyboard-accessible
-panels. Replay, Inspect, Compare and Share remain under More tools.
+Style changes interpolate the actual UI properties over 280ms with the shared
+`--ease-out`: colors, corners, shadows, spacing, sizes and typography metrics.
+Rapid changes retarget from the currently rendered values; controls and storage
+update immediately. The temporary document transition scope includes pseudo-elements
+and portals, then releases ownership back to each component's interaction motion.
+This intentionally interpolates layout rather than fading document screenshots.
+Mount, hidden-page updates and reduced motion remain immediate. Font-family and
+other non-interpolable discrete values switch; they cannot morph through CSS.
+
+Density affects Oreo's spacing scale and Tailwind spacing-based geometry. Semantic
+error/success colors retain their roles. Nested comparisons and exports explicitly
+reset theme recipes; a consuming app should place tokens on its portal root too.
+On narrower screens, Variation and Properties open keyboard-accessible panels.
+Replay, Inspect, Compare and Share remain under More tools.
 
 
 ### Spectral Glass Studio

@@ -1,34 +1,23 @@
-/* The site's single snapshot owner. Components keep their own interaction motion. */
-::view-transition {
-  pointer-events: none;
-}
-
-::view-transition-group(root) {
-  animation: none;
-}
-
-::view-transition-old(root),
-::view-transition-new(root) {
-  mix-blend-mode: normal;
-}
-
-/* New page fades over an opaque old page, avoiding a flash of the canvas beneath. */
-::view-transition-old(root) {
-  animation: none;
-}
-
-::view-transition-new(root) {
-  animation: oreo-theme-reveal 220ms var(--ease-out) both;
-}
-
-@keyframes oreo-theme-reveal {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Enabled only around a theme update, never permanently on component interactions.
+   `all` is intentional here: Style changes include layout, typography, SVG paint,
+   borders, shadows and smooth corners, not just colors/opacity. Descendants and
+   pseudo-elements include body portals and the shared state/corner layers. */
+html[data-theme-transition],
+html[data-theme-transition] *,
+html[data-theme-transition] *::before,
+html[data-theme-transition] *::after {
+  transition-property: all, --theme-hatch-color !important;
+  transition-duration: var(--theme-transition-duration) !important;
+  transition-timing-function: var(--ease-out) !important;
+  transition-delay: 0s !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation: none;
+  html[data-theme-transition],
+  html[data-theme-transition] *,
+  html[data-theme-transition] *::before,
+  html[data-theme-transition] *::after {
+    transition-property: none !important;
+    transition-duration: 0s !important;
   }
 }
