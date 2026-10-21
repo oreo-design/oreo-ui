@@ -1,5 +1,7 @@
 import { MotionCodeStudio } from "@/patterns/motion-code-studio";
 import { MotionCodeDocs } from "@/pages/MotionCodeDocs";
+import { SpectralGlassStudio } from "@/patterns/spectral-glass-studio";
+import { SpectralGlassDocs } from "@/pages/SpectralGlassDocs";
 import { AuroraFaq } from "@/patterns/aurora-faq";
 import { AuroraAccordionDocs } from "@/pages/AuroraAccordionDocs";
 import { OutlineBrandFooter } from "@/patterns/outline-brand-footer";
@@ -233,6 +235,7 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "motion-code-studio": MotionCodeStudio,
   "code-focus": MotionCodeDocs,
   "sheet-timeline": MotionCodeDocs,
+  "spectral-glass": SpectralGlassDocs, "spectral-glass-studio": SpectralGlassStudio,
   "aurora-faq": AuroraFaq, "aurora-accordion": AuroraAccordionDocs, "aurora-surface": AuroraAccordionDocs,
   "outline-brand-footer": OutlineBrandFooter, "outline-wordmark": OutlineWordmarkDocs, "path-glyph": OutlineWordmarkDocs, "footer-link-groups": OutlineWordmarkDocs,
   "breakout-404": Breakout404Page, "breakout-navigator": BreakoutNavigationDocs, "destination-progress": BreakoutNavigationDocs, "recovery-message": BreakoutNavigationDocs,

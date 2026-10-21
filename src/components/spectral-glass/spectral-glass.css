@@ -1,0 +1,12 @@
+.spectral-glass {
+  /* Artwork-only stage; remains dark like a photograph in either site theme. */
+  --glass-stage: #030205;
+  width: 100%; height: 100%; min-height: calc(var(--spacing) * 80);
+  position: relative; overflow: hidden; border-radius: var(--radius-card-medium);
+  background: var(--glass-stage);
+}
+.spectral-glass-canvas { position: absolute; inset: 0; }
+.spectral-glass canvas { width: 100%; height: 100%; display: block; }
+.spectral-glass-state { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: calc(var(--spacing) * 4); font-size: var(--text-sm); color: var(--color-text-on-accent); text-align: center; padding: calc(var(--spacing) * 6); }
+.spectral-glass-skeleton { width: calc(var(--spacing) * 24); height: calc(var(--spacing) * 24); border-radius: var(--radius-capsule); border: 1px solid currentColor; opacity: .25; }
+.spectral-glass-error { background: var(--color-bg-elevated); color: var(--color-text-primary); }
