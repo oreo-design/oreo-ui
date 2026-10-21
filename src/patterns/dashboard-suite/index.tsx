@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { formatCurrency } from "@/components/currency-finance/model";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -43,7 +44,7 @@ export function MembershipDashboardPage() {
 }
 function DashboardWorkspace({ kind }: { kind: DashboardKind }) {
   const config = DASHBOARDS[kind],
-    [dark, setDark] = useState<boolean>(config.dark),
+    [dark, setDark] = useThemeMode(config.dark),
     [tab, setTab] = useState("Overview"),
     [period, setPeriod] = useState(30),
     [records, setRecords] = useState(() => sampleRecords(kind)),

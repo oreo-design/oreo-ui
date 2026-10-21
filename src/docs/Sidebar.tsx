@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/cn";
 import { Icon } from "@/components/icon";
 import { OreoLogo } from "./OreoLogo";
@@ -391,18 +391,6 @@ export function Sidebar({ nav }: { nav: DocsNav }) {
 export function MobileNavigation({ nav }: { nav: DocsNav }) {
   const shell = useRef<HTMLDivElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
-  const [dark, setDark] = useState(false);
-  // Pages own their preview theme. Mirror only the page root, never nested specimens.
-  useLayoutEffect(() => {
-    const pageRoot = shell.current?.nextElementSibling;
-    const root = document.documentElement;
-    const sync = () => setDark(root.classList.contains("theme-dark") || Boolean(pageRoot?.classList.contains("theme-dark")));
-    const observer = new MutationObserver(sync);
-    observer.observe(root, { attributes: true, attributeFilter: ["class"] });
-    if (pageRoot) observer.observe(pageRoot, { attributes: true, attributeFilter: ["class"] });
-    sync();
-    return () => observer.disconnect();
-  }, [nav.active]);
   const [open, setOpen] = useState(false);
   useEffect(() => {
     if (!open) return;
@@ -413,7 +401,7 @@ export function MobileNavigation({ nav }: { nav: DocsNav }) {
     media.addEventListener("change", closeOnDesktop);
     return () => { document.body.style.overflow = previous; media.removeEventListener("change", closeOnDesktop); };
   }, [open]);
-  return <div ref={shell} className={cn("site-mobile-nav", dark && "theme-dark")}>
+  return <div ref={shell} className="site-mobile-nav">
     <div className="site-mobile-bar"><Brand /><button type="button" className="site-action" aria-haspopup="dialog" aria-expanded={open} onClick={() => { dialog.current?.showModal(); setOpen(true); }}>Browse pages</button></div>
     <dialog ref={dialog} className="site-navigation-dialog" aria-label="Browse pages" onClose={() => setOpen(false)}>
       <div className="site-mobile-bar"><span className="text-sm font-medium">Browse pages</span><button type="button" className="site-action" onClick={() => dialog.current?.close()}>Close</button></div>

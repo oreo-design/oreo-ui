@@ -1,6 +1,5 @@
 import { useVariation, patchTheme } from "./playground/useVariation";
-import { variationTokens } from "./playground/variation";
-import { useState, useEffect, type CSSProperties } from "react";
+import { useState, useEffect } from "react";
 import { DocsLayout } from "./DocsLayout";
 import { CustomizePanel } from "./CustomizePanel";
 import { ComponentPlayground } from "./playground/ComponentPlayground";
@@ -72,11 +71,10 @@ export function DocsPage({
     radius,
     dark,
   };
-  const wrapStyle = (view === "playground" ? variationTokens(theme) : { "--radius-control": `${radius}px` }) as CSSProperties;
 
   return (
     <IconLibraryProvider library={library}>
-      <div className={dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"} style={wrapStyle}>
+      <div className={dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"}>
         {view === "remixes" && hasRemix(nav.active) ? <RemixExamples slug={nav.active} nav={nav} dark={dark} setDark={setDark} onPlayground={() => changeView("playground")} onDocumentation={() => changeView("docs")} /> : spec && view === "playground" ? <ComponentPlayground spec={spec} nav={nav} breadcrumb={breadcrumb} onDocumentation={() => changeView("docs")} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : <>
         <DocsLayout toc={toc} breadcrumb={breadcrumb} nav={nav} views={(spec || hasRemix(nav.active)) ? <PageViews slug={nav.active} active="docs" onPlayground={spec ? () => changeView("playground") : undefined} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : undefined}>
           {children(controls)}

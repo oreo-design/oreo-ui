@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState } from "react";
 import { Avatar, AvatarGroup } from "@/components/avatar";
 import { Button, IconButton } from "@/components/button";
@@ -8,7 +9,7 @@ import { collaborators, songs } from "./data";
 import "./music-workspace.css";
 
 export function MusicWorkspace() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const [active, setActive] = useState("on-my-mind");
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("All projects");

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -16,7 +17,7 @@ import { AgentWorkspaceState } from "@/components/automation";
 import { SECTIONS, RULES, COLOURS, VOICE } from "./data";
 import "./brand-guide.css";
 export function BrandGuide() {
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [query, setQuery] = useState(""),
     [active, setActive] = useState("start"),
     [base, setBase] = useState(16),

@@ -114,19 +114,6 @@ export function ComponentPlayground({
       config: new URLSearchParams(window.location.search).get("config"),
     });
   }, [values, nav.active]);
-  // Portaled component surfaces must receive the same tokens as the preview.
-  useEffect(() => {
-    const root = document.documentElement;
-    const previousDark = root.classList.contains("theme-dark");
-    const tokens = variationTokens(theme);
-    const previous = Object.fromEntries(Object.keys(tokens).map(key => [key, root.style.getPropertyValue(key)]));
-    root.classList.toggle("theme-dark", theme.dark);
-    Object.entries(tokens).forEach(([key, value]) => root.style.setProperty(key, value));
-    return () => {
-      root.classList.toggle("theme-dark", previousDark);
-      Object.entries(previous).forEach(([key, value]) => value ? root.style.setProperty(key, value) : root.style.removeProperty(key));
-    };
-  }, [theme]);
   useEffect(() => {
     if (!copyStatus) return;
     const timer = setTimeout(() => setCopyStatus(""), 2600);

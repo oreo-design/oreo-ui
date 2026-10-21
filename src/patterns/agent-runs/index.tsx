@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState } from "react";
 import { Button } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -15,7 +16,7 @@ import {
 import { AGENTS, agentWeek, selectedWeek } from "./data";
 import "./workspace.css";
 export function AgentRunsPage() {
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [agent, setAgent] = useState("all"),
     [previous, setPrevious] = useState(false),
     [metric, setMetric] = useState<RunMetric>("runs"),

@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 2rem;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 8);
   border-bottom: 1px solid var(--color-border-subtle);
   background: var(--color-bg-base);
 }
@@ -16,7 +16,7 @@
 .mr-page-nav > div {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
 }
 .mr-page-nav > a {
   font-size: 0.8125rem;
@@ -44,7 +44,7 @@
   max-width: 80rem;
   margin: auto;
   min-height: calc(100dvh - 5rem);
-  padding: 5rem 1.5rem 2.5rem;
+  padding: calc(var(--spacing) * 20) calc(var(--spacing) * 6) calc(var(--spacing) * 10);
   background: repeating-linear-gradient(
     32deg,
     transparent 0,
@@ -60,18 +60,18 @@
 .mr-panel {
   width: 100%;
   max-width: 43rem;
-  padding: 0.25rem;
+  padding: var(--spacing);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-subtle);
-  border-radius: 1.5rem;
+  border-radius: calc(var(--radius-control) * 3);
   box-shadow: var(--shadow-overlay);
 }
 .mr-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.25rem;
-  gap: 1rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5);
+  gap: calc(var(--spacing) * 4);
 }
 .mr-header h1 {
   font-size: 1rem;
@@ -81,7 +81,7 @@
 .mr-header > div {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .model-router-page select {
   font-size: 0.75rem;
@@ -91,7 +91,7 @@
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
-  padding: 0.25rem 0.5rem;
+  padding: var(--spacing) calc(var(--spacing) * 2);
   cursor: pointer;
   color-scheme: light;
 }
@@ -107,13 +107,13 @@
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-elevated);
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
 }
 .mr-overview-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .mr-eyebrow {
   font: 0.625rem monospace;
@@ -126,11 +126,11 @@
 .mr-price {
   display: flex;
   align-items: baseline;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 2.5rem;
   letter-spacing: -0.075rem;
   line-height: 1.2;
-  margin: 0.5rem 0;
+  margin: calc(var(--spacing) * 2) 0;
 }
 .mr-price > span {
   font-size: 0.75rem;
@@ -141,10 +141,10 @@
 .mr-statline {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font: 0.625rem monospace;
   color: var(--color-text-secondary);
-  margin: 0.75rem 0 1.25rem;
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 5);
   line-height: 1.6;
 }
 .mr-cost-delta {
@@ -158,36 +158,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
   color: var(--color-text-tertiary);
   font-size: 0.625rem;
 }
 .mr-flow-caption button {
   cursor: pointer;
   color: var(--color-text-secondary);
-  padding: 0.25rem 0.5rem;
+  padding: var(--spacing) calc(var(--spacing) * 2);
   border-radius: var(--radius-control);
   min-height: 1.75rem;
 }
 .mr-routes {
-  margin-top: 0.25rem;
-  padding-top: 1rem;
-  padding-bottom: 0.75rem;
+  margin-top: var(--spacing);
+  padding-top: calc(var(--spacing) * 4);
+  padding-bottom: calc(var(--spacing) * 3);
 }
 .mr-fallback {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   flex-wrap: wrap;
-  padding: 0.75rem 0 0.25rem;
+  padding: calc(var(--spacing) * 3) 0 var(--spacing);
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
 }
 .mr-fallback-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-right: 0.25rem;
+  gap: calc(var(--spacing) * 2);
+  margin-right: var(--spacing);
 }
 .mr-fallback strong {
   font-weight: 500;
@@ -200,8 +200,8 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 1rem;
-  margin: 0.75rem 0;
+  padding: calc(var(--spacing) * 4);
+  margin: calc(var(--spacing) * 3) 0;
   background: var(--color-bg-base);
   border-radius: var(--radius-control);
   font-size: 0.75rem;
@@ -211,20 +211,20 @@
 }
 .mr-detail p {
   color: var(--color-text-secondary);
-  margin-top: 0.375rem;
+  margin-top: calc(var(--spacing) * 1.5);
   line-height: 1.6;
 }
 .mr-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5);
 }
 .mr-footer > span {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font: 0.5625rem monospace;
   color: var(--color-text-tertiary);
   line-height: 1.6;
@@ -235,26 +235,26 @@
 }
 .mr-footer > div {
   display: flex;
-  gap: 0.25rem;
+  gap: var(--spacing);
   flex: none;
 }
 .mr-notice {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   border-top: 1px solid var(--color-border-subtle);
-  padding: 0.75rem 1.25rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 5);
   font-size: 0.75rem;
   line-height: 1.6;
   color: var(--color-text-secondary);
 }
 .mr-settings {
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .mr-settings header {
   display: flex;
@@ -272,19 +272,19 @@
   font-size: 0.6875rem;
   line-height: 1.7;
   color: var(--color-text-secondary);
-  margin: 0.75rem 0;
+  margin: calc(var(--spacing) * 3) 0;
 }
 .mr-test-controls {
   display: flex;
   align-items: flex-end;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 4);
 }
 .mr-test-controls label {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
 }
@@ -294,8 +294,8 @@
 .mr-traffic {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
+  gap: calc(var(--spacing) * 2);
+  margin-top: calc(var(--spacing) * 5);
   font-size: 0.75rem;
 }
 .mr-error,
@@ -303,10 +303,10 @@
   color: var(--color-status-error) !important;
   font-size: 0.75rem;
   line-height: 1.6;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
 }
 .mr-probe {
-  padding: 0.75rem;
+  padding: calc(var(--spacing) * 3);
   background: var(--color-bg-base);
   border-radius: var(--radius-control);
 }
@@ -320,9 +320,9 @@
 }
 .mr-context {
   text-align: center;
-  margin-top: 2.5rem;
+  margin-top: calc(var(--spacing) * 10);
   background: var(--color-bg-elevated);
-  padding: 1rem 1.5rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   border-radius: var(--radius-card-medium);
 }
 .mr-context > span {
@@ -334,7 +334,7 @@
   font-size: 0.75rem;
   line-height: 1.8;
   color: var(--color-text-tertiary);
-  margin: 0.75rem 0;
+  margin: calc(var(--spacing) * 3) 0;
 }
 .mr-context a {
   font-size: 0.625rem;
@@ -356,10 +356,10 @@
 }
 @media (max-width: 700px) {
   .mr-page-nav {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .mr-stage {
-    padding: 2rem 1rem;
+    padding: calc(var(--spacing) * 8) calc(var(--spacing) * 4);
   }
   .mr-overview-top {
     flex-direction: column;
@@ -368,46 +368,46 @@
     align-self: flex-start;
   }
   .mr-statline {
-    margin-bottom: 0.75rem;
+    margin-bottom: calc(var(--spacing) * 3);
   }
   .mr-cost-delta {
     margin-left: 0;
   }
   .mr-footer {
     flex-wrap: wrap;
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .mr-footer > div {
     margin-left: auto;
   }
   .mr-overview,
   .mr-routes {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .mr-header {
-    padding: 1rem 0.75rem;
+    padding: calc(var(--spacing) * 4) calc(var(--spacing) * 3);
   }
   .mr-header > div {
-    gap: 0.125rem;
+    gap: calc(var(--spacing) * 0.5);
   }
   .mr-demo-tag {
     display: none;
   }
   .mr-header {
-    gap: 0.25rem;
+    gap: var(--spacing);
   }
   .mr-header h1 {
     font-size: 0.875rem;
   }
   .mr-context {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .mr-settings {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
 }
 .mr-stage {
-  padding-top: 3rem;
+  padding-top: calc(var(--spacing) * 12);
   background: repeating-linear-gradient(
     32deg,
     transparent 0,

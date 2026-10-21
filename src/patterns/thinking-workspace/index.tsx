@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useReducer, useRef, useState } from "react";
 import {
   ThinkingState,
@@ -15,7 +16,7 @@ import "./thinking-workspace.css";
 
 import { initial, runReducer } from "./run-state";
 export function ThinkingWorkspace() {
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [draft, setDraft] = useState(""),
     [question, setQuestion] = useState("");
   const [run, dispatch] = useReducer(runReducer, initial);

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -45,7 +46,7 @@ export function CrossCurrencyPage() {
     heading = useRef<HTMLHeadingElement>(null),
     trigger = useRef<HTMLElement | null>(null),
     errorRef = useRef<HTMLParagraphElement>(null);
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [hidden, setHidden] = useState(false),
     [wallet, setWallet] = useState<Wallet>(INITIAL_WALLET),
     [undo, setUndo] = useState<Wallet | null>(null),

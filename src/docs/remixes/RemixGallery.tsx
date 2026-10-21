@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { Sidebar } from "@/docs/Sidebar";
 import type { DocsNav } from "@/docs/DocsPage";
 import { briefs } from "./briefs";
@@ -6,7 +6,7 @@ import { remixSlugs } from "./model";
 import "./remixes.css";
 
 export function RemixGallery({ nav }: { nav: DocsNav }) {
-  const [dark, setDark] = useState(() => new URLSearchParams(window.location.search).has("dark"));
+  const [dark, setDark] = useThemeMode(() => new URLSearchParams(window.location.search).has("dark"));
   const theme = dark ? "&dark" : "";
   return <div className={dark ? "theme-dark" : ""}><div className="remix-layout">
     <Sidebar nav={nav} />

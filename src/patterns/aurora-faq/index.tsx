@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { AuroraAccordion } from "@/components/aurora-accordion";
 import { IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
 import "./page.css";
 export function AuroraFaq() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useThemeMode(true);
   return (
     <div className={dark ? "theme-dark" : ""}>
       <main className="aurora-faq">

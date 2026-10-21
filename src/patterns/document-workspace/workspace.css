@@ -6,7 +6,7 @@
 .document-content {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 18rem;
-  gap: 2.5rem;
+  gap: calc(var(--spacing) * 10);
 }
 .document-workspace :is(button, a, input):focus-visible {
   outline: 2px solid var(--color-status-progress);
@@ -27,7 +27,7 @@
   .document-content > aside {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
   }
   .document-content > aside > * {
     margin: 0;
@@ -46,7 +46,7 @@
   }
   .document-sidebar nav {
     display: flex;
-    gap: 0.25rem;
+    gap: var(--spacing);
     overflow-x: auto;
   }
   .document-sidebar nav button {
@@ -59,7 +59,7 @@
     display: none;
   }
   .document-sidebar > div {
-    margin-bottom: 0.5rem;
+    margin-bottom: calc(var(--spacing) * 2);
   }
   .document-content > aside {
     grid-template-columns: minmax(0, 1fr);

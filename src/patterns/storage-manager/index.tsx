@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -28,7 +29,7 @@ type Modal =
   | { kind: "purge"; id: string }
   | null;
 export function StorageManagerPage() {
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [tab, setTab] = useState<Tab>("Storage"),
     [data, setData] = useState(initialStorage),
     [capacity, setCapacity] = useState(20 * GB),

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -28,7 +29,7 @@ import "./workspace.css";
 const fmt = (n: number) =>
   n.toLocaleString("en-US", { maximumFractionDigits: 1 });
 export function AgentObservatoryPage() {
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [period, setPeriod] = useState<Period>("Last 30 days"),
     [region, setRegion] = useState("all"),
     [query, setQuery] = useState(""),

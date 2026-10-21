@@ -8,8 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding: 16px 32px;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 8);
   border-bottom: 1px solid var(--color-border-subtle);
   background: var(--color-bg-base);
 }
@@ -17,7 +17,7 @@
 .qz-top > div {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--spacing) * 3);
 }
 .qz-top a > span {
   color: var(--color-text-secondary);
@@ -25,26 +25,26 @@
 .qz-main {
   max-width: 1280px;
   margin: auto;
-  padding: 48px 32px 64px;
+  padding: calc(var(--spacing) * 12) calc(var(--spacing) * 8) calc(var(--spacing) * 16);
 }
 .qz-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 32px;
+  gap: calc(var(--spacing) * 6);
+  margin-bottom: calc(var(--spacing) * 8);
 }
 .qz-heading p {
   font-size: 10px;
   letter-spacing: 0.12em;
   color: var(--color-text-tertiary);
-  margin-bottom: 12px;
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .qz-heading h1 {
   font-size: 32px;
   font-weight: 500;
   letter-spacing: -0.04em;
-  margin-bottom: 12px;
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .qz-heading span,
 .qz-section-heading p {
@@ -53,14 +53,14 @@
 }
 .qz-tabs {
   display: flex;
-  gap: 24px;
+  gap: calc(var(--spacing) * 6);
   border-bottom: 1px solid var(--color-border-default);
 }
 .qz-tabs button {
   display: flex;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
-  padding: 12px 0;
+  padding: calc(var(--spacing) * 3) 0;
   color: var(--color-text-secondary);
   border-bottom: 2px solid transparent;
   cursor: pointer;
@@ -73,11 +73,11 @@
   font-size: 10px;
   background: var(--color-palette-default-bg);
   border-radius: var(--radius-control-tiny);
-  padding: 2px 5px;
+  padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 1.25);
 }
 .qz-notice {
   min-height: 40px;
-  padding: 10px 0;
+  padding: calc(var(--spacing) * 2.5) 0;
   font-size: 12px;
   color: var(--color-text-secondary);
 }
@@ -91,14 +91,14 @@
 .qz-inbox {
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr);
-  gap: 24px;
+  gap: calc(var(--spacing) * 6);
 }
 .qz-queue > header,
 .qz-case > header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 6);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .qz-queue h2,
@@ -116,15 +116,15 @@
 .qz-case > header p {
   color: var(--color-text-secondary);
   font-size: 12px;
-  margin-top: 6px;
+  margin-top: calc(var(--spacing) * 1.5);
 }
 .qz-conversation {
-  padding: 24px;
+  padding: calc(var(--spacing) * 6);
 }
 .qz-bubble {
   max-width: 80%;
   margin-left: auto;
-  padding: 16px;
+  padding: calc(var(--spacing) * 4);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-card-small);
   line-height: 24px;
@@ -133,8 +133,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
-  margin-top: 12px;
+  gap: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 3);
 }
 .qz-attachment > span {
   font-size: 10px;
@@ -142,27 +142,27 @@
 }
 .qz-tools {
   display: grid;
-  gap: 12px;
-  margin-top: 32px;
+  gap: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 8);
 }
 .qz-draft {
-  padding: 24px;
+  padding: calc(var(--spacing) * 6);
   border-top: 1px solid var(--color-border-subtle);
 }
 .qz-draft > p {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
   color: var(--color-text-secondary);
   font-size: 12px;
-  margin-bottom: 16px;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .qz-section-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 6);
 }
 .qz-section-heading h2 {
   font-size: 24px;
@@ -171,14 +171,14 @@
 }
 .qz-section-heading p {
   font-size: 12px;
-  margin-top: 6px;
+  margin-top: calc(var(--spacing) * 1.5);
 }
 .qz-budget {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  margin: 0 0 24px;
-  padding: 24px;
+  gap: calc(var(--spacing) * 12);
+  margin: 0 0 calc(var(--spacing) * 6);
+  padding: calc(var(--spacing) * 6);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-base);
@@ -186,9 +186,9 @@
 .qz-budget > div:last-child {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
   border-left: 1px solid var(--color-border-subtle);
-  padding-left: 32px;
+  padding-left: calc(var(--spacing) * 8);
 }
 .qz-budget strong {
   font-size: 28px;
@@ -202,11 +202,11 @@
   font-size: 12px;
 }
 .qz-keys-heading {
-  padding: 20px 24px;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 6);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .qz-keys-heading h3 {
@@ -217,7 +217,7 @@
   font-size: 14px;
   font-weight: 400;
   color: var(--color-text-secondary);
-  margin-left: 8px;
+  margin-left: calc(var(--spacing) * 2);
 }
 .qz-keys-heading input,
 .qz-dialog form input,
@@ -225,7 +225,7 @@
   border: 1px solid var(--color-border-default);
   background: var(--color-bg-base);
   border-radius: var(--radius-control);
-  padding: 10px 12px;
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   font-size: 14px;
   min-width: 0;
   width: 100%;
@@ -234,7 +234,7 @@
 .qz-footnote {
   font-size: 12px;
   color: var(--color-text-secondary);
-  margin-top: 16px;
+  margin-top: calc(var(--spacing) * 4);
   line-height: 20px;
 }
 .qz-backdrop {
@@ -257,7 +257,7 @@
   color: var(--color-text-primary);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-card-medium);
-  padding: 24px;
+  padding: calc(var(--spacing) * 6);
   z-index: 81;
   box-shadow: 0 20px 60px var(--color-border-default);
 }
@@ -269,27 +269,27 @@
   font-size: 14px;
   color: var(--color-text-secondary);
   line-height: 24px;
-  margin-top: 8px;
-  margin-bottom: 24px;
+  margin-top: calc(var(--spacing) * 2);
+  margin-bottom: calc(var(--spacing) * 6);
 }
 .qz-dialog form {
   display: grid;
-  gap: 20px;
+  gap: calc(var(--spacing) * 5);
 }
 .qz-dialog form label {
   display: grid;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
   font-size: 14px;
 }
 .qz-dialog footer {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
 }
 .qz-key-created > p {
   font-size: 12px;
   color: var(--color-text-secondary);
-  margin: 16px 0;
+  margin: calc(var(--spacing) * 4) 0;
 }
 .qz-key-created > button {
   display: block;
@@ -301,11 +301,11 @@
 }
 @media (max-width: 900px) {
   .qz-main {
-    padding: 32px 24px;
+    padding: calc(var(--spacing) * 8) calc(var(--spacing) * 6);
   }
   .qz-inbox {
     grid-template-columns: 260px minmax(0, 1fr);
-    gap: 16px;
+    gap: calc(var(--spacing) * 4);
   }
   .qz-bubble {
     max-width: 100%;
@@ -318,23 +318,23 @@
   .qz-case > header,
   .qz-draft,
   .qz-conversation {
-    padding: 16px;
+    padding: calc(var(--spacing) * 4);
   }
 }
 @media (max-width: 680px) {
   .qz-top {
-    padding: 12px 16px;
+    padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
   }
   .qz-top a > span {
     display: none;
   }
   .qz-main {
-    padding: 28px 16px;
+    padding: calc(var(--spacing) * 7) calc(var(--spacing) * 4);
   }
   .qz-heading {
     align-items: flex-start;
     flex-direction: column;
-    gap: 16px;
+    gap: calc(var(--spacing) * 4);
   }
   .qz-heading h1 {
     font-size: 28px;
@@ -354,7 +354,7 @@
   }
   .qz-budget {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: calc(var(--spacing) * 6);
   }
   .qz-budget > div:last-child {
     padding: 0;

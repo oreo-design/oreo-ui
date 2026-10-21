@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState } from "react";
 import { Sidebar } from "@/docs/Sidebar";
 import type { DocsNav } from "@/docs/DocsPage";
@@ -27,7 +28,7 @@ export function SpacingPage({ nav }: { nav: DocsNav }) {
   const [compare, setCompare] = useState(false);
   const [highlights, setHighlights] = useState(false);
   const [focus, setFocus] = useState<SpacingKey | "all">("all");
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const [longText, setLongText] = useState(false);
   const [notice, setNotice] = useState("");
   const [showCSS, setShowCSS] = useState(false);

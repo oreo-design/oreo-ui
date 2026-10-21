@@ -11,7 +11,7 @@
 .ao-sidebar {
   width: 216px;
   flex: none;
-  padding: 28px 16px 20px;
+  padding: calc(var(--spacing) * 7) calc(var(--spacing) * 4) calc(var(--spacing) * 5);
   border-right: 1px solid var(--color-border-subtle);
   background: var(--color-bg-base);
   display: flex;
@@ -23,10 +23,10 @@
 .ao-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: calc(var(--spacing) * 2.5);
   font-size: 17px;
   font-weight: 600;
-  padding: 0 8px;
+  padding: 0 calc(var(--spacing) * 2);
   letter-spacing: -0.03em;
 }
 .ao-brand > span {
@@ -45,18 +45,18 @@
 .ao-workspace-label {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: calc(var(--spacing) * 2.5);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 12px 8px;
-  margin-top: 32px;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 2);
+  margin-top: calc(var(--spacing) * 8);
   font-size: 11px;
 }
 .ao-workspace-label small {
   display: block;
   color: var(--color-text-tertiary);
   font-size: 10px;
-  margin-top: 4px;
+  margin-top: var(--spacing);
 }
 .ao-workspace-avatar {
   display: grid;
@@ -80,19 +80,19 @@
     monospace;
   letter-spacing: 0.08em;
   color: var(--color-text-tertiary);
-  margin: 28px 8px 12px;
+  margin: calc(var(--spacing) * 7) calc(var(--spacing) * 2) calc(var(--spacing) * 3);
 }
 .ao-sidebar nav {
   display: grid;
-  gap: 4px;
+  gap: var(--spacing);
 }
 .ao-sidebar nav > a,
 .ao-sidebar nav > button {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: calc(var(--spacing) * 2.5);
   text-align: left;
-  padding: 10px 12px;
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   font-size: 12px;
   color: var(--color-text-secondary);
   border: 0;
@@ -114,20 +114,20 @@
 }
 .ao-budget {
   margin-top: auto;
-  padding: 20px 8px 16px;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 2) calc(var(--spacing) * 4);
   font-size: 11px;
 }
 .ao-budget > div {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .ao-budget .ao-pixel-meter,
 .ao-budget svg {
   width: 100%;
 }
 .ao-budget p {
-  margin: 8px 0;
+  margin: calc(var(--spacing) * 2) 0;
   color: var(--color-text-secondary);
   font-family: monospace;
 }
@@ -137,7 +137,7 @@
 }
 .ao-library-link {
   border-top: 1px solid var(--color-border-subtle);
-  padding: 20px 8px 0;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 2) 0;
   display: flex;
   justify-content: space-between;
   font-size: 12px;
@@ -152,14 +152,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 32px;
+  padding: 0 calc(var(--spacing) * 8);
   border-bottom: 1px solid var(--color-border-subtle);
   background: var(--color-bg-base);
   font-size: 12px;
 }
 .ao-topbar > span {
   display: flex;
-  gap: 16px;
+  gap: calc(var(--spacing) * 4);
 }
 .ao-sample-label {
   font:
@@ -170,14 +170,14 @@
 .ao-main {
   max-width: 1500px;
   margin: auto;
-  padding: 40px 32px 24px;
+  padding: calc(var(--spacing) * 10) calc(var(--spacing) * 8) calc(var(--spacing) * 6);
 }
 .ao-intro {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-  margin-bottom: 24px;
+  gap: calc(var(--spacing) * 6);
+  margin-bottom: calc(var(--spacing) * 6);
 }
 .ao-eyebrow {
   font:
@@ -185,7 +185,7 @@
     monospace;
   letter-spacing: 0.12em;
   color: var(--color-status-success);
-  margin: 0 0 12px;
+  margin: 0 0 calc(var(--spacing) * 3);
 }
 .ao-intro h1 {
   font-size: 28px;
@@ -197,7 +197,7 @@
 .ao-intro h1 + p {
   font-size: 12px;
   color: var(--color-text-secondary);
-  margin: 12px 0 0;
+  margin: calc(var(--spacing) * 3) 0 0;
   line-height: 1.6;
 }
 .ao-workspace select {
@@ -205,7 +205,7 @@
   color: var(--color-text-primary);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 8px 12px;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   min-height: 36px;
   font-size: 12px;
   max-width: 100%;
@@ -214,8 +214,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: calc(var(--spacing) * 3);
+  margin-bottom: calc(var(--spacing) * 4);
   color: var(--color-text-secondary);
   font:
     11px ui-monospace,
@@ -224,16 +224,16 @@
 .ao-context label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
 }
 .ao-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: calc(var(--spacing) * 3);
+  margin-bottom: calc(var(--spacing) * 5);
 }
 .ao-metrics .workspace-metric {
-  padding: 20px;
+  padding: calc(var(--spacing) * 5);
   background: var(--color-bg-base);
 }
 .ao-metrics .workspace-metric strong {
@@ -248,12 +248,12 @@
 .ao-chart-grid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: calc(var(--spacing) * 5);
+  margin-bottom: calc(var(--spacing) * 5);
   align-items: start;
 }
 .ao-panel {
-  padding: 20px;
+  padding: calc(var(--spacing) * 5);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
@@ -263,8 +263,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 5);
 }
 .ao-panel-heading h2 {
   font-size: 14px;
@@ -273,7 +273,7 @@
 }
 .ao-panel-heading h2 span {
   display: inline-block;
-  margin-left: 6px;
+  margin-left: calc(var(--spacing) * 1.5);
   font: 11px monospace;
   color: var(--color-text-tertiary);
 }
@@ -281,7 +281,7 @@
   font-size: 11px;
   line-height: 1.6;
   color: var(--color-text-tertiary);
-  margin: 6px 0 0;
+  margin: calc(var(--spacing) * 1.5) 0 0;
 }
 .ao-panel-heading > svg {
   color: var(--color-text-tertiary);
@@ -290,16 +290,16 @@
 .ao-table-toolbar {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: calc(var(--spacing) * 3);
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .ao-search {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 0 12px;
+  padding: 0 calc(var(--spacing) * 3);
   min-height: 36px;
   width: 280px;
   max-width: 100%;
@@ -326,7 +326,7 @@
 }
 .ao-notice {
   min-height: 20px;
-  margin: 16px 0 24px;
+  margin: calc(var(--spacing) * 4) 0 calc(var(--spacing) * 6);
   font-size: 11px;
   color: var(--color-text-secondary);
   line-height: 1.6;
@@ -334,7 +334,7 @@
 .ao-footer {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: calc(var(--spacing) * 5);
   justify-content: space-between;
   font:
     10px ui-monospace,
@@ -366,7 +366,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   border-bottom: 1px solid var(--color-border-subtle);
   background: var(--color-bg-base);
   position: sticky;
@@ -377,19 +377,19 @@
   font-size: 12px;
   color: var(--color-text-secondary);
   line-height: 1.6;
-  margin: 20px 24px 0;
+  margin: calc(var(--spacing) * 5) calc(var(--spacing) * 6) 0;
 }
 .ao-details {
-  padding: 8px 24px 20px;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 6) calc(var(--spacing) * 5);
   margin: 0;
   font-size: 12px;
 }
 .ao-details > div {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: calc(var(--spacing) * 5);
   border-bottom: 1px solid var(--color-border-subtle);
-  padding: 12px 0;
+  padding: calc(var(--spacing) * 3) 0;
 }
 .ao-details dt {
   color: var(--color-text-secondary);
@@ -401,8 +401,8 @@
 .ao-dialog-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
-  padding: 16px 24px;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   background: var(--color-bg-base);
   border-top: 1px solid var(--color-border-subtle);
   position: sticky;
@@ -411,14 +411,14 @@
 @media (max-width: 1100px) {
   .ao-sidebar {
     width: 184px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: calc(var(--spacing) * 3);
+    padding-right: calc(var(--spacing) * 3);
   }
   .ao-main {
-    padding: 28px 20px;
+    padding: calc(var(--spacing) * 7) calc(var(--spacing) * 5);
   }
   .ao-topbar {
-    padding: 0 20px;
+    padding: 0 calc(var(--spacing) * 5);
   }
   .ao-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -441,7 +441,7 @@
     width: 100%;
     height: auto;
     position: static;
-    padding: 16px;
+    padding: calc(var(--spacing) * 4);
     border-right: 0;
     border-bottom: 1px solid var(--color-border-subtle);
   }
@@ -453,16 +453,16 @@
     display: none;
   }
   .ao-main {
-    padding: 24px 16px;
+    padding: calc(var(--spacing) * 6) calc(var(--spacing) * 4);
   }
   .ao-topbar {
     height: 52px;
-    padding: 0 16px;
+    padding: 0 calc(var(--spacing) * 4);
   }
   .ao-intro {
     align-items: flex-start;
     flex-direction: column;
-    gap: 16px;
+    gap: calc(var(--spacing) * 4);
   }
   .ao-intro h1 {
     font-size: 24px;
@@ -472,25 +472,25 @@
     flex-direction: column;
   }
   .ao-metrics {
-    gap: 8px;
+    gap: calc(var(--spacing) * 2);
   }
   .ao-metrics .workspace-metric {
-    padding: 14px;
+    padding: calc(var(--spacing) * 3.5);
   }
   .ao-metrics .workspace-metric strong {
     font-size: 21px;
   }
   .ao-panel {
-    padding: 16px;
+    padding: calc(var(--spacing) * 4);
   }
   .ao-health-panel .ao-panel-heading {
     flex-direction: column;
   }
   .ao-footer {
-    gap: 16px;
+    gap: calc(var(--spacing) * 4);
   }
   .ao-region-list button {
-    padding: 8px;
+    padding: calc(var(--spacing) * 2);
     font-size: 10px;
   }
   .ao-search {
@@ -501,12 +501,12 @@
   .ao-sidebar nav[aria-label="Workspace"] {
     display: flex;
     overflow: auto;
-    margin-top: 16px;
-    gap: 8px;
+    margin-top: calc(var(--spacing) * 4);
+    gap: calc(var(--spacing) * 2);
   }
   .ao-sidebar nav[aria-label="Workspace"] > * {
     white-space: nowrap;
     flex: none;
-    padding: 10px 8px;
+    padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 2);
   }
 }

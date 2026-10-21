@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -30,7 +31,7 @@ export function WritingFoldersPage() {
     [visibility, setVisibility] = useState("All visibility"),
     [sort, setSort] = useState("recent"),
     [view, setView] = useState<"list" | "grid">("list"),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [state, setState] = useState("ready"),
     [editor, setEditor] = useState<Editor | null>(null),
     [error, setError] = useState(""),

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -47,7 +48,7 @@ const sectionIcons: Record<Section, IconName> = {
   Notes: "pencil",
 };
 export function ClientWorkspacePage() {
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [section, setSection] = useState<Section>("Financial");
   const [invoices, setInvoices] = useState<Invoice[]>(CLIENT_INVOICES),
     [query, setQuery] = useState(""),

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Tabs } from "@base-ui-components/react/tabs";
@@ -36,7 +37,7 @@ export function GroupedTasksPage() {
   const [tasks, setTasks] = useState(SAMPLE_TASKS),
     [filters, setFilters] = useState(initialFilters),
     [tab, setTab] = useState("list"),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [collapsed, setCollapsed] = useState<TaskStatus[]>([]),
     [showEmpty, setShowEmpty] = useState(false);
   const [draft, setDraft] = useState<GroupedTask | null>(null),

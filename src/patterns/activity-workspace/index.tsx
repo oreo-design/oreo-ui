@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState, type ReactNode } from "react";
 import { Tabs } from "@base-ui-components/react/tabs";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -12,7 +13,7 @@ type View = "overview" | "logs" | "audit";
 type Detail = "budget" | "personal" | "leaderboard" | RequestEntry | null;
 const tabClass = "relative cursor-pointer border-b-2 border-transparent px-1 py-5 text-sm text-text-secondary data-[active]:border-text-primary data-[active]:text-text-primary";
 export function ActivityWorkspace() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useThemeMode(true);
   const [period, setPeriod] = useState<ActivityPeriod>("september");
   const [view, setView] = useState<View>("overview");
   const [filter, setFilter] = useState("all");

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -82,7 +83,7 @@ export function SubscriptionWorkspacePage() {
     [tab, setTab] = useState<"customers" | "members" | "revenue">("customers"),
     [selectedSegment, setSelectedSegment] = useState("all"),
     [query, setQuery] = useState(""),
-    [dark, setDark] = useState(true),
+    [dark, setDark] = useThemeMode(true),
     [mode, setMode] = useState<Mode | null>(null),
     [segmentDraft, setSegmentDraft] = useState<Segment>(INITIAL_SEGMENT),
     [targetDraft, setTargetDraft] = useState(target),

@@ -69,7 +69,7 @@
   flex-shrink: 0;
 }
 .pg-header nav a {
-  padding: 6px calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 3);
   color: var(--color-text-secondary);
   border-radius: var(--radius-capsule);
   text-decoration: none;
@@ -102,7 +102,7 @@
 .pg-actions {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: calc(var(--spacing) * 0.5);
   flex-shrink: 0;
 }
 .pg-actions {
@@ -145,7 +145,7 @@
   background: var(--color-border-default);
 }
 .pg-tooltip {
-  padding: 6px calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
   border-radius: var(--radius-control-tiny);
   background: var(--color-bg-inverse);
   color: var(--color-text-on-inverse);
@@ -252,7 +252,7 @@
 }
 .pg-install > div {
   height: 34px;
-  padding-left: 10px;
+  padding-left: calc(var(--spacing) * 2.5);
   display: flex;
   align-items: center;
   gap: calc(var(--spacing) * 1);
@@ -306,11 +306,11 @@
 .pg-field input:not([type="radio"], [type="range"]),
 .pg-field select {
   height: calc(var(--spacing) * 8);
-  padding: 0 10px;
+  padding: 0 calc(var(--spacing) * 2.5);
   border-radius: var(--radius-control-large);
   font-family: inherit;
 }
-.pg-field :is(input, textarea, select) {
+.pg-field :is(input:not([type="range"]), textarea, select) {
   background: var(--color-bg-elevated);
   border-color: var(--color-border-default);
 }
@@ -327,7 +327,7 @@
 }
 .pg-segment label span {
   height: calc(var(--spacing) * 6);
-  padding: calc(var(--spacing) * 1) 6px;
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1.5);
   font-size: var(--text-xs);
   line-height: calc(var(--spacing) * 4);
   border-radius: var(--space-x3);
@@ -427,7 +427,7 @@
   position: absolute;
   pointer-events: none;
   border: 1px solid var(--color-palette-purple-text);
-  border-radius: 6px;
+  border-radius: calc(var(--radius-control) * 0.75);
 }
 .pg-selection[data-mode="annotation"] {
   border-color: var(--color-palette-orange-text);
@@ -467,7 +467,7 @@
   inset-inline: calc(var(--spacing) * 3);
   display: flex;
   justify-content: space-between;
-  gap: 60px;
+  gap: calc(var(--spacing) * 15);
   overflow: hidden;
   font:
     9px "Geist Mono Variable",
@@ -563,7 +563,7 @@
 .pg-modal input:not([type="range"], [type="radio"]),
 .pg-modal textarea {
   width: 100%;
-  padding: 10px calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   border: 0.5px solid var(--color-border-default);
   border-radius: var(--radius-control);
   background: var(--color-bg-elevated);
@@ -613,7 +613,7 @@
 .pg-picker-results a {
   display: flex;
   justify-content: space-between;
-  padding: 10px calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   border-radius: var(--radius-control);
 }
 .pg-picker-results a:hover,
@@ -703,7 +703,7 @@
     gap: 0;
   }
   .pg-header nav a {
-    padding: 6px calc(var(--spacing) * 2);
+    padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
   }
   .pg-toolbar {
     padding-inline: calc(var(--spacing) * 3);
@@ -804,13 +804,7 @@ body:has(.pg-shell) .site-mobile-nav {
 
 /* 94:169: two quiet inspectors around a centered canvas. Layout-specific 57/328
    dimensions are retained; controls use Oreo spacing/radius/typography tokens. */
-.pg-shell, .pg-modal {
-  --spacing: 4px;
-  --space-x1: 2px; --space-x2: 4px; --space-x3: 6px;
-  --space-x4: 8px; --space-x6: 12px; --space-x8: 16px;
-  --radius-control-tiny: 4px; --radius-control: 8px;
-  --radius-control-large: 10px; --radius-card-small: 12px; --radius-card-medium: 16px;
-}
+
 .pg-header { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
 .pg-header nav { justify-self: end; }
 .pg-header .pg-toolbar { padding: 0; min-height: 0; overflow: visible; }
@@ -873,7 +867,3 @@ body:has(.pg-shell) .site-mobile-nav {
 .pg-inspector-content > hr { margin-block: var(--space-x4); }
 .pg-switch-group { display: flex; flex-direction: column; gap: var(--space-x4); }
 .pg-switch-group .pg-boolean { padding-inline: var(--space-x2); }
-.pg-shell, .pg-modal {
-  --radius-xs: 2px; --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px;
-  --radius-xl: 12px; --radius-2xl: 16px; --radius-3xl: 24px; --radius-4xl: 32px; --radius-card-large: 24px;
-}

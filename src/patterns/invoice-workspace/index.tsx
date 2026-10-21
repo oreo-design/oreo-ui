@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import {
@@ -51,7 +52,7 @@ const scopes: {
 export function InvoiceWorkspace() {
   const [invoices, setInvoices] = useState(INITIAL_INVOICES),
     [view, setView] = useState<View>("list"),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [expanded, setExpanded] = useState(false);
   const [query, setQuery] = useState(""),
     [filters, setFilters] = useState<InvoiceStatus[]>([]),

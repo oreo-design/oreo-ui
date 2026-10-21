@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -32,7 +33,7 @@ export function CompanyDirectoryPage() {
     heading = useRef<HTMLHeadingElement>(null),
     returnTo = useRef<HTMLElement | null>(null);
   const [rows, setRows] = useState(COMPANIES),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [nav, setNav] = useState(false),
     [view, setView] = useState<CompanyView>("all"),
     [query, setQuery] = useState(""),

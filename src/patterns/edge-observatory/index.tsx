@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useState, useRef } from "react";
 import { Tabs } from "@base-ui-components/react/tabs";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -59,7 +60,7 @@ export function EdgeObservatory() {
     media.addEventListener("change", sync);
     return () => media.removeEventListener("change", sync);
   }, []);
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [view, setView] = useState<View>("overview");
   const [period, setPeriod] = useState<MonitorPeriod>("24h"),
     [regionId, setRegionId] = useState("all");

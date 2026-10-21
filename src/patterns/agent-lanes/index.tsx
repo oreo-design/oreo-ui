@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import {
   useEffect,
   useLayoutEffect,
@@ -29,7 +30,7 @@ export function AgentLanesPage() {
     tasks: LANE_TASKS,
     approvedAt: null,
   });
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [minutes, setMinutes] = useState(30),
     [query, setQuery] = useState(""),
     [selected, setSelected] = useState<string>(),

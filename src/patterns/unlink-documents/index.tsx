@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useReducer, useRef, useState, useEffect } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -18,7 +19,7 @@ export function UnlinkDocumentsPage() {
     removed: [],
     notice: "",
   });
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [tab, setTab] = useState("Condition"),
     [scenario, setScenario] = useState("ready"),
     [reviewed, setReviewed] = useState<Record<string, boolean>>({});

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -53,7 +54,7 @@ type Position = {
   opponent?: string;
 };
 export function PositionStudio() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const [asset, setAsset] = useState("eth");
   const [opponent, setOpponent] = useState("btc");
   const [type, setType] = useState("Up / Down");

@@ -274,7 +274,7 @@
 }
 .pc-summary > p svg {
   flex-shrink: 0;
-  margin-top: 3px;
+  margin-top: calc(var(--spacing) * 0.75);
 }
 .pc-summary-art {
   display: flex;

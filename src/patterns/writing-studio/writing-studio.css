@@ -1,12 +1,12 @@
 .writing-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 18rem;
-  gap: 2.5rem;
+  gap: calc(var(--spacing) * 10);
   align-items: start;
 }
 .writing-paper {
   min-width: 0;
-  padding: 2rem;
+  padding: calc(var(--spacing) * 8);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-base);
@@ -20,7 +20,7 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: 0.75rem;
+  padding: calc(var(--spacing) * 3);
   border: 1px solid transparent;
   border-radius: var(--radius-control);
   text-align: inherit;
@@ -38,7 +38,7 @@
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   line-height: 1.65;
-  padding: 0 0.25rem;
+  padding: 0 var(--spacing);
   border-radius: var(--radius-control-tiny);
 }
 .selection-handle {
@@ -58,14 +58,14 @@
 }
 .writing-inspector {
   min-width: 0;
-  padding-top: 0.5rem;
+  padding-top: calc(var(--spacing) * 2);
 }
 .writing-textarea,
 .writing-input {
   display: block;
   width: 100%;
   min-width: 0;
-  padding: 0.75rem;
+  padding: calc(var(--spacing) * 3);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
   background: var(--color-bg-base);
@@ -81,7 +81,7 @@
   width: min(28rem, calc(100vw - 2rem));
   max-height: calc(100dvh - 2rem);
   margin: auto;
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
   overflow: auto;
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-card-medium);
@@ -106,21 +106,21 @@
     margin: 0 auto;
   }
   .writing-paper {
-    padding: 1.5rem;
+    padding: calc(var(--spacing) * 6);
   }
 }
 @media (max-width: 480px) {
   .writing-paper {
-    padding: 1rem 0.5rem;
+    padding: calc(var(--spacing) * 4) calc(var(--spacing) * 2);
   }
   .writing-paper > div:first-child {
-    padding: 0 0.5rem;
+    padding: 0 calc(var(--spacing) * 2);
   }
   .writing-block {
-    padding: 0.5rem;
+    padding: calc(var(--spacing) * 2);
   }
   .writing-studio main {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    padding-left: calc(var(--spacing) * 3);
+    padding-right: calc(var(--spacing) * 3);
   }
 }

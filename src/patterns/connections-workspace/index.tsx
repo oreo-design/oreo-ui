@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useLayoutEffect, useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -37,7 +38,7 @@ export function EditableConnections({ direction, initialIds = [], dark = false }
 }
 
 export function ConnectionsWorkspace() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const [version, setVersion] = useState(0);
   return <div className={dark ? "theme-dark" : ""}>
     <div className="min-h-screen bg-bg-elevated text-text-primary">

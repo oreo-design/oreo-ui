@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState } from "react";
 import { Button } from "@/components/button";
 import { AgentWorkspaceState } from "@/components/automation";
@@ -25,7 +26,7 @@ export const DEMO_BUDGET: BudgetInputs = {
   daysToReset: 16,
 };
 export function AgentBudgetPage() {
-  const [dark, setDark] = useState(false),
+  const [dark, setDark] = useThemeMode(false),
     [saved, setSaved] = useState(120000),
     [draft, setDraft] = useState(120000),
     [spent, setSpent] = useState(64000),

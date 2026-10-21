@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -18,7 +19,7 @@ const groups: WorkspaceNavGroup[] = [
 type RunState = "ready" | "empty" | "running" | "error";
 
 export function AutomationStudio() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useThemeMode(false);
   const [view, setView] = useState<AutomationView>("canvas");
   const [runState, setRunState] = useState<RunState>("ready");
   const [prompt, setPrompt] = useState("");

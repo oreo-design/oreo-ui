@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -31,7 +32,7 @@ const blank: Deal = {
   nextStep: "Reach out",
 };
 export function SalesWorkspacePage() {
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [deals, setDeals] = useState(SALES_DEALS),
     [view, setView] = useState<string>("Overview"),
     [query, setQuery] = useState(""),

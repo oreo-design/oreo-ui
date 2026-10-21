@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -23,7 +24,7 @@ import "./workspace.css";
 export function TeamPerformancePage() {
   const [data, setData] = useState(makePerformanceData),
     [period, setPeriod] = useState<string>(PERIODS[0]),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [query, setQuery] = useState(""),
     [department, setDepartment] = useState("All departments"),
     [review, setReview] = useState("All reviews"),

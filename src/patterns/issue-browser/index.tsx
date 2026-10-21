@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -22,7 +23,7 @@ export function IssueBrowserPage() {
     [status, setStatus] = useState<Issue["state"]>("open"),
     [label, setLabel] = useState(""),
     [sort, setSort] = useState<IssueSort>("updated"),
-    [dark, setDark] = useState(true),
+    [dark, setDark] = useThemeMode(true),
     [drafts, setDrafts] = useState<Record<number, string>>({}),
     [notice, setNotice] = useState(
       "Local sample workspace · changes reset on reload",

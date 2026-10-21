@@ -117,8 +117,9 @@
   --shadow-overlay: 0 0 1px rgba(0, 0, 0, 0.24), 0 4px 48px rgba(0, 0, 0, 0.06);
 }
 
-/* Dark skin — only token values change, components stay untouched. */
-.theme-dark {
+/* Under the site provider, nested legacy dark wrappers are state selectors,
+   not palette boundaries. Standalone copied components still support dark scopes. */
+.theme-dark:not(:where([data-site-theme] *)) {
   --color-bg-base: #111111;
   --color-bg-elevated: #191919;
   --color-bg-surface: #222222;
@@ -273,6 +274,7 @@ body {
   background: var(--color-bg-elevated);
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
+  accent-color: var(--color-accent);
 }
 
 /* dotted preview surface */

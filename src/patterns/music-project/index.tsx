@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Tabs } from "@base-ui-components/react/tabs";
 import { Avatar } from "@/components/avatar";
@@ -20,7 +21,7 @@ import {
 import { MIX_COMMENTS, MIX_SAMPLES, MIX_TASKS, MIX_VERSIONS } from "./data";
 import "./music-project.css";
 export function MusicProjectPage() {
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [favorite, setFavorite] = useState(true),
     [versions, setVersions] = useState(MIX_VERSIONS),
     [selected, setSelected] = useState("v4"),

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -34,7 +35,7 @@ export function ColorCalendarPage() {
     ),
     [weekends, setWeekends] = useState(false),
     [query, setQuery] = useState(""),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [notice, setNotice] = useState(""),
     [mode, setMode] = useState<"event" | "source" | "delete" | null>(null),
     [draft, setDraft] = useState<CalendarEvent | null>(null),

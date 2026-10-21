@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useReducer, useRef, useState } from "react";
 import {
   AgentTaskQueue,
@@ -23,7 +24,7 @@ export function AgentQueueWorkspace() {
       notice: "Start the sample session, or add another task.",
       removed: [],
     }),
-    [dark, setDark] = useState(false),
+    [dark, setDark] = useThemeMode(false),
     [expanded, setExpanded] = useState<string | null>(null),
     [stackOpen, setStackOpen] = useState(false),
     [draft, setDraft] = useState(""),

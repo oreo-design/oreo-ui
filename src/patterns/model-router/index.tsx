@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -31,7 +32,7 @@ const fresh = (): Entry => ({
 const same = (a: RouterConfig, b: RouterConfig) =>
   JSON.stringify(a) === JSON.stringify(b);
 export function ModelRouter() {
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [playing, setPlaying] = useState(true),
     [selected, setSelected] = useState<string>(),
     [environment, setEnvironment] = useState<Environment>("chat-prod"),

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -33,7 +34,7 @@ const SECTIONS = [
 type Section = (typeof SECTIONS)[number]["name"];
 export function AccessWorkspacePage() {
   const [section, setSection] = useState<Section>("Dashboard"),
-    [dark, setDark] = useState(false);
+    [dark, setDark] = useThemeMode(false);
   const [tools, setTools] = useState(ACCESS_TOOLS),
     [members, setMembers] = useState(ACCESS_MEMBERS),
     [sessions, setSessions] = useState(ACCESS_SESSIONS);

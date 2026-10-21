@@ -19,8 +19,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  padding: 1.5rem 0.5rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 6) calc(var(--spacing) * 2);
   border-right: 1px solid var(--pbw-line);
 }
 .pbw-rail > a:first-child {
@@ -28,7 +28,7 @@
   place-items: center;
   width: 2rem;
   height: 2rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-control);
   background: var(--color-text-primary);
   color: var(--color-bg-base);
 }
@@ -36,7 +36,7 @@
   width: 1.5rem;
   height: 1px;
   background: var(--pbw-line);
-  margin: 0.5rem 0;
+  margin: calc(var(--spacing) * 2) 0;
 }
 .pbw-rail-bottom {
   margin-top: auto;
@@ -48,17 +48,17 @@
   min-width: 0;
   background: var(--color-bg-elevated);
   border-right: 1px solid var(--pbw-line);
-  padding: 1.25rem 0.75rem;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 3);
 }
 .pbw-workspace {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   background: var(--color-bg-base);
   border: 1px solid var(--pbw-line);
-  border-radius: 0.5rem;
-  padding: 0.625rem;
-  margin-bottom: 0.75rem;
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2.5);
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .pbw-workspace-mark {
   display: grid;
@@ -67,7 +67,7 @@
   height: 1.75rem;
   background: var(--color-palette-blue-bg);
   color: var(--color-palette-blue-text);
-  border-radius: 0.375rem;
+  border-radius: calc(var(--radius-control) * 0.75);
   flex-shrink: 0;
 }
 .pbw-workspace > div {
@@ -84,16 +84,16 @@
   display: block;
   font-size: 0.625rem;
   color: var(--color-text-secondary);
-  margin-top: 0.125rem;
+  margin-top: calc(var(--spacing) * 0.5);
 }
 .pbw-search {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.625rem;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 2.5);
   background: var(--color-bg-base);
   border: 1px solid var(--pbw-line);
-  border-radius: 0.375rem;
+  border-radius: calc(var(--radius-control) * 0.75);
   color: var(--color-text-tertiary);
 }
 .pbw-search input {
@@ -111,18 +111,18 @@
   font-size: 0.625rem;
   letter-spacing: 0.1em;
   color: var(--color-text-tertiary);
-  margin: 2rem 0.5rem 0.75rem;
+  margin: calc(var(--spacing) * 8) calc(var(--spacing) * 2) calc(var(--spacing) * 3);
 }
 .pbw-nav {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
-  padding: 0.75rem 0.625rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 2.5);
   width: 100%;
   text-align: left;
   cursor: pointer;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-control);
   color: var(--color-text-secondary);
 }
 .pbw-nav > span,
@@ -135,22 +135,22 @@
   box-shadow: 0 1px 3px #00000006;
 }
 .pbw-parent {
-  margin-top: 0.5rem;
+  margin-top: calc(var(--spacing) * 2);
   color: var(--color-text-primary);
 }
 .pbw-category {
-  margin: 0.25rem 0 0.25rem 1rem;
-  padding-left: 0.75rem;
+  margin: var(--spacing) 0 var(--spacing) calc(var(--spacing) * 4);
+  padding-left: calc(var(--spacing) * 3);
   border-left: 1px solid var(--color-border-default);
   display: grid;
-  gap: 0.125rem;
+  gap: calc(var(--spacing) * 0.5);
 }
 .pbw-category button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.625rem 0.5rem;
-  border-radius: 0.375rem;
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 2);
+  border-radius: calc(var(--radius-control) * 0.75);
   font-size: 0.75rem;
   color: var(--color-text-secondary);
   cursor: pointer;
@@ -166,25 +166,25 @@
 .pbw-add-link {
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: calc(var(--spacing) * 1.5);
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
-  padding: 0.75rem 0.5rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 2);
   cursor: pointer;
 }
 .pbw-sidebar-foot {
   margin-top: auto;
-  padding-top: 3rem;
+  padding-top: calc(var(--spacing) * 12);
 }
 .pbw-work-hours {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
-  padding: 0.75rem 0.5rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 2);
   background: var(--color-bg-base);
   border: 1px solid var(--pbw-line);
-  border-radius: 0.5rem;
-  margin-bottom: 0.75rem;
+  border-radius: var(--radius-control);
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .pbw-work-hours strong {
   font-size: 0.6875rem;
@@ -195,7 +195,7 @@
   font-size: 0.5625rem;
   color: var(--color-text-tertiary);
   display: block;
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .pbw-sidebar-foot > button {
   width: 100%;
@@ -204,7 +204,7 @@
   font-size: 0.5625rem;
   color: var(--color-text-tertiary);
   text-align: center;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
 }
 .pbw-main {
   min-width: 0;
@@ -214,14 +214,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  padding: 0 calc(var(--spacing) * 6);
   border-bottom: 1px solid var(--pbw-line);
 }
 .pbw-header > div {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   min-width: 0;
   font-size: 0.8125rem;
 }
@@ -232,28 +232,28 @@
   color: var(--color-text-tertiary);
 }
 .pbw-content {
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
 }
 .pbw-toolbar {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .pbw-views {
   display: flex;
-  padding: 0.25rem;
+  padding: var(--spacing);
   border: 1px solid var(--color-border-default);
-  border-radius: 0.5rem;
-  gap: 0.25rem;
+  border-radius: var(--radius-control);
+  gap: var(--spacing);
 }
 .pbw-views button {
-  padding: 0.5rem 0.75rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   font-size: 0.75rem;
   color: var(--color-text-secondary);
   cursor: pointer;
-  border-radius: 0.375rem;
+  border-radius: calc(var(--radius-control) * 0.75);
   white-space: nowrap;
 }
 .pbw-views button[aria-pressed="true"] {
@@ -264,7 +264,7 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
 }
@@ -273,28 +273,28 @@
   color: var(--color-text-secondary);
   line-height: 1.7;
   min-height: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: calc(var(--spacing) * 6);
 }
 .pbw-undo {
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   justify-content: space-between;
   align-items: center;
   background: var(--color-bg-elevated);
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
+  border-radius: var(--radius-control);
   font-size: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .pbw-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: start;
 }
 .pbw-empty {
   border: 1px dashed var(--color-border-default);
-  border-radius: 1rem;
+  border-radius: calc(var(--radius-control) * 2);
   min-height: 20rem;
   display: grid;
   place-items: center;
@@ -303,27 +303,27 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.5rem 0 0;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 6) 0 0;
   font-size: 0.625rem;
   color: var(--color-text-tertiary);
 }
 .pbw-footer a {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--spacing);
 }
 .pbw-kanban {
-  border-radius: 0.75rem;
-  padding: 1rem;
+  border-radius: calc(var(--radius-control) * 1.5);
+  padding: calc(var(--spacing) * 4);
 }
 .project-board-workspace select,
 .pbw-dialog input,
 .pbw-dialog textarea {
   font-size: 0.8125rem;
   border: 1px solid var(--color-border-default);
-  border-radius: 0.5rem;
-  padding: 0.625rem;
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 2.5);
   background: var(--color-bg-base);
   color: var(--color-text-primary);
   max-width: 100%;
@@ -356,7 +356,7 @@
   z-index: 101;
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-default);
-  border-radius: 1rem;
+  border-radius: calc(var(--radius-control) * 2);
   color: var(--color-text-primary);
   box-shadow: 0 2rem 5rem #0003;
   overflow: hidden;
@@ -369,8 +369,8 @@
 .pbw-dialog header {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 6);
   border-bottom: 1px solid var(--pbw-line);
 }
 .pbw-dialog header > button {
@@ -385,24 +385,24 @@
   font-size: 0.75rem;
   line-height: 1.7;
   color: var(--color-text-secondary);
-  margin-top: 0.5rem;
+  margin-top: calc(var(--spacing) * 2);
 }
 .pbw-dialog-body {
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
   overflow: auto;
   display: grid;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .pbw-dialog label {
   display: grid;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
   min-width: 0;
 }
 .pbw-form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .pbw-dialog textarea {
   resize: vertical;
@@ -410,8 +410,8 @@
 }
 .pbw-dialog footer {
   display: flex;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   border-top: 1px solid var(--pbw-line);
   justify-content: flex-end;
 }
@@ -423,8 +423,8 @@
   border: 1px solid var(--color-palette-orange-text);
   background: var(--color-palette-orange-bg);
   color: var(--color-palette-orange-text);
-  border-radius: 0.5rem;
-  padding: 0.75rem;
+  border-radius: var(--radius-control);
+  padding: calc(var(--spacing) * 3);
   line-height: 1.6;
 }
 .pbw-field-note {
@@ -433,18 +433,18 @@
 }
 .pbw-activity {
   display: grid;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .pbw-activity li {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   align-items: flex-start;
   font-size: 0.8125rem;
   line-height: 1.6;
 }
 .pbw-activity svg {
   flex-shrink: 0;
-  margin-top: 0.125rem;
+  margin-top: calc(var(--spacing) * 0.5);
 }
 .pbw-archive-name {
   font-size: 0.875rem;
@@ -458,10 +458,10 @@
     display: none;
   }
   .pbw-content {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .pbw-header {
-    padding: 0 1rem;
+    padding: 0 calc(var(--spacing) * 4);
   }
   .pbw-snapshot {
     display: none;
@@ -475,7 +475,7 @@
     display: none;
   }
   .pbw-sidebar {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
     border-right: 0;
     border-bottom: 1px solid var(--pbw-line);
   }
@@ -486,24 +486,24 @@
     display: none;
   }
   .pbw-search {
-    margin-bottom: 0.75rem;
+    margin-bottom: calc(var(--spacing) * 3);
   }
   .pbw-nav {
     width: auto;
     display: inline-flex;
-    padding: 0.5rem 0.75rem;
+    padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   }
   .pbw-category {
     display: flex;
-    gap: 0.25rem;
-    margin: 0.5rem 0 0;
+    gap: var(--spacing);
+    margin: calc(var(--spacing) * 2) 0 0;
     padding: 0;
     border: 0;
     overflow: auto;
   }
   .pbw-category button {
     white-space: nowrap;
-    gap: 0.75rem;
+    gap: calc(var(--spacing) * 3);
   }
   .pbw-header {
     height: 4rem;
@@ -513,10 +513,10 @@
     display: none;
   }
   .pbw-header > div {
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
   .pbw-toolbar {
-    gap: 0.75rem;
+    gap: calc(var(--spacing) * 3);
   }
   .pbw-views {
     width: 100%;
@@ -534,16 +534,16 @@
   }
   .pbw-form-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+    gap: calc(var(--spacing) * 3);
   }
   .pbw-dialog-body {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .pbw-dialog header {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .pbw-dialog footer {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
     flex-wrap: wrap;
   }
   .pbw-dialog footer > span {

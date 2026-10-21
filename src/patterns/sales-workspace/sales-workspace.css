@@ -9,7 +9,7 @@
   position: fixed;
   inset: 0 auto 0 0;
   width: 13.5rem;
-  padding: 1.75rem 1rem 1rem;
+  padding: calc(var(--spacing) * 7) calc(var(--spacing) * 4) calc(var(--spacing) * 4);
   border-right: 1px solid var(--color-border-subtle);
   background: var(--color-bg-surface);
   display: flex;
@@ -18,7 +18,7 @@
 .sw-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 1.25rem;
   letter-spacing: -0.05em;
   font-weight: 600;
@@ -40,22 +40,22 @@
   font-size: 0.5625rem;
   letter-spacing: 0.125rem;
   color: var(--color-text-tertiary);
-  margin: 2.5rem 0.625rem 0.75rem;
+  margin: calc(var(--spacing) * 10) calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
 }
 .sw-sidebar nav,
 .sw-mobile-nav nav {
   display: grid;
-  gap: 0.375rem;
+  gap: calc(var(--spacing) * 1.5);
 }
 .sw-sidebar nav button,
 .sw-mobile-nav button,
 .sw-resource {
   display: flex;
-  gap: 0.625rem;
+  gap: calc(var(--spacing) * 2.5);
   align-items: center;
   text-align: left;
   color: var(--color-text-secondary);
-  padding: 0.625rem;
+  padding: calc(var(--spacing) * 2.5);
   border-radius: var(--radius-control);
   cursor: pointer;
 }
@@ -78,7 +78,7 @@
   margin-top: auto;
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-small);
-  padding: 1rem;
+  padding: calc(var(--spacing) * 4);
   background: radial-gradient(
     ellipse at top left,
     var(--color-palette-blue-bg),
@@ -93,7 +93,7 @@
   border-radius: var(--radius-card-small);
   background: var(--color-palette-blue-bg);
   color: var(--color-palette-blue-text);
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .sw-insight h2 {
   font-size: 0.875rem;
@@ -104,7 +104,7 @@
   font-size: 0.6875rem;
   line-height: 1.7;
   color: var(--color-text-secondary);
-  margin: 0.5rem 0 1rem;
+  margin: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 4);
 }
 .sw-insight button {
   width: 100%;
@@ -112,8 +112,8 @@
 .sw-profile {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1.5rem 0.25rem 0.25rem;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 6) var(--spacing) var(--spacing);
   font-size: 0.6875rem;
 }
 .sw-profile > span {
@@ -128,10 +128,10 @@
   display: block;
   color: var(--color-text-tertiary);
   font-size: 0.5625rem;
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .sw-main {
-  margin-left: 13.5rem;
+  margin-left: calc(var(--spacing) * 54);
   min-width: 0;
 }
 .sw-topbar {
@@ -139,7 +139,7 @@
   justify-content: space-between;
   align-items: center;
   height: 4rem;
-  padding: 0 2rem;
+  padding: 0 calc(var(--spacing) * 8);
   background: var(--color-bg-base);
   border-bottom: 1px solid var(--color-border-subtle);
   position: sticky;
@@ -149,7 +149,7 @@
 .sw-topbar > div {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .sw-topbar span {
   color: var(--color-text-tertiary);
@@ -164,24 +164,24 @@
 .sw-demo {
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 0.375rem 0.5rem;
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
 }
 .sw-main main {
   max-width: 100rem;
   margin: auto;
-  padding: 2rem;
+  padding: calc(var(--spacing) * 8);
 }
 .sw-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .sw-heading p {
   font-size: 0.5625rem;
   letter-spacing: 0.125rem;
   color: var(--color-text-tertiary);
-  margin-bottom: 0.625rem;
+  margin-bottom: calc(var(--spacing) * 2.5);
 }
 .sw-heading h1 {
   font-size: 1.5rem;
@@ -195,7 +195,7 @@
 .sw-notice {
   min-height: 3.5rem;
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: center;
   justify-content: space-between;
   font-size: 0.6875rem;
@@ -205,11 +205,11 @@
 .sw-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .sw-metrics .workspace-metric {
-  padding: 1rem;
+  padding: calc(var(--spacing) * 4);
 }
 .sw-metrics .workspace-metric strong {
   font-size: 1.75rem;
@@ -220,8 +220,8 @@
 .sw-charts {
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .sw-card {
   min-width: 0;
@@ -234,14 +234,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .sw-card h2 {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.8125rem;
   font-weight: 500;
 }
@@ -253,42 +253,42 @@
   color: var(--color-text-tertiary);
 }
 .sw-card-content {
-  padding: 1rem 1.25rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5);
 }
 .sw-chart-note {
   font-size: 0.625rem;
   line-height: 1.6;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
   color: var(--color-text-tertiary);
 }
 .sw-card h2 > span {
   font-size: 0.625rem;
   color: var(--color-text-tertiary);
   border: 1px solid var(--color-border-subtle);
-  padding: 0.125rem 0.375rem;
+  padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 1.5);
   border-radius: var(--radius-control-tiny);
 }
 .sw-card header p {
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
-  margin-top: 0.375rem;
+  margin-top: calc(var(--spacing) * 1.5);
 }
 .sw-filters {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.25rem;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5);
 }
 .sw-search {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   min-width: 0;
   flex: 1;
   border: 1px solid var(--color-border-default);
   background: var(--color-bg-base);
   border-radius: var(--radius-control);
-  padding: 0 0.75rem;
+  padding: 0 calc(var(--spacing) * 3);
   color: var(--color-text-secondary);
 }
 .sw-search input {
@@ -309,7 +309,7 @@
   border-radius: var(--radius-control);
   background: var(--color-bg-base);
   color: var(--color-text-primary);
-  padding: 0.5rem 0.75rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   font-size: 0.75rem;
   min-height: 2.25rem;
 }
@@ -319,17 +319,17 @@
 .sw-deals > footer {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5);
   font-size: 0.625rem;
   color: var(--color-text-tertiary);
   line-height: 1.6;
 }
 .sw-selection {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   align-items: center;
-  padding: 0.5rem 1.25rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 5);
   background: var(--color-state-press);
 }
 .sw-selection > span {
@@ -339,15 +339,15 @@
 .sw-footer {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 6);
   color: var(--color-text-tertiary);
   font-size: 0.625rem;
 }
 .sw-footer a {
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: calc(var(--spacing) * 1.5);
 }
 .sw-mobile-nav {
   display: none;
@@ -375,8 +375,8 @@
 .sw-dialog > header {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
-  padding: 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 6);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .sw-dialog > header > div {
@@ -390,18 +390,18 @@
   font-size: 0.75rem;
   line-height: 1.6;
   color: var(--color-text-secondary);
-  margin-top: 0.5rem;
+  margin-top: calc(var(--spacing) * 2);
 }
 .sw-form {
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .sw-form label {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
   min-width: 0;
 }
@@ -419,11 +419,11 @@
   line-height: 1.6;
 }
 .sw-dialog form > footer {
-  padding: 1rem 1.5rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   border-top: 1px solid var(--color-border-subtle);
   display: flex;
   justify-content: flex-end;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .sales-workspace :is(button, a, select, input):focus-visible {
   outline: 2px solid var(--color-status-progress);
@@ -474,13 +474,13 @@
     grid-template-columns: 1fr;
   }
   .sw-main main {
-    padding: 1.5rem;
+    padding: calc(var(--spacing) * 6);
   }
   .sw-heading h1 {
     font-size: 1.25rem;
   }
   .sw-insight {
-    margin-top: 3rem;
+    margin-top: calc(var(--spacing) * 12);
   }
   .sw-sidebar {
     overflow: auto;
@@ -497,14 +497,14 @@
     margin: 0;
   }
   .sw-topbar {
-    padding: 0 1rem;
+    padding: 0 calc(var(--spacing) * 4);
   }
   .sw-main main {
-    padding: 1.25rem 1rem;
+    padding: calc(var(--spacing) * 5) calc(var(--spacing) * 4);
   }
   .sw-mobile-nav {
     display: block;
-    margin-bottom: 1.5rem;
+    margin-bottom: calc(var(--spacing) * 6);
   }
   .sw-mobile-nav nav {
     display: flex;
@@ -514,7 +514,7 @@
     white-space: nowrap;
     flex: 1;
     font-size: 0.75rem;
-    padding: 0.625rem 0.5rem;
+    padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 2);
     justify-content: center;
   }
   .sw-mobile-nav small {
@@ -528,29 +528,29 @@
     font-size: 1.5rem;
   }
   .sw-notice {
-    padding: 0.75rem 0;
+    padding: calc(var(--spacing) * 3) 0;
     flex-wrap: wrap;
   }
   .sw-metrics {
-    gap: 0.75rem;
+    gap: calc(var(--spacing) * 3);
   }
   .sw-metrics .workspace-metric {
-    padding: 0.875rem;
+    padding: calc(var(--spacing) * 3.5);
   }
   .sw-metrics .workspace-metric strong {
     font-size: 1.5rem;
   }
   .sw-card > header,
   .sw-card-content {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .sw-filters {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
     flex-wrap: wrap;
   }
   .sw-search {
     flex-basis: 100%;
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--spacing);
   }
   .sw-search input,
   .sales-workspace select,
@@ -563,10 +563,10 @@
   }
   .sw-deals > footer {
     flex-direction: column;
-    gap: 0.375rem;
+    gap: calc(var(--spacing) * 1.5);
   }
   .sw-selection {
-    padding: 0.5rem;
+    padding: calc(var(--spacing) * 2);
     flex-wrap: wrap;
   }
   .sw-footer {
@@ -581,9 +581,9 @@
   }
   .sw-dialog > header,
   .sw-form {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .sw-topbar > div {
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
 }

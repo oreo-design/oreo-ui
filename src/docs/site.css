@@ -1,29 +1,29 @@
 /* Website chrome only. Component and template tokens are not overridden. */
 .site-sidebar { position:sticky; top:0; display:flex; flex-direction:column; height:100dvh; width:15rem; flex-shrink:0; border-right:1px solid var(--color-border-subtle); background:var(--color-bg-elevated); }
-.site-brand { display:flex; align-items:center; gap:.5rem; color:var(--color-text-primary); font-size:.875rem; font-weight:600; text-decoration:none; }
-.site-sidebar > .site-brand { padding:1.5rem 1.25rem 1rem; }
-.site-directory-search { padding:0 1rem 1rem; }
-.site-directory-search input { width:100%; min-width:0; border:1px solid var(--color-border-subtle); border-radius:var(--radius-control-tiny); background:transparent; color:var(--color-text-primary); padding:.5rem; font:inherit; font-size:.75rem; }
-.site-directory { flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:0 .75rem 1.5rem; }
-.site-directory section + section { margin-top:1.5rem; }
-.site-directory h2 { padding:0 .5rem .5rem; font-size:.75rem; font-weight:500; color:var(--color-text-secondary); }
-.site-directory-link { display:block; border-radius:var(--radius-control-tiny); padding:.375rem .5rem; font-size:.8125rem; line-height:1.5; color:var(--color-text-secondary); text-decoration:none; }
+.site-brand { display:flex; align-items:center; gap:calc(var(--spacing) * 2); color:var(--color-text-primary); font-size:.875rem; font-weight:600; text-decoration:none; }
+.site-sidebar > .site-brand { padding:calc(var(--spacing) * 6) calc(var(--spacing) * 5) calc(var(--spacing) * 4); }
+.site-directory-search { padding:0 calc(var(--spacing) * 4) calc(var(--spacing) * 4); }
+.site-directory-search input { width:100%; min-width:0; border:1px solid var(--color-border-subtle); border-radius:var(--radius-control-tiny); background:transparent; color:var(--color-text-primary); padding:calc(var(--spacing) * 2); font:inherit; font-size:.75rem; }
+.site-directory { flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:0 calc(var(--spacing) * 3) calc(var(--spacing) * 6); }
+.site-directory section + section { margin-top:calc(var(--spacing) * 6); }
+.site-directory h2 { padding:0 calc(var(--spacing) * 2) calc(var(--spacing) * 2); font-size:.75rem; font-weight:500; color:var(--color-text-secondary); }
+.site-directory-link { display:block; border-radius:var(--radius-control-tiny); padding:calc(var(--spacing) * 1.5) calc(var(--spacing) * 2); font-size:.8125rem; line-height:1.5; color:var(--color-text-secondary); text-decoration:none; }
 .site-directory-link:hover { color:var(--color-text-primary); background:var(--color-state-hover); }
 .site-directory-link.is-active { color:var(--color-text-primary); background:var(--color-state-press); font-weight:500; }
-.site-directory-empty { display:flex; min-height:100%; flex-direction:column; align-items:center; justify-content:center; gap:.75rem; font-size:.8125rem; color:var(--color-text-secondary); }
-.site-action { display:inline-flex; align-items:center; justify-content:center; gap:.375rem; border-radius:var(--radius-control-tiny); padding:.375rem .5rem; font-size:.75rem; line-height:1.5; color:var(--color-text-secondary); background:transparent; cursor:pointer; }
+.site-directory-empty { display:flex; min-height:100%; flex-direction:column; align-items:center; justify-content:center; gap:calc(var(--spacing) * 3); font-size:.8125rem; color:var(--color-text-secondary); }
+.site-action { display:inline-flex; align-items:center; justify-content:center; gap:calc(var(--spacing) * 1.5); border-radius:var(--radius-control-tiny); padding:calc(var(--spacing) * 1.5) calc(var(--spacing) * 2); font-size:.75rem; line-height:1.5; color:var(--color-text-secondary); background:transparent; cursor:pointer; }
 .site-action:hover { color:var(--color-text-primary); background:var(--color-state-hover); }
-.site-views { display:flex; flex-wrap:wrap; gap:1rem; font-size:.75rem; }
-.site-views a { display:block; border-bottom:1px solid transparent; padding:.5rem 0; color:var(--color-text-secondary); text-decoration:none; }
+.site-views { display:flex; flex-wrap:wrap; gap:calc(var(--spacing) * 4); font-size:.75rem; }
+.site-views a { display:block; border-bottom:1px solid transparent; padding:calc(var(--spacing) * 2) 0; color:var(--color-text-secondary); text-decoration:none; }
 .site-views a[aria-current] { color:var(--color-text-primary); border-color:currentColor; font-weight:500; }
 .site-views a:hover { color:var(--color-text-primary); }
 .site-mobile-nav { display:none; }
-.site-mobile-bar { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:3.5rem; padding:.75rem 1rem; border-bottom:1px solid var(--color-border-subtle); background:var(--color-bg-elevated); color:var(--color-text-primary); }
+.site-mobile-bar { display:flex; align-items:center; justify-content:space-between; gap:calc(var(--spacing) * 4); min-height:3.5rem; padding:calc(var(--spacing) * 3) calc(var(--spacing) * 4); border-bottom:1px solid var(--color-border-subtle); background:var(--color-bg-elevated); color:var(--color-text-primary); }
 .site-navigation-dialog { position:fixed; inset:0; margin:0; width:min(24rem,100%); height:100dvh; max-height:100dvh; max-width:100%; padding:0; border:0; background:var(--color-bg-elevated); color:var(--color-text-primary); }
 .site-navigation-dialog[open] { display:flex; flex-direction:column; }
 .site-navigation-dialog::backdrop { background:var(--color-overlay-strong); }
-.site-navigation-dialog .site-mobile-bar { margin-bottom:1rem; }
-.site-docs-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.75rem; margin-bottom:2rem; }
+.site-navigation-dialog .site-mobile-bar { margin-bottom:calc(var(--spacing) * 4); }
+.site-docs-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:calc(var(--spacing) * 3); margin-bottom:calc(var(--spacing) * 8); }
 .site-docs-content > header h1 { font-size:1.5rem; line-height:1.3; font-weight:600; letter-spacing:-.025em; }
 .site-docs-content > header p { font-size:.875rem; line-height:1.75; }
 .site-docs-content > section > h2 { font-size:1.125rem; }

@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -20,7 +21,7 @@ export function ExperimentWorkspacePage() {
     [activeId, setActiveId] = useState(EXPERIMENTS[0].id),
     [search, setSearch] = useState(""),
     [filter, setFilter] = useState("All experiments"),
-    [dark, setDark] = useState(true),
+    [dark, setDark] = useThemeMode(true),
     [day, setDay] = useState<number | undefined>(undefined),
     [notice, setNotice] = useState(""),
     [modal, setModal] = useState<"new" | "edit" | "decide" | null>(null),

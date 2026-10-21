@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Avatar } from "@/components/avatar";
 import { Button, IconButton } from "@/components/button";
@@ -217,7 +218,7 @@ function Discussion({
   );
 }
 export function StudioInbox() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useThemeMode(true);
   const [narrow, setNarrow] = useState(false);
   useEffect(() => {
     const media = window.matchMedia("(max-width: 760px)");

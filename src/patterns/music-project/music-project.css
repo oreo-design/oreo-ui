@@ -9,18 +9,18 @@
   color-scheme: dark;
 }
 .mp-sidebar {
-  padding: 2rem 1rem;
+  padding: calc(var(--spacing) * 8) calc(var(--spacing) * 4);
   background: var(--color-bg-elevated);
   border-right: 1px solid var(--color-border-subtle);
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: calc(var(--spacing) * 8);
 }
 .mp-workspace {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0 0.5rem;
+  gap: calc(var(--spacing) * 3);
+  padding: 0 calc(var(--spacing) * 2);
   font-size: 0.875rem;
 }
 .mp-workspace > span:last-child {
@@ -29,13 +29,13 @@
 }
 .mp-sidebar nav {
   display: grid;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .mp-sidebar nav a {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 3);
   border-radius: var(--radius-control);
   font-size: 0.875rem;
   color: var(--color-text-secondary);
@@ -46,13 +46,13 @@
 }
 .mp-sidebar-bottom {
   margin-top: auto;
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
   font-size: 0.6875rem;
   line-height: 1.8;
   color: var(--color-text-tertiary);
 }
 .mp-sidebar-bottom p {
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
 }
 .mp-main {
   min-width: 0;
@@ -60,39 +60,39 @@
 .mp-topbar {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   min-height: 4.5rem;
   border-bottom: 1px solid var(--color-border-subtle);
-  padding: 1rem 2rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 8);
   color: var(--color-text-secondary);
   font-size: 0.8125rem;
 }
 .mp-topbar > a {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   color: var(--color-text-primary);
 }
 .mp-top-actions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   margin-left: auto;
 }
 .mp-content {
   max-width: 80rem;
   margin: auto;
-  padding: 2rem;
+  padding: calc(var(--spacing) * 8);
 }
 .mp-heading {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 6);
   flex-wrap: wrap;
 }
 .mp-heading > a {
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
   color: var(--color-text-secondary);
@@ -119,14 +119,14 @@
 .mp-player {
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
   background: var(--color-bg-base);
 }
 .mp-player-heading {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: calc(var(--spacing) * 3);
+  margin-bottom: calc(var(--spacing) * 6);
 }
 .mp-player-heading > div {
   flex: 1;
@@ -139,7 +139,7 @@
 .mp-player-heading p {
   font-size: 0.75rem;
   color: var(--color-text-tertiary);
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .mp-player-heading > span {
   font-size: 0.75rem;
@@ -147,20 +147,20 @@
   font-variant-numeric: tabular-nums;
 }
 .mp-play {
-  border-radius: 999px;
+  border-radius: var(--radius-capsule);
   background: var(--color-status-progress);
   color: var(--color-text-on-accent);
 }
 .mp-audio-status {
   font-size: 0.75rem;
   color: var(--color-text-secondary);
-  padding-top: 0.75rem;
+  padding-top: calc(var(--spacing) * 3);
 }
 .mp-comment-composer {
-  margin-top: 1.25rem;
+  margin-top: calc(var(--spacing) * 5);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-small);
-  padding: 0.75rem;
+  padding: calc(var(--spacing) * 3);
   background: var(--color-bg-elevated);
 }
 .mp-comment-composer textarea {
@@ -177,13 +177,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .mp-anchor {
   font-size: 0.75rem;
   color: var(--color-text-tertiary);
   border: 1px solid var(--color-border-subtle);
-  padding: 0.25rem 0.5rem;
+  padding: var(--spacing) calc(var(--spacing) * 2);
   border-radius: var(--radius-control);
 }
 .mp-anchor strong {
@@ -193,19 +193,19 @@
 .mp-demo-note {
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
-  margin: 0.75rem 0 1.75rem;
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 7);
 }
 .mp-tab-list {
   display: flex;
-  gap: 1.75rem;
+  gap: calc(var(--spacing) * 7);
   border-bottom: 1px solid var(--color-border-subtle);
   overflow-x: auto;
 }
 .mp-tab-list > button {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.75rem 0;
+  gap: calc(var(--spacing) * 1.6);
+  padding: calc(var(--spacing) * 3) 0;
   color: var(--color-text-secondary);
   font-size: 0.875rem;
   border-bottom: 2px solid transparent;
@@ -217,15 +217,15 @@
 }
 .mp-tab-list > button > span {
   font-size: 0.6875rem;
-  padding: 0 0.35rem;
-  border-radius: 999px;
+  padding: 0 calc(var(--spacing) * 1.4);
+  border-radius: var(--radius-capsule);
   background: var(--color-state-hover);
 }
 .mp-panel-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   min-height: 3.25rem;
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
@@ -236,13 +236,13 @@
 }
 .mp-add-task {
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 4);
 }
 .mp-add-task input {
   flex: 1;
   min-width: 0;
-  padding: 0.5rem 0.75rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   background: transparent;
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
@@ -250,12 +250,12 @@
 }
 .mp-comments {
   display: grid;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
 }
 .mp-comment {
   display: flex;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-small);
 }
@@ -270,7 +270,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
 }
 .mp-comment strong {
@@ -283,20 +283,20 @@
 .mp-comment p {
   font-size: 0.875rem;
   line-height: 1.7;
-  margin: 0.5rem 0;
+  margin: calc(var(--spacing) * 2) 0;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
 .mp-files {
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-small);
-  padding: 0 1rem;
+  padding: 0 calc(var(--spacing) * 4);
 }
 .mp-files > div {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 0;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 4) 0;
   border-bottom: 1px solid var(--color-border-subtle);
   font-size: 0.75rem;
 }
@@ -305,7 +305,7 @@
 }
 .mp-files > div > span {
   display: grid;
-  gap: 0.25rem;
+  gap: var(--spacing);
   flex: 1;
   min-width: 0;
   overflow-wrap: anywhere;
@@ -323,17 +323,17 @@
   min-height: 2.5rem;
   font-size: 0.75rem;
   line-height: 1.6;
-  padding-top: 1rem;
+  padding-top: calc(var(--spacing) * 4);
   color: var(--color-text-secondary);
 }
 .mp-footer {
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
-  padding-top: 1.5rem;
+  padding-top: calc(var(--spacing) * 6);
 }
 .music-project-page :is(button, a, input, textarea):focus-visible {
   outline: 2px solid var(--color-status-progress);
@@ -344,13 +344,13 @@
     grid-template-columns: 11rem minmax(0, 1fr);
   }
   .mp-content {
-    padding: 1.5rem;
+    padding: calc(var(--spacing) * 6);
   }
   .mp-topbar {
-    padding: 1rem 1.5rem;
+    padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   }
   .mp-heading {
-    gap: 0.75rem;
+    gap: calc(var(--spacing) * 3);
   }
   .mp-heading > span {
     font-size: 0.75rem;
@@ -361,19 +361,19 @@
     display: block;
   }
   .mp-sidebar {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
     border-right: 0;
     border-bottom: 1px solid var(--color-border-subtle);
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
   }
   .mp-sidebar nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.25rem;
+    gap: var(--spacing);
   }
   .mp-sidebar nav a {
     font-size: 0.75rem;
-    padding: 0.5rem;
+    padding: calc(var(--spacing) * 2);
   }
   .mp-workspace {
     padding: 0;
@@ -382,15 +382,15 @@
     display: none;
   }
   .mp-topbar {
-    padding: 0.75rem 1rem;
+    padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
   .mp-topbar > span {
     display: none;
   }
   .mp-content {
-    padding: 1.25rem 1rem;
+    padding: calc(var(--spacing) * 5) calc(var(--spacing) * 4);
   }
   .mp-heading h1 {
     font-size: 1.5rem;
@@ -398,7 +398,7 @@
   .mp-heading > span {
     order: 4;
     flex-basis: 100%;
-    padding-left: 3rem;
+    padding-left: calc(var(--spacing) * 12);
   }
   .mp-replace {
     font-size: 0.75rem;
@@ -410,10 +410,10 @@
     padding-left: 0;
   }
   .mp-player {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .mp-player-heading {
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
   .mp-player-heading > span {
     font-size: 0.6875rem;
@@ -422,7 +422,7 @@
     font-size: 0.6875rem;
   }
   .mp-tab-list {
-    gap: 1.25rem;
+    gap: calc(var(--spacing) * 5);
   }
   .mp-comment-composer textarea {
     font-size: 1rem;

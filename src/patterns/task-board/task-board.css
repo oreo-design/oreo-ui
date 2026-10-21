@@ -17,7 +17,7 @@
   height: auto;
 }
 .tb-nav .agent-nav-brand {
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
 }
 .tb-nav .agent-nav-footer > a {
   display: flex;
@@ -28,16 +28,16 @@
 .tb-user {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   border-top: 1px solid var(--color-border-subtle);
-  padding-top: 1rem;
-  margin-top: 1.5rem;
+  padding-top: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 6);
   font-size: 0.75rem;
 }
 .tb-user small {
   display: block;
   color: var(--color-text-tertiary);
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .tb-workspace {
   min-width: 0;
@@ -51,15 +51,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  padding: 0 calc(var(--spacing) * 6);
   border-bottom: 1px solid var(--color-border-subtle);
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   color: var(--color-text-secondary);
   font-size: 0.75rem;
 }
 .tb-top b {
   font-weight: 400;
-  padding: 0 0.625rem;
+  padding: 0 calc(var(--spacing) * 2.5);
   color: var(--color-text-tertiary);
 }
 .tb-split {
@@ -74,18 +74,18 @@
 .tb-main {
   min-width: 0;
   overflow: auto;
-  padding: 1.5rem;
+  padding: calc(var(--spacing) * 6);
 }
 .tb-title {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   flex-wrap: wrap;
-  margin-bottom: 1.5rem;
+  margin-bottom: calc(var(--spacing) * 6);
 }
 .tb-title > div {
   display: flex;
-  gap: 0.625rem;
+  gap: calc(var(--spacing) * 2.5);
   align-items: center;
 }
 .tb-title h1 {
@@ -105,20 +105,20 @@
 .tb-stage {
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 0.25rem 0.5rem;
+  padding: var(--spacing) calc(var(--spacing) * 2);
   color: var(--color-text-secondary);
   font-size: 0.75rem;
 }
 .tb-tabs {
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .tb-tabs button {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 0;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 3) 0;
   color: var(--color-text-secondary);
   font-size: 0.8125rem;
   border-bottom: 2px solid transparent;
@@ -130,7 +130,7 @@
 .tb-view {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .tb-view .tb-tabs {
@@ -139,18 +139,18 @@
 }
 .tb-tools {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   align-items: center;
-  padding: 1rem 0;
+  padding: calc(var(--spacing) * 4) 0;
   flex-wrap: wrap;
 }
 .tb-tools label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
-  padding: 0.375rem 0.625rem;
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2.5);
   min-width: 0;
   flex: 1;
   color: var(--color-text-tertiary);
@@ -167,7 +167,7 @@
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
   background: var(--color-bg-base);
-  padding: 0.375rem;
+  padding: calc(var(--spacing) * 1.5);
   color: inherit;
   font-size: 0.75rem;
 }
@@ -181,16 +181,16 @@
   min-height: 2rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   color: var(--color-text-secondary);
-  margin-bottom: 0.75rem;
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .tb-main > .oreo-kanban {
-  padding: 1rem;
+  padding: calc(var(--spacing) * 4);
   border-radius: var(--radius-card-medium);
 }
 .tb-main .oreo-kanban > header {
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .tb-main .oreo-kanban > header h2 {
   font-size: 0.875rem;
@@ -199,21 +199,21 @@
   grid-template-columns: repeat(var(--kanban-columns), minmax(15rem, 1fr));
 }
 .tb-foot {
-  margin-top: 1.25rem;
+  margin-top: calc(var(--spacing) * 5);
   color: var(--color-text-tertiary);
   font-size: 0.75rem;
   line-height: 1.6;
 }
 .tb-edit-title {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .tb-edit-title input {
   width: 100%;
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 0.5rem 0.625rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 2.5);
   font-size: 0.8125rem;
 }
 .tb-edit-title:before {
@@ -221,11 +221,11 @@
   display: block;
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
-  margin-bottom: 0.375rem;
+  margin-bottom: calc(var(--spacing) * 1.5);
 }
 .task-board textarea {
   width: 100%;
-  padding: 0.75rem;
+  padding: calc(var(--spacing) * 3);
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
@@ -240,12 +240,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   min-height: 3.5rem;
   font-size: 0.8125rem;
   position: relative;
   color: var(--color-text-secondary);
-  margin-bottom: 0.5rem;
+  margin-bottom: calc(var(--spacing) * 2);
 }
 .tb-attach input {
   position: absolute;
@@ -260,9 +260,9 @@
 .tb-files li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
-  padding: 0.625rem 0;
+  padding: calc(var(--spacing) * 2.5) 0;
 }
 .tb-files a {
   flex: 1;
@@ -271,8 +271,8 @@
 }
 .tb-comments article {
   display: flex;
-  gap: 0.75rem;
-  padding: 1rem 0;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4) 0;
   font-size: 0.8125rem;
 }
 .tb-comments article > div {
@@ -284,17 +284,17 @@
 .tb-comments time {
   font-weight: 400;
   color: var(--color-text-tertiary);
-  margin-left: 0.5rem;
+  margin-left: calc(var(--spacing) * 2);
 }
 .tb-comments p {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   line-height: 1.6;
-  margin-top: 0.25rem;
+  margin-top: var(--spacing);
 }
 .tb-comments .agent-workspace-state {
   min-height: 9rem;
-  padding: 1.5rem 0.5rem;
+  padding: calc(var(--spacing) * 6) calc(var(--spacing) * 2);
 }
 .tb-comments .agent-workspace-state h3 {
   font-size: 0.875rem;
@@ -306,8 +306,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+  gap: calc(var(--spacing) * 2);
+  margin-top: calc(var(--spacing) * 2);
 }
 .tb-post > span {
   font-size: 0.6875rem;
@@ -315,8 +315,8 @@
 }
 .tb-activity li {
   display: flex;
-  gap: 0.5rem;
-  padding: 0.75rem 0;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 3) 0;
   border-bottom: 1px solid var(--color-border-subtle);
   font-size: 0.8125rem;
   color: var(--color-text-secondary);
@@ -336,7 +336,7 @@
     grid-template-columns: 11rem minmax(0, 1fr);
   }
   .tb-main {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .task-board[data-details] .tb-split {
     grid-template-columns: minmax(0, 1fr) 24rem;
@@ -362,7 +362,7 @@
     border: 0;
   }
   .tb-top {
-    padding: 0 1rem;
+    padding: 0 calc(var(--spacing) * 4);
   }
   .tb-top span {
     overflow: hidden;
@@ -373,7 +373,7 @@
     max-width: 40rem;
     width: 100%;
     margin: auto;
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .tb-title h1 {
     font-size: 1.125rem;
@@ -388,12 +388,12 @@
     align-items: flex-start;
   }
   .tb-main .oreo-kanban {
-    padding: 0.75rem;
+    padding: calc(var(--spacing) * 3);
   }
 }
 
 .tb-nav .agent-nav-groups {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: calc(var(--spacing) * 8);
 }

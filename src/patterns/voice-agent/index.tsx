@@ -1,3 +1,4 @@
+import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
@@ -16,7 +17,7 @@ import {
 import { VOICE_TURNS } from "./data";
 import "./voice-agent.css";
 export function VoiceAgentPage() {
-  const [dark, setDark] = useState(true),
+  const [dark, setDark] = useThemeMode(true),
     [selected, setSelected] = useState(12),
     [position, setPosition] = useState(3800),
     [playing, setPlaying] = useState(false),
