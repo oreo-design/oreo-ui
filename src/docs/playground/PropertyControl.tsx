@@ -19,7 +19,7 @@ function NumericInput({ control, value, onChange, id, label }: { control: Extrac
   </div>;
 }
 
-export function PropertyControl({ name, control, value, onChange }: { name: string; control: Control; value: string | boolean | number; onChange: (value: string | boolean | number) => void }) {
+export function PropertyControl({ name, control, value, onChange, onReselect }: { name: string; control: Control; value: string | boolean | number; onChange: (value: string | boolean | number) => void; onReselect?: () => void }) {
   const id = useId();
   const label = control.label ?? name.replace(/([a-z])([A-Z])/g, (_, first, second: string) => `${first} ${second.toLowerCase()}`).replace(/^./, first => first.toUpperCase());
   if (control.kind === "boolean") return <div className="pg-boolean flex min-h-8 items-center justify-between gap-4">
@@ -32,7 +32,7 @@ export function PropertyControl({ name, control, value, onChange }: { name: stri
     {control.kind === "select" && (control.options.length <= 3 && control.options.join("").length < 26 ?
       <div role="radiogroup" aria-labelledby={`${id}-label`} className="pg-segment oreo-squircle flex">
         {control.options.map(option => <label key={option} className="relative min-w-0 flex-1 cursor-pointer text-center">
-          <input type="radio" className="peer sr-only" name={id} value={option} checked={value === option} onChange={() => onChange(option)} />
+          <input type="radio" className="peer sr-only" name={id} value={option} checked={value === option} onChange={() => onChange(option)} onClick={() => { if (value === option) onReselect?.(); }} />
           <span className="oreo-squircle oreo-state-layer block px-2 py-1.5 text-xs capitalize peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--color-text-tertiary)] text-[var(--color-text-secondary)]">{({ sm: "Small", md: "Medium", lg: "Large" } as Record<string, string>)[option] ?? option}</span>
         </label>)}
       </div> : <select id={id} className={inputClass} value={String(value)} onChange={e => onChange(e.target.value)}>{control.options.map(option => <option key={option} value={option}>{option}</option>)}</select>)}

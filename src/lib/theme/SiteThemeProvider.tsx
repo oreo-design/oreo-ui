@@ -1,7 +1,10 @@
-import { useLayoutEffect, useMemo, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useMemo, type ReactNode } from "react";
+import { flushSync } from "react-dom";
 import { SiteThemeModeContext, type ThemeMode } from "./useThemeMode";
 import { siteThemeStore, themeStorageKey, useSiteTheme } from "./store";
 import { variationTokens } from "./tokens";
+import { createThemeTransition } from "./transition";
+import "./transition.css";
 
 /** The only website owner of document theme styles, including body portals. */
 export function SiteThemeProvider({ children }: { children: ReactNode }) {
@@ -28,6 +31,14 @@ export function SiteThemeProvider({ children }: { children: ReactNode }) {
     };
     window.addEventListener("storage", sync);
     return () => window.removeEventListener("storage", sync);
+  }, []);
+  useEffect(() => {
+    // Install after initial saved/URL appearance has rendered; never animate hydration.
+    return siteThemeStore.installTransition(createThemeTransition({
+      start: document.startViewTransition ? update => document.startViewTransition(update) : undefined,
+      canAnimate: () => !document.hidden && !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      flush: update => flushSync(update),
+    }));
   }, []);
   const mode = useMemo<ThemeMode>(() => [theme.dark, next => {
     const current = siteThemeStore.getSnapshot().theme.dark;

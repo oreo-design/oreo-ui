@@ -1,0 +1,34 @@
+/* The site's single snapshot owner. Components keep their own interaction motion. */
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-group(root) {
+  animation: none;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+}
+
+/* New page fades over an opaque old page, avoiding a flash of the canvas beneath. */
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  animation: oreo-theme-reveal 220ms var(--ease-out) both;
+}
+
+@keyframes oreo-theme-reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
