@@ -1,3 +1,4 @@
+@import "./lib/theme/recipes.css";
 @import "tailwindcss";
 @import "./lib/surfaces.css";
 

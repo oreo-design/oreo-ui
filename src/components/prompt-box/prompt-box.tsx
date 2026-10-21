@@ -47,9 +47,9 @@ export function PromptBoxModelSelect({
     <button
       type="button"
       className={cn(
-        "flex h-8 items-center gap-[var(--space-x2)] rounded-[var(--radius-control)] px-[var(--space-x4)]",
+        "oreo-model-selector oreo-squircle oreo-state-layer flex h-8 items-center gap-[var(--space-x2)] px-[var(--space-x4)]",
         "text-[14px] leading-5 text-[var(--color-text-primary)] outline-none select-none",
-        "transition-colors duration-150 hover:bg-[var(--color-state-hover)] active:bg-[var(--color-state-press)]",
+        "transition-colors duration-150",
         "focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
         className,
       )}

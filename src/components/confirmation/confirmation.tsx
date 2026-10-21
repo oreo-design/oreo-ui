@@ -59,7 +59,7 @@ export function Confirmation({
               key="actions"
               exit={leaving}
               transition={{ duration: 0.15, ease: easeOut }}
-              className="flex items-center gap-2"
+              className="oreo-notice-actions flex items-center gap-2"
             >
               <Button type="secondary" size="sm" onClick={onDeny}>
                 {denyLabel}

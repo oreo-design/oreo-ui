@@ -57,9 +57,15 @@ export const attachment = tv({
     /** sm only compacts the labeled form (28px tall); the square stays 36. */
     size: { md: {}, sm: {} },
     removable: { true: {}, false: {} },
-    media: { true: {}, false: {} },
+    media: { true: { thumb: "oreo-squircle [--squircle-radius:var(--radius-media-thumb,var(--radius-control-tiny))]" }, false: {} },
   },
   compoundVariants: [
+    // Only a full-bleed media tile owns the media frame. A labeled file chip
+    // remains a structural control; its thumbnail keeps its intrinsic role.
+    { media: true, withLabel: false, class: {
+      root: "oreo-squircle [--squircle-radius:var(--radius-media,var(--radius-control))]",
+      fill: "oreo-media-fill oreo-squircle",
+    } },
     // Explicit heights so the hairline border stays inside the 36/28 box,
     // matching Figma's inner strokes.
     { withLabel: true, size: "md", class: { root: "h-9 px-[var(--space-x4)]" } },

@@ -11,15 +11,15 @@ import { tv } from "@/lib/tv";
 export const confirmation = tv({
   slots: {
     root: [
-      "w-full overflow-hidden rounded-2xl",
+      "oreo-paper-card w-full overflow-hidden rounded-2xl",
       "bg-[var(--color-bg-base)] ring-1 ring-inset ring-[var(--color-border-subtle)]",
       "shadow-[var(--shadow-panel)]",
     ],
-    body: "flex flex-col gap-1 px-4 pt-3.5",
-    title: "text-[14px] font-medium text-[var(--color-text-primary)]",
-    description: "text-[13px] leading-relaxed text-[var(--color-text-secondary)]",
+    body: "oreo-notice-body flex flex-col gap-1 px-4 pt-3.5",
+    title: "oreo-card-title text-[14px] font-medium text-[var(--color-text-primary)]",
+    description: "oreo-technical text-[13px] leading-relaxed text-[var(--color-text-secondary)]",
     detail: "px-4 pt-3",
-    footer: "flex min-h-12 items-center justify-end gap-2 px-4 py-3",
+    footer: "oreo-notice-footer flex min-h-12 items-center justify-end gap-2 px-4 py-3",
     resolution: "flex items-center gap-1.5 text-[13px] font-medium",
   },
   variants: {
