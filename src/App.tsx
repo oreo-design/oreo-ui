@@ -1,3 +1,5 @@
+import { MotionCodeStudio } from "@/patterns/motion-code-studio";
+import { MotionCodeDocs } from "@/pages/MotionCodeDocs";
 import { AuroraFaq } from "@/patterns/aurora-faq";
 import { AuroraAccordionDocs } from "@/pages/AuroraAccordionDocs";
 import { OutlineBrandFooter } from "@/patterns/outline-brand-footer";
@@ -228,6 +230,9 @@ import { DEFAULT_PAGE, isPageSlug, metaForRoute, type PageSlug } from "@/lib/sit
 import { applyRouteMeta } from "@/lib/head";
 
 const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
+  "motion-code-studio": MotionCodeStudio,
+  "code-focus": MotionCodeDocs,
+  "sheet-timeline": MotionCodeDocs,
   "aurora-faq": AuroraFaq, "aurora-accordion": AuroraAccordionDocs, "aurora-surface": AuroraAccordionDocs,
   "outline-brand-footer": OutlineBrandFooter, "outline-wordmark": OutlineWordmarkDocs, "path-glyph": OutlineWordmarkDocs, "footer-link-groups": OutlineWordmarkDocs,
   "breakout-404": Breakout404Page, "breakout-navigator": BreakoutNavigationDocs, "destination-progress": BreakoutNavigationDocs, "recovery-message": BreakoutNavigationDocs,

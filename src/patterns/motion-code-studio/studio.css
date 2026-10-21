@@ -1,0 +1,55 @@
+@reference "../../index.css";
+.motion-code-studio { @apply min-h-screen bg-bg-base px-6 text-text-primary; }
+.motion-code-studio > * { @apply mx-auto w-full max-w-6xl; }
+.motion-code-studio__header { @apply flex min-h-20 items-center justify-between gap-4; }
+.motion-code-studio__brand { @apply flex items-center gap-3 text-xs font-medium; }
+.motion-code-studio__mark { @apply text-2xl; }
+.motion-code-studio__intro { @apply flex items-end justify-between gap-8 pb-6 pt-4; }
+.motion-code-studio__eyebrow { @apply mb-4 font-mono text-xs tracking-widest text-text-tertiary; }
+.motion-code-studio__intro h1 { @apply text-4xl leading-tight font-medium tracking-tight; }
+.motion-code-studio__description { @apply pb-1 text-sm leading-6 text-text-secondary; }
+.motion-code-studio__stage { @apply overflow-hidden rounded-card-large border border-border-subtle bg-bg-elevated; }
+.motion-code-studio__stage-header { @apply flex items-center justify-between border-b border-border-subtle px-6 py-4 font-mono text-xs text-text-tertiary; }
+.motion-code-studio__live { @apply flex items-center gap-2; }
+.motion-code-studio__live i { @apply size-1 rounded-capsule bg-text-tertiary; }
+.motion-code-studio__canvas { @apply grid min-w-0 items-center gap-8 px-6 py-4; grid-template-columns: minmax(0,1fr) 16rem; }
+.motion-code-studio__preview { @apply relative grid min-w-0 place-items-center; }
+.motion-code-studio__preview-label { @apply mt-4 font-mono text-xs tracking-widest text-text-tertiary; }
+.motion-code-studio__transport { @apply flex items-center gap-2 border-t border-border-subtle px-6 py-4; }
+.motion-code-studio__range { @apply flex min-w-0 flex-1 items-center gap-4 pl-4; }
+.motion-code-studio__range input { @apply min-w-0 flex-1 cursor-pointer; accent-color: var(--color-status-progress); }
+.motion-code-studio__position { @apply w-12 text-right font-mono text-xs text-text-secondary; }
+.motion-code-studio__below { @apply flex flex-wrap items-center justify-between gap-4 py-4; }
+.motion-code-studio__below p { @apply text-xs text-text-tertiary; }
+.motion-code-studio__source { @apply mt-4 overflow-hidden rounded-card-medium border border-border-subtle bg-bg-elevated p-6; }
+.motion-code-studio__source pre { @apply overflow-x-auto font-mono text-sm leading-7; }
+.motion-code-studio__footer { @apply flex flex-wrap items-center justify-between gap-4 py-8 text-xs text-text-tertiary; }
+.motion-code-studio__footer a { @apply hover:text-text-primary; }
+@media (max-width: 64rem) {
+  .motion-code-studio__canvas { @apply gap-4 px-2; grid-template-columns: minmax(0,1fr) 14rem; }
+  .motion-code-studio__canvas .oreo-code-focus { @apply text-xs; }
+  .motion-code-studio__canvas .oreo-code-focus__input { @apply px-3; }
+  .motion-code-studio__canvas .oreo-code-focus__line { @apply gap-3; }
+}
+@media (max-width: 40rem) {
+  .motion-code-studio { @apply px-4; }
+  .motion-code-studio__header { @apply min-h-20; }
+  .motion-code-studio__brand { @apply gap-2; }
+  .motion-code-studio__intro { @apply items-start gap-4 pt-4; }
+  .motion-code-studio__intro h1 { @apply text-3xl; }
+  .motion-code-studio__description { display: none; }
+  .motion-code-studio__eyebrow { @apply text-xs tracking-normal; }
+  .motion-code-studio__canvas { @apply relative flex flex-col gap-0 px-2 py-0; }
+  .motion-code-studio__canvas > .oreo-code-focus { @apply w-full; }
+  .motion-code-studio__canvas .oreo-code-focus { font-size: var(--text-xs); }
+  .motion-code-studio__canvas .oreo-code-focus__input { @apply px-1; }
+  .motion-code-studio__canvas .oreo-code-focus__line { @apply gap-2; }
+  .motion-code-studio__preview { @apply pointer-events-none relative order-first w-full border-b border-border-subtle py-4; height: 12rem; }
+  .motion-code-studio__preview .oreo-sheet-timeline { width: 4.2rem; height: 9.45rem; }
+  .motion-code-studio__preview .oreo-sheet-timeline__drawing { transform: scale(.3); transform-origin: top left; }
+  .motion-code-studio__preview-label { @apply absolute left-2 top-4 m-0; }
+  .motion-code-studio__stage-header { @apply px-4 text-xs; }
+  .motion-code-studio__transport { @apply px-3; }
+  .motion-code-studio__range { @apply gap-2 pl-0; }
+  .motion-code-studio__below { @apply gap-2; }
+}
