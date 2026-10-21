@@ -11,6 +11,7 @@
  * every library has an answer for the new name.
  */
 export const ICON_NAMES = [
+
   "hand",
   "columns",
   "info",
@@ -96,6 +97,15 @@ export const ICON_NAMES = [
   "trash",
   "warning-circle",
   "x",
+  "unlink",
+  "play",
+  "pause",
+  "cpu",
+  "lightning",
+  "git-merge",
+  "git-pull-request",
+  "git-pull-request-closed",
+  "file",
 ] as const;
 
 export type IconName = (typeof ICON_NAMES)[number];

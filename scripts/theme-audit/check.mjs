@@ -19,7 +19,7 @@ console.log(`Checked spacing and corner token contracts in ${checked} component 
 
 // Utility-owned controls must use the same scales. The two 1px exceptions are
 // glyph geometry (terminal caret and square Stop icon), not control surfaces.
-const glyphCorners = new Set(['src/components/terminal/terminal.tsx', 'src/components/prompt-box/prompt-box.tsx']);
+const glyphCorners = new Set(['src/components/terminal/terminal.tsx', 'src/components/icon/custom-glyphs.tsx']);
 function checkUtilities(dir) {
   for (const entry of readdirSync(dir, {withFileTypes:true})) {
     const path = join(dir, entry.name);

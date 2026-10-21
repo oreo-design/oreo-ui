@@ -13,24 +13,7 @@ import { DocumentEmpty } from "@/components/document-activity";
 import type { LinkedDocument } from "./model";
 import "./linked-documents.css";
 export type { LinkedDocument } from "./model";
-function UnlinkGlyph() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path
-        d="m8 16-1 1a4 4 0 0 1-6-6l3-3a4 4 0 0 1 5.6 0M16 8l1-1a4 4 0 0 1 6 6l-3 3a4 4 0 0 1-5.6 0M9 15l6-6M5 2v3M2 5h3M19 22v-3M22 19h-3"
-        transform="translate(1 0) scale(.9 1)"
-      />
-    </svg>
-  );
-}
+
 export function LinkedDocumentRow({
   document,
   index,
@@ -69,7 +52,7 @@ export function LinkedDocumentRow({
                 tapScale={1}
                 aria-label={`Unlink ${document.name}`}
                 data-unlink={document.id}
-                icon={<UnlinkGlyph />}
+                icon={<Icon name="unlink" />}
                 onClick={() => onUnlink(document.id)}
               />
             }

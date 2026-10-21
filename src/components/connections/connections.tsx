@@ -1,8 +1,8 @@
+import { TriangleMark, Icon } from "@/components/icon";
 import { useEffect, useId, useRef, useState, type ReactNode, type Ref } from "react";
 import { Combobox } from "@base-ui-components/react/combobox";
 import { Collapsible } from "@base-ui-components/react/collapsible";
 import { tv } from "@/lib/tv";
-import { Icon } from "@/components/icon";
 import { Button, IconButton } from "@/components/button";
 import { CodeBlock } from "@/components/code-block";
 import { cn } from "@/lib/cn";
@@ -18,7 +18,7 @@ const markStyle = tv({
 
 export function ProjectIdentity({ project, className }: { project: ConnectionProject; className?: string }) {
   return <span className={cn("inline-flex min-w-0 items-center gap-2.5", className)}>
-    <span aria-hidden="true" className={markStyle({ tone: project.tone })}>{project.mark === "flame" ? "🔥" : project.mark === "letter" ? (project.letter ?? project.name[0]?.toUpperCase()) : <svg viewBox="0 0 16 16" className="size-3" fill="currentColor"><path d="M8 2 15 14H1Z" /></svg>}</span>
+    <span aria-hidden="true" className={markStyle({ tone: project.tone })}>{project.mark === "flame" ? "🔥" : project.mark === "letter" ? (project.letter ?? project.name[0]?.toUpperCase()) : <TriangleMark />}</span>
     <span className="min-w-0 break-words">{project.name}</span>
   </span>;
 }

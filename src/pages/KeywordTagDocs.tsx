@@ -12,18 +12,18 @@ import {
   TextGlyph,
   FolderGlyph,
 } from "@/components/keyword-tag";
-import openaiLogo from "@/components/prompt-box/assets/openai.svg";
-import claudeLogo from "@/components/prompt-box/assets/claude-color.svg";
-import figmaLogo from "@/components/prompt-box/assets/figma-color.svg";
-import geminiLogo from "@/components/keyword-tag/assets/gemini-color.svg";
-import grokLogo from "@/components/keyword-tag/assets/grok.svg";
-import klingLogo from "@/components/keyword-tag/assets/kling-color.svg";
-import qwenLogo from "@/components/keyword-tag/assets/qwen-color.svg";
-import midjourneyLogo from "@/components/keyword-tag/assets/midjourney.svg";
-import notionLogo from "@/components/keyword-tag/assets/notion.svg";
-import gmailLogo from "@/components/keyword-tag/assets/gmail.svg";
-import calendarLogo from "@/components/keyword-tag/assets/google-calendar.svg";
-import githubLogo from "@/components/keyword-tag/assets/github.svg";
+import openaiLogo from "@/components/icon/assets/brands/openai.svg";
+import claudeLogo from "@/components/icon/assets/brands/claude-color.svg";
+import figmaLogo from "@/components/icon/assets/brands/figma-color.svg";
+import geminiLogo from "@/components/icon/assets/brands/gemini-color.svg";
+import grokLogo from "@/components/icon/assets/brands/grok.svg";
+import klingLogo from "@/components/icon/assets/brands/kling-color.svg";
+import qwenLogo from "@/components/icon/assets/brands/qwen-color.svg";
+import midjourneyLogo from "@/components/icon/assets/brands/midjourney.svg";
+import notionLogo from "@/components/icon/assets/brands/notion.svg";
+import gmailLogo from "@/components/icon/assets/brands/gmail.svg";
+import calendarLogo from "@/components/icon/assets/brands/google-calendar.svg";
+import githubLogo from "@/components/icon/assets/brands/github.svg";
 
 const TOC: TocItem[] = [
   { id: "keyword-tag", label: "Introduction" },

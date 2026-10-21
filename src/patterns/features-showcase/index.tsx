@@ -1,4 +1,4 @@
-import { Cpu, Lightning, LockKey, Sparkle } from "@phosphor-icons/react";
+import { Icon } from "@/components/icon";
 import { FeaturePanel, FeatureItem, InvoicePreview, UsageSummary, type UsageSegment } from "@/components/feature-cards";
 
 export const featureUsage: UsageSegment[] = [{ label: "Running", value: 20, tone: "purple", detail: "average of 12 minutes" }, { label: "Swimming", value: 20, tone: "blue" }];
@@ -15,10 +15,10 @@ export function FeaturesShowcase() {
       </FeaturePanel>
     </div>
     <div className="grid gap-x-8 gap-y-8 border-t border-border-subtle pt-10 sm:grid-cols-2 lg:grid-cols-4">
-      <FeatureItem icon={<Lightning size={20} />} title="Faaast">Move from an idea to an invoice in minutes, with less busywork.</FeatureItem>
-      <FeatureItem icon={<Cpu size={20} />} title="Powerful">Flexible tools that grow with your team and the way you work.</FeatureItem>
-      <FeatureItem icon={<LockKey size={20} />} title="Security">Keep sensitive work organized, with control over what you share.</FeatureItem>
-      <FeatureItem icon={<Sparkle size={20} />} title="AI Powered">Turn information into a useful starting point for your next step.</FeatureItem>
+      <FeatureItem icon={<Icon name="lightning" />} title="Faaast">Move from an idea to an invoice in minutes, with less busywork.</FeatureItem>
+      <FeatureItem icon={<Icon name="cpu" />} title="Powerful">Flexible tools that grow with your team and the way you work.</FeatureItem>
+      <FeatureItem icon={<Icon name="lock" />} title="Security">Keep sensitive work organized, with control over what you share.</FeatureItem>
+      <FeatureItem icon={<Icon name="sparkle" />} title="AI Powered">Turn information into a useful starting point for your next step.</FeatureItem>
     </div>
   </div>;
 }

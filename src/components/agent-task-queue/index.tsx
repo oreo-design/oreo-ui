@@ -37,21 +37,7 @@ const statusGlyph = {
   "needs-context": "info",
   done: "check",
 } as const;
-function TransportGlyph({ paused = false }: { paused?: boolean }) {
-  return (
-    <svg
-      aria-hidden
-      viewBox="0 0 20 20"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      {paused ? <path d="m7 4 9 6-9 6Z" /> : <path d="M7 4v12M13 4v12" />}
-    </svg>
-  );
-}
+function TransportGlyph({ paused = false }: { paused?: boolean }) { return <Icon name={paused ? "play" : "pause"} />; }
 export function QueueTaskRow({
   task,
   expanded = false,

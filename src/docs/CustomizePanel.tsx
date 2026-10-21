@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Slider, Segmented } from "./primitives";
-import { Icon, ICON_LIBRARIES, ICON_WEIGHTS, type IconLibrary, type IconWeight } from "@/components/icon";
+import { Icon, ICON_WEIGHTS, type IconLibrary, type IconWeight } from "@/components/icon";
 
 export type CustomizeState = {
   dark: boolean;
@@ -101,7 +101,6 @@ export function CustomizePanel(s: CustomizeState) {
                 <div className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-text-secondary)]">
                   Icon
                 </div>
-                <Segmented label="library" value={s.library} options={ICON_LIBRARIES} onChange={s.setLibrary} />
                 {/* Lucide is stroke-only, so its weight menu is shorter. */}
                 <Segmented label="weight" value={s.weight} options={ICON_WEIGHTS[s.library]} onChange={s.setWeight} />
               </div>

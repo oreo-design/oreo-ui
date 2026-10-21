@@ -1,8 +1,8 @@
+import { Icon } from "@/components/icon";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
 import { IconButton } from "@/components/button";
-import { Icon } from "@/components/icon";
 
 const TOC: TocItem[] = [
   { id: "icon-button", label: "Introduction" },
@@ -31,7 +31,6 @@ const PROPS: PropRow[] = [
 ];
 
 const CODE_BASIC = `import { IconButton } from "@/components/button";
-import { Icon } from "@/components/icon";
 
 <IconButton aria-label="Attach" icon={<Icon name="paperclip" />} />`;
 

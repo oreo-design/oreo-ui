@@ -38,7 +38,7 @@ export const LUCIDE_STROKE: Record<IconWeight, number> = {
   duotone: 2.5,
 };
 
-const IconLibraryContext = React.createContext<IconLibrary>("phosphor");
+const IconLibraryContext = React.createContext<IconLibrary>("lucide");
 
 /**
  * Points every `<Icon name="…">` underneath it at a different icon set.
@@ -63,7 +63,7 @@ export function IconLibraryProvider({
   return <IconLibraryContext.Provider value={library}>{children}</IconLibraryContext.Provider>;
 }
 
-/** The icon set in effect here. Defaults to Phosphor when no provider is set. */
+/** The icon set in effect here. Defaults to Lucide when no provider is set. */
 export function useIconLibrary() {
   return React.useContext(IconLibraryContext);
 }

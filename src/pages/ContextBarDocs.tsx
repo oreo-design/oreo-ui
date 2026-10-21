@@ -12,7 +12,7 @@ import {
   ContextBarTextButton,
   ContextBarIconButton,
 } from "@/components/context-bar";
-import claudeLogo from "@/components/prompt-box/assets/claude-color.svg";
+import claudeLogo from "@/components/icon/assets/brands/claude-color.svg";
 
 const TOC: TocItem[] = [
   { id: "context-bar", label: "Introduction" },

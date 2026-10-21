@@ -38,25 +38,7 @@ export function PullRequestPill({
       title={`Pull request #${number} · ${state}`}
       aria-label={`Pull request ${number}, ${state}`}
     >
-      <svg
-        viewBox="0 0 16 16"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        aria-hidden
-      >
-        <circle cx="4" cy="3" r="1.5" />
-        <circle cx="4" cy="13" r="1.5" />
-        <circle cx="12" cy="13" r="1.5" />
-        <path
-          d={
-            state === "merged"
-              ? "M4 4.5v7M12 11.5V8L5.5 4.5"
-              : "M4 4.5v7M12 11.5V5a2 2 0 0 0-2-2H8m2-2L8 3l2 2"
-          }
-        />
-        {state === "closed" && <path d="m10 1 4 4m0-4-4 4" />}
-      </svg>
+      <Icon name={state === "merged" ? "git-merge" : state === "closed" ? "git-pull-request-closed" : "git-pull-request"} size="sm" />
       <span>#{number}</span>
     </span>
   );

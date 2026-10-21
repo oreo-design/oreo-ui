@@ -288,20 +288,7 @@ export function KnowledgeFileTable({
                   onClick={() => onOpen(file)}
                   className="kb-file-open"
                 >
-                  <svg
-                    width="17"
-                    height="20"
-                    viewBox="0 0 17 20"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M3 1h7l4 4v14H3zM10 1v5h4"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <Icon name="file" size="sm" />
                   <span className="break-all">{file.name}</span>
                 </button>
               </td>

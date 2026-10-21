@@ -1,3 +1,4 @@
+import { CutScissors } from "@/components/icon";
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import "./cut-reveal.css";
@@ -14,13 +15,7 @@ export type CutRevealProps = {
   onReveal?: () => void;
 };
 
-function Scissors() {
-  return <svg viewBox="0 0 36 30" fill="none" aria-hidden="true">
-    <g className="cut-reveal__blade cut-reveal__blade--upper"><circle cx="9" cy="7" r="4" /><path d="m12 10 20 14" /></g>
-    <g className="cut-reveal__blade cut-reveal__blade--lower"><circle cx="9" cy="23" r="4" /><path d="M12 20 32 6" /></g>
-    <circle cx="19" cy="15" r="1.5" fill="currentColor" stroke="none" />
-  </svg>;
-}
+
 
 function RollingCounter() {
   return <span className="cut-reveal__counter">
@@ -89,7 +84,7 @@ export function CutReveal({ children, wordmark, duration = 5200, skipLabel = "Sk
           <div className="cut-reveal__cut" />
           <RollingCounter />
           <span className="cut-reveal__instruction">Cut along line <b>▸▸▸</b></span>
-          <div className="cut-reveal__scissors-track"><span className="cut-reveal__scissors"><Scissors /></span></div>
+          <div className="cut-reveal__scissors-track"><span className="cut-reveal__scissors"><CutScissors /></span></div>
         </div>
       </div>
       <span className="sr-only" role="status">Opening presentation</span>

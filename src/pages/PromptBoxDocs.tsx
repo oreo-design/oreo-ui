@@ -12,10 +12,10 @@ import { MenuItem, MenuPopup, MenuSeparator, MenuSubmenu, MenuSubmenuTrigger } f
 import { PromptBox, PromptBoxModelSelect, KeywordTag } from "@/components/prompt-box";
 import { PlusGlyph } from "@/components/keyword-tag";
 import type { SpringProps } from "@/docs/DocsPage";
-import openaiLogo from "@/components/prompt-box/assets/openai.svg";
-import claudeLogo from "@/components/prompt-box/assets/claude-color.svg";
-import googleLogo from "@/components/prompt-box/assets/google-color.svg";
-import figmaLogo from "@/components/prompt-box/assets/figma-color.svg";
+import openaiLogo from "@/components/icon/assets/brands/openai.svg";
+import claudeLogo from "@/components/icon/assets/brands/claude-color.svg";
+import googleLogo from "@/components/icon/assets/brands/google-color.svg";
+import figmaLogo from "@/components/icon/assets/brands/figma-color.svg";
 
 const TOC: TocItem[] = [
   { id: "prompt-box", label: "Introduction" },
