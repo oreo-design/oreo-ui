@@ -1,3 +1,4 @@
+import { parseVariation, type Variation } from "./variation.ts";
 import {
   defaultsFor,
   normalizeNumber,
@@ -7,6 +8,7 @@ import {
 } from "./schema.ts";
 
 export type SavedAppearance = {
+  variation?: Variation;
   dark: boolean;
   radius: number;
   library: "phosphor" | "lucide";
@@ -92,7 +94,7 @@ export function readConfiguration(
     a.radius <= 999 &&
     ["phosphor", "lucide"].includes(a.library)
   )
-    result.appearance = { dark: a.dark, radius: a.radius, library: a.library };
+    result.appearance = { dark: a.dark, radius: a.radius, library: a.library, ...(a.variation === undefined ? {} : { variation: parseVariation(a.variation) }) };
   return result;
 }
 

@@ -803,3 +803,64 @@ body:has(.pg-shell) .site-mobile-nav {
 .pg-tooltip-positioner {
   z-index: 110;
 }
+
+/* 94:169: two quiet inspectors around a centered canvas. Layout-specific 57/328
+   dimensions are retained; controls use Oreo spacing/radius/typography tokens. */
+.pg-shell, .pg-modal {
+  --spacing: 4px;
+  --space-x1: 2px; --space-x2: 4px; --space-x3: 6px;
+  --space-x4: 8px; --space-x6: 12px; --space-x8: 16px;
+  --radius-control-tiny: 4px; --radius-control: 8px;
+  --radius-control-large: 10px; --radius-card-small: 12px; --radius-card-medium: 16px;
+}
+.pg-header { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+.pg-header nav { justify-self: end; }
+.pg-header .pg-toolbar { padding: 0; min-height: 0; overflow: visible; }
+.pg-header .pg-tool { width: calc(var(--spacing) * 8); height: calc(var(--spacing) * 8); }
+.pg-header .pg-tool[aria-pressed="true"] { border-radius: var(--radius-capsule); }
+.pg-breadcrumb { justify-self: start; white-space: nowrap; }
+.pg-breadcrumb > span:nth-child(2), .pg-breadcrumb > span:nth-child(4) { opacity: .2; }
+.pg-variation { width: 328px; flex-shrink: 0; overflow-y: auto; overscroll-behavior: contain; }
+.pg-variation-trigger { display: none; }
+.pg-theme-options { display: grid; gap: var(--space-x2); border: 0; min-width: 0; }
+.pg-theme-option { display: flex; align-items: center; gap: var(--space-x4); padding: var(--space-x4) var(--space-x6); border-radius: var(--radius-control); color: var(--color-text-secondary); cursor: pointer; position: relative; }
+.pg-theme-option:has(:checked) { background: var(--color-state-press); color: var(--color-text-primary); }
+.pg-theme-option:hover { background: var(--color-state-hover); }
+.pg-theme-option:has(:focus-visible) { outline: 2px solid var(--color-text-tertiary); outline-offset: 2px; }
+.pg-theme-option input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pg-theme-swatch { width: var(--space-x8); height: var(--space-x8); border-radius: var(--radius-control-tiny); background: var(--color-text-primary); border: .5px solid var(--color-border-default); }
+.pg-theme-swatch-openai { background: var(--color-text-primary); border-radius: var(--radius-capsule); }
+.pg-theme-swatch-material { border-radius: var(--radius-control); }
+.pg-theme-selection { margin-left: auto; }
+.pg-variation-content > .pg-row.pg-fine { color: var(--color-text-tertiary); }
+.pg-color-field { display: flex; align-items: center; gap: var(--space-x4); padding: var(--space-x3) var(--space-x4); border: .5px solid var(--color-border-default); border-radius: var(--radius-control); }
+.pg-color-field input[type="color"] { width: calc(var(--spacing) * 6); height: calc(var(--spacing) * 6); padding: 0; border: 0; background: transparent; cursor: pointer; }
+.pg-color-field input[type="text"], .pg-color-field input:not([type]) { min-width: 0; width: 100%; background: transparent; font: inherit; outline: none; }
+.pg-theme-error { display: grid; gap: var(--space-x4); color: var(--color-text-secondary); }
+.pg-theme-error button { text-decoration: underline; justify-self: start; }
+.pg-more-tools { position: relative; }
+.pg-more-tools > summary { list-style: none; cursor: pointer; }
+.pg-more-tools > summary::-webkit-details-marker { display: none; }
+.pg-more-popover { position: absolute; top: calc(100% + var(--space-x4)); right: 0; padding: var(--space-x2); background: var(--color-bg-base); border: .5px solid var(--color-border-default); border-radius: var(--radius-control-large); box-shadow: var(--shadow-panel); z-index: 20; }
+.pg-inspector-content > .pg-muted:first-child { color: var(--color-text-placeholder); }
+.pg-main .pg-content { min-height: 0; }
+@media (max-width: 1199px) {
+  .pg-variation { display: none; }
+  .pg-variation-trigger { display: inline-flex; }
+  .pg-header { gap: var(--space-x4); }
+  .pg-brand, .pg-brand-separator { display: none; }
+}
+@media (max-width: 767px) {
+  .pg-header { grid-template-columns: minmax(0, 1fr) auto; height: auto; min-height: 57px; padding-top: var(--space-x4); }
+  .pg-header .pg-toolbar { grid-column: 1 / -1; grid-row: 2; justify-content: center; padding-block: var(--space-x4); flex-wrap: nowrap; }
+  .pg-header nav { grid-column: 2; grid-row: 1; }
+  .pg-breadcrumb .pg-category { display: none; }
+  .pg-properties-trigger { margin-left: 0; }
+  .pg-more-popover { right: calc(-1 * var(--space-x8)); flex-wrap: wrap; max-width: 240px; }
+}
+/* PropertyControl must keep the same range/value split inside either inspector. */
+.pg-modal .pg-field input[type="number"] { width: calc(var(--spacing) * 20); }
+.pg-modal .pg-color-field input:not([type="color"]) { border: 0; padding: 0; background: transparent; }
+@media (max-width: 767px) {
+  .pg-breadcrumb > span:not(.pg-glyph) { display: none; }
+}

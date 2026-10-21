@@ -1,4 +1,6 @@
-import { useState, type CSSProperties } from "react";
+import { useVariation, patchTheme } from "./playground/useVariation";
+import { variationTokens } from "./playground/variation";
+import { useState, useEffect, type CSSProperties } from "react";
 import { DocsLayout } from "./DocsLayout";
 import { CustomizePanel } from "./CustomizePanel";
 import { ComponentPlayground } from "./playground/ComponentPlayground";
@@ -46,12 +48,18 @@ export function DocsPage({
     window.history.replaceState(null, "", url);
     window.scrollTo({ top: 0 });
   };
-  const [dark, setDark] = useState(() => new URLSearchParams(window.location.search).get("view") === "remixes" && new URLSearchParams(window.location.search).has("dark"));
-  const [radius, setRadius] = useState(8);
+  const { theme } = useVariation();
+  const { dark, radius, library } = theme;
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("view") === "remixes" && params.has("dark")) patchTheme({ dark: true });
+  }, []);
+  const setDark = (dark: boolean) => patchTheme({ dark });
+  const setRadius = (radius: number) => patchTheme({ radius });
+  const setLibrary = (library: IconLibrary) => patchTheme({ library });
   const [bounce, setBounce] = useState(0.4);
   const [duration, setDuration] = useState(0.3);
   const [tapScale, setTapScale] = useState(0.96);
-  const [library, setLibrary] = useState<IconLibrary>("phosphor");
   const [weight, setWeight] = useState<IconWeight>("regular");
 
   // Not every weight survives a library swap — Lucide can't draw `fill`. Fall
@@ -64,14 +72,12 @@ export function DocsPage({
     radius,
     dark,
   };
-  const wrapStyle = { ["--radius-control" as string]: `${radius}px` } as CSSProperties;
-
-  const appearance = { dark, setDark, radius, setRadius, bounce, setBounce, duration, setDuration, tapScale, setTapScale, library, setLibrary, weight: effectiveWeight, setWeight };
+  const wrapStyle = (view === "playground" ? variationTokens(theme) : { "--radius-control": `${radius}px` }) as CSSProperties;
 
   return (
     <IconLibraryProvider library={library}>
       <div className={dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"} style={wrapStyle}>
-        {view === "remixes" && hasRemix(nav.active) ? <RemixExamples slug={nav.active} nav={nav} dark={dark} setDark={setDark} onPlayground={() => changeView("playground")} onDocumentation={() => changeView("docs")} /> : spec && view === "playground" ? <ComponentPlayground spec={spec} nav={nav} breadcrumb={breadcrumb} appearance={appearance} onDocumentation={() => changeView("docs")} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : <>
+        {view === "remixes" && hasRemix(nav.active) ? <RemixExamples slug={nav.active} nav={nav} dark={dark} setDark={setDark} onPlayground={() => changeView("playground")} onDocumentation={() => changeView("docs")} /> : spec && view === "playground" ? <ComponentPlayground spec={spec} nav={nav} breadcrumb={breadcrumb} onDocumentation={() => changeView("docs")} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : <>
         <DocsLayout toc={toc} breadcrumb={breadcrumb} nav={nav} views={(spec || hasRemix(nav.active)) ? <PageViews slug={nav.active} active="docs" onPlayground={spec ? () => changeView("playground") : undefined} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : undefined}>
           {children(controls)}
         </DocsLayout>

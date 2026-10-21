@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 
 export type Part = { name: string; description: string; selector: string };
 export const partsFor = (slug: string): Part[] =>
@@ -69,6 +69,7 @@ type Measurement = {
 };
 export function PreviewStage({
   children,
+  themeStyle,
   slug,
   mode,
   viewport,
@@ -77,6 +78,7 @@ export function PreviewStage({
   revision,
 }: {
   children: ReactNode;
+  themeStyle?: CSSProperties;
   slug: string;
   mode: "preview" | "annotation" | "inspect";
   viewport: string;
@@ -220,7 +222,7 @@ export function PreviewStage({
         <div
           ref={content}
           inert={mode === "annotation"}
-          className="pg-preview"
+          className="pg-preview" style={themeStyle}
           key={revision}
         >
           {children}

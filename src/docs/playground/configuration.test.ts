@@ -124,3 +124,33 @@ test("appearance export keeps provider and radius only when requested", async ()
   assert.match(decorated, /"--radius-control": "12px"/);
   assert.match(decorated, /<Button \/>/);
 });
+
+test("theme presets, custom values and old links round-trip safely", async () => {
+  const { presetAppearance, variationTokens } = await import("./variation.ts");
+  for (const preset of ["oreo", "claude", "openai", "material"] as const) {
+    const appearance = presetAppearance(preset, true);
+    const restored = readConfiguration(JSON.stringify({ ...config, appearance }), "test", spec);
+    assert.deepEqual(restored.appearance, appearance);
+    assert.ok(Object.keys(variationTokens(appearance)).includes("--space-x4"));
+  }
+  const appearance = { ...presetAppearance("material"), radius: 12, variation: { preset: "material", density: .75, accent: "#123abc" } };
+  assert.deepEqual(readConfiguration(JSON.stringify({ ...config, appearance }), "test", spec).appearance, appearance);
+  for (const bad of [null, { preset: "unknown", density: 1, accent: null }, { preset: "oreo", density: 9, accent: null }, { preset: "oreo", density: 1, accent: "red;display:none" }]) {
+    assert.throws(() => readConfiguration(JSON.stringify({ ...config, appearance: { ...config.appearance, variation: bad } }), "test", spec));
+  }
+});
+
+test("theme export carries token scales, palette, contrast and preserves semantic errors", async () => {
+  const { withAppearance } = await import("./exportAppearance.ts");
+  const { presetAppearance, variationTokens, accentForeground } = await import("./variation.ts");
+  const a = presetAppearance("claude");
+  const code = 'import { Button } from "@/components/button";\n\n// Starting props. Connect event handlers in your app.\n<Button />';
+  const exported = withAppearance(code, a);
+  assert.match(exported, /--space-x4/);
+  assert.match(exported, /--radius-card-medium/);
+  assert.match(exported, /#b45d3a/);
+  assert.equal(variationTokens(a)["--color-status-error"], undefined);
+  assert.equal(accentForeground("#ffffff"), "#000000");
+  assert.equal(accentForeground("#000000"), "#ffffff");
+  assert.equal(variationTokens(presetAppearance("oreo"))["--spacing"], "4px");
+});

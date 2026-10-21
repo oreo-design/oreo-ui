@@ -308,3 +308,24 @@ Kevin’s [Unlink Documents](https://x.com/kvnkld/status/2111826634902741219) ex
 ### Outline brand footer
 
 `/outline-brand-footer` composes OutlineWordmark, PathGlyph and FooterLinkGroups. Contour nodes, per-letter hover/focus/touch highlights, quiet release fades and real footer navigation. Independent Playgrounds and four-part component docs; reference by @creativestefan via uiinspoo.
+
+### Playground variations
+
+The Playground's left **Style** panel owns a shared theme; the right panel owns
+component properties. Oreo Default, Claude, OpenAI and Material are editable
+Oreo style presets (not official vendor implementations). Change spacing,
+corner radius, accent, light/dark mode and icon library independently. Manual
+changes are marked Custom. Reset theme and Reset properties are independent.
+Themes persist across component navigation and reloads in this browser; Share
+and code export include the current token overrides. Old configuration links
+remain valid. Storage failures leave the editor usable and offer Retry saving.
+
+Preview tokens are owned by `src/docs/playground/variation.ts`; shell controls
+retain their geometry so theme editing remains usable. Density affects Oreo's
+spacing scale and Tailwind spacing-based geometry. Components that explicitly
+fix their own sizes or colors retain those local choices; semantic error/success
+colors are not replaced by an accent. Portaled components receive the same root
+tokens while the Playground is mounted. Exports include the preview wrapper;
+when portaling in another app, put these tokens on that app's theme/portal root.
+On narrower screens, Variation and Properties open separate keyboard-accessible
+panels. Replay, Inspect, Compare and Share remain under More tools.

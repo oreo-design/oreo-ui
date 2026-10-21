@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import { variationTokens } from "./variation";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { Button } from "@/components/button";
 import { PropertyControl } from "./PropertyControl";
 import {
@@ -64,6 +65,7 @@ export function ComparePanel({
       <div className="pg-comparisons">
         {[{ label: "Current", values }, ...variants].map((variant, index) => (
           <Comparison
+            themeStyle={configuration.appearance ? variationTokens(configuration.appearance) as CSSProperties : undefined}
             key={`${seed}-${index}`}
             spec={spec}
             label={variant.label}
@@ -161,11 +163,13 @@ export function ComparePanel({
 }
 
 function Comparison({
+  themeStyle,
   spec,
   label,
   initial,
   onApply,
 }: {
+  themeStyle?: CSSProperties;
   spec: PlaygroundSpec;
   label: string;
   initial: Values;
@@ -176,7 +180,7 @@ function Comparison({
   return (
     <section className="pg-card">
       <strong>{label}</strong>
-      <div className="pg-compare-preview">
+      <div className="pg-compare-preview" style={themeStyle}>
         {spec.render(values, (key, value) =>
           setValues((current) =>
             updateValues(spec.controls, current, key, value),

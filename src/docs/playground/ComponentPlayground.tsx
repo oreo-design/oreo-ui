@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, type CSSProperties } from "react";
 import { Tooltip } from "@base-ui-components/react/tooltip";
 import type { DocsNav } from "@/docs/DocsPage";
-import type { CustomizeState } from "@/docs/CustomizePanel";
-import { ICON_LIBRARIES } from "@/components/icon";
+import { VariationPanel } from "./VariationPanel";
+import { useVariation, setTheme } from "./useVariation";
+import { variationTokens } from "./variation";
 import { CodeBlock } from "@/components/code-block";
 import { PropertyControl } from "./PropertyControl";
 import {
   defaultsFor,
   resolveControl,
   updateValues,
-  select,
-  toggle,
-  number,
   type PlaygroundSpec,
   type Values,
 } from "./schema";
@@ -48,17 +46,18 @@ export function ComponentPlayground({
   spec,
   nav,
   breadcrumb,
-  appearance,
   onDocumentation,
   onRemixes,
 }: {
   spec: PlaygroundSpec;
   nav: DocsNav;
   breadcrumb: string[];
-  appearance: CustomizeState;
   onDocumentation: () => void;
   onRemixes?: () => void;
 }) {
+  const { theme } = useVariation();
+  const moreTools = useRef<HTMLDetailsElement>(null);
+  const [variationOpen, setVariationOpen] = useState(false);
   const [initial] = useState(() => {
     const raw = new URLSearchParams(window.location.search).get("config");
     try {
@@ -92,9 +91,7 @@ export function ComponentPlayground({
   useEffect(() => {
     const a = initial.configuration?.appearance;
     if (a && !initial.resumed) {
-      appearance.setDark(a.dark);
-      appearance.setRadius(a.radius);
-      appearance.setLibrary(a.library);
+      setTheme(a);
     }
     try {
       setPresets(
@@ -116,15 +113,19 @@ export function ComponentPlayground({
       config: new URLSearchParams(window.location.search).get("config"),
     });
   }, [values, nav.active]);
-  // Portaled Oreo controls and the shell share the same semantic theme tokens.
+  // Portaled component surfaces must receive the same tokens as the preview.
   useEffect(() => {
     const root = document.documentElement;
-    const previous = root.classList.contains("theme-dark");
-    root.classList.toggle("theme-dark", appearance.dark);
+    const previousDark = root.classList.contains("theme-dark");
+    const tokens = variationTokens(theme);
+    const previous = Object.fromEntries(Object.keys(tokens).map(key => [key, root.style.getPropertyValue(key)]));
+    root.classList.toggle("theme-dark", theme.dark);
+    Object.entries(tokens).forEach(([key, value]) => root.style.setProperty(key, value));
     return () => {
-      root.classList.toggle("theme-dark", previous);
+      root.classList.toggle("theme-dark", previousDark);
+      Object.entries(previous).forEach(([key, value]) => value ? root.style.setProperty(key, value) : root.style.removeProperty(key));
     };
-  }, [appearance.dark]);
+  }, [theme]);
   useEffect(() => {
     if (!copyStatus) return;
     const timer = setTimeout(() => setCopyStatus(""), 2600);
@@ -148,15 +149,21 @@ export function ComponentPlayground({
         ) &&
         !share &&
         !picker &&
-        !properties
+        !properties &&
+        !variationOpen
       ) {
-        setMode("preview");
-        setSelected(0);
+        if (moreTools.current?.open) {
+          moreTools.current.open = false;
+          moreTools.current.querySelector("summary")?.focus();
+        } else {
+          setMode("preview");
+          setSelected(0);
+        }
       }
     };
     window.addEventListener("keydown", escape);
     return () => window.removeEventListener("keydown", escape);
-  }, [share, picker, properties]);
+  }, [share, picker, properties, variationOpen]);
   const set = (key: string, value: Values[string]) => {
     demo.player?.stop();
     setValues((current) => updateValues(spec.controls, current, key, value));
@@ -188,11 +195,7 @@ export function ComponentPlayground({
     version: 1,
     component: nav.active,
     values,
-    appearance: {
-      dark: appearance.dark,
-      radius: appearance.radius,
-      library: appearance.library,
-    },
+    appearance: theme,
   };
   const previewCode = withAppearance(code, configuration.appearance);
   const copy = async (text: string, kind: string) => {
@@ -325,34 +328,7 @@ export function ComponentPlayground({
           </p>
         </details>
       )}
-      <details className="pg-disclosure">
-        <summary>
-          Appearance
-          <Glyph name="chevron" />
-        </summary>
-        <div className="pg-fields">
-          <PropertyControl
-            name="Dark theme"
-            control={toggle()}
-            value={appearance.dark}
-            onChange={(value) => appearance.setDark(Boolean(value))}
-          />
-          <PropertyControl
-            name="Radius"
-            control={number(8, 0, 999)}
-            value={appearance.radius}
-            onChange={(value) => appearance.setRadius(Number(value))}
-          />
-          <PropertyControl
-            name="Icon library"
-            control={select(ICON_LIBRARIES, "phosphor")}
-            value={appearance.library}
-            onChange={(value) =>
-              appearance.setLibrary(value as CustomizeState["library"])
-            }
-          />
-        </div>
-      </details>
+
     </div>
   );
 
@@ -366,12 +342,130 @@ export function ComponentPlayground({
             aria-label={`Choose component, current ${spec.title}`}
             aria-haspopup="dialog"
           >
-            <Glyph name="logo" />
-            <span>{breadcrumb[0] ?? "Components"}</span>
+            <span className="pg-brand">Oreo UI</span>
+            <span className="pg-brand-separator">/</span>
+            <span className="pg-category">{breadcrumb[0] ?? "Components"}</span>
             <span>/</span>
             <strong>{spec.title}</strong>
             <Glyph name="chevron" />
           </button>
+            <div
+              className="pg-toolbar"
+              role="toolbar"
+              aria-label="Playground tools"
+              onKeyDown={(event) => {
+                if (
+                  !["ArrowLeft", "ArrowRight", "Home", "End"].includes(
+                    event.key,
+                  )
+                )
+                  return;
+                const buttons = Array.from(
+                  event.currentTarget.querySelectorAll<HTMLButtonElement>(
+                    "button, summary",
+                  ),
+                ).filter(
+                  (button) => button.offsetParent !== null && !button.disabled,
+                );
+                const current = buttons.indexOf(
+                  document.activeElement as HTMLButtonElement,
+                );
+                const next =
+                  event.key === "Home"
+                    ? 0
+                    : event.key === "End"
+                      ? buttons.length - 1
+                      : (current +
+                          (event.key === "ArrowRight" ? 1 : -1) +
+                          buttons.length) %
+                        buttons.length;
+                event.preventDefault();
+                buttons[next]?.focus();
+              }}
+            >
+              <div className="pg-toolgroup">
+                {(["preview", "annotation", "code"] as const).map((view) => (
+                  <Tool
+                    key={view}
+                    icon={view}
+                    label={view.charAt(0).toUpperCase() + view.slice(1)}
+                    active={mode === view}
+                    onClick={() => changeMode(view)}
+                  />
+                ))}
+              </div>
+              <span className="pg-divider" />
+              <div className="pg-toolgroup">
+                {["desktop", "tablet", "mobile"].map((device) => (
+                  <Tool
+                    key={device}
+                    icon={device}
+                    label={device.charAt(0).toUpperCase() + device.slice(1)}
+                    active={viewport === device}
+                    onClick={() => setViewport(device)}
+                  />
+                ))}
+              </div>
+              <details className="pg-more-tools" ref={moreTools}>
+                <summary className="pg-tool" aria-label="More tools" title="More tools"><Glyph name="dots" /></summary>
+                <div className="pg-toolgroup pg-more-popover">
+                <Tool
+                  icon="replay"
+                  label="Replay"
+                  onClick={() => {
+                    setMode("preview");
+                    if (demo.player) demo.player.replay();
+                    else setRevision((v) => v + 1);
+                  }}
+                />
+                <Tool
+                  icon="inspect"
+                  label="Inspect"
+                  active={mode === "inspect"}
+                  onClick={() =>
+                    changeMode(mode === "inspect" ? "preview" : "inspect")
+                  }
+                />
+                <Tool
+                  icon="compare"
+                  label="Compare"
+                  active={mode === "compare"}
+                  onClick={() =>
+                    changeMode(mode === "compare" ? "preview" : "compare")
+                  }
+                />
+                <Tool
+                  icon="share"
+                  label="Share"
+                  onClick={() => setShare(true)}
+                />
+                {demo.player && (
+                  <Tool
+                    icon={demo.status === "playing" ? "pause" : "play"}
+                    label={
+                      demo.status === "playing"
+                        ? "Pause demo"
+                        : demo.status === "paused"
+                          ? "Resume demo"
+                          : "Play demo"
+                    }
+                    onClick={() => {
+                      setMode("preview");
+                      if (demo.status === "playing") demo.player?.pause();
+                      else demo.player?.play();
+                    }}
+                  />
+                )}
+                </div>
+              </details>
+              <Tool className="pg-variation-trigger" icon="palette" label="Variation" onClick={() => setVariationOpen(true)} />
+              <Tool
+                className="pg-properties-trigger"
+                icon="sliders"
+                label="Properties"
+                onClick={() => setProperties(true)}
+              />
+            </div>
           <nav aria-label="Page view">
             <a
               aria-current="page"
@@ -425,121 +519,8 @@ export function ComponentPlayground({
           </nav>
         </header>
         <div className="pg-workspace">
+          <aside className="pg-variation" aria-label="Global variation"><VariationPanel /></aside>
           <main aria-label={`${spec.title} playground`} className="pg-main">
-            <div
-              className="pg-toolbar"
-              role="toolbar"
-              aria-label="Playground tools"
-              onKeyDown={(event) => {
-                if (
-                  !["ArrowLeft", "ArrowRight", "Home", "End"].includes(
-                    event.key,
-                  )
-                )
-                  return;
-                const buttons = Array.from(
-                  event.currentTarget.querySelectorAll<HTMLButtonElement>(
-                    "button",
-                  ),
-                ).filter(
-                  (button) => button.offsetParent !== null && !button.disabled,
-                );
-                const current = buttons.indexOf(
-                  document.activeElement as HTMLButtonElement,
-                );
-                const next =
-                  event.key === "Home"
-                    ? 0
-                    : event.key === "End"
-                      ? buttons.length - 1
-                      : (current +
-                          (event.key === "ArrowRight" ? 1 : -1) +
-                          buttons.length) %
-                        buttons.length;
-                event.preventDefault();
-                buttons[next]?.focus();
-              }}
-            >
-              <div className="pg-toolgroup">
-                {(["preview", "annotation", "code"] as const).map((view) => (
-                  <Tool
-                    key={view}
-                    icon={view}
-                    label={view.charAt(0).toUpperCase() + view.slice(1)}
-                    active={mode === view}
-                    onClick={() => changeMode(view)}
-                  />
-                ))}
-              </div>
-              <span className="pg-divider" />
-              <div className="pg-toolgroup">
-                {["desktop", "tablet", "mobile"].map((device) => (
-                  <Tool
-                    key={device}
-                    icon={device}
-                    label={device.charAt(0).toUpperCase() + device.slice(1)}
-                    active={viewport === device}
-                    onClick={() => setViewport(device)}
-                  />
-                ))}
-              </div>
-              <span className="pg-divider" />
-              <div className="pg-toolgroup">
-                <Tool
-                  icon="replay"
-                  label="Replay"
-                  onClick={() => {
-                    setMode("preview");
-                    if (demo.player) demo.player.replay();
-                    else setRevision((v) => v + 1);
-                  }}
-                />
-                <Tool
-                  icon="inspect"
-                  label="Inspect"
-                  active={mode === "inspect"}
-                  onClick={() =>
-                    changeMode(mode === "inspect" ? "preview" : "inspect")
-                  }
-                />
-                <Tool
-                  icon="compare"
-                  label="Compare"
-                  active={mode === "compare"}
-                  onClick={() =>
-                    changeMode(mode === "compare" ? "preview" : "compare")
-                  }
-                />
-                <Tool
-                  icon="share"
-                  label="Share"
-                  onClick={() => setShare(true)}
-                />
-                {demo.player && (
-                  <Tool
-                    icon={demo.status === "playing" ? "pause" : "play"}
-                    label={
-                      demo.status === "playing"
-                        ? "Pause demo"
-                        : demo.status === "paused"
-                          ? "Resume demo"
-                          : "Play demo"
-                    }
-                    onClick={() => {
-                      setMode("preview");
-                      if (demo.status === "playing") demo.player?.pause();
-                      else demo.player?.play();
-                    }}
-                  />
-                )}
-              </div>
-              <Tool
-                className="pg-properties-trigger"
-                icon="sliders"
-                label="Properties"
-                onClick={() => setProperties(true)}
-              />
-            </div>
             {error && (
               <div className="pg-error" role="alert">
                 <p>{error}</p>
@@ -590,9 +571,7 @@ export function ComponentPlayground({
                   onPresetApply={(preset) => {
                     apply(preset.values);
                     if (preset.appearance) {
-                      appearance.setDark(preset.appearance.dark);
-                      appearance.setRadius(preset.appearance.radius);
-                      appearance.setLibrary(preset.appearance.library);
+                      setTheme(preset.appearance);
                     }
                   }}
                   onSave={(preset) => {
@@ -615,6 +594,7 @@ export function ComponentPlayground({
                   onKeyDownCapture={() => demo.player?.stop()}
                 >
                   <PreviewStage
+                    themeStyle={variationTokens(theme) as CSSProperties}
                     slug={nav.active}
                     mode={mode}
                     viewport={viewport}
@@ -632,9 +612,6 @@ export function ComponentPlayground({
                 {demo.label} · {demo.status}
               </p>
             )}
-            <footer className="pg-footer" aria-hidden="true">
-              {spec.title}
-            </footer>
           </main>
           <aside className="pg-inspector" aria-label="Component properties">
             {inspector}
@@ -658,6 +635,9 @@ export function ComponentPlayground({
           install={install}
           copy={copy}
         />
+        <Modal open={variationOpen} onOpenChange={setVariationOpen} title="Variation" className="pg-mobile-properties">
+          {variationOpen && <VariationPanel />}
+        </Modal>
         <Modal
           open={properties}
           onOpenChange={setProperties}
