@@ -8,7 +8,7 @@
 .oreo-switch-stretch-head {
   display: block;
   position: absolute;
-  inset: 2px;
+  inset: calc(var(--spacing) * 0.5);
   border-radius: var(--radius-capsule);
   pointer-events: none;
 }
@@ -18,12 +18,13 @@
 .oreo-switch-stretch-head {
   inset: 0;
   background: var(--color-bg-base);
-  clip-path: inset(0 14px 0 0 round var(--radius-capsule));
+  clip-path: inset(0 calc(var(--spacing) * 3.5) 0 0 round var(--radius-capsule));
 }
 .oreo-switch-stretch[data-checked] .oreo-switch-stretch-tail {
-  clip-path: inset(0 0 0 14px round var(--radius-capsule));
+  clip-path: inset(0 0 0 calc(var(--spacing) * 3.5) round var(--radius-capsule));
 }
 .oreo-switch-stretch[data-checked] .oreo-switch-stretch-head {
+  background: var(--color-text-on-inverse);
   clip-path: inset(0 0 0 0 round var(--radius-capsule));
 }
 @media (prefers-reduced-motion: no-preference) {
