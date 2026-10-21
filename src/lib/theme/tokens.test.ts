@@ -8,9 +8,9 @@ test("nested non-ASCII scopes explicitly turn off inherited ASCII surface recipe
     const next = variationTokens(presetAppearance(preset));
     for (const key of Object.keys(ascii).filter(k => k.startsWith("--theme-") || k.startsWith("--radius-media") || k === "--font-technical"))
       assert.ok(key in next, `${preset} must reset ${key}`);
-    assert.equal(next["--theme-hatch"], "none");
+    assert.equal(next["--theme-hatch-color"], "transparent");
     assert.equal(next["--theme-frame-marks"], "0");
-    assert.equal(next["--theme-art-display"], "none");
+    assert.equal(next["--theme-art-presence"], "0");
     assert.equal(next["--font-technical"], "initial");
   }
 });

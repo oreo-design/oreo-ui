@@ -1,3 +1,11 @@
+/* A typed paint value lets the ASCII hatch interpolate without replacing an
+   entire gradient image. Defined with the recipe so exported themes retain it. */
+@property --theme-hatch-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
 /* Shared role recipes. Every switch is a token, so nested exports/comparisons
    can reset it without inheriting a root [data-site-theme] selector. */
 .oreo-technical { font-family: var(--font-technical, inherit); }
@@ -37,10 +45,10 @@
 /* Structural rails belong to existing page boundaries, never overlay content. */
 .pg-header { border-bottom: var(--theme-rail-width, 0px) solid var(--color-border-default); }
 .pg-main { border-inline: var(--theme-rail-width, 0px) solid var(--color-border-default); }
-.pg-stage { background-image: var(--theme-hatch, none); }
+.pg-stage { background-image: repeating-linear-gradient(135deg, transparent 0 8px, var(--theme-hatch-color, transparent) 8px 8.5px, transparent 8.5px 9px); }
 .pg-frame { background-color: var(--color-bg-elevated); }
 .oreo-document-frame > main {
-  background-image: var(--theme-hatch, none);
+  background-image: repeating-linear-gradient(135deg, transparent 0 8px, var(--theme-hatch-color, transparent) 8px 8.5px, transparent 8.5px 9px);
 }
 .oreo-document-frame .site-docs-content {
   background-color: var(--color-bg-elevated);
@@ -54,14 +62,15 @@
 /* Actual Figma graphic: native SVG dimensions are preserved, layers positioned
    in the original 216×120 coordinate space. This is decorative, not an icon. */
 .oreo-theme-illustration {
-  display: var(--theme-art-display, none);
+  /* Retain the box so entering/leaving artwork animates its actual layout. */
   position: relative;
   width: 100%;
-  height: calc(var(--spacing) * 50);
-  margin-block: calc(var(--spacing) * 8);
+  height: calc(var(--spacing) * 50 * var(--theme-art-presence, 0));
+  margin-block: calc(var(--spacing) * 8 * var(--theme-art-presence, 0));
+  opacity: var(--theme-art-presence, 0);
   overflow: hidden;
   background: var(--color-bg-illustration);
-  border-bottom: .5px solid var(--color-border-default);
+  border-bottom: calc(.5px * var(--theme-art-presence, 0)) solid var(--color-border-default);
 }
 .oreo-theme-illustration::after {
   content: "";
