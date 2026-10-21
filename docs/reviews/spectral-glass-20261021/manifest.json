@@ -1,0 +1,250 @@
+{
+  "source": "https://x.com/aecyydesign/status/2112623654530138136?s=20",
+  "baseline": "8bd77d4",
+  "capture": "Chrome through Playwriter 7 then recovered session 3",
+  "locale": "en-US",
+  "viewports": [
+    [
+      1440,
+      1000
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "fixture": "Procedural real component; no remote assets or account data",
+  "superseded": [
+    "after-studio-initial.png",
+    "after-studio-light-v2.png",
+    "after-studio-light-v3.png",
+    "after-studio-environment.png",
+    "after-studio-crown.png",
+    "after-studio-composite.png"
+  ],
+  "limits": [
+    "RGB rasterization approximation; source spectral path tracing, caustics and inter-object multi-bounce transport not reproduced",
+    "Reference clip 2 frame is horizontally clipped",
+    "Full 16s loop and physical-device FPS not measured",
+    "Production deployment not verified"
+  ],
+  "finalSource": "1091fbae3b0b46792328dc867f5cd5131aceb230",
+  "builtPreviewSource": "220adfb12511afb40968a033facd0a2925b3afa6",
+  "finalBase": "e4626b6",
+  "productionPreview": "http://localhost:5235",
+  "pr": "https://github.com/oreo-design/oreo-ui/pull/121",
+  "sourceEquivalence": "No diff between 220adfb and final source in spectral-glass component, studio or docs",
+  "motion": {
+    "method": "Playwriter CDP Page.startScreencast",
+    "frames": 132,
+    "sourceTimestampSpanSeconds": 10.771188,
+    "originalDimensions": [
+      1440,
+      1000
+    ],
+    "cleanDimensions": [
+      1440,
+      984
+    ],
+    "cleanTransform": "crop top 16 CSS px automation tab; preserve original video and frames",
+    "localRawArchive": "motion-originals.tar.gz"
+  },
+  "captures": [
+    {
+      "file": "after-component-docs-final.png",
+      "sha256": "78f6111a71b9b62236bfd1a431da5c40816b6ac1a899d1e93b5dd7abd29d7191",
+      "capturedAt": "2026-10-21T17:11:34.433463+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-component-docs-verified.png",
+      "sha256": "78f6111a71b9b62236bfd1a431da5c40816b6ac1a899d1e93b5dd7abd29d7191",
+      "capturedAt": "2026-10-21T17:12:07.074013+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-component-docs.png",
+      "sha256": "46b49ce75cd329d8a8a6e3ac772afa8c11b9259861c3bb72fc710500248eca1f",
+      "capturedAt": "2026-10-21T17:07:35.338006+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-component-playground-final.png",
+      "sha256": "4b9827af4935b0f4aca0cc23909195e4dac7d52086ce6fc20d04205dceb18833",
+      "capturedAt": "2026-10-21T17:10:44.087410+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-component-playground.png",
+      "sha256": "d7958071afb3ece9d35bb34aeaeae89b032c547b87fb83e03a8d41ce42c4bd1f",
+      "capturedAt": "2026-10-21T17:06:27.851591+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-error-context-loss.png",
+      "sha256": "112871524134c37f1837e185041b05f86d68963757f626cfc482a79eb9e36b42",
+      "capturedAt": "2026-10-21T17:04:27.536105+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-interactions-clean.mp4",
+      "sha256": "75bb2524dd83ef5e1c710fc3b3316d282c8c9ac297c99e8ab9155ac21a797b48",
+      "capturedAt": "2026-10-21T17:04:16.274653+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-interactions.mp4",
+      "sha256": "63ecfe36dfc621a3c2109bed6911030689613bfc85766408ae30393916e752b8",
+      "capturedAt": "2026-10-21T17:02:43.365181+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-loading-built-preview.png",
+      "sha256": "75ec4c9e76678540acfd0a9567a85b7e7ede7d908ac2b90df8c617da5549200d",
+      "capturedAt": "2026-10-21T17:11:22.372175+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-loading-module-delay-final.png",
+      "sha256": "24b01d0c50a9f88febbe9a302b4998fbd37e31891c7f964eaf0277e3dd4caab2",
+      "capturedAt": "2026-10-21T17:10:09.634971+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-mobile-dark.png",
+      "sha256": "e8a69ccae53530a67e6ed29f05b708cdba181c3984b4e382c3cfa682d108177f",
+      "capturedAt": "2026-10-21T16:58:37.078063+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-mobile-light.png",
+      "sha256": "3e9c2e7354f32c711e9b5f5daafa9cd0b5b65f39b99caae6b551b372914cc333",
+      "capturedAt": "2026-10-21T17:00:13.060452+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-orbit-dark.png",
+      "sha256": "4186a1fc8e025c1d8bb20fcb041b840ce7e6ee502958a14e51e0bdb2247f53cf",
+      "capturedAt": "2026-10-21T16:56:55.587152+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-reduced-motion-verified.png",
+      "sha256": "9a035fd8796ba1777da22ebda753df074f803584aed939656e0812409a811064",
+      "capturedAt": "2026-10-21T17:04:13.399367+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-retry-recovered.png",
+      "sha256": "15c18af9b43432d5050872aac6ce9328e7b59585158ba58b1c9d0df64e712734",
+      "capturedAt": "2026-10-21T17:05:08.387942+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-single-frosted-amber.png",
+      "sha256": "5e515e78ec2de8e0a8afdf73c5b1b79e28a34e2731958347fe28bd08be3c93af",
+      "capturedAt": "2026-10-21T16:58:16.806901+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-studio-composite.png",
+      "sha256": "10d5ae908e56aa21794a2a9582ad9cdc1bc349261b241fb8d6204d7a5c2c8014",
+      "capturedAt": "2026-10-21T16:54:44.745633+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-studio-crown.png",
+      "sha256": "a1955637de1d300c118af3a594aadd54cba30aef77ca5cb7b31c328b315b97fd",
+      "capturedAt": "2026-10-21T16:47:20.197078+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-studio-dark.png",
+      "sha256": "d8d0ede31eb8dc11c18b3d29608362d283fdd7c167ef6bdef32c2bc6e43c221f",
+      "capturedAt": "2026-10-21T16:56:21.266992+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-studio-environment.png",
+      "sha256": "f5814e88ff086dd0047d66b9afcc7d8ed6e7c63c86e909908ec30c74993b51c6",
+      "capturedAt": "2026-10-21T16:46:15.192385+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-studio-initial.png",
+      "sha256": "5a25649283bf1f1837c502341dce455ee2c151b5af2863bd5cc225c3bcc80de7",
+      "capturedAt": "2026-10-21T16:42:31.642667+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-studio-light-v2.png",
+      "sha256": "1ac681962f996b98e458fa6ebe1d81e7ff24034bfbcde4dc1637960114b201e0",
+      "capturedAt": "2026-10-21T16:43:41.677911+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-studio-light-v3.png",
+      "sha256": "1ac681962f996b98e458fa6ebe1d81e7ff24034bfbcde4dc1637960114b201e0",
+      "capturedAt": "2026-10-21T16:44:36.209465+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-studio-light.png",
+      "sha256": "cba75d040826d1c18185b761be6f4ba61e608723d7b92a6598887ecdfd711ecd",
+      "capturedAt": "2026-10-21T16:55:54.512555+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "after-tablet-reduced-motion.png",
+      "sha256": "f9dcce031b06042d64275af485de67fbeb0aafb34027f29fa0ea7c1df22ee4cf",
+      "capturedAt": "2026-10-21T16:59:25.845632+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "before-aurora-peer.png",
+      "sha256": "440c7b728cbc93db80dff8b7dd4878d0783efc648f6d625c41bb7bad6bed4cd3",
+      "capturedAt": "2026-10-21T16:36:53.838167+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "before-studio-entry.png",
+      "sha256": "01e23fb9202255b5c72e0a616cd0e8555f3dbe27c698bc242129e9af9cbc722c",
+      "capturedAt": "2026-10-21T16:37:13.457477+08:00",
+      "sourceType": "real Oreo component fixture"
+    },
+    {
+      "file": "reference-glass-01.png",
+      "sha256": "3ac5d5bfb871fd57b3d3322331f918030d094bd692060f0a87ae5ef81b6a44e6",
+      "capturedAt": "2026-10-21T16:35:16.851353+08:00",
+      "sourceType": "reference X page"
+    },
+    {
+      "file": "reference-glass-02.png",
+      "sha256": "770683a1e9cef09f67e1f73a97da596c374489a7d2d1adea1d0d2db71f9afef6",
+      "capturedAt": "2026-10-21T16:38:03.074199+08:00",
+      "sourceType": "reference X page"
+    },
+    {
+      "file": "reference-glass-03.png",
+      "sha256": "7d486264599443e9a6a719108a92c134263d347ce6a659dc47cac1f4e617c3d0",
+      "capturedAt": "2026-10-21T16:38:31.541132+08:00",
+      "sourceType": "reference X page"
+    },
+    {
+      "file": "reference-glass-04.png",
+      "sha256": "e96d4b4cc32f36103aa5e0dcdada82223a32b981ada9ed2b3f7d5e21310076b3",
+      "capturedAt": "2026-10-21T16:42:20.231822+08:00",
+      "sourceType": "reference X page"
+    },
+    {
+      "file": "reference-post.png",
+      "sha256": "e1f1228abfaa3c3f4d6e0a4044751a9e17431acc6b3aa36563959e99ed12e679",
+      "capturedAt": "2026-10-21T16:34:47.173984+08:00",
+      "sourceType": "reference X page"
+    }
+  ]
+}
