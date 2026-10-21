@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { defaultVariation, parseVariation, presetAppearance, type ThemeAppearance } from "./tokens.ts";
+import type { ThemeTransition } from "./transition.ts";
 
 // Keep the existing key so saved playground settings become the site preference.
 export const themeStorageKey = "oreo:playground:theme:v1";
@@ -13,23 +14,47 @@ export function parseAppearance(raw: string | null): ThemeAppearance {
 export function createThemeStore(storage: () => Pick<Storage, "getItem" | "setItem">) {
   let initialized = false;
   let snapshot = { theme: presetAppearance("oreo"), storageError: "" };
+  let requestedTheme = snapshot.theme;
+  let transition: ThemeTransition | undefined;
   const listeners = new Set<() => void>();
   const publish = () => listeners.forEach(fn => fn());
   function read() {
     try { snapshot = { theme: parseAppearance(storage().getItem(themeStorageKey)), storageError: "" }; }
     catch { snapshot = { theme: snapshot.theme, storageError: "Saved theme could not be loaded. Retry saving or reset the theme." }; }
   }
-  const getSnapshot = () => { if (!initialized) { initialized = true; read(); } return snapshot; };
-  const setTheme = (next: ThemeAppearance) => {
+  const getSnapshot = () => { if (!initialized) { initialized = true; read(); requestedTheme = snapshot.theme; } return snapshot; };
+  function commitTheme(theme: ThemeAppearance, storageError: string, animate: boolean) {
+    const changed = JSON.stringify(theme) !== JSON.stringify(getSnapshot().theme);
+    requestedTheme = theme;
+    const commit = () => { snapshot = { theme, storageError }; initialized = true; publish(); };
+    if (transition) transition.run(commit, animate && changed);
+    else commit();
+  }
+  const setTheme = (next: ThemeAppearance, animate = true) => {
     const theme = parseAppearance(JSON.stringify(next));
     let storageError = "";
     try { storage().setItem(themeStorageKey, JSON.stringify(theme)); }
     catch { storageError = "Theme works for this session, but could not be saved. Retry or use Share to keep it."; }
-    snapshot = { theme, storageError }; initialized = true; publish();
+    commitTheme(theme, storageError, animate);
   };
   return { getSnapshot, setTheme,
-    patchTheme: (patch: Partial<ThemeAppearance>) => setTheme({ ...getSnapshot().theme, ...patch }),
-    refresh: () => { initialized = true; read(); publish(); },
+    patchTheme: (patch: Partial<ThemeAppearance>) => {
+      getSnapshot();
+      const next = { ...requestedTheme, ...patch };
+      // Continuous adjustments must remain under the pointer, not queue snapshots.
+      const animate = next.dark !== requestedTheme.dark || next.variation?.preset !== requestedTheme.variation?.preset;
+      setTheme(next, animate);
+    },
+    refresh: () => {
+      getSnapshot();
+      try { commitTheme(parseAppearance(storage().getItem(themeStorageKey)), "", true); }
+      catch { commitTheme(requestedTheme, "Saved theme could not be loaded. Retry saving or reset the theme.", false); }
+    },
+    installTransition: (next: ThemeTransition) => {
+      transition?.dispose();
+      transition = next;
+      return () => { if (transition === next) { transition = undefined; next.dispose(); } };
+    },
     subscribe: (fn: () => void) => { listeners.add(fn); return () => { listeners.delete(fn); }; },
   };
 }

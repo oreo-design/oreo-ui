@@ -1,0 +1,9 @@
+# Animate UI — whole-page theme transitions
+
+User-requested research, 2026-10-21. Sources inspected: [Theme Toggler](https://animate-ui.com/docs/primitives/animate-ui/theme-toggler) and [Theme Toggler Button](https://animate-ui.com/docs/primitives/animate-ui/theme-toggler-button), current Animate UI documentation. Documentation describes behavior; no claim of a source-code audit or performance benchmark.
+
+The page-level primitive uses the native View Transitions API and a directional snapshot wipe, with a documented 700ms ease-in-out default. Unsupported browsers and reduced-motion preferences switch immediately. Its completion callback commits the theme at the end while `onImmediateChange` can update controls earlier. The button primitive separately animates its icon, so an animated theme icon alone does not demonstrate a whole-page transition.
+
+Oreo adaptation: reuse the existing document-level theme owner and tokens, fade the entire page over 220ms with the house ease-out curve. This covers sidebars, component previews, template pages and body portals, without asking every component to duplicate transitions or interpolating layout on every frame. Keep persistence immediate and commit React at the snapshot update; cancel superseded snapshots and ignore stale update callbacks. Skip mount, reduced-motion and unsupported cases; continuous controls remain direct. Do not adopt the longer directional wipe, delayed persistence or an additional component dependency.
+
+Implementation: `src/lib/theme/transition.ts`, `transition.css`, `store.ts`, `SiteThemeProvider.tsx`. Adoption status: implemented; delivery and observed coverage are maintained in the existing task [REVIEW.md](/Users/ziye/Documents/Project/Research/output/playground-figma-20261019/REVIEW.md), section “Whole-site Style transitions”, rather than in a second audit index. The crossfade visually bridges old/new radius and layout; it does not morph each element's geometry independently.
