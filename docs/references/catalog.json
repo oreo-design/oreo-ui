@@ -421,6 +421,31 @@
       "limits": "原帖另一段 32 秒视频未全量逐帧分析；Oreo 为在线 fixture，未测真实网络、全部键盘状态、跨页持久性和部署 SHA。截图是参考/现状，不是修复前后。",
       "evidence": "evidence/cosign-20261020/REVIEW.md",
       "path": "records/2026-10-20-cosign.md"
+    },
+    {
+      "id": "2026-10-21-spectral-glass",
+      "title": "Szymon：光学玻璃材质与浏览器渲染",
+      "date": "2026-10-21",
+      "category": "材质与三维视觉",
+      "sources": [
+        "https://x.com/aecyydesign/status/2112623654530138136?s=20",
+        "https://threejs.org/docs/pages/MeshPhysicalMaterial.html",
+        "https://www.openimagedenoise.org/"
+      ],
+      "thread": null,
+      "summary": "厚玻璃、倒角、条形环境光、光谱色散和程序化微观细节；Oreo 实时 RGB 材质台保留明确的渲染边界。",
+      "observations": [
+        "作者明确使用 Three.js、自定义 WebGPU 光谱路径追踪、蓝噪声采样、Intel AI 降噪。",
+        "四段视频显示圆片堆叠、环形排列、斜向散布和单片近景。"
+      ],
+      "lessons": [
+        "几何、光路、布光、表面细节和采样共同决定材质，不能简化成背景模糊。",
+        "实时 RGB 近似与原作者光谱追踪分开记录。"
+      ],
+      "status": "可复用 SpectralGlass、Glass Studio 和研究记录已实现；交付见任务 REVIEW。",
+      "limits": "未取得原工具源码；没有复现多次光路、光谱追踪、焦散、蓝噪声或 AI 降噪。",
+      "evidence": "../reviews/spectral-glass-20261021/REVIEW.md",
+      "path": "records/2026-10-21-spectral-glass.md"
     }
   ],
   "implementationReviews": [

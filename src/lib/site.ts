@@ -21,6 +21,8 @@ export const PAGE_META = {
   "motion-code-studio": { title: "Motion Code Studio", description: "Explore motion through a resolving code lens and a linked bottom sheet timeline." },
   "code-focus": { title: "Code Focus", description: "An accessible code focus lens with bounded scrambling, pointer, touch and keyboard scrubbing." },
   "sheet-timeline": { title: "Sheet Timeline", description: "A seekable sheet motion diagram with explicit progress and reduced-motion support." },
+  "spectral-glass": { title: "Spectral Glass", description: "A real-time optical glass study with bevelled volume, dispersion and procedural surface detail." },
+  "spectral-glass-studio": { title: "Glass Studio", description: "Explore optical glass, colored studio reflections and three spatial compositions." },
   "aurora-faq": { title: "Aurora FAQ", description: "A complete studio FAQ with softly lit, separating answer cards." },
   "aurora-accordion": { title: "Aurora Accordion", description: "Single-open answers with joined rows and a softly lit active card." },
   "aurora-surface": { title: "Aurora Surface", description: "An independent, theme-aware multicolor edge surface." },

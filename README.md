@@ -329,3 +329,8 @@ tokens while the Playground is mounted. Exports include the preview wrapper;
 when portaling in another app, put these tokens on that app's theme/portal root.
 On narrower screens, Variation and Properties open separate keyboard-accessible
 panels. Replay, Inspect, Compare and Share remain under More tools.
+
+
+### Spectral Glass Studio
+
+[Szymon’s optical glass renders](https://x.com/aecyydesign/status/2112623654530138136?s=20) inform the reusable `/spectral-glass` component and complete `/spectral-glass-studio` template: bevelled volumes, colored studio reflections, RGB dispersion, procedural surface detail and controllable cyclic motion. The study is an explicit real-time approximation; the author's WebGPU spectral path tracer and denoiser are not reproduced. [Research](docs/references/records/2026-10-21-spectral-glass.md) · [Recipe and integration](src/patterns/spectral-glass-studio/README.md) · [Visual review](docs/reviews/spectral-glass-20261021/REVIEW.md).
