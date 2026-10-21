@@ -5,6 +5,8 @@
 
 ## 从这里找
 
+- [Emil：代码聚焦扫描与联动预览](records/2026-10-21-emil-motion-code.md)
+
 - [本次 Cosign：稳定加载与录屏时间轴审查](records/2026-10-20-cosign.md)
 - [已有组件／模板的参考与实施审查](implementation-index.md)：75 份原任务 REVIEW，保留各自的证据 owner。
 - [检索目录 catalog.json](catalog.json)：结构化的主题、来源、聊天 ID 和证据路径。

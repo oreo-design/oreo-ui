@@ -15,6 +15,8 @@ export const NAV: Group[] = [
   {
     title: "Components",
     items: [
+      {label:"Code Focus",page:"code-focus"},
+      {label:"Sheet Timeline",page:"sheet-timeline"},
       {label:"Adaptive Issue Table",page:"adaptive-issue-table"},
       {label:"Adaptive Issue Row",page:"adaptive-issue-row"},
       {label:"Pull Request Pill",page:"pull-request-pill"},
@@ -286,6 +288,7 @@ export const NAV: Group[] = [
     title: "Templates",
     items: [
       {label:"Workflow Directory",page:"workflow-directory"},
+      {label:"Motion Code Studio",page:"motion-code-studio"},
       {label:"Aurora FAQ",page:"aurora-faq"},
       {label:"Outline Brand Footer",page:"outline-brand-footer"},
       {label:"Breakout 404",page:"breakout-404"},

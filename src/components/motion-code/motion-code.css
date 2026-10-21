@@ -1,0 +1,61 @@
+@reference "../../index.css";
+
+.oreo-code-focus { @apply min-w-0 font-mono text-sm; }
+.oreo-code-focus__input {
+  @apply relative rounded-control p-6 outline-none;
+  cursor: ns-resize;
+  touch-action: pan-x pinch-zoom;
+}
+.oreo-code-focus__input:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.oreo-code-focus[data-disabled] .oreo-code-focus__input { cursor: default; touch-action: auto; }
+.oreo-code-focus__lines { position: relative; pointer-events: none; user-select: none; }
+.oreo-code-focus__line { @apply relative flex gap-5; height: 1.75rem; line-height: 1.75rem; }
+.oreo-code-focus__gutter { @apply w-6 shrink-0 text-right text-text-tertiary; opacity: .45; transition: opacity 120ms var(--ease-out); }
+.oreo-code-focus__text { @apply relative min-w-0 flex-1; white-space: pre; }
+.oreo-code-focus__noise { @apply absolute inset-0 text-text-tertiary; opacity: .28; }
+.oreo-code-focus__noise, .oreo-code-focus__real { transition: opacity 120ms var(--ease-out); }
+.oreo-code-focus__line:not([data-active]) .oreo-code-focus__noise { opacity: .3 !important; }
+.oreo-code-focus__real { color: var(--color-text-secondary); }
+.oreo-code-focus__property { @apply font-semibold text-text-primary; }
+.oreo-code-focus__number { color: var(--color-status-progress); }
+.oreo-code-focus__line[data-active] .oreo-code-focus__gutter { opacity: 1; color: var(--color-status-progress); }
+.oreo-code-focus__band {
+  @apply absolute inset-x-0 top-0 border-y border-dashed;
+  border-color: color-mix(in srgb, var(--color-status-progress) 50%, transparent);
+  height: calc(var(--focus-band) * 1.75rem);
+  transition: transform 160ms var(--ease-out);
+}
+.oreo-code-focus[data-instant] * { transition-duration: 0ms; }
+.oreo-code-focus__empty { @apply flex min-h-48 items-center justify-center text-text-secondary; }
+
+.oreo-sheet-timeline { @apply m-0 grid place-items-center; }
+.oreo-sheet-timeline__drawing { --phone-radius: min(calc(var(--radius-card-large) * var(--oreo-corner-scale, 1)), calc(7rem - var(--spacing) * 4), 15.75rem); position: relative; width: 14rem; height: 31.5rem; }
+.oreo-sheet-timeline__phone { --squircle-rendered-radius: var(--phone-radius); @apply absolute inset-y-0 left-6 right-2 overflow-hidden border-2 border-border-default; }
+.oreo-sheet-timeline__content { @apply flex flex-col gap-6 px-6 pt-16; }
+.oreo-sheet-timeline__content i { @apply block h-1.5 bg-text-tertiary; opacity: .24; }
+.oreo-sheet-timeline__sheet {
+  @apply absolute inset-x-1 bottom-0 border-2 border-border-default bg-bg-surface;
+  --squircle-rendered-radius: max(0px, calc(var(--phone-radius) - var(--spacing) - 2px));
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 50%;
+  /* All coordinates refer to this diagram's sheet, never live product content. */
+}
+.oreo-sheet-timeline__handle { @apply mx-auto mt-3 block h-1 w-10 rounded-capsule bg-text-tertiary; opacity: .45; }
+.oreo-sheet-timeline__copy { @apply flex flex-col gap-4 px-5 pt-7; }
+.oreo-sheet-timeline__copy i { @apply block h-1.5 bg-text-tertiary; opacity: .4; }
+.oreo-sheet-timeline__copy i:first-child { @apply w-3/5 bg-text-primary; opacity: .8; }
+.oreo-sheet-timeline__copy i:last-child { @apply w-3/4; }
+.oreo-sheet-timeline__rest { @apply absolute inset-x-0 top-1/2 border-t border-dashed border-border-default; }
+.oreo-sheet-timeline__axis { @apply absolute left-0 border-l border-border-default; top: 7.875rem; height: 15.75rem; }
+.oreo-sheet-timeline__axis::before, .oreo-sheet-timeline__axis::after { @apply absolute -left-1.5 w-3 border-t border-border-default; content: ""; }
+.oreo-sheet-timeline__axis::before { top: 0; }
+.oreo-sheet-timeline__axis::after { bottom: 0; }
+.oreo-sheet-timeline__axis i { position: absolute; top: 0; left: -.375rem; width: .75rem; border-top: 2px solid var(--color-status-progress); }
+.oreo-sheet-timeline__tick { position: absolute; right: -.25rem; top: 0; width: .5rem; border-top: 2px solid var(--color-status-progress); }
+@media (prefers-reduced-motion: reduce) {
+  .oreo-code-focus__band { transition: none; }
+  .oreo-code-focus__noise, .oreo-code-focus__real, .oreo-code-focus__gutter { transition: opacity 100ms var(--ease-out); }
+  .oreo-sheet-timeline__sheet { transform: none !important; opacity: var(--sheet-opacity); }
+  .oreo-sheet-timeline__axis i, .oreo-sheet-timeline__tick { display: none; }
+}

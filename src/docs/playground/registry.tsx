@@ -1,3 +1,4 @@
+import { CodeFocus, SheetTimeline, SHEET_CODE } from "@/components/motion-code";
 import { PlaygroundIcon, Icon } from "@/components/icon";
 import { AuroraAccordion, AuroraSurface, AURORA_QUESTIONS } from "@/components/aurora-accordion";
 import { OutlineWordmark, PathGlyph, FooterLinkGroups, OREO_WORDMARK, STUDIO_WORDMARK, FOOTER_LINK_GROUPS } from "@/components/outline-wordmark";
@@ -198,6 +199,7 @@ import { definePlayground as define, text, toggle, number, select, type Playgrou
 
 // Registered names also make the JSX export independent of minified function names.
 export const componentModules = {
+ "motion-code": {CodeFocus,SheetTimeline},
  "aurora-accordion": {AuroraAccordion,AuroraSurface},
  "outline-wordmark": {OutlineWordmark,PathGlyph,FooterLinkGroups},
  "breakout-navigation": {BreakoutNavigator,DestinationProgress,RecoveryMessage},
@@ -324,6 +326,8 @@ function linkedDocumentPlayground(selector = false): PlaygroundSpec {
 }
 function queueAnswers(raw:string):Record<string,string>{try{const value=JSON.parse(raw);return value&&typeof value==="object"&&!Array.isArray(value)?Object.fromEntries(Object.entries(value).filter((entry):entry is [string,string]=>typeof entry[1]==="string")):{};}catch{return {};}}
 export const playgrounds: Record<string, PlaygroundSpec> = {
+ "code-focus": {...define("Code Focus", {code:text(SHEET_CODE,true),value:number(36,0,100,1),focusLines:number(5,1,12,1),scramble:toggle(true),disabled:toggle(false),label:text("Code focus")},(v,set)=><div className="w-full max-w-2xl overflow-hidden p-4"><CodeFocus {...v} onValueChange={value=>set("value",value)} /></div>),source:"motion-code"},
+ "sheet-timeline": {...define("Sheet Timeline", {progress:number(60,0,100,1),guides:toggle(true),label:text("Bottom sheet motion preview")},v=><div className="p-8"><SheetTimeline {...v} /></div>),source:"motion-code"},
  "aurora-accordion": {...define("Aurora Accordion",{tone:select(["spectrum","mint","neutral"],"spectrum"),animated:toggle(true),disabled:toggle(false),empty:toggle(false),label:text("Frequently asked questions")},v=><div className="w-full p-8"><AuroraAccordion items={v.empty?[]:AURORA_QUESTIONS} tone={v.tone} animated={v.animated} disabled={v.disabled} label={v.label}/></div>),source:"aurora-accordion"},
  "aurora-surface": {...define("Aurora Surface",{active:toggle(true),tone:select(["spectrum","mint","neutral"],"spectrum"),animated:toggle(true),title:text("A little atmosphere"),description:text("Soft color. Quiet detail.")},v=><div className="w-full p-8"><AuroraSurface active={v.active} tone={v.tone} animated={v.animated} className="mx-auto max-w-sm p-6"><h3 className="font-medium">{v.title}</h3><p className="mt-2 text-sm text-text-secondary">{v.description}</p></AuroraSurface></div>),source:"aurora-accordion"},
  "outline-wordmark": {...define("Outline Wordmark",{artwork:select(["oreo","studio"],"oreo"),accent:select(["amber","mint","neutral"],"amber"),nodes:toggle(true),animated:toggle(true),release:number(700,0,1500,50),revealed:toggle(false),empty:toggle(false),resetKey:number(0,0,99,1)},v=><div className="w-full p-8"><OutlineWordmark glyphs={v.empty?[]:v.artwork==="oreo"?OREO_WORDMARK:STUDIO_WORDMARK} label={v.artwork} accent={v.accent} nodes={v.nodes} animated={v.animated} release={v.release} revealed={v.revealed} resetKey={v.resetKey}/></div>),source:"outline-wordmark"},
