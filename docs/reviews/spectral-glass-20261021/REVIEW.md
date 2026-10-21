@@ -137,3 +137,11 @@ The earlier `after-component-playground.png` blank page remains historical and i
 ![After: local module loading, whole shell remains usable](/Users/ziye/Documents/Project/Research/oreo-ui-material-20261021/docs/reviews/spectral-glass-20261021/after-loading-built-preview.png)
 
 All available screenshots in this directory were opened and inspected. Retained near-duplicate docs/loading captures are historical, not additional coverage. `after-single-frosted-amber.png` predates the last capture recovery and is not used to assert final palette fidelity; final geometry/control evidence is the reviewed motion and static captures above. No screenshots establish measured physical optics or equivalence to the original spectral renders.
+
+## Round 2 — original-video fidelity correction (2026-10-21)
+
+User rejects the first implementation's visual gap and asks to use the original video as the quality standard. Baseline is `93926a8` main; the retained 5235 built preview has the identical original material renderer. The preceding implementation is historical, not accepted fidelity. Before editing, re-inspected reference frames 01/03/04, original studio capture, the rendered studio and original rendered Aurora peer. The same reusable SpectralGlass owner serves the Playground and full studio; controls continue to use existing Oreo Button/IconButton/theme. No new shell pattern is needed.
+
+Observed failures: the shared white vertical stripe comes from sampling the same screen-space studio background through all discs; edge depth is underlit, surface faces are too uniformly black/blue, and the animation barely changes the disc orientation. Target: broad lavender face reflections, sharply bounded pink/white strip highlights, bright rounded rims with darker interior layers, genuine transmitted silhouettes between discs, fine surface wear, and a full periodic turn. Replace the screen-space transmission/mask recipe with bounded ray transport through the actual closed disc volumes. Material/light parameters remain artwork values, not UI tokens. Preserve the one review index and all earlier media.
+
+Round 2 baseline: `r2-before-desktop.png`; earlier original motion recording is retained, and the unchanged built preview remains available for matched recovery until the new build.

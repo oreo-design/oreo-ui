@@ -7,7 +7,7 @@ import "./studio.css";
 const tones: { value: GlassTone; label: string }[] = [{value:"violet",label:"Violet"},{value:"clear",label:"Crystal"},{value:"amber",label:"Amber"}];
 const compositions: { value: GlassComposition; label: string }[] = [{value:"stack",label:"Stack"},{value:"orbit",label:"Orbit"},{value:"single",label:"Single"}];
 const opticalControls = [
-  {key:"roughness",label:"Roughness",min:0,max:.6,step:.01,hint:"Polished → frosted"},
+  {key:"roughness",label:"Roughness",min:0,max:.6,step:.01,hint:"Sharp → soft reflections"},
   {key:"dispersion",label:"Dispersion",min:0,max:1,step:.01,hint:"Separation of transmitted colors"},
   {key:"thickness",label:"Thickness",min:.12,max:.65,step:.01,hint:"Volume and bevel depth"},
   {key:"imperfections",label:"Surface detail",min:0,max:1,step:.01,hint:"Fine scratches and soft smudges"},

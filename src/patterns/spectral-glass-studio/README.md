@@ -6,16 +6,23 @@ are browser-local and reset on reload. `/spectral-glass` exposes the same compon
 in the standard Playground; `?view=docs` explains the API and material recipe.
 
 - `components/spectral-glass/material.ts`: optical settings, artwork palette and bounds.
-- `components/spectral-glass/scene.ts`: lazy Three.js renderer, lathed closed geometry,
-  procedural studio environment, PMREM, deterministic surface texture and cyclic pose.
-- `components/spectral-glass/index.tsx`: lifecycle, local loading and recoverable WebGL failure.
+- `components/spectral-glass/scene.ts`: lazy Three.js lifecycle, transform matrices,
+  HDR render targets, FXAA, restrained bloom and cyclic pose.
+- `components/spectral-glass/optics.ts`: rounded-cylinder intersections, bounded
+  refractive transport, absorption, three RGB bands and finite studio softboxes.
+- `components/spectral-glass/index.tsx`: local loading and recoverable WebGL failure.
 - `patterns/spectral-glass-studio`: composition and controlled property editor.
 
-The reference author describes WebGPU spectral path tracing, blue noise and Intel AI
-denoising. This implementation uses RGB WebGL rasterization with MeshPhysicalMaterial
-and a studio transmission buffer composited through an object mask onto black. It does not simulate
-multi-bounce interactions between glass objects, caustics, spectral transport or denoising.
-The optical settings are artistic parameters, not measured physical sample properties.
+Round 2 replaces the original screen-space transmission/mask renderer. Rays now
+cross the actual front/back surfaces, can encounter another disc, and follow total
+internal reflection. Four fixed subpixel samples reduce rim aliasing. The optical
+pass has a 650,000 pixel budget and a 30 fps scheduling cap, not a device FPS guarantee.
+
+The original author uses WebGPU spectral path tracing and AI denoising. This is a
+bounded WebGL RGB ray tracer (16 boundary events, three wavelength bands). Fresnel
+reflection branches sample studio lights directly; they do not recursively trace
+other glass. It does not reproduce full spectral integration, rough microfacet
+scattering, caustics or AI denoising. Parameters are artistic, not measured samples.
 
 A 16-second closed trigonometric pose loop stops when paused, offscreen, hidden or
 Reduced Motion is enabled. The black artwork stage is intentionally theme-independent.
