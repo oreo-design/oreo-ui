@@ -1,7 +1,7 @@
 .thinking-state {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   color: var(--color-text-secondary);
   font-size: 0.875rem;
   line-height: 1.5;
@@ -59,9 +59,9 @@
 }
 .thinking-timeline li {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   position: relative;
-  padding: 0 0 1.75rem;
+  padding: 0 0 calc(var(--spacing) * 7);
 }
 .thinking-timeline li:last-child {
   padding-bottom: 0;
@@ -76,7 +76,7 @@
   background: var(--color-border-subtle);
 }
 .thinking-step-icon {
-  padding-top: 0.25rem;
+  padding-top: calc(var(--spacing) * 1);
   flex: none;
   color: var(--color-text-tertiary);
 }
@@ -93,7 +93,7 @@
   font-size: 0.75rem;
   line-height: 1.7;
   color: var(--color-text-tertiary);
-  margin: 0.25rem 0;
+  margin: calc(var(--spacing) * 1) 0;
 }
 .thinking-step-status {
   font-size: 0.625rem;

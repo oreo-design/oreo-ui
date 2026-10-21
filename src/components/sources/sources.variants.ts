@@ -13,7 +13,7 @@ export const sources = tv({
       "group/trigger inline-flex w-fit items-center gap-1.5 rounded-[var(--radius-capsule)] px-3.5 py-2",
       "bg-[var(--color-state-hover)] text-[12px] text-[var(--color-text-secondary)]",
       "outline-none transition-colors hover:bg-[var(--color-state-press)] hover:text-[var(--color-text-primary)]",
-      "focus-visible:ring-2 focus-visible:ring-black/40",
+      "focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
     ],
     count: "font-mono text-[11px] tracking-tight text-[var(--color-text-disabled)] tabular-nums",
     chevron: [
@@ -31,7 +31,7 @@ export const sources = tv({
       "flex flex-col gap-1.5 rounded-xl p-3",
       "bg-[var(--color-bg-base)] ring-1 ring-inset ring-[var(--color-border-subtle)]",
       "transition-transform hover:-translate-y-px motion-reduce:transition-none",
-      "outline-none focus-visible:ring-2 focus-visible:ring-black/40",
+      "outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
     ],
     cardHeader: "flex items-center gap-1.5",
     favicon: [

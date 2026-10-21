@@ -1,9 +1,9 @@
 .oreo-task-row {
   display: flex;
   align-items: center;
-  gap: 0.875rem;
+  gap: calc(var(--spacing) * 3.5);
   min-width: 0;
-  padding: 0.875rem 1rem;
+  padding: calc(var(--spacing) * 3.5) calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
   background: var(--color-bg-base);
   color: var(--color-text-primary);
@@ -33,14 +33,14 @@
   display: block;
   color: var(--color-text-tertiary);
   font-size: 0.625rem;
-  margin-top: 0.25rem;
+  margin-top: calc(var(--spacing) * 1);
 }
 .oreo-task-row[data-done] .tr-title > span {
   text-decoration: line-through;
   color: var(--color-text-tertiary);
 }
 .tr-title:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 .oreo-task-row :disabled {
@@ -53,7 +53,7 @@
 }
 .tr-priority {
   display: flex;
-  gap: 0.25rem;
+  gap: calc(var(--spacing) * 1);
   align-items: center;
   font-size: 0.625rem;
   color: var(--color-text-tertiary);
@@ -88,8 +88,8 @@
 }
 @media (max-width: 720px) {
   .oreo-task-row {
-    gap: 0.625rem;
-    padding: 0.875rem;
+    gap: calc(var(--spacing) * 2.5);
+    padding: calc(var(--spacing) * 3.5);
   }
   .tr-priority {
     display: none;

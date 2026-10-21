@@ -52,7 +52,7 @@ export function InlineQuickMenu({
         aria-label={`${label}: ${selected?.label ?? "Choose"}`}
         onPointerDown={() => setKeyboard(false)}
         onKeyDown={() => setKeyboard(true)}
-        className="oreo-quick-trigger inline-flex h-11 max-w-full items-center gap-2 rounded-capsule bg-bg-elevated px-4 text-sm font-medium text-text-secondary outline-none focus-visible:ring-2 focus-visible:ring-status-progress focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        className="oreo-quick-trigger inline-flex h-11 max-w-full items-center gap-2 rounded-capsule bg-bg-elevated px-4 text-sm font-medium text-text-secondary outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {selected?.icon && <span aria-hidden className="shrink-0 text-text-tertiary">{selected.icon}</span>}
         <span className="truncate">{selected?.label ?? "Choose"}</span>

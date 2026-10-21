@@ -10,31 +10,31 @@
 .ts-toolbar {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: center;
   flex-wrap: wrap;
-  padding: 0.75rem 1rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .ts-toolbar > div {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   flex-wrap: wrap;
 }
 .ts-toolbar h2 {
   font-size: 0.8125rem;
   font-weight: 600;
-  margin-right: 0.5rem;
+  margin-right: calc(var(--spacing) * 2);
 }
 .ts-zoom {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
   color: var(--color-text-secondary);
 }
 .ts-zoom select {
-  padding: 0.375rem;
+  padding: calc(var(--spacing) * 1.5);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
   background: var(--color-bg-base);
@@ -63,14 +63,14 @@
 .ts-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
   color: var(--color-text-secondary);
   font-size: 0.6875rem;
 }
 .ts-legend > span {
   display: flex;
-  gap: 0.375rem;
+  gap: calc(var(--spacing) * 1.5);
   align-items: center;
 }
 .ts-legend i {
@@ -93,7 +93,7 @@
 }
 .ts-weekday {
   text-align: center;
-  padding: 0.625rem;
+  padding: calc(var(--spacing) * 2.5);
   border-top: 1px solid var(--color-border-subtle);
   border-bottom: 1px solid var(--color-border-subtle);
   color: var(--color-text-secondary);
@@ -101,7 +101,7 @@
 }
 .ts-day {
   min-height: 8rem;
-  padding: 0.375rem;
+  padding: calc(var(--spacing) * 1.5);
   border-right: 1px solid var(--color-border-subtle);
   border-bottom: 1px solid var(--color-border-subtle);
 }
@@ -118,7 +118,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.375rem;
+  margin-bottom: calc(var(--spacing) * 1.5);
 }
 .ts-day time {
   display: grid;
@@ -133,7 +133,7 @@
   border-radius: 50%;
 }
 .ts-add {
-  padding: 0.25rem;
+  padding: calc(var(--spacing) * 1);
   border-radius: var(--radius-control);
   color: var(--color-text-tertiary);
 }
@@ -144,12 +144,12 @@
 .ts-chip {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: calc(var(--spacing) * 1);
   width: 100%;
   min-width: 0;
   min-height: 1.75rem;
-  padding: 0.25rem 0.375rem;
-  margin-bottom: 0.25rem;
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 1.5);
+  margin-bottom: calc(var(--spacing) * 1);
   background: var(--ts-fill);
   color: var(--ts-tone);
   border: 1px solid color-mix(in srgb, var(--ts-tone) 30%, transparent);
@@ -193,37 +193,37 @@
 .ts-more {
   font-size: 0.625rem;
   color: var(--color-text-secondary);
-  padding: 0.25rem;
+  padding: calc(var(--spacing) * 1);
 }
 .ts-more:hover {
   text-decoration: underline;
 }
 .ts-range-empty,
 .ts-timeline-summary {
-  padding: 0.75rem 1rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
   color: var(--color-text-secondary);
   font-size: 0.6875rem;
 }
 .ts-unscheduled {
-  padding: 1rem;
+  padding: calc(var(--spacing) * 4);
   border-top: 1px solid var(--color-border-subtle);
 }
 .ts-unscheduled h3 {
   font-weight: 500;
 }
 .ts-unscheduled h3 span {
-  margin-left: 0.5rem;
+  margin-left: calc(var(--spacing) * 2);
   color: var(--color-text-secondary);
 }
 .ts-unscheduled p {
   color: var(--color-text-secondary);
   font-size: 0.6875rem;
-  margin: 0.25rem 0 0.75rem;
+  margin: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 3);
 }
 .ts-unscheduled > div {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .ts-timeline-scroll {
   overflow: auto;
@@ -241,11 +241,11 @@
   left: 0;
   z-index: 2;
   background: var(--color-bg-base);
-  padding: 0.625rem 0.75rem;
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   border-right: 1px solid var(--color-border-subtle);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   min-width: 0;
   text-align: left;
 }
@@ -258,7 +258,7 @@
   display: block;
   font-size: 0.625rem;
   color: var(--color-text-tertiary);
-  margin-top: 0.25rem;
+  margin-top: calc(var(--spacing) * 1);
 }
 .ts-task-name:hover {
   background: var(--color-bg-elevated);
@@ -283,7 +283,7 @@
   align-self: center;
   z-index: 1;
   min-width: 0;
-  padding: 0 0.125rem;
+  padding: 0 calc(var(--spacing) * 0.5);
 }
 .ts-bar .ts-chip {
   margin: 0;
@@ -297,14 +297,14 @@
 .ts-date-head > div {
   text-align: center;
   border-right: 1px solid var(--color-border-subtle);
-  padding: 0.375rem 0;
+  padding: calc(var(--spacing) * 1.5) 0;
   font-variant-numeric: tabular-nums;
 }
 .ts-date-head small {
   display: block;
   color: var(--color-text-tertiary);
   font-size: 0.5625rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: calc(var(--spacing) * 1);
 }
 .ts-date-head [data-today] {
   color: var(--color-palette-purple-text);
@@ -340,12 +340,12 @@
 .ts-task-name:focus-visible,
 .ts-calendar-scroll:focus-visible,
 .ts-timeline-scroll:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: -2px;
 }
 @media (max-width: 600px) {
   .ts-toolbar {
-    padding: 0.75rem;
+    padding: calc(var(--spacing) * 3);
   }
   .ts-toolbar h2 {
     font-size: 0.75rem;
@@ -353,7 +353,7 @@
     order: -1;
   }
   .ts-legend {
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
   .ts-month {
     min-width: 45rem;

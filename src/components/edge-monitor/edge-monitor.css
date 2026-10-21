@@ -8,9 +8,9 @@
 .edge-panel-header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   min-height: 3.5rem;
-  padding: 0.75rem 1rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .edge-panel-header h2 {
@@ -33,7 +33,7 @@
 }
 .edge-metric {
   min-width: 0;
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
 }
 .edge-sparkbars {
   width: 5rem;
@@ -41,7 +41,7 @@
 }
 .edge-sparkbars .activity-bars {
   height: 1.5rem;
-  gap: 1.5px;
+  gap: calc(var(--spacing) * 0.375);
 }
 .edge-sparkbars .activity-bar {
   background: transparent;
@@ -49,7 +49,7 @@
 .edge-map {
   position: relative;
   aspect-ratio: 600/330;
-  margin: 0.75rem;
+  margin: calc(var(--spacing) * 3);
 }
 .edge-map svg {
   display: block;
@@ -60,9 +60,9 @@
   position: absolute;
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: calc(var(--spacing) * 1.5);
   transform: translate(-50%, -50%);
-  padding: 0.5rem 0.25rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 1);
   cursor: pointer;
   color: var(--color-text-primary);
   border-radius: var(--radius-capsule);
@@ -82,7 +82,7 @@
   white-space: nowrap;
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-capsule);
-  padding: 0.125rem 0.375rem;
+  padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 1.5);
   background: var(--color-bg-elevated);
   color: var(--color-text-tertiary);
 }
@@ -108,17 +108,17 @@
 .edge-map-point:focus-visible,
 .edge-region-list button:focus-visible,
 .edge-deployments button:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 .edge-map-hint {
-  padding: 0 1.25rem 1.25rem;
+  padding: 0 calc(var(--spacing) * 5) calc(var(--spacing) * 5);
   font-size: 0.75rem;
   color: var(--color-text-tertiary);
 }
 .edge-region-detail {
-  margin: 0 1rem 1rem;
-  padding: 1rem;
+  margin: 0 calc(var(--spacing) * 4) calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 4);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-card-small);
   background: var(--color-bg-surface);
@@ -129,7 +129,7 @@
   width: 0.375rem;
   height: 0.375rem;
   border-radius: 50%;
-  margin-right: 0.5rem;
+  margin-right: calc(var(--spacing) * 2);
   background: var(--color-text-secondary);
   flex-shrink: 0;
 }
@@ -139,13 +139,13 @@
 .edge-region-detail dl {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 4);
 }
 .edge-region-detail dt {
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
-  margin-bottom: 0.25rem;
+  margin-bottom: calc(var(--spacing) * 1);
 }
 .edge-region-detail dd {
   font-size: 1rem;
@@ -158,15 +158,15 @@
   color: var(--color-text-secondary);
 }
 .edge-region-list {
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
 }
 .edge-region-list button {
   display: grid;
   grid-template-columns: 2.5rem minmax(0, 1fr) 3rem 3.5rem;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   width: 100%;
-  padding: 0.625rem 0.5rem;
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 2);
   text-align: left;
   font-size: 0.75rem;
   border-radius: var(--radius-control);
@@ -188,7 +188,7 @@
   opacity: 0.6;
 }
 .edge-latency {
-  padding: 1rem;
+  padding: calc(var(--spacing) * 4);
 }
 .edge-latency svg {
   display: block;
@@ -203,9 +203,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   flex-wrap: wrap;
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
   font-variant-numeric: tabular-nums;
@@ -214,33 +214,33 @@
 .edge-latency-values {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
 }
 .edge-latency input {
   width: 5rem;
-  accent-color: var(--color-text-primary);
+  accent-color: var(--color-theme-accent, var(--color-text-primary));
 }
 .edge-latency-values b {
   color: var(--color-text-primary);
   font-weight: 500;
 }
 .edge-deployments {
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
 }
 .edge-deployments li > :is(button, div) {
   width: 100%;
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   text-align: left;
-  padding: 0.75rem 0.5rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 2);
   border-radius: var(--radius-control);
 }
 .edge-deployments button {
   cursor: pointer;
 }
 .edge-deployments .edge-health {
-  margin-top: 0.5rem;
+  margin-top: calc(var(--spacing) * 2);
 }
 @media (hover: hover) and (pointer: fine) {
   .edge-region-list button:hover,
@@ -256,7 +256,7 @@
     display: none;
   }
   .edge-map-point {
-    padding: 0.75rem;
+    padding: calc(var(--spacing) * 3);
   }
   .edge-map-dot {
     width: 0.5rem;
@@ -276,7 +276,7 @@
 .edge-spotlight header {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: calc(var(--spacing) * 1);
 }
 .edge-spotlight-code {
   margin-left: auto;
@@ -287,17 +287,17 @@
 .edge-spotlight > svg {
   width: 100%;
   height: 3.5rem;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
 }
 .edge-spotlight dl {
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
 }
 .edge-spotlight dd {
   font-size: 0.875rem;
 }
 .edge-advice {
-  margin: 0.75rem;
-  padding: 1rem;
+  margin: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4);
   background: color-mix(
     in srgb,
     var(--color-status-error) 8%,
@@ -309,7 +309,7 @@
 }
 .edge-advice h3 {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
   font-size: 0.8125rem;
   font-weight: 500;
@@ -322,12 +322,12 @@
   font-size: 0.75rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
-  margin: 0.5rem 0 0.75rem;
+  margin: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 3);
 }
 .edge-advice > div {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 @media (min-width: 1251px) {
   .edge-map-block[data-placement="overlay"] .edge-spotlight-slot {
@@ -339,9 +339,9 @@
   }
   .edge-map-block[data-placement="overlay"] .edge-spotlight {
     margin: 0;
-    padding: 0.875rem;
+    padding: calc(var(--spacing) * 3.5);
   }
   .edge-map-block[data-placement="overlay"] .edge-spotlight dl {
-    margin-top: 0.5rem;
+    margin-top: calc(var(--spacing) * 2);
   }
 }

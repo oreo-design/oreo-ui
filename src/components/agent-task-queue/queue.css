@@ -3,7 +3,7 @@
   min-width: 0;
 }
 .aq-queue:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: var(--spacing);
 }
 .aq-task-list {
@@ -151,7 +151,7 @@ button.aq-title {
 .aq-drag-handle:focus-visible,
 .aq-context-hint:focus-visible,
 .aq-request-stack > button:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: 2px;
 }
 .aq-context-hint {
@@ -234,12 +234,12 @@ button.aq-title {
   line-height: 1.6;
 }
 .aq-choice[data-selected] {
-  border-color: var(--color-palette-mint-text);
-  background: var(--color-palette-mint-bg);
-  color: var(--color-palette-mint-text);
+  border-color: var(--color-theme-accent, var(--color-palette-mint-text));
+  background: var(--color-theme-accent-subtle, var(--color-palette-mint-bg));
+  color: var(--color-theme-accent, var(--color-palette-mint-text));
 }
 .aq-choice input {
-  accent-color: var(--color-palette-mint-text);
+  accent-color: var(--color-theme-accent, var(--color-palette-mint-text));
   width: calc(var(--spacing) * 3);
   height: calc(var(--spacing) * 3);
   flex-shrink: 0;

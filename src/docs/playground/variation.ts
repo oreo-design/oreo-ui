@@ -41,8 +41,14 @@ export function variationTokens(a: ThemeAppearance): Record<string, string> {
     "--radius-control-large": `${a.radius * 1.25}px`,
     "--radius-card-small": `${a.radius * 1.5}px`,
     "--radius-card-medium": `${a.radius * 2}px`,
+    "--radius-card-large": `${a.radius * 3}px`,
     "--spacing": `${4 * v.density}px`,
   };
+  // Tailwind aliases are declared explicitly at the theme boundary: a custom
+  // property alias inherited from :root is already resolved there and would
+  // otherwise ignore a nested provider's component-radius override.
+  for (const [name, ratio] of Object.entries({ xs: .25, sm: .5, md: .75, lg: 1, xl: 1.5, "2xl": 2, "3xl": 3, "4xl": 4 }))
+    tokens[`--radius-${name}`] = `${a.radius * ratio}px`;
   for (const n of [1, 2, 3, 4, 6, 8]) tokens[`--space-x${n}`] = `${n * 2 * v.density}px`;
   // Existing Claude remix palette, with an explicit dark counterpart. OpenAI uses
   // Oreo's neutral palette and rounded geometry; Material uses Oreo purple.
@@ -59,7 +65,16 @@ export function variationTokens(a: ThemeAppearance): Record<string, string> {
     "--color-bg-base": "#211e29", "--color-bg-elevated": "#18151e", "--color-bg-surface": "#2b2733",
   } : { "--color-bg-base": "#fffbff", "--color-bg-elevated": "#f4f0fe", "--color-bg-surface": "#fffbff" });
   if (v.accent) Object.assign(tokens, {
+    "--color-theme-accent": v.accent,
+    "--color-theme-accent-subtle": `${v.accent}1f`,
+    "--color-accent": v.accent,
+    "--color-accent-subtle": `${v.accent}1f`,
+    "--color-accent-foreground": accentForeground(v.accent),
     "--color-bg-inverse": v.accent, "--color-text-on-inverse": accentForeground(v.accent),
+    "--color-state-hover": `${v.accent}${a.dark ? "18" : "08"}`,
+    "--color-state-press": `${v.accent}${a.dark ? "2b" : "14"}`,
+    "--color-palette-default-bg": `${v.accent}${a.dark ? "2b" : "14"}`,
+    "--color-palette-default-text": `color-mix(in srgb, ${v.accent} 65%, var(--color-text-primary))`,
     "--color-state-hover-inverse": accentForeground(v.accent) === "#ffffff" ? "#ffffff0f" : "#00000005",
     "--color-state-press-inverse": accentForeground(v.accent) === "#ffffff" ? "#ffffff1a" : "#0000000d",
   });

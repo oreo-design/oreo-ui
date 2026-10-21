@@ -6,9 +6,9 @@
 .vt-signal header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .vt-signal h2 {
   font-size: 0.875rem;
@@ -28,8 +28,8 @@
   font-size: 0.6875rem;
   line-height: 1.5;
   border: 1px solid var(--color-border-subtle);
-  padding: 0 0.5rem;
-  border-radius: 999px;
+  padding: 0 calc(var(--spacing) * 2);
+  border-radius: var(--radius-capsule);
   color: var(--color-text-secondary);
   background: var(--color-state-hover);
 }
@@ -49,13 +49,13 @@
 }
 .vt-lanes {
   display: grid;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
 }
 .vt-lane {
   display: grid;
   grid-template-columns: 4rem minmax(0, 1fr);
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .vt-lane > span,
 .vt-transcript p > span:first-child {
@@ -93,34 +93,34 @@
   pointer-events: none;
 }
 .vt-transcript {
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
   border-radius: var(--radius-control);
   background: var(--color-state-hover);
-  padding: 0.75rem;
+  padding: calc(var(--spacing) * 3);
 }
 .vt-transcript p {
   display: grid;
   grid-template-columns: 3.5rem 1fr;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
   line-height: 1.6;
   min-height: 1.25rem;
 }
 .vt-transcript p + p {
-  margin-top: 0.25rem;
+  margin-top: calc(var(--spacing) * 1);
 }
 .vt-seek {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 4);
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
 }
 .vt-seek input {
   min-width: 0;
   flex: 1;
-  accent-color: var(--color-palette-orange-text);
+  accent-color: var(--color-theme-accent, var(--color-palette-orange-text));
 }
 .vt-seek .vt-time {
   font-variant-numeric: tabular-nums;
@@ -130,7 +130,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .vt-latency h2 {
   font-size: 0.75rem;
@@ -146,8 +146,8 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0.25rem 0 0.75rem;
+  gap: calc(var(--spacing) * 2);
+  margin: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 3);
   font: 0.6875rem monospace;
   text-transform: uppercase;
   color: var(--color-text-secondary);
@@ -156,7 +156,7 @@
   height: 0.75rem;
   position: relative;
   background: var(--color-state-hover);
-  border-radius: 0.25rem;
+  border-radius: var(--radius-control-tiny);
 }
 .vt-stage-fill {
   display: flex;
@@ -178,13 +178,13 @@
 .vt-stage-labels {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: calc(var(--spacing) * 2);
+  margin-top: calc(var(--spacing) * 4);
 }
 .vt-stage-labels dt {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: calc(var(--spacing) * 1);
   font: 0.625rem monospace;
   text-transform: uppercase;
   color: var(--color-text-secondary);
@@ -193,12 +193,12 @@
   display: inline-block;
   width: 0.4rem;
   height: 0.5rem;
-  border-radius: 1px;
+  border-radius: calc(var(--radius-control) * 0.125);
   flex-shrink: 0;
 }
 .vt-stage-labels dd {
   font: 0.8125rem monospace;
-  margin-top: 0.35rem;
+  margin-top: calc(var(--spacing) * 1.4);
 }
 .vt-stage-fill [data-tone="neutral"],
 .vt-stage-labels [data-tone="neutral"] {
@@ -222,13 +222,13 @@
 }
 .vt-history-scroll {
   overflow-x: auto;
-  padding-top: 0.5rem;
+  padding-top: calc(var(--spacing) * 2);
 }
 .vt-history-bars {
   height: 4rem;
   display: flex;
   align-items: flex-end;
-  gap: 0.3rem;
+  gap: calc(var(--spacing) * 1.2);
   position: relative;
 }
 .vt-history-budget {
@@ -242,7 +242,7 @@
   flex: 1;
   position: relative;
   min-width: 1.25rem;
-  border-radius: 0.3rem;
+  border-radius: calc(var(--radius-control) * 0.6);
   background: var(--color-state-press);
   border: 1px solid var(--color-border-subtle);
   cursor: pointer;
@@ -256,7 +256,7 @@
 }
 .vt-history-bars button[aria-pressed="true"] {
   background: var(--color-bg-inverse);
-  border-color: var(--color-text-primary);
+  border-color: var(--color-theme-accent, var(--color-text-primary));
 }
 .vt-history-bars button[aria-pressed="true"][data-over="true"] {
   background: var(--color-status-error);
@@ -273,15 +273,15 @@
   cursor: default;
 }
 .vt-history-bars button:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 .vt-history footer {
   display: flex;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   flex-wrap: wrap;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
   font: 0.6875rem monospace;
   text-transform: uppercase;
   color: var(--color-text-secondary);
@@ -290,7 +290,7 @@
   font: inherit;
 }
 .vt-seek input:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -301,7 +301,7 @@
 @media (max-width: 540px) {
   .vt-stage-labels {
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 1rem;
+    row-gap: calc(var(--spacing) * 4);
   }
   .vt-lane {
     grid-template-columns: 3rem 1fr;

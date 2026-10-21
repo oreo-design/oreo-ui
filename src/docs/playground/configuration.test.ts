@@ -154,3 +154,17 @@ test("theme export carries token scales, palette, contrast and preserves semanti
   assert.equal(accentForeground("#000000"), "#ffffff");
   assert.equal(variationTokens(presetAppearance("oreo"))["--spacing"], "4px");
 });
+
+test("theme covers utility corners and interaction accents without recoloring semantic status", async () => {
+  const { variationTokens, presetAppearance } = await import("./variation.ts");
+  const a = { ...presetAppearance("oreo"), radius: 20, variation: { preset: "oreo" as const, density: 1.25, accent: "#ffffff" } };
+  const tokens = variationTokens(a);
+  assert.equal(tokens["--radius-xl"], "30px");
+  assert.equal(tokens["--radius-card-large"], "60px");
+  assert.equal(tokens["--spacing"], "5px");
+  assert.equal(tokens["--color-accent-foreground"], "#000000");
+  assert.equal(tokens["--color-accent"], "#ffffff");
+  for (const name of ["error", "success", "progress"]) assert.equal(tokens[`--color-status-${name}`], undefined);
+  for (const name of ["mint", "pink", "blue", "purple"]) assert.equal(tokens[`--color-palette-${name}-text`], undefined);
+  assert.equal(variationTokens(presetAppearance("oreo"))["--color-theme-accent"], undefined);
+});

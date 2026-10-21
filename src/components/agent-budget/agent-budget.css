@@ -2,7 +2,7 @@
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-base);
-  padding: 2rem;
+  padding: calc(var(--spacing) * 8);
   box-shadow: var(--shadow-default);
   color: var(--color-text-primary);
 }
@@ -13,36 +13,36 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   flex-wrap: wrap;
 }
 .ab-card h2 {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 1rem;
   font-weight: 500;
 }
 .ab-card h2 > svg {
-  color: var(--color-palette-purple-text);
+  color: var(--color-theme-accent, var(--color-palette-purple-text));
 }
 .ab-reset {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
   background: var(--color-bg-elevated);
-  border-radius: 0.75rem;
-  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-card-small);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
   color: var(--color-text-secondary);
   font-size: 0.8125rem;
 }
 .ab-amount-row {
-  margin: 1.5rem 0 1rem;
+  margin: calc(var(--spacing) * 6) 0 calc(var(--spacing) * 4);
   flex-wrap: nowrap;
 }
 .ab-amount {
   display: flex;
-  gap: 0.25rem;
+  gap: calc(var(--spacing) * 1);
   min-width: 0;
   align-items: baseline;
   font-size: 3rem;
@@ -57,15 +57,15 @@
 .ab-stepper {
   display: flex;
   flex-shrink: 0;
-  gap: 0.25rem;
-  padding: 0.25rem;
+  gap: calc(var(--spacing) * 1);
+  padding: calc(var(--spacing) * 1);
   background: var(--color-bg-elevated);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-card-small);
 }
 .ab-rail {
   height: 2rem;
   position: relative;
-  border-radius: 0.75rem;
+  border-radius: var(--radius-card-small);
   background: var(--color-state-hover);
   isolation: isolate;
 }
@@ -73,12 +73,12 @@
 .ab-spent {
   position: absolute;
   inset: 0 auto 0 0;
-  border-radius: 0.75rem;
-  background: var(--color-palette-purple-text);
+  border-radius: var(--radius-card-small);
+  background: var(--color-theme-accent, var(--color-palette-purple-text));
 }
 .theme-dark .ab-allowance,
 .theme-dark .ab-spent {
-  background: var(--color-palette-purple-bg);
+  background: var(--color-theme-accent-subtle, var(--color-palette-purple-bg));
 }
 .ab-spent {
   background-image: repeating-linear-gradient(
@@ -122,51 +122,51 @@
   appearance: none;
   width: 18px;
   height: 28px;
-  border: 6px solid var(--color-palette-purple-text);
-  border-radius: 0.75rem;
-  background: var(--color-text-on-accent);
+  border: 6px solid var(--color-theme-accent, var(--color-palette-purple-text));
+  border-radius: var(--radius-card-small);
+  background: var(--color-accent-foreground);
 }
 .theme-dark .ab-rail input::-webkit-slider-thumb {
-  border-color: var(--color-palette-purple-bg);
+  border-color: var(--color-theme-accent-subtle, var(--color-palette-purple-bg));
 }
 .ab-rail input::-moz-range-thumb {
   width: 6px;
   height: 16px;
-  border: 6px solid var(--color-palette-purple-text);
-  border-radius: 0.75rem;
-  background: var(--color-text-on-accent);
+  border: 6px solid var(--color-theme-accent, var(--color-palette-purple-text));
+  border-radius: var(--radius-card-small);
+  background: var(--color-accent-foreground);
 }
 .theme-dark .ab-rail input::-moz-range-thumb {
-  border-color: var(--color-palette-purple-bg);
+  border-color: var(--color-theme-accent-subtle, var(--color-palette-purple-bg));
 }
 .ab-rail input:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: 4px;
-  border-radius: 0.75rem;
+  border-radius: var(--radius-card-small);
 }
 .ab-rail input:disabled {
   cursor: default;
   opacity: 0.5;
 }
 .ab-legend {
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
   font-size: 0.8125rem;
   color: var(--color-text-secondary);
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .ab-legend span:first-child {
   display: flex;
-  gap: 0.3rem;
+  gap: calc(var(--spacing) * 1.2);
   align-items: center;
 }
 .ab-legend i {
   width: 0.75rem;
   height: 0.75rem;
-  border-radius: 0.25rem;
+  border-radius: var(--radius-control-tiny);
   background: repeating-linear-gradient(
     135deg,
-    var(--color-palette-purple-text) 0 2px,
-    var(--color-palette-purple-bg) 2px 4px
+    var(--color-theme-accent, var(--color-palette-purple-text)) 0 2px,
+    var(--color-theme-accent-subtle, var(--color-palette-purple-bg)) 2px 4px
   );
 }
 .ab-legend strong {
@@ -174,7 +174,7 @@
 }
 .ab-boundary {
   min-height: 2.5rem;
-  padding-top: 0.75rem;
+  padding-top: calc(var(--spacing) * 3);
   margin: 0;
   color: var(--color-text-secondary);
   font-size: 0.75rem;
@@ -184,12 +184,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 1px solid var(--color-border-subtle);
-  padding-top: 1.5rem;
-  gap: 1.5rem;
+  padding-top: calc(var(--spacing) * 6);
+  gap: calc(var(--spacing) * 6);
 }
 .ab-outcome > div + div {
   border-left: 1px solid var(--color-border-subtle);
-  padding-left: 1.5rem;
+  padding-left: calc(var(--spacing) * 6);
 }
 .ab-outcome span,
 .ab-outcome small {
@@ -202,7 +202,7 @@
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: -0.03em;
-  margin: 0.25rem 0 0.5rem;
+  margin: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 2);
   font-variant-numeric: tabular-nums;
 }
 .ab-outcome small {
@@ -213,41 +213,41 @@
   font-size: 0.75rem;
   line-height: 1.6;
   color: var(--color-text-secondary);
-  margin: 1.25rem 0;
+  margin: calc(var(--spacing) * 5) 0;
 }
 .ab-card footer {
   border-top: 1px solid var(--color-border-subtle);
-  padding-top: 1.25rem;
+  padding-top: calc(var(--spacing) * 5);
   font-size: 0.8125rem;
 }
 .ab-card footer small {
   display: block;
   color: var(--color-text-secondary);
-  margin-top: 0.25rem;
+  margin-top: calc(var(--spacing) * 1);
   font-size: 0.75rem;
 }
 .ab-actions {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .ab-cap input:disabled {
   opacity: 0.5;
 }
 @media (max-width: 540px) {
   .ab-card {
-    padding: 1.25rem;
+    padding: calc(var(--spacing) * 5);
   }
   .ab-card header {
-    gap: 0.75rem;
+    gap: calc(var(--spacing) * 3);
   }
   .ab-amount {
     font-size: 2.5rem;
   }
   .ab-outcome {
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
   }
   .ab-outcome > div + div {
-    padding-left: 1rem;
+    padding-left: calc(var(--spacing) * 4);
   }
   .ab-outcome strong {
     font-size: 1.25rem;

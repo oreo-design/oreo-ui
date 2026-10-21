@@ -116,7 +116,7 @@
   outline-offset: -2px;
 }
 .bs-tab:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: -3px;
 }
 .bs-tab-strip > button {

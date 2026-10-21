@@ -68,7 +68,7 @@ export function WebSearchResult({ domain, title, className, ...rest }: WebSearch
         className={cn(
           "-mx-2.5 flex items-center gap-2.5 rounded-xl px-2.5 py-1.5",
           "transition-colors hover:bg-[var(--color-state-hover)]",
-          "outline-none focus-visible:ring-2 focus-visible:ring-black/40",
+          "outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
           className,
         )}
         {...rest}

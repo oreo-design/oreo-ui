@@ -11,6 +11,16 @@
   --radius-control-large: 10px;
   --radius-card-small: 12px;
   --radius-card-medium: 16px;
+  --radius-card-large: 24px;
+  /* Tailwind's named corners share the component radius owner. */
+  --radius-xs: calc(var(--radius-control) * .25);
+  --radius-sm: var(--radius-control-tiny);
+  --radius-md: calc(var(--radius-control) * .75);
+  --radius-lg: var(--radius-control);
+  --radius-xl: var(--radius-card-small);
+  --radius-2xl: var(--radius-card-medium);
+  --radius-3xl: var(--radius-card-large);
+  --radius-4xl: calc(var(--radius-control) * 4);
   --radius-capsule: 999px;
 
   /* spacing scale used by controls */
@@ -42,6 +52,10 @@
 
   /* Stable foreground for saturated accents in either theme. */
   --color-text-on-accent: #ffffff;
+  /* Interaction emphasis is independent from running/success/error status. */
+  --color-accent: #3e63dd;
+  --color-accent-subtle: #3e63dd1f;
+  --color-accent-foreground: #ffffff;
 
   /* status */
   --color-status-error: #dc3e42;

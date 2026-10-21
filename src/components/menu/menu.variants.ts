@@ -12,7 +12,7 @@ import { tv } from "@/lib/tv";
 export const menu = tv({
   slots: {
     popup: [
-      "min-w-[180px] rounded-[var(--radius-card-medium)] bg-[var(--color-bg-surface)] p-[6px]",
+      "min-w-[180px] rounded-[var(--radius-card-medium)] bg-[var(--color-bg-surface)] p-1.5",
       "shadow-[var(--shadow-overlay)] outline-none",
       // Grow/fade from the anchor; Base UI sets --transform-origin on the popup.
       // Transition `scale`, not `transform` — Tailwind v4 compiles `scale-95` to
@@ -24,16 +24,16 @@ export const menu = tv({
       "motion-reduce:transition-none",
     ],
     item: [
-      "flex w-full cursor-default select-none items-center gap-[6px]",
-      "rounded-[10px] px-[10px] py-[8px] text-[14px] font-medium leading-5",
+      "flex w-full cursor-default select-none items-center gap-1.5",
+      "rounded-control-large px-2.5 py-2 text-[14px] font-medium leading-5",
       "text-[var(--color-text-primary)] outline-none",
       "data-[highlighted]:bg-[var(--color-state-hover)]",
       "data-[disabled]:text-[var(--color-text-disabled)]",
     ],
     itemIcon: "grid size-5 shrink-0 place-items-center [&_svg]:size-5 [&_img]:size-5",
     itemLabel: "min-w-0 flex-1 truncate text-left",
-    itemTrailing: "flex shrink-0 items-center gap-[4px] text-[var(--color-text-secondary)]",
-    separator: "mx-[6px] my-[8px] h-[0.5px] bg-[var(--color-border-subtle)]",
+    itemTrailing: "flex shrink-0 items-center gap-1 text-[var(--color-text-secondary)]",
+    separator: "mx-1.5 my-2 h-[0.5px] bg-[var(--color-border-subtle)]",
   },
 });
 

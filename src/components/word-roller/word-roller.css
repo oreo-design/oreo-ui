@@ -16,7 +16,7 @@
 .oreo-word-roller[data-has-suffix] .oreo-word-roller__viewport { max-width: 55%; }
 .oreo-word-roller__viewport:active { cursor: grabbing; }
 .oreo-word-roller__viewport[aria-disabled="true"] { cursor: default; }
-.oreo-word-roller__viewport:focus-visible { outline: 2px solid var(--color-status-progress); outline-offset: 4px; }
+.oreo-word-roller__viewport:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
 .oreo-word-roller__measure { display: grid; visibility: hidden; }
 .oreo-word-roller__measure > span { grid-area: 1 / 1; white-space: nowrap; }
 .oreo-word-roller__mask {

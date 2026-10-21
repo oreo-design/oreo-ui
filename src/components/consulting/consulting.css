@@ -176,7 +176,7 @@
   min-width: 0;
 }
 .co-conflict blockquote[data-selected] {
-  border-color: var(--color-palette-mint-text);
+  border-color: var(--color-theme-accent, var(--color-palette-mint-text));
 }
 .co-conflict blockquote > span {
   display: flex;
@@ -360,7 +360,7 @@
   padding: var(--spacing);
 }
 .co-chart-bars > button[aria-pressed="true"] {
-  background: var(--color-bg-elevated);
+  background: var(--color-theme-accent-subtle, var(--color-bg-elevated));
 }
 .co-chart-track {
   height: 128px;
@@ -375,7 +375,7 @@
     var(--color-border-subtle) 52%,
     transparent 52%
   );
-  gap: 2px;
+  gap: calc(var(--spacing) * 0.5);
 }
 .co-chart-track i {
   width: 100%;
@@ -396,7 +396,7 @@
 }
 .co-escalation-heading:focus-visible,
 .co-chart-bars > button:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: -2px;
 }
 @media (max-width: 1150px) {

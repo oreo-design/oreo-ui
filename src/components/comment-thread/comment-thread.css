@@ -19,19 +19,19 @@
   color: var(--color-palette-mint-text);
   background: var(--color-palette-mint-bg);
   border-radius: var(--radius-control-tiny);
-  padding: 2px 4px;
+  padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 1);
 }
 .ct-menu.ct-no-motion {
   transition: none;
 }
 @media (max-width: 480px) {
   .ct-comment {
-    padding: 12px;
+    padding: calc(var(--spacing) * 3);
   }
   .ct-comment header {
     flex-wrap: wrap;
   }
   .ct-summary {
-    padding-inline: 12px;
+    padding-inline: calc(var(--spacing) * 3);
   }
 }

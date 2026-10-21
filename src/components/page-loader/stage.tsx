@@ -150,7 +150,7 @@ export function GameStage({
         aria-label={label}
         tabIndex={0}
         style={responsive ? { width: "100%", height: "auto", aspectRatio: `${width} / ${height}` } : { width, height }}
-        className="touch-none rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-bg-surface)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-status-progress)]"
+        className="touch-none rounded-2xl border border-[var(--color-border-subtle)] bg-[var(--color-bg-surface)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
         onKeyDown={(e) => {
           if (CAPTURED.has(e.key)) e.preventDefault();
           keys.current.add(e.key);

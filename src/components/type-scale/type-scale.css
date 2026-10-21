@@ -6,8 +6,8 @@
 .oreo-type-scale-row {
   display: grid;
   grid-template-columns: 7rem minmax(0, 1fr);
-  gap: 1.5rem;
-  padding: 1.5rem 0;
+  gap: calc(var(--spacing) * 6);
+  padding: calc(var(--spacing) * 6) 0;
   border-bottom: 1px solid var(--color-border-subtle);
   align-items: baseline;
 }
@@ -35,11 +35,11 @@
 @media (max-width: 600px) {
   .oreo-type-scale-row {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: calc(var(--spacing) * 3);
   }
   .oreo-type-scale-row > div {
     display: flex;
-    gap: 1rem;
+    gap: calc(var(--spacing) * 4);
     align-items: baseline;
   }
 }

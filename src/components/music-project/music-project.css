@@ -4,17 +4,17 @@
 .mp-markers {
   height: 2.25rem;
   position: relative;
-  margin: 0 1rem;
+  margin: 0 calc(var(--spacing) * 4);
 }
 .mp-marker {
   position: absolute;
   top: 0;
   transform: translateX(-50%);
   z-index: 1;
-  border-radius: 999px;
+  border-radius: var(--radius-capsule);
 }
 .mp-marker[aria-pressed="true"] {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   z-index: 2;
 }
@@ -24,14 +24,14 @@
   left: 50%;
   height: 4rem;
   width: 1px;
-  background: var(--color-status-progress);
+  background: var(--color-accent);
   pointer-events: none;
   opacity: 0.6;
 }
 .mp-wave-track {
   position: relative;
   height: 4.5rem;
-  margin: 0 1rem;
+  margin: 0 calc(var(--spacing) * 4);
 }
 .mp-wave-track svg {
   width: 100%;
@@ -41,7 +41,7 @@
   stroke: var(--color-border-default);
 }
 .mp-played {
-  stroke: var(--color-status-progress);
+  stroke: var(--color-accent);
 }
 .mp-wave-track input {
   position: absolute;
@@ -52,14 +52,14 @@
   cursor: crosshair;
 }
 .mp-wave-track:focus-within {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 4px;
   border-radius: var(--radius-control);
 }
 .mp-time-scale {
   display: flex;
   justify-content: space-between;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
   font-size: 0.75rem;
   color: var(--color-text-tertiary);
   font-variant-numeric: tabular-nums;
@@ -67,33 +67,33 @@
 .mp-marker-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  gap: calc(var(--spacing) * 2);
+  margin-top: calc(var(--spacing) * 4);
 }
 .mp-marker-links button {
   font-size: 0.6875rem;
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 0.25rem 0.5rem;
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2);
   color: var(--color-text-secondary);
 }
 .mp-marker-links button[aria-pressed="true"] {
-  color: var(--color-status-progress);
-  background: var(--color-status-progress-subtle);
+  color: var(--color-accent);
+  background: var(--color-accent-subtle);
 }
 .mp-task-list {
-  padding: 0.5rem 1rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
   list-style: none;
 }
 .mp-task-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   min-height: 3.25rem;
 }
 .mp-task-row input {
   appearance: auto;
-  accent-color: var(--color-status-progress);
+  accent-color: var(--color-accent);
   width: 1rem;
   height: 1rem;
   flex-shrink: 0;
@@ -114,25 +114,25 @@
   color: var(--color-text-secondary);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
-  padding: 0.25rem 0.5rem;
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2);
   white-space: nowrap;
 }
 .mp-time-link {
-  margin-left: 0.35rem;
-  color: var(--color-status-progress);
+  margin-left: calc(var(--spacing) * 1.4);
+  color: var(--color-accent);
   text-decoration: none;
 }
 .mp-subtasks-toggle {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: calc(var(--spacing) * 1);
   color: var(--color-text-tertiary);
   font-size: 0.75rem;
   white-space: nowrap;
 }
 .mp-subtasks {
   list-style: none;
-  padding-left: 2rem;
+  padding-left: calc(var(--spacing) * 8);
 }
 .mp-subtasks .mp-task-row {
   min-height: 2.75rem;
@@ -143,23 +143,23 @@
 }
 .mp-version-list {
   display: grid;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .mp-version {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   width: 100%;
   text-align: left;
-  padding: 1rem;
+  padding: calc(var(--spacing) * 4);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-small);
   font-size: 0.75rem;
   color: var(--color-text-secondary);
 }
 .mp-version[aria-pressed="true"] {
-  background: var(--color-status-progress-subtle);
-  border-color: var(--color-status-progress);
+  background: var(--color-accent-subtle);
+  border-color: var(--color-accent);
 }
 .mp-version-icon {
   display: grid;
@@ -172,7 +172,7 @@
 }
 .mp-version-info {
   display: grid;
-  gap: 0.35rem;
+  gap: calc(var(--spacing) * 1.4);
   min-width: 0;
   flex: 1;
   overflow-wrap: anywhere;
@@ -183,15 +183,15 @@
   font-weight: 500;
 }
 .mp-version small {
-  margin-left: 0.5rem;
+  margin-left: calc(var(--spacing) * 2);
   font-size: 0.625rem;
-  color: var(--color-status-progress);
+  color: var(--color-accent);
 }
 .mp-waveform button:focus-visible,
 .mp-task-list button:focus-visible,
 .mp-task-list input:focus-visible,
 .mp-version:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -201,21 +201,21 @@
 }
 @media (max-width: 600px) {
   .mp-task-row {
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
     flex-wrap: wrap;
-    padding: 0.5rem 0;
+    padding: calc(var(--spacing) * 2) 0;
   }
   .mp-task-title {
     flex-basis: calc(100% - 2rem);
   }
   .mp-task-date {
-    margin-left: 1.5rem;
+    margin-left: calc(var(--spacing) * 6);
   }
   .mp-subtasks {
-    padding-left: 1.5rem;
+    padding-left: calc(var(--spacing) * 6);
   }
   .mp-version {
-    gap: 0.5rem;
-    padding: 0.75rem;
+    gap: calc(var(--spacing) * 2);
+    padding: calc(var(--spacing) * 3);
   }
 }

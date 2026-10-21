@@ -238,21 +238,19 @@ export function ComponentPlayground({
   const groups = [
     ...new Set(entries.map(([, control]) => control.group ?? spec.title)),
   ];
-  const fields = (group: string) => (
-    <div className="pg-fields">
-      {entries
-        .filter(([, control]) => (control.group ?? spec.title) === group)
-        .map(([key, control]) => (
-          <PropertyControl
-            key={`${revision}-${key}`}
-            name={key}
-            control={resolveControl(control, values)}
-            value={values[key]}
-            onChange={(value) => set(key, value)}
-          />
-        ))}
-    </div>
-  );
+  const fields = (group: string) => {
+    const controls = entries.filter(([, c]) => (c.group ?? spec.title) === group);
+    const renderField = ([key, control]: typeof entries[number]) => <PropertyControl
+      key={`${revision}-${key}`} name={key} control={resolveControl(control, values)}
+      value={values[key]} onChange={value => set(key, value)} />;
+    const switches = controls.filter(([, c]) => c.kind === "boolean");
+    return <div className="pg-fields">
+      {controls.filter(([, c]) => c.kind !== "boolean").map(renderField)}
+      {switches.length > 0 && <div className="pg-switch-group">
+        <p className="pg-caption">Others</p>{switches.map(renderField)}
+      </div>}
+    </div>;
+  };
   const inspector = (
     <div className="pg-inspector-content" data-mode={mode}>
       {mode === "annotation" ? (
@@ -268,12 +266,12 @@ export function ComponentPlayground({
         </>
       ) : (
         <>
-          <p className="pg-muted">Description</p>
-          <p className="pg-description">
-            {descriptionFor(nav.active, spec.title)}
-          </p>
+          <div className="pg-description-group">
+            <p className="pg-caption">Description</p>
+            <p className="pg-description">{descriptionFor(nav.active, spec.title)}</p>
+          </div>
           <div className="pg-install">
-            <p className="pg-muted">Install</p>
+            <p className="pg-caption">Install</p>
             <div>
               <code>{install}</code>
               <Tool
@@ -286,19 +284,6 @@ export function ComponentPlayground({
         </>
       )}
       <hr />
-      {mode !== "annotation" && (
-        <div className="pg-row pg-property-heading">
-          <h2>Properties</h2>
-          <div className="pg-actions">
-            <Tool
-              label="Randomize properties"
-              icon="randomize"
-              onClick={() => apply(randomValues(spec, values))}
-            />
-            <Tool label="Reset properties" icon="reset" onClick={reset} />
-          </div>
-        </div>
-      )}
       {groups
         .filter((group) => group !== "Press spring")
         .sort((a, b) => (a === spec.title ? -1 : b === spec.title ? 1 : 0))
@@ -409,6 +394,8 @@ export function ComponentPlayground({
               <details className="pg-more-tools" ref={moreTools}>
                 <summary className="pg-tool" aria-label="More tools" title="More tools"><Glyph name="dots" /></summary>
                 <div className="pg-toolgroup pg-more-popover">
+                <Tool label="Randomize properties" icon="randomize" onClick={() => apply(randomValues(spec, values))} />
+                <Tool label="Reset properties" icon="reset" onClick={reset} />
                 <Tool
                   icon="replay"
                   label="Replay"

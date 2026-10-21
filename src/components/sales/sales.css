@@ -9,8 +9,8 @@
 .revenue-matrix figcaption {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: calc(var(--spacing) * 2);
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .revenue-matrix figcaption strong {
   font-size: 1.75rem;
@@ -24,10 +24,10 @@
 }
 .revenue-plot {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   height: 12rem;
   min-width: 260px;
-  margin-top: 1.5rem;
+  margin-top: calc(var(--spacing) * 6);
 }
 .revenue-plot svg {
   display: block;
@@ -48,8 +48,8 @@
 .sales-x-axis {
   display: flex;
   justify-content: space-between;
-  gap: 0.5rem;
-  margin: 0.75rem 0 1rem 3.5rem;
+  gap: calc(var(--spacing) * 2);
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 4) calc(var(--spacing) * 14);
   font-size: 0.625rem;
   color: var(--color-text-tertiary);
   min-width: 200px;
@@ -71,7 +71,7 @@
 }
 .revenue-matrix details {
   border-top: 1px solid var(--color-border-subtle);
-  padding-top: 0.75rem;
+  padding-top: calc(var(--spacing) * 3);
 }
 .revenue-matrix summary {
   cursor: pointer;
@@ -80,7 +80,7 @@
 .sales-data-scroll {
   max-height: 12rem;
   overflow: auto;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
 }
 .sales-data-scroll table {
   width: 100%;
@@ -89,11 +89,11 @@
 }
 .sales-data-scroll caption {
   text-align: left;
-  padding-bottom: 0.5rem;
+  padding-bottom: calc(var(--spacing) * 2);
 }
 .sales-data-scroll th,
 .sales-data-scroll td {
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
   border-bottom: 1px solid var(--color-border-subtle);
   font-weight: 400;
 }
@@ -128,27 +128,27 @@
 }
 .pipeline-funnel ul {
   padding: 0;
-  margin: 0.5rem 0;
+  margin: calc(var(--spacing) * 2) 0;
   list-style: none;
 }
 .pipeline-funnel li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0.5rem 0;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 2) 0;
   border-bottom: 1px solid var(--color-border-subtle);
   font-variant-numeric: tabular-nums;
 }
 .pipeline-funnel li > span {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .pipeline-funnel i {
   width: 0.5rem;
   height: 0.5rem;
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
   flex: none;
 }
 .pipeline-funnel small {
@@ -175,7 +175,7 @@
 }
 .deal-table th,
 .deal-table td {
-  padding: 1rem 0.75rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 3);
   border-bottom: 1px solid var(--color-border-subtle);
   font-weight: 400;
 }
@@ -199,7 +199,7 @@
   background: var(--color-state-press);
 }
 .deal-table input {
-  accent-color: var(--color-status-progress);
+  accent-color: var(--color-accent);
   width: 1rem;
   height: 1rem;
   vertical-align: middle;
@@ -213,7 +213,7 @@
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control-tiny);
   overflow: hidden;
-  padding: 0.25rem;
+  padding: calc(var(--spacing) * 1);
 }
 .deal-progress > span {
   position: absolute;
@@ -228,7 +228,7 @@
 .revenue-matrix :focus-visible,
 .deal-table-scroll:focus-visible,
 .deal-table :focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 

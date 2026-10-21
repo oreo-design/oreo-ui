@@ -23,9 +23,9 @@
   top: 34%;
   width: 14rem;
   max-width: calc(100% - 1rem);
-  padding: 0.75rem;
+  padding: calc(var(--spacing) * 3);
   border: 1px solid var(--color-border-default);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-card-small);
   background: var(--color-bg-elevated);
   box-shadow: 0 0.5rem 1.5rem #00000012;
   font:
@@ -40,7 +40,7 @@
 .experiment-tooltip p {
   display: flex;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   white-space: nowrap;
 }
 .experiment-tooltip b {
@@ -55,14 +55,14 @@
 .experiment-tooltip > strong {
   font-weight: 500;
   display: block;
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
+  margin-top: calc(var(--spacing) * 2);
+  padding-top: calc(var(--spacing) * 2);
   border-top: 1px solid var(--color-border-default);
 }
 .experiment-scrubber {
   display: grid;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
+  gap: calc(var(--spacing) * 2);
+  margin-top: calc(var(--spacing) * 3);
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
 }
@@ -77,18 +77,18 @@
 .experiment-scrubber input {
   width: 100%;
   height: 1rem;
-  accent-color: var(--color-text-primary);
+  accent-color: var(--color-theme-accent, var(--color-text-primary));
   cursor: pointer;
 }
 .experiment-reading {
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
-  margin-top: 0.5rem;
+  margin-top: calc(var(--spacing) * 2);
   line-height: 1.6;
   font-variant-numeric: tabular-nums;
 }
 .experiment-data {
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
   font-size: 0.6875rem;
   color: var(--color-text-secondary);
 }
@@ -99,9 +99,9 @@
 .experiment-data > div {
   overflow: auto;
   max-height: 17rem;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
   border: 1px solid var(--color-border-subtle);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-control);
 }
 .experiment-data table {
   width: 100%;
@@ -111,7 +111,7 @@
 }
 .experiment-data th,
 .experiment-data td {
-  padding: 0.625rem;
+  padding: calc(var(--spacing) * 2.5);
   text-align: left;
   border-bottom: 1px solid var(--color-border-subtle);
   font-weight: 400;
@@ -123,20 +123,20 @@
 }
 .experiment-variants {
   display: grid;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   font-size: 0.75rem;
-  margin-top: 1.5rem;
+  margin-top: calc(var(--spacing) * 6);
 }
 .experiment-variants > div {
   display: flex;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   align-items: flex-start;
 }
 .experiment-variants dt {
   display: flex;
   align-items: flex-start;
-  gap: 0.625rem;
+  gap: calc(var(--spacing) * 2.5);
   min-width: 0;
   line-height: 1.5;
 }
@@ -145,7 +145,7 @@
 }
 .experiment-variants dd {
   display: flex;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   align-items: center;
   font:
     0.6875rem/1.7 ui-monospace,
@@ -167,7 +167,7 @@
   width: 1.25rem;
   height: 1.25rem;
   flex-shrink: 0;
-  border-radius: 0.25rem;
+  border-radius: var(--radius-control-tiny);
   background: var(--color-bg-elevated);
   color: var(--color-text-secondary);
 }
@@ -177,16 +177,16 @@
 }
 .experiment-decision {
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: center;
   justify-content: space-between;
-  padding-top: 1.5rem;
-  margin-top: 1.5rem;
+  padding-top: calc(var(--spacing) * 6);
+  margin-top: calc(var(--spacing) * 6);
   border-top: 1px solid var(--color-border-subtle);
 }
 .experiment-decision strong {
   display: flex;
-  gap: 0.375rem;
+  gap: calc(var(--spacing) * 1.5);
   align-items: center;
   font-size: 0.75rem;
   font-weight: 500;
@@ -199,22 +199,22 @@
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
   line-height: 1.6;
-  margin-top: 0.25rem;
+  margin-top: calc(var(--spacing) * 1);
 }
 .experiment-decision > button {
   flex-shrink: 0;
 }
 .experiment-chart :focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 @media (max-width: 600px) {
   .experiment-variants > div {
     display: grid;
-    gap: 0.375rem;
+    gap: calc(var(--spacing) * 1.5);
   }
   .experiment-variants dd {
-    padding-left: 1.875rem;
+    padding-left: calc(var(--spacing) * 7.5);
   }
   .experiment-decision {
     align-items: flex-start;
@@ -222,7 +222,7 @@
   }
   .experiment-tooltip {
     font-size: 0.625rem;
-    padding: 0.5rem;
+    padding: calc(var(--spacing) * 2);
   }
   .experiment-plot svg {
     min-height: 12rem;

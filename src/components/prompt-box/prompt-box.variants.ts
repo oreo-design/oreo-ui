@@ -12,8 +12,8 @@ import { tv } from "@/lib/tv";
 export const promptBox = tv({
   slots: {
     stack: "relative isolate flex w-full max-w-[800px] flex-col",
-    headerSlot: "z-[1] -mb-[16px] w-full",
-    footerSlot: "z-[1] -mt-[16px] w-full",
+    headerSlot: "z-[1] -mb-4 w-full",
+    footerSlot: "z-[1] -mt-4 w-full",
     card: [
       "z-[2] flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x8)]",
       "rounded-[var(--radius-card-medium)] bg-[var(--color-bg-base)] p-[var(--space-x6)]",

@@ -74,7 +74,7 @@
 .ar-heatmap {
   margin: 0;
   min-width: 0;
-  --ar-accent: var(--color-status-progress);
+  --ar-accent: var(--color-accent);
 }
 .ar-heatmap[data-metric="failures"] {
   --ar-accent: var(--color-status-error);
@@ -117,7 +117,7 @@
 }
 .ar-day button[data-selected],
 .ar-day button:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: 2px;
 }
 .ar-day button:hover {
@@ -140,7 +140,7 @@
   background: var(--ar-accent);
 }
 .ar-hours {
-  margin-left: 44px;
+  margin-left: calc(var(--spacing) * 11);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding-top: calc(var(--spacing) * 3);
@@ -194,7 +194,7 @@
 .ar-scale i {
   width: calc(var(--spacing) * 3);
   height: calc(var(--spacing) * 3);
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
 }
 .ar-scale i:first-of-type {
   margin-left: var(--spacing);
@@ -211,7 +211,7 @@
   color: var(--color-text-secondary);
 }
 .ar-card > footer svg {
-  color: var(--color-status-progress);
+  color: var(--color-accent);
 }
 .ar-card > footer small {
   margin-left: auto;

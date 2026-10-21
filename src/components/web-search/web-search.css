@@ -3,7 +3,7 @@
   transition: background-color 150ms, box-shadow 150ms, transform 200ms var(--ease-out);
 }
 .oreo-search-card:focus-visible, .oreo-search-trigger:focus-visible, .oreo-search-citation:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 .oreo-search-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }

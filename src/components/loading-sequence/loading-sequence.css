@@ -19,7 +19,7 @@
   padding: 5%; animation: ols-heading var(--loading-duration) var(--ease-drawer) both; }
 .ols-line { display: flex; justify-content: center; flex-wrap: wrap; }
 .ols-word { display: inline-block; transform-origin: bottom left; animation: ols-word calc(var(--loading-duration) * .16) var(--ease-out) both; animation-delay: var(--word-delay); }
-.ols-loader { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: .5rem; color: var(--color-code-fg); animation: ols-loader var(--loading-duration) var(--ease-out) both; }
+.ols-loader { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: calc(var(--spacing) * 2); color: var(--color-code-fg); animation: ols-loader var(--loading-duration) var(--ease-out) both; }
 .ols-spinner { width: 1rem; height: 1rem; border: 2px solid currentColor; border-right-color: transparent; border-top-color: transparent; border-radius: 50%; animation: ols-spin .8s linear infinite; }
 .ols-loading-label { font-size: .5rem; letter-spacing: .06em; }
 .ols-brand { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: clamp(.75rem, 3cqw, 1.5rem); letter-spacing: .18em; color: var(--color-code-fg); animation: ols-brand var(--loading-duration) var(--ease-drawer) both; }

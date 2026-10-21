@@ -101,7 +101,7 @@ export function ThreadListItemAction({
       className={cn(
         "grid size-5 place-items-center rounded-full text-[var(--color-text-secondary)]",
         "transition-colors hover:bg-[var(--color-state-press)] hover:text-[var(--color-text-primary)]",
-        "outline-none focus-visible:ring-2 focus-visible:ring-black/40",
+        "outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
         "[&_svg]:size-3",
         className,
       )}

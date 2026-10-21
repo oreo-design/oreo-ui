@@ -9,8 +9,8 @@
 .ds-stat header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.25rem 0.5rem;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 5) calc(var(--spacing) * 2);
   color: var(--color-text-secondary);
 }
 .ds-stat h3 {
@@ -21,8 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0.25rem 1.25rem 1rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 5) calc(var(--spacing) * 4);
 }
 .ds-stat-value > strong {
   font-size: 1.875rem;
@@ -33,15 +33,15 @@
 .ds-stat p {
   font-size: 0.75rem;
   color: var(--color-text-tertiary);
-  padding: 0.75rem 1.25rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 5);
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
   flex-wrap: wrap;
 }
 .ds-stat p > span {
   display: inline-flex;
-  gap: 0.25rem;
+  gap: calc(var(--spacing) * 1);
   align-items: center;
 }
 .ds-stat [data-direction="up"] {
@@ -58,8 +58,8 @@
   background: var(--color-bg-base);
   border-top: 1px solid var(--color-border-default);
   border-radius: var(--radius-card-medium) var(--radius-card-medium) 0 0;
-  padding-top: 1.25rem;
-  padding-bottom: 0.25rem;
+  padding-top: calc(var(--spacing) * 5);
+  padding-bottom: calc(var(--spacing) * 1);
 }
 .ds-stat[data-variant="header"] p {
   background: var(--color-bg-base);
@@ -72,7 +72,7 @@
 }
 .ds-chart {
   min-width: 0;
-  color: var(--color-text-secondary);
+  color: var(--color-theme-accent, var(--color-text-secondary));
 }
 .ds-chart-scroll {
   overflow: auto;
@@ -102,8 +102,8 @@
   stroke-width: 1;
 }
 .ds-chart [data-series="0"] {
-  fill: var(--color-text-secondary);
-  background: var(--color-text-secondary);
+  fill: var(--color-theme-accent, var(--color-text-secondary));
+  background: var(--color-theme-accent, var(--color-text-secondary));
 }
 .ds-chart [data-series="1"] {
   fill: var(--color-text-tertiary);
@@ -116,14 +116,14 @@
 .ds-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   font-size: 0.75rem;
-  padding: 0 0 1rem;
+  padding: 0 0 calc(var(--spacing) * 4);
 }
 .ds-legend > span {
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: calc(var(--spacing) * 1.5);
 }
 .ds-legend i {
   width: 0.5rem;
@@ -134,21 +134,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   flex-wrap: wrap;
   font-size: 0.75rem;
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
 }
 .ds-readout label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .ds-readout select {
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control);
-  padding: 0.375rem 0.5rem;
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
   color: var(--color-text-primary);
   max-width: 12rem;
 }
@@ -157,8 +157,8 @@
   color: var(--color-text-primary);
 }
 .ds-exact {
-  margin-top: 1rem;
-  padding-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 4);
+  padding-top: calc(var(--spacing) * 3);
   border-top: 1px solid var(--color-border-subtle);
   font-size: 0.75rem;
 }
@@ -169,7 +169,7 @@
 .ds-exact > div {
   overflow: auto;
   max-height: 18rem;
-  margin-top: 0.75rem;
+  margin-top: calc(var(--spacing) * 3);
 }
 .ds-exact table {
   width: 100%;
@@ -179,7 +179,7 @@
 .ds-exact th,
 .ds-exact td {
   text-align: right;
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .ds-exact th:first-child {
@@ -187,7 +187,7 @@
 }
 .ds-exact caption {
   text-align: left;
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
 }
 .ds-exact thead {
   position: sticky;
@@ -197,7 +197,7 @@
 .ds-channels h3 {
   font-size: 0.875rem;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .ds-channels ul {
   list-style: none;
@@ -205,12 +205,12 @@
   margin: 0;
 }
 .ds-channels li + li {
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
 }
 .ds-channels li > div,
 .ds-channels li > button {
   display: block;
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
   border-radius: var(--radius-control);
   width: 100%;
   text-align: left;
@@ -225,7 +225,7 @@
 .ds-channels li > * > span:first-child {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   font-size: 0.8125rem;
 }
 .ds-channels strong {
@@ -234,7 +234,7 @@
 }
 .ds-channels .ao-pixel-meter {
   display: block;
-  margin: 0.5rem 0 0.25rem;
+  margin: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 1);
 }
 .ds-channels small {
   font-size: 0.6875rem;
@@ -244,7 +244,7 @@
 .ds-readout select:focus-visible,
 .ds-chart-scroll:focus-visible,
 .ds-exact summary:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 @media (hover: hover) and (pointer: fine) {
