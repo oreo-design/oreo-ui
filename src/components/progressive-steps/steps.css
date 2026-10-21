@@ -30,7 +30,7 @@
   left: 0;
   top: 0;
   height: 48px;
-  background: var(--color-text-primary);
+  background: var(--color-bg-inverse);
   border-radius: var(--radius-capsule);
   transition: transform 240ms var(--ease-out);
   pointer-events: none;
@@ -40,7 +40,7 @@
   justify-content: center;
   gap: calc(var(--spacing) * 2);
   padding: 0 calc(var(--spacing) * 3);
-  color: var(--color-bg-base);
+  color: var(--color-text-on-inverse);
   font-size: var(--text-sm);
   font-weight: 500;
   white-space: nowrap;
@@ -82,7 +82,7 @@
   color: var(--color-text-tertiary);
 }
 .pgs-track button:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: 3px;
 }
 .pgs-number {

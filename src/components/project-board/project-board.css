@@ -1,5 +1,5 @@
 .pb-create {
-  padding: 0.875rem;
+  padding: calc(var(--spacing) * 3.5);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-base);
@@ -9,18 +9,18 @@
   position: relative;
   height: 10rem;
   border: 1px solid var(--color-border-subtle);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-control);
   background: var(--color-bg-elevated);
   display: grid;
   place-items: center;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .pb-mini-window {
   width: 80%;
   height: 7rem;
   border: 1px solid var(--color-border-default);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-control);
   background: var(--color-bg-base);
   opacity: 0.55;
 }
@@ -32,23 +32,23 @@
 .pb-mini-window > span:before {
   content: "•••";
   letter-spacing: 0.1rem;
-  padding-left: 0.5rem;
+  padding-left: calc(var(--spacing) * 2);
   color: var(--color-text-tertiary);
   font-size: 0.625rem;
 }
 .pb-mini-window > div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.375rem;
-  padding: 0.5rem;
+  gap: calc(var(--spacing) * 1.5);
+  padding: calc(var(--spacing) * 2);
 }
 .pb-mini-window i {
   display: block;
   height: 0.875rem;
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border-subtle);
-  border-radius: 0.25rem;
-  margin-bottom: 0.375rem;
+  border-radius: var(--radius-control-tiny);
+  margin-bottom: calc(var(--spacing) * 1.5);
 }
 .pb-floating-card {
   position: absolute;
@@ -56,9 +56,9 @@
   top: 2.5rem;
   width: 3.5rem;
   height: 4.5rem;
-  padding: 0.375rem;
+  padding: calc(var(--spacing) * 1.5);
   border: 1px solid var(--color-border-default);
-  border-radius: 0.5rem;
+  border-radius: var(--radius-control);
   background: var(--color-bg-base);
   box-shadow: 0 0.375rem 0.75rem #00000012;
   transform: rotate(-7deg);
@@ -69,15 +69,15 @@
   place-items: center;
   height: 2.25rem;
   background: var(--color-bg-elevated);
-  border-radius: 0.25rem;
+  border-radius: var(--radius-control-tiny);
   color: var(--color-text-secondary);
 }
 .pb-floating-card i {
   display: block;
   height: 0.25rem;
   background: var(--color-border-subtle);
-  margin-top: 0.375rem;
-  border-radius: 0.25rem;
+  margin-top: calc(var(--spacing) * 1.5);
+  border-radius: var(--radius-control-tiny);
 }
 .pb-floating-card i:last-child {
   width: 65%;
@@ -91,32 +91,32 @@
   font-size: 0.75rem;
   color: var(--color-text-secondary);
   line-height: 1.7;
-  margin: 0.5rem 0 1rem;
+  margin: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 4);
 }
 .pb-create > button {
   width: 100%;
 }
 .pb-overview-scroll {
   overflow: auto;
-  padding-bottom: 1rem;
+  padding-bottom: calc(var(--spacing) * 4);
   min-width: 0;
   max-width: 100%;
 }
 .pb-overview {
   display: grid;
   grid-template-columns: repeat(4, minmax(245px, 1fr));
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   min-width: 1028px;
 }
 .pb-column > header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.375rem 0.625rem;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2.5);
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border-subtle);
-  border-radius: 0.5rem;
-  margin-bottom: 0.75rem;
+  border-radius: var(--radius-control);
+  margin-bottom: calc(var(--spacing) * 3);
   min-height: 2.5rem;
 }
 .pb-column h2 {
@@ -133,13 +133,13 @@
 .pb-column-content {
   display: grid;
   align-content: start;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
 }
 .pb-column-empty {
   border: 1px dashed var(--color-border-default);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-card-small);
   color: var(--color-text-tertiary);
-  padding: 2rem 1rem;
+  padding: calc(var(--spacing) * 8) calc(var(--spacing) * 4);
   text-align: center;
   font-size: 0.75rem;
 }
@@ -154,14 +154,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
-  padding: 1rem 1rem 0;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 4) 0;
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
 }
 .pb-project .oreo-project-summary {
   border: 0;
-  padding: 1rem;
+  padding: calc(var(--spacing) * 4);
 }
 .pb-project .ps-heading {
   flex-wrap: wrap;
@@ -179,7 +179,7 @@
   font-size: 0.6875rem;
 }
 .pb-overview-scroll:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {

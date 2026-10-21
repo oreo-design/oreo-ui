@@ -229,7 +229,7 @@
 }
 .tq-table tr[data-selected],
 .tq-table tr:focus-within {
-  background: var(--color-bg-elevated);
+  background: var(--color-theme-accent-subtle, var(--color-bg-elevated));
 }
 .tq-skeleton {
   display: block;
@@ -241,7 +241,7 @@
 .tq-filter-bar :focus-visible,
 .tq-table-wrap :focus-visible,
 .tq-filter-popup :focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: 2px;
 }
 @media (hover: hover) {

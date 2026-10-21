@@ -5,14 +5,14 @@
 .sp-label {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   font-size: 0.75rem;
   color: var(--color-text-secondary);
   font-variant-numeric: tabular-nums;
 }
 .sp-track {
   height: 0.25rem;
-  margin-top: 0.625rem;
+  margin-top: calc(var(--spacing) * 2.5);
   border-radius: var(--radius-capsule);
   background: var(--color-border-subtle);
   overflow: hidden;

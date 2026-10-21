@@ -14,7 +14,7 @@ type Status = "default" | "avatar" | "progress" | "loading" | "waiting" | "done"
 const trailingButtonBase = [
   "flex shrink-0 items-center outline-none select-none",
   "text-[var(--color-text-tertiary)] transition-colors duration-150",
-  "hover:text-[var(--color-text-primary)] focus-visible:ring-2 focus-visible:ring-black/40",
+  "hover:text-[var(--color-text-primary)] focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
   "rounded-[var(--radius-control-tiny)]",
 ];
 
@@ -172,8 +172,8 @@ export function ContextBarTasks({ summary, defaultOpen, open, onOpenChange, clas
     <Collapsible.Root defaultOpen={defaultOpen} open={open} onOpenChange={onOpenChange} className={cn("w-full", className)}>
       <Collapsible.Trigger
         className={cn(
-          "group/tasks flex w-full items-center gap-[4px] outline-none select-none",
-          "rounded-[var(--radius-control-tiny)] focus-visible:ring-2 focus-visible:ring-black/40",
+          "group/tasks flex w-full items-center gap-1 outline-none select-none",
+          "rounded-[var(--radius-control-tiny)] focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
         )}
       >
         <span className="grid size-5 shrink-0 place-items-center">

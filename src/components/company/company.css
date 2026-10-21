@@ -119,7 +119,7 @@
 }
 .company-table-scroll:focus-visible,
 .company-table :focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: -2px;
 }
 .company-loading {

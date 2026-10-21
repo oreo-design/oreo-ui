@@ -1,10 +1,10 @@
 .oreo-kanban { --kanban-columns: 4; }
-.oreo-kanban-grid { display: grid; grid-template-columns: repeat(var(--kanban-columns), minmax(15rem, 1fr)); gap: .75rem; }
+.oreo-kanban-grid { display: grid; grid-template-columns: repeat(var(--kanban-columns), minmax(15rem, 1fr)); gap: calc(var(--spacing) * 3); }
 .oreo-kanban-card { transition: border-color 150ms ease, box-shadow 150ms ease; }
 .oreo-kanban-card:active { cursor: grabbing; }
 .oreo-kanban-action { border-radius: var(--radius-control); outline: none; transition: background-color 150ms ease, color 150ms ease, transform 100ms var(--ease-out); }
 .oreo-kanban-action:active { transform: scale(.97); }
-.oreo-kanban-action:focus-visible { outline: 2px solid var(--color-status-progress); outline-offset: 2px; }
+.oreo-kanban-action:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 @media (hover: hover) and (pointer: fine) {
   .oreo-kanban-card:hover { border-color: var(--color-border-default); }
   .oreo-kanban-action:hover { background: var(--color-state-hover); color: var(--color-text-primary); }
@@ -16,6 +16,6 @@
   .oreo-kanban-card, .oreo-kanban-action { transition: none; }
 }
 
-.oreo-kanban-open{border-radius:var(--radius-control);cursor:pointer}.oreo-kanban-handle{display:grid;place-items:center;width:1.5rem;height:1.5rem;border-radius:var(--radius-control);cursor:grab}.oreo-kanban-handle:active{cursor:grabbing}.oreo-kanban-open:focus-visible,.oreo-kanban-handle:focus-visible{outline:2px solid var(--color-status-progress);outline-offset:2px}
+.oreo-kanban-open{border-radius:var(--radius-control);cursor:pointer}.oreo-kanban-handle{display:grid;place-items:center;width:1.5rem;height:1.5rem;border-radius:var(--radius-control);cursor:grab}.oreo-kanban-handle:active{cursor:grabbing}.oreo-kanban-open:focus-visible,.oreo-kanban-handle:focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
 
-.oreo-kanban-card[data-selected]{border-color:var(--color-border-strong, var(--color-text-secondary));box-shadow:0 0 0 1px var(--color-border-strong, var(--color-text-secondary))}
+.oreo-kanban-card[data-selected]{border-color:var(--color-theme-accent, var(--color-border-strong, var(--color-text-secondary)));box-shadow:0 0 0 1px var(--color-border-strong, var(--color-text-secondary))}

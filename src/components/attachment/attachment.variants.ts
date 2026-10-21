@@ -38,7 +38,7 @@ export const attachment = tv({
       "absolute inset-0 grid place-items-center rounded-[var(--radius-capsule)] text-[var(--color-text-primary)]",
       "opacity-0 transition-opacity duration-150",
       "group-hover/attachment:opacity-100 focus-visible:opacity-100",
-      "outline-none focus-visible:ring-2 focus-visible:ring-black/40",
+      "outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
     ],
     /** Icon-only form ×: floating badge off the top-right corner. */
     badge: [
@@ -46,7 +46,7 @@ export const attachment = tv({
       "rounded-[var(--radius-capsule)] bg-[var(--color-bg-inverse)] text-[var(--color-text-on-inverse)]",
       "opacity-0 transition-opacity duration-150",
       "group-hover/attachment:opacity-100 focus-visible:opacity-100",
-      "outline-none focus-visible:ring-2 focus-visible:ring-black/40",
+      "outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
     ],
   },
   variants: {

@@ -13,8 +13,8 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 12px;
+  gap: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 3);
 }
 .mr-card-header h2 {
   margin: 0;
@@ -27,7 +27,7 @@
   color: var(--mr-success, var(--color-palette-mint-text));
   font-size: 12px;
   white-space: nowrap;
-  padding-top: 2px;
+  padding-top: calc(var(--spacing) * 0.5);
 }
 .mr-card[data-phase="merged"] .mr-open-state {
   color: var(--color-palette-purple-text);
@@ -39,10 +39,10 @@
 .mr-target {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--spacing) * 3);
   min-height: 36px;
   color: var(--color-text-secondary);
-  padding: 0 8px;
+  padding: 0 calc(var(--spacing) * 2);
 }
 .mr-target > span:last-child {
   margin-left: auto;
@@ -77,7 +77,7 @@
 .mr-commit {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--spacing) * 3);
   height: 42px;
   width: 100%;
   padding: 0 8px 0 var(--graph-width);
@@ -91,7 +91,7 @@
 .mr-commit-copy {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
   min-width: 0;
   flex: 1;
 }
@@ -108,7 +108,7 @@ button.mr-commit {
 }
 button.mr-commit:hover,
 button.mr-commit[aria-pressed="true"] {
-  background: var(--color-bg-elevated);
+  background: var(--color-theme-accent-subtle, var(--color-bg-elevated));
 }
 .mr-commit-meta {
   font-size: 11px;
@@ -116,11 +116,11 @@ button.mr-commit[aria-pressed="true"] {
   white-space: nowrap;
 }
 .mr-commit-meta code {
-  margin-right: 4px;
+  margin-right: calc(var(--spacing) * 1);
 }
 .mr-branch {
   font-size: 10px;
-  padding: 2px 5px;
+  padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 1.25);
   border-radius: var(--radius-control-tiny);
   background: var(--color-bg-elevated);
   max-width: 170px;
@@ -133,7 +133,7 @@ button.mr-commit[aria-pressed="true"] {
   place-items: center;
   min-width: 18px;
   height: 18px;
-  padding: 0 4px;
+  padding: 0 calc(var(--spacing) * 1);
   border-radius: var(--radius-capsule);
   font-size: 11px;
   color: var(--color-palette-orange-text);
@@ -148,9 +148,9 @@ button.mr-commit[aria-pressed="true"] {
 .mr-check > summary {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: calc(var(--spacing) * 1.75);
   min-height: 30px;
-  padding: 4px 10px;
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2.5);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-capsule);
   background: var(--color-bg-base);
@@ -176,8 +176,8 @@ button.mr-commit[aria-pressed="true"] {
 .mr-checks {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin: 12px 0 4px;
+  gap: calc(var(--spacing) * 1.5);
+  margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 1);
 }
 .mr-check {
   position: relative;
@@ -199,8 +199,8 @@ button.mr-commit[aria-pressed="true"] {
 }
 .mr-check-detail {
   max-width: 280px;
-  margin-top: 6px;
-  padding: 10px 12px;
+  margin-top: calc(var(--spacing) * 1.5);
+  padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-control);
@@ -211,7 +211,7 @@ button.mr-commit[aria-pressed="true"] {
   max-width: 100%;
 }
 .mr-change-detail {
-  padding-top: 12px;
+  padding-top: calc(var(--spacing) * 3);
   width: min(640px, 100%);
 }
 .mr-added {
@@ -222,12 +222,12 @@ button.mr-commit[aria-pressed="true"] {
 }
 .mr-diff-blocks {
   display: flex;
-  gap: 2px;
+  gap: calc(var(--spacing) * 0.5);
 }
 .mr-diff-blocks i {
   width: 6px;
   height: 7px;
-  border-radius: 1px;
+  border-radius: calc(var(--radius-control) * 0.125);
   background: var(--color-border-default);
 }
 .mr-diff-blocks [data-tone="add"] {
@@ -240,14 +240,14 @@ button.mr-commit[aria-pressed="true"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: calc(var(--spacing) * 3);
   min-height: 40px;
-  margin-top: 12px;
+  margin-top: calc(var(--spacing) * 3);
 }
 .mr-footer-status {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
   font-size: 13px;
   color: var(--color-text-secondary);
   min-width: 0;
@@ -261,15 +261,15 @@ button.mr-commit[aria-pressed="true"] {
 .mr-error {
   font-size: 12px;
   color: var(--color-status-error);
-  margin: 8px 0 0;
+  margin: calc(var(--spacing) * 2) 0 0;
 }
 .mr-spin {
   animation: mr-spin 1s linear infinite;
 }
 .mr-skeleton {
   display: grid;
-  gap: 18px;
-  padding: 16px 8px;
+  gap: calc(var(--spacing) * 4.5);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 2);
   min-height: 250px;
 }
 .mr-skeleton > div {
@@ -281,7 +281,7 @@ button.mr-commit[aria-pressed="true"] {
 .mr-commit:focus-visible,
 .mr-check > summary:focus-visible,
 .mr-change-summary > summary:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 @keyframes mr-spin {
@@ -304,13 +304,13 @@ button.mr-commit[aria-pressed="true"] {
   }
   .mr-commit {
     font-size: 12px;
-    gap: 4px;
+    gap: calc(var(--spacing) * 1);
   }
   .mr-commit-copy {
-    gap: 5px;
+    gap: calc(var(--spacing) * 1.25);
   }
   .mr-card {
-    padding: 12px;
+    padding: calc(var(--spacing) * 3);
   }
   .mr-card-header h2 {
     font-size: 14px;
@@ -323,7 +323,7 @@ button.mr-commit[aria-pressed="true"] {
   }
   .mr-check > summary {
     font-size: 11px;
-    padding: 4px 8px;
+    padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2);
   }
 }
 @media (prefers-reduced-motion: reduce) {

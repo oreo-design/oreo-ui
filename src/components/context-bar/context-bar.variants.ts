@@ -15,20 +15,20 @@ export const contextBar = tv({
       "bg-[var(--color-bg-elevated)] shadow-[var(--shadow-default)]",
       "border-[0.5px] border-[var(--color-border-subtle)]",
     ],
-    row: "flex w-full items-center gap-[12px]",
-    content: "flex min-w-0 flex-1 items-center gap-[4px]",
+    row: "flex w-full items-center gap-3",
+    content: "flex min-w-0 flex-1 items-center gap-1",
     leadingIcon: "grid size-5 shrink-0 place-items-center [&_svg]:size-4",
     label: "min-w-0 flex-1 text-[14px] leading-5 font-medium text-[var(--color-text-primary)]",
-    trailing: "flex shrink-0 items-center gap-[12px]",
-    trailingIcons: "flex items-center gap-[4px]",
+    trailing: "flex shrink-0 items-center gap-3",
+    trailingIcons: "flex items-center gap-1",
   },
   variants: {
     position: {
       header: {
-        bar: "rounded-t-[var(--radius-card-medium)] px-[var(--space-x6)] pt-[var(--space-x6)] pb-[28px]",
+        bar: "rounded-t-[var(--radius-card-medium)] px-[var(--space-x6)] pt-[var(--space-x6)] pb-7",
       },
       footer: {
-        bar: "rounded-b-[var(--radius-card-medium)] px-[var(--space-x6)] pt-[28px] pb-[var(--space-x6)]",
+        bar: "rounded-b-[var(--radius-card-medium)] px-[var(--space-x6)] pt-7 pb-[var(--space-x6)]",
       },
       detached: {
         bar: "rounded-[var(--radius-card-medium)] p-[var(--space-x6)]",

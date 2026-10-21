@@ -83,7 +83,7 @@ export function AssistantModal({
           "relative grid size-12 place-items-center rounded-full",
           "bg-[var(--color-bg-inverse)] text-[var(--color-text-on-inverse)]",
           "shadow-[0_8px_24px_rgba(0,0,0,0.18)] outline-none",
-          "focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black/40",
+          "focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-accent)]",
         )}
       >
         <span aria-hidden className={cn(iconSwap, open ? "scale-25 opacity-0 blur-[4px]" : "scale-100 opacity-100 blur-none")}>

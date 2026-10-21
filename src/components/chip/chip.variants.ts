@@ -13,7 +13,7 @@ export const chip = tv({
     "relative isolate inline-flex items-center justify-center select-none",
     "gap-[var(--space-x3)] rounded-[var(--radius-control)] whitespace-nowrap",
     "font-medium leading-[20px] outline-none transition-[box-shadow,color] duration-150",
-    "focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-black/40",
+    "focus-visible:ring-2 focus-visible:ring-offset-1 focus-visible:ring-[var(--color-accent)]",
     // state layer
     "after:absolute after:inset-0 after:-z-10 after:rounded-[inherit]",
     "after:bg-transparent after:transition-colors after:duration-150",

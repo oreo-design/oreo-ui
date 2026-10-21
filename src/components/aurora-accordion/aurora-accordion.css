@@ -114,7 +114,7 @@
   background: var(--color-state-hover);
 }
 .aurora-trigger:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: 3px;
 }
 .aurora-trigger:disabled {

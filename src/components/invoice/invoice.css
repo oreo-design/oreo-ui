@@ -36,9 +36,9 @@
 .invoice-table th button {
   display: flex;
   align-items: center;
-  gap: 0.375rem;
+  gap: calc(var(--spacing) * 1.5);
   cursor: pointer;
-  padding: 0.5rem 0;
+  padding: calc(var(--spacing) * 2) 0;
 }
 .invoice-table th svg {
   width: 0.75rem;
@@ -55,21 +55,21 @@
 }
 .invoice-table th,
 .invoice-table td {
-  padding: 0 0.875rem;
+  padding: 0 calc(var(--spacing) * 3.5);
 }
 .invoice-table th:first-child,
 .invoice-table td:first-child {
-  padding-left: 1.5rem;
+  padding-left: calc(var(--spacing) * 6);
 }
 .invoice-table th:last-child,
 .invoice-table td:last-child {
-  padding-right: 1.25rem;
+  padding-right: calc(var(--spacing) * 5);
 }
 .invoice-table td:first-child {
-  border-radius: 0.75rem 0 0 0.75rem;
+  border-radius: var(--radius-card-small) 0 0 var(--radius-card-small);
 }
 .invoice-table td:last-child {
-  border-radius: 0 0.75rem 0.75rem 0;
+  border-radius: 0 var(--radius-card-small) var(--radius-card-small) 0;
 }
 .invoice-table [data-column="amountCents"] {
   text-align: right;
@@ -98,7 +98,7 @@
 .invoice-client {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: calc(var(--spacing) * 2.5);
 }
 .invoice-client > span:last-child {
   max-width: 12rem;
@@ -107,7 +107,7 @@
 }
 .invoice-table button:focus-visible,
 .invoice-table-scroll:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 .invoice-table tr:focus-within td {
@@ -123,12 +123,12 @@
 .invoice-totals {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .invoice-totals article {
   border: 1px solid var(--color-border-subtle);
-  border-radius: 1rem;
-  padding: 1.25rem;
+  border-radius: var(--radius-card-medium);
+  padding: calc(var(--spacing) * 5);
   background: var(--color-bg-surface);
 }
 .invoice-totals article > div {
@@ -140,7 +140,7 @@
 }
 .invoice-totals strong {
   display: block;
-  margin: 1rem 0 0.5rem;
+  margin: calc(var(--spacing) * 4) 0 calc(var(--spacing) * 2);
   font-size: 1.5rem;
   letter-spacing: -0.0625rem;
   font-weight: 500;
@@ -171,10 +171,10 @@
 }
 @media (max-width: 480px) {
   .invoice-totals {
-    gap: 0.625rem;
+    gap: calc(var(--spacing) * 2.5);
   }
   .invoice-totals article {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .invoice-totals strong {
     font-size: 1.25rem;

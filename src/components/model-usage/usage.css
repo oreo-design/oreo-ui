@@ -38,7 +38,7 @@
   display: inline-block;
   width: 7px;
   height: 7px;
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
   background: var(--mu-color);
 }
 .mu-trend figcaption {
@@ -56,7 +56,7 @@
   color: var(--color-text-secondary);
 }
 .mu-trend input {
-  accent-color: var(--color-text-primary);
+  accent-color: var(--color-theme-accent, var(--color-text-primary));
   width: 96px;
 }
 .mu-point-values {
@@ -181,7 +181,7 @@
   border-radius: var(--radius-control);
 }
 .mu-distribution button[aria-pressed="true"] {
-  background: var(--color-bg-elevated);
+  background: var(--color-theme-accent-subtle, var(--color-bg-elevated));
   color: var(--color-text-primary);
 }
 .mu-distribution li i {
@@ -259,7 +259,7 @@
 .mu-trend :focus-visible,
 .mu-distribution :focus-visible,
 .mu-agent-row :focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: 3px;
 }
 @media (max-width: 600px) {

@@ -43,14 +43,14 @@
   background: var(--color-bg-elevated);
   color: var(--color-text-primary);
   border-radius: var(--radius-card-medium);
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
   box-shadow: var(--shadow-default);
 }
 .fo-panel > header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 0.75rem;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 3);
   min-height: 3.5rem;
 }
 .fo-panel > header > svg {
@@ -85,8 +85,8 @@
 }
 .fo-notice {
   display: flex;
-  gap: 1rem;
-  padding: 1.25rem 1rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 4);
   min-height: 8rem;
   border-bottom: 1px solid var(--color-border-default);
 }
@@ -104,10 +104,10 @@
   font-size: 0.8125rem;
   line-height: 1.6;
   color: var(--color-text-secondary);
-  margin: 0.25rem 0 0.5rem;
+  margin: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 2);
 }
 .fo-notice button {
-  margin-left: -0.5rem;
+  margin-left: calc(var(--spacing) * -2);
 }
 .fo-tile {
   display: grid;
@@ -145,8 +145,8 @@
   align-items: center;
   width: 100%;
   text-align: left;
-  padding: 1rem;
-  gap: 0.75rem;
+  padding: calc(var(--spacing) * 4);
+  gap: calc(var(--spacing) * 3);
   min-height: 5.5rem;
   border-bottom: 1px solid var(--color-border-default);
 }
@@ -192,23 +192,23 @@ button.fo-account {
 .fo-spark > span {
   display: flex;
   align-items: flex-end;
-  gap: 2px;
+  gap: calc(var(--spacing) * 0.5);
   height: 100%;
 }
 .fo-spark i {
   display: block;
   flex: 1;
   background: var(--color-border-default);
-  border-radius: 1px;
+  border-radius: calc(var(--radius-control) * 0.125);
 }
 .fo-spark i:last-child {
-  background: var(--color-palette-purple-text);
+  background: var(--color-theme-accent, var(--color-palette-purple-text));
 }
 .fo-connect {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1rem;
+  gap: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 4);
   min-height: 5.5rem;
 }
 .fo-connect > div {
@@ -226,22 +226,22 @@ button.fo-account {
   line-height: 1.5;
 }
 .fo-rate-note {
-  padding: 0.75rem 0.75rem 0.25rem;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 3) calc(var(--spacing) * 1);
 }
 .fo-notice-skeleton,
 .fo-account-skeleton {
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   align-items: flex-start;
-  padding: 1.25rem 1rem;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 4);
   min-height: 8rem;
   border-bottom: 1px solid var(--color-border-default);
 }
 .fo-account-skeleton {
   min-height: 5.5rem;
   align-items: center;
-  padding: 1rem;
-  gap: 0.75rem;
+  padding: calc(var(--spacing) * 4);
+  gap: calc(var(--spacing) * 3);
 }
 .fo-notice-skeleton i,
 .fo-account-skeleton i {
@@ -264,14 +264,14 @@ button.fo-account {
 .fo-account-skeleton > div i {
   height: 0.75rem;
   width: 85%;
-  margin: 0.25rem 0 0.625rem;
+  margin: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 2.5);
 }
 .fo-notice-skeleton > div i:nth-child(2) {
   width: 100%;
 }
 .fo-notice-skeleton > div i:last-child {
   width: 40%;
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
 }
 .fo-account-skeleton > div i:last-child {
   width: 65%;
@@ -283,7 +283,7 @@ button.fo-account {
   flex-shrink: 0;
 }
 .fo-account:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: -3px;
   border-radius: var(--radius-control);
 }
@@ -324,17 +324,17 @@ button.fo-account {
     flex-basis: calc(100% - 3rem);
   }
   .fo-account-balance {
-    margin-left: 3rem;
+    margin-left: calc(var(--spacing) * 12);
     text-align: left;
   }
   .fo-connect {
     flex-wrap: wrap;
   }
   .fo-connect button {
-    margin-left: 3rem;
+    margin-left: calc(var(--spacing) * 12);
   }
   .fo-panel > header {
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
   .fo-total {
     font-size: 0.8125rem;

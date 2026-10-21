@@ -25,8 +25,8 @@ export function InvoicePreview({ number = "INV-456789", amount = "$284,342.57", 
   return <LayeredCard fade={fade} className={className}><div className="relative min-h-60">
     <div className="mb-5 text-palette-purple-text" aria-hidden="true">{mark ?? <Icon name="copy" className="size-6" />}</div>
     <div aria-hidden="true" className="absolute top-0 right-0 hidden h-16 w-14 rounded-control-large border border-border-subtle bg-bg-base p-2.5 shadow-[var(--shadow-active)] sm:block">
-      <div className="mb-2 flex items-center gap-1"><span className="size-2 rounded-full bg-state-press" /><span className="h-1 w-5 rounded bg-state-press" /></div>
-      {["w-8", "w-7", "w-full", "w-9"].map((width, i) => <div key={i} className={cn("mb-1 h-0.5 rounded bg-state-press", width)} />)}
+      <div className="mb-2 flex items-center gap-1"><span className="size-2 rounded-full bg-state-press" /><span className="h-1 w-5 rounded-sm bg-state-press" /></div>
+      {["w-8", "w-7", "w-full", "w-9"].map((width, i) => <div key={i} className={cn("mb-1 h-0.5 rounded-sm bg-state-press", width)} />)}
       <span className="float-right font-serif text-xs italic">A.</span>
     </div>
     <p className="font-mono text-xs sm:text-sm">{number}</p>

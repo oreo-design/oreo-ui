@@ -14,7 +14,7 @@ export const toolCall = tv({
       "group/trigger flex w-full items-center gap-2 rounded-lg py-1 text-[13.5px]",
       "text-[var(--color-text-secondary)] outline-none transition-colors",
       "hover:text-[var(--color-text-primary)]",
-      "focus-visible:ring-2 focus-visible:ring-black/40",
+      "focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
     ],
     chevron: [
       "size-3.5 shrink-0 opacity-60",

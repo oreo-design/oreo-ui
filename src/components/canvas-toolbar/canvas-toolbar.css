@@ -3,10 +3,10 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   width: max-content;
   max-width: 100%;
-  padding: 0.5rem;
+  padding: calc(var(--spacing) * 2);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-base);
@@ -21,7 +21,7 @@
 .canvas-toolbar .canvas-ask,
 .canvas-toolbar .canvas-add {
   height: 2.5rem;
-  padding-inline: 0.875rem;
+  padding-inline: calc(var(--spacing) * 3.5);
   font-size: 0.875rem;
   border-radius: var(--radius-control);
 }
@@ -30,9 +30,9 @@
   min-width: 6.75rem;
 }
 .canvas-mode-button[aria-pressed="true"] {
-  background: var(--color-status-progress);
-  color: var(--color-text-on-accent);
-  border-color: var(--color-status-progress);
+  background: var(--color-accent);
+  color: var(--color-accent-foreground);
+  border-color: var(--color-accent);
 }
 .canvas-mode-button[aria-pressed="true"]:disabled {
   opacity: 0.45;
@@ -47,7 +47,7 @@
   bottom: calc(100% + 0.75rem);
   left: 50%;
   transform: translateX(-50%);
-  padding: 0.375rem 0.625rem;
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2.5);
   border-radius: var(--radius-control);
   background: var(--color-bg-inverse);
   color: var(--color-text-on-inverse);
@@ -67,14 +67,14 @@
 }
 .canvas-toolbar button:focus-visible,
 .canvas-block:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 .canvas-block {
   display: block;
   width: 16rem;
   height: 12rem;
-  padding: 1.25rem;
+  padding: calc(var(--spacing) * 5);
   text-align: left;
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-card-medium);
@@ -89,7 +89,7 @@
   color: var(--color-palette-orange-text);
 }
 .canvas-block[aria-pressed="true"] {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 4px;
 }
 .canvas-block-body {
@@ -111,14 +111,14 @@
 }
 @media (max-width: 480px) {
   .canvas-toolbar {
-    gap: 0.375rem;
+    gap: calc(var(--spacing) * 1.5);
   }
   .canvas-toolbar .canvas-zoom {
     min-width: 6.25rem;
   }
   .canvas-toolbar .canvas-ask,
   .canvas-toolbar .canvas-add {
-    padding-inline: 0.75rem;
+    padding-inline: calc(var(--spacing) * 3);
   }
 }
 

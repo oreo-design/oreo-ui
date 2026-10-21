@@ -239,8 +239,8 @@
   color: var(--color-text-secondary);
 }
 .pg-description {
-  font-size: 13px;
-  line-height: 19px;
+  font-size: var(--text-sm);
+  line-height: var(--text-sm--line-height);
 }
 .pg-fine {
   font-size: 11px;
@@ -265,7 +265,7 @@
   overflow-x: auto;
   white-space: nowrap;
   font-family: "Geist Mono Variable", monospace;
-  font-size: 11px;
+  font-size: var(--text-xs);
 }
 .pg-install .pg-glyph {
   width: 14px;
@@ -298,7 +298,7 @@
 .pg-field {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: var(--space-x4);
 }
 .pg-field > * {
   margin: 0;
@@ -307,7 +307,7 @@
 .pg-field select {
   height: calc(var(--spacing) * 8);
   padding: 0 10px;
-  border-radius: var(--radius-control);
+  border-radius: var(--radius-control-large);
   font-family: inherit;
 }
 .pg-field :is(input, textarea, select) {
@@ -328,9 +328,9 @@
 .pg-segment label span {
   height: calc(var(--spacing) * 6);
   padding: calc(var(--spacing) * 1) 6px;
-  font-size: 11px;
+  font-size: var(--text-xs);
   line-height: calc(var(--spacing) * 4);
-  border-radius: var(--radius-control-tiny);
+  border-radius: var(--space-x3);
   background: transparent;
 }
 .pg-segment input:checked + span {
@@ -339,11 +339,9 @@
   color: var(--color-text-primary);
 }
 .pg-boolean {
-  min-height: calc(var(--spacing) * 7);
+  min-height: calc(var(--spacing) * 8);
 }
-.pg-boolean + .pg-boolean {
-  margin-top: -12px;
-}
+
 .pg-disclosure summary {
   height: calc(var(--spacing) * 8);
   display: flex;
@@ -863,4 +861,19 @@ body:has(.pg-shell) .site-mobile-nav {
 .pg-modal .pg-color-field input:not([type="color"]) { border: 0; padding: 0; background: transparent; }
 @media (max-width: 767px) {
   .pg-breadcrumb > span:not(.pg-glyph) { display: none; }
+}
+
+/* Figma 94:619: section labels are 50% sub-text; description/field inset 4px.
+   The sub-text mix maps the reference's 600 tone through existing neutral tokens. */
+.pg-inspector-content { --pg-text-sub: color-mix(in srgb, var(--color-text-secondary) 76%, var(--color-text-primary)); }
+.pg-description-group { display: grid; gap: var(--space-x4); padding-inline: var(--space-x2); }
+.pg-description-group .pg-description { color: var(--pg-text-sub); }
+.pg-caption, .pg-field > label { color: var(--pg-text-sub, var(--color-text-secondary)); opacity: .5; font-size: var(--text-xs); }
+.pg-install > .pg-caption, .pg-field > label, .pg-switch-group > .pg-caption { padding-inline: var(--space-x2); }
+.pg-inspector-content > hr { margin-block: var(--space-x4); }
+.pg-switch-group { display: flex; flex-direction: column; gap: var(--space-x4); }
+.pg-switch-group .pg-boolean { padding-inline: var(--space-x2); }
+.pg-shell, .pg-modal {
+  --radius-xs: 2px; --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px;
+  --radius-xl: 12px; --radius-2xl: 16px; --radius-3xl: 24px; --radius-4xl: 32px; --radius-card-large: 24px;
 }

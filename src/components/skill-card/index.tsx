@@ -45,7 +45,7 @@ export function SkillCard({ title, description, provider, icon = "circle-dashed"
 }
 
 export function SkillSearch({ value, onValueChange, placeholder = "Search skills…" }: { value: string; onValueChange: (value: string) => void; placeholder?: string }) {
-  return <label className="focus-within:ring-2 focus-within:ring-status-progress flex min-h-10 w-full items-center gap-2 rounded-control-large border border-border-default bg-bg-base px-3 text-text-tertiary sm:w-60">
+  return <label className="focus-within:ring-2 focus-within:ring-accent flex min-h-10 w-full items-center gap-2 rounded-control-large border border-border-default bg-bg-base px-3 text-text-tertiary sm:w-60">
     <Icon name="search" size="sm" /><span className="sr-only">Search skills</span>
     <input type="search" value={value} onChange={e => onValueChange(e.target.value)} placeholder={placeholder} className="min-w-0 flex-1 bg-transparent py-2 text-sm text-text-primary outline-none placeholder:text-text-placeholder" />
   </label>;
@@ -88,7 +88,7 @@ export function SkillEmptyState({ title = "No skills found", description = "Try 
 
 /** The host supplies the rail and owns navigation. No service dependencies. */
 export function SkillWorkspaceShell({ rail, header, children }: { rail: ReactNode; header?: ReactNode; children: ReactNode }) {
-  return <div className="skills-shell grid min-h-full w-full grid-cols-[3.5rem_minmax(0,1fr)] overflow-hidden rounded-card-medium border border-border-subtle bg-bg-base text-text-primary sm:grid-cols-[4rem_minmax(0,1fr)] [&_button:focus-visible]:outline-2 [&_button:focus-visible]:outline-offset-2 [&_button:focus-visible]:outline-status-progress [&_label:focus-within]:ring-2 [&_label:focus-within]:ring-status-progress">
+  return <div className="skills-shell grid min-h-full w-full grid-cols-[3.5rem_minmax(0,1fr)] overflow-hidden rounded-card-medium border border-border-subtle bg-bg-base text-text-primary sm:grid-cols-[4rem_minmax(0,1fr)] [&_button:focus-visible]:outline-2 [&_button:focus-visible]:outline-offset-2 [&_button:focus-visible]:outline-accent [&_label:focus-within]:ring-2 [&_label:focus-within]:ring-accent">
     {rail}<div className="min-w-0"><header className="flex h-16 items-center gap-3 border-b border-border-subtle px-5 text-sm font-medium sm:px-7">{header ?? <><Icon name="circle-dashed" />Skills</>}</header>
       <div className="mx-auto max-w-5xl px-5 py-10 sm:px-10 sm:py-14 xl:px-20"><h1 className="mb-8 text-2xl font-medium tracking-tight">Skills</h1>{children}</div>
     </div>

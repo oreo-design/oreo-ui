@@ -30,10 +30,10 @@ button.adapt-row {
 }
 .adapt-row[data-selected="true"],
 button.adapt-row:hover {
-  background: var(--color-bg-elevated);
+  background: var(--color-theme-accent-subtle, var(--color-bg-elevated));
 }
 .adapt-row:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: -2px;
 }
 .adapt-title {
@@ -151,7 +151,7 @@ button.adapt-row:hover {
   background: var(--color-text-primary);
 }
 .adapt-resize-handle:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: 2px;
 }
 .adapt-skeleton {

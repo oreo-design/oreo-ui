@@ -82,7 +82,7 @@
 .data-filter-checks input {
   width: calc(var(--spacing) * 4);
   height: calc(var(--spacing) * 4);
-  accent-color: var(--color-status-progress);
+  accent-color: var(--color-accent);
 }
 .data-filter-pills {
   clear: both;
@@ -102,9 +102,9 @@
   cursor: pointer;
 }
 .data-filter-pills button[aria-pressed="true"] {
-  color: var(--color-status-progress);
-  border-color: var(--color-status-progress);
-  background: var(--color-status-progress-subtle);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-accent-subtle);
 }
 .data-filter-body select {
   width: 100%;
@@ -149,7 +149,7 @@
   padding-inline: calc(var(--spacing) * 2);
 }
 .data-bulk-bar strong svg {
-  color: var(--color-status-progress);
+  color: var(--color-accent);
 }
 .data-bulk-actions {
   display: flex;
@@ -158,7 +158,7 @@
   flex-wrap: wrap;
 }
 .data-filter-popup :focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 @media (prefers-reduced-motion: reduce) {

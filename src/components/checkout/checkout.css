@@ -14,8 +14,8 @@
   overflow: hidden;
 }
 .co-method[data-selected] {
-  background: var(--color-bg-elevated);
-  border-color: var(--color-text-secondary);
+  background: var(--color-theme-accent-subtle, var(--color-bg-elevated));
+  border-color: var(--color-theme-accent, var(--color-text-secondary));
 }
 .co-method-choice {
   display: grid;
@@ -28,8 +28,8 @@
 .co-method-choice input {
   width: 16px;
   height: 16px;
-  accent-color: var(--color-text-primary);
-  margin-top: 4px;
+  accent-color: var(--color-theme-accent, var(--color-text-primary));
+  margin-top: calc(var(--spacing) * 1);
 }
 .co-method-choice strong {
   font-weight: 600;
@@ -166,10 +166,10 @@
   cursor: default;
 }
 .co-method:focus-within {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: 3px;
 }
 .co-discount-input input:focus-visible {
-  outline: 2px solid var(--color-text-primary);
+  outline: 2px solid var(--color-theme-accent, var(--color-text-primary));
   outline-offset: 2px;
 }

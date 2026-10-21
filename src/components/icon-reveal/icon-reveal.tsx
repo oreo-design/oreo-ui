@@ -50,7 +50,7 @@ export function IconReveal({ text = "Oreo UI", radius = "md", density = "regular
   }, [text]);
 
   return <div {...props} role="img" tabIndex={0} aria-label={props["aria-label"] ?? `${text}. Move over the letters to reveal icons, or focus to reveal all.`}
-    className={cn("w-full select-none rounded-control text-text-primary outline-none focus-visible:ring-2 focus-visible:ring-status-progress focus-visible:ring-offset-4 focus-visible:ring-offset-bg-base", className)}
+    className={cn("w-full select-none rounded-control text-text-primary outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-bg-base", className)}
     onPointerMove={event => {
       props.onPointerMove?.(event);
       if (event.pointerType === "touch") return;

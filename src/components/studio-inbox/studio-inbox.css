@@ -1,34 +1,34 @@
 .si-notification {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: calc(var(--spacing) * 3);
   width: 100%;
   min-width: 0;
-  padding: 16px 12px;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 3);
   border-radius: var(--radius-control);
   color: var(--color-text-primary);
 }
 .si-notification.si-selected {
-  background: var(--color-status-progress-subtle);
+  background: var(--color-accent-subtle);
 }
 .si-unread {
   width: 6px;
   height: 6px;
   flex-shrink: 0;
-  margin-top: 12px;
+  margin-top: calc(var(--spacing) * 3);
   border-radius: 50%;
 }
 .si-is-unread {
-  background: var(--color-status-progress);
+  background: var(--color-accent);
 }
 .si-group + .si-group {
-  margin-top: 24px;
+  margin-top: calc(var(--spacing) * 6);
 }
 .si-filters {
   display: flex;
-  gap: 4px;
+  gap: calc(var(--spacing) * 1);
   overflow-x: auto;
-  padding: 12px 16px;
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 4);
   border-bottom: 1px solid var(--color-border-subtle);
   scrollbar-width: thin;
 }
@@ -37,7 +37,7 @@
 }
 .si-notification:focus-visible,
 .si-filters button:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: -2px;
 }
 @media (hover: hover) {

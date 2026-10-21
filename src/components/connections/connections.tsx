@@ -39,7 +39,7 @@ export function ConnectionRow({ project, open, defaultOpen = false, onOpenChange
 }) {
   const [keyboard, setKeyboard] = useState(false);
   return <Collapsible.Root open={open} defaultOpen={defaultOpen} onOpenChange={onOpenChange} className="connection-row" data-instant={instant || keyboard || undefined}>
-    <Collapsible.Trigger ref={triggerRef} onKeyDown={() => setKeyboard(true)} onPointerDown={() => setKeyboard(false)} className="connection-trigger flex min-h-12 w-full items-center gap-2 rounded-control-large px-3 py-3 text-left text-sm outline-offset-2 focus-visible:outline-2 focus-visible:outline-status-progress">
+    <Collapsible.Trigger ref={triggerRef} onKeyDown={() => setKeyboard(true)} onPointerDown={() => setKeyboard(false)} className="connection-trigger flex min-h-12 w-full items-center gap-2 rounded-control-large px-3 py-3 text-left text-sm outline-offset-2 focus-visible:outline-2 focus-visible:outline-accent">
       <ProjectIdentity project={project} /><Icon name="chevron-right" size="sm" className="connection-chevron shrink-0 text-text-secondary" />
     </Collapsible.Trigger>
     <Collapsible.Panel className="connection-panel"><div className="px-3 pb-5 pt-3">{children}</div></Collapsible.Panel>
@@ -77,7 +77,7 @@ export function InlineProjectPicker({ projects, label = "Search projects", onSel
     <Combobox.Root<ConnectionProject> modal={false} items={projects} itemToStringLabel={project => project.name} defaultOpen autoHighlight inputValue={query} onInputValueChange={setQuery}
       onOpenChange={(open, details) => { if (open) { pendingDismiss.current?.(); pendingDismiss.current = null; } else dismiss(details); }}
       onValueChange={project => { if (project) onSelect(project, keyboard.current); }}>
-      <span ref={anchorRef} className="flex min-w-0 max-w-72 flex-1 items-center gap-2 rounded-control border border-border-default bg-bg-base px-2 focus-within:outline-2 focus-within:outline-status-progress">
+      <span ref={anchorRef} className="flex min-w-0 max-w-72 flex-1 items-center gap-2 rounded-control border border-border-default bg-bg-base px-2 focus-within:outline-2 focus-within:outline-accent">
         <Icon name="search" size="sm" className="shrink-0 text-text-tertiary" />
         <Combobox.Input autoFocus aria-label={label} placeholder="Search projects…" className="min-w-0 w-full bg-transparent py-1.5 text-sm outline-none placeholder:text-text-placeholder" onKeyDown={() => { keyboard.current = true; }} onPointerDown={() => { keyboard.current = false; }} />
       </span>

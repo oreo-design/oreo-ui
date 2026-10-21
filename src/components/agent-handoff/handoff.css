@@ -20,10 +20,10 @@
   outline: none;
 }
 .ah-composer:focus-within {
-  border-color: var(--color-text-tertiary);
+  border-color: var(--color-theme-accent, var(--color-text-tertiary));
 }
 .ah-composer textarea:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: var(--radius-control-tiny);
 }

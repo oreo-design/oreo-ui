@@ -35,7 +35,7 @@ export const keywordTag = tv({
       "absolute inset-0 grid place-items-center rounded-[var(--radius-capsule)]",
       "opacity-0 transition-opacity duration-150",
       "group-hover/tag:opacity-100 focus-visible:opacity-100",
-      "outline-none focus-visible:ring-2 focus-visible:ring-black/40",
+      "outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
     ],
   },
   variants: {

@@ -45,7 +45,7 @@
 .workflow-table tr[data-selected] > * {
   background: color-mix(
     in srgb,
-    var(--color-status-progress) 7%,
+    var(--color-accent) 7%,
     var(--color-bg-base)
   );
 }
@@ -55,7 +55,7 @@
 .workflow-table tbody tr[data-selected]:hover > * {
   background: color-mix(
     in srgb,
-    var(--color-status-progress) 10%,
+    var(--color-accent) 10%,
     var(--color-bg-base)
   );
 }
@@ -66,7 +66,7 @@
 .workflow-table input {
   width: calc(var(--spacing) * 4);
   height: calc(var(--spacing) * 4);
-  accent-color: var(--color-status-progress);
+  accent-color: var(--color-accent);
   cursor: pointer;
   vertical-align: middle;
 }
@@ -119,15 +119,15 @@
   height: calc(var(--spacing) * 5);
   display: flex;
   align-items: flex-end;
-  gap: 2px;
+  gap: calc(var(--spacing) * 0.5);
   width: calc(var(--spacing) * 14);
-  color: var(--color-status-progress);
+  color: var(--color-accent);
 }
 .workflow-bars i {
   flex: 1;
   min-height: 2px;
   background: currentColor;
-  border-radius: 2px 2px 0 0;
+  border-radius: var(--radius-xs) var(--radius-xs) 0 0;
 }
 .workflow-bars[data-failing],
 .workflow-success[data-failing] {
@@ -177,7 +177,7 @@
 }
 .workflow-table-scroll:focus-visible,
 .workflow-table :focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: -2px;
 }
 @media (max-width: 600px) {

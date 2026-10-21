@@ -1,7 +1,7 @@
 @reference "../../index.css";
 
 .agent-shell { @apply grid min-w-0 gap-2 rounded-card-medium border border-border-subtle bg-bg-elevated p-2 text-text-primary; grid-template-columns: 14rem minmax(0, 1fr) minmax(0, 1.08fr); height: calc(100dvh - 7rem); min-height: 42rem; }
-.agent-shell :is(button, a, input, textarea):focus-visible { outline: 2px solid var(--color-status-progress); outline-offset: 3px; }
+.agent-shell :is(button, a, input, textarea):focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
 .agent-shell-assistant, .agent-shell-workspace { @apply min-h-0 min-w-0; }
 .agent-nav { @apply flex min-h-0 min-w-0 flex-col px-2 py-3; }
 .agent-nav-brand { @apply mb-8 flex min-h-10 items-center gap-3 px-2 text-base font-medium; }

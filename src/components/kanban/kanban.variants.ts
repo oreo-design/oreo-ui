@@ -1,7 +1,7 @@
 import { tv } from "@/lib/tv";
 
 export const kanbanCard = tv({
-  base: "oreo-kanban-card group relative rounded-card-medium border border-border-subtle bg-bg-base p-3 text-left text-text-primary shadow-[var(--shadow-default)] outline-none focus-visible:ring-2 focus-visible:ring-status-progress",
+  base: "oreo-kanban-card group relative rounded-card-medium border border-border-subtle bg-bg-base p-3 text-left text-text-primary shadow-[var(--shadow-default)] outline-none focus-visible:ring-2 focus-visible:ring-accent",
   variants: {
     dragging: { true: "border-dashed border-palette-orange-text/20 bg-palette-orange-bg/20 shadow-none", false: "" },
     overlay: { true: "cursor-grabbing border-border-default shadow-[var(--shadow-overlay)]", false: "cursor-grab" },

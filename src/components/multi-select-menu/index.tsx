@@ -74,7 +74,7 @@ export function MultiSelectMenu({
             <button
               type="button"
               className={cn(
-                "group flex w-full items-center gap-3 rounded-card-small px-3 py-3 text-left text-sm font-medium text-text-primary outline-none hover:bg-state-hover focus-visible:ring-2 focus-visible:ring-status-progress disabled:text-text-disabled data-[popup-open]:bg-state-press",
+                "group flex w-full items-center gap-3 rounded-card-small px-3 py-3 text-left text-sm font-medium text-text-primary outline-none hover:bg-state-hover focus-visible:ring-2 focus-visible:ring-accent disabled:text-text-disabled data-[popup-open]:bg-state-press",
                 className,
               )}
             />

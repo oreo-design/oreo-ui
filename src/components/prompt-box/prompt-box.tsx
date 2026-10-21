@@ -50,12 +50,12 @@ export function PromptBoxModelSelect({
         "flex h-8 items-center gap-[var(--space-x2)] rounded-[var(--radius-control)] px-[var(--space-x4)]",
         "text-[14px] leading-5 text-[var(--color-text-primary)] outline-none select-none",
         "transition-colors duration-150 hover:bg-[var(--color-state-hover)] active:bg-[var(--color-state-press)]",
-        "focus-visible:ring-2 focus-visible:ring-black/40",
+        "focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
         className,
       )}
       {...rest}
     >
-      <span className="flex items-center gap-[4px]">
+      <span className="flex items-center gap-1">
         {icon != null && (
           <span className="grid size-4 place-items-center overflow-hidden [&_img]:size-3 [&_svg]:size-3">{icon}</span>
         )}
@@ -318,7 +318,7 @@ export function PromptBox({
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "grid size-8 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
-        "bg-[var(--color-text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-black/40",
+        "bg-[var(--color-bg-inverse)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
       )}
     >
       <span className="size-2.5 rounded-[1px] bg-[var(--color-text-on-inverse)]" />
@@ -334,7 +334,7 @@ export function PromptBox({
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "grid size-8 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
-        "bg-[var(--color-text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-black/40",
+        "bg-[var(--color-bg-inverse)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
         "[&_img]:size-5",
       )}
     >
@@ -350,7 +350,7 @@ export function PromptBox({
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "flex h-8 items-center gap-[var(--space-x4)] rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
-        "bg-[var(--color-status-progress-subtle)] outline-none focus-visible:ring-2 focus-visible:ring-black/40",
+        "bg-[var(--color-status-progress-subtle)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
       )}
     >
       <EqBars animate />

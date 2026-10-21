@@ -21,12 +21,12 @@
   width: 100%;
 }
 .pc-audio:has(.pc-seek:focus-visible) {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 .pc-panel button:focus-visible,
 .pc-panel textarea:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 .pc-panel button:active:not(:disabled) {

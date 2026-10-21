@@ -5,8 +5,8 @@
 .recipient-search-field {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0 1rem;
+  gap: calc(var(--spacing) * 3);
+  padding: 0 calc(var(--spacing) * 4);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control-large);
   background: var(--color-bg-surface);
@@ -21,7 +21,7 @@
   outline: 0;
 }
 .recipient-search-field:focus-within {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 .recipient-search-field input:focus-visible {
@@ -30,7 +30,7 @@
 .recipient-result-count {
   font-size: 0.6875rem;
   color: var(--color-text-tertiary);
-  margin: 1rem 0 0.5rem;
+  margin: calc(var(--spacing) * 4) 0 calc(var(--spacing) * 2);
 }
 .recipient-search ul {
   list-style: none;
@@ -43,10 +43,10 @@
 .recipient-search li button {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   width: 100%;
   text-align: left;
-  padding: 1rem 0.5rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 2);
   border-radius: var(--radius-control);
   cursor: pointer;
 }
@@ -64,7 +64,7 @@
   font-size: 0.6875rem;
   display: block;
   color: var(--color-text-tertiary);
-  margin-top: 0.375rem;
+  margin-top: calc(var(--spacing) * 1.5);
 }
 .recipient-search li button > svg {
   color: var(--color-text-secondary);
@@ -87,7 +87,7 @@
   color: var(--color-text-secondary);
 }
 .recipient-add {
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
   max-width: 100%;
   height: auto !important;
   min-height: 2.5rem;
@@ -102,28 +102,28 @@
   border: 0;
   padding: 0;
   min-width: 0;
-  margin: 1.5rem 0 1rem;
+  margin: calc(var(--spacing) * 6) 0 calc(var(--spacing) * 4);
   color: var(--color-text-primary);
 }
 .payment-rail-picker legend {
   font-weight: 500;
   font-size: 0.875rem;
-  margin-bottom: 1rem;
+  margin-bottom: calc(var(--spacing) * 4);
 }
 .payment-rail-picker > div {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .payment-rail-picker label {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.625rem;
+  gap: calc(var(--spacing) * 2.5);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-small);
-  padding: 0.875rem 0.75rem;
+  padding: calc(var(--spacing) * 3.5) calc(var(--spacing) * 3);
   cursor: pointer;
   min-width: 0;
 }
@@ -136,11 +136,11 @@
   cursor: pointer;
 }
 .payment-rail-picker label[data-selected] {
-  border-color: var(--color-text-secondary);
-  background: var(--color-bg-elevated);
+  border-color: var(--color-theme-accent, var(--color-text-secondary));
+  background: var(--color-theme-accent-subtle, var(--color-bg-elevated));
 }
 .payment-rail-picker label:has(:focus-visible) {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 .payment-rail-picker strong {
@@ -198,14 +198,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 6);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 .recipient-form > header > div {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: calc(var(--spacing) * 3);
   min-width: 0;
 }
 .recipient-form > header strong {
@@ -215,34 +215,34 @@
 }
 .recipient-form > header fieldset {
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   flex: none;
   font-size: 0.75rem;
 }
 .recipient-form > header label {
   display: flex;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   align-items: center;
   cursor: pointer;
 }
 .recipient-form input[type="radio"] {
-  accent-color: var(--color-text-primary);
+  accent-color: var(--color-theme-accent, var(--color-text-primary));
 }
 .rf-scroll {
   max-height: 55dvh;
   overflow: auto;
-  padding: 1.25rem 1.5rem;
+  padding: calc(var(--spacing) * 5) calc(var(--spacing) * 6);
   scroll-padding-block: 1rem;
 }
 .rf-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
 }
 .rf-fields label {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-size: 0.75rem;
   color: var(--color-text-secondary);
   min-width: 0;
@@ -257,7 +257,7 @@
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-control-large);
   background: var(--color-bg-surface);
-  padding: 0 0.75rem;
+  padding: 0 calc(var(--spacing) * 3);
   color: var(--color-text-primary);
   font-size: 0.875rem;
 }
@@ -267,7 +267,7 @@
 .recipient-form h3 {
   font-size: 0.875rem;
   font-weight: 500;
-  margin: 1.75rem 0 1rem;
+  margin: calc(var(--spacing) * 7) 0 calc(var(--spacing) * 4);
 }
 .recipient-field-error {
   font-size: 0.6875rem !important;
@@ -275,7 +275,7 @@
   line-height: 1.6;
 }
 .rf-scroll > p {
-  margin-top: 1rem;
+  margin-top: calc(var(--spacing) * 4);
 }
 .rf-note {
   font-size: 0.6875rem;
@@ -283,16 +283,16 @@
   line-height: 1.6;
 }
 .recipient-form footer {
-  padding: 1rem 1.5rem;
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
   display: flex;
   justify-content: flex-end;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   border-top: 1px solid var(--color-border-subtle);
   background: var(--color-bg-surface);
 }
 .recipient-form :is(input, select, button):focus-visible,
 .recipient-search button:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -308,10 +308,10 @@
   .recipient-form > header {
     align-items: flex-start;
     flex-direction: column;
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .rf-scroll {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
     max-height: none;
   }
   .rf-fields {
@@ -323,9 +323,9 @@
     font-size: 1rem;
   }
   .recipient-form footer {
-    padding: 1rem;
+    padding: calc(var(--spacing) * 4);
   }
   .recipient-search li button {
-    gap: 0.5rem;
+    gap: calc(var(--spacing) * 2);
   }
 }

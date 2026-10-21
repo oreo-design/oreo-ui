@@ -106,7 +106,7 @@ function RunnerLong() {
       ctx.fill();
     }
 
-    // player — a rounded block with an eye, tilting slightly in the air
+    // player — a rounded-sm block with an eye, tilting slightly in the air
     ctx.fillStyle = s.dead ? c.error : c.ink;
     rr(ctx, PX, s.py, PS, PS, 6);
     ctx.fill();

@@ -3,25 +3,25 @@
 /* These geometric values describe the reference's shallow arc, not a new spacing or color scale. */
 .agent-connect-horizon { position:absolute; left:-35%; top:3.5rem; width:170%; height:12rem; border:1px solid var(--color-border-subtle); border-radius:50%; background:linear-gradient(var(--color-bg-elevated),var(--color-bg-base) 55%); }
 .agent-connect-orb { position:absolute; left:calc(50% + var(--orbit-x)); top:calc(2rem + var(--orbit-y)); width:var(--orbit-size); height:var(--orbit-size); display:grid; place-items:center; transform:translateX(-50%); border-radius:var(--radius-capsule); background:var(--color-bg-base); border:1px solid var(--color-border-subtle); box-shadow:var(--shadow-panel); font-size:1.5rem; }
-.agent-connect-copy { padding:0 1.25rem 1.25rem; }
+.agent-connect-copy { padding:0 calc(var(--spacing) * 5) calc(var(--spacing) * 5); }
 .agent-connect-copy h2 { font-size:1rem; font-weight:500; line-height:1.5; text-wrap:balance; }
-.agent-connect-copy p { margin:.5rem 0 1rem; color:var(--color-text-secondary); font-size:.8125rem; line-height:1.6; }
-.agent-quota { display:flex; align-items:center; gap:.75rem; color:var(--color-text-primary); font-size:.8125rem; font-variant-numeric:tabular-nums; }
+.agent-connect-copy p { margin:calc(var(--spacing) * 2) 0 calc(var(--spacing) * 4); color:var(--color-text-secondary); font-size:.8125rem; line-height:1.6; }
+.agent-quota { display:flex; align-items:center; gap:calc(var(--spacing) * 3); color:var(--color-text-primary); font-size:.8125rem; font-variant-numeric:tabular-nums; }
 .agent-quota-ring { width:1.75rem; height:1.75rem; flex-shrink:0; }
 .agent-quota strong { font-weight:500; }
 .agent-quota p>span,.agent-quota-label { color:var(--color-text-secondary); }
-.agent-quota-label { margin-top:.125rem; font-size:.75rem; }
+.agent-quota-label { margin-top:calc(var(--spacing) * 0.5); font-size:.75rem; }
 .agent-client-fieldset { min-width:0; border:0; margin:0; padding:0; }
-.agent-client-fieldset legend { margin-bottom:1rem; font-size:.875rem; font-weight:500; }
-.agent-client-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; }
-.agent-client { position:relative; display:flex; align-items:center; gap:.75rem; padding:1rem; border:1px solid var(--color-border-default); border-radius:var(--radius-control); cursor:pointer; background:var(--color-bg-base); }
+.agent-client-fieldset legend { margin-bottom:calc(var(--spacing) * 4); font-size:.875rem; font-weight:500; }
+.agent-client-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:calc(var(--spacing) * 3); }
+.agent-client { position:relative; display:flex; align-items:center; gap:calc(var(--spacing) * 3); padding:calc(var(--spacing) * 4); border:1px solid var(--color-border-default); border-radius:var(--radius-control); cursor:pointer; background:var(--color-bg-base); }
 .agent-client input { position:absolute; opacity:0; width:1px; height:1px; }
-.agent-client:has(input:checked) { border-color:var(--color-text-primary); background:var(--color-bg-elevated); }
-.agent-client:has(input:focus-visible) { outline:2px solid var(--color-text-primary); outline-offset:3px; }
+.agent-client:has(input:checked) { border-color:var(--color-theme-accent, var(--color-text-primary)); background:var(--color-theme-accent-subtle, var(--color-bg-elevated)); }
+.agent-client:has(input:focus-visible) { outline:2px solid var(--color-theme-accent, var(--color-text-primary)); outline-offset:3px; }
 .agent-client[data-disabled] { opacity:.5; cursor:not-allowed; }
 .agent-client-mark { display:grid; place-items:center; width:2.5rem; height:2.5rem; flex-shrink:0; border:1px solid var(--color-border-subtle); border-radius:var(--radius-control); background:var(--color-bg-base); }
 .agent-client strong { display:block; font-size:.8125rem; font-weight:500; overflow-wrap:anywhere; }
-.agent-client-description { display:block; margin-top:.25rem; color:var(--color-text-secondary); font-size:.75rem; }
+.agent-client-description { display:block; margin-top:calc(var(--spacing) * 1); color:var(--color-text-secondary); font-size:.75rem; }
 .agent-client-check { margin-left:auto; visibility:hidden; flex-shrink:0; }
 .agent-client:has(input:checked) .agent-client-check { visibility:visible; }
 @media(max-width:480px) { .agent-client-grid { grid-template-columns:1fr; } }

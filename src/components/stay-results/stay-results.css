@@ -1,7 +1,7 @@
 .stay-price-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   font-variant-numeric: tabular-nums;
 }
 .stay-price-label strong {
@@ -32,7 +32,7 @@
   display: block;
   width: 14rem;
   flex: 0 0 14rem;
-  padding: 0.375rem;
+  padding: calc(var(--spacing) * 1.5);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
   background: var(--color-bg-base);
@@ -43,11 +43,11 @@ button.stay-result-card {
   cursor: pointer;
 }
 .stay-result-card[aria-pressed="true"] {
-  border-color: var(--color-text-primary);
+  border-color: var(--color-theme-accent, var(--color-text-primary));
   box-shadow: 0 0 0 1px var(--color-text-primary);
 }
 .stay-result-card:focus-visible {
-  outline: 3px solid var(--color-status-progress);
+  outline: 3px solid var(--color-accent);
   outline-offset: 3px;
 }
 .stay-result-art {
@@ -62,8 +62,8 @@ button.stay-result-card {
   top: 0.5rem;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.25rem 0.5rem;
+  gap: calc(var(--spacing) * 1);
+  padding: calc(var(--spacing) * 1) calc(var(--spacing) * 2);
   background: var(--color-bg-base);
   border-radius: var(--radius-control);
   font-size: 0.6875rem;
@@ -78,8 +78,8 @@ button.stay-result-card {
 .stay-result-body {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.75rem 0.5rem 0.5rem;
+  gap: calc(var(--spacing) * 1);
+  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 2) calc(var(--spacing) * 2);
   font-size: 0.75rem;
   color: var(--color-text-secondary);
 }
@@ -88,7 +88,7 @@ button.stay-result-card {
   color: var(--color-text-primary);
 }
 .stay-result-price {
-  margin-top: 0.25rem;
+  margin-top: calc(var(--spacing) * 1);
 }
 .stay-result-price b {
   color: var(--color-text-primary);
@@ -98,8 +98,8 @@ button.stay-result-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
+  gap: calc(var(--spacing) * 4);
+  padding: calc(var(--spacing) * 4);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-card-medium);
@@ -108,7 +108,7 @@ button.stay-result-card {
 .stay-selection-main {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: calc(var(--spacing) * 4);
   min-width: 0;
 }
 .stay-selection-main > .stay-illustration {
@@ -121,7 +121,7 @@ button.stay-result-card {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.4;
-  margin: 0.25rem 0;
+  margin: calc(var(--spacing) * 1) 0;
 }
 .stay-selection p {
   font-size: 0.8125rem;
@@ -139,14 +139,14 @@ button.stay-result-card {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
   flex-shrink: 0;
 }
 .stay-pager,
 .stay-action-row {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: calc(var(--spacing) * 2);
 }
 .stay-pager {
   font-size: 0.75rem;

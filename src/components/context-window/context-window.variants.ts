@@ -12,7 +12,7 @@ export const contextWindow = tv({
     grid: "grid gap-[var(--space-x1)]",
     cell: "aspect-square rounded-control-tiny transition-opacity duration-150 ease-out motion-reduce:transition-none",
     row: "flex flex-wrap min-w-0 items-center gap-2 rounded-control-large px-2 transition-colors duration-150 data-[active=true]:bg-state-hover",
-    label: "flex min-h-10 min-w-0 flex-1 items-center gap-3 rounded-control text-left text-sm outline-none focus-visible:ring-2 focus-visible:ring-status-progress",
+    label: "flex min-h-10 min-w-0 flex-1 items-center gap-3 rounded-control text-left text-sm outline-none focus-visible:ring-2 focus-visible:ring-accent",
     dot: "size-2 shrink-0 rounded-control-tiny",
     count: "ml-auto shrink-0 text-sm tabular-nums text-text-secondary",
     file: "flex min-w-0 items-center gap-2 py-1 pl-7 pr-2 text-sm",

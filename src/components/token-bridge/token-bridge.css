@@ -48,7 +48,7 @@
   outline: 2px solid var(--color-bg-base);
 }
 .tb-marks i + i {
-  margin-left: -6px;
+  margin-left: calc(var(--spacing) * -1.5);
   background: var(--color-palette-blue-bg);
   color: var(--color-palette-blue-text);
 }
@@ -131,7 +131,7 @@
   overflow-wrap: anywhere;
 }
 .tb-amount input:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 4px;
   border-radius: var(--radius-control-tiny);
 }
@@ -206,7 +206,7 @@
   outline: none;
 }
 .tb-picker header label:focus-within {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 .tb-chain-list,
@@ -307,7 +307,7 @@
 }
 .tb-picker button:focus-visible,
 .tb-token-trigger:focus-visible {
-  outline: 2px solid var(--color-status-progress);
+  outline: 2px solid var(--color-accent);
   outline-offset: -2px;
 }
 @media (max-width: 600px) {

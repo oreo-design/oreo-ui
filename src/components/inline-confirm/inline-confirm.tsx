@@ -125,7 +125,7 @@ export function InlineConfirm({
                 className="oreo-confirm-action oreo-confirm-danger min-h-11 h-auto max-w-full rounded-capsule px-4 py-2 whitespace-normal break-words" onClick={event => { if (event.detail < 2) void confirm(); }}>{phase === "error" ? retryLabel : confirmLabel}</Button>
             </div>
           </div>
-          : <div ref={status} tabIndex={-1} className="flex min-h-11 items-center gap-2 rounded-capsule px-4 text-sm font-medium text-text-secondary outline-none focus-visible:ring-2 focus-visible:ring-status-progress" aria-busy={phase === "pending"}>
+          : <div ref={status} tabIndex={-1} className="flex min-h-11 items-center gap-2 rounded-capsule px-4 text-sm font-medium text-text-secondary outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-busy={phase === "pending"}>
             <span aria-hidden className={phase === "pending" ? "oreo-confirm-spinner" : "text-status-success"}><Icon name={phase === "pending" ? "spinner" : "check"} /></span>
             <span className="min-w-0 break-words">{phase === "pending" ? pendingLabel : successLabel}</span>
           </div>}
