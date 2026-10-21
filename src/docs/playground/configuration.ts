@@ -1,4 +1,4 @@
-import { parseVariation, type Variation } from "./variation.ts";
+import { parseAppearanceVariation, type Variation } from "./variation.ts";
 import {
   defaultsFor,
   normalizeNumber,
@@ -94,7 +94,7 @@ export function readConfiguration(
     a.radius <= 999 &&
     ["phosphor", "lucide"].includes(a.library)
   )
-    result.appearance = { dark: a.dark, radius: a.radius, library: a.library, ...(a.variation === undefined ? {} : { variation: parseVariation(a.variation) }) };
+    result.appearance = { dark: a.dark, radius: a.radius, library: a.library, ...(a.variation === undefined ? {} : parseAppearanceVariation(a.radius, a.variation)) };
   return result;
 }
 

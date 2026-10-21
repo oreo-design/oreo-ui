@@ -25,6 +25,8 @@
 
 ### Playground
 
+- [ASCII 全站主题](records/2026-10-21-ascii-theme.md)：Figma 中的暖白、直角与按角色混合字体，替换 Material。
+
 | 日期 | 参考 | 重点 |
 | --- | --- | --- |
 | 2026-10-21 | [Animate UI：全站主题过渡](records/2026-10-21-animate-ui-theme-transition.md) | 整页快照覆盖侧栏、预览和弹层；短过渡、连续切换与减少动态效果。 |

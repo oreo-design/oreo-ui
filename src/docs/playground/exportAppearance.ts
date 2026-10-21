@@ -17,7 +17,8 @@ export function withAppearance(
   const marker = "\n\n// Starting props. Connect event handlers in your app.\n";
   const [imports, jsx] = code.split(marker);
   if (!jsx) return code;
-  return `${imports}\nimport { IconLibraryProvider } from "@/components/icon";\nimport type { CSSProperties } from "react";${marker}<IconLibraryProvider library=${JSON.stringify(appearance.library)}>\n  <div className=${JSON.stringify(appearance.dark ? "theme-dark" : "")} style={${JSON.stringify(variationTokens(appearance), null, 2)} as CSSProperties}>\n${jsx
+  const fonts = appearance.variation?.preset === "ascii" ? '\nimport "@fontsource-variable/source-serif-4";\nimport "@fontsource-variable/geist-mono";' : "";
+  return `${imports}${fonts}\nimport { IconLibraryProvider } from "@/components/icon";\nimport type { CSSProperties } from "react";${marker}<IconLibraryProvider library=${JSON.stringify(appearance.library)}>\n  <div className=${JSON.stringify(appearance.dark ? "theme-dark" : "")} style={${JSON.stringify(variationTokens(appearance), null, 2)} as CSSProperties}>\n${jsx
     .split("\n")
     .map((line) => `    ${line}`)
     .join("\n")}\n  </div>\n</IconLibraryProvider>`;
