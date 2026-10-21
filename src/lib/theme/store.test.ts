@@ -5,9 +5,9 @@ import { presetAppearance } from "./tokens.ts";
 const memory = () => { const values = new Map<string,string>(); return { removeItem:(key:string)=>values.delete(key), getItem:(key:string)=>values.get(key) ?? null, setItem:(key:string,value:string)=>{values.set(key,value);} }; };
 test("a template mode change keeps the preset, density, corners and accent across reloads", () => {
  const storage=memory(), first=createThemeStore(()=>storage);
- first.setTheme(presetAppearance("material")); first.patchTheme({dark:true});
+ first.setTheme(presetAppearance("ascii")); first.patchTheme({dark:true});
  const second=createThemeStore(()=>storage);
- assert.deepEqual(second.getSnapshot().theme, presetAppearance("material",true));
+ assert.deepEqual(second.getSnapshot().theme, presetAppearance("ascii",true));
 });
 test("legacy saved appearances normalize without losing radius or mode", () => {
  assert.deepEqual(parseAppearance(JSON.stringify({dark:true,radius:12,library:"phosphor"})), {...presetAppearance("oreo",true),radius:12});
@@ -31,8 +31,15 @@ test("cross-tab refresh and clearing preferences notify subscribers without writ
  assert.equal(store.getSnapshot().storageError,"");unsubscribe();
 });
 test("invalid density, radius and color never replace the active preference", () => {
- const storage=memory(),store=createThemeStore(()=>storage);store.setTheme(presetAppearance("material"));
+ const storage=memory(),store=createThemeStore(()=>storage);store.setTheme(presetAppearance("ascii"));
  for(const patch of [{radius:-1},{variation:{preset:"oreo",density:2,accent:null}},{variation:{preset:"oreo",density:1,accent:"red"}}])
  assert.throws(()=>store.setTheme({...presetAppearance("oreo"),...patch} as ReturnType<typeof presetAppearance>));
- assert.equal(store.getSnapshot().theme.variation?.preset,"material");
+ assert.equal(store.getSnapshot().theme.variation?.preset,"ascii");
+});
+
+test("Material preferences migrate defaults and preserve explicit custom choices", () => {
+ const legacy = {dark:true,radius:20,library:"lucide",variation:{preset:"material",density:1.15,accent:"#6550B9"}};
+ assert.deepEqual(parseAppearance(JSON.stringify(legacy)),presetAppearance("ascii",true));
+ const custom = {...legacy,radius:12,variation:{...legacy.variation,density:.8,accent:"#123ABC"}};
+ assert.deepEqual(parseAppearance(JSON.stringify(custom)),{...presetAppearance("ascii",true),radius:12,variation:{preset:"ascii",density:.8,accent:"#123abc"}});
 });

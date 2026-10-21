@@ -127,13 +127,13 @@ test("appearance export keeps provider and radius only when requested", async ()
 
 test("theme presets, custom values and old links round-trip safely", async () => {
   const { presetAppearance, variationTokens } = await import("./variation.ts");
-  for (const preset of ["oreo", "claude", "openai", "material"] as const) {
+  for (const preset of ["oreo", "claude", "openai", "ascii"] as const) {
     const appearance = presetAppearance(preset, true);
     const restored = readConfiguration(JSON.stringify({ ...config, appearance }), "test", spec);
     assert.deepEqual(restored.appearance, appearance);
     assert.ok(Object.keys(variationTokens(appearance)).includes("--space-x4"));
   }
-  const appearance = { ...presetAppearance("material"), radius: 12, variation: { preset: "material", density: .75, accent: "#123abc" } };
+  const appearance = { ...presetAppearance("ascii"), radius: 12, variation: { preset: "ascii", density: .75, accent: "#123abc" } };
   assert.deepEqual(readConfiguration(JSON.stringify({ ...config, appearance }), "test", spec).appearance, appearance);
   for (const bad of [null, { preset: "unknown", density: 1, accent: null }, { preset: "oreo", density: 9, accent: null }, { preset: "oreo", density: 1, accent: "red;display:none" }]) {
     assert.throws(() => readConfiguration(JSON.stringify({ ...config, appearance: { ...config.appearance, variation: bad } }), "test", spec));
@@ -167,4 +167,20 @@ test("theme covers utility corners and interaction accents without recoloring se
   for (const name of ["error", "success", "progress"]) assert.equal(tokens[`--color-status-${name}`], undefined);
   for (const name of ["mint", "pink", "blue", "purple"]) assert.equal(tokens[`--color-palette-${name}-text`], undefined);
   assert.equal(variationTokens(presetAppearance("oreo"))["--color-theme-accent"], undefined);
+});
+
+
+test("legacy Material share links migrate identically to site preferences", async () => {
+  const { presetAppearance, variationTokens } = await import("./variation.ts");
+  const legacy = {dark:false,radius:20,library:"lucide",variation:{preset:"material",density:1.15,accent:"#6550b9"}};
+  const restored = readConfiguration(JSON.stringify({...config,appearance:legacy}),"test",spec);
+  assert.deepEqual(restored.appearance,presetAppearance("ascii"));
+  const { withAppearance } = await import("./exportAppearance.ts");
+  const code = 'import { Button } from "@/components/button";\n\n// Starting props. Connect event handlers in your app.\n<Button />';
+  assert.match(withAppearance(code,restored.appearance), /@fontsource-variable\/source-serif-4/);
+  assert.match(withAppearance(code,restored.appearance), /--font-input/);
+  const tokens = variationTokens(presetAppearance("ascii"));
+  assert.equal(tokens["--radius-control"],"0px");
+  assert.equal(tokens["--color-bg-elevated"],"#f5f4f0");
+  assert.equal(variationTokens(presetAppearance("oreo"))["--font-input"],"initial");
 });

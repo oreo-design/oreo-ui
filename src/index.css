@@ -6,6 +6,9 @@
  * Theme/skin changes happen HERE only; components never hardcode colors.
  * -------------------------------------------------------------------------- */
 @theme {
+  /* Typography roles; theme presets can change roles without changing text sizes. */
+  --font-sans: "Inter Variable", Inter, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
   /* radius */
   --radius-control-tiny: 4px;
   --radius-control: 8px;
@@ -271,7 +274,7 @@ body {
   /* "Inter Variable" is the family name shipped by @fontsource-variable/inter
      (self-hosted, imported in main.tsx); plain "Inter" catches a locally
      installed copy before we fall back to the system UI face. */
-  font-family: "Inter Variable", "Inter", system-ui, sans-serif;
+  font-family: var(--font-sans);
   background: var(--color-bg-elevated);
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
@@ -362,4 +365,11 @@ body {
 }
 .toggle[data-on="true"]::after {
   transform: translateX(14px);
+}
+
+/* Display titles and editing surfaces inherit the same roles in pages and portals.
+   Secondary headings, action labels and prose retain the normal UI face. */
+h1 { font-family: var(--font-display, inherit); }
+input:not([type="checkbox"]):not([type="radio"]), textarea, [contenteditable="true"] {
+  font-family: var(--font-input, inherit);
 }

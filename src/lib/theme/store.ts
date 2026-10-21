@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { defaultVariation, parseVariation, presetAppearance, type ThemeAppearance } from "./tokens.ts";
+import { parseAppearanceVariation, presetAppearance, type ThemeAppearance } from "./tokens.ts";
 import type { ThemeTransition } from "./transition.ts";
 
 // Keep the existing key so saved playground settings become the site preference.
@@ -9,7 +9,8 @@ export function parseAppearance(raw: string | null): ThemeAppearance {
   const a = JSON.parse(raw) as ThemeAppearance;
   if (typeof a?.dark !== "boolean" || !Number.isFinite(a.radius) || a.radius < 0 || a.radius > 999)
     throw new Error("Unsupported theme");
-  return { dark: a.dark, radius: a.radius, library: "lucide", variation: a.variation ? parseVariation(a.variation) : { ...defaultVariation } };
+  const normalized = parseAppearanceVariation(a.radius, a.variation);
+  return { dark: a.dark, radius: normalized.radius, library: "lucide", variation: normalized.variation };
 }
 export function createThemeStore(storage: () => Pick<Storage, "getItem" | "setItem">) {
   let initialized = false;

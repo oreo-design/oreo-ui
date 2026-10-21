@@ -38,18 +38,18 @@ test("theme is saved immediately and rendered at snapshot update, not animation 
 test("rapid choices skip old snapshots and ignore late stale callbacks", () => {
   const { store, requests } = setup();
   store.setTheme(presetAppearance("claude"));
-  store.setTheme(presetAppearance("material"));
+  store.setTheme(presetAppearance("ascii"));
   assert.equal(requests[0].skipped, true);
   requests[1].update(); requests[0].update();
-  assert.deepEqual(store.getSnapshot().theme, presetAppearance("material"));
+  assert.deepEqual(store.getSnapshot().theme, presetAppearance("ascii"));
 });
 
 test("a patch before capture keeps the requested preset, and continuous edits commit immediately", () => {
   const { store, requests } = setup();
-  store.setTheme(presetAppearance("material"));
+  store.setTheme(presetAppearance("ascii"));
   store.patchTheme({ dark: true });
   requests[0].update(); requests[1].update();
-  assert.deepEqual(store.getSnapshot().theme, presetAppearance("material", true));
+  assert.deepEqual(store.getSnapshot().theme, presetAppearance("ascii", true));
   store.patchTheme({ radius: 12 });
   assert.equal(requests.length, 2);
   assert.equal(store.getSnapshot().theme.radius, 12);
@@ -77,8 +77,8 @@ test("cross-tab changes supersede a pending local snapshot without overwriting s
 test("reduced motion and disposal commit the latest choice and invalidate deferred work", () => {
   const { store, requests, reduce, uninstall } = setup();
   store.setTheme(presetAppearance("claude"));
-  reduce(); store.setTheme(presetAppearance("material")); requests[0].update();
-  assert.deepEqual(store.getSnapshot().theme, presetAppearance("material"));
+  reduce(); store.setTheme(presetAppearance("ascii")); requests[0].update();
+  assert.deepEqual(store.getSnapshot().theme, presetAppearance("ascii"));
   assert.equal(requests.length, 1);
   uninstall();
   const second = setup();

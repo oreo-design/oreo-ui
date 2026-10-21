@@ -7,6 +7,8 @@ import { SiteThemeProvider } from "./lib/theme/SiteThemeProvider";
 // unicode-range gated, so a visitor only downloads the ones their text needs.
 import "@fontsource-variable/inter";
 import "@fontsource-variable/inter/wght-italic.css";
+import "@fontsource-variable/geist-mono";
+import "@fontsource-variable/source-serif-4";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(

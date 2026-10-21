@@ -4,13 +4,13 @@ import { PlaygroundIcon } from "@/components/icon";
 import { Tool } from "./Tools";
 import { number, select } from "./schema";
 import { useVariation, patchTheme, setTheme } from "./useVariation";
-import { defaultVariation, isCustomized, presetAppearance, themeNames, themePresets } from "./variation";
+import { defaultVariation, isCustomized, presetAppearance, themeNames, themePresets, variationTokens } from "./variation";
 
 export function VariationPanel() {
   const id = useId();
   const { theme, storageError } = useVariation();
   const v = theme.variation ?? defaultVariation;
-  const color = v.accent ?? (theme.dark ? "#fcfcfc" : "#202020");
+  const color = v.accent ?? variationTokens(theme)["--color-bg-inverse"] ?? (theme.dark ? "#fcfcfc" : "#202020");
   const [draft, setDraft] = useState(color);
   const [invalid, setInvalid] = useState(false);
   useEffect(() => { setDraft(color); setInvalid(false); }, [color, theme.variation]);
@@ -26,7 +26,7 @@ export function VariationPanel() {
           // Clicking the still-selected radio must cancel a pending snapshot choice too.
           if (v.preset === name) setTheme(theme);
         }} />
-        <span className={`pg-theme-swatch pg-theme-swatch-${name}`} style={{ background: themePresets[name].accent ?? "var(--color-text-primary)" }} aria-hidden="true" />
+        <span className={`pg-theme-swatch pg-theme-swatch-${name}`} style={name === "ascii" ? undefined : { background: themePresets[name].accent ?? "var(--color-text-primary)" }} aria-hidden="true" />
         <span>{themePresets[name].label}</span><span className="pg-theme-selection" aria-hidden="true">{v.preset === name ? <PlaygroundIcon name="check" /> : null}</span>
       </label>)}
     </fieldset>
