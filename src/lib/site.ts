@@ -496,6 +496,7 @@ export const PAGE_META = {
     description:
       "Parallel delegated work as a stack of agent cards — status, task, model and an eased progress bar per agent. The fan-out counterpart to Plan.",
   },
+  composer: { title: "Composer", description: "The complete Figma composer family: prompt, context, files, keywords, usage and menus." },
   "prompt-box": {
     title: "Prompt Box",
     description:

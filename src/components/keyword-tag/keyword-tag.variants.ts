@@ -13,7 +13,7 @@ import { tv } from "@/lib/tv";
 export const keywordTag = tv({
   slots: {
     root: [
-      "group/tag relative inline-flex h-6 min-w-6 items-center justify-center gap-[var(--space-x1)]",
+      "oreo-legacy-label group/tag relative inline-flex h-6 min-w-6 items-center justify-center gap-[var(--space-x1)]",
       "rounded-[var(--radius-control)] py-[var(--space-x1)] pr-[var(--space-x4)] pl-[var(--space-x2)]",
       "text-[12px] leading-4 font-semibold whitespace-nowrap",
       // Material-style state layer for the removable hover tint

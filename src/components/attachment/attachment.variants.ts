@@ -12,8 +12,8 @@ import { tv } from "@/lib/tv";
 export const attachment = tv({
   slots: {
     root: [
-      "group/attachment relative w-fit shrink-0 select-none",
-      "rounded-[var(--radius-control)] border-[0.5px] border-[var(--color-border-default)]",
+      "oreo-legacy-label group/attachment relative w-fit shrink-0 select-none",
+      "rounded-[var(--radius-control)] ring-[0.5px] ring-inset ring-[var(--color-border-default)]",
       "bg-[var(--color-bg-base)]",
       // Material-style state layer for the hover tint
       "after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit]",

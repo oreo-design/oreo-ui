@@ -1,4 +1,5 @@
-import { StepDots, Icon } from "@/components/icon";
+import { ComposerAsset } from "@/components/composer/assets";
+import { StepDots } from "@/components/icon";
 import * as React from "react";
 import { Collapsible } from "@base-ui-components/react/collapsible";
 import { cn } from "@/lib/cn";
@@ -12,7 +13,7 @@ type Status = "default" | "avatar" | "progress" | "loading" | "waiting" | "done"
 /* ------------------------------ Building blocks ------------------------------ */
 
 const trailingButtonBase = [
-  "flex shrink-0 items-center outline-none select-none",
+  "flex shrink-0 cursor-pointer items-center outline-none select-none",
   "text-[var(--color-text-tertiary)] transition-colors duration-150",
   "hover:text-[var(--color-text-primary)] focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
   "rounded-[var(--radius-control-tiny)]",
@@ -52,12 +53,12 @@ export function ContextBarIconButton({ icon, className, ...rest }: ContextBarIco
 }
 
 const STATUS_GLYPHS: Record<Exclude<Status, "avatar">, React.ReactNode> = {
-  default: <Icon name="folder" size="sm" />,
+  default: <ComposerAsset name="folder"/>,
   progress: <StepDots className="size-4" />,
   loading: <SpinnerDots className="size-4 animate-[spin_0.8s_steps(8)_infinite] motion-reduce:animate-none" />,
-  waiting: <Icon name="circle-dashed" size="sm" />,
-  done: <Icon name="check" size="sm" />,
-  queue: <Icon name="grip-vertical" size="sm" />,
+  waiting: <ComposerAsset name="taskWaiting"/>,
+  done: <ComposerAsset name="taskCheck"/>,
+  queue: <ComposerAsset name="grip"/>,
 };
 
 /* -------------------------------- Label row -------------------------------- */
@@ -106,14 +107,14 @@ export function ContextBarLabel({
     (onSteer || onRemove || onMore ? (
       <>
         {onSteer && (
-          <ContextBarTextButton icon={<Icon name="corner-down-right" size="sm" />} onClick={onSteer}>
+          <ContextBarTextButton icon={<ComposerAsset name="steer"/>} onClick={onSteer}>
             Steer
           </ContextBarTextButton>
         )}
         {(onRemove || onMore) && (
           <span className={rowSlots.trailingIcons()}>
-            {onRemove && <ContextBarIconButton aria-label="Remove" icon={<Icon name="trash" size="sm" />} onClick={onRemove} />}
-            {onMore && <ContextBarIconButton aria-label="More" icon={<Icon name="ellipsis" size="sm" weight="bold" />} onClick={onMore} />}
+            {onRemove && <ContextBarIconButton aria-label="Remove" icon={<ComposerAsset name="trash"/>} onClick={onRemove} />}
+            {onMore && <ContextBarIconButton aria-label="More" icon={<ComposerAsset name="more"/>} onClick={onMore} />}
           </span>
         )}
       </>
@@ -151,19 +152,12 @@ export function ContextBarTasks({ summary, defaultOpen, open, onOpenChange, clas
     <Collapsible.Root defaultOpen={defaultOpen} open={open} onOpenChange={onOpenChange} className={cn("w-full", className)}>
       <Collapsible.Trigger
         className={cn(
-          "group/tasks flex w-full items-center gap-1 outline-none select-none",
+          "group/tasks flex cursor-pointer w-full items-center gap-1 outline-none select-none",
           "rounded-[var(--radius-control-tiny)] focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
         )}
       >
         <span className="grid size-5 shrink-0 place-items-center">
-          <Icon
-            name="chevron-down"
-            size="sm"
-            className={cn(
-              "-rotate-90 transition-transform duration-200 ease-drawer motion-reduce:transition-none",
-              "group-data-[panel-open]/tasks:rotate-0",
-            )}
-          />
+          <ComposerAsset name="taskChevron" className="-rotate-90 transition-transform duration-200 ease-drawer motion-reduce:transition-none group-data-[panel-open]/tasks:rotate-0"/>
         </span>
         <span className="min-w-0 flex-1 text-left text-[14px] leading-5 font-medium text-[var(--color-text-primary)]">
           {summary}

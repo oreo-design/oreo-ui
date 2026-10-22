@@ -1,3 +1,5 @@
+import VIDEO_THUMB from "@/components/composer/assets/e9ccd.png";
+import IMG_THUMB from "@/components/composer/assets/1ebaa.png";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
@@ -25,17 +27,7 @@ const PROPS: PropRow[] = [
   { prop: "onRemove", type: "() => void", desc: "Square: floating × badge on hover. Labeled: the leading icon swaps to an × in place." },
 ];
 
-function gradientThumb(from: string, to: string) {
-  return (
-    "data:image/svg+xml," +
-    encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='${from}'/><stop offset='1' stop-color='${to}'/></linearGradient></defs><rect width='72' height='72' fill='url(#g)'/></svg>`,
-    )
-  );
-}
 
-const IMG_THUMB = gradientThumb("#b3a5ef", "#5fd2e3");
-const VIDEO_THUMB = gradientThumb("#f49ad2", "#ff9e57");
 
 const LAYOUTS_CODE = `import { Attachment, AttachmentBar } from "@/components/attachment";
 

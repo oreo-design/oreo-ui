@@ -74,13 +74,6 @@ export function Attachment({
   ) : media ? (
     <span className={slots.thumb()}>
       <img src={src} alt="" className={slots.image()} />
-      {kind === "video" && (
-        <img
-          src={playIcon}
-          alt=""
-          className="absolute top-1/2 left-1/2 size-[7px] -translate-x-1/2 -translate-y-1/2 [filter:drop-shadow(0_2.33px_7px_rgba(0,0,0,0.08))_drop-shadow(0_0_0.29px_rgba(0,0,0,0.24))]"
-        />
-      )}
     </span>
   ) : (
     <img src={TYPE_ICONS[kind as Exclude<AttachmentType, "image" | "video">]} alt="" className={slots.typeIcon()} />

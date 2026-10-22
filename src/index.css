@@ -8,15 +8,20 @@
  * -------------------------------------------------------------------------- */
 @theme {
   /* Typography roles; theme presets can change roles without changing text sizes. */
-  --font-sans: "Inter Variable", Inter, system-ui, sans-serif;
-  --font-mono: "Geist Mono Variable", ui-monospace, monospace;
+  --font-sans: "Mona Sans Variable", system-ui, sans-serif;
+  /* Legacy permission instance colors have no matching foundation role. */
+  --color-composer-permission-description: #8f8f94;
+  --color-composer-permission-warning: #f0400a;
+  --font-legacy: "Inter Variable", Inter, system-ui, sans-serif;
+  --font-mono: "Fragment Mono", ui-monospace, monospace;
   /* radius */
   --radius-control-tiny: 4px;
   --radius-control: 8px;
   --radius-control-large: 10px;
   --radius-card-small: 12px;
   --radius-card-medium: 16px;
-  --radius-card-large: 24px;
+  --radius-card-large: 20px;
+  --radius-container: 24px;
   /* Tailwind's named corners share the component radius owner. */
   --radius-xs: calc(var(--radius-control) * .25);
   --radius-sm: var(--radius-control-tiny);
@@ -36,17 +41,29 @@
   --space-x6: 12px;
   --space-x8: 16px;
 
+  --space-x5: 10px;
+  --space-x7: 14px;
+  --space-x10: 20px;
+  --space-x12: 24px;
+  --space-x18: 36px;
+  --space-x24: 48px;
+  --space-x32: 64px;
+  --space-x48: 96px;
+  --space-x64: 128px;
+
   /* backgrounds */
   --color-bg-base: #ffffff;
   --color-bg-elevated: #f9f9f9;
   --color-bg-surface: #ffffff;
   --color-bg-inverse: #202020;
+  --color-bg-subtle: #0000000d;
+  --color-bg-dismiss: #00000008;
 
   /* text */
   --color-text-primary: #000000;
   --color-text-secondary: #646464;
   --color-text-tertiary: #838383;
-  --color-text-placeholder: #8d8d8d;
+  --color-text-placeholder: #a8a8a8;
   --color-text-on-inverse: #ffffff;
   --color-text-disabled: #bbbbbb;
   --color-text-waiting: #d9d9d9;
@@ -54,6 +71,8 @@
   /* borders */
   --color-border-default: #0000001f;
   --color-border-subtle: #00000017;
+  --color-border-focus: #000000de;
+  --color-border-inverse: #ffffff26;
 
   /* Stable foreground for saturated accents in either theme. */
   --color-text-on-accent: #ffffff;
@@ -64,6 +83,10 @@
 
   /* status */
   --color-status-error: #dc3e42;
+  --color-status-warning: #ef5f00;
+  --color-status-warning-subtle: #ef5f001f;
+  --color-status-error-subtle: #dc3e421f;
+  --color-status-success-subtle: #12a5941f;
   --color-status-success: #12a594;
   --color-status-progress: #3e63dd;
   --color-status-progress-subtle: #3e63dd1f;
@@ -129,6 +152,10 @@
   --color-bg-elevated: #191919;
   --color-bg-surface: #222222;
   --color-bg-inverse: #fcfcfc;
+  --color-bg-subtle: #ffffff0f;
+  --color-bg-dismiss: #ffffff0a;
+  --color-border-focus: #ffffffed;
+  --color-border-inverse: #0000001f;
   --color-text-primary: #ffffff;
   --color-text-secondary: #b4b4b4;
   --color-text-tertiary: #7b7b7b;
@@ -374,3 +401,7 @@ h1 { font-family: var(--font-display, inherit); }
 input:not([type="checkbox"]):not([type="radio"]), textarea, [contenteditable="true"] {
   font-family: var(--font-input, inherit);
 }
+
+/* Figma component instances retain explicit Inter labels alongside Mona body roles. */
+.oreo-legacy-label { font-family: var(--font-legacy); font-feature-settings: normal; }
+.oreo-composer, .oreo-context-bar { font-feature-settings: "ss05" 1; }

@@ -1,3 +1,4 @@
+import ComposerDocs from "@/pages/ComposerDocs";
 import { MotionCodeStudio } from "@/patterns/motion-code-studio";
 import { MotionCodeDocs } from "@/pages/MotionCodeDocs";
 import { SpectralGlassStudio } from "@/patterns/spectral-glass-studio";
@@ -410,6 +411,7 @@ const PAGES: Record<PageSlug, ComponentType<{ nav: DocsNav }>> = {
   "web-search": WebSearchDocs,
   subagents: SubagentsDocs,
   "prompt-box": PromptBoxDocs,
+  composer: ComposerDocs,
   "keyword-tag": KeywordTagDocs,
   "context-bar": ContextBarDocs,
   "inbox-stream": StreamPage,

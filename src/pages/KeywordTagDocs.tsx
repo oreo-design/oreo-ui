@@ -1,3 +1,4 @@
+import IMG_THUMB from "@/components/composer/assets/1ebaa.png";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
@@ -40,15 +41,6 @@ const PROPS: PropRow[] = [
   { prop: "onRemove", type: "() => void", desc: "Hover swaps the leading slot for an × in place and tints the chip. The × is its own button — the tag's onClick never fires from it." },
 ];
 
-function gradientThumb(from: string, to: string) {
-  return (
-    "data:image/svg+xml," +
-    encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='${from}'/><stop offset='1' stop-color='${to}'/></linearGradient></defs><rect width='72' height='72' fill='url(#g)'/></svg>`,
-    )
-  );
-}
-const IMG_THUMB = gradientThumb("#b3a5ef", "#5fd2e3");
 
 /** Monochrome brand marks flip to white in the dark theme. */
 const mono = "[.theme-dark_&]:invert";
@@ -165,7 +157,7 @@ export function KeywordTagDocs({ nav }: { nav: DocsNav }) {
                   <div className="flex flex-col gap-3">
                     <Caption>Integration</Caption>
                     <div className="flex flex-wrap items-center gap-6">
-                      <KeywordTag icon={<img src={figmaLogo} alt="" />}>Figma</KeywordTag>
+                      <KeywordTag icon={<span className="relative size-4"><img src={figmaLogo} alt="" style={{position: "absolute", left: "23.61%", top: "11.46%", width: "52.78%", height: "79.16%"}} /></span>}>Figma</KeywordTag>
                       <KeywordTag icon={<img src={notionLogo} alt="" className={mono} />}>Notion</KeywordTag>
                       <KeywordTag icon={<img src={gmailLogo} alt="" />}>Gmail</KeywordTag>
                       <KeywordTag icon={<img src={calendarLogo} alt="" />}>Google Calendar</KeywordTag>

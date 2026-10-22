@@ -1,4 +1,5 @@
-import { StopGlyph, AudioWaveGlyph, Icon } from "@/components/icon";
+import { ComposerAsset } from "@/components/composer/assets";
+import { StopGlyph } from "@/components/icon";
 import * as React from "react";
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
@@ -48,7 +49,7 @@ export function PromptBoxModelSelect({
       type="button"
       className={cn(
         "oreo-model-selector oreo-squircle oreo-state-layer flex h-8 items-center gap-[var(--space-x2)] px-[var(--space-x4)]",
-        "text-[14px] leading-5 text-[var(--color-text-primary)] outline-none select-none",
+        "text-[14px] font-normal leading-5 text-[var(--color-text-primary)] outline-none select-none",
         "transition-colors duration-150",
         "focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
         className,
@@ -66,7 +67,7 @@ export function PromptBoxModelSelect({
           </AnimatePresence>
         </span>
       </span>
-      <Icon name="chevron-down" weight="bold" className="size-[10px] text-[var(--color-text-secondary)]" />
+      <ComposerAsset name="chevron" />
     </button>
   );
 
@@ -127,6 +128,10 @@ export type PromptBoxProps = {
   /** Keep a structured/generated prompt selectable without allowing text edits. */
   readOnly?: boolean;
   onAttach?: () => void;
+  /** Custom controls preserve the action slots while adding anchored menus. */
+  attachControl?: React.ReactNode;
+  mentionControl?: React.ReactNode;
+  onPromptKeyDown?: React.KeyboardEventHandler<HTMLTextAreaElement>;
   onMention?: () => void;
   /** Attachment row above the text — usually an `<AttachmentBar>`. */
   attachments?: React.ReactNode;
@@ -134,7 +139,7 @@ export type PromptBoxProps = {
   tags?: React.ReactNode;
   /** The model picker — usually a `<PromptBoxModelSelect>`. */
   modelSelect?: React.ReactNode;
-  /** Voice input add-on: `wave` replaces send (Type A), `mic` sits beside it (Type B). */
+  /** Voice input add-on: `wave` and `mic` both sit beside Send, per the Figma Type A/B variants. */
   voice?: "wave" | "mic";
   /** Voice lifecycle — drives the wave button / Stop pill / Thinking pill. */
   voiceStatus?: "idle" | "inputting" | "thinking";
@@ -166,6 +171,9 @@ export function PromptBox({
   submitDisabled = false,
   readOnly = false,
   onAttach,
+  attachControl,
+  mentionControl,
+  onPromptKeyDown,
   onMention,
   attachments,
   tags,
@@ -263,7 +271,7 @@ export function PromptBox({
     <>
       <span>Type a prompt or press</span>
       <Shortcut keys={["/"]} />
-      <span>for commands</span>
+      <span className="oreo-legacy-label leading-5">for commands</span>
     </>
   );
 
@@ -274,7 +282,7 @@ export function PromptBox({
     <IconButton
       aria-label="Add attachment"
       type="secondary"
-      icon={<Icon name="paperclip" />}
+      icon={<ComposerAsset name="attach" />}
       onClick={onAttach}
       className={hairline}
       {...spring}
@@ -284,7 +292,7 @@ export function PromptBox({
     <IconButton
       aria-label="Mention"
       type="secondary"
-      icon={<Icon name="at" />}
+      icon={<ComposerAsset name="mention" />}
       onClick={onMention}
       className={hairline}
       {...spring}
@@ -295,7 +303,7 @@ export function PromptBox({
     <IconButton
       aria-label="Send"
       type="primary"
-      icon={<Icon name="arrow-up" weight="bold" />}
+      icon={<ComposerAsset name="send" />}
       onClick={submit}
       {...spring}
     />
@@ -303,7 +311,7 @@ export function PromptBox({
     <IconButton
       aria-label="Send"
       type="secondary"
-      icon={<Icon name="arrow-up" weight="bold" />}
+      icon={<ComposerAsset name="send" />}
       disabled
       className="bg-[var(--color-bg-elevated)] ring-[0.5px] ring-[var(--color-border-default)]"
     />
@@ -318,7 +326,7 @@ export function PromptBox({
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "grid size-8 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
-        "bg-[var(--color-bg-inverse)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
+        "bg-[var(--color-text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
       )}
     >
       <StopGlyph />
@@ -334,11 +342,10 @@ export function PromptBox({
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "grid size-8 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
-        "bg-[var(--color-bg-inverse)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
-        "[&_img]:size-5",
+        "bg-[var(--color-bg-base)] text-[var(--color-text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
       )}
     >
-      <AudioWaveGlyph className="size-5 text-[var(--color-text-on-inverse)]" />
+      <ComposerAsset name="audio" />
     </motion.button>
   );
 
@@ -354,18 +361,18 @@ export function PromptBox({
       )}
     >
       <EqBars animate />
-      <span className="text-[14px] leading-5 font-medium text-[var(--color-status-progress)]">Stop</span>
+      <span className="oreo-legacy-label text-[14px] leading-5 font-medium text-[var(--color-status-progress)]">Stop</span>
     </motion.button>
   );
 
   const thinkingPill = (
     <span
       className={cn(
-        "flex h-8 min-w-[100px] items-center justify-center rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
+        "oreo-legacy-label relative overflow-hidden flex h-8 min-w-[74px] items-center justify-center rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
         "bg-[var(--color-bg-elevated)] text-[12px] leading-5 font-medium text-[var(--color-text-secondary)]",
       )}
     >
-      <ShimmerText>Thinking</ShimmerText>
+      <span aria-hidden className="absolute inset-y-0 left-0 w-[51px] bg-state-hover" /><ShimmerText>Thinking</ShimmerText>
     </span>
   );
 
@@ -373,9 +380,9 @@ export function PromptBox({
     <IconButton
       aria-label={voiceStatus === "inputting" ? "Stop voice input" : "Start voice input"}
       type="tertiary"
-      icon={<Icon name="mic" />}
+      icon={<ComposerAsset name={voiceStatus === "inputting" ? "mic" : "micOutline"} />}
       onClick={onVoiceToggle}
-      className={voiceStatus === "inputting" ? "text-[var(--color-status-progress)]" : "text-[var(--color-text-primary)]"}
+      className={voiceStatus === "inputting" ? "bg-status-progress-subtle text-[var(--color-status-progress)] ring-4 ring-inset ring-[color-mix(in_srgb,var(--color-status-progress)_6%,transparent)]" : "text-[var(--color-text-primary)]"}
       {...spring}
     />
   );
@@ -385,7 +392,7 @@ export function PromptBox({
   const card = (
     <div className={slots.card()}>
       <div className={cn(slots.content(), "gap-0")}>
-        <PromptReveal>{attachments != null && <div className="pb-[var(--space-x4)]">{attachments}</div>}</PromptReveal>
+        <PromptReveal>{attachments != null && <div className="pb-[var(--space-x8)]">{attachments}</div>}</PromptReveal>
         <div className={slots.inputWrap()}>
           <AnimatePresence initial={false}>
             {tags != null && <motion.div key="tags" ref={setTagsElement} className={cn(slots.tags(), "[&_span]:transition-colors [&_span]:duration-200")}
@@ -403,6 +410,8 @@ export function PromptBox({
             readOnly={readOnly}
             onChange={(event) => setText(event.target.value)}
             onKeyDown={(event) => {
+              onPromptKeyDown?.(event);
+              if (event.defaultPrevented) return;
               if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing) {
                 event.preventDefault();
                 submit();
@@ -421,7 +430,7 @@ export function PromptBox({
         </div>
       </div>
       <div className={cn(slots.actions(), "gap-[var(--space-x4)]")}>
-        <div className={slots.actionCluster()}>{attachButton}{mentionButton}</div>
+        <div className={slots.actionCluster()}>{attachControl ?? attachButton}{mentionControl ?? mentionButton}</div>
         <motion.div layout={reduce ? false : "position"} transition={promptTransition}
           className="ml-auto">
           {modelSelect}
@@ -430,9 +439,8 @@ export function PromptBox({
           <AnimatePresence initial={false} mode="popLayout">
             {voice === "mic" && <motion.div key="mic" layout={reduce ? false : "position"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={promptTransition}>{micButton}</motion.div>}
           </AnimatePresence>
-          <PromptSwap state={voice === "wave" ? `voice-${voiceStatus}` : running ? "running" : "send"}>
-            {voice === "wave" ? voicePrimary : running ? stopButton : sendButton}
-          </PromptSwap>
+          {voice === "wave" && <PromptSwap state={`voice-${voiceStatus}`}>{voicePrimary}</PromptSwap>}
+          <PromptSwap state={running ? "running" : "send"}>{running ? stopButton : sendButton}</PromptSwap>
         </motion.div>
       </div>
     </div>

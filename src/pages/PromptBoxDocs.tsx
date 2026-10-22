@@ -1,3 +1,5 @@
+import VIDEO_THUMB from "@/components/composer/assets/e9ccd.png";
+import IMG_THUMB from "@/components/composer/assets/1ebaa.png";
 import { useState, type ReactNode } from "react";
 import { PromptBoxDictationDemo } from "@/docs/playground/PromptBoxDictationDemo";
 import { AnimatePresence, motion } from "motion/react";
@@ -41,7 +43,7 @@ const PROPS: PropRow[] = [
   { prop: "attachments", type: "ReactNode", desc: "Row above the text — usually an <AttachmentBar>." },
   { prop: "tags", type: "ReactNode", desc: "Inline <KeywordTag> chips at the head of the first text line." },
   { prop: "modelSelect", type: "ReactNode", desc: "The model picker — usually a <PromptBoxModelSelect>." },
-  { prop: "voice", type: '"wave" | "mic"', desc: "Voice add-on: wave replaces the send button, mic sits beside it." },
+  { prop: "voice", type: '"wave" | "mic"', desc: "Voice add-on: wave and mic sit beside the send button." },
   { prop: "voiceStatus", type: '"idle" | "inputting" | "thinking"', def: '"idle"', desc: "Drives the wave button ↔ Stop pill ↔ Thinking pill." },
   { prop: "onAttach / onMention / onVoiceToggle", type: "() => void", desc: "Toolbar button callbacks." },
   { prop: "header / footer", type: "ReactNode", desc: "A <ContextBar> docked above or below; it tucks 16px under the card." },
@@ -51,16 +53,7 @@ const PROPS: PropRow[] = [
 const FILLED =
   "Building a To-Do application requires a balance between simplicity for quick entries and enough structure to stay organized. Here is a comprehensive blueprint.";
 
-function gradientThumb(from: string, to: string) {
-  return (
-    "data:image/svg+xml," +
-    encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='${from}'/><stop offset='1' stop-color='${to}'/></linearGradient></defs><rect width='72' height='72' fill='url(#g)'/></svg>`,
-    )
-  );
-}
-const IMG_THUMB = gradientThumb("#b3a5ef", "#5fd2e3");
-const VIDEO_THUMB = gradientThumb("#f49ad2", "#ff9e57");
+
 
 const brandImg = "[.theme-dark_&]:invert";
 
@@ -259,7 +252,7 @@ const TAGS_CODE = `<PromptBox
   }
 />`;
 
-const VOICE_CODE = `// Type A — the wave button replaces send; tap to talk, tap to stop
+const VOICE_CODE = `// Type A — a wave button beside send; tap to talk, tap to stop
 <PromptBox voice="wave" voiceStatus={status} onVoiceToggle={toggle} />
 <PromptBox voice="wave" voiceStatus="thinking" />
 
@@ -376,7 +369,7 @@ export function PromptBoxDocs({ nav }: { nav: DocsNav }) {
           <Section
             id="voice"
             title="Voice input"
-            description="Type A replaces the send button with a wave button — tap to talk, the pill pulses while listening, and “Thinking” shimmers while the model works. Type B keeps a quiet mic beside send."
+            description="Type A keeps a wave button beside send — tap to talk, the pill pulses while listening, and “Thinking” shimmers while the model works. Type B uses a quiet mic beside send."
           >
             <PreviewTabs
               code={VOICE_CODE}
