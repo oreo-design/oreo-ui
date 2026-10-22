@@ -24,6 +24,10 @@
 .pg-shell button:disabled,
 .pg-modal button:disabled {
   cursor: default;
+}
+/* Previewed components own their disabled tokens; shell opacity must not dim them twice. */
+.pg-shell button:disabled:not(.pg-preview *),
+.pg-modal button:disabled:not(.pg-preview *) {
   opacity: 0.4;
 }
 .pg-shell :is(button, a, input, textarea, select):focus-visible,

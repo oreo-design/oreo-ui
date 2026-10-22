@@ -4,7 +4,7 @@ import { PromptBox, type PromptBoxProps } from "./prompt-box";
 import { PromptPresenceContent, promptTransition } from "./prompt-box.motion";
 import { ContextBar } from "@/components/context-bar";
 import { ShimmerText } from "@/components/activity-label";
-import { Icon } from "@/components/icon";
+import { ComposerAsset } from "@/components/composer/assets";
 import { keywordTag } from "@/components/keyword-tag";
 import { cn } from "@/lib/cn";
 import "./prompt-box.dictation.css";
@@ -61,7 +61,7 @@ export function PromptBoxActions({ actions, onRemove, onClear, onEdit, disabled 
               <span className="min-w-0 break-words">{action.label}</span>
               <button type="button" data-action-remove disabled={disabled} aria-label={`Remove ${action.label}`}
                 onClick={() => remove(action.id)} className={cn(quietButton, "grid size-6 shrink-0 place-items-center text-inherit")}>
-                <Icon name="x" size="sm" />
+                <ComposerAsset name="closeKeyword" />
               </button>
             </span>
           </PromptPresenceContent>

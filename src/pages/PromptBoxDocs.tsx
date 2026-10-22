@@ -6,18 +6,16 @@ import { AnimatePresence, motion } from "motion/react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
-import { Icon } from "@/components/icon";
 import { Button } from "@/components/button";
 import { Chip, ChipGroup } from "@/components/chip";
 import { Attachment, AttachmentBar, type AttachmentType } from "@/components/attachment";
 import { MenuItem, MenuPopup, MenuSeparator, MenuSubmenu, MenuSubmenuTrigger } from "@/components/menu";
 import { PromptBox, PromptBoxModelSelect, KeywordTag } from "@/components/prompt-box";
-import { PlusGlyph } from "@/components/keyword-tag";
+import { ComposerAsset } from "@/components/composer/assets";
 import type { SpringProps } from "@/docs/DocsPage";
 import openaiLogo from "@/components/icon/assets/brands/openai.svg";
 import claudeLogo from "@/components/icon/assets/brands/claude-color.svg";
 import googleLogo from "@/components/icon/assets/brands/google-color.svg";
-import figmaLogo from "@/components/icon/assets/brands/figma-color.svg";
 
 const TOC: TocItem[] = [
   { id: "prompt-box", label: "Introduction" },
@@ -65,11 +63,11 @@ const brandImg = "[.theme-dark_&]:invert";
 function ModelMenu() {
   return (
     <>
-      <MenuItem selected>Auto</MenuItem>
+      <MenuItem selected trailing={<ComposerAsset name="check" className="text-text-primary" />}>Auto</MenuItem>
       <MenuItem>Use multiple models</MenuItem>
       <MenuSeparator />
       <MenuSubmenu>
-        <MenuSubmenuTrigger icon={<img src={openaiLogo} alt="" className={brandImg} />}>OpenAI</MenuSubmenuTrigger>
+        <MenuSubmenuTrigger trailingIcon={<ComposerAsset name="right" className="text-text-tertiary" />} icon={<img src={openaiLogo} alt="" className={brandImg} />}>OpenAI</MenuSubmenuTrigger>
         <MenuPopup side="right" align="start" sideOffset={8}>
           <MenuItem>GPT-5.2 Pro</MenuItem>
           <MenuItem>GPT-5.2</MenuItem>
@@ -77,15 +75,15 @@ function ModelMenu() {
         </MenuPopup>
       </MenuSubmenu>
       <MenuSubmenu>
-        <MenuSubmenuTrigger icon={<img src={claudeLogo} alt="" />}>Anthropic</MenuSubmenuTrigger>
+        <MenuSubmenuTrigger trailingIcon={<ComposerAsset name="right" className="text-text-tertiary" />} icon={<img src={claudeLogo} alt="" />}>Anthropic</MenuSubmenuTrigger>
         <MenuPopup side="right" align="start" sideOffset={8}>
-          <MenuItem selected>Claude Opus 4.5</MenuItem>
+          <MenuItem selected trailing={<ComposerAsset name="check" className="text-text-primary" />}>Claude Opus 4.5</MenuItem>
           <MenuItem>Claude Sonnet 4.5</MenuItem>
           <MenuItem>Claude Haiku 4.5</MenuItem>
         </MenuPopup>
       </MenuSubmenu>
       <MenuSubmenu>
-        <MenuSubmenuTrigger icon={<img src={googleLogo} alt="" />}>Google</MenuSubmenuTrigger>
+        <MenuSubmenuTrigger trailingIcon={<ComposerAsset name="right" className="text-text-tertiary" />} icon={<img src={googleLogo} alt="" />}>Google</MenuSubmenuTrigger>
         <MenuPopup side="right" align="start" sideOffset={8}>
           <MenuItem>Gemini 3.1 Pro</MenuItem>
           <MenuItem>Gemini 3 Flash</MenuItem>
@@ -241,7 +239,7 @@ const ATTACH_CODE = `<PromptBox
 const TAGS_CODE = `<PromptBox
   defaultValue="…"
   tags={
-    <KeywordTag icon={<img src={figmaLogo} alt="" />} onRemove={remove}>
+    <KeywordTag icon={<ComposerAsset name="figmaSmall" />} onRemove={remove}>
       Figma
     </KeywordTag>
   }
@@ -250,7 +248,7 @@ const TAGS_CODE = `<PromptBox
 <PromptBox
   defaultValue="…"
   tags={
-    <KeywordTag color="purple" icon={<PlusGlyph />} onRemove={remove}>
+    <KeywordTag color="purple" icon={<ComposerAsset name="plus" />} onRemove={remove}>
       Create Image
     </KeywordTag>
   }
@@ -265,8 +263,8 @@ const VOICE_CODE = `// Type A — a wave button beside send; tap to talk, tap to
 
 const ADDONS_CODE = `<div className="flex w-full flex-col gap-[var(--space-x4)]">
   <ChipGroup>
-    <Chip icon={<Icon name="sparkle" />}>Summarize this page</Chip>
-    <Chip icon={<Icon name="sparkle" />}>Debug my code</Chip>
+    <Chip icon={<ComposerAsset name="suggestion" />}>Summarize this page</Chip>
+    <Chip icon={<ComposerAsset name="suggestion" />}>Debug my code</Chip>
   </ChipGroup>
   <PromptBox … />
 </div>`;
@@ -352,7 +350,7 @@ export function PromptBoxDocs({ nav }: { nav: DocsNav }) {
                   <TagsDemo
                     spring={spring}
                     render={(remove) => (
-                      <KeywordTag icon={<img src={figmaLogo} alt="" />} onRemove={remove}>
+                      <KeywordTag icon={<ComposerAsset name="figmaSmall" />} onRemove={remove}>
                         Figma
                       </KeywordTag>
                     )}
@@ -360,7 +358,7 @@ export function PromptBoxDocs({ nav }: { nav: DocsNav }) {
                   <TagsDemo
                     spring={spring}
                     render={(remove) => (
-                      <KeywordTag color="purple" icon={<PlusGlyph />} onRemove={remove}>
+                      <KeywordTag color="purple" icon={<ComposerAsset name="plus" />} onRemove={remove}>
                         Create Image
                       </KeywordTag>
                     )}
@@ -421,10 +419,10 @@ export function PromptBoxDocs({ nav }: { nav: DocsNav }) {
               preview={
                 <div className="flex w-full flex-col items-start gap-[var(--space-x4)]">
                   <ChipGroup>
-                    <Chip icon={<Icon name="sparkle" />} {...spring}>
+                    <Chip icon={<ComposerAsset name="suggestion" />} {...spring}>
                       Summarize this page
                     </Chip>
-                    <Chip icon={<Icon name="sparkle" />} {...spring}>
+                    <Chip icon={<ComposerAsset name="suggestion" />} {...spring}>
                       Debug my code
                     </Chip>
                   </ChipGroup>

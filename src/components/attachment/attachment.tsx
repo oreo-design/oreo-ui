@@ -1,4 +1,5 @@
-import { SpinnerDots, CloseGlyph } from "@/components/icon";
+import { SpinnerDots } from "@/components/icon";
+import { ComposerAsset } from "@/components/composer/assets";
 import * as React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/cn";
@@ -38,6 +39,14 @@ const TYPE_ICONS: Record<Exclude<AttachmentType, "image" | "video">, string> = {
   pdf: pdfIcon,
 };
 
+/** Preserve the original export's shadow overflow around its 20px Figma frame.
+ * These offsets are artwork bounds, not component spacing tokens. */
+function FileIcon({ src, className }: { src: string; className: string }) {
+  return <span className={cn("relative inline-block shrink-0", className)}>
+    <img src={src} alt="" className="pointer-events-none absolute max-w-none" style={{ left: -8, top: -5, width: 38, height: 33 }} />
+  </span>;
+}
+
 export type AttachmentProps = {
   /** Filename shown next to the icon; omit for the icon-only square. */
   label?: string;
@@ -76,7 +85,7 @@ export function Attachment({
       <img src={src} alt="" className={slots.image()} />
     </span>
   ) : (
-    <img src={TYPE_ICONS[kind as Exclude<AttachmentType, "image" | "video">]} alt="" className={slots.typeIcon()} />
+    <FileIcon src={TYPE_ICONS[kind as Exclude<AttachmentType, "image" | "video">]} className={slots.typeIcon()} />
   );
 
   if (!withLabel) {
@@ -90,15 +99,14 @@ export function Attachment({
               <img src={src} alt="" className={slots.image()} />
             </span>
             {kind === "video" && (
-              <img
-                src={playIcon}
-                alt=""
-                className="pointer-events-none absolute top-1/2 left-1/2 size-[14px] -translate-x-1/2 -translate-y-1/2 [filter:drop-shadow(0_4.67px_14px_rgba(0,0,0,0.08))_drop-shadow(0_0_0.58px_rgba(0,0,0,0.24))]"
-              />
+              <span className="pointer-events-none absolute top-1/2 left-1/2 size-3.5 -translate-x-1/2 -translate-y-1/2">
+                {/* Full export bounds preserve the shadow outside the 14px glyph frame. */}
+                <img src={playIcon} alt="" className="absolute max-w-none" style={{ left: -25.2291564941406, top: -22.157470703125, width: 67, height: 68 }} />
+              </span>
             )}
           </>
         ) : (
-          <img src={TYPE_ICONS[kind as Exclude<AttachmentType, "image" | "video">]} alt="" className={slots.typeIcon()} />
+          <FileIcon src={TYPE_ICONS[kind as Exclude<AttachmentType, "image" | "video">]} className={slots.typeIcon()} />
         )}
         {onRemove && (
           <motion.button
@@ -109,7 +117,7 @@ export function Attachment({
             onClick={onRemove}
             className={slots.badge()}
           >
-            <CloseGlyph className="size-[10px]" />
+            <ComposerAsset name="closeBadge" />
           </motion.button>
         )}
       </div>
@@ -129,7 +137,7 @@ export function Attachment({
             onClick={onRemove}
             className={slots.ghost()}
           >
-            <CloseGlyph className="size-4" />
+            <ComposerAsset name="closeAttachment" />
           </motion.button>
         )}
       </span>

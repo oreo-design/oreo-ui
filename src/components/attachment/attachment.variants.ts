@@ -30,7 +30,7 @@ export const attachment = tv({
       "border-[0.5px] border-[var(--color-border-default)] bg-[var(--color-bg-elevated)]",
       "shadow-[var(--shadow-active)]",
     ],
-    typeIcon: "size-5 [filter:drop-shadow(var(--shadow-active))]",
+    typeIcon: "size-5",
     spinner: "size-4 animate-[spin_0.8s_steps(8)_infinite] text-[var(--color-text-waiting)] motion-reduce:animate-none",
     label: "max-w-48 truncate text-[12px] leading-4 font-semibold text-[var(--color-text-primary)]",
     /** Labeled form ×: replaces the leading icon in place on hover. */
@@ -43,7 +43,7 @@ export const attachment = tv({
     /** Icon-only form ×: floating badge off the top-right corner. */
     badge: [
       "absolute -top-[4.5px] -right-[3.5px] grid size-[14px] place-items-center",
-      "rounded-[var(--radius-capsule)] bg-[var(--color-bg-inverse)] text-[var(--color-text-on-inverse)]",
+      "rounded-[var(--radius-capsule)] bg-[var(--color-border-focus)] text-[var(--color-text-on-inverse)]",
       "opacity-0 transition-opacity duration-150",
       "group-hover/attachment:opacity-100 focus-visible:opacity-100",
       "outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
