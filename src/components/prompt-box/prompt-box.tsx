@@ -204,7 +204,7 @@ export function PromptBox({
 }: PromptBoxProps) {
   const reduce = useReducedMotion();
   const layoutId = React.useId();
-  const [textHeight, setTextHeight] = React.useState(60);
+  const [textHeight, setTextHeight] = React.useState(40);
   const [internal, setInternal] = React.useState(defaultValue ?? "");
   const text = value ?? internal;
   const canSend = text.trim().length > 0 && !submitDisabled;
@@ -222,7 +222,7 @@ export function PromptBox({
     const previousIndent = el.style.textIndent;
     el.style.height = "0px";
     el.style.textIndent = `${indent}px`;
-    const height = Math.max(el.scrollHeight, 60);
+    const height = Math.max(el.scrollHeight, parseFloat(getComputedStyle(el).minHeight) || 0);
     el.style.height = previousHeight;
     el.style.textIndent = previousIndent;
     setTextHeight(height);
@@ -292,9 +292,10 @@ export function PromptBox({
 
   const attachButton = (
     <IconButton
+      size="sm"
       aria-label={entryStyle === "add" ? "Add" : "Add attachment"}
       type={entryStyle === "add" ? "tertiary" : "secondary"}
-      icon={entryStyle === "add" ? <ComposerAsset name="add" /> : <ComposerAsset name="attach" />}
+      icon={<ComposerAsset name={entryStyle === "add" ? "add" : "attach"} className="oreo-prompt-action-icon" />}
       onClick={onAttach}
       className={entryStyle === "add" ? undefined : hairline}
       {...spring}
@@ -302,9 +303,10 @@ export function PromptBox({
   );
   const mentionButton = (
     <IconButton
+      size="sm"
       aria-label="Mention"
       type="secondary"
-      icon={<ComposerAsset name="mention" />}
+      icon={<ComposerAsset name="mention" className="oreo-prompt-action-icon" />}
       onClick={onMention}
       className={hairline}
       {...spring}
@@ -313,19 +315,21 @@ export function PromptBox({
 
   const sendButton = canSend ? (
     <IconButton
+      size="sm"
       aria-label="Send"
       type="primary"
-      icon={<ComposerAsset name="send" />}
+      icon={<ComposerAsset name="send" className="oreo-prompt-action-icon" />}
       onClick={submit}
       {...spring}
     />
   ) : (
     <IconButton
+      size="sm"
       aria-label="Send"
-      type="secondary"
-      icon={<ComposerAsset name="send" />}
+      type="primary"
+      icon={<ComposerAsset name="send" className="oreo-prompt-action-icon" />}
       disabled
-      className="bg-[var(--color-bg-elevated)] ring-[0.5px] ring-[var(--color-border-default)]"
+      className="bg-[var(--color-text-waiting)] text-[var(--color-bg-base)]"
     />
   );
 
@@ -337,7 +341,7 @@ export function PromptBox({
       whileTap={reduce ? undefined : { scale: tapScale }}
       transition={{ type: "spring", bounce, duration }}
       className={cn(
-        "grid size-8 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
+        "grid size-7 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
         "bg-[var(--color-text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
       )}
     >
@@ -353,7 +357,7 @@ export function PromptBox({
       whileTap={reduce ? undefined : { scale: tapScale }}
       transition={{ type: "spring", bounce, duration }}
       className={cn(
-        "grid size-8 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
+        "grid size-7 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
         "bg-[var(--color-bg-base)] text-[var(--color-text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
       )}
     >
@@ -368,7 +372,7 @@ export function PromptBox({
       whileTap={reduce ? undefined : { scale: tapScale }}
       transition={{ type: "spring", bounce, duration }}
       className={cn(
-        "flex h-8 items-center gap-[var(--space-x4)] rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
+        "flex h-7 items-center gap-[var(--space-x4)] rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
         "bg-[var(--color-status-progress-subtle)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
       )}
     >
@@ -380,7 +384,7 @@ export function PromptBox({
   const thinkingPill = (
     <span
       className={cn(
-        "oreo-legacy-label relative overflow-hidden flex h-8 min-w-[74px] items-center justify-center rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
+        "oreo-legacy-label relative overflow-hidden flex h-7 min-w-[74px] items-center justify-center rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
         "bg-[var(--color-bg-elevated)] text-[12px] leading-5 font-medium text-[var(--color-text-secondary)]",
       )}
     >
@@ -390,9 +394,10 @@ export function PromptBox({
 
   const micButton = (
     <IconButton
+      size="sm"
       aria-label={voiceStatus === "inputting" ? "Stop voice input" : "Start voice input"}
       type="tertiary"
-      icon={<ComposerAsset name={voiceStatus === "inputting" ? "mic" : "micOutline"} />}
+      icon={<ComposerAsset name={voiceStatus === "inputting" ? "mic" : "micOutline"} className="oreo-prompt-action-icon" />}
       onClick={onVoiceToggle}
       className={voiceStatus === "inputting" ? "bg-status-progress-subtle text-[var(--color-status-progress)] ring-4 ring-inset ring-[color-mix(in_srgb,var(--color-status-progress)_6%,transparent)]" : "text-[var(--color-text-primary)]"}
       {...spring}
