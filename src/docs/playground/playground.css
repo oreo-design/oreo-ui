@@ -181,13 +181,8 @@
   gap: calc(var(--spacing) * 5);
   padding: calc(var(--spacing) * 10) 0;
 }
-.pg-frame[data-device="tablet"] {
-  max-width: calc(var(--spacing) * 192);
-}
 .pg-frame[data-device="mobile"] {
   max-width: 375px;
-}
-.pg-frame:not([data-device="desktop"]) {
   border-inline: 0.5px solid var(--color-border-default);
 }
 .pg-preview {

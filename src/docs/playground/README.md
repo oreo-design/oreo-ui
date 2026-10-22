@@ -29,7 +29,7 @@ masks so they inherit semantic icon colors. Hairline separators use
 - Annotation selects parts directly in the preview and measures actual DOM bounds and computed styles in the right sidebar. Button and Prompt Box
   have named anatomy; other components expose their root and arbitrary elements
   through Annotation. Portaled content outside the preview is not measured.
-- Device controls constrain the preview container to desktop, 768px or 375px;
+- Device controls constrain the preview container to Desktop or Mobile (375px);
   they do not emulate an operating system or change browser media queries.
 - Compare offers independent interactive specimens. Apply copies the chosen
   values. Randomize stays inside the current schema; text remains locked by
