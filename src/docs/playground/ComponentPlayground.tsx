@@ -1,6 +1,7 @@
-import { useEffect, useState, useRef, type CSSProperties } from "react";
+import { useEffect, useState, useRef, useId, type CSSProperties } from "react";
 import { Tooltip } from "@base-ui-components/react/tooltip";
 import type { DocsNav } from "@/docs/DocsPage";
+import { ThemeChips } from "./ThemeChips";
 import { VariationPanel } from "./VariationPanel";
 import { useVariation, setTheme } from "./useVariation";
 import { variationTokens } from "./variation";
@@ -59,6 +60,25 @@ export function ComponentPlayground({
   const { theme } = useVariation();
   const moreTools = useRef<HTMLDetailsElement>(null);
   const [variationOpen, setVariationOpen] = useState(false);
+  const themePanelId = useId();
+  const themeTriggerId = useId();
+  const [wideSettings, setWideSettings] = useState(() => window.matchMedia("(min-width: 1200px)").matches);
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 1200px)");
+    const sync = () => setWideSettings(query.matches);
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
+  const closeThemeSettings = () => {
+    setVariationOpen(false);
+    document.getElementById(themeTriggerId)?.focus();
+  };
+  useEffect(() => {
+    if (variationOpen && wideSettings) document.getElementById(themePanelId)?.querySelector<HTMLButtonElement>("button")?.focus();
+  }, [variationOpen, wideSettings, themePanelId]);
+  const themePicker = <ThemeChips open={variationOpen} onToggle={() => setVariationOpen(open => !open)}
+    panelId={themePanelId} triggerId={themeTriggerId} />;
+
   const [initial] = useState(() => {
     const raw = new URLSearchParams(window.location.search).get("config");
     try {
@@ -433,7 +453,6 @@ export function ComponentPlayground({
                 )}
                 </div>
               </details>
-              <Tool className="pg-variation-trigger" icon="palette" label="Variation" onClick={() => setVariationOpen(true)} />
               <Tool
                 className="pg-properties-trigger"
                 icon="sliders"
@@ -497,7 +516,10 @@ export function ComponentPlayground({
           </nav>
         </header>
         <div className="pg-workspace">
-          <aside className="pg-variation" aria-label="Global variation"><VariationPanel /></aside>
+          {wideSettings && variationOpen && <aside id={themePanelId} className="pg-variation" aria-label="Theme settings"
+            onKeyDown={event => { if (event.key === "Escape" && !event.defaultPrevented) { event.preventDefault(); closeThemeSettings(); } }}>
+            <VariationPanel onClose={closeThemeSettings} />
+          </aside>}
           <main aria-label={`${spec.title} playground`} className="pg-main">
             {error && (
               <div className="pg-error" role="alert">
@@ -572,6 +594,7 @@ export function ComponentPlayground({
                   onKeyDownCapture={() => demo.player?.stop()}
                 >
                   <PreviewStage
+                    controls={themePicker}
                     themeStyle={variationTokens(theme) as CSSProperties}
                     slug={nav.active}
                     mode={mode}
@@ -585,6 +608,7 @@ export function ComponentPlayground({
                 </div>
               )}
             </div>
+            {(mode === "code" || mode === "compare") && <div className="pg-theme-footer">{themePicker}</div>}
             {demo.player && demo.status !== "idle" && (
               <p className="pg-demo-status" role="status">
                 {demo.label} · {demo.status}
@@ -613,7 +637,7 @@ export function ComponentPlayground({
           install={install}
           copy={copy}
         />
-        <Modal open={variationOpen} onOpenChange={setVariationOpen} title="Variation" className="pg-mobile-properties">
+        <Modal id={themePanelId} open={variationOpen && !wideSettings} onOpenChange={setVariationOpen} title="Theme settings" className="pg-mobile-properties">
           {variationOpen && <VariationPanel />}
         </Modal>
         <Modal

@@ -311,8 +311,9 @@ Kevin’s [Unlink Documents](https://x.com/kvnkld/status/2111826634902741219) ex
 
 ### Playground variations
 
-The Playground's left **Style** panel owns the document theme; the right panel
-owns component properties. Oreo Default, Claude, OpenAI and ASCII are editable
+The compact theme chips below each Playground demo own the document theme; the
+right panel owns component properties. The adjacent **Theme settings** icon opens
+advanced controls in the left sidebar, which is collapsed by default. Oreo Default, Claude, OpenAI and ASCII are editable
 Oreo style presets (not official vendor implementations). Spacing, corner radius,
 accent and light/dark mode affect the site, including sidebars, templates and body
 portals, through `src/lib/theme`. Reset theme and Reset properties are independent.
@@ -332,7 +333,7 @@ other non-interpolable discrete values switch; they cannot morph through CSS.
 Density affects Oreo's spacing scale and Tailwind spacing-based geometry. Semantic
 error/success colors retain their roles. Nested comparisons and exports explicitly
 reset theme recipes; a consuming app should place tokens on its portal root too.
-On narrower screens, Variation and Properties open keyboard-accessible panels.
+On narrower screens, Theme settings and Properties open keyboard-accessible panels.
 Replay, Inspect, Compare and Share remain under More tools.
 
 

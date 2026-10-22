@@ -806,7 +806,6 @@ body:has(.pg-shell) .site-mobile-nav {
 .pg-breadcrumb { justify-self: start; white-space: nowrap; }
 .pg-breadcrumb > span:nth-child(2), .pg-breadcrumb > span:nth-child(4) { opacity: .2; }
 .pg-variation { width: 328px; flex-shrink: 0; overflow-y: auto; overscroll-behavior: contain; }
-.pg-variation-trigger { display: none; }
 .pg-theme-options { display: grid; gap: var(--space-x2); border: 0; min-width: 0; }
 .pg-theme-option { display: flex; align-items: center; gap: var(--space-x4); padding: var(--space-x4) var(--space-x6); --squircle-radius: var(--radius-control); color: var(--color-text-secondary); cursor: pointer; position: relative; }
 .pg-theme-option:has(:checked) { background-color: var(--color-state-press); color: var(--color-text-primary); }
@@ -830,7 +829,6 @@ body:has(.pg-shell) .site-mobile-nav {
 .pg-main .pg-content { min-height: 0; }
 @media (max-width: 1199px) {
   .pg-variation { display: none; }
-  .pg-variation-trigger { display: inline-flex; }
   .pg-header { gap: var(--space-x4); }
   .pg-brand, .pg-brand-separator { display: none; }
 }
@@ -889,3 +887,13 @@ body:has(.pg-shell) .site-mobile-nav {
 .pg-field textarea { --squircle-radius: var(--radius-control-large); }
 .pg-modal input:not([type="range"], [type="radio"], .oreo-squircle),
 .pg-modal textarea:not(.oreo-squircle) { border-radius: var(--radius-control); }
+
+/* Compact theme choices belong to the demo, outside its inspectable content. */
+.pg-theme-picker { max-width: 100%; }
+.pg-theme-bar { display: flex; align-items: center; justify-content: center; gap: var(--space-x2); flex-wrap: wrap; }
+.pg-theme-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-x2); border: 0; padding: 0; margin: 0; min-width: 0; }
+.pg-theme-chip { gap: var(--space-x2); padding: var(--space-x2) var(--space-x4); min-height: calc(var(--spacing) * 7); border: .5px solid var(--color-border-default); font-size: var(--text-xs); white-space: nowrap; }
+.pg-theme-chip .pg-theme-swatch { width: var(--space-x4); height: var(--space-x4); flex-shrink: 0; }
+.pg-theme-bar > .pg-tool { width: calc(var(--spacing) * 7); height: calc(var(--spacing) * 7); }
+.pg-theme-picker .pg-theme-error { margin-top: var(--space-x4); max-width: calc(var(--spacing) * 80); }
+.pg-theme-footer { padding: var(--space-x4) var(--space-x6); flex-shrink: 0; }
