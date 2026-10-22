@@ -1,12 +1,11 @@
 import { useEffect, useState, useId } from "react";
 import { PropertyControl } from "./PropertyControl";
-import { PlaygroundIcon } from "@/components/icon";
 import { Tool } from "./Tools";
 import { number, select } from "./schema";
 import { useVariation, patchTheme, setTheme } from "./useVariation";
-import { defaultVariation, isCustomized, presetAppearance, themeNames, themePresets, variationTokens } from "./variation";
+import { defaultVariation, isCustomized, presetAppearance, themePresets, variationTokens } from "./variation";
 
-export function VariationPanel() {
+export function VariationPanel({ onClose }: { onClose?: () => void }) {
   const id = useId();
   const { theme, storageError } = useVariation();
   const v = theme.variation ?? defaultVariation;
@@ -19,17 +18,10 @@ export function VariationPanel() {
     else setInvalid(true);
   };
   return <div className="pg-inspector-content pg-variation-content">
-    <div className="pg-row pg-property-heading"><h2>Style</h2><Tool label="Reset theme" icon="reset" onClick={() => setTheme(presetAppearance("oreo", theme.dark))} /></div>
-    <fieldset className="pg-theme-options"><legend className="sr-only">Theme preset</legend>
-      {themeNames.map(name => <label key={name} className="pg-theme-option oreo-squircle oreo-state-layer">
-        <input type="radio" name={`${id}-theme-preset`} value={name} checked={v.preset === name} onChange={() => setTheme(presetAppearance(name, theme.dark))} onClick={() => {
-          // Clicking the still-selected radio must cancel a pending snapshot choice too.
-          if (v.preset === name) setTheme(theme);
-        }} />
-        <span className={`pg-theme-swatch pg-theme-swatch-${name}`} style={name === "ascii" ? undefined : { background: themePresets[name].accent ?? "var(--color-text-primary)" }} aria-hidden="true" />
-        <span>{themePresets[name].label}</span><span className="pg-theme-selection" aria-hidden="true">{v.preset === name ? <PlaygroundIcon name="check" /> : null}</span>
-      </label>)}
-    </fieldset>
+    <div className="pg-row pg-property-heading"><h2>{onClose ? "Theme settings" : "Style"}</h2><div className="pg-toolgroup">
+      <Tool label="Reset theme" icon="reset" onClick={() => setTheme(presetAppearance("oreo", theme.dark))} />
+      {onClose && <Tool label="Close theme settings" icon="x" onClick={onClose} />}
+    </div></div>
     <div className="pg-row pg-fine"><span>Variation</span><span aria-live="polite">{isCustomized(theme) ? "Custom" : themePresets[v.preset].label}</span></div>
     <hr />
     <PropertyControl name="Color mode" control={select(["light", "dark"], "light")} value={theme.dark ? "dark" : "light"} onChange={value => patchTheme({ dark: value === "dark" })} onReselect={() => patchTheme({ dark: theme.dark })} />

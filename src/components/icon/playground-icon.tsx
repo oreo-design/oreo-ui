@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import {
   ArrowLeft, ArrowUpRight, Check, Columns2, Ellipsis, MousePointer2,
-  Palette, Pause, Play, RotateCcw, Save, Share2, SlidersHorizontal, Smartphone, X,
+  Palette, Pause, Play, RotateCcw, Save, Settings, Share2, SlidersHorizontal, Smartphone, X,
 } from "lucide-react";
 import preview from "./assets/figma/preview.svg";
 import annotation from "./assets/figma/annotation.svg";
@@ -26,7 +26,7 @@ const operationIcons = {
   "arrow-left": ArrowLeft, "arrow-out": ArrowUpRight, check: Check,
   "floppy-disk": Save, play: Play, pause: Pause, dots: Ellipsis, palette: Palette,
   mobile: Smartphone, replay: RotateCcw, inspect: MousePointer2, compare: Columns2,
-  share: Share2, sliders: SlidersHorizontal, x: X,
+  share: Share2, settings: Settings, sliders: SlidersHorizontal, x: X,
 } as const;
 export type PlaygroundIconName = keyof typeof FIGMA_ICONS | keyof typeof operationIcons;
 export const PLAYGROUND_ICON_NAMES = [...Object.keys(FIGMA_ICONS), ...Object.keys(operationIcons)] as PlaygroundIconName[];
