@@ -26,9 +26,9 @@ masks so they inherit semantic icon colors. Hairline separators use
 `--color-border-default` at 0.5px.
 
 - Preview, Annotation and Code share the current controlled configuration.
-- Inspect measures actual DOM bounds and computed styles. Button and Prompt Box
+- Annotation selects parts directly in the preview and measures actual DOM bounds and computed styles in the right sidebar. Button and Prompt Box
   have named anatomy; other components expose their root and arbitrary elements
-  through Inspect. Portaled content outside the preview is not measured.
+  through Annotation. Portaled content outside the preview is not measured.
 - Device controls constrain the preview container to desktop, 768px or 375px;
   they do not emulate an operating system or change browser media queries.
 - Compare offers independent interactive specimens. Apply copies the chosen

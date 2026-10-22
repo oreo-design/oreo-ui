@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode, type SyntheticEvent } from "react";
 
 export type Part = { name: string; description: string; selector: string };
 export const partsFor = (slug: string): Part[] =>
@@ -14,12 +14,17 @@ export const partsFor = (slug: string): Part[] =>
           name: "Leading icon",
           description:
             "Optional; inherits the label color and stays the same size.",
-          selector: "button > svg:first-child",
+          selector: "button > :first-child[aria-hidden]",
         },
         {
           name: "Label",
           description: "Describe the next action with a short verb.",
-          selector: "button > span",
+          selector: "button > span:not([aria-hidden])",
+        },
+        {
+          name: "Trailing icon",
+          description: "Optional; follows the label and inherits its color.",
+          selector: "button > :last-child[aria-hidden]",
         },
       ]
     : slug === "prompt-box"
@@ -47,12 +52,12 @@ export const partsFor = (slug: string): Part[] =>
           {
             name: "Container",
             description:
-              "The rendered component. Select a visible element in Inspect to see its computed dimensions and styles.",
+              "The rendered component. Select a visible element in Annotation to see its computed dimensions and styles.",
             selector: ":scope > *",
           },
         ];
 
-type Measurement = {
+export type Measurement = {
   x: number;
   y: number;
   width: number;
@@ -76,21 +81,23 @@ export function PreviewStage({
   selected,
   onSelect,
   revision,
+  onMeasure,
 }: {
   children: ReactNode;
   themeStyle?: CSSProperties;
   slug: string;
-  mode: "preview" | "annotation" | "inspect";
+  mode: "preview" | "annotation";
   viewport: string;
   selected: number;
-  onSelect: (index: number) => void;
+  onSelect: (index: number, part?: Part) => void;
+  onMeasure: (measurement: Measurement | null) => void;
   revision: number;
 }) {
   const frame = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
   const target = useRef<Element | null>(null);
   const [measurement, setMeasurement] = useState<Measurement | null>(null);
-  const [locked, setLocked] = useState(false);
+  const selectElement = useRef<(element: Element) => void>(() => {});
   const [markers, setMarkers] = useState<
     { x: number; y: number; index: number }[]
   >([]);
@@ -100,19 +107,32 @@ export function PreviewStage({
       root = content.current;
     if (!host || !root || mode === "preview") {
       setMeasurement(null);
+      onMeasure(null);
       return;
     }
-    target.current = null;
+    if (selected >= 0) target.current = null;
     const measure = () => {
       const hostRect = host.getBoundingClientRect();
       const element =
-        mode === "annotation"
+        selected >= 0
           ? root.querySelector(parts[selected]?.selector ?? parts[0].selector)
           : target.current && root.contains(target.current)
             ? target.current
-            : root.firstElementChild;
-      if (!element) {
+            : null;
+      const visible = (el: Element) => {
+        const rect = el.getBoundingClientRect();
+        return rect.width > 0 && rect.height > 0 && getComputedStyle(el).visibility !== "hidden";
+      };
+      setMarkers(parts.flatMap((part, index) => {
+        const el = root.querySelector(part.selector);
+        if (!el || !visible(el)) return [];
+        const r = el.getBoundingClientRect();
+        return [{ index, x: r.x - hostRect.x + host.scrollLeft,
+          y: r.y - hostRect.y + host.scrollTop + (index ? r.height + 8 : -12) }];
+      }));
+      if (!element || !visible(element)) {
         setMeasurement(null);
+        onMeasure(null);
         return;
       }
       const rect = element.getBoundingClientRect(),
@@ -145,7 +165,7 @@ export function PreviewStage({
         "status-error",
       ]);
       probe.remove();
-      setMeasurement({
+      const next: Measurement = {
         x: rect.x - hostRect.x + host.scrollLeft,
         y: rect.y - hostRect.y + host.scrollTop,
         width: rect.width,
@@ -159,38 +179,40 @@ export function PreviewStage({
         colorToken,
         font: `${style.fontSize} / ${style.lineHeight}`,
         tag: element.tagName.toLowerCase(),
-      });
-      setMarkers(
-        parts.flatMap((part, index) => {
-          const el = root.querySelector(part.selector);
-          if (!el) return [];
-          const r = el.getBoundingClientRect();
-          return [
-            {
-              index,
-              x: r.x - hostRect.x + host.scrollLeft,
-              y:
-                r.y -
-                hostRect.y +
-                host.scrollTop +
-                (index ? r.height + 8 : -12),
-            },
-          ];
-        }),
-      );
+      };
+      setMeasurement(next);
+      onMeasure(next);
     };
-    const click = (event: MouseEvent) => {
-      if (mode !== "inspect" || !(event.target instanceof Element)) return;
-      event.preventDefault();
-      event.stopPropagation();
-      target.current = event.target;
+    selectElement.current = (clicked) => {
+      // Prefer the deepest named part; a container must not swallow its label/icon.
+      let element: Element | null = clicked;
+      while (element && element !== root) {
+        const index = parts.findIndex(part => root.querySelector(part.selector) === element);
+        if (index >= 0 && (index > 0 || element === clicked)) {
+          target.current = null;
+          onSelect(index);
+          return;
+        }
+        element = element.parentElement;
+      }
+      const picked = clicked.closest("svg") ?? clicked;
+      target.current = picked;
+      onSelect(-1, {
+        name: picked.getAttribute("aria-label") || picked.tagName.toLowerCase(),
+        description: "Selected element. Dimensions and styles are measured from the rendered component.",
+        selector: "",
+      });
       measure();
     };
-    root.addEventListener("click", click, true);
     const resize = new ResizeObserver(measure);
     resize.observe(host);
     resize.observe(root);
-    const mutations = new MutationObserver(measure);
+    // Coalesce DOM changes; measuring must not form a render/mutation microtask loop.
+    let pending = 0;
+    const mutations = new MutationObserver(() => {
+      cancelAnimationFrame(pending);
+      pending = requestAnimationFrame(measure);
+    });
     mutations.observe(root, {
       childList: true,
       subtree: true,
@@ -202,26 +224,43 @@ export function PreviewStage({
     return () => {
       resize.disconnect();
       mutations.disconnect();
-      root.removeEventListener("click", click, true);
+      cancelAnimationFrame(pending);
+      selectElement.current = () => {};
       window.removeEventListener("resize", measure);
     };
-  }, [mode, selected, slug, viewport, revision]);
+  }, [mode, selected, slug, viewport, revision, onSelect, onMeasure]);
+
+  const select = (event: SyntheticEvent) => {
+    if (mode !== "annotation" || !(event.target instanceof Element)) return;
+    event.preventDefault();
+    event.stopPropagation();
+    selectElement.current(event.target);
+  };
+  const suppress = (event: SyntheticEvent) => {
+    if (mode !== "annotation") return;
+    event.preventDefault();
+    event.stopPropagation();
+  };
 
   return (
     <div className={`pg-stage pg-stage-${mode}`}>
       <div ref={frame} className="pg-frame" data-device={viewport}>
-        {mode === "inspect" && (
-          <div className="pg-ruler" aria-hidden="true">
-            {Array.from({ length: 10 }, (_, i) => (
-              <span key={i} style={{ left: i * 100 }}>
-                {i * 100}
-              </span>
-            ))}
-          </div>
-        )}
         <div
           ref={content}
-          inert={mode === "annotation"}
+          onPointerDownCapture={select}
+          onClickCapture={select}
+          onDoubleClickCapture={suppress}
+          onFocusCapture={event => { if (mode === "annotation") event.stopPropagation(); }}
+          onKeyDownCapture={event => {
+            if (event.key === "Tab" || event.key === "Escape") return;
+            if (event.key === "Enter" || event.key === " ") select(event);
+            else suppress(event);
+          }}
+          onKeyUpCapture={suppress}
+          onBeforeInputCapture={suppress}
+          onPasteCapture={suppress}
+          onDropCapture={suppress}
+          onSubmitCapture={suppress}
           className="pg-preview" style={themeStyle}
           key={revision}
         >
@@ -241,14 +280,7 @@ export function PreviewStage({
               height: measurement.height,
             }}
             aria-hidden="true"
-          >
-            {mode === "inspect" && (
-              <span>
-                {Math.round(measurement.width)} ×{" "}
-                {Math.round(measurement.height)}
-              </span>
-            )}
-          </div>
+          />
         )}
         {mode === "annotation" &&
           markers.map((marker) => (
@@ -258,7 +290,6 @@ export function PreviewStage({
               style={{ left: marker.x, top: marker.y }}
               onClick={() => {
                 onSelect(marker.index);
-                setLocked(true);
               }}
               aria-label={`Select ${parts[marker.index].name}`}
               aria-pressed={selected === marker.index}
@@ -274,16 +305,7 @@ export function PreviewStage({
               key={part.name}
               className="pg-card oreo-squircle oreo-state-layer"
               aria-pressed={selected === index}
-              onMouseEnter={() => {
-                if (!locked) onSelect(index);
-              }}
-              onFocus={() => {
-                if (!locked) onSelect(index);
-              }}
-              onClick={() => {
-                onSelect(index);
-                setLocked(true);
-              }}
+              onClick={() => onSelect(index)}
             >
               <strong>
                 {String(index + 1).padStart(2, "0")} · {part.name}
@@ -296,32 +318,7 @@ export function PreviewStage({
           ))}
         </div>
       )}
-      {mode === "inspect" && (
-        <>
-          <div className="pg-inspect-details">
-            <section className="pg-card oreo-squircle">
-              <strong>{measurement?.tag ?? "Select an element"}</strong>
-              <p>
-                Height {Math.round(measurement?.height ?? 0)} · Radius{" "}
-                {measurement?.radius}
-                <br />
-                Padding {measurement?.padding} · Gap {measurement?.gap}
-              </p>
-            </section>
-            <section className="pg-card oreo-squircle">
-              <strong>Semantic styles</strong>
-              <p>
-                {measurement?.backgroundToken} / {measurement?.colorToken}
-                <br />
-                Text {measurement?.font} · Values from the rendered component.
-              </p>
-            </section>
-          </div>
-          <p className="pg-hint">
-            Select an element to see its bounds. Escape returns to Preview.
-          </p>
-        </>
-      )}
+
     </div>
   );
 }
