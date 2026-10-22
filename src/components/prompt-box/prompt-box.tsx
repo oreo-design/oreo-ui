@@ -1,5 +1,5 @@
 import { ComposerAsset } from "@/components/composer/assets";
-import { StopGlyph } from "@/components/icon";
+import { Icon, StopGlyph } from "@/components/icon";
 import * as React from "react";
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
@@ -10,6 +10,8 @@ import { Shortcut } from "@/components/shortcut";
 import { ShimmerText } from "@/components/activity-label";
 import { Menu, MenuTrigger, MenuPopup } from "@/components/menu";
 import { promptBox } from "./prompt-box.variants";
+
+import { PromptBoxPermission, PromptBoxConnectApps, type PromptBoxPermissionProps, type PromptBoxConnectAppsProps } from "./prompt-box.controls";
 
 const slots = promptBox();
 
@@ -128,6 +130,12 @@ export type PromptBoxProps = {
   /** Keep a structured/generated prompt selectable without allowing text edits. */
   readOnly?: boolean;
   onAttach?: () => void;
+  /** Attachment button or quiet plus entry. Custom attachControl takes priority. */
+  entryStyle?: "attachment" | "add";
+  showMention?: boolean;
+  permission?: PromptBoxPermissionProps;
+  /** Used when footer is undefined; footer={null} explicitly hides it. */
+  connectApps?: PromptBoxConnectAppsProps;
   /** Custom controls preserve the action slots while adding anchored menus. */
   attachControl?: React.ReactNode;
   mentionControl?: React.ReactNode;
@@ -171,6 +179,10 @@ export function PromptBox({
   submitDisabled = false,
   readOnly = false,
   onAttach,
+  entryStyle = "attachment",
+  showMention = true,
+  permission,
+  connectApps,
   attachControl,
   mentionControl,
   onPromptKeyDown,
@@ -280,11 +292,11 @@ export function PromptBox({
 
   const attachButton = (
     <IconButton
-      aria-label="Add attachment"
-      type="secondary"
-      icon={<ComposerAsset name="attach" />}
+      aria-label={entryStyle === "add" ? "Add" : "Add attachment"}
+      type={entryStyle === "add" ? "tertiary" : "secondary"}
+      icon={entryStyle === "add" ? <Icon name="plus" /> : <ComposerAsset name="attach" />}
       onClick={onAttach}
-      className={hairline}
+      className={entryStyle === "add" ? undefined : hairline}
       {...spring}
     />
   );
@@ -429,8 +441,13 @@ export function PromptBox({
           </AnimatePresence>
         </div>
       </div>
-      <div className={cn(slots.actions(), "gap-[var(--space-x4)]")}>
-        <div className={slots.actionCluster()}>{attachControl ?? attachButton}{mentionControl ?? mentionButton}</div>
+      <div className={cn(slots.actions(), "oreo-prompt-actions gap-[var(--space-x4)]")}>
+        <div className={cn(slots.actionCluster(), "oreo-prompt-leading")} >
+          {attachControl ?? attachButton}
+          {showMention && (mentionControl ?? mentionButton)}
+          {permission && <PromptBoxPermission {...permission} />}
+        </div>
+        <div className="oreo-prompt-trailing">
         <motion.div layout={reduce ? false : "position"} transition={promptTransition}
           className="ml-auto">
           {modelSelect}
@@ -442,16 +459,19 @@ export function PromptBox({
           {voice === "wave" && <PromptSwap state={`voice-${voiceStatus}`}>{voicePrimary}</PromptSwap>}
           <PromptSwap state={running ? "running" : "send"}>{running ? stopButton : sendButton}</PromptSwap>
         </motion.div>
+        </div>
       </div>
     </div>
   );
+
+  const resolvedFooter = footer !== undefined ? footer : connectApps ? <PromptBoxConnectApps {...connectApps} /> : undefined;
 
   return (
     <LayoutGroup id={layoutId}>
       <div className={cn(slots.stack(), className)} {...rest}>
         <PromptReveal edge="header">{header != null && <div className={cn("transition-[padding] duration-200 ease-[var(--ease-out)] motion-reduce:transition-none", inset && "px-[var(--space-x6)]")}>{header}</div>}</PromptReveal>
         {card}
-        <PromptReveal edge="footer">{footer != null && <div className={cn("transition-[padding] duration-200 ease-[var(--ease-out)] motion-reduce:transition-none", inset && "px-[var(--space-x6)]")}>{footer}</div>}</PromptReveal>
+        <PromptReveal edge="footer">{resolvedFooter != null && <div className={cn("transition-[padding] duration-200 ease-[var(--ease-out)] motion-reduce:transition-none", inset && "px-[var(--space-x6)]")}>{resolvedFooter}</div>}</PromptReveal>
       </div>
     </LayoutGroup>
   );

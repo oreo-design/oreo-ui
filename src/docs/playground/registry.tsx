@@ -1,6 +1,6 @@
 import { CodeFocus, SheetTimeline, SHEET_CODE } from "@/components/motion-code";
 import { SpectralGlass } from "@/components/spectral-glass";
-import { PlaygroundIcon, Icon } from "@/components/icon";
+import { PlaygroundIcon, Icon, AppBrand } from "@/components/icon";
 import { AuroraAccordion, AuroraSurface, AURORA_QUESTIONS } from "@/components/aurora-accordion";
 import { OutlineWordmark, PathGlyph, FooterLinkGroups, OREO_WORDMARK, STUDIO_WORDMARK, FOOTER_LINK_GROUPS } from "@/components/outline-wordmark";
 import { BreakoutNavigator, DestinationProgress, RecoveryMessage, BREAKOUT_DESTINATIONS } from "@/components/breakout-navigation";
@@ -301,7 +301,7 @@ export const componentModules = {
   "skill-card": { SkillCard, SkillProviderBadge },
   "feature-cards": { InvoicePreview, UsageSummary },
   "status-icon": { StatusIcon },
-  button: { Button, IconButton }, icon: { Icon, PlaygroundIcon }, chip: { Chip }, tag: { Tag }, shortcut: { Shortcut }, avatar: { Avatar },
+  button: { Button, IconButton }, icon: { Icon, PlaygroundIcon, AppBrand }, chip: { Chip }, tag: { Tag }, shortcut: { Shortcut }, avatar: { Avatar },
   attachment: { Attachment, AttachmentBar }, "prompt-box": { PromptBox, PromptBoxModelSelect, PromptBoxDictation }, "keyword-tag": { KeywordTag },
   "context-bar": { ContextBar, ContextBarLabel }, "tool-call": { ToolCall, ToolCallRow }, reasoning: { Reasoning }, plan: { Plan, PlanStep },
   sources: { Sources, Source }, confirmation: { Confirmation }, "web-search": { WebSearch, WebSearchResult, WebSearchAnswer, WebSearchCitation, WebSearchSourceCard, WebSearchSourceStack }, "code-diff": { CodeDiff },
@@ -643,14 +643,25 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     placeholder: { ...text("Start by typing…"), group: "Prompt Box" },
     running: { ...toggle(), group: "Prompt Box" },
     attachments: { ...toggle(), label: "Show attachments", group: "Prompt Box" },
-    footer: { ...toggle(true), label: "Show context bar", group: "Prompt Box" },
+    footer: { ...toggle(true), label: "Show footer", group: "Prompt Box" },
+    entryStyle: { ...select(["attachment", "add"], "add"), label: "Entry style", group: "Toolbar" },
+    showMention: { ...toggle(false), label: "Show mention", group: "Toolbar" },
+    permission: { ...select(["hidden", "approval", "unrestricted"], "unrestricted"), label: "Permission", group: "Toolbar" },
+    footerStyle: { ...select(["workspace", "apps"], "apps"), label: "Footer style", group: "Connect apps" },
+    appsLabel: { ...text("Connect apps"), label: "Label", group: "Connect apps" },
+    gmail: { ...toggle(true), label: "Gmail", group: "Connect apps" },
+    slack: { ...toggle(true), label: "Slack", group: "Connect apps" },
+    clickup: { ...toggle(true), label: "ClickUp", group: "Connect apps" },
+    gmailConnected: { ...toggle(false), label: "Gmail connected (demo)", group: "Connect apps" },
+    slackConnected: { ...toggle(false), label: "Slack connected (demo)", group: "Connect apps" },
+    clickupConnected: { ...toggle(false), label: "ClickUp connected (demo)", group: "Connect apps" },
     inset: { ...toggle(), group: "Prompt Box" },
     keywords: { ...toggle(), label: "Show keywords", group: "Keyword Tag" },
     keyword: { ...text("Design system"), label: "Label", group: "Keyword Tag" },
     keywordColor: { ...select(["surface", "mint", "pink", "blue", "purple", "orange"], "purple"), label: "Color", group: "Keyword Tag" },
     voice: { ...select(["none", "mic", "wave"], "mic"), label: "Type", group: "Voice" },
     voiceStatus: { ...select(["idle", "inputting", "thinking"], "idle"), label: "Status", group: "Voice" },
-    model: { ...select(["Claude", "ChatGPT", "Gemini"], "Claude"), label: "Model", group: "Model select" },
+    model: { ...select(["Claude", "ChatGPT", "Gemini"], "ChatGPT"), label: "Model", group: "Model select" },
     ...spring,
   }, (v, set) => v.dictation ? <PromptBoxDictation
     draft={{ text: v.value, actions: [
@@ -665,6 +676,17 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     status={v.dictationStatus} transcript={v.dictationTranscript}
     onStart={() => set("dictationStatus", "listening")} onFinish={() => set("dictationStatus", "ready")}
     onCancel={() => set("dictationStatus", "idle")} onRetry={() => set("dictationStatus", "listening")}
+    entryStyle={v.entryStyle} showMention={v.showMention}
+    permission={v.permission === "hidden" ? undefined : { value: v.permission, options: [
+      { value: "approval", label: "Ask for approval" },
+      { value: "unrestricted", label: "Unrestricted access", tone: "warning" },
+    ], onValueChange: value => set("permission", value as typeof v.permission) }}
+    connectApps={v.footer && v.footerStyle === "apps" ? {
+      label: v.appsLabel,
+      apps: (["gmail", "slack", "clickup"] as const).filter(id => v[id]).map(id => ({ id, label: { gmail: "Gmail", slack: "Slack", clickup: "ClickUp" }[id], icon: <AppBrand name={id} />, connected: v[`${id}Connected`] })),
+      onAppClick: app => { const key = `${app.id}Connected` as "gmailConnected" | "slackConnected" | "clickupConnected"; set(key, !v[key]); },
+    } : undefined}
+    footer={v.footer && v.footerStyle === "workspace" ? <ContextBar position="footer"><ContextBarLabel muted>Connected to your workspace</ContextBarLabel></ContextBar> : undefined}
     onSubmit={() => set("running", true)} running={v.running} onStop={() => set("running", false)}
     modelSelect={<PromptBoxModelSelect icon={promptModelIcons[v.model]} label={v.model} />} inset={v.inset}
     bounce={v.bounce} duration={v.duration} tapScale={v.tapScale}
@@ -675,7 +697,17 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     tags={v.keywords ? <KeywordTag color={v.keywordColor} icon={<Icon name="sparkle" />} onRemove={() => set("keywords", false)}>{v.keyword}</KeywordTag> : undefined}
     voice={v.voice === "none" ? undefined : v.voice} voiceStatus={v.voiceStatus} onVoiceToggle={() => set("voiceStatus", v.voiceStatus === "idle" ? "inputting" : "idle")}
     modelSelect={<PromptBoxModelSelect icon={promptModelIcons[v.model]} label={v.model} menu={<>{["Claude", "ChatGPT", "Gemini"].map(model => <MenuItem key={model} selected={model === v.model} onClick={() => set("model", model as typeof v.model)}>{model}</MenuItem>)}</>} />}
-    footer={v.footer ? <ContextBar position="footer"><ContextBarLabel muted>Connected to your workspace</ContextBarLabel></ContextBar> : undefined}
+    entryStyle={v.entryStyle} showMention={v.showMention}
+    permission={v.permission === "hidden" ? undefined : { value: v.permission, options: [
+      { value: "approval", label: "Ask for approval" },
+      { value: "unrestricted", label: "Unrestricted access", tone: "warning" },
+    ], onValueChange: value => set("permission", value as typeof v.permission) }}
+    connectApps={v.footer && v.footerStyle === "apps" ? {
+      label: v.appsLabel,
+      apps: (["gmail", "slack", "clickup"] as const).filter(id => v[id]).map(id => ({ id, label: { gmail: "Gmail", slack: "Slack", clickup: "ClickUp" }[id], icon: <AppBrand name={id} />, connected: v[`${id}Connected`] })),
+      onAppClick: app => { const key = `${app.id}Connected` as "gmailConnected" | "slackConnected" | "clickupConnected"; set(key, !v[key]); },
+    } : undefined}
+    footer={v.footer && v.footerStyle === "workspace" ? <ContextBar position="footer"><ContextBarLabel muted>Connected to your workspace</ContextBarLabel></ContextBar> : undefined}
     inset={v.inset} bounce={v.bounce} duration={v.duration} tapScale={v.tapScale}
   />),
   attachment: define("Attachment", { label: text("Design brief.pdf"), type: select(["image", "video", "doc", "text", "code", "json", "music", "unknown", "link", "pdf"], "pdf"), size: select(["md", "sm"], "md"), loading: toggle() }, v => <Attachment {...v} src={v.type === "image" || v.type === "video" ? new URL("../../components/icon/assets/brands/figma-color.svg", import.meta.url).href : undefined} />),

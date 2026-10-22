@@ -20,10 +20,16 @@ export function playgroundCode(element: ReactNode): string {
       imports.set(entry.path, names);
     }
     const indent = "  ".repeat(depth);
+    function propExpression(value: unknown): string {
+      if (isValidElement(value)) return serialize(value, depth + 1).trim();
+      if (Array.isArray(value)) return `[${value.map(propExpression).join(", ")}]`;
+      if (value && typeof value === "object") return `{ ${Object.entries(value).filter(([, item]) => typeof item !== "function").map(([key, item]) => `${JSON.stringify(key)}: ${propExpression(item)}`).join(", ")} }`;
+      return JSON.stringify(value) ?? "undefined";
+    }
     const props = Object.entries(node.props).filter(([key, value]) => key !== "children" && value != null && typeof value !== "function").map(([key, value]) => {
       const name = key === "layout" && tag === "OrbitGallery" ? "defaultLayout" : key === "value" && (tag === "PromptBox" || tag === "InlineQuickMenu" || tag === "WordRoller") ? "defaultValue" : key === "open" ? "defaultOpen" : key === "expanded" && tag === "WebSearch" ? "defaultExpanded" : key;
       if (isValidElement(value)) return `${name}={${serialize(value, depth + 1).trim()}}`;
-      return value === true ? name : `${name}={${JSON.stringify(value)}}`;
+      return value === true ? name : `${name}={${propExpression(value)}}`;
     });
     // Required destructive handlers must never export a successful no-op.
     if (tag === "InlineConfirm") props.push('onConfirm={async () => { throw new Error("Connect your action before using InlineConfirm"); }}');
