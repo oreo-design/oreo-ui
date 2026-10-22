@@ -258,6 +258,7 @@ export const NAV: Group[] = [
       {label:"Test Results",page:"test-results"},{label:"Test Run Summary",page:"test-run-summary"},{label:"Test Result Filters",page:"test-result-filters"},{label:"Test File Group",page:"test-file-group"},{label:"Test Failure Detail",page:"test-failure-detail"},{label:"Test Stack Trace",page:"test-stack-trace"},
       {label:"Branch History",page:"branch-history"},{label:"Merge Status Badge",page:"merge-status-badge"},{label:"Merge Checks",page:"merge-checks"},{label:"Change Summary",page:"change-summary"},{label:"Pull Request Card",page:"pull-request-card"},
       { label: "Automation", page: "automation-components" },
+      { label: "Composer", page: "composer" },
       { label: "Prompt Box", page: "prompt-box" },
       { label: "Keyword Tag", page: "keyword-tag" },
       { label: "Context Bar", page: "context-bar" },

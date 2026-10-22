@@ -5,6 +5,8 @@
 
 ## 从这里找
 
+- [Composer：Figma token 与组件对齐](records/2026-10-22-composer-figma.md)：六组设计、可复用组件及完整模板；链接唯一任务 review。
+
 - [Emil：代码聚焦扫描与联动预览](records/2026-10-21-emil-motion-code.md)
 - [Szymon：光学玻璃材质与浏览器渲染](records/2026-10-21-spectral-glass.md)：几何、透射、布光、色散与表面细节；含实时材质台。
 

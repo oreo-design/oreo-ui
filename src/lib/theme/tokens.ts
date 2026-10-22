@@ -52,8 +52,9 @@ export function variationTokens(a: ThemeAppearance): Record<string, string> {
   const v = a.variation ?? defaultVariation;
   const tokens: Record<string, string> = {
     // Explicit role tokens also reset correctly in nested comparison/export scopes.
-    "--font-sans": '"Inter Variable", Inter, system-ui, sans-serif',
-    "--font-mono": '"Geist Mono Variable", ui-monospace, monospace',
+    "--font-sans": v.preset === "oreo" ? '"Mona Sans Variable", system-ui, sans-serif' : '"Inter Variable", Inter, system-ui, sans-serif',
+    "--font-legacy": '"Inter Variable", Inter, system-ui, sans-serif',
+    "--font-mono": v.preset === "oreo" ? '"Fragment Mono", ui-monospace, monospace' : '"Geist Mono Variable", ui-monospace, monospace',
     "--font-shell": v.preset === "ascii" ? '"Inter Variable", Inter, sans-serif' : '"Mona Sans Variable", sans-serif',
     "--font-display": v.preset === "ascii" ? '"Source Serif 4 Variable", Georgia, serif' : "initial",
     "--font-input": v.preset === "ascii" ? '"Geist Mono Variable", ui-monospace, monospace' : 'initial',
@@ -87,15 +88,16 @@ export function variationTokens(a: ThemeAppearance): Record<string, string> {
     "--radius-control-large": `${a.radius * 1.25}px`,
     "--radius-card-small": `${a.radius * 1.5}px`,
     "--radius-card-medium": `${a.radius * 2}px`,
-    "--radius-card-large": `${a.radius * 3}px`,
+    "--radius-card-large": `${a.radius * 2.5}px`,
+    "--radius-container": `${a.radius * 3}px`,
     "--spacing": `${4 * v.density}px`,
   };
   // Tailwind aliases are declared explicitly at the theme boundary: a custom
   // property alias inherited from :root is already resolved there and would
   // otherwise ignore a nested provider's component-radius override.
-  for (const [name, ratio] of Object.entries({ xs: .25, sm: .5, md: .75, lg: 1, xl: 1.5, "2xl": 2, "3xl": 3, "4xl": 4 }))
+  for (const [name, ratio] of Object.entries({ xs: .25, sm: .5, md: .75, lg: 1, xl: 1.5, "2xl": 2, "3xl": 2.5, "4xl": 4 }))
     tokens[`--radius-${name}`] = `${a.radius * ratio}px`;
-  for (const n of [1, 2, 3, 4, 6, 8]) tokens[`--space-x${n}`] = `${n * 2 * v.density}px`;
+  for (const n of [1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 18, 24, 32, 48, 64]) tokens[`--space-x${n}`] = `${n * 2 * v.density}px`;
   // Existing Claude remix palette, with an explicit dark counterpart. OpenAI uses
   // Oreo's neutral palette and rounded geometry. ASCII follows Figma 330:10660.
   if (v.preset === "claude") Object.assign(tokens, a.dark ? {

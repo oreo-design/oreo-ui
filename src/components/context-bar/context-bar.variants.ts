@@ -11,9 +11,9 @@ import { tv } from "@/lib/tv";
 export const contextBar = tv({
   slots: {
     bar: [
-      "flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x4)]",
+      "oreo-context-bar flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x4)]",
       "bg-[var(--color-bg-elevated)] shadow-[var(--shadow-default)]",
-      "border-[0.5px] border-[var(--color-border-subtle)]",
+      "ring-[0.5px] ring-inset ring-[var(--color-border-subtle)]",
     ],
     row: "flex w-full items-center gap-3",
     content: "flex min-w-0 flex-1 items-center gap-1",
@@ -42,7 +42,7 @@ export const contextBar = tv({
       waiting: { leadingIcon: "text-[var(--color-text-waiting)]" },
       done: {
         leadingIcon: "text-[var(--color-text-disabled)]",
-        label: "text-[var(--color-text-disabled)] line-through decoration-from-font",
+        label: "text-[var(--color-text-disabled)] line-through decoration-[1px]",
       },
       queue: { leadingIcon: "text-[var(--color-text-primary)]" },
     },
