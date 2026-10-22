@@ -31,3 +31,7 @@ Validation and original Figma exports, matching public-before/local-after screen
 Rebased on PR #136 without reverting its new entry, permission or connected-app controls. The toolbar plus reuses the original keyword plus at the 20px action size; its permission picker uses the same original 16px selected check. Gmail/Slack/ClickUp are preserved upstream identity assets; no matching nodes exist on the supplied Composer page, so their source fidelity is explicitly outside the Figma comparison claim.
 
 Final export handling preserves full SVG render bounds around the 20px file / 14px video logical frames; source offsets are artwork geometry, not new spacing tokens. The slash uses a fixed 20px keycap with a 14px original glyph.
+
+### Prompt and Context surface stroke correction
+
+The theme recipe's `box-shadow` replaced PromptBox's inset ring; connected-app styling likewise removed ContextBar's ring when disabling elevation. The Figma source still specifies inside 0.5px strokes: border-default (12% black) for the prompt and border-subtle (9% black) for context. Render these strokes on a pointer-transparent pseudo-element that inherits both radius and corner shape, independently of the existing elevation. This also preserves the outline in the intentionally shadowless ASCII theme. PR #138 spacing and controls are retained. Matching baseline/result evidence and live readback remain in the existing REVIEW under `border-fix/`.

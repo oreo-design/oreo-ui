@@ -11,9 +11,10 @@ import { tv } from "@/lib/tv";
 export const contextBar = tv({
   slots: {
     bar: [
-      "oreo-context-bar flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x4)]",
+      "oreo-context-bar relative flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x4)]",
       "bg-[var(--color-bg-elevated)] shadow-[var(--shadow-default)]",
-      "ring-[0.5px] ring-inset ring-[var(--color-border-subtle)]",
+      // Shadowless consumers (connected apps) still retain the Figma outline.
+      "after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:[corner-shape:inherit] after:ring-[0.5px] after:ring-inset after:ring-[var(--color-border-subtle)]",
     ],
     row: "flex w-full items-center gap-3",
     content: "flex min-w-0 flex-1 items-center gap-[var(--space-x3)]",

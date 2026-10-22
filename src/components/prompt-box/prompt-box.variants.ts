@@ -16,7 +16,9 @@ export const promptBox = tv({
     footerSlot: "z-[1] -mt-4 w-full",
     card: [
       "oreo-composer oreo-squircle [--squircle-radius:var(--radius-card-medium)] z-[2] flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x8)]",
-      "rounded-[var(--radius-card-medium)] bg-[var(--color-bg-base)] px-[var(--space-x8)] pt-[var(--space-x10)] pb-[var(--space-x7)] [border-width:0] ring-[0.5px] ring-inset ring-[var(--color-border-default)]",
+      "rounded-[var(--radius-card-medium)] bg-[var(--color-bg-base)] px-[var(--space-x8)] pt-[var(--space-x10)] pb-[var(--space-x7)] [border-width:0]",
+      // Keep the inside stroke independent of theme-owned elevation shadows.
+      "after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:[corner-shape:inherit] after:ring-[0.5px] after:ring-inset after:ring-[var(--color-border-default)]",
       "shadow-[var(--shadow-default)]",
     ],
     content: "flex w-full flex-col items-start gap-[var(--space-x4)]",
