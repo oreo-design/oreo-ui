@@ -174,6 +174,9 @@ import { Shortcut } from "@/components/shortcut";
 import { Avatar } from "@/components/avatar";
 import { Attachment, AttachmentBar } from "@/components/attachment";
 import { PromptBox, PromptBoxModelSelect, PromptBoxDictation } from "@/components/prompt-box";
+import claudeModelLogo from "@/components/composer/assets/dc1a3.svg";
+import openaiModelLogo from "@/components/icon/assets/brands/openai.svg";
+import geminiModelLogo from "@/components/icon/assets/brands/gemini-color.svg";
 import { KeywordTag } from "@/components/keyword-tag";
 import { ContextBar, ContextBarLabel } from "@/components/context-bar";
 import { ToolCall, ToolCallRow } from "@/components/tool-call";
@@ -312,6 +315,11 @@ const emphasis = select(["primary", "secondary", "tertiary"], "primary");
 const color = select(PALETTE, "default");
 const spring = { bounce: { ...number(.4, 0, 1, .05), group: "Press spring" }, duration: { ...number(.3, .1, 1, .05), group: "Press spring" }, tapScale: { ...number(.96, .8, 1, .01), group: "Press spring" } };
 const promptText = "Help me design a thoughtful workspace.";
+const promptModelIcons = {
+  Claude: <img src={claudeModelLogo} alt="" />,
+  ChatGPT: <img src={openaiModelLogo} alt="" className="[.theme-dark_&]:invert" />,
+  Gemini: <img src={geminiModelLogo} alt="" />,
+};
 
 function parseFilters(raw: string): FilterValues { try { const value = JSON.parse(raw); return value && typeof value === "object" && !Array.isArray(value) ? Object.fromEntries(Object.entries(value).filter((entry): entry is [string, string[]] => Array.isArray(entry[1]) && entry[1].every(v => typeof v === "string"))) : {}; } catch { return {}; } }
 function linkedDocumentPlayground(selector = false): PlaygroundSpec {
@@ -658,7 +666,7 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     onStart={() => set("dictationStatus", "listening")} onFinish={() => set("dictationStatus", "ready")}
     onCancel={() => set("dictationStatus", "idle")} onRetry={() => set("dictationStatus", "listening")}
     onSubmit={() => set("running", true)} running={v.running} onStop={() => set("running", false)}
-    modelSelect={<PromptBoxModelSelect label={v.model} />} inset={v.inset}
+    modelSelect={<PromptBoxModelSelect icon={promptModelIcons[v.model]} label={v.model} />} inset={v.inset}
     bounce={v.bounce} duration={v.duration} tapScale={v.tapScale}
   /> : <PromptBox
     value={v.value} onValueChange={value => set("value", value)} placeholder={v.placeholder} running={v.running}
@@ -666,7 +674,7 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     attachments={v.attachments ? <AttachmentBar><Attachment type="pdf" label="Design brief.pdf" onRemove={() => set("attachments", false)} /></AttachmentBar> : undefined}
     tags={v.keywords ? <KeywordTag color={v.keywordColor} icon={<Icon name="sparkle" />} onRemove={() => set("keywords", false)}>{v.keyword}</KeywordTag> : undefined}
     voice={v.voice === "none" ? undefined : v.voice} voiceStatus={v.voiceStatus} onVoiceToggle={() => set("voiceStatus", v.voiceStatus === "idle" ? "inputting" : "idle")}
-    modelSelect={<PromptBoxModelSelect label={v.model} menu={<>{["Claude", "ChatGPT", "Gemini"].map(model => <MenuItem key={model} selected={model === v.model} onClick={() => set("model", model as typeof v.model)}>{model}</MenuItem>)}</>} />}
+    modelSelect={<PromptBoxModelSelect icon={promptModelIcons[v.model]} label={v.model} menu={<>{["Claude", "ChatGPT", "Gemini"].map(model => <MenuItem key={model} selected={model === v.model} onClick={() => set("model", model as typeof v.model)}>{model}</MenuItem>)}</>} />}
     footer={v.footer ? <ContextBar position="footer"><ContextBarLabel muted>Connected to your workspace</ContextBarLabel></ContextBar> : undefined}
     inset={v.inset} bounce={v.bounce} duration={v.duration} tapScale={v.tapScale}
   />),
