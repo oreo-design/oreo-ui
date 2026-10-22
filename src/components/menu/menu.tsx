@@ -186,16 +186,18 @@ export function MenuSubmenu(props: MenuSubmenuProps) {
 
 export type MenuSubmenuTriggerProps = {
   icon?: React.ReactNode;
+  /** Optional source-specific chevron; the shared icon remains the default. */
+  trailingIcon?: React.ReactNode;
 } & React.ComponentPropsWithoutRef<typeof BaseMenu.SubmenuTrigger>;
 
 /** A row that opens a nested menu; always shows the trailing chevron. */
-export function MenuSubmenuTrigger({ icon, className, children, ...rest }: MenuSubmenuTriggerProps) {
+export function MenuSubmenuTrigger({ icon, trailingIcon, className, children, ...rest }: MenuSubmenuTriggerProps) {
   return (
     <BaseMenu.SubmenuTrigger className={cn(slots.item(), className)} {...rest}>
       {icon != null && <span className={slots.itemIcon()}>{icon}</span>}
       <span className={slots.itemLabel()}>{children}</span>
       <span className={slots.itemTrailing()}>
-        <Icon name="chevron-right" size="sm" />
+        {trailingIcon ?? <Icon name="chevron-right" size="sm" />}
       </span>
     </BaseMenu.SubmenuTrigger>
   );

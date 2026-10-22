@@ -35,7 +35,7 @@ import steer from "./assets/3b88e.svg";
 import trash from "./assets/9ce89.svg";
 import more from "./assets/c1dd5.svg";
 import claude from "./assets/dc1a3.svg";
-import figma from "./assets/452cf.svg";
+import figma from "@/components/icon/assets/brands/figma-color.svg";
 import notion from "./assets/7e69d.svg";
 import dots from "./assets/6c77e.svg";
 import taskCheck from "./assets/d9f77.svg";
@@ -44,7 +44,9 @@ import taskChevron from "./assets/952ca.svg";
 import micOutline from "./assets/0f955.svg";
 import external from "./assets/d2728.svg";
 import suggestion from "./assets/4d19e.svg";
+import reset from "./assets/17720.svg";
 const assets = {
+  reset: { src: reset, width: 16, height: 16 },
   external: { src: external, width: 16, height: 16 },
   suggestion: { src: suggestion, width: 16, height: 16 },
   micOutline: { src: micOutline, width: 20, height: 20 },
@@ -100,7 +102,13 @@ export function ComposerAsset({
   className?: string;
 }) {
   const asset = assets[name];
-  if (["claude", "figma", "notion", "finder"].includes(name))
+  if (name === "figma")
+    return (
+      <span aria-hidden className={cn("relative inline-block shrink-0", className)} style={{ width: asset.width, height: asset.height }}>
+        <img src={asset.src} alt="" style={{ position: "absolute", left: "23.61%", top: "11.46%", width: "52.78%", height: "79.16%" }} />
+      </span>
+    );
+  if (["claude", "notion", "finder"].includes(name))
     return (
       <img
         src={asset.src}

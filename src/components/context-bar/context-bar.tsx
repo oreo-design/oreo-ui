@@ -152,14 +152,14 @@ export function ContextBarTasks({ summary, defaultOpen, open, onOpenChange, clas
     <Collapsible.Root defaultOpen={defaultOpen} open={open} onOpenChange={onOpenChange} className={cn("w-full", className)}>
       <Collapsible.Trigger
         className={cn(
-          "group/tasks flex cursor-pointer w-full items-center gap-1 outline-none select-none",
+          "group/tasks flex cursor-pointer w-full items-center gap-[var(--space-x3)] outline-none select-none",
           "rounded-[var(--radius-control-tiny)] focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
         )}
       >
         <span className="grid size-5 shrink-0 place-items-center">
           <ComposerAsset name="taskChevron" className="-rotate-90 transition-transform duration-200 ease-drawer motion-reduce:transition-none group-data-[panel-open]/tasks:rotate-0"/>
         </span>
-        <span className="min-w-0 flex-1 text-left text-[14px] leading-5 font-medium text-[var(--color-text-primary)]">
+        <span className={cn(slots.label(), "text-left")}>
           {summary}
         </span>
       </Collapsible.Trigger>
