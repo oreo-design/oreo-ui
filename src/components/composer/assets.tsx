@@ -52,6 +52,8 @@ import closeBadge from "./assets/f7127.svg";
 import slash from "./assets/09710.svg";
 const assets = {
   plus: { src: plus, width: 12, height: 12 },
+  // Toolbar variant reuses the same original plus in the 20px action slot.
+  add: { src: plus, width: 20, height: 20 },
   closeKeyword: { src: closeKeyword, width: 14, height: 14 },
   closeAttachment: { src: closeAttachment, width: 16, height: 16 },
   closeBadge: { src: closeBadge, width: 10, height: 10 },
@@ -143,6 +145,7 @@ export function ComposerAsset({
           maskImage: `url(${JSON.stringify(asset.src)})`,
           maskRepeat: "no-repeat",
           maskPosition: "center",
+          maskSize: "contain",
         } as CSSProperties
       }
     />

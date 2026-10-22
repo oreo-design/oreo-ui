@@ -27,7 +27,7 @@ export function PromptBoxPermission({ value, options, onValueChange, disabled }:
       <span>{selected.label}</span>
     </MenuTrigger>
     <MenuPopup side="top" align="start">
-      {options.map(option => <MenuItem key={option.value} selected={option.value === value} onClick={() => onValueChange?.(option.value)}>{option.label}</MenuItem>)}
+      {options.map(option => <MenuItem key={option.value} selected={option.value === value} trailing={option.value === value ? <ComposerAsset name="check" className="text-text-primary" /> : undefined} onClick={() => onValueChange?.(option.value)}>{option.label}</MenuItem>)}
     </MenuPopup>
   </Menu>;
 }

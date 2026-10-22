@@ -1,5 +1,5 @@
 import { ComposerAsset } from "@/components/composer/assets";
-import { Icon, StopGlyph } from "@/components/icon";
+import { StopGlyph } from "@/components/icon";
 import * as React from "react";
 import { AnimatePresence, LayoutGroup, motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/cn";
@@ -294,7 +294,7 @@ export function PromptBox({
     <IconButton
       aria-label={entryStyle === "add" ? "Add" : "Add attachment"}
       type={entryStyle === "add" ? "tertiary" : "secondary"}
-      icon={entryStyle === "add" ? <Icon name="plus" /> : <ComposerAsset name="attach" />}
+      icon={entryStyle === "add" ? <ComposerAsset name="add" /> : <ComposerAsset name="attach" />}
       onClick={onAttach}
       className={entryStyle === "add" ? undefined : hairline}
       {...spring}
