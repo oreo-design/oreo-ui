@@ -45,7 +45,19 @@ import micOutline from "./assets/0f955.svg";
 import external from "./assets/d2728.svg";
 import suggestion from "./assets/4d19e.svg";
 import reset from "./assets/17720.svg";
+import plus from "./assets/173c6.svg";
+import closeKeyword from "./assets/a6621.svg";
+import closeAttachment from "./assets/0e4b4.svg";
+import closeBadge from "./assets/f7127.svg";
+import slash from "./assets/09710.svg";
 const assets = {
+  plus: { src: plus, width: 12, height: 12 },
+  closeKeyword: { src: closeKeyword, width: 14, height: 14 },
+  closeAttachment: { src: closeAttachment, width: 16, height: 16 },
+  closeBadge: { src: closeBadge, width: 10, height: 10 },
+  slash: { src: slash, width: 14, height: 14 },
+  // Keyword tags use the same brand geometry in the Figma 16px frame.
+  figmaSmall: { src: figma, width: 16, height: 16 },
   reset: { src: reset, width: 16, height: 16 },
   external: { src: external, width: 16, height: 16 },
   suggestion: { src: suggestion, width: 16, height: 16 },
@@ -102,7 +114,7 @@ export function ComposerAsset({
   className?: string;
 }) {
   const asset = assets[name];
-  if (name === "figma")
+  if (name === "figma" || name === "figmaSmall")
     return (
       <span aria-hidden className={cn("relative inline-block shrink-0", className)} style={{ width: asset.width, height: asset.height }}>
         <img src={asset.src} alt="" style={{ position: "absolute", left: "23.61%", top: "11.46%", width: "52.78%", height: "79.16%" }} />

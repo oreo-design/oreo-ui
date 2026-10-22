@@ -1,4 +1,5 @@
-import { SpinnerDots, CloseGlyph } from "@/components/icon";
+import { SpinnerDots } from "@/components/icon";
+import { ComposerAsset } from "@/components/composer/assets";
 import * as React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/cn";
@@ -93,7 +94,7 @@ export function Attachment({
               <img
                 src={playIcon}
                 alt=""
-                className="pointer-events-none absolute top-1/2 left-1/2 size-[14px] -translate-x-1/2 -translate-y-1/2 [filter:drop-shadow(0_4.67px_14px_rgba(0,0,0,0.08))_drop-shadow(0_0_0.58px_rgba(0,0,0,0.24))]"
+                className="pointer-events-none absolute top-1/2 left-1/2 size-[14px] -translate-x-1/2 -translate-y-1/2"
               />
             )}
           </>
@@ -109,7 +110,7 @@ export function Attachment({
             onClick={onRemove}
             className={slots.badge()}
           >
-            <CloseGlyph className="size-[10px]" />
+            <ComposerAsset name="closeBadge" />
           </motion.button>
         )}
       </div>
@@ -129,7 +130,7 @@ export function Attachment({
             onClick={onRemove}
             className={slots.ghost()}
           >
-            <CloseGlyph className="size-4" />
+            <ComposerAsset name="closeAttachment" />
           </motion.button>
         )}
       </span>

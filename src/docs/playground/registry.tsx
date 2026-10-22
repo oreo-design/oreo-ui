@@ -173,6 +173,7 @@ import { Tag } from "@/components/tag";
 import { Shortcut } from "@/components/shortcut";
 import { Avatar } from "@/components/avatar";
 import { Attachment, AttachmentBar } from "@/components/attachment";
+import { ComposerAsset } from "@/components/composer/assets";
 import { PromptBox, PromptBoxModelSelect, PromptBoxDictation } from "@/components/prompt-box";
 import claudeModelLogo from "@/components/composer/assets/dc1a3.svg";
 import openaiModelLogo from "@/components/icon/assets/brands/openai.svg";
@@ -694,9 +695,9 @@ export const playgrounds: Record<string, PlaygroundSpec> = {
     value={v.value} onValueChange={value => set("value", value)} placeholder={v.placeholder} running={v.running}
     onSubmit={() => set("running", true)} onStop={() => set("running", false)} onAttach={() => set("attachments", !v.attachments)} onMention={() => set("keywords", !v.keywords)}
     attachments={v.attachments ? <AttachmentBar><Attachment type="pdf" label="Design brief.pdf" onRemove={() => set("attachments", false)} /></AttachmentBar> : undefined}
-    tags={v.keywords ? <KeywordTag color={v.keywordColor} icon={<Icon name="sparkle" />} onRemove={() => set("keywords", false)}>{v.keyword}</KeywordTag> : undefined}
+    tags={v.keywords ? <KeywordTag color={v.keywordColor} icon={<ComposerAsset name="plus" />} onRemove={() => set("keywords", false)}>{v.keyword}</KeywordTag> : undefined}
     voice={v.voice === "none" ? undefined : v.voice} voiceStatus={v.voiceStatus} onVoiceToggle={() => set("voiceStatus", v.voiceStatus === "idle" ? "inputting" : "idle")}
-    modelSelect={<PromptBoxModelSelect icon={promptModelIcons[v.model]} label={v.model} menu={<>{["Claude", "ChatGPT", "Gemini"].map(model => <MenuItem key={model} selected={model === v.model} onClick={() => set("model", model as typeof v.model)}>{model}</MenuItem>)}</>} />}
+    modelSelect={<PromptBoxModelSelect icon={promptModelIcons[v.model]} label={v.model} menu={<>{["Claude", "ChatGPT", "Gemini"].map(model => <MenuItem key={model} selected={model === v.model} trailing={model === v.model ? <ComposerAsset name="check" className="text-text-primary" /> : undefined} onClick={() => set("model", model as typeof v.model)}>{model}</MenuItem>)}</>} />}
     entryStyle={v.entryStyle} showMention={v.showMention}
     permission={v.permission === "hidden" ? undefined : { value: v.permission, options: [
       { value: "approval", label: "Ask for approval" },

@@ -18,3 +18,12 @@ Static comparison covers the supplied native dimensions and browser-rendered spe
 Adoption: implemented; PR and remote result are recorded in the task review index.
 
 Follow-up on 2026-10-22: the live site was still the 14:32 deployment and did not contain PR #129. The refreshed Context Bar source changes body labels to Regular and icon/text spacing to 6px. The follow-up also corrects queue-grip color, Composer trailing tones, exact reset/chevron assets in live popups, and the Figma asset alias. Source captures and paired correction evidence remain under the same REVIEW (`context-revision-2/` and `live-check-20261022/`). Production readback is recorded there separately from Git integration.
+
+
+### Prompt Box icon correction round
+
+Re-audited the public `/prompt-box` Playground and Doc variants against the linked Figma frames. Fixed preview-shell disabled opacity, keyword plus and removal marks, selected menu checks and submenu chevrons, suggestion stars, the slash key glyph, and Figma brand proportions. File icons and video play now use untouched native-frame Figma SVG exports including their source shadows instead of manually translated paths and CSS approximations. Semantic tokens still own monochrome colors; brand colors and exported attachment artwork remain original assets.
+
+Sources: prompt variants 4111:13598–13683; file frames 4020:2211, 2231, 2249, 2267, 2285, 2303, 2309, 2315 and play 4020:2081; hover marks 4020:2078 / 2352 and 4079:27658 / 27689; context 4064:16958. Native SVG dimensions are asset geometry (10/12/14/16/20px), not new layout tokens. A 1px inside stroke can export as a 0.5px centered stroke: attribute widths alone are not evidence of a visual mismatch.
+
+Validation and original Figma exports, matching public-before/local-after screenshots, computed sizes/colors, and final deployment readback are indexed in the existing task review: `artifacts/composer-20261022/REVIEW.md`, section `/prompt-box 全图标复核`. No new motion or provider behavior.

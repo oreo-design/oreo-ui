@@ -1,4 +1,4 @@
-import { CloseGlyph } from "@/components/icon";
+import { ComposerAsset } from "@/components/composer/assets";
 import * as React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/cn";
@@ -51,7 +51,7 @@ export function KeywordTag({ icon, src, color, onRemove, className, children, ..
               }}
               className={slots.ghost()}
             >
-              <CloseGlyph className="size-[14px]" />
+              <ComposerAsset name="closeKeyword" />
             </motion.button>
           )}
         </span>

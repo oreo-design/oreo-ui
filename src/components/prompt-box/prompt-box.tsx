@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 import { easeOut } from "@/lib/motion";
 import { PromptReveal, PromptSwap, PromptPresenceContent, promptTransition } from "./prompt-box.motion";
 import { IconButton } from "@/components/button";
-import { Shortcut } from "@/components/shortcut";
+import { shortcutCap } from "@/components/shortcut/shortcut.variants";
 import { ShimmerText } from "@/components/activity-label";
 import { Menu, MenuTrigger, MenuPopup } from "@/components/menu";
 import { promptBox } from "./prompt-box.variants";
@@ -282,7 +282,7 @@ export function PromptBox({
   ) : (
     <>
       <span>Type a prompt or press</span>
-      <Shortcut keys={["/"]} />
+      <kbd aria-label="/" className={cn(shortcutCap({ size: "sm" }), "text-text-placeholder")}><ComposerAsset name="slash" /></kbd>
       <span className="oreo-legacy-label leading-5">for commands</span>
     </>
   );
