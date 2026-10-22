@@ -282,7 +282,7 @@ export function PromptBox({
   ) : (
     <>
       <span>Type a prompt or press</span>
-      <kbd aria-label="/" className={cn(shortcutCap({ size: "sm" }), "text-text-placeholder")}><ComposerAsset name="slash" /></kbd>
+      <kbd aria-label="/" className={cn(shortcutCap({ size: "sm" }), "w-5 px-0 text-text-placeholder")}><ComposerAsset name="slash" /></kbd>
       <span className="oreo-legacy-label leading-5">for commands</span>
     </>
   );

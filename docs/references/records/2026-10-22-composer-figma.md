@@ -29,3 +29,5 @@ Sources: prompt variants 4111:13598–13683; file frames 4020:2211, 2231, 2249, 
 Validation and original Figma exports, matching public-before/local-after screenshots, computed sizes/colors, and final deployment readback are indexed in the existing task review: `artifacts/composer-20261022/REVIEW.md`, section `/prompt-box 全图标复核`. No new motion or provider behavior.
 
 Rebased on PR #136 without reverting its new entry, permission or connected-app controls. The toolbar plus reuses the original keyword plus at the 20px action size; its permission picker uses the same original 16px selected check. Gmail/Slack/ClickUp are preserved upstream identity assets; no matching nodes exist on the supplied Composer page, so their source fidelity is explicitly outside the Figma comparison claim.
+
+Final export handling preserves full SVG render bounds around the 20px file / 14px video logical frames; source offsets are artwork geometry, not new spacing tokens. The slash uses a fixed 20px keycap with a 14px original glyph.
