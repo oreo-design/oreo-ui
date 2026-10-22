@@ -344,7 +344,7 @@ Density affects Oreo's spacing scale and Tailwind spacing-based geometry. Semant
 error/success colors retain their roles. Nested comparisons and exports explicitly
 reset theme recipes; a consuming app should place tokens on its portal root too.
 On narrower screens, Theme settings and Properties open keyboard-accessible panels.
-Replay, Inspect, Compare and Share remain under More tools.
+Annotation combines named-part selection and computed measurements: click a part in the preview or its anatomy card. Compare and Share remain under More tools; playback stays in the bottom footer.
 
 
 ### Spectral Glass Studio

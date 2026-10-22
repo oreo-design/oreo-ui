@@ -398,8 +398,7 @@
 .pg-code pre {
   max-height: none;
 }
-.pg-stage-annotation,
-.pg-stage-inspect {
+.pg-stage-annotation {
   padding: calc(var(--spacing) * 10) calc(var(--spacing) * 16)
     calc(var(--spacing) * 6);
   gap: calc(var(--spacing) * 5);
@@ -464,36 +463,22 @@
   font-size: 10px;
   z-index: 1;
 }
-.pg-stage-inspect .pg-frame {
-  border: 0.5px solid var(--color-border-default);
-  border-radius: var(--radius-card-small);
-  min-height: calc(var(--spacing) * 75);
+.pg-stage-annotation .pg-preview,
+.pg-stage-annotation .pg-preview * {
+  cursor: pointer !important;
 }
-.pg-stage-inspect .pg-preview * {
-  cursor: crosshair !important;
-}
-.pg-ruler {
-  position: absolute;
-  top: 0;
-  inset-inline: calc(var(--spacing) * 3);
-  display: flex;
-  justify-content: space-between;
-  gap: calc(var(--spacing) * 15);
-  overflow: hidden;
-  font:
-    9px "Geist Mono Variable",
-    monospace;
-  color: var(--color-text-secondary);
-}
-.pg-inspect-details {
-  width: 100%;
+.pg-part-metrics {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: calc(var(--spacing) * 4);
+  gap: var(--space-x4);
+  font-size: var(--text-xs);
 }
-.pg-inspect-details p {
-  overflow-wrap: anywhere;
+.pg-part-metrics > div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-x4);
 }
+.pg-part-metrics dt { color: var(--color-text-secondary); }
+.pg-part-metrics dd { overflow-wrap: anywhere; }
 .pg-comparisons {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -689,8 +674,7 @@
   }
   .pg-code,
   .pg-compare,
-  .pg-stage-annotation,
-  .pg-stage-inspect {
+  .pg-stage-annotation {
     padding-inline: calc(var(--spacing) * 6);
   }
   .pg-mobile-properties {
@@ -738,8 +722,7 @@
     line-height: calc(var(--spacing) * 16);
     padding-inline: calc(var(--spacing) * 4);
   }
-  .pg-comparisons,
-  .pg-inspect-details {
+  .pg-comparisons {
     grid-template-columns: 1fr;
   }
   .pg-compare-preview {

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useId, type CSSProperties } from "react";
+import { useEffect, useState, useCallback, useRef, useId, type CSSProperties } from "react";
 import { Tooltip } from "@base-ui-components/react/tooltip";
 import type { DocsNav } from "@/docs/DocsPage";
 import { ThemeChips } from "./ThemeChips";
@@ -21,7 +21,7 @@ import { useDemo } from "./useDemo";
 import { PlaygroundIcon as Glyph } from "@/components/icon";
 import { Tool, Modal } from "./Tools";
 import { ComponentPicker } from "./ComponentPicker";
-import { PreviewStage, partsFor } from "./PreviewStage";
+import { PreviewStage, partsFor, type Part, type Measurement } from "./PreviewStage";
 import { SharePanel } from "./SharePanel";
 import { ComparePanel } from "./ComparePanel";
 import {
@@ -37,7 +37,7 @@ import "@fontsource-variable/geist-mono";
 import "./playground.css";
 
 const sessions = new Map<string, { values: Values; config: string | null }>();
-type Mode = "preview" | "annotation" | "code" | "inspect" | "compare";
+type Mode = "preview" | "annotation" | "code" | "compare";
 const descriptionFor = (slug: string, title: string) =>
   slug === "button"
     ? "A button for the next action. Three types, three sizes, and independent state controls."
@@ -109,6 +109,16 @@ export function ComponentPlayground({
     [share, setShare] = useState(false),
     [properties, setProperties] = useState(false),
     [selected, setSelected] = useState(0);
+  const [customPart, setCustomPart] = useState<Part | null>(null);
+  const [measurement, setMeasurement] = useState<Measurement | null>(null);
+  const reportMeasurement = useCallback((next: Measurement | null) => {
+    setMeasurement(current => JSON.stringify(current) === JSON.stringify(next) ? current : next);
+  }, []);
+  const selectPart = useCallback((index: number, part?: Part) => {
+    setSelected(index);
+    setCustomPart(part ?? null);
+  }, []);
+  const selectedPart = selected >= 0 ? partsFor(nav.active)[selected] : customPart;
   const [presets, setPresets] = useState<Preset[]>([]);
   useEffect(() => {
     const a = initial.configuration?.appearance;
@@ -267,12 +277,25 @@ export function ComponentPlayground({
         <>
           <p className="pg-muted">Selected part</p>
           <h2>
-            {String(selected + 1).padStart(2, "0")}{" "}
-            {partsFor(nav.active)[selected]?.name}
+            {selected >= 0 && `${String(selected + 1).padStart(2, "0")} `}
+            {selectedPart?.name}
           </h2>
           <p className="pg-description">
-            {partsFor(nav.active)[selected]?.description}
+            {selectedPart?.description}
           </p>
+          {measurement ? (
+            <dl className="pg-part-metrics" aria-label="Selected part measurements">
+              {Object.entries({
+                Size: `${Math.round(measurement.width)} × ${Math.round(measurement.height)}`,
+                Radius: measurement.radius,
+                Padding: measurement.padding,
+                Gap: measurement.gap,
+                Background: measurement.backgroundToken,
+                Color: measurement.colorToken,
+                Text: measurement.font,
+              }).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+            </dl>
+          ) : <p className="pg-fine">This part is not currently visible.</p>}
         </>
       ) : (
         <>
@@ -415,14 +438,6 @@ export function ComponentPlayground({
               <details className="pg-more-tools" ref={moreTools}>
                 <summary className="pg-tool oreo-squircle oreo-state-layer" aria-label="More tools" title="More tools"><Glyph name="dots" /></summary>
                 <div className="pg-toolgroup pg-more-popover oreo-squircle">
-                <Tool
-                  icon="inspect"
-                  label="Inspect"
-                  active={mode === "inspect"}
-                  onClick={() =>
-                    changeMode(mode === "inspect" ? "preview" : "inspect")
-                  }
-                />
                 <Tool
                   icon="compare"
                   label="Compare"
@@ -584,7 +599,8 @@ export function ComponentPlayground({
                     mode={mode}
                     viewport={viewport}
                     selected={selected}
-                    onSelect={setSelected}
+                    onSelect={selectPart}
+                    onMeasure={reportMeasurement}
                     revision={revision}
                   >
                     {preview}
