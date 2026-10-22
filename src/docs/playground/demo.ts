@@ -37,7 +37,12 @@ export class DemoPlayer {
   };
   stop = () => { this.dispose(); this.status = "idle"; this.change(this.status); };
   replay = () => { this.stop(); this.play(); };
-  dispose = () => { this.cancel(); };
+  dispose = () => {
+    this.cancel();
+    this.status = "idle";
+    this.elapsed = 0;
+    this.cursor = 0;
+  };
   private cancel() { if (this.timer !== undefined) this.time.cancel(this.timer); this.timer = undefined; }
   private tick = () => {
     const elapsed = this.elapsed + this.time.now() - this.startedAt;
