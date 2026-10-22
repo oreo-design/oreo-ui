@@ -16,3 +16,5 @@ The single task evidence owner is [REVIEW.md](/Users/ziye/Documents/Project/Rese
 Static comparison covers the supplied native dimensions and browser-rendered specimens. Font rasterization is platform dependent; no zero-pixel-difference claim is made. WebGPU renders the original Ultracode shader; unsupported browsers retain the neutral track. Local fixtures do not prove upload services, model execution, real microphone transcription or deployment.
 
 Adoption: implemented; PR and remote result are recorded in the task review index.
+
+Follow-up on 2026-10-22: the live site was still the 14:32 deployment and did not contain PR #129. The refreshed Context Bar source changes body labels to Regular and icon/text spacing to 6px. The follow-up also corrects queue-grip color, Composer trailing tones, exact reset/chevron assets in live popups, and the Figma asset alias. Source captures and paired correction evidence remain under the same REVIEW (`context-revision-2/` and `live-check-20261022/`). Production readback is recorded there separately from Git integration.

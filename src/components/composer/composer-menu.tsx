@@ -11,11 +11,9 @@ import {
 } from "@/components/menu";
 import { menu } from "@/components/menu/menu.variants";
 import { Shortcut } from "@/components/shortcut";
-import { Icon } from "@/components/icon";
 import { cn } from "@/lib/cn";
 import { ComposerAsset, type ComposerAssetName } from "./assets";
 import "./composer.css";
-import figmaBrand from "@/components/icon/assets/brands/figma-color.svg";
 import { DitherFill } from "./dither-fill";
 
 const slots = menu();
@@ -111,7 +109,7 @@ function Row({
     return (
       <MenuItem
         icon={glyph(icon)}
-        trailing={end}
+        trailing={end && <span className="flex items-center gap-1 text-text-tertiary">{end}</span>}
         className={classes}
         closeOnClick={closeOnClick}
         disabled={disabled}
@@ -130,7 +128,7 @@ function Row({
     >
       {icon && <span className={slots.itemIcon()}>{glyph(icon)}</span>}
       <span className={slots.itemLabel()}>{label}</span>
-      {end && <span className={slots.itemTrailing()}>{end}</span>}
+      {end && <span className={cn(slots.itemTrailing(), "text-text-tertiary")}>{end}</span>}
     </button>
   );
 }
@@ -179,6 +177,7 @@ function Submenu({
     <MenuSubmenu>
       <MenuSubmenuTrigger
         icon={icon && <ComposerAsset name={icon} />}
+        trailingIcon={<ComposerAsset name="right" className="text-text-tertiary" />}
         className="composer-row"
       >
         <span className="flex items-center justify-between gap-4">
@@ -209,21 +208,7 @@ export const defaultConnectors: ComposerConnector[] = [
   {
     id: "figma",
     label: "Figma",
-    icon: (
-      <span className="relative size-5">
-        <img
-          src={figmaBrand}
-          alt=""
-          style={{
-            position: "absolute",
-            left: "23.61%",
-            top: "11.46%",
-            width: "52.78%",
-            height: "79.16%",
-          }}
-        />
-      </span>
-    ),
+    icon: <ComposerAsset name="figma" />,
     enabled: true,
   },
   {
@@ -634,7 +619,7 @@ export function ComposerModelSettings({
       <MenuSeparator />
       <Row
         className="text-text-tertiary"
-        trailing={<Icon name="reset" size="sm" />}
+        trailing={<ComposerAsset name="reset" />}
         onClick={() => {
           select("5.6 Terra");
           setEffort(3);
