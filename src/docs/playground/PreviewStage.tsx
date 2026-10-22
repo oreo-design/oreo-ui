@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode, type SyntheticEvent } from "react";
 
+export type PreviewDevice = "desktop" | "mobile";
 export type Part = { name: string; description: string; selector: string };
 export const partsFor = (slug: string): Part[] =>
   slug === "button"
@@ -87,7 +88,7 @@ export function PreviewStage({
   themeStyle?: CSSProperties;
   slug: string;
   mode: "preview" | "annotation";
-  viewport: string;
+  viewport: PreviewDevice;
   selected: number;
   onSelect: (index: number, part?: Part) => void;
   onMeasure: (measurement: Measurement | null) => void;

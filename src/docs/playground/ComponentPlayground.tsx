@@ -21,7 +21,7 @@ import { useDemo } from "./useDemo";
 import { PlaygroundIcon as Glyph } from "@/components/icon";
 import { Tool, Modal } from "./Tools";
 import { ComponentPicker } from "./ComponentPicker";
-import { PreviewStage, partsFor, type Part, type Measurement } from "./PreviewStage";
+import { PreviewStage, partsFor, type Part, type Measurement, type PreviewDevice } from "./PreviewStage";
 import { SharePanel } from "./SharePanel";
 import { ComparePanel } from "./ComparePanel";
 import {
@@ -101,7 +101,7 @@ export function ComponentPlayground({
   );
   const [revision, setRevision] = useState(0),
     [mode, setMode] = useState<Mode>("preview"),
-    [viewport, setViewport] = useState("desktop");
+    [viewport, setViewport] = useState<PreviewDevice>("desktop");
   const [copyStatus, setCopyStatus] = useState(""),
     [error, setError] = useState(initial.error),
     [fallback, setFallback] = useState("");
@@ -425,7 +425,7 @@ export function ComponentPlayground({
               </div>
               <span className="pg-divider" />
               <div className="pg-toolgroup">
-                {(["desktop", "tablet", "mobile"] as const).map((device) => (
+                {(["desktop", "mobile"] as const).map((device) => (
                   <Tool
                     key={device}
                     icon={device}
