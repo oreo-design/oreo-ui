@@ -34,6 +34,14 @@ test("rapid replay owns only one timer and starts from the beginning", () => {
   assert.equal(f.timers.size, 1); f.advance(200);
   assert.deepEqual(f.frames, ["start", "next", "start", "start", "next"]); assert.equal(f.statuses.at(-1), "complete");
 });
+test("effect cleanup followed by setup restarts with one live timer", () => {
+  const f = fixture(); f.player.play(); f.advance(40); f.player.dispose();
+  assert.equal(f.timers.size, 0);
+  f.player.play(); f.advance(100);
+  assert.deepEqual(f.frames, ["start", "start", "next"]);
+  assert.equal(f.timers.size, 1);
+  f.advance(100); assert.equal(f.statuses.at(-1), "complete");
+});
 test("reduced motion preserves all demo states without per-character typing", () => {
   const normal = promptBoxDemo(false), reduced = promptBoxDemo(true);
   assert.ok(normal.frames.length > reduced.frames.length);

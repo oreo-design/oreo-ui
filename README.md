@@ -321,6 +321,14 @@ Themes persist across navigation and reloads. Share and code export include the
 current token overrides; old configuration links remain valid. Storage failures
 leave the editor usable and offer Retry saving.
 
+Scripted component demos start automatically on a fresh default visit. Playback
+and replay controls sit above the theme chips in the bottom footer. Pause/resume
+preserves progress; replay starts over. Interacting with the demo or editing its
+properties takes over, and leaving the tab or preview mode pauses playback.
+Saved/shared configurations and resumed edits stay untouched. Reduced motion
+starts idle and keeps an explicit Play action with the gentler demo sequence.
+Components without a scripted sequence retain their remount-based Replay action.
+
 Style changes interpolate the actual UI properties over 280ms with the shared
 `--ease-out`: colors, corners, shadows, spacing, sizes and typography metrics.
 Rapid changes retarget from the currently rendered values; controls and storage

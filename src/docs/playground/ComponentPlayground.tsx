@@ -141,6 +141,7 @@ export function ComponentPlayground({
   }, [copyStatus]);
   const demo = useDemo(spec, (patch) =>
     setValues((current) => ({ ...current, ...patch })),
+    !initial.configuration && !initial.resumed && !initial.error,
   );
   const changeMode = (next: Mode) => {
     demo.player?.pause();
@@ -405,15 +406,6 @@ export function ComponentPlayground({
                 <Tool label="Randomize properties" icon="randomize" onClick={() => apply(randomValues(spec, values))} />
                 <Tool label="Reset properties" icon="reset" onClick={reset} />
                 <Tool
-                  icon="replay"
-                  label="Replay"
-                  onClick={() => {
-                    setMode("preview");
-                    if (demo.player) demo.player.replay();
-                    else setRevision((v) => v + 1);
-                  }}
-                />
-                <Tool
                   icon="inspect"
                   label="Inspect"
                   active={mode === "inspect"}
@@ -434,23 +426,6 @@ export function ComponentPlayground({
                   label="Share"
                   onClick={() => setShare(true)}
                 />
-                {demo.player && (
-                  <Tool
-                    icon={demo.status === "playing" ? "pause" : "play"}
-                    label={
-                      demo.status === "playing"
-                        ? "Pause demo"
-                        : demo.status === "paused"
-                          ? "Resume demo"
-                          : "Play demo"
-                    }
-                    onClick={() => {
-                      setMode("preview");
-                      if (demo.status === "playing") demo.player?.pause();
-                      else demo.player?.play();
-                    }}
-                  />
-                )}
                 </div>
               </details>
               <Tool
@@ -607,12 +582,32 @@ export function ComponentPlayground({
                 </div>
               )}
             </div>
-            <div className="pg-theme-footer">{themePicker}</div>
-            {demo.player && demo.status !== "idle" && (
-              <p className="pg-demo-status" role="status">
-                {demo.label} · {demo.status}
-              </p>
-            )}
+            <div className="pg-theme-footer">
+              <div className="pg-playback" role="group" aria-label="Demo playback">
+                {demo.player && (
+                  <Tool
+                    icon={demo.status === "playing" ? "pause" : "play"}
+                    label={demo.status === "playing" ? "Pause demo" : demo.status === "paused" ? "Resume demo" : "Play demo"}
+                    onClick={() => {
+                      setMode("preview");
+                      if (demo.status === "playing") demo.player?.pause();
+                      else demo.player?.play();
+                    }}
+                  />
+                )}
+                <Tool icon="replay" label="Replay" onClick={() => {
+                  setMode("preview");
+                  if (demo.player) demo.player.replay();
+                  else setRevision((v) => v + 1);
+                }} />
+              </div>
+              {themePicker}
+              {demo.player && demo.status !== "idle" && (
+                <p className="pg-demo-status sr-only" role="status">
+                  {demo.label} · {demo.status}
+                </p>
+              )}
+            </div>
           </main>
           <aside className="pg-inspector" aria-label="Component properties">
             {inspector}
