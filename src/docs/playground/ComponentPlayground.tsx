@@ -594,7 +594,6 @@ export function ComponentPlayground({
                   onKeyDownCapture={() => demo.player?.stop()}
                 >
                   <PreviewStage
-                    controls={themePicker}
                     themeStyle={variationTokens(theme) as CSSProperties}
                     slug={nav.active}
                     mode={mode}
@@ -608,7 +607,7 @@ export function ComponentPlayground({
                 </div>
               )}
             </div>
-            {(mode === "code" || mode === "compare") && <div className="pg-theme-footer">{themePicker}</div>}
+            <div className="pg-theme-footer">{themePicker}</div>
             {demo.player && demo.status !== "idle" && (
               <p className="pg-demo-status" role="status">
                 {demo.label} · {demo.status}

@@ -70,7 +70,6 @@ type Measurement = {
 export function PreviewStage({
   children,
   themeStyle,
-  controls,
   slug,
   mode,
   viewport,
@@ -80,7 +79,6 @@ export function PreviewStage({
 }: {
   children: ReactNode;
   themeStyle?: CSSProperties;
-  controls?: ReactNode;
   slug: string;
   mode: "preview" | "annotation" | "inspect";
   viewport: string;
@@ -229,7 +227,6 @@ export function PreviewStage({
         >
           {children}
         </div>
-        {controls}
         {mode === "preview" && (
           <p className="pg-hint">Click to try the interaction</p>
         )}

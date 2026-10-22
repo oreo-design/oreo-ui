@@ -311,7 +311,7 @@ Kevin’s [Unlink Documents](https://x.com/kvnkld/status/2111826634902741219) ex
 
 ### Playground variations
 
-The compact theme chips below each Playground demo own the document theme; the
+The compact theme chips in the Playground's bottom footer own the document theme; the
 right panel owns component properties. The adjacent **Theme settings** icon opens
 advanced controls in the left sidebar, which is collapsed by default. Oreo Default, Claude, OpenAI and ASCII are editable
 Oreo style presets (not official vendor implementations). Spacing, corner radius,
