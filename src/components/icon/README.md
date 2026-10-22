@@ -12,3 +12,8 @@ All website operation icons, exported Figma icons and brand/file symbols live in
 Dynamic charts, maps, wordmark illustrations, and data-driven SVG are not operation icons and remain with their owning visualization components. Keyboard shortcut characters represent actual keys, not substitute icons.
 
 Run `node scripts/icon-audit/check.mjs` for asset provenance/dimensions and import-boundary checks. The dev-only `scripts/icon-audit/index.html` renders the real adapter and kit consumers; it is not a production route or a substitute for product screenshots.
+
+`AppBrand` centralizes Gmail, Slack and ClickUp identity marks used by Connect apps.
+Gmail reuses the existing Figma export. Slack and ClickUp are from Iconify's logos
+collection: https://api.iconify.design/logos/slack-icon.svg and
+https://api.iconify.design/logos/clickup-icon.svg (2026-10-22).

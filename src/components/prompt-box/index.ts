@@ -18,3 +18,5 @@ export {
   type PromptBoxActionsProps,
   type PromptBoxDictationProps,
 } from "./prompt-box.dictation";
+
+export { PromptBoxPermission, PromptBoxConnectApps, type PromptBoxPermissionProps, type PromptBoxPermissionOption, type PromptBoxConnectAppsProps, type PromptBoxApp } from "./prompt-box.controls";

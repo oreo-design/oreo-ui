@@ -45,8 +45,12 @@ const PROPS: PropRow[] = [
   { prop: "modelSelect", type: "ReactNode", desc: "The model picker — usually a <PromptBoxModelSelect>." },
   { prop: "voice", type: '"wave" | "mic"', desc: "Voice add-on: wave and mic sit beside the send button." },
   { prop: "voiceStatus", type: '"idle" | "inputting" | "thinking"', def: '"idle"', desc: "Drives the wave button ↔ Stop pill ↔ Thinking pill." },
+  { prop: "entryStyle", type: '"attachment" | "add"', def: '"attachment"', desc: "Choose the bordered attachment entry or quiet plus entry; both call onAttach. Custom attachControl takes priority." },
+  { prop: "showMention", type: "boolean", def: "true", desc: "Independently show or hide the mention control." },
+  { prop: "permission", type: "PromptBoxPermissionProps", desc: "Controlled value, options (value, label, neutral/warning tone), onValueChange and disabled. Permission policy remains host-owned." },
+  { prop: "connectApps", type: "PromptBoxConnectAppsProps", desc: "Attached footer: apps (id, label, icon, connected, disabled), label, onAppClick; or onClick to launch your own connection flow. No authorization is performed by the UI." },
   { prop: "onAttach / onMention / onVoiceToggle", type: "() => void", desc: "Toolbar button callbacks." },
-  { prop: "header / footer", type: "ReactNode", desc: "A <ContextBar> docked above or below; it tucks 16px under the card." },
+  { prop: "header / footer", type: "ReactNode", desc: "A <ContextBar> docked above or below. Explicit footer content (including null) takes priority over connectApps." },
   { prop: "inset", type: "boolean", def: "false", desc: "Indents docked bars by 12px (Figma “Is Inset”)." },
 ];
 

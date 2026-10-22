@@ -9,3 +9,4 @@ export type { PlaygroundIconName } from "./playground-icon";
 export { CloseGlyph, SpinnerDots, AudioWaveGlyph, StepDots, PlusGlyph, CodeGlyph, LinkGlyph, TextGlyph, FolderGlyph } from "./kit-glyphs";
 export { OreoLogo } from "./oreo-logo";
 export { CutScissors, LoadingMark, IntegrationSyncGlyph, TriangleMark, StopGlyph } from "./custom-glyphs";
+export { AppBrand, type AppBrandName } from "./app-brand";
