@@ -222,15 +222,31 @@
 }
 .pg-inspector {
   width: 328px;
+  display: flex;
+  flex-direction: column;
   flex-shrink: 0;
-  overflow-y: auto;
-  overscroll-behavior: contain;
+  min-height: 0;
+  overflow: hidden;
 }
 .pg-inspector-content {
   padding: calc(var(--spacing) * 5) calc(var(--spacing) * 6);
   display: flex;
   flex-direction: column;
   gap: calc(var(--spacing) * 4);
+}
+.pg-inspector > .pg-inspector-content,
+.pg-properties-dialog > .pg-inspector-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.pg-property-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--space-x4);
+  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 6);
+  border-top: 0.5px solid var(--color-border-default);
 }
 .pg-muted,
 .pg-description,
@@ -555,6 +571,15 @@
   font-size: var(--theme-dialog-title-size, 22px);
   line-height: 1.4;
   font-weight: var(--theme-title-weight, 500);
+}
+.pg-properties-dialog {
+  overflow: hidden;
+}
+.pg-properties-dialog > header {
+  flex-shrink: 0;
+}
+.pg-properties-dialog > .pg-property-actions {
+  padding: calc(var(--spacing) * 4) 0 0;
 }
 .pg-modal input:not([type="range"], [type="radio"]),
 .pg-modal textarea {

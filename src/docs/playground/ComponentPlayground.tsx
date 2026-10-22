@@ -6,6 +6,7 @@ import { VariationPanel } from "./VariationPanel";
 import { useVariation, setTheme } from "./useVariation";
 import { variationTokens } from "./variation";
 import { CodeBlock } from "@/components/code-block";
+import { Button } from "@/components/button";
 import { PropertyControl } from "./PropertyControl";
 import {
   defaultsFor,
@@ -326,6 +327,17 @@ export function ComponentPlayground({
     </div>
   );
 
+  const propertyActions = (
+    <div className="pg-property-actions" role="group" aria-label="Property actions">
+      <Button type="secondary" size="sm" className="flex-1" onClick={() => apply(randomValues(spec, values))}>
+        Random
+      </Button>
+      <Button type="secondary" size="sm" className="flex-1" onClick={reset}>
+        Reset
+      </Button>
+    </div>
+  );
+
   return (
     <Tooltip.Provider delay={350}>
       <div className="pg-shell">
@@ -403,8 +415,6 @@ export function ComponentPlayground({
               <details className="pg-more-tools" ref={moreTools}>
                 <summary className="pg-tool oreo-squircle oreo-state-layer" aria-label="More tools" title="More tools"><Glyph name="dots" /></summary>
                 <div className="pg-toolgroup pg-more-popover oreo-squircle">
-                <Tool label="Randomize properties" icon="randomize" onClick={() => apply(randomValues(spec, values))} />
-                <Tool label="Reset properties" icon="reset" onClick={reset} />
                 <Tool
                   icon="inspect"
                   label="Inspect"
@@ -611,6 +621,7 @@ export function ComponentPlayground({
           </main>
           <aside className="pg-inspector" aria-label="Component properties">
             {inspector}
+            {propertyActions}
           </aside>
         </div>
         <div
@@ -638,9 +649,9 @@ export function ComponentPlayground({
           open={properties}
           onOpenChange={setProperties}
           title="Properties"
-          className="pg-mobile-properties"
+          className="pg-mobile-properties pg-properties-dialog"
         >
-          {properties && inspector}
+          {properties && <>{inspector}{propertyActions}</>}
         </Modal>
         <Modal
           open={Boolean(fallback)}
