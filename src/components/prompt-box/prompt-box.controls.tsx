@@ -26,7 +26,7 @@ export function PromptBoxPermission({ value, options, onValueChange, disabled }:
       <ComposerAsset name="shield" className="oreo-prompt-permission-icon" />
       <span>{selected.label}</span>
     </MenuTrigger>
-    <MenuPopup side="top" align="start">
+    <MenuPopup className="oreo-prompt-menu oreo-squircle" side="top" align="start">
       {options.map(option => <MenuItem key={option.value} selected={option.value === value} trailing={option.value === value ? <ComposerAsset name="check" className="text-text-primary" /> : undefined} onClick={() => onValueChange?.(option.value)}>{option.label}</MenuItem>)}
     </MenuPopup>
   </Menu>;
@@ -60,7 +60,7 @@ export function PromptBoxConnectApps({ apps, label = "Connect apps", onAppClick,
   return <ContextBar position="footer" className="oreo-prompt-apps">
     {onClick ? <button type="button" className={className} disabled={disabled} onClick={onClick}>{content}</button> : <Menu>
       <MenuTrigger className={className} disabled={disabled || !apps.length || !onAppClick}>{content}</MenuTrigger>
-      <MenuPopup side="top" align="start">
+      <MenuPopup className="oreo-prompt-menu oreo-squircle" side="top" align="start">
         {apps.map(app => <MenuItem key={app.id} icon={app.icon} disabled={app.disabled} onClick={() => onAppClick?.(app)} trailing={app.connected ? "Connected" : undefined}>{app.label}</MenuItem>)}
       </MenuPopup>
     </Menu>}

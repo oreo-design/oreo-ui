@@ -13,10 +13,10 @@ export const attachment = tv({
   slots: {
     root: [
       "oreo-legacy-label group/attachment relative w-fit shrink-0 select-none",
-      "rounded-[var(--radius-control)] ring-[0.5px] ring-inset ring-[var(--color-border-default)]",
+      "oreo-squircle [--squircle-radius:var(--radius-control)] ring-[0.5px] ring-inset ring-[var(--color-border-default)]",
       "bg-[var(--color-bg-base)]",
       // Material-style state layer for the hover tint
-      "after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit]",
+      "after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:[corner-shape:inherit]",
       "after:bg-transparent after:transition-colors after:duration-150",
     ],
     /** Icon-only form: thumbnail filling the whole square. */

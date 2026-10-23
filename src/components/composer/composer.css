@@ -7,17 +7,16 @@
   width: auto;
 }
 .composer-row {
+  background-color: transparent;
   cursor: pointer;
-  min-height: 36px;
+  min-height: calc(var(--spacing) * 9);
 }
-.composer-row:hover,
-.composer-row[data-highlighted],
 .composer-row.is-selected,
 .composer-row.is-active {
-  background: var(--color-bg-subtle);
+  background-color: var(--color-bg-subtle);
 }
-.composer-row:active {
-  background: var(--color-state-press);
+.composer-row[data-highlighted] {
+  --surface-feedback: var(--color-state-hover);
 }
 .composer-row:focus-visible {
   outline: 2px solid var(--color-accent);
@@ -42,8 +41,8 @@
 .composer-permission-heading {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
-  padding: 8px 10px;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 2.5);
   color: var(--color-text-tertiary);
   font-size: 14px;
   line-height: 20px;
@@ -56,12 +55,11 @@
 }
 .composer-model-search {
   width: 100%;
-  height: 36px;
+  height: calc(var(--spacing) * 9);
   outline: none;
   border: 0.5px solid var(--color-border-subtle);
-  border-radius: var(--radius-control);
-  padding: 8px 10px;
-  margin-bottom: 4px;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 2.5);
+  margin-bottom: calc(var(--spacing) * 1);
   font-size: 14px;
 }
 .composer-model-search::placeholder {
@@ -75,7 +73,7 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 10px;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 2.5);
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 500;
@@ -83,15 +81,15 @@
   cursor: pointer;
 }
 .composer-category.is-last {
-  padding-block: 2px;
+  padding-block: calc(var(--spacing) * 0.5);
 }
 .composer-search-empty {
-  min-height: 108px;
+  min-height: calc(var(--spacing) * 27);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: calc(var(--spacing) * 2);
   text-align: center;
   font-size: 14px;
   color: var(--color-text-secondary);
@@ -101,13 +99,13 @@
   text-decoration: underline;
 }
 .composer-inline-submenu {
-  margin: 4px 0 8px 16px;
+  margin: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 2) calc(var(--spacing) * 4);
 }
 .composer-toggle {
   display: block;
   position: relative;
-  width: 27.5px;
-  height: 15px;
+  width: calc(var(--spacing) * 6.875);
+  height: calc(var(--spacing) * 3.75);
   border-radius: var(--radius-capsule);
   background: var(--color-bg-subtle);
 }
@@ -117,28 +115,29 @@
 .composer-toggle::after {
   content: "";
   position: absolute;
-  top: 1.5px;
-  left: 1.5px;
-  width: 12px;
-  height: 12px;
+  top: calc(var(--spacing) * 0.375);
+  left: calc(var(--spacing) * 0.375);
+  width: calc(var(--spacing) * 3);
+  height: calc(var(--spacing) * 3);
   border-radius: 50%;
   background: var(--color-bg-base);
 }
 .composer-toggle[data-checked="true"]::after {
-  left: 14px;
+  left: calc(var(--spacing) * 3.5);
 }
 .composer-effort {
   font-family: var(--font-legacy);
   font-size: 14px;
+  line-height: 20px;
   font-weight: 500;
 }
 .composer-effort-heading,
 .composer-effort-labels {
   display: flex;
   align-items: center;
-  padding: 8px 10px;
-  gap: 6px;
-  height: 36px;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 2.5);
+  gap: calc(var(--spacing) * 1.5);
+  min-height: calc(var(--spacing) * 9);
   color: var(--color-text-tertiary);
 }
 .composer-effort-heading strong {
@@ -153,17 +152,16 @@
   justify-content: space-between;
 }
 .composer-effort-track {
-  height: 28px;
-  margin: 0 10px 12px;
+  height: calc(var(--spacing) * 7);
+  margin: 0 calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
   position: relative;
-  border-radius: var(--radius-control);
   background: var(--color-bg-elevated);
 }
 .composer-effort-dots {
   display: flex;
   align-items: center;
   position: absolute;
-  inset: 12px;
+  inset: calc(var(--spacing) * 3);
   overflow: hidden;
   color: var(--color-text-disabled);
   height: 4px;
@@ -171,7 +169,6 @@
 .composer-effort-fill {
   position: absolute;
   inset: 0 auto 0 0;
-  border-radius: var(--radius-control);
   background: var(--color-bg-subtle);
   pointer-events: none;
 }
@@ -182,7 +179,7 @@
   appearance: none;
   position: relative;
   width: 100%;
-  height: 28px;
+  height: calc(var(--spacing) * 7);
   margin: 0;
   background: transparent;
   cursor: ew-resize;
@@ -190,25 +187,24 @@
 .composer-effort-track input::-webkit-slider-thumb {
   appearance: none;
   box-sizing: border-box;
-  width: 24px;
-  height: 28px;
+  width: calc(var(--spacing) * 6);
+  height: calc(var(--spacing) * 7);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-control);
   box-shadow: var(--shadow-default);
 }
 .composer-effort-track input::-moz-range-thumb {
   box-sizing: border-box;
-  width: 24px;
-  height: 28px;
+  width: calc(var(--spacing) * 6);
+  height: calc(var(--spacing) * 7);
   background: var(--color-bg-base);
   border: 1px solid var(--color-border-default);
-  border-radius: var(--radius-control);
   box-shadow: var(--shadow-default);
 }
 .composer-effort-track input:focus-visible {
+  border-radius: inherit;
+  corner-shape: inherit;
   outline: 2px solid var(--color-accent);
-  border-radius: var(--radius-control);
 }
 .composer-command-list {
   max-height: 340px;
@@ -223,7 +219,7 @@
   top: 0;
   z-index: 1;
   background: var(--color-bg-surface);
-  padding: 8px 10px;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 2.5);
   color: var(--color-text-tertiary);
   font-size: 14px;
   line-height: 20px;
@@ -232,7 +228,7 @@
 .composer-command-label {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: calc(var(--spacing) * 1.5);
   min-width: 0;
 }
 .composer-command-label > span {
@@ -261,13 +257,13 @@
   font-weight: 500;
 }
 .composer-usage-inline {
-  padding-left: 26px;
+  padding-left: calc(var(--spacing) * 6.5);
 }
 .composer-usage-meter {
-  padding: 8px 10px;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 2.5);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: calc(var(--spacing) * 1.5);
   font-size: 14px;
   line-height: 20px;
 }
@@ -275,16 +271,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 20px;
-  gap: 12px;
+  min-height: calc(var(--spacing) * 5);
+  gap: calc(var(--spacing) * 3);
 }
 .composer-usage-label > span:last-child {
   display: flex;
-  gap: 16px;
+  gap: calc(var(--spacing) * 4);
   color: var(--color-text-secondary);
 }
 .composer-meter-track {
-  height: 5px;
+  height: calc(var(--spacing) * 1.25);
   background: var(--color-bg-subtle);
   border-radius: var(--radius-capsule);
   overflow: hidden;
@@ -298,10 +294,10 @@
 @media (max-width: 480px) {
   .composer-usage-label {
     flex-wrap: wrap;
-    gap: 2px;
+    gap: calc(var(--spacing) * 0.5);
   }
   .composer-usage-label > span:last-child {
-    gap: 8px;
+    gap: calc(var(--spacing) * 2);
   }
   .composer-permission-heading {
     font-size: 12px;
@@ -323,11 +319,12 @@
   border-radius: inherit;
 }
 .composer-effort-heading > span:last-child {
+  display: flex;
   color: var(--color-text-placeholder);
 }
 
 .composer-menu [role="separator"] {
-  margin-block: 7.75px;
+  margin-block: calc(var(--space-x4) - 0.25px);
 }
 .composer-model-search {
   font-family: var(--font-sans);
@@ -338,8 +335,8 @@
 
 /* Source permission rows use clipped 13px descriptions. Full copy stays in DOM. */
 .composer-permission-row {
-  height: 56px;
-  gap: 12px;
+  min-height: max(calc(var(--spacing) * 14), calc(38px + var(--space-x8)));
+  gap: calc(var(--spacing) * 3);
   overflow: hidden;
 }
 .composer-permission-row .composer-description {
@@ -362,7 +359,7 @@
 }
 .composer-permission-heading {
   color: var(--color-text-secondary);
-  height: 36px;
+  min-height: calc(var(--spacing) * 9);
   white-space: nowrap;
 }
 .composer-permission-heading > span {
@@ -375,7 +372,7 @@
 @media (max-width: 480px) {
   .composer-permission-row {
     height: auto;
-    min-height: 56px;
+    min-height: calc(var(--spacing) * 14);
   }
   .composer-permission-row .composer-description small {
     height: auto;
@@ -387,23 +384,20 @@
 }
 
 .composer-connector-row.is-selected {
-  background: transparent;
-}
-.composer-connector-row:hover {
-  background: var(--color-bg-subtle);
+  background-color: transparent;
 }
 
 .composer-category {
-  height: 24px;
-  padding-block: 2px;
+  min-height: calc(var(--spacing) * 6);
+  padding-block: calc(var(--spacing) * 0.5);
   line-height: 20px;
-  margin-bottom: 12px;
+  margin-bottom: calc(var(--spacing) * 3);
   position: relative;
 }
 .composer-category:not(.is-last)::after {
   content: "";
   position: absolute;
-  inset: auto 4px -6px;
+  inset: auto calc(var(--spacing) * 1) calc(var(--spacing) * -1.5);
   height: 0.5px;
   background: var(--color-border-subtle);
 }
@@ -418,16 +412,40 @@
 
 /* Match the shared MenuSwitchItem to this Figma menu's compact switch role. */
 .composer-menu .toggle {
-  width: 27.5px;
-  height: 15px;
+  width: calc(var(--spacing) * 6.875);
+  height: calc(var(--spacing) * 3.75);
 }
 .composer-menu .toggle::after {
-  top: 1.5px;
-  left: 1.5px;
-  width: 12px;
-  height: 12px;
+  top: calc(var(--spacing) * 0.375);
+  left: calc(var(--spacing) * 0.375);
+  width: calc(var(--spacing) * 3);
+  height: calc(var(--spacing) * 3);
   box-shadow: none;
 }
 .composer-menu .toggle[data-on="true"]::after {
-  transform: translateX(12.5px);
+  transform: translateX(calc(var(--spacing) * 3.125));
 }
+
+/* Shared smooth corners; rows/search derive the inset from their owning popup. */
+.composer-menu {
+  --squircle-radius: var(--radius-card-medium);
+  --squircle-rendered-radius: initial;
+}
+.composer-row,
+.composer-model-search {
+  --squircle-rendered-radius: max(0px, calc(var(--radius-card-medium) * var(--oreo-corner-scale) - var(--space-x3)));
+}
+.composer-effort-track,
+.composer-effort-fill { --squircle-radius: var(--radius-control); }
+.composer-effort-track input::-webkit-slider-thumb {
+  border-radius: calc(var(--radius-control) * var(--oreo-corner-scale));
+  corner-shape: var(--oreo-corner-shape);
+}
+.composer-effort-track input::-moz-range-thumb {
+  border-radius: calc(var(--radius-control) * var(--oreo-corner-scale));
+  corner-shape: var(--oreo-corner-shape);
+}
+
+/* Original menu artwork is 20px. Density changes the surrounding space, not
+   the exported vector or its reservation in the row. */
+.composer-row > .grid { min-width: 20px; min-height: 20px; }

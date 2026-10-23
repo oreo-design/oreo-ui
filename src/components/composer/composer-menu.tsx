@@ -26,7 +26,7 @@ export function ComposerMenuSurface({
 }: React.ComponentPropsWithoutRef<"div">) {
   return (
     <PreviewContext.Provider value={true}>
-      <div className={cn(slots.popup(), "composer-menu", className)} {...rest}>
+      <div className={cn(slots.popup(), "composer-menu oreo-squircle", className)} {...rest}>
         {children}
       </div>
     </PreviewContext.Provider>
@@ -44,8 +44,8 @@ export function ComposerMenu({
   return (
     <Menu>
       <MenuTrigger render={trigger} />
-      <MenuPopup className="composer-menu composer-popup" side="top">
-        <div style={{ width: `min(${width - 12}px, calc(100vw - 44px))` }}>
+      <MenuPopup className="composer-menu composer-popup oreo-squircle" side="top">
+        <div style={{ width: `min(calc(${width}px - var(--space-x6)), calc(100vw - var(--spacing) * 11))` }}>
           <PreviewContext.Provider value={false}>
             {children}
           </PreviewContext.Provider>
@@ -100,7 +100,7 @@ function Row({
     children
   );
   const classes = cn(
-    "composer-row",
+    "composer-row oreo-squircle oreo-state-layer",
     selected && "is-selected",
     active && "is-active",
     className,
@@ -178,7 +178,7 @@ function Submenu({
       <MenuSubmenuTrigger
         icon={icon && <ComposerAsset name={icon} />}
         trailingIcon={<ComposerAsset name="right" className="text-text-tertiary" />}
-        className="composer-row"
+        className="composer-row oreo-squircle oreo-state-layer"
       >
         <span className="flex items-center justify-between gap-4">
           {label}
@@ -189,9 +189,9 @@ function Submenu({
         side="right"
         align="start"
         sideOffset={8}
-        className="composer-menu composer-popup"
+        className="composer-menu composer-popup oreo-squircle"
       >
-        <div style={{ width: width - 12, maxWidth: "calc(100vw - 44px)" }}>
+        <div style={{ width: `calc(${width}px - var(--space-x6))`, maxWidth: "calc(100vw - var(--spacing) * 11)" }}>
           {children}
         </div>
       </MenuPopup>
@@ -283,7 +283,7 @@ export function ComposerConnectorMenu({
             icon={c.icon}
             checked={c.enabled}
             onCheckedChange={(next) => toggle(c.id, next)}
-            className="composer-row"
+            className="composer-row oreo-squircle oreo-state-layer"
           >
             {c.label}
           </MenuSwitchItem>
@@ -456,7 +456,7 @@ export function ComposerModelList({
       {searchable && (
         <input
           aria-label="Search model"
-          className="composer-model-search"
+          className="composer-model-search oreo-squircle"
           placeholder="Search model"
           value={query}
           onKeyDown={(e) => {
@@ -537,14 +537,14 @@ export function ComposerEffort({
         <span>Faster</span>
         <span>Smarter</span>
       </div>
-      <div className="composer-effort-track" data-ultra={n === 5}>
+      <div className="composer-effort-track oreo-squircle" data-ultra={n === 5}>
         <div className="composer-effort-dots">
           <ComposerAsset name="dots" />
         </div>
         <div
-          className="composer-effort-fill"
+          className="composer-effort-fill oreo-squircle"
           style={{
-            width: `calc(24px + (100% - 24px) * ${n === 3 ? 148 / 248 : n / 5})`,
+            width: `calc(var(--space-x12) + (100% - var(--space-x12)) * ${n === 3 ? 148 / 248 : n / 5})`,
           }}
         >
           {n === 5 && <DitherFill />}

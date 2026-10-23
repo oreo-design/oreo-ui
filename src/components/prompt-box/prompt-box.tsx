@@ -78,7 +78,7 @@ export function PromptBoxModelSelect({
   return (
     <Menu>
       <MenuTrigger render={trigger} />
-      <MenuPopup side={side} align={align}>
+      <MenuPopup className="oreo-prompt-menu oreo-squircle" side={side} align={align}>
         {menu}
       </MenuPopup>
     </Menu>

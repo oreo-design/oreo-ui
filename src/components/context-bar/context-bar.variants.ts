@@ -11,7 +11,7 @@ import { tv } from "@/lib/tv";
 export const contextBar = tv({
   slots: {
     bar: [
-      "oreo-context-bar relative flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x4)]",
+      "oreo-context-bar [--context-bar-radius:calc(var(--radius-card-medium)*var(--oreo-corner-scale))] [corner-shape:var(--oreo-corner-shape)] relative flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x4)]",
       "bg-[var(--color-bg-elevated)] shadow-[var(--shadow-default)]",
       // Shadowless consumers (connected apps) still retain the Figma outline.
       "after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:[corner-shape:inherit] after:ring-[0.5px] after:ring-inset after:ring-[var(--color-border-subtle)]",
@@ -26,13 +26,13 @@ export const contextBar = tv({
   variants: {
     position: {
       header: {
-        bar: "rounded-t-[var(--radius-card-medium)] px-[var(--space-x6)] pt-[var(--space-x6)] pb-7",
+        bar: "rounded-t-[var(--context-bar-radius)] px-[var(--space-x6)] pt-[var(--space-x6)] pb-7",
       },
       footer: {
-        bar: "rounded-b-[var(--radius-card-medium)] px-[var(--space-x6)] pt-7 pb-[var(--space-x6)]",
+        bar: "rounded-b-[var(--context-bar-radius)] px-[var(--space-x6)] pt-7 pb-[var(--space-x6)]",
       },
       detached: {
-        bar: "rounded-[var(--radius-card-medium)] p-[var(--space-x6)]",
+        bar: "rounded-[var(--context-bar-radius)] p-[var(--space-x6)]",
       },
     },
     status: {

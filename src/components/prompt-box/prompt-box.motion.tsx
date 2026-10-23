@@ -8,16 +8,22 @@ export const promptTransition = { duration: 0.22, ease: easeOut };
 function Reveal({ children, edge }: { children: ReactNode; edge?: "header" | "footer" }) {
   const reduce = useReducedMotion();
   const present = useIsPresent();
-  const overlap = edge === "header" ? { marginBottom: -16 } : edge === "footer" ? { marginTop: -16 } : {};
-  const closedOverlap = edge === "header" ? { marginBottom: 0 } : edge === "footer" ? { marginTop: 0 } : {};
+  // Animate the overlap fraction; CSS resolves the current theme's spacing on
+  // every frame, including density edits while this surface remains mounted.
+  const overlap = { "--prompt-overlap": 1 };
+  const closedOverlap = { "--prompt-overlap": 0 };
   return <motion.div
     inert={!present}
     className={edge ? "relative z-[1] w-full" : "w-full"}
     initial={{ opacity: 0, height: reduce ? "auto" : 0, ...closedOverlap }}
     animate={{ opacity: 1, height: "auto", ...overlap }}
     exit={{ opacity: 0, height: reduce ? "auto" : 0, ...(reduce ? overlap : closedOverlap) }}
-    transition={{ ...promptTransition, ...(reduce ? { height: { duration: 0 }, marginTop: { duration: 0 }, marginBottom: { duration: 0 } } : {}) }}
-    style={{ overflow: "clip" }}
+    transition={{ ...promptTransition, ...(reduce ? { height: { duration: 0 }, "--prompt-overlap": { duration: 0 } } : {}) }}
+    style={{
+      overflow: "clip",
+      marginTop: edge === "footer" ? "calc(-1 * var(--space-x8) * var(--prompt-overlap, 1))" : undefined,
+      marginBottom: edge === "header" ? "calc(-1 * var(--space-x8) * var(--prompt-overlap, 1))" : undefined,
+    }}
   >{children}</motion.div>;
 }
 
