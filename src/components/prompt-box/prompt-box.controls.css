@@ -1,11 +1,14 @@
 .oreo-prompt-permission {
-  --squircle-radius: var(--radius-control-tiny);
+  /* A compact toolbar control, not a tiny metadata label. Keep its geometry
+     on the same theme scale as the composer's other interactive controls. */
+  --squircle-radius: var(--radius-control);
   display: inline-flex;
   align-items: center;
-  gap: var(--space-x1);
+  gap: var(--space-x2);
+  min-height: calc(var(--spacing) * 6);
   min-width: 0;
   max-width: 100%;
-  padding: var(--space-x1) var(--space-x2);
+  padding: var(--space-x1) var(--space-x4);
   background-color: var(--color-bg-subtle);
   color: var(--color-text-secondary);
   font-size: var(--text-sm);
