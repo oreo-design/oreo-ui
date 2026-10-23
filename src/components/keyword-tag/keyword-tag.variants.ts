@@ -14,10 +14,10 @@ export const keywordTag = tv({
   slots: {
     root: [
       "oreo-legacy-label group/tag relative inline-flex h-6 min-w-6 items-center justify-center gap-[var(--space-x1)]",
-      "rounded-[var(--radius-control)] py-[var(--space-x1)] pr-[var(--space-x4)] pl-[var(--space-x2)]",
+      "oreo-squircle [--squircle-radius:var(--radius-control)] py-[var(--space-x1)] pr-[var(--space-x4)] pl-[var(--space-x2)]",
       "text-[12px] leading-4 font-semibold whitespace-nowrap",
       // Material-style state layer for the removable hover tint
-      "after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit]",
+      "after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:[corner-shape:inherit]",
       "after:bg-transparent after:transition-colors after:duration-150",
     ],
     /** The 16px leading slot the icon, thumbnail, and hover × share. */
