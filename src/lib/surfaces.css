@@ -30,3 +30,44 @@
 .oreo-state-layer:active:not(:disabled, [aria-disabled="true"]):not(:has(input:disabled)):not(input:disabled + *) {
   --surface-feedback: var(--surface-press, var(--color-state-press));
 }
+
+/* One quiet keyboard cue for shared controls and website chrome. Shell rules
+   deliberately exclude the preview: each embedded component owns its focus. */
+.oreo-focus-proxy { border-radius: inherit; corner-shape: inherit; }
+.oreo-focus,
+:is(.pg-shell, .pg-modal) :is(button, a, summary, select):not(.pg-preview *),
+:is(.site-sidebar, .site-mobile-nav, .site-views, .remix-layout) :is(button, a, summary),
+.site-action {
+  outline: none;
+}
+.oreo-focus:focus-visible,
+.oreo-focus-proxy:has(:focus-visible),
+:is(.pg-shell, .pg-modal) :is(button, a, summary, select):focus-visible:not(.pg-preview *),
+:is(.site-sidebar, .site-mobile-nav, .site-views, .remix-layout) :is(button, a, summary):focus-visible,
+.site-action:focus-visible {
+  outline: 1px solid var(--color-border-default);
+  outline-offset: 1px;
+}
+/* A text field already has its own surface and caret. Strengthen its existing
+   border slightly instead of adding a second frame around the text. */
+.oreo-focus-field:focus,
+.site-directory-search input:focus,
+.remix-search input:focus,
+.remix-range input:focus {
+  outline: none;
+  border-color: var(--color-border-default);
+}
+/* System high-contrast colors are an intentional platform exception. */
+@media (forced-colors: active) {
+  .oreo-focus:focus-visible,
+  .oreo-focus-proxy:has(:focus-visible),
+  .oreo-focus-field:focus-visible,
+  .site-directory-search input:focus-visible,
+  .remix-search input:focus-visible,
+  .remix-range input:focus-visible,
+  :is(.pg-shell, .pg-modal, .site-sidebar, .site-mobile-nav, .site-views, .remix-layout) :is(button, a, summary, select):focus-visible:not(.pg-preview *),
+  .site-action:focus-visible {
+    outline: 1px solid Highlight;
+    outline-offset: 1px;
+  }
+}

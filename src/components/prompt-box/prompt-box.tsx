@@ -53,7 +53,7 @@ export function PromptBoxModelSelect({
         "oreo-model-selector oreo-squircle oreo-state-layer flex h-8 items-center gap-[var(--space-x2)] px-[var(--space-x4)]",
         "text-[14px] font-normal leading-5 text-[var(--color-text-primary)] outline-none select-none",
         "transition-colors duration-150",
-        "focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
+        "oreo-focus",
         className,
       )}
       {...rest}
@@ -342,7 +342,7 @@ export function PromptBox({
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "grid size-7 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
-        "bg-[var(--color-text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
+        "bg-[var(--color-text-primary)] outline-none oreo-focus",
       )}
     >
       <StopGlyph />
@@ -358,7 +358,7 @@ export function PromptBox({
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "grid size-7 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
-        "bg-[var(--color-bg-base)] text-[var(--color-text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
+        "bg-[var(--color-bg-base)] text-[var(--color-text-primary)] outline-none oreo-focus",
       )}
     >
       <ComposerAsset name="audio" />
@@ -373,7 +373,7 @@ export function PromptBox({
       transition={{ type: "spring", bounce, duration }}
       className={cn(
         "flex h-7 items-center gap-[var(--space-x4)] rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
-        "bg-[var(--color-status-progress-subtle)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]",
+        "bg-[var(--color-status-progress-subtle)] outline-none oreo-focus",
       )}
     >
       <EqBars animate />

@@ -322,6 +322,7 @@ body {
  * Refined range slider — thin track, small token-colored thumb. Themeable.
  * -------------------------------------------------------------------------- */
 .slider {
+  outline: none;
   -webkit-appearance: none;
   appearance: none;
   height: 16px;
@@ -362,7 +363,12 @@ body {
   transform: scale(1.12);
 }
 .slider:focus-visible::-webkit-slider-thumb {
-  outline: 2px solid var(--color-text-primary);
+  outline: 1px solid var(--color-border-default);
+  outline-offset: 1px;
+}
+
+.slider:focus-visible::-moz-range-thumb {
+  outline: 1px solid var(--color-border-default);
   outline-offset: 1px;
 }
 

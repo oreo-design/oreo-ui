@@ -78,7 +78,6 @@
 .remix-reference a, .remix-footer a { text-decoration:underline; text-underline-offset:3px; }
 .remix-reference code { overflow-wrap:anywhere; font-size:11px; }
 .remix-footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:calc(var(--spacing) * 4); font-size:11px; color:var(--color-text-secondary); padding:calc(var(--spacing) * 5.5) 0 calc(var(--spacing) * 8); }
-.remix-layout :is(button,a,input,textarea,summary):focus-visible { outline:2px solid var(--color-text-secondary); outline-offset:3px; }
 /* Independent interpretation, scoped to the specimen; not official Claude tokens. */
 .remix-claude { --color-bg-base:#fffefa; --color-bg-elevated:#f5f3ed; --color-bg-inverse:#b45d3a; --color-text-primary:#302e29; --color-text-secondary:#706c64; --color-text-disabled:#858077; --color-text-on-inverse:#fffefa; --color-border-subtle:#dedbd2; --color-border-default:#d2cec4; --color-state-hover:#302e2906; --color-state-press:#302e290e; --shadow-default:0 2px 5px #302e2906; --shadow-panel:none; }
 .theme-dark .remix-claude { --color-bg-base:#302e2a; --color-bg-elevated:#262521; --color-bg-inverse:#df9b7e; --color-text-primary:#eeeae2; --color-text-secondary:#b3ada3; --color-text-disabled:#a19b92; --color-text-on-inverse:#262521; --color-border-subtle:#48443e; --color-border-default:#58534b; --color-state-hover:#eeeae208; --color-state-press:#eeeae212; --shadow-default:none; }
@@ -104,7 +103,6 @@
 .remix-gallery-links small { display:block; margin-bottom:calc(var(--spacing) * 1.75); color:var(--color-text-secondary); font-size:12px; }
 .remix-gallery-links strong { font-size:14px; font-weight:500; }
 .remix-gallery-links span { position:absolute; right:24px; top:50%; transform:translateY(-50%); }
-.remix-gallery a:focus-visible { outline:2px solid var(--color-text-primary); outline-offset:-3px; }
 @media (hover:hover) and (pointer:fine) { .remix-gallery-links a:hover { background:var(--color-state-hover); } }
 .remix-gallery .remix-footer { display:block; line-height:1.8; }
 @media (max-width:700px) { .remix-gallery-grid,.remix-gallery-legend { grid-template-columns:1fr; } .remix-gallery-card-heading { padding-top:calc(var(--spacing) * 5); } }
