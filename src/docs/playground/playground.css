@@ -180,9 +180,80 @@
   gap: calc(var(--spacing) * 5);
   padding: calc(var(--spacing) * 10) 0;
 }
-.pg-frame[data-device="mobile"] {
-  max-width: 375px;
-  border-inline: 0.5px solid var(--color-border-default);
+.pg-device {
+  display: contents;
+}
+.pg-stage[data-device="mobile"] {
+  padding-block: calc(var(--spacing) * 6);
+}
+/* Physical mockup geometry is independent of the component theme/density.
+   375px screen + two 8px bezels; a 16px minimum content safe inset.
+   Inspired by Magic UI's iPhone mockup, rendered as live DOM instead of media. */
+.pg-device[data-device="mobile"] {
+  --device-bezel: 8px;
+  --device-radius: 56px;
+  --device-ink: #171717;
+  position: relative;
+  display: block;
+  flex: none;
+  width: 391px;
+  aspect-ratio: 391 / 804;
+  zoom: var(--device-scale, 1);
+  border: var(--device-bezel) solid var(--device-ink);
+  border-radius: var(--device-radius);
+  corner-shape: superellipse(1.5);
+  background: var(--color-bg-elevated);
+  box-shadow: 0 0 0 1px var(--color-border-default), var(--shadow-panel);
+}
+.pg-device[data-device="mobile"] .pg-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 64px max(16px, calc(var(--spacing) * 4)) 40px;
+  border-radius: calc(var(--device-radius) - var(--device-bezel));
+  corner-shape: superellipse(1.5);
+  justify-content: safe center;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+.pg-device-hardware {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.pg-device-portals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Establish the screen as the containing block for fixed menu positioners. */
+  transform: translateZ(0);
+}
+.pg-device-portals > * {
+  pointer-events: auto;
+}
+.pg-device-hardware::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 104px;
+  height: 28px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: var(--device-ink);
+}
+.pg-device-hardware::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  width: 112px;
+  height: 4px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: var(--color-text-primary);
 }
 .pg-preview {
   width: 100%;

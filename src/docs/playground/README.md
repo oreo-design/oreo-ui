@@ -29,8 +29,18 @@ masks so they inherit semantic icon colors. Hairline separators use
 - Annotation selects parts directly in the preview and measures actual DOM bounds and computed styles in the right sidebar. Button and Prompt Box
   have named anatomy; other components expose their root and arbitrary elements
   through Annotation. Portaled content outside the preview is not measured.
-- Device controls constrain the preview container to Desktop or Mobile (375px);
-  they do not emulate an operating system or change browser media queries.
+- Device controls choose Desktop or a live iPhone-style Mobile mockup. The
+  screen is 375 CSS pixels wide, with at least 16px content insets on both sides;
+  the 391×804 outer shell fits the available area by scaling as a unit. Its
+  bezel, concentric smooth corners and island are physical mockup geometry,
+  independent of theme radius/density. Screen colors and content still inherit
+  the global theme. These dimensions have no product-token equivalent.
+  This is a layout preview, not OS or browser-media-query emulation.
+- Keep theme/playback controls outside the device. `PreviewStage` owns insets
+  for every adapter and converts annotation bounds back to screen CSS pixels.
+  Shared Menu popups inherit its optional `PortalContainerContext`, so model
+  and permission menus scale with their triggers; explicit component portal
+  hosts retain precedence and ordinary product menus keep their body portal.
 - Compare offers independent interactive specimens. Apply copies the chosen
   values. Randomize stays inside the current schema; text remains locked by
   default. Unlocking text restores text fields to their component defaults.
