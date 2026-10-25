@@ -67,6 +67,17 @@
   mask-size: contain;
 }
 .oreo-prompt-trailing > :last-child { gap: 0; }
+.oreo-prompt-trailing > .oreo-prompt-voice-actions { gap: var(--space-x4); }
+/* Figma's 4px OUTSIDE stroke surrounds the 32px face, not its icon.
+   A separate layer keeps the halo independent of theme elevation and hover. */
+.oreo-prompt-mic-active::before {
+  content: "";
+  position: absolute;
+  inset: calc(-1 * var(--space-x2));
+  border: var(--space-x2) solid color-mix(in srgb, var(--color-status-progress) 6%, transparent);
+  border-radius: inherit;
+  pointer-events: none;
+}
 .oreo-prompt-trailing .oreo-model-selector { padding-inline: var(--space-x1); gap: var(--space-x1); color: var(--color-text-secondary); }
 .oreo-prompt-trailing .oreo-model-selector > span:first-child { gap: var(--space-x1); }
 .oreo-prompt-trailing .oreo-model-selector > span:first-child > span:first-child:not(:last-child) { width: calc(var(--spacing) * 3); height: calc(var(--spacing) * 3); }
