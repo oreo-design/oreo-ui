@@ -4,6 +4,7 @@ import { cn } from "@/lib/cn";
 import { Icon } from "@/components/icon";
 import { Shortcut } from "@/components/shortcut";
 import { menu } from "./menu.variants";
+import { PortalContainerContext } from "@/lib/portal-container";
 
 const slots = menu();
 
@@ -55,9 +56,11 @@ export type MenuPopupProps = {
 
 /** The floating surface: portal + positioner + the styled popup card. */
 export function MenuPopup({ container, collisionAvoidance, side = "bottom", align = "start", sideOffset = 4, className, children }: MenuPopupProps) {
+  const previewContainer = React.useContext(PortalContainerContext);
+  const portalContainer = container === undefined ? previewContainer ?? undefined : container;
   return (
-    <BaseMenu.Portal container={container}>
-      <BaseMenu.Positioner collisionAvoidance={collisionAvoidance} positionMethod={container ? "fixed" : "absolute"} side={side} align={align} sideOffset={sideOffset} className="z-50 outline-none">
+    <BaseMenu.Portal container={portalContainer}>
+      <BaseMenu.Positioner collisionAvoidance={collisionAvoidance} positionMethod={portalContainer ? "fixed" : "absolute"} side={side} align={align} sideOffset={sideOffset} className="z-50 outline-none">
         <BaseMenu.Popup className={cn(slots.popup(), className)}>{children}</BaseMenu.Popup>
       </BaseMenu.Positioner>
     </BaseMenu.Portal>

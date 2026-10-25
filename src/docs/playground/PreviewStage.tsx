@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode, type SyntheticEvent } from "react";
+import { PortalContainerContext } from "@/lib/portal-container";
 
 export type PreviewDevice = "desktop" | "mobile";
 export type Part = { name: string; description: string; selector: string };
@@ -94,10 +95,29 @@ export function PreviewStage({
   onMeasure: (measurement: Measurement | null) => void;
   revision: number;
 }) {
+  const stage = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
   const target = useRef<Element | null>(null);
   const [measurement, setMeasurement] = useState<Measurement | null>(null);
+  const [deviceScale, setDeviceScale] = useState(1);
+  const [portalHost, setPortalHost] = useState<HTMLDivElement | null>(null);
+  useLayoutEffect(() => {
+    const element = stage.current;
+    const host = element?.parentElement;
+    if (!element || !host || viewport !== "mobile") return;
+    const fit = () => {
+      const style = getComputedStyle(element);
+      const width = host.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      const height = host.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
+      setDeviceScale(Math.max(0.1, Math.min(1, width / 391, height / 804)));
+    };
+    const resize = new ResizeObserver(fit);
+    resize.observe(host);
+    resize.observe(element);
+    fit();
+    return () => resize.disconnect();
+  }, [viewport]);
   const selectElement = useRef<(element: Element) => void>(() => {});
   const [markers, setMarkers] = useState<
     { x: number; y: number; index: number }[]
@@ -114,6 +134,9 @@ export function PreviewStage({
     if (selected >= 0) target.current = null;
     const measure = () => {
       const hostRect = host.getBoundingClientRect();
+      // DOM rects include the mockup zoom; overlays and inspector values use
+      // the screen's own CSS pixels, including its independent scroll offset.
+      const scale = viewport === "mobile" ? deviceScale : 1;
       const element =
         selected >= 0
           ? root.querySelector(parts[selected]?.selector ?? parts[0].selector)
@@ -128,8 +151,8 @@ export function PreviewStage({
         const el = root.querySelector(part.selector);
         if (!el || !visible(el)) return [];
         const r = el.getBoundingClientRect();
-        return [{ index, x: r.x - hostRect.x + host.scrollLeft,
-          y: r.y - hostRect.y + host.scrollTop + (index ? r.height + 8 : -12) }];
+        return [{ index, x: (r.x - hostRect.x) / scale + host.scrollLeft,
+          y: (r.y - hostRect.y) / scale + host.scrollTop + (index ? r.height / scale + 8 : -12) }];
       }));
       if (!element || !visible(element)) {
         setMeasurement(null);
@@ -167,10 +190,10 @@ export function PreviewStage({
       ]);
       probe.remove();
       const next: Measurement = {
-        x: rect.x - hostRect.x + host.scrollLeft,
-        y: rect.y - hostRect.y + host.scrollTop,
-        width: rect.width,
-        height: rect.height,
+        x: (rect.x - hostRect.x) / scale + host.scrollLeft,
+        y: (rect.y - hostRect.y) / scale + host.scrollTop,
+        width: rect.width / scale,
+        height: rect.height / scale,
         radius: style.borderRadius,
         padding: style.padding,
         gap: style.gap,
@@ -229,7 +252,7 @@ export function PreviewStage({
       selectElement.current = () => {};
       window.removeEventListener("resize", measure);
     };
-  }, [mode, selected, slug, viewport, revision, onSelect, onMeasure]);
+  }, [mode, selected, slug, viewport, revision, deviceScale, onSelect, onMeasure]);
 
   const select = (event: SyntheticEvent) => {
     if (mode !== "annotation" || !(event.target instanceof Element)) return;
@@ -244,60 +267,66 @@ export function PreviewStage({
   };
 
   return (
-    <div className={`pg-stage pg-stage-${mode}`}>
-      <div ref={frame} className="pg-frame" data-device={viewport}>
-        <div
-          ref={content}
-          onPointerDownCapture={select}
-          onClickCapture={select}
-          onDoubleClickCapture={suppress}
-          onFocusCapture={event => { if (mode === "annotation") event.stopPropagation(); }}
-          onKeyDownCapture={event => {
-            if (event.key === "Tab" || event.key === "Escape") return;
-            if (event.key === "Enter" || event.key === " ") select(event);
-            else suppress(event);
-          }}
-          onKeyUpCapture={suppress}
-          onBeforeInputCapture={suppress}
-          onPasteCapture={suppress}
-          onDropCapture={suppress}
-          onSubmitCapture={suppress}
-          className="pg-preview" style={themeStyle}
-          key={revision}
-        >
-          {children}
-        </div>
-        {mode === "preview" && (
-          <p className="pg-hint">Click to try the interaction</p>
-        )}
-        {mode !== "preview" && measurement && (
+    <div ref={stage} className={`pg-stage pg-stage-${mode}`} data-device={viewport}>
+      <div className="pg-device" data-device={viewport} style={{ "--device-scale": deviceScale } as CSSProperties}>
+        {viewport === "mobile" && <div className="pg-device-hardware" aria-hidden="true" />}
+        <div ref={frame} className="pg-frame" data-device={viewport}>
           <div
-            className="pg-selection"
-            data-mode={mode}
-            style={{
-              left: measurement.x,
-              top: measurement.y,
-              width: measurement.width,
-              height: measurement.height,
+            ref={content}
+            onPointerDownCapture={select}
+            onClickCapture={select}
+            onDoubleClickCapture={suppress}
+            onFocusCapture={event => { if (mode === "annotation") event.stopPropagation(); }}
+            onKeyDownCapture={event => {
+              if (event.key === "Tab" || event.key === "Escape") return;
+              if (event.key === "Enter" || event.key === " ") select(event);
+              else suppress(event);
             }}
-            aria-hidden="true"
-          />
-        )}
-        {mode === "annotation" &&
-          markers.map((marker) => (
-            <button
-              key={marker.index}
-              className="pg-marker"
-              style={{ left: marker.x, top: marker.y }}
-              onClick={() => {
-                onSelect(marker.index);
+            onKeyUpCapture={suppress}
+            onBeforeInputCapture={suppress}
+            onPasteCapture={suppress}
+            onDropCapture={suppress}
+            onSubmitCapture={suppress}
+            className="pg-preview" style={themeStyle}
+            key={revision}
+          >
+            <PortalContainerContext.Provider value={viewport === "mobile" ? portalHost : null}>
+              {children}
+            </PortalContainerContext.Provider>
+          </div>
+          {mode === "preview" && (
+            <p className="pg-hint">Click to try the interaction</p>
+          )}
+          {mode !== "preview" && measurement && (
+            <div
+              className="pg-selection"
+              data-mode={mode}
+              style={{
+                left: measurement.x,
+                top: measurement.y,
+                width: measurement.width,
+                height: measurement.height,
               }}
-              aria-label={`Select ${parts[marker.index].name}`}
-              aria-pressed={selected === marker.index}
-            >
-              {marker.index + 1}
-            </button>
-          ))}
+              aria-hidden="true"
+            />
+          )}
+          {mode === "annotation" &&
+            markers.map((marker) => (
+              <button
+                key={marker.index}
+                className="pg-marker"
+                style={{ left: marker.x, top: marker.y }}
+                onClick={() => {
+                  onSelect(marker.index);
+                }}
+                aria-label={`Select ${parts[marker.index].name}`}
+                aria-pressed={selected === marker.index}
+              >
+                {marker.index + 1}
+              </button>
+            ))}
+          <div ref={setPortalHost} className="pg-device-portals" />
+        </div>
       </div>
       {mode === "annotation" && (
         <div className="pg-anatomy">
