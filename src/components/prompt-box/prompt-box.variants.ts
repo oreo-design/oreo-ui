@@ -5,7 +5,8 @@ import { tv } from "@/lib/tv";
  *
  * Geometry from the Figma `_Prompt Box` master: a `--radius-card-medium` card
  * with smooth corners on the base background, a hairline border and Shadow/Default
- * elevation; 16px inline inset, a 40px minimum input region, and a 16px content/action gap.
+ * elevation; 12px top inset, 16px inline inset, a 40px minimum input region,
+ * and a 16px content/action gap.
  * When a Context Bar is attached the bar tucks 16px underneath the card
  * (`headerSlot` / `footerSlot` pull margins) and the card paints above it.
  */
@@ -16,7 +17,7 @@ export const promptBox = tv({
     footerSlot: "z-[1] -mt-4 w-full",
     card: [
       "oreo-composer oreo-squircle [--squircle-radius:var(--radius-card-medium)] z-[2] flex w-full max-w-[800px] flex-col items-start gap-[var(--space-x8)]",
-      "rounded-[var(--radius-card-medium)] bg-[var(--color-bg-base)] px-[var(--space-x8)] pt-[var(--space-x10)] pb-[var(--space-x7)] [border-width:0]",
+      "rounded-[var(--radius-card-medium)] bg-[var(--color-bg-base)] px-[var(--space-x8)] pt-[var(--space-x6)] pb-[var(--space-x7)] [border-width:0]",
       // Keep the inside stroke independent of theme-owned elevation shadows.
       "after:pointer-events-none after:absolute after:inset-0 after:rounded-[inherit] after:[corner-shape:inherit] after:ring-[0.5px] after:ring-inset after:ring-[var(--color-border-default)]",
       "shadow-[var(--shadow-default)]",
