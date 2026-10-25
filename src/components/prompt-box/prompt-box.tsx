@@ -357,7 +357,7 @@ export function PromptBox({
       whileTap={reduce ? undefined : { scale: tapScale }}
       transition={{ type: "spring", bounce, duration }}
       className={cn(
-        "grid size-7 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
+        "grid size-8 shrink-0 place-items-center rounded-[var(--radius-capsule)]",
         "bg-[var(--color-bg-base)] text-[var(--color-text-primary)] outline-none oreo-focus",
       )}
     >
@@ -372,7 +372,7 @@ export function PromptBox({
       whileTap={reduce ? undefined : { scale: tapScale }}
       transition={{ type: "spring", bounce, duration }}
       className={cn(
-        "flex h-7 items-center gap-[var(--space-x4)] rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
+        "flex h-8 items-center gap-[var(--space-x4)] rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
         "bg-[var(--color-status-progress-subtle)] outline-none oreo-focus",
       )}
     >
@@ -384,7 +384,7 @@ export function PromptBox({
   const thinkingPill = (
     <span
       className={cn(
-        "oreo-legacy-label relative overflow-hidden flex h-7 min-w-[74px] items-center justify-center rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
+        "oreo-legacy-label relative overflow-hidden flex h-8 min-w-[74px] items-center justify-center rounded-[var(--radius-capsule)] px-[var(--space-x6)]",
         "bg-[var(--color-bg-elevated)] text-[12px] leading-5 font-medium text-[var(--color-text-secondary)]",
       )}
     >
@@ -394,12 +394,13 @@ export function PromptBox({
 
   const micButton = (
     <IconButton
-      size="sm"
+      size="md"
       aria-label={voiceStatus === "inputting" ? "Stop voice input" : "Start voice input"}
+      aria-pressed={voiceStatus === "inputting"}
       type="tertiary"
-      icon={<ComposerAsset name={voiceStatus === "inputting" ? "mic" : "micOutline"} className="oreo-prompt-action-icon" />}
+      icon={<ComposerAsset name={voiceStatus === "inputting" ? "mic" : "micOutline"} />}
       onClick={onVoiceToggle}
-      className={voiceStatus === "inputting" ? "bg-status-progress-subtle text-[var(--color-status-progress)] ring-4 ring-inset ring-[color-mix(in_srgb,var(--color-status-progress)_6%,transparent)]" : "text-[var(--color-text-primary)]"}
+      className={cn("oreo-prompt-mic", voiceStatus === "inputting" ? "oreo-prompt-mic-active bg-status-progress-subtle text-[var(--color-status-progress)]" : "text-[var(--color-text-primary)]")}
       {...spring}
     />
   );
@@ -457,7 +458,7 @@ export function PromptBox({
           className="ml-auto">
           {modelSelect}
         </motion.div>
-        <motion.div layout={reduce ? false : "position"} transition={promptTransition} className={cn(slots.actionCluster(), "justify-end")}>
+        <motion.div layout={reduce ? false : "position"} transition={promptTransition} className={cn(slots.actionCluster(), "justify-end", voice && "oreo-prompt-voice-actions")}>
           <AnimatePresence initial={false} mode="popLayout">
             {voice === "mic" && <motion.div key="mic" layout={reduce ? false : "position"} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={promptTransition}>{micButton}</motion.div>}
           </AnimatePresence>
