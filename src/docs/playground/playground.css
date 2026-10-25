@@ -30,11 +30,6 @@
 .pg-modal button:disabled:not(.pg-preview *) {
   opacity: 0.4;
 }
-.pg-shell :is(button, a, input, textarea, select):focus-visible,
-.pg-modal :is(button, a, input, textarea, select):focus-visible {
-  outline: 2px solid var(--color-text-tertiary);
-  outline-offset: 3px;
-}
 .pg-header {
   height: 57px;
   flex-shrink: 0;
@@ -811,7 +806,6 @@ body:has(.pg-shell) .site-mobile-nav {
 .pg-theme-options { display: grid; gap: var(--space-x2); border: 0; min-width: 0; }
 .pg-theme-option { display: flex; align-items: center; gap: var(--space-x4); padding: var(--space-x4) var(--space-x6); --squircle-radius: var(--radius-control); color: var(--color-text-secondary); cursor: pointer; position: relative; }
 .pg-theme-option:has(:checked) { background-color: var(--color-state-press); color: var(--color-text-primary); }
-.pg-theme-option:has(:focus-visible) { outline: 2px solid var(--color-text-tertiary); outline-offset: 2px; }
 .pg-theme-option input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .pg-theme-swatch { width: var(--space-x8); height: var(--space-x8); border-radius: var(--radius-control-tiny); background: var(--color-text-primary); border: .5px solid var(--color-border-default); }
 .pg-theme-swatch-openai { background: var(--color-text-primary); border-radius: var(--radius-capsule); }

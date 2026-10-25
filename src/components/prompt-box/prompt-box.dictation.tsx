@@ -23,7 +23,7 @@ export function composePromptDraft(draft: PromptBoxDraft): string {
   return [draft.text.trim(), ...draft.actions.map(action => action.text.trim())].filter(Boolean).join("\n");
 }
 
-const quietButton = "rounded-[var(--radius-control)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-text-primary)] disabled:opacity-40";
+const quietButton = "rounded-[var(--radius-control)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] oreo-focus disabled:opacity-40";
 
 export type PromptBoxActionsProps = {
   actions: PromptBoxAction[];

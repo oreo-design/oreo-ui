@@ -27,5 +27,4 @@
 .site-docs-content > header h1 { font-size:1.5rem; line-height:1.3; font-weight:600; letter-spacing:-.025em; }
 .site-docs-content > header p { font-size:.875rem; line-height:1.75; }
 .site-docs-content > section > h2 { font-size:1.125rem; }
-:is(.site-sidebar,.site-mobile-nav,.site-views) :is(a,button,input):focus-visible, .site-action:focus-visible { outline:2px solid var(--color-text-secondary); outline-offset:3px; }
 @media(max-width:1023px) { .site-sidebar { display:none; } .site-mobile-nav { display:block; } }

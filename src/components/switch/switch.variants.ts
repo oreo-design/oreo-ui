@@ -15,7 +15,7 @@ export const switchStyles = tv({
       "relative inline-flex h-5 w-[calc(var(--spacing)*8.5)] shrink-0 cursor-pointer rounded-[var(--radius-capsule)] p-0.5",
       "bg-[var(--color-border-default)] transition-colors duration-150 ease-out",
       "data-[checked]:bg-[var(--color-bg-inverse)]",
-      "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-text-primary)]",
+      "oreo-focus",
       "data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
     ],
     thumb: [

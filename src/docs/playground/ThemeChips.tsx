@@ -16,7 +16,7 @@ export function ThemeChips({ open, onToggle, panelId, triggerId }: {
   return <div className="pg-theme-picker">
     <div className="pg-theme-bar">
       <fieldset className="pg-theme-chips"><legend className="sr-only">Theme preset</legend>
-        {themeNames.map(name => <label key={name} className="pg-theme-option pg-theme-chip oreo-squircle oreo-state-layer">
+        {themeNames.map(name => <label key={name} className="oreo-focus-proxy pg-theme-option pg-theme-chip oreo-squircle oreo-state-layer">
           <input type="radio" name={`${id}-theme-preset`} value={name} aria-label={themePresets[name].label}
             checked={selected === name} onChange={() => setTheme(presetAppearance(name, theme.dark))} />
           <span className={`pg-theme-swatch pg-theme-swatch-${name}`} aria-hidden="true"

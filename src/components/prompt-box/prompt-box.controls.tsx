@@ -22,7 +22,7 @@ export function PromptBoxPermission({ value, options, onValueChange, disabled }:
   const selected = options.find(option => option.value === value);
   if (!selected) return null;
   return <Menu>
-    <MenuTrigger disabled={disabled || !onValueChange} className="oreo-prompt-permission oreo-squircle oreo-state-layer" data-tone={selected.tone ?? "neutral"} aria-label={`Permissions: ${selected.label}`}>
+    <MenuTrigger disabled={disabled || !onValueChange} className="oreo-prompt-permission oreo-focus oreo-squircle oreo-state-layer" data-tone={selected.tone ?? "neutral"} aria-label={`Permissions: ${selected.label}`}>
       <ComposerAsset name="shield" className="oreo-prompt-permission-icon" />
       <span>{selected.label}</span>
     </MenuTrigger>
@@ -56,7 +56,7 @@ export function PromptBoxConnectApps({ apps, label = "Connect apps", onAppClick,
     <span aria-hidden className="oreo-prompt-app-icons">{apps.slice(0, 3).map(app => <span key={app.id}>{app.icon}</span>)}</span>
     <span className="oreo-prompt-app-label">{label}</span>
   </>;
-  const className = "oreo-prompt-app-trigger oreo-squircle oreo-state-layer";
+  const className = "oreo-prompt-app-trigger oreo-focus oreo-squircle oreo-state-layer";
   return <ContextBar position="footer" className="oreo-prompt-apps">
     {onClick ? <button type="button" className={className} disabled={disabled} onClick={onClick}>{content}</button> : <Menu>
       <MenuTrigger className={className} disabled={disabled || !apps.length || !onAppClick}>{content}</MenuTrigger>

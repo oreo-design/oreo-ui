@@ -50,3 +50,21 @@ Verify rest, hover, press, selected+hover, selected+press, disabled, keyboard
 focus, light/dark, radius zero/large and compact/spacious density. Scope:
 Playground chrome is migrated; this does not claim every historical component or
 reference template already follows the global rule.
+
+
+## Focus ownership
+
+Use `oreo-focus` for a shared action: a single 1px border-default outline with
+1px offset on `:focus-visible`, no accent halo, no offset ring stacked on it.
+Use `oreo-focus-proxy` on a visible label for a visually hidden native control.
+Use `oreo-focus-field` for bordered settings inputs: focus changes only the
+existing border to border-default. Inline editors keep their caret without an
+extra box around the text; their containing surface already defines the field.
+Playground shell focus rules must exclude `.pg-preview` descendants. Site and
+Remix navigation use the same quiet action cue. Preserve semantic error/selected
+borders, component shadows, native tab order and focus return. Forced-colors mode
+uses the system Highlight color. Do not use `*:focus { outline: none }`.
+
+This migration covers shared Button/IconButton, Switch, PromptBox controls and
+site/Playground/Remix chrome. Historical custom templates may still have authored
+focus treatments; their local overrides are not proof of a new global rule.

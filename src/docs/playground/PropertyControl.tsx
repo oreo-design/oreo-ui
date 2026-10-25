@@ -3,7 +3,7 @@ import { Switch } from "@/components/switch";
 import { normalizeNumber, type Control } from "./schema";
 import { cn } from "@/lib/cn";
 
-const inputClass = "oreo-squircle w-full min-w-0 border border-[var(--color-border-subtle)] bg-[var(--color-bg-elevated)] px-3 py-2 text-xs text-[var(--color-text-primary)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-text-tertiary)]";
+const inputClass = "oreo-squircle w-full min-w-0 border border-[var(--color-border-subtle)] bg-[var(--color-bg-elevated)] px-3 py-2 text-xs text-[var(--color-text-primary)] outline-none oreo-focus-field";
 
 function NumericInput({ control, value, onChange, id, label }: { control: Extract<Control, { kind: "number" }>; value: number; onChange: (value: number) => void; id: string; label: string }) {
   const [draft, setDraft] = useState(String(value));
@@ -31,9 +31,9 @@ export function PropertyControl({ name, control, value, onChange, onReselect }: 
     {control.kind === "number" && <NumericInput id={id} label={label} control={control} value={Number(value)} onChange={onChange} />}
     {control.kind === "select" && (control.options.length <= 3 && control.options.join("").length < 26 ?
       <div role="radiogroup" aria-labelledby={`${id}-label`} className="pg-segment oreo-squircle flex">
-        {control.options.map(option => <label key={option} className="relative min-w-0 flex-1 cursor-pointer text-center">
+        {control.options.map(option => <label key={option} className="oreo-focus-proxy relative min-w-0 flex-1 cursor-pointer text-center">
           <input type="radio" className="peer sr-only" name={id} value={option} checked={value === option} onChange={() => onChange(option)} onClick={() => { if (value === option) onReselect?.(); }} />
-          <span className="oreo-squircle oreo-state-layer block px-2 py-1.5 text-xs capitalize peer-focus-visible:ring-2 peer-focus-visible:ring-[var(--color-text-tertiary)] text-[var(--color-text-secondary)]">{({ sm: "Small", md: "Medium", lg: "Large" } as Record<string, string>)[option] ?? option}</span>
+          <span className="oreo-squircle oreo-state-layer block px-2 py-1.5 text-xs capitalize text-[var(--color-text-secondary)]">{({ sm: "Small", md: "Medium", lg: "Large" } as Record<string, string>)[option] ?? option}</span>
         </label>)}
       </div> : <select id={id} className={inputClass} value={String(value)} onChange={e => onChange(e.target.value)}>{control.options.map(option => <option key={option} value={option}>{option}</option>)}</select>)}
     {control.description && <p className="text-xs leading-5 text-[var(--color-text-tertiary)]">{control.description}</p>}
