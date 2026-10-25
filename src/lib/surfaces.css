@@ -33,7 +33,6 @@
 
 /* One quiet keyboard cue for shared controls and website chrome. Shell rules
    deliberately exclude the preview: each embedded component owns its focus. */
-.oreo-focus-proxy { border-radius: inherit; corner-shape: inherit; }
 .oreo-focus,
 :is(.pg-shell, .pg-modal) :is(button, a, summary, select):not(.pg-preview *),
 :is(.site-sidebar, .site-mobile-nav, .site-views, .remix-layout) :is(button, a, summary),
@@ -41,7 +40,8 @@
   outline: none;
 }
 .oreo-focus:focus-visible,
-.oreo-focus-proxy:has(:focus-visible),
+.oreo-focus-proxy:has(:focus-visible):not(:has(> .oreo-squircle)),
+.oreo-focus-proxy:has(:focus-visible) > .oreo-squircle,
 :is(.pg-shell, .pg-modal) :is(button, a, summary, select):focus-visible:not(.pg-preview *),
 :is(.site-sidebar, .site-mobile-nav, .site-views, .remix-layout) :is(button, a, summary):focus-visible,
 .site-action:focus-visible {
@@ -60,7 +60,8 @@
 /* System high-contrast colors are an intentional platform exception. */
 @media (forced-colors: active) {
   .oreo-focus:focus-visible,
-  .oreo-focus-proxy:has(:focus-visible),
+  .oreo-focus-proxy:has(:focus-visible):not(:has(> .oreo-squircle)),
+.oreo-focus-proxy:has(:focus-visible) > .oreo-squircle,
   .oreo-focus-field:focus-visible,
   .site-directory-search input:focus-visible,
   .remix-search input:focus-visible,
