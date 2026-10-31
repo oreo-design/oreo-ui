@@ -85,3 +85,46 @@ export async function checkPickerDestinations({ page, baseURL, observe = async (
   }
   return { filteredHintsMatchDestination: true, normalClicksOpenSelectedView: true, nativeHrefMatchesNormalNavigation: true };
 }
+
+/** Keyboard return focus belongs to the current trigger, including replacement
+ * of a pending shell while the persistent picker stays open. Dev adapter path
+ * can be replaced by a production chunk matcher by the caller. */
+export async function checkPickerFocus({ page, baseURL, adapterURL = /\/src\/docs\/playground\/adapters\/switch\.tsx(?:\?.*)?$/, observe = async () => {} }) {
+  const close = async title => {
+    await page.getByRole("button", { name: "Close Find a component", exact: true }).click();
+    const trigger = page.getByRole("button", { name: `Choose component, current ${title}`, exact: true });
+    await trigger.and(page.locator(":focus")).waitFor({ state: "visible" });
+    assert.equal(await trigger.and(page.locator(":focus")).count(), 1, "Closing must focus the current visible breadcrumb");
+    await observe(`${title}: close restored breadcrumb focus`);
+  };
+  await page.goto(new URL("/button", baseURL).href, { waitUntil: "domcontentloaded" });
+  await page.getByRole("button", { name: "Choose component, current Button", exact: true }).click();
+  await observe("ready: picker open");
+  await close("Button");
+
+  let release;
+  const gate = new Promise(resolve => { release = resolve; });
+  let intercepted = false;
+  const holdAdapter = async route => { intercepted = true; await gate; await route.continue(); };
+  await page.route(adapterURL, holdAdapter);
+  try {
+    await page.goto(new URL("/switch", baseURL).href, { waitUntil: "domcontentloaded" });
+    await page.getByRole("region", { name: "Switch content", exact: true }).waitFor();
+    assert.equal(intercepted, true, "The pending scenario must really delay the selected adapter");
+    await page.getByRole("button", { name: "Choose component, current Switch", exact: true }).click();
+    const input = page.getByRole("searchbox", { name: "Find a component", exact: true });
+    await input.click();
+    await input.fill("button");
+    await observe("pending: typed into picker");
+    release();
+    await page.getByRole("toolbar", { name: "Playground tools", exact: true, includeHidden: true }).waitFor({ state: "attached" });
+    assert.equal(await input.inputValue(), "button", "Ready content must preserve the open picker query");
+    assert.equal(await input.and(page.locator(":focus")).count(), 1, "Ready content must preserve the active editing field");
+    await observe("ready: picker retained query and input focus");
+    await close("Switch");
+  } finally {
+    release();
+    await page.unroute(adapterURL, holdAdapter);
+  }
+  return { readyCloseReturnsFocus: true, pendingHandoffPreservesEditing: true, handoffCloseReturnsToCurrentTrigger: true };
+}

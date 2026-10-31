@@ -6,7 +6,7 @@ import { DocsLayout } from "./DocsLayout";
 import type { DocsNav } from "./DocsPage";
 import { PageViews } from "./PageViews";
 import { AsyncContentState } from "./AsyncContentState";
-import { ComponentPicker } from "./playground/ComponentPicker";
+import { ComponentPicker, useComponentPickerTrigger } from "./playground/ComponentPicker";
 import { ThemeChips } from "./playground/ThemeChips";
 import { VariationPanel } from "./playground/VariationPanel";
 import { Modal } from "./playground/Tools";
@@ -21,6 +21,7 @@ export function RoutePending({ nav, view, error, onRetry, onViewChange, onIntera
   const framed = useDocsFrame();
   const entry: CatalogEntry = CATALOG[nav.active as CatalogSlug];
   const [picker, setPicker] = useState(false);
+  const pickerTriggerRef = useComponentPickerTrigger();
   const [settings, setSettings] = useState(false);
   const changeSettings = (next: boolean) => { setSettings(next); onInteractionChange?.(next); };
   const themeId = useId();
@@ -34,7 +35,7 @@ export function RoutePending({ nav, view, error, onRetry, onViewChange, onIntera
     <AsyncContentState title={entry.title} error={error} onRetry={onRetry} />
   </DocsLayout>;
   return <Tooltip.Provider delay={350}><div className="pg-shell">
-    <header className="pg-header"><button className="pg-breadcrumb" onClick={() => setPicker(true)} aria-label={`${view === "playground" ? "Choose component" : "Choose page"}, current ${entry.title}`} aria-haspopup="dialog"><span className="pg-brand">Oreo UI</span><span>/</span><span className="pg-category">{entry.nav.group}</span><span>/</span><strong>{entry.title}</strong></button>{entry.views?.includes("docs") ? views : null}</header>
+    <header className="pg-header"><button ref={pickerTriggerRef} className="pg-breadcrumb" onClick={() => setPicker(true)} aria-label={`${view === "playground" ? "Choose component" : "Choose page"}, current ${entry.title}`} aria-haspopup="dialog"><span className="pg-brand">Oreo UI</span><span>/</span><span className="pg-category">{entry.nav.group}</span><span>/</span><strong>{entry.title}</strong></button>{entry.views?.includes("docs") ? views : null}</header>
     <div className="pg-workspace"><main className="pg-main" aria-label={`${entry.title} ${view === "playground" ? "playground" : "page"}`}><div className="pg-content async-pending-region"><AsyncContentState title={entry.title} error={error} onRetry={onRetry} /></div><footer className="pg-theme-footer"><ThemeChips open={settings} onToggle={() => changeSettings(!settings)} panelId={themeId} triggerId={`${themeId}-trigger`} /></footer></main>
       {view === "playground" && <aside className="pg-inspector async-playground-inspector" aria-label="Properties" aria-busy={!error}><p className="pg-caption">Properties</p><div className="async-content-skeleton" aria-hidden="true"><i /><div /><i /><div /></div></aside>}
     </div>

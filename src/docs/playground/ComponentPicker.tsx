@@ -1,9 +1,17 @@
 import { PlaygroundIcon } from "@/components/icon";
-import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode, type RefObject } from "react";
 import { catalogHref, searchCatalog, type CatalogView } from "@/lib/catalog";
 import type { DocsNav } from "@/docs/DocsPage";
 import { Modal } from "./Tools";
 
+
+const PickerTriggerContext = createContext<RefObject<HTMLButtonElement | null> | null>(null);
+
+/** The current breadcrumb replaces the pending one without replacing this ref. */
+export function useComponentPickerTrigger() {
+  const fallback = useRef<HTMLButtonElement>(null);
+  return useContext(PickerTriggerContext) ?? fallback;
+}
 
 const PickerContext = createContext<((onClose: () => void) => void) | null>(null);
 
@@ -11,10 +19,11 @@ const PickerContext = createContext<((onClose: () => void) => void) | null>(null
  * input focus and selection when the content beneath it becomes ready. */
 export function ComponentPickerProvider({ nav, children }: { nav: DocsNav; children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const onClose = useRef<(() => void) | undefined>(undefined);
   const request = useRef((close: () => void) => { onClose.current = close; setOpen(true); }).current;
   const changeOpen = (next: boolean) => { setOpen(next); if (!next) onClose.current?.(); };
-  return <PickerContext.Provider value={request}>{children}<PickerDialog nav={nav} open={open} setOpen={changeOpen} /></PickerContext.Provider>;
+  return <PickerTriggerContext.Provider value={triggerRef}><PickerContext.Provider value={request}>{children}<PickerDialog nav={nav} open={open} setOpen={changeOpen} finalFocus={triggerRef} /></PickerContext.Provider></PickerTriggerContext.Provider>;
 }
 
 export function ComponentPicker(props: { open: boolean; setOpen: (open: boolean) => void; nav: DocsNav }) {
@@ -29,10 +38,12 @@ function PickerDialog({
   open,
   setOpen,
   nav,
+  finalFocus,
 }: {
   open: boolean;
   setOpen: (open: boolean) => void;
   nav: DocsNav;
+  finalFocus?: RefObject<HTMLButtonElement | null>;
 }) {
   const [query, setQuery] = useState("");
   const [view, setView] = useState<CatalogView | "">("");
@@ -43,6 +54,7 @@ function PickerDialog({
       onOpenChange={setOpen}
       title="Find a component"
       className="pg-picker"
+      finalFocus={finalFocus}
     >
       <input
         autoFocus

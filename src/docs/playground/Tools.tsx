@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { ButtonHTMLAttributes, ComponentProps, ReactNode } from "react";
 import { Tooltip } from "@base-ui-components/react/tooltip";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { PlaygroundIcon as Glyph, type PlaygroundIconName } from "@/components/icon";
@@ -52,6 +52,7 @@ export function Modal({
   className = "",
   trigger,
   id,
+  finalFocus,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -61,6 +62,7 @@ export function Modal({
   className?: string;
   trigger?: ReactNode;
   id?: string;
+  finalFocus?: ComponentProps<typeof Dialog.Popup>["finalFocus"];
 }) {
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
@@ -68,7 +70,7 @@ export function Modal({
       <Dialog.Portal>
         <Dialog.Backdrop className="pg-backdrop" />
         <Dialog.Viewport className="pg-modal-viewport">
-          <Dialog.Popup id={id} className={`pg-modal oreo-paper-card oreo-squircle ${className}`}>
+          <Dialog.Popup id={id} finalFocus={finalFocus} className={`pg-modal oreo-paper-card oreo-squircle ${className}`}>
             <header className="pg-row">
               <Dialog.Title>{title}</Dialog.Title>
               <Dialog.Close className="pg-tool oreo-squircle oreo-state-layer" aria-label={`Close ${title}`}>

@@ -22,7 +22,7 @@ import { sourceReferencePath, sourceReferenceText } from "@/docs/source-referenc
 import { useDemo } from "./useDemo";
 import { PlaygroundIcon as Glyph } from "@/components/icon";
 import { Tool, Modal } from "./Tools";
-import { ComponentPicker } from "./ComponentPicker";
+import { ComponentPicker, useComponentPickerTrigger } from "./ComponentPicker";
 import { PreviewStage, partsFor, type Part, type Measurement, type PreviewDevice } from "./PreviewStage";
 import { SharePanel } from "./SharePanel";
 import { ComparePanel } from "./ComparePanel";
@@ -62,6 +62,7 @@ export function ComponentPlayground({
 }) {
   const { theme } = useVariation();
   const moreTools = useRef<HTMLDetailsElement>(null);
+  const pickerTriggerRef = useComponentPickerTrigger();
   const [variationOpen, setVariationOpen] = useState(false);
   const themePanelId = useId();
   const themeTriggerId = useId();
@@ -368,6 +369,7 @@ export function ComponentPlayground({
       <div className="pg-shell">
         <header className="pg-header">
           <button
+            ref={pickerTriggerRef}
             className="pg-breadcrumb"
             onClick={() => setPicker(true)}
             aria-label={`Choose component, current ${spec.title}`}
