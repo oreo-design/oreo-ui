@@ -1,11 +1,12 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
-import { Section, PreviewTabs, PropsTable, CodeBlock, type PropRow } from "@/docs/primitives";
+import { Section, PreviewTabs, PropsTable, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
 import { Shortcut } from "@/components/shortcut";
 
 const TOC: TocItem[] = [
   { id: "shortcut", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "keys", label: "Keys" },
   { id: "combinations", label: "Combinations" },
   { id: "inline", label: "Inline & menus" },
@@ -50,8 +51,8 @@ export function ShortcutDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <CodeBlock lang="bash" code={`npx oreo-ui add shortcut\n# or copy src/components/shortcut/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="shortcut" />
           </Section>
 
           <Section id="keys" title="Keys" description="Modifier and action keys (letters, function keys, ESC, Tab) with proper spacing and visual hierarchy.">

@@ -1,7 +1,6 @@
 import { useId, type ReactNode } from "react";
 import { Collapsible } from "@base-ui-components/react/collapsible";
 import { Tabs } from "@base-ui-components/react/tabs";
-import { Button } from "@/components/button";
 import { Icon, type IconName } from "@/components/icon";
 import { cn } from "@/lib/cn";
 import "./automation.css";
@@ -64,7 +63,5 @@ export function AutomationStepCard({ step, selected = false, onSelect }: { step:
   return <button type="button" className="agent-step" aria-pressed={selected} onClick={() => onSelect(step.id)}><span className="agent-step-icon"><Icon name={step.icon} /></span><span className="min-w-0"><span className="mb-1 block text-xs text-text-tertiary">{step.kind}</span><span className="block text-sm font-medium">{step.title}</span><span className="mt-1 block text-xs leading-5 text-text-secondary">{step.description}</span></span><Icon name="chevron-right" size="sm" className="shrink-0 text-text-tertiary" /></button>;
 }
 
-/** One empty/error owner for the assistant and its associated workspace. */
-export function AgentWorkspaceState({ title, description, error = false, actionLabel, onAction }: { title: string; description: string; error?: boolean; actionLabel?: string; onAction?: () => void }) {
-  return <div className="agent-workspace-state" role={error ? "alert" : undefined}><Icon name={error ? "warning-circle" : "sparkle"} size="lg" className={error ? "text-status-error" : "text-text-tertiary"} /><h3 className="text-base font-medium">{title}</h3><p className="max-w-xs text-sm leading-6 text-text-secondary">{description}</p>{actionLabel && onAction && <Button type="secondary" tapScale={1} onClick={onAction}>{actionLabel}</Button>}</div>;
-}
+/** Compatibility export for existing Agent and template consumers. */
+export { StatusView as AgentWorkspaceState } from "@/components/status-view";

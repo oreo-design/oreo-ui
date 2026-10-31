@@ -1,3 +1,5 @@
+import { ComponentRules } from "@/docs/ComponentRules";
+import { treeStepperRules } from "@/components/tree-stepper/rules";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, CodeBlock, PropsTable } from "@/docs/primitives";
 export function TreeStepperDocs({ nav }: { nav: DocsNav }) {
@@ -9,6 +11,7 @@ export function TreeStepperDocs({ nav }: { nav: DocsNav }) {
         { id: "overview", label: "Overview" },
         { id: "usage", label: "Usage" },
         { id: "api", label: "API" },
+        { id: "component-rules", label: "Usage rules" },
       ]}
     >
       {() => (
@@ -93,7 +96,8 @@ export function TreeStepperDocs({ nav }: { nav: DocsNav }) {
               ]}
             />
           </Section>
-        </>
+        <ComponentRules rule={treeStepperRules} />
+          </>
       )}
     </DocsPage>
   );

@@ -2,7 +2,7 @@ import { useEffect, useRef, type ReactNode } from "react";
 import { Tag } from "@/components/tag";
 import { Avatar } from "@/components/avatar";
 import { Icon, type IconName } from "@/components/icon";
-import { AgentWorkspaceState } from "@/components/automation";
+import { StatusView } from "@/components/status-view";
 import {
   type Workflow,
   type WorkflowStatus,
@@ -111,7 +111,7 @@ export function WorkflowTable({
 }) {
   if (error)
     return (
-      <AgentWorkspaceState
+      <StatusView
         error
         title="Workflows unavailable"
         description={error}
@@ -139,7 +139,7 @@ export function WorkflowTable({
     );
   if (!rows.length)
     return (
-      <AgentWorkspaceState
+      <StatusView
         title="No workflows found"
         description="Try another search or clear the filters to see your workflows."
         actionLabel="Clear filters"

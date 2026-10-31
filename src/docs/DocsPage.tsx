@@ -1,11 +1,15 @@
 import { useVariation, patchTheme } from "./playground/useVariation";
 import { useState, useEffect } from "react";
+import { useDocsFrame } from "./DocsFrame";
 import { DocsLayout } from "./DocsLayout";
 import { CustomizePanel } from "./CustomizePanel";
 import { ComponentPlayground } from "./playground/ComponentPlayground";
-import { RemixExamples } from "./remixes/RemixExamples";
+import { useAsyncContent } from "./useAsyncContent";
+import { RoutePending } from "./RoutePending";
+import { routeView, type DocsView } from "./route-view";
+import { CATALOG, type CatalogSlug, type CatalogView } from "@/lib/catalog";
 import { hasRemix } from "./remixes/model";
-import { playgrounds } from "./playground/registry";
+import { playgroundLoaders } from "./playground/loaders";
 import { PageViews } from "./PageViews";
 import type { TocItem } from "./OnThisPage";
 import { ICON_WEIGHTS, IconLibraryProvider, type IconLibrary, type IconWeight } from "@/components/icon";
@@ -14,7 +18,7 @@ export type SpringProps = { bounce: number; duration: number; tapScale: number }
 export type IconControls = { library: IconLibrary; weight: IconWeight };
 export type DocsControls = { spring: SpringProps; icon: IconControls; radius: number; dark: boolean };
 
-export type DocsNav = { active: string; onNavigate: (id: string) => void };
+export type DocsNav = { active: string; onNavigate: (id: string, view?: CatalogView) => void; onViewChange?: (view: DocsView) => void; /** Query identity for restoring URL configuration; never includes an anchor. */ locationKey?: string };
 
 /**
  * Reusable component-docs shell. Owns the live controls (theme / radius /
@@ -32,13 +36,22 @@ export function DocsPage({
   nav: DocsNav;
   children: (controls: DocsControls) => React.ReactNode;
 }) {
-  const spec = playgrounds[nav.active];
-  const [view, setView] = useState<"playground" | "docs" | "remixes">(() => {
-    const requested = new URLSearchParams(window.location.search).get("view");
-    if (requested === "remixes" && hasRemix(nav.active)) return "remixes";
-    return window.location.hash || requested === "docs" ? "docs" : "playground";
-  });
-  const changeView = (next: "playground" | "docs" | "remixes") => {
+  const framed = useDocsFrame();
+  const hasPlayground = Boolean(playgroundLoaders[nav.active]);
+  const readView = (): DocsView => {
+    const value = routeView(CATALOG[nav.active as CatalogSlug], window.location.search, window.location.hash);
+    return value === "remixes" ? "remixes" : value === "playground" && hasPlayground ? "playground" : "docs";
+  };
+  const [localView, setView] = useState<DocsView>(readView);
+  const view = nav.onViewChange ? readView() : localView;
+  useEffect(() => {
+    const sync = () => setView(readView());
+    window.addEventListener("popstate", sync);
+    window.addEventListener("hashchange", sync);
+    return () => { window.removeEventListener("popstate", sync); window.removeEventListener("hashchange", sync); };
+  }, [nav.active]);
+  const changeView = (next: DocsView) => {
+    if (nav.onViewChange) { nav.onViewChange(next); return; }
     setView(next);
     const url = new URL(window.location.href);
     url.hash = "";
@@ -74,9 +87,9 @@ export function DocsPage({
 
   return (
     <IconLibraryProvider library={library}>
-      <div className={dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"}>
-        {view === "remixes" && hasRemix(nav.active) ? <RemixExamples slug={nav.active} nav={nav} dark={dark} setDark={setDark} onPlayground={() => changeView("playground")} onDocumentation={() => changeView("docs")} /> : spec && view === "playground" ? <ComponentPlayground spec={spec} nav={nav} breadcrumb={breadcrumb} onDocumentation={() => changeView("docs")} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : <>
-        <DocsLayout toc={toc} breadcrumb={breadcrumb} nav={nav} views={(spec || hasRemix(nav.active)) ? <PageViews slug={nav.active} active="docs" onPlayground={spec ? () => changeView("playground") : undefined} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : undefined}>
+      <div className={framed && view === "docs" ? "contents" : dark ? "theme-dark min-h-screen bg-[var(--color-bg-elevated)]" : "min-h-screen"}>
+        {view === "remixes" && hasRemix(nav.active) ? <AsyncRemixes slug={nav.active} nav={nav} dark={dark} setDark={setDark} changeView={changeView} /> : hasPlayground && view === "playground" ? <AsyncPlayground nav={nav} breadcrumb={breadcrumb} changeView={changeView} /> : <>
+        <DocsLayout toc={toc} breadcrumb={breadcrumb} nav={nav} views={(hasPlayground || hasRemix(nav.active)) ? <PageViews slug={nav.active} active="docs" onPlayground={hasPlayground ? () => changeView("playground") : undefined} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} /> : undefined}>
           {children(controls)}
         </DocsLayout>
 
@@ -100,4 +113,20 @@ export function DocsPage({
       </div>
     </IconLibraryProvider>
   );
+}
+
+
+function AsyncPlayground({ nav, breadcrumb, changeView }: { nav: DocsNav; breadcrumb: string[]; changeView: (view: DocsView) => void }) {
+  const result = useAsyncContent(playgroundLoaders[nav.active]);
+  const [settingsActive, setSettingsActive] = useState(false);
+  if (result.status !== "ready" || settingsActive) return <RoutePending nav={nav} view="playground" error={result.status === "error"} onRetry={result.retry} onViewChange={changeView} onInteractionChange={setSettingsActive} />;
+  return <ComponentPlayground key={`${nav.active}:${nav.locationKey ?? ""}`} spec={result.value} nav={nav} breadcrumb={breadcrumb} onDocumentation={() => changeView("docs")} onRemixes={hasRemix(nav.active) ? () => changeView("remixes") : undefined} />;
+}
+const loadRemixes = () => import("./remixes/RemixExamples").then(module => module.RemixExamples);
+function AsyncRemixes({ slug, nav, dark, setDark, changeView }: { slug: import("./remixes/model").RemixSlug; nav: DocsNav; dark: boolean; setDark: (dark: boolean) => void; changeView: (view: DocsView) => void }) {
+  const result = useAsyncContent(loadRemixes);
+  const [settingsActive, setSettingsActive] = useState(false);
+  if (result.status !== "ready" || settingsActive) return <RoutePending nav={nav} view="remixes" error={result.status === "error"} onRetry={result.retry} onViewChange={changeView} onInteractionChange={setSettingsActive} />;
+  const Remixes = result.value;
+  return <Remixes key={`${slug}:${nav.locationKey ?? ""}`} slug={slug} nav={nav} dark={dark} setDark={setDark} onPlayground={() => changeView("playground")} onDocumentation={() => changeView("docs")} />;
 }

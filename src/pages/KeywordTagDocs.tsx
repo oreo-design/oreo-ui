@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import IMG_THUMB from "@/components/composer/assets/1ebaa.png";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
@@ -28,7 +29,7 @@ import githubLogo from "@/components/icon/assets/brands/github.svg";
 
 const TOC: TocItem[] = [
   { id: "keyword-tag", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "types", label: "Types" },
   { id: "removable", label: "Removable" },
   { id: "api", label: "API Reference" },
@@ -129,8 +130,8 @@ export function KeywordTagDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add keyword-tag\n# or copy src/components/keyword-tag/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="keyword-tag" />
           </Section>
 
           <Section

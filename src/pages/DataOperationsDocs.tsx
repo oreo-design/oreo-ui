@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock } from "@/docs/primitives";
-import { playgroundCode } from "@/docs/playground/code";
+import { documentationCode } from "@/docs/playground/code";
+import { formatCode } from "@/docs/playground/code-types";
+import { dataFilterPopoverRecipe } from "@/docs/playground/adapters/data-operations";
 import { PAGE_META } from "@/lib/site";
 import {
   DataFilterPopover,
@@ -159,7 +161,7 @@ export function DataOperationsDocs({ nav }: { nav: DocsNav }) {
                   </p>
                 </div>
               }
-              code={playgroundCode(preview)}
+              code={nav.active === "data-filter-popover" ? formatCode(dataFilterPopoverRecipe({ selection: JSON.stringify(filters) })) : documentationCode(preview, { "data-operations": { DataFilterPopover, DataSortMenu, RowActionMenu, BulkActionBar }, "workflow-table": { WorkflowStatusBadge, WorkflowRunBars, WorkflowTable }, button: { Button } })}
             />
           </Section>
           <Section id="api" title="API">

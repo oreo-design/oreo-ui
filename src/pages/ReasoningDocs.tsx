@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useEffect, useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -9,7 +10,7 @@ import { useElapsed } from "@/lib/use-elapsed";
 
 const TOC: TocItem[] = [
   { id: "reasoning", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "status", label: "Status" },
   { id: "container", label: "Container" },
   { id: "group", label: "Group" },
@@ -227,10 +228,10 @@ export function ReasoningDocs({ nav }: { nav: DocsNav }) {
 
           <Section
             id="installation"
-            title="Installation"
-            description="Copy the source into your project — you own the code."
+            title="Source"
+            description="Use the source from this internal repository."
           >
-            <Snippet lang="bash" code={`npx oreo-ui add reasoning\n# or copy src/components/reasoning/* by hand`} />
+            <SourceReference source="reasoning" />
           </Section>
 
           <Section

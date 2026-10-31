@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useEffect, useRef, useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -7,7 +8,7 @@ import { Button } from "@/components/button";
 
 const TOC: TocItem[] = [
   { id: "response", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "basic", label: "Basic" },
   { id: "streaming", label: "Streaming" },
   { id: "api", label: "API Reference" },
@@ -114,8 +115,11 @@ export function ResponseDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Depends on react-markdown + remark-gfm and the Oreo Code Block.">
-            <Snippet lang="bash" code={`pnpm add react-markdown remark-gfm\nnpx oreo-ui add response`} />
+          <Section id="installation" title="Source" description="Depends on react-markdown + remark-gfm and the Oreo Code Block.">
+            <div className="space-y-4">
+              <Snippet lang="bash" code="pnpm add react-markdown remark-gfm" />
+              <SourceReference source="response" />
+            </div>
           </Section>
 
           <Section id="basic" title="Basic" description="Headings, lists, quotes, tables, links, inline and fenced code — all on Oreo tokens.">

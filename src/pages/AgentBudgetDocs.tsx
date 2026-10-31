@@ -1,3 +1,5 @@
+import { ComponentRules } from "@/docs/ComponentRules";
+import { agentBudgetRules } from "@/components/agent-budget/rules";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PropsTable, CodeBlock } from "@/docs/primitives";
 const specs: Record<
@@ -85,6 +87,7 @@ export function AgentBudgetDocs({ nav }: { nav: DocsNav }) {
         { id: "overview", label: "Overview" },
         { id: "usage", label: "Usage" },
         { id: "api", label: "API" },
+        { id: "component-rules", label: "Usage rules" },
       ]}
     >
       {() => (
@@ -126,7 +129,8 @@ export function AgentBudgetDocs({ nav }: { nav: DocsNav }) {
               Reference by Anant ↗
             </a>
           </Section>
-        </>
+        <ComponentRules rule={agentBudgetRules} />
+          </>
       )}
     </DocsPage>
   );

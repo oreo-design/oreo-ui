@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useRef, useId, type CSSProperties } from "react";
+import { useEffect, useMemo, useState, useCallback, useRef, useId, type CSSProperties } from "react";
 import { Tooltip } from "@base-ui-components/react/tooltip";
 import type { DocsNav } from "@/docs/DocsPage";
 import { ThemeChips } from "./ThemeChips";
@@ -17,10 +17,12 @@ import {
 } from "./schema";
 import { withAppearance } from "./exportAppearance";
 import { playgroundCode } from "./code";
+import { formatCode, type CodeExample } from "./code-types";
+import { sourceReferencePath, sourceReferenceText } from "@/docs/source-reference";
 import { useDemo } from "./useDemo";
 import { PlaygroundIcon as Glyph } from "@/components/icon";
 import { Tool, Modal } from "./Tools";
-import { ComponentPicker } from "./ComponentPicker";
+import { ComponentPicker, useComponentPickerTrigger } from "./ComponentPicker";
 import { PreviewStage, partsFor, type Part, type Measurement, type PreviewDevice } from "./PreviewStage";
 import { SharePanel } from "./SharePanel";
 import { ComparePanel } from "./ComparePanel";
@@ -60,6 +62,7 @@ export function ComponentPlayground({
 }) {
   const { theme } = useVariation();
   const moreTools = useRef<HTMLDetailsElement>(null);
+  const pickerTriggerRef = useComponentPickerTrigger();
   const [variationOpen, setVariationOpen] = useState(false);
   const themePanelId = useId();
   const themeTriggerId = useId();
@@ -201,23 +204,23 @@ export function ComponentPlayground({
     history.replaceState(null, "", url);
   };
   const preview = spec.render(values, set);
-  let code = "",
-    codeError = "";
-  try {
-    code = playgroundCode(preview);
-  } catch {
-    codeError =
-      "Code could not be generated for this component. You can still use the preview or open its documentation.";
-  }
-  const source = spec.source ?? nav.active,
-    install = `npx oreo-ui add ${source}`;
+  const { code, codeError } = useMemo((): { code?: CodeExample; codeError: string } => {
+    if (mode !== "code" && !share) return { codeError: "" };
+    try {
+      return { code: spec.exportRecipe ? spec.exportRecipe(values) : playgroundCode(spec.render(values, () => {}), spec.exports), codeError: "" };
+    } catch (error) {
+      return { codeError: error instanceof Error ? error.message : "Code needs a dedicated export recipe. Open the documentation." };
+    }
+  }, [spec, values, mode, share]);
+  const source = spec.source ?? nav.active;
+  const sourceText = sourceReferenceText(source);
   const configuration: Configuration = {
     version: 1,
     component: nav.active,
     values,
     appearance: theme,
   };
-  const previewCode = withAppearance(code, configuration.appearance);
+  const previewCode = code ? formatCode(withAppearance(code, configuration.appearance)) : "";
   const copy = async (text: string, kind: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -304,13 +307,13 @@ export function ComponentPlayground({
             <p className="pg-description">{descriptionFor(nav.active, spec.title)}</p>
           </div>
           <div className="pg-install">
-            <p className="pg-caption">Install</p>
+            <p className="pg-caption">Source</p>
             <div className="oreo-squircle">
-              <code>{install}</code>
+              <code>{sourceReferencePath(source)}</code>
               <Tool
-                label="Copy install command"
+                label="Copy source path"
                 icon="copy"
-                onClick={() => void copy(install, "Command")}
+                onClick={() => void copy(sourceReferencePath(source), "Source path")}
               />
             </div>
           </div>
@@ -366,6 +369,7 @@ export function ComponentPlayground({
       <div className="pg-shell">
         <header className="pg-header">
           <button
+            ref={pickerTriggerRef}
             className="pg-breadcrumb"
             onClick={() => setPicker(true)}
             aria-label={`Choose component, current ${spec.title}`}
@@ -535,7 +539,7 @@ export function ComponentPlayground({
                     <Tool
                       icon="copy"
                       label="Copy code"
-                      disabled={Boolean(codeError)}
+                      disabled={Boolean(codeError) || !code}
                       onClick={() => void copy(previewCode, "Code")}
                     />
                   </header>
@@ -549,8 +553,7 @@ export function ComponentPlayground({
                   ) : (
                     <>
                       <p className="pg-muted">
-                        Starting props for this configuration. Connect event
-                        handlers in your app.
+                        Example for this configuration. Read the code notes before connecting host actions.
                       </p>
                       <CodeBlock
                         code={previewCode}
@@ -654,8 +657,9 @@ export function ComponentPlayground({
           setOpen={setShare}
           title={spec.title}
           configuration={configuration}
-          code={codeError || code}
-          install={install}
+          code={code}
+          codeError={codeError}
+          sourceText={sourceText}
           copy={copy}
         />
         <Modal id={themePanelId} open={variationOpen && !wideSettings} onOpenChange={setVariationOpen} title="Theme settings" className="pg-mobile-properties">

@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
@@ -5,7 +6,7 @@ import { PageLoader, type LoaderStory, type LoaderTier } from "@/components/page
 
 const TOC: TocItem[] = [
   { id: "page-loader", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "tiers", label: "The three tiers" },
   { id: "snake", label: "Snake" },
   { id: "breakout", label: "Breakout" },
@@ -100,8 +101,8 @@ export function PageLoaderDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Self-contained: component + stories + a local stylesheet. No dependencies beyond the Oreo tokens.">
-            <Snippet lang="bash" code={`npx oreo-ui add page-loader\n# or copy src/components/page-loader/* by hand`} />
+          <Section id="installation" title="Source" description="Self-contained: component + stories + a local stylesheet. No dependencies beyond the Oreo tokens.">
+            <SourceReference source="page-loader" />
           </Section>
 
           <Section

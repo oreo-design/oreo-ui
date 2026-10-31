@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -13,7 +14,7 @@ import { Icon } from "@/components/icon";
 
 const TOC: TocItem[] = [
   { id: "thread-list", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "basic", label: "Basic" },
   { id: "api", label: "API Reference" },
 ];
@@ -107,8 +108,8 @@ export function ThreadListDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add thread-list\n# or copy src/components/thread-list/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="thread-list" />
           </Section>
 
           <Section id="basic" title="Basic" description="Hover a row: the meta swaps to actions. Delete removes; the unread dot hides on the active row.">

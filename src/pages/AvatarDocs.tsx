@@ -1,5 +1,6 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
-import { Section, PreviewTabs, PropsTable, CodeBlock, type PropRow } from "@/docs/primitives";
+import { Section, PreviewTabs, PropsTable, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
 import { Avatar, AvatarGroup, AGENTS, type AvatarColor } from "@/components/avatar";
 import { Icon } from "@/components/icon";
@@ -7,7 +8,7 @@ import { OreoLogo } from "@/docs/OreoLogo";
 
 const TOC: TocItem[] = [
   { id: "avatar", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "types", label: "Types" },
   { id: "alphabet", label: "Alphabet" },
   { id: "agents", label: "Agents" },
@@ -56,8 +57,8 @@ export function AvatarDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <CodeBlock lang="bash" code={`npx oreo-ui add avatar\n# or copy src/components/avatar/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="avatar" />
           </Section>
 
           <Section id="types" title="Types" description="Empty, portrait (photo), logo (brand mark), alphabet (initials), and agent (gradient).">

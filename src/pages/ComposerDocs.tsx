@@ -1,3 +1,5 @@
+import { ComponentRules } from "@/docs/ComponentRules";
+import { composerRules } from "@/components/composer/rules";
 import * as React from "react";
 import {
   Composer,
@@ -210,9 +212,10 @@ export default function ComposerDocs({ nav }: { nav: DocsNav }) {
             "keywords",
             "usage",
             "menus",
+            "component-rules",
           ].map((s) => (
             <a key={s} href={`#${s}`}>
-              {s}
+              {s === "component-rules" ? "Usage rules" : s}
             </a>
           ))}
         </nav>
@@ -645,6 +648,7 @@ export default function ComposerDocs({ nav }: { nav: DocsNav }) {
             </Panel>
           </div>
         </section>
+        <ComponentRules rule={composerRules} />
       </main>
     </div>
   );

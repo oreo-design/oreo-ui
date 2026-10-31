@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -8,7 +9,7 @@ import { Response } from "@/components/response";
 
 const TOC: TocItem[] = [
   { id: "branch-picker", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "basic", label: "In the action row" },
   { id: "api", label: "API Reference" },
 ];
@@ -67,8 +68,8 @@ export function BranchPickerDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add branch-picker\n# or copy src/components/branch-picker/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="branch-picker" />
           </Section>
 
           <Section id="basic" title="In the action row" description="Page between three alternative answers (action row pinned visible for the demo).">

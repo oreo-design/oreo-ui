@@ -1,23 +1,28 @@
+import { ComponentRules } from "@/docs/ComponentRules";
+import { buttonRules } from "@/components/button/rules";
+import { SourceReference } from "@/docs/SourceReference";
 import { Icon } from "@/components/icon";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
-import { Section, PreviewTabs, PropsTable, CodeBlock, type PropRow } from "@/docs/primitives";
+import { Section, PreviewTabs, PropsTable, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
 import { IconButton } from "@/components/button";
 
 const TOC: TocItem[] = [
   { id: "icon-button", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "variants", label: "Variants" },
   { id: "shapes", label: "Shapes" },
   { id: "sizes", label: "Sizes" },
   { id: "floating", label: "Floating" },
   { id: "api", label: "API Reference" },
+  { id: "component-rules", label: "Usage rules" },
 ];
 
 const TYPES = ["primary", "secondary", "tertiary"] as const;
 const SIZES = ["sm", "md", "lg"] as const;
 
 const PROPS: PropRow[] = [
+  { prop: "htmlType", type: `"button" | "submit" | "reset"`, def: `"button"`, desc: "Native type for the default renderer. A custom render element owns its own native type." },
   { prop: "aria-label", type: "string", desc: "Required — names the icon-only button for assistive tech." },
   { prop: "icon", type: "ReactNode", desc: "The icon to render (scales with size)." },
   { prop: "type", type: `"primary" | "secondary" | "tertiary"`, def: `"primary"`, desc: "Visual emphasis." },
@@ -53,8 +58,8 @@ export function IconButtonDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Ships alongside Button — same folder, shared surface.">
-            <CodeBlock lang="bash" code={`npx oreo-ui add button\n# IconButton is exported from the same module`} />
+          <Section id="installation" title="Source" description="Ships alongside Button — same folder, shared surface.">
+            <SourceReference source="button" />
           </Section>
 
           <Section id="variants" title="Variants" description="Three emphasis levels, plus the danger palette.">
@@ -111,9 +116,10 @@ export function IconButtonDocs({ nav }: { nav: DocsNav }) {
             />
           </Section>
 
-          <Section id="api" title="API Reference" description="IconButton extends all native <button> props.">
+          <Section id="api" title="API Reference" description="IconButton supports native button props except type, which selects visual emphasis. Use htmlType for native button behavior.">
             <PropsTable rows={PROPS} />
           </Section>
+          <ComponentRules rule={buttonRules} />
         </>
       )}
     </DocsPage>

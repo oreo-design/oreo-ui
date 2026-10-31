@@ -1,7 +1,10 @@
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { PropertyControl } from "./PropertyControl";
 import { toggle } from "./schema";
 import { shareUrl, type Configuration } from "./configuration";
+import { formatCode, type CodeExample } from "./code-types";
+import { loadComponentRules } from "@/docs/component-rules";
+import { formatComponentRules } from "@/lib/component-rules";
 import { withAppearance } from "./exportAppearance";
 import { Modal, Tool } from "./Tools";
 
@@ -11,32 +14,41 @@ export function SharePanel({
   title,
   configuration,
   code,
-  install,
+  codeError,
+  sourceText,
   copy,
 }: {
   open: boolean;
   setOpen: (v: boolean) => void;
   title: string;
   configuration: Configuration;
-  code: string;
-  install: string;
+  code?: CodeExample;
+  codeError: string;
+  sourceText: string;
   copy: (text: string, kind: string) => Promise<void>;
 }) {
   const id = useId();
   const [tab, setTab] = useState("Copy prompt"),
     [rules, setRules] = useState(true),
     [includeAppearance, setIncludeAppearance] = useState(true);
-  const exportCode = withAppearance(
-    code,
-    includeAppearance ? configuration.appearance : undefined,
-  );
+  const [ruleText, setRuleText] = useState("Loading component rules…");
+  useEffect(() => {
+    if (!open) return;
+    let current = true;
+    setRuleText("Loading component rules…");
+    void loadComponentRules(configuration.component).then(rule => {
+      if (current) setRuleText(formatComponentRules(rule));
+    });
+    return () => { current = false; };
+  }, [open, configuration.component]);
+  const exportCode = code ? formatCode(withAppearance(code, includeAppearance ? configuration.appearance : undefined)) : "";
   const link = shareUrl(window.location.href, {
     ...configuration,
     appearance: includeAppearance ? configuration.appearance : undefined,
   });
-  const prompt = `Build with Oreo UI\n\nInstall ${title}, then use this JSX for the exact configuration. Connect event handlers in your app.\n\n${install}\n\n${exportCode}${rules ? "\n\nDesign rules: Reuse Oreo semantic tokens and shared components. Preserve sizes, spacing, keyboard focus, disabled states and reduced-motion behavior." : ""}${includeAppearance ? `\n\nAppearance: ${JSON.stringify(configuration.appearance)}` : ""}\n\nConfiguration: ${link}`;
+  const prompt = `Build with Oreo UI\n\nUse ${title} from this repository. Read example notes and connect host actions.\n\n${sourceText}\n\n${exportCode || `Code unavailable: ${codeError}`}${rules ? `\n\n${ruleText}` : ""}${includeAppearance ? `\n\nAppearance: ${JSON.stringify(configuration.appearance)}` : ""}\n\nConfiguration: ${link}`;
   const text =
-    tab === "Code" ? exportCode : tab === "Share link" ? link : prompt;
+    tab === "Code" ? (exportCode || `Code unavailable: ${codeError}`) : tab === "Share link" ? link : prompt;
   return (
     <Modal
       open={open}
@@ -91,12 +103,13 @@ export function SharePanel({
           <div className="pg-prompt-preview">
             <strong>Build with Oreo UI</strong>
             <p>
-              Install {title}, then use this JSX for the exact configuration.
+              Use {title} from this repository with this configuration.
               Keep its size, spacing, focus, disabled and reduced-motion
               behavior.
             </p>
-            <code>{install}</code>
-            <pre>{exportCode}</pre>
+            <code>{sourceText}</code>
+            {codeError ? <p role="alert">Code unavailable: {codeError}</p> : <pre>{exportCode}</pre>}
+            {rules && <pre>{ruleText}</pre>}
             <p>
               Includes imports{rules ? ", design rules" : ""} and a link back to
               this configuration. Wire your own event handlers.
@@ -129,6 +142,7 @@ export function SharePanel({
       <div className="pg-row">
         <Tool
           icon="copy"
+          disabled={(tab === "Code" && !code) || (tab === "Copy prompt" && rules && ruleText === "Loading component rules…")}
           label={`Copy ${tab === "Code" ? "code" : tab === "Share link" ? "link" : "prompt"}`}
           onClick={() =>
             void copy(text, tab === "Copy prompt" ? "Prompt" : tab)

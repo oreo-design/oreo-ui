@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { searchSources, searchAnswer } from "@/docs/playground/web-search.demo";
 import { useEffect, useRef, useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
@@ -8,7 +9,7 @@ import { Button } from "@/components/button";
 
 const TOC: TocItem[] = [
   { id: "web-search", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "cards", label: "Source cards & citations" },
   { id: "streaming", label: "Streaming list" },
   { id: "api", label: "API Reference" },
@@ -96,8 +97,8 @@ export function WebSearchDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add web-search\n# or copy src/components/web-search/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="web-search" />
           </Section>
 
           <Section id="cards" title="Source cards & citations" description="Replay the search, expand the sources, hover the icon stack, then hover or focus an inline citation.">

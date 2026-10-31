@@ -20,7 +20,7 @@
 | 关系 | 实现载体 | 允许变化的内容 |
 | --- | --- | --- |
 | 小号分组 label 只命名分组，不携带 description；缩进跟随卡片内部文字边缘 | `language/SettingsGroup.tsx` 复用原版对齐 | label、尾部操作、分组内容 |
-| 行内文字与分隔线保持原版字号、行高、留白和末行规则 | 从原版无样式修改提取的 `row-primitives.tsx` | 设置名称、说明、控件 |
+| 行内文字与分隔线保持原版字号、行高、留白和末行规则 | `components/row-layout` 实现 + `row-primitives.tsx` 兼容入口 | 设置名称、说明、控件 |
 | 卡片表面跟随背景层级，圆角跟随 Oreo token | `settings.variants.ts`、`settings.css` | 三个原有外观轴 |
 | 操作在空间足够时靠右，空间不足时回到文字下方 | `AdaptiveRow` 的命名容器查询 | 单个或多个控件、不同长度的标签 |
 | 媒体靠近标题；窄容器中的操作与详情跟随文字列 | `language.css` 中媒体列、操作列、详情列的关联 | 图标、头像等媒体 |
@@ -69,3 +69,10 @@ Settings 本身已经具备组合能力。新机制真正补充的是「改动�
 用户明确排除小号 label 下再接 description。实验页面统一使用 `language/SettingsGroup`，只开放 `label / actions / children`，`description` 在类型上禁止，运行时也不转发。原始 `/settings` 的 `SettingsSection` 保留为母版对照，业务组合层检查拒绝直接导入它。页面标题与具体设置行仍可承载说明；导出示例提示归到 Workspace archive 行。
 
 通知和集成中的分组说明已移除。布局矩阵增加分组 label 与内容之间不能出现说明段落的检查，并通过注入反例验证。前后截图、源码快照和采集清单保存在 `artifacts/settings-label-boundary-2026-09-14/`。这些约束针对约定组件接口和已覆盖结构，任意自定义 JSX 仍需审阅。
+
+
+## 2026-10-31：共享行 owner 下沉
+
+`RowLayout` / `RowLabel` 的真实实现位于 `src/components/row-layout/index.tsx`，Settings 的 `row-primitives.tsx` 保留原名和调用约定。兼容入口把 `--settings-hairline` 映射到中立 `--row-divider`，不增加 DOM。Storage 直接引用中立模块，不反向依赖 Settings pattern。
+
+`contract.json` 同时保护兼容入口和真实实现，保留原始 `baselineCommit`；迁移不更改已有字号、间距、末行规则或 AdaptiveRow 的响应式组合。聚焦兼容/依赖检查为 `node --test scripts/component-boundaries/*.test.mjs` 与 `node scripts/component-boundaries/check.mjs`。这些检查不替代原版 Settings 的实际视觉对照，也不刷新本次范围以外的历史 hash。
