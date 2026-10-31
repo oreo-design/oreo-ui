@@ -1,23 +1,28 @@
+import { ComponentRules } from "@/docs/ComponentRules";
+import { buttonRules } from "@/components/button/rules";
+import { SourceReference } from "@/docs/SourceReference";
 import { Icon } from "@/components/icon";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
-import { Section, PreviewTabs, PropsTable, CodeBlock, type PropRow } from "@/docs/primitives";
+import { Section, PreviewTabs, PropsTable, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
 import { Button } from "@/components/button";
 
 const TOC: TocItem[] = [
   { id: "button", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "basic", label: "Basic" },
   { id: "variants", label: "Variants" },
   { id: "sizes", label: "Sizes" },
   { id: "states", label: "States" },
   { id: "api", label: "API Reference" },
+  { id: "component-rules", label: "Usage rules" },
 ];
 
 const TYPES = ["primary", "secondary", "tertiary"] as const;
 const SIZES = ["sm", "md", "lg"] as const;
 
 const PROPS: PropRow[] = [
+  { prop: "htmlType", type: `"button" | "submit" | "reset"`, def: `"button"`, desc: "Native type for the default renderer. A custom render element owns its own native type." },
   { prop: "type", type: `"primary" | "secondary" | "tertiary"`, def: `"primary"`, desc: "Visual emphasis of the button." },
   { prop: "size", type: `"sm" | "md" | "lg"`, def: `"md"`, desc: "Control height & padding. md = 32px (Oreo control height)." },
   { prop: "danger", type: "boolean", def: "false", desc: "Recolors the button with the error palette." },
@@ -48,7 +53,10 @@ const CODE_SIZES = `<Button size="sm">Small</Button>
 <Button size="md">Medium</Button>
 <Button size="lg">Large</Button>`;
 
-const CODE_STATES = `{/* disabled */}
+const CODE_STATES = `{/* native form action; host owns submission */}
+<Button htmlType="submit">Save changes</Button>
+
+{/* disabled */}
 <Button disabled>Button</Button>
 
 {/* polymorphic — render as a link, styling preserved */}
@@ -75,8 +83,8 @@ export function ButtonDocs({ nav }: { nav: DocsNav }) {
               </p>
             </header>
 
-            <Section id="installation" title="Installation" description="Copy the source into your project — no package to install, you own the code.">
-              <CodeBlock lang="bash" code={`npx oreo-ui add button\n# or copy src/components/button/* by hand`} />
+            <Section id="installation" title="Source" description="Use the source from this internal repository.">
+              <SourceReference source="button" />
             </Section>
 
             <Section id="basic" title="Basic" description="A button with leading and trailing icons. Press it to feel the spring.">
@@ -139,9 +147,10 @@ export function ButtonDocs({ nav }: { nav: DocsNav }) {
               />
             </Section>
 
-            <Section id="api" title="API Reference" description="Button extends all native <button> props.">
+            <Section id="api" title="API Reference" description="Button supports native button props except type, which selects visual emphasis. Use htmlType for native button behavior.">
               <PropsTable rows={PROPS} />
             </Section>
+            <ComponentRules rule={buttonRules} />
           </>
         );
       }}

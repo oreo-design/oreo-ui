@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useEffect, useRef, useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -7,7 +8,7 @@ import { Button } from "@/components/button";
 
 const TOC: TocItem[] = [
   { id: "tool-call", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "lifecycle", label: "Lifecycle" },
   { id: "detail", label: "Request & result" },
   { id: "error", label: "Error" },
@@ -84,8 +85,8 @@ export function ToolCallDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add tool-call\n# or copy src/components/tool-call/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="tool-call" />
           </Section>
 
           <Section

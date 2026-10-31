@@ -2,8 +2,8 @@ import { useEffect, useId, useRef, type ReactNode } from "react";
 import { DocumentStorage } from "@/components/document-activity";
 import { Button } from "@/components/button";
 import { Icon, type IconName } from "@/components/icon";
-import { AgentWorkspaceState } from "@/components/automation";
-import { RowShell, RowLabel } from "@/patterns/settings/row-primitives";
+import { StatusView } from "@/components/status-view";
+import { RowLayout, RowLabel } from "@/components/row-layout";
 import {
   GB,
   formatStorage,
@@ -33,7 +33,7 @@ export function StorageUsageCard({
     )
   )
     return (
-      <AgentWorkspaceState
+      <StatusView
         error
         title="Storage unavailable"
         description="Provide finite non-negative byte counts and a positive capacity."
@@ -107,7 +107,7 @@ export function StorageModuleTable({
     totalUsed < modules.reduce((s, m) => s + m.bytes, 0)
   )
     return (
-      <AgentWorkspaceState
+      <StatusView
         error
         title="Module data unavailable"
         description="Module totals must fit the occupied storage total."
@@ -117,7 +117,7 @@ export function StorageModuleTable({
     return (
       <>
         {empty ?? (
-          <AgentWorkspaceState
+          <StatusView
             title="No modules found"
             description="Try another module name."
           />
@@ -238,7 +238,7 @@ export function RetentionPolicyRow({
 }) {
   const id = useId();
   return (
-    <RowShell className="sm-retention-row">
+    <RowLayout className="sm-retention-row">
       <span className="sm-policy-icon">
         <Icon name={icon} />
       </span>
@@ -258,6 +258,6 @@ export function RetentionPolicyRow({
           </option>
         ))}
       </select>
-    </RowShell>
+    </RowLayout>
   );
 }

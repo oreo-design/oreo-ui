@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
@@ -5,7 +6,7 @@ import { Sources, Source } from "@/components/sources";
 
 const TOC: TocItem[] = [
   { id: "sources", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "basic", label: "Basic" },
   { id: "api", label: "API Reference" },
 ];
@@ -37,8 +38,8 @@ export function SourcesDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add sources\n# or copy src/components/sources/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="sources" />
           </Section>
 
           <Section id="basic" title="Basic" description="Cards lift a pixel on hover. Count is derived from children unless overridden.">

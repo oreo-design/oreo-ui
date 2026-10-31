@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock } from "@/docs/primitives";
-import { playgroundCode } from "@/docs/playground/code";
+import { documentationCode } from "@/docs/playground/code";
 import { PAGE_META } from "@/lib/site";
 import {
   AdaptiveIssueTable,
@@ -81,7 +81,7 @@ export function AdaptiveIssuesDocs({ nav }: { nav: DocsNav }) {
           >
             <PreviewTabs
               preview={<div className="w-full p-4">{content}</div>}
-              code={playgroundCode(content)}
+              code={documentationCode(content, { "adaptive-issues": { AdaptiveIssueTable, AdaptiveIssueRow, PullRequestPill, ResizeFrame } })}
             />
           </Section>
           <Section id="api" title="API">

@@ -18,6 +18,8 @@ type FormValues<C> = { [K in keyof C]: Value<C[K]> };
 export type PlaygroundSpec = {
   title: string;
   source?: string;
+  exports?: import("./code-types").ComponentExports;
+  exportRecipe?: (values: Values) => import("./code-types").CodeExample;
   demo?: (reducedMotion: boolean) => import("./demo").Demo;
   controls: Record<string, Control>;
   render: (values: Values, set: (key: string, value: string | number | boolean) => void) => ReactElement;

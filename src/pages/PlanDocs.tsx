@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useEffect, useRef, useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -7,7 +8,7 @@ import { Button } from "@/components/button";
 
 const TOC: TocItem[] = [
   { id: "plan", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "progress", label: "Progress" },
   { id: "api", label: "API Reference" },
 ];
@@ -87,8 +88,8 @@ export function PlanDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add plan\n# or copy src/components/plan/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="plan" />
           </Section>
 
           <Section

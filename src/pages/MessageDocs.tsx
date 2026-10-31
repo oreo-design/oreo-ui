@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
@@ -14,7 +15,7 @@ import { Icon } from "@/components/icon";
 
 const TOC: TocItem[] = [
   { id: "message", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "pair", label: "A turn pair" },
   { id: "actions", label: "Actions" },
   { id: "avatar", label: "With avatar" },
@@ -86,8 +87,8 @@ export function MessageDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add message\n# or copy src/components/message/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="message" />
           </Section>
 
           <Section id="pair" title="A turn pair" description="The standard chat asymmetry: user bubble on the end edge, assistant flat below.">

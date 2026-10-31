@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useEffect, useRef, useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -9,7 +10,7 @@ import { Button } from "@/components/button";
 
 const TOC: TocItem[] = [
   { id: "conversation", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "playground", label: "Playground" },
   { id: "anatomy", label: "Anatomy" },
   { id: "api", label: "API Reference" },
@@ -163,8 +164,8 @@ export function ConversationDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add conversation\n# or copy src/components/conversation/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="conversation" />
           </Section>
 
           <Section

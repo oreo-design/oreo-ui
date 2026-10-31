@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -8,7 +9,7 @@ import { Button } from "@/components/button";
 
 const TOC: TocItem[] = [
   { id: "confirmation", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "basic", label: "Basic" },
   { id: "danger", label: "Destructive" },
   { id: "api", label: "API Reference" },
@@ -92,8 +93,8 @@ export function ConfirmationDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add confirmation\n# or copy src/components/confirmation/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="confirmation" />
           </Section>
 
           <Section id="basic" title="Basic" description="Deny stays secondary; approve is the primary action. Decide to see the footer swap.">

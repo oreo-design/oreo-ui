@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useEffect, useRef, useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -7,7 +8,7 @@ import { Button } from "@/components/button";
 
 const TOC: TocItem[] = [
   { id: "streaming-text", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "plain", label: "Plain" },
   { id: "fade", label: "Fade" },
   { id: "gradient", label: "Gradient tail" },
@@ -102,8 +103,8 @@ export function StreamingTextDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="No dependencies beyond the Oreo tokens.">
-            <Snippet lang="bash" code={`npx oreo-ui add streaming-text\n# or copy src/components/streaming-text/* by hand`} />
+          <Section id="installation" title="Source" description="No dependencies beyond the Oreo tokens.">
+            <SourceReference source="streaming-text" />
           </Section>
 
           <Section

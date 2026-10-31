@@ -8,9 +8,7 @@
     "src/components/avatar/avatar.tsx": "9024c1dd1f1034100d99f98a63f889f4ddd47094ffc8d4fd2330480f992a5fd7",
     "src/components/avatar/avatar.variants.ts": "e1dddb49bb9ede0a65ef0d96b156ea343eefb7849b36990ed9d9e623414a4fe0",
     "src/components/avatar/index.ts": "8a57ece4e923c9e0dd7ae36e080930099e5cdb78079d296d2318d9fe23f1d518",
-    "src/components/button/button.tsx": "b5c4fac7db1a07773fa8f5465ffb10bc14c39cebd1a7ea7340876dea860d5269",
     "src/components/button/button.variants.ts": "2297c5fc3f10aaa61e5e09cf9e2317404a27ddebf5ae83464dd92f912d209c15",
-    "src/components/button/icon-button.tsx": "2a675329c03d058369d7cec35b797c6185816510f0e8b9906626493a257164a1",
     "src/components/button/index.ts": "0fc9738d9d20c27502f34b5f29f22aa8f182fdcb0164d0ef1fd79d52f2e7a595",
     "src/components/button/surface.ts": "ef50ede7dcdf60e2d501ad1153e31a7a9cd03ece598e1f23f6df027e4e635fcb",
     "src/components/chip/chip.tsx": "ea74ea84286ee518b8b6a06601625378048b4860fa7bedc32a9945f614fcafd1",
@@ -44,8 +42,8 @@
   "reviewedChanges": [
     {
       "path": "src/patterns/settings/row-primitives.tsx",
-      "sha256": "c5909186427b8c7982cdefdb43c07a62aa2292748b5bcff48d0d4b45cd56a814",
-      "decision": "Extract the original RowShell and RowLabel without changing their default classes or markup. Original screenshots and typography checks cover the result."
+      "sha256": "c167fdb91e67db8c00f9e26672c9f962288f110a173f952a9145d27a7c795940",
+      "decision": "2026-10-31 F7: retain Settings RowShell/RowLabel exports through the neutral row-layout owner. The wrapper bridges settings-hairline to row-divider without extra DOM. Preserve baselineCommit and existing typography, spacing and last-row separators. Focused compatibility and boundary checks: scripts/component-boundaries; matching visual evidence belongs to the 2026-10-31 system audit."
     },
     {
       "path": "src/patterns/settings/rows.tsx",
@@ -110,6 +108,23 @@
       "sha256": "31a6bf24c433d1fc66f8ec34826924caac87b4b3defd5b7604f1178d459ed9c7",
       "baselineSha256": "ed9c6fbbfbc6a30c8cbc373c45d540a63f236b8aaa2cc55f9f2b709a1f1f75cf",
       "decision": "Integration of completed Inbox Stream commit 6ff4894: additive icon vocabulary / easeDrawer export only. Existing glyph mappings and motion values are unchanged. Re-run the original Settings visual and behavioral comparison."
+    },
+    {
+      "path": "src/components/row-layout/index.tsx",
+      "sha256": "9de06d4d0ecea63448b15baec8966a7c8728678fbed07e5b4e6674559aafdfa4",
+      "decision": "2026-10-31 F7: actual shared RowLayout/RowLabel implementation extracted from the reviewed Settings owner. Protect this implementation, not only the compatibility re-export; retain original DOM, typography, spacing and divider geometry, with a semantic global divider fallback. Original Settings baseline remains unchanged."
+    },
+    {
+      "path": "src/components/button/button.tsx",
+      "sha256": "4cd22f7b9ccd2221fbcd0dbd52444d2eab54645c3cecc313e4dcbc849044daaf",
+      "baselineSha256": "b5c4fac7db1a07773fa8f5465ffb10bc14c39cebd1a7ea7340876dea860d5269",
+      "decision": "2026-10-31 F5 system audit: preserve visual variants and custom-render ownership; add native htmlType with safe button default and shared reduced-motion-aware press behavior. Independent contract review and 5 native/type tests passed; matched actual Button press recordings (normal and Reduce Motion), Settings and TokenBridge captures inspected in the system-audit REVIEW.md. Unrelated historical source drift remains unacknowledged."
+    },
+    {
+      "path": "src/components/button/icon-button.tsx",
+      "sha256": "ccd71179bfcf8af947c38f76d7811a491f4ce5ed2e11ff7e8ebe2e1a834b4652",
+      "baselineSha256": "2a675329c03d058369d7cec35b797c6185816510f0e8b9906626493a257164a1",
+      "decision": "2026-10-31 F5 system audit: preserve visual variants and custom-render ownership; add native htmlType with safe button default and shared reduced-motion-aware press behavior. Independent contract review and 5 native/type tests passed; matched actual Button press recordings (normal and Reduce Motion), Settings and TokenBridge captures inspected in the system-audit REVIEW.md. Unrelated historical source drift remains unacknowledged."
     }
   ],
   "compositionDirectories": [

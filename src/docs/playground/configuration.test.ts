@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { formatCode } from "./code-types.ts";
 import {
   readConfiguration,
   randomValues,
@@ -112,13 +113,13 @@ test("preset storage is bounded and validates every configuration", () => {
 test("appearance export keeps provider and radius only when requested", async () => {
   const { withAppearance } = await import("./exportAppearance.ts");
   const code =
-    'import { Button } from "@/components/button";\n\n// Starting props. Connect event handlers in your app.\n<Button />';
+    { imports: ['import { Button } from "@/components/button";'], setup: [], jsx: "<Button />", notes: [] };
   assert.equal(withAppearance(code), code);
-  const decorated = withAppearance(code, {
+  const decorated = formatCode(withAppearance(code, {
     dark: true,
     radius: 12,
     library: "lucide",
-  });
+  }));
   assert.match(decorated, /IconLibraryProvider library="lucide"/);
   assert.match(decorated, /className="theme-dark"/);
   assert.match(decorated, /"--radius-control": "12px"/);
@@ -144,8 +145,8 @@ test("theme export carries token scales, palette, contrast and preserves semanti
   const { withAppearance } = await import("./exportAppearance.ts");
   const { presetAppearance, variationTokens, accentForeground } = await import("./variation.ts");
   const a = presetAppearance("claude");
-  const code = 'import { Button } from "@/components/button";\n\n// Starting props. Connect event handlers in your app.\n<Button />';
-  const exported = withAppearance(code, a);
+  const code = { imports: ['import { Button } from "@/components/button";'], setup: [], jsx: "<Button />", notes: [] };
+  const exported = formatCode(withAppearance(code, a));
   assert.match(exported, /--space-x4/);
   assert.match(exported, /--radius-card-medium/);
   assert.match(exported, /#b45d3a/);
@@ -176,9 +177,9 @@ test("legacy Material share links migrate identically to site preferences", asyn
   const restored = readConfiguration(JSON.stringify({...config,appearance:legacy}),"test",spec);
   assert.deepEqual(restored.appearance,presetAppearance("ascii"));
   const { withAppearance } = await import("./exportAppearance.ts");
-  const code = 'import { Button } from "@/components/button";\n\n// Starting props. Connect event handlers in your app.\n<Button />';
-  assert.match(withAppearance(code,restored.appearance), /@fontsource-variable\/source-serif-4/);
-  assert.match(withAppearance(code,restored.appearance), /--font-input/);
+  const code = { imports: ['import { Button } from "@/components/button";'], setup: [], jsx: "<Button />", notes: [] };
+  assert.match(formatCode(withAppearance(code,restored.appearance)), /@fontsource-variable\/source-serif-4/);
+  assert.match(formatCode(withAppearance(code,restored.appearance)), /--font-input/);
   const tokens = variationTokens(presetAppearance("ascii"));
   assert.equal(tokens["--radius-control"],"0px");
   assert.equal(tokens["--color-bg-elevated"],"#f5f4f0");

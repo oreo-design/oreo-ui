@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import VIDEO_THUMB from "@/components/composer/assets/e9ccd.png";
 import IMG_THUMB from "@/components/composer/assets/1ebaa.png";
 import { useState } from "react";
@@ -10,7 +11,7 @@ import { Button } from "@/components/button";
 
 const TOC: TocItem[] = [
   { id: "attachment", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "layouts", label: "Layouts" },
   { id: "file-types", label: "File types" },
   { id: "removable", label: "Removable" },
@@ -139,8 +140,8 @@ export function AttachmentDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add attachment\n# or copy src/components/attachment/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="attachment" />
           </Section>
 
           <Section

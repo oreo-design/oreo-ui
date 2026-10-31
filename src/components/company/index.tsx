@@ -4,7 +4,7 @@ import { Button, IconButton } from "@/components/button";
 import { Icon } from "@/components/icon";
 import { Tag } from "@/components/tag";
 import { DealStageBadge } from "@/components/sales";
-import { AgentWorkspaceState } from "@/components/automation";
+import { StatusView } from "@/components/status-view";
 import {
   companyMoney,
   type Company,
@@ -65,7 +65,7 @@ export function CompanyTable({
 }) {
   if (error)
     return (
-      <AgentWorkspaceState
+      <StatusView
         error
         title="Companies unavailable"
         description={error}
@@ -92,7 +92,7 @@ export function CompanyTable({
     );
   if (!companies.length)
     return (
-      <AgentWorkspaceState
+      <StatusView
         title="No companies found"
         description="Try a different view or clear your filters to see more companies."
         actionLabel={onReset ? "Clear filters" : undefined}

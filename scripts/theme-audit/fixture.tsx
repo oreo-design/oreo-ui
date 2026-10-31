@@ -4,13 +4,14 @@ import React, { Component, useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import '@fontsource-variable/inter';
 import '../../src/index.css';
-import { playgrounds } from '../../src/docs/playground/registry';
+import { playgroundLoaders } from '../../src/docs/playground/loaders';
 import { defaultsFor } from '../../src/docs/playground/schema';
 import { variationTokens, presetAppearance } from '../../src/docs/playground/variation';
 import { IconLibraryProvider } from '../../src/components/icon';
-const routes = Object.keys(playgrounds);
+const routes = Object.keys(playgroundLoaders);
 const query = new URLSearchParams(location.search);
 const start = Number(query.get('start') ?? 0), count = Number(query.get('count') ?? 6);
+const playgrounds = Object.fromEntries(await Promise.all(routes.slice(start, start + count).map(async route => [route, await playgroundLoaders[route]()] as const)));
 const appearance = {...presetAppearance('oreo',query.has('dark')), radius:20,variation:{preset:'oreo' as const,density:1.25,accent:'#b45d3a'}};
 const properties = {
   spacing: ['padding-top','padding-right','padding-bottom','padding-left','row-gap','column-gap','margin-top','margin-right','margin-bottom','margin-left','width','height'],

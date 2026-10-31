@@ -17,12 +17,12 @@
   flex-direction: column;
   background: var(--color-bg-elevated);
 }
-.pg-shell button,
-.pg-modal button {
+.pg-shell button:not(.pg-preview *),
+.pg-modal button:not(.pg-preview *) {
   cursor: pointer;
 }
-.pg-shell button:disabled,
-.pg-modal button:disabled {
+.pg-shell button:disabled:not(.pg-preview *),
+.pg-modal button:disabled:not(.pg-preview *) {
   cursor: default;
 }
 /* Previewed components own their disabled tokens; shell opacity must not dim them twice. */

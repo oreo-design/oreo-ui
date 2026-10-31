@@ -6,13 +6,13 @@
  */
 
 export const surfaceBase = [
-  "relative isolate inline-flex items-center justify-center select-none",
+  "relative isolate inline-flex items-center justify-center select-none cursor-pointer",
   "outline-none transition-[box-shadow,color] duration-150",
   "oreo-focus",
   // the state layer
   "after:absolute after:inset-0 after:-z-10 after:rounded-[inherit]",
   "after:bg-transparent after:transition-colors after:duration-150",
-  "disabled:pointer-events-none disabled:after:bg-transparent",
+  "disabled:pointer-events-none disabled:cursor-default disabled:after:bg-transparent",
 ];
 
 export const typeVariants = {

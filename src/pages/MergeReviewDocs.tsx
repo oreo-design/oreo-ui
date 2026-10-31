@@ -1,4 +1,4 @@
-import { playgroundCode } from "@/docs/playground/code";
+import { documentationCode } from "@/docs/playground/code";
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock } from "@/docs/primitives";
@@ -126,7 +126,7 @@ export function MergeReviewDocs({ nav }: { nav: DocsNav }) {
           >
             <PreviewTabs
               preview={<div className="w-full max-w-3xl">{preview}</div>}
-              code={playgroundCode(preview)}
+              code={documentationCode(preview, { "merge-review": { PullRequestCard, BranchHistory, MergeStatusBadge, MergeChecks, ChangeSummary }, "code-diff": { CodeDiff } })}
             />
           </Section>
           <Section id="api" title="API">

@@ -40,7 +40,6 @@
 .agent-step { @apply flex w-full cursor-pointer items-center gap-3 rounded-card-small border border-border-default bg-bg-base p-4 text-left shadow-sm hover:bg-bg-elevated; }
 .agent-step[aria-pressed="true"] { @apply border-status-progress ring-1 ring-status-progress; }
 .agent-step-icon { @apply grid size-9 shrink-0 place-items-center rounded-control bg-bg-elevated text-text-secondary; }
-.agent-workspace-state { @apply flex min-h-72 flex-col items-center justify-center gap-3 px-5 py-10 text-center; }
 .agent-canvas-stack { @apply mx-auto flex w-full max-w-sm flex-col items-center py-5; }
 .agent-canvas-connector { @apply h-8 w-px bg-border-default; }
 .agent-build-field { @apply flex flex-col gap-2 text-sm text-text-secondary; }

@@ -75,7 +75,7 @@
   background: var(--color-palette-orange-text);
 }
 .sm-retention-row {
-  --settings-hairline: var(--color-border-subtle);
+  --row-divider: var(--color-border-subtle);
   gap: calc(var(--spacing) * 4);
 }
 .sm-policy-icon {

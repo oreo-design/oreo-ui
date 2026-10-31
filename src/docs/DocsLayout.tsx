@@ -1,3 +1,4 @@
+import { useDocsFrame } from "./DocsFrame";
 import { ThemeIllustration } from "@/lib/theme/ThemeIllustration";
 import { Sidebar } from "./Sidebar";
 import { OnThisPage, type TocItem } from "./OnThisPage";
@@ -16,9 +17,10 @@ export function DocsLayout({
   children: React.ReactNode;
   views?: React.ReactNode;
 }) {
+  const framed = useDocsFrame();
   return (
-    <div className="oreo-document-frame mx-auto flex min-h-screen gap-0 bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]">
-      <Sidebar nav={nav} />
+    <div className={framed ? "contents" : "oreo-document-frame mx-auto flex min-h-screen gap-0 bg-[var(--color-bg-elevated)] text-[var(--color-text-primary)]"}>
+      {!framed && <Sidebar nav={nav} />}
       <main className="min-w-0 flex-1 px-6 py-10 md:px-12">
         <div className="site-docs-content mx-auto max-w-2xl">
           <div className="site-docs-heading"><nav aria-label="Breadcrumb" className="text-[12px] text-[var(--color-text-secondary)]">

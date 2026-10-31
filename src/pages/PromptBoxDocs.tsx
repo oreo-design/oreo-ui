@@ -1,3 +1,6 @@
+import { ComponentRules } from "@/docs/ComponentRules";
+import { composerRules } from "@/components/composer/rules";
+import { SourceReference } from "@/docs/SourceReference";
 import VIDEO_THUMB from "@/components/composer/assets/e9ccd.png";
 import IMG_THUMB from "@/components/composer/assets/1ebaa.png";
 import { useState, type ReactNode } from "react";
@@ -19,7 +22,7 @@ import googleLogo from "@/components/icon/assets/brands/google-color.svg";
 
 const TOC: TocItem[] = [
   { id: "prompt-box", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "input", label: "Input" },
   { id: "attachments", label: "Attachments" },
   { id: "keyword-tags", label: "Keyword tags" },
@@ -28,6 +31,7 @@ const TOC: TocItem[] = [
   { id: "model-select", label: "Model select" },
   { id: "add-ons", label: "Add-ons" },
   { id: "api", label: "API Reference" },
+  { id: "component-rules", label: "Usage rules" },
 ];
 
 const PROPS: PropRow[] = [
@@ -300,8 +304,8 @@ export function PromptBoxDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add prompt-box\n# or copy src/components/prompt-box/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="prompt-box" />
           </Section>
 
           <Section
@@ -435,7 +439,8 @@ export function PromptBoxDocs({ nav }: { nav: DocsNav }) {
           <Section id="api" title="API Reference" description="PromptBox extends native <div> props. KeywordTag and PromptBoxModelSelect ship alongside.">
             <PropsTable rows={PROPS} />
           </Section>
-        </>
+        <ComponentRules rule={composerRules} />
+          </>
       )}
     </DocsPage>
   );

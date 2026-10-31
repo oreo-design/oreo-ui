@@ -1,7 +1,8 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { Icon } from "@/components/icon";
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
-import { Section, PreviewTabs, PropsTable, CodeBlock, type PropRow } from "@/docs/primitives";
+import { Section, PreviewTabs, PropsTable, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
 import type { SpringProps } from "@/docs/DocsPage";
 import type { IconName, IconWeight } from "@/components/icon";
@@ -9,7 +10,7 @@ import { Chip, ChipGroup } from "@/components/chip";
 
 const TOC: TocItem[] = [
   { id: "chip", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "states", label: "States" },
   { id: "selection", label: "Selection" },
   { id: "group", label: "Chip group" },
@@ -82,8 +83,8 @@ export function ChipDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <CodeBlock lang="bash" code={`npx oreo-ui add chip\n# or copy src/components/chip/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="chip" />
           </Section>
 
           <Section id="states" title="States" description="Default reads as a bordered pill; selected fills with the inverse palette; disabled dims. Hover and press are Material-style state layers.">

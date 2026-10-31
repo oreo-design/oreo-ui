@@ -12,7 +12,7 @@ When a component ships from a different module, set its `source` (IconButton use
 
 Focused numeric checks: `node --test src/docs/playground/schema.test.ts`. Build: `pnpm build`.
 
-Optional `spec.demo(reducedMotion)` supplies timestamped property patches and a total duration. Prompt Box's new sequence lives in `prompt-box.demo.ts`: Play demo runs once, Pause/Resume preserves elapsed time, Replay starts over, and Reset or manual property/preview interaction cancels playback. Code view and background tabs pause. Playback is opt-in; reduced motion replaces typewriter ticks with one complete-text update. Existing component transitions remain responsible for presentation. A demo never sends a real prompt or records microphone audio.
+Optional `spec.demo(reducedMotion)` supplies timestamped property patches and a total duration. Prompt Box's new sequence lives in `prompt-box.demo.ts`: Play demo runs once, Pause/Resume preserves elapsed time, Replay starts over, and Reset or manual property/preview interaction cancels playback. Code view and background tabs pause. An initial untouched demo starts automatically only without a shared configuration, restored session or configuration error. Reduced motion prevents automatic playback; explicit playback replaces typewriter ticks with one complete-text update. Returning to a tab does not override an explicit pause or manual takeover. Existing component transitions remain responsible for presentation. A demo never sends a real prompt or records microphone audio.
 
 The earlier requested Prompt Box script could not be located in local source, worktrees, reachable/unreachable Git history, or related local conversation records; this sequence is newly authored, not a recovered version. Player checks: `node --test src/docs/playground/demo.test.ts src/docs/playground/schema.test.ts`.
 
@@ -59,3 +59,9 @@ masks so they inherit semantic icon colors. Hairline separators use
 Focused state tests: `node --test src/docs/playground/{schema,demo,configuration}.test.ts`.
 Visual implementation evidence continues in the existing task index at
 `/Users/ziye/Documents/Project/Research/output/playground-figma-20261019/REVIEW.md`.
+
+## Family usage rules
+
+Component-family `rules.ts` files own pure-data guidance for independent properties, interaction/states, copy and composition. `docs/component-rules.ts` maps known route slugs to lazy data-only loaders. Docs and Agent sharing use the same text through `ComponentRules` / `formatComponentRules`; unknown families explicitly report missing dedicated rules. These modules must not import component renderers, fixtures, CSS or assets. Catalog metadata and export recipes refer to rule IDs instead of duplicating prose. Public component types own API facts; rules explain usage and host responsibilities rather than introducing another runtime schema.
+
+The site is an internal source preview. Source references point to verified component modules; no published Oreo npm package or CLI is assumed. Follow imports for shared tokens, styles, component and external dependencies. Existing third-party dependency commands remain distinct from Oreo source instructions.

@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, Segmented, type PropRow } from "@/docs/primitives";
@@ -7,7 +8,7 @@ import { Icon } from "@/components/icon";
 
 const TOC: TocItem[] = [
   { id: "code-block", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "basic", label: "Basic" },
   { id: "filename", label: "Filename & actions" },
   { id: "wrap", label: "Line wrap" },
@@ -67,8 +68,8 @@ export function CodeBlockDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add code-block\n# or copy src/components/code-block/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="code-block" />
           </Section>
 
           <Section id="basic" title="Basic" description="Language label left, copy right. The body scrolls horizontally by default.">

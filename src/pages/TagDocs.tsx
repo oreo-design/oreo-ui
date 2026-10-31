@@ -1,13 +1,14 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
-import { Section, PreviewTabs, PropsTable, CodeBlock, type PropRow } from "@/docs/primitives";
+import { Section, PreviewTabs, PropsTable, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
 import { Tag, PALETTE, type PaletteColor } from "@/components/tag";
 import { Icon } from "@/components/icon";
 
 const TOC: TocItem[] = [
   { id: "tag", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "colors", label: "Colors" },
   { id: "icons", label: "Icons & hash" },
   { id: "removable", label: "Removable" },
@@ -74,8 +75,8 @@ export function TagDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <CodeBlock lang="bash" code={`npx oreo-ui add tag\n# or copy src/components/tag/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="tag" />
           </Section>
 
           <Section id="colors" title="Colors" description="Seven palette tones — default (neutral) plus six hues. Each pairs a soft surface with readable text, re-skinned automatically in dark mode.">

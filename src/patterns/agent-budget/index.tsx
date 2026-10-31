@@ -14,17 +14,10 @@ import {
   budgetOutlook,
   runBatch,
   money,
-  type BudgetInputs,
 } from "@/components/agent-budget";
 import "./agent-budget-page.css";
-export const DEMO_BUDGET: BudgetInputs = {
-  cap: 120000,
-  spent: 64000,
-  planMax: 200000,
-  costPerRun: 25,
-  dailySpend: 4000,
-  daysToReset: 16,
-};
+import { DEMO_BUDGET } from "./data";
+export { DEMO_BUDGET } from "./data";
 export function AgentBudgetPage() {
   const [dark, setDark] = useThemeMode(false),
     [saved, setSaved] = useState(120000),

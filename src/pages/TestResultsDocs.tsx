@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock } from "@/docs/primitives";
-import { playgroundCode } from "@/docs/playground/code";
+import { documentationCode } from "@/docs/playground/code";
 import { PAGE_META } from "@/lib/site";
 import {
   TestResults,
@@ -89,7 +89,7 @@ Template: src/patterns/test-workspace/. No new packages."
           >
             <PreviewTabs
               preview={<div className="w-full p-4">{preview}</div>}
-              code={playgroundCode(preview)}
+              code={documentationCode(preview, { "test-results": { TestResults, TestRunSummary, TestResultFilters, TestFileGroup, TestFailureDetail, TestStackTrace } })}
             />
           </Section>
           <Section id="api" title="API">

@@ -1,0 +1,14 @@
+.async-content-state{display:grid;place-items:center;min-height:18rem;flex:1;min-width:0;padding:2rem}
+.async-content-message{max-width:28rem;text-align:center;color:var(--color-text-secondary)}
+.async-content-message h2{font-size:1rem;font-weight:600;color:var(--color-text-primary)}
+.async-content-message p{font-size:.875rem;line-height:1.6;margin:1rem 0}
+.async-content-actions{display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap}
+.async-content-skeleton{width:min(100%,30rem);display:grid;gap:1rem}
+.async-content-skeleton i,.async-content-skeleton div{display:block;background:var(--color-bg-subtle);border-radius:var(--radius-control);height:.75rem}
+.async-content-skeleton i:first-child{width:40%}.async-content-skeleton i:last-child{width:65%}.async-content-skeleton div{height:10rem;border-radius:var(--radius-card-medium)}
+.async-playground-content{display:flex;min-height:0;flex:1}.async-playground-content>.async-content-state{min-height:0}
+.async-playground-inspector{width:328px;border-left:1px solid var(--color-border-default);padding:1.5rem}
+.async-playground-inspector .async-content-skeleton div{height:2rem}
+@media(max-width:900px){.async-playground-inspector{display:none}}
+
+.async-pending-region{display:flex}.async-pending-region>.async-content-state{min-height:min(18rem,100%)}

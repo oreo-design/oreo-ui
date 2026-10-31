@@ -1,0 +1,4 @@
+@reference "../../index.css";
+
+/* Layout remains compatible; container-specific sizing belongs to the host. */
+.agent-workspace-state { @apply flex min-h-72 flex-col items-center justify-center gap-3 px-5 py-10 text-center; }

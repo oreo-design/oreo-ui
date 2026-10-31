@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { useState } from "react";
 import { DocsPage, type DocsNav, type SpringProps } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
@@ -16,7 +17,7 @@ import claudeLogo from "@/components/icon/assets/brands/claude-color.svg";
 
 const TOC: TocItem[] = [
   { id: "context-bar", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "position", label: "Position" },
   { id: "progress", label: "Progress" },
   { id: "upgrade", label: "Upgrade" },
@@ -207,8 +208,8 @@ export function ContextBarDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add context-bar\n# or copy src/components/context-bar/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="context-bar" />
           </Section>
 
           <Section

@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { tv } from "@/lib/tv";
 import { cn } from "@/lib/cn";
 import { surfaceBase, typeVariants, dangerCompounds, disabledCompounds } from "./surface";
+import { useButtonPress, type ButtonPressOptions } from "./use-button-press";
 
 /**
  * Oreo UI Icon Button — a square action with only an icon.
@@ -46,15 +47,16 @@ export type IconButtonProps = {
   /** Required for accessibility — an icon-only button needs a name. */
   "aria-label": string;
   icon: React.ReactNode;
+  /** Replaces the renderer; custom elements own their native type and motion. */
   render?: useRender.RenderProp;
-  bounce?: number;
-  duration?: number;
-  tapScale?: number;
-} & IconButtonVariants &
+  /** Native type for the default button renderer. Visual emphasis remains `type`. */
+  htmlType?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
+} & ButtonPressOptions & IconButtonVariants &
   Omit<React.ComponentPropsWithoutRef<"button">, "type" | "children">;
 
 export function IconButton({
   render,
+  htmlType = "button",
   type,
   size,
   shape,
@@ -63,16 +65,16 @@ export function IconButton({
   disabled,
   icon,
   className,
-  bounce = 0.4,
-  duration = 0.3,
-  tapScale = 0.96,
+  bounce,
+  duration,
+  tapScale,
   ...rest
 }: IconButtonProps) {
+  const press = useButtonPress({ disabled, bounce, duration, tapScale });
   const defaultRender = (
     <motion.button
-      type="button"
-      whileTap={disabled ? undefined : { scale: tapScale }}
-      transition={{ type: "spring", bounce, duration }}
+      type={htmlType}
+      {...press}
     />
   );
 

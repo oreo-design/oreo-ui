@@ -1,3 +1,4 @@
+import { SourceReference } from "@/docs/SourceReference";
 import { DocsPage, type DocsNav } from "@/docs/DocsPage";
 import { Section, PreviewTabs, PropsTable, CodeBlock as Snippet, type PropRow } from "@/docs/primitives";
 import type { TocItem } from "@/docs/OnThisPage";
@@ -20,7 +21,7 @@ import googleLogo from "@/components/icon/assets/brands/google-color.svg";
 
 const TOC: TocItem[] = [
   { id: "menu", label: "Introduction" },
-  { id: "installation", label: "Installation" },
+  { id: "installation", label: "Source" },
   { id: "model-select", label: "Model Select" },
   { id: "rows", label: "Rows" },
   { id: "submenus", label: "Submenus" },
@@ -126,8 +127,8 @@ export function MenuDocs({ nav }: { nav: DocsNav }) {
             </p>
           </header>
 
-          <Section id="installation" title="Installation" description="Copy the source into your project — you own the code.">
-            <Snippet lang="bash" code={`npx oreo-ui add menu\n# or copy src/components/menu/* by hand`} />
+          <Section id="installation" title="Source" description="Use the source from this internal repository.">
+            <SourceReference source="menu" />
           </Section>
 
           <Section
