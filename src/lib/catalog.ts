@@ -22,6 +22,11 @@ export type CatalogEntry = {
 
 /** Keys and insertion order preserve existing routes and sitemap order. */
 export const CATALOG = {
+  "film-cover-studio": {title:"Film Cover Studio",description:"A local cover editor with film development, a persistent media tray and a continuous reading preview.",nav:{group:"Templates",order:-2},subject:"template",views:["template"],defaultView:"template",related:["film-cover-upload","film-reveal","media-tray"]},
+  "film-cover-upload": {title:"Film Cover Upload",description:"A controlled cover drop zone with developing preview, file progress, cancellation and recovery.",nav:{group:"Components",order:-2},subject:"component",views:["playground","docs"],defaultView:"playground"},
+  "film-reveal": {title:"Film Reveal",description:"Progress-controlled silver-grain to color image development, with reduced-motion and image fallbacks.",nav:{group:"Components",order:-2},subject:"component",views:["playground","docs"],defaultView:"playground"},
+  "media-tray": {title:"Media Tray",description:"A selectable photo library with accessible click, keyboard and drag-to-cover interaction.",nav:{group:"Components",order:-2},subject:"component",views:["playground","docs"],defaultView:"playground"},
+
   "parameter-controller": {title:"Parameter Controller",description:"Reference-matched Tuner parameter controls with Oreo foundation tokens.",nav:{group:"Templates",order:-1},subject:"template",views:["template"],defaultView:"template"},
   "parameter-controls": {title:"Parameter Controls",description:"Reference-matched Tuner parameter controls with Oreo foundation tokens.",nav:{group:"Components",order:-1},subject:"family",views:["playground", "docs"],defaultView:"playground"},
   "parameter-panel": {title:"Parameter Panel",description:"Reference-matched Tuner parameter controls with Oreo foundation tokens.",nav:{group:"Components",order:-1},subject:"component",views:["playground", "docs"],defaultView:"playground"},

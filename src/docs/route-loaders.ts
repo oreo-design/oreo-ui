@@ -4,6 +4,10 @@ import type { PageSlug } from "@/lib/site";
 
 /** Browser runtime only. The pure catalog and sitemap never import loaders. */
 export const routeLoaders = {
+  "film-cover-studio": () => import("@/patterns/film-cover-studio").then(m=>m.FilmCoverStudio),
+  "film-cover-upload": () => import("@/pages/FilmCoverDocs").then(m=>m.FilmCoverDocs),
+  "film-reveal": () => import("@/pages/FilmCoverDocs").then(m=>m.FilmCoverDocs),
+  "media-tray": () => import("@/pages/FilmCoverDocs").then(m=>m.FilmCoverDocs),
   "parameter-controller": () => import("@/patterns/parameter-controller").then(m=>m.ParameterControllerPage),
   "parameter-controls": () => import("@/pages/ParameterControllerDocs").then(m=>m.ParameterControllerDocs),
   "parameter-panel": () => import("@/pages/ParameterControllerDocs").then(m=>m.ParameterControllerDocs),
