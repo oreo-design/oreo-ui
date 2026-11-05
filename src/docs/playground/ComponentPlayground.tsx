@@ -193,10 +193,10 @@ export function ComponentPlayground({
     demo.player?.stop();
     setValues((current) => updateValues(spec.controls, current, key, value));
   };
-  // Discrete option edits (size, type, side…) morph the preview with the shared
-  // Style transition, scoped to the preview. Booleans often toggle presence that
-  // Motion already animates, and text/number edits are continuous, so they stay
-  // immediate; direct preview interaction keeps its own motion.
+  // Controls marked `morph` (plain-CSS geometry/appearance options such as size
+  // or type) morph the preview with the shared Style transition, scoped to the
+  // preview. Everything else applies directly: state a component animates itself
+  // (Motion) would be eased twice, and text/number edits are continuous.
   const stageHost = useRef<HTMLDivElement>(null);
   const [propertyTransition] = useState(() => createScopedTransition({
     scope: () => stageHost.current?.querySelector<HTMLElement>(".pg-preview") ?? null,
@@ -205,7 +205,7 @@ export function ComponentPlayground({
   }));
   useEffect(() => () => propertyTransition.dispose(), [propertyTransition]);
   const editProperty = (key: string, value: Values[string]) =>
-    propertyTransition.run(() => set(key, value), spec.controls[key]?.kind === "select");
+    propertyTransition.run(() => set(key, value), Boolean(spec.controls[key]?.morph));
   const apply = (next: Values) => {
     demo.player?.stop();
     setValues(next);

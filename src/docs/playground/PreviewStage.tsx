@@ -304,9 +304,13 @@ export function PreviewStage({
           report();
         }
       } else {
+        // Settled: refresh content nodes (a fade may have started at opacity 0)
+        // so the redlines and the inspector agree on the final layout.
         predictPending = false;
+        predictGeneration++;
         leaves = null;
         setPredicted(null);
+        measureGeometry(true);
         report();
       }
     };
@@ -325,7 +329,7 @@ export function PreviewStage({
     // their exact progress. Only the previewed component's animations are touched:
     // overlay tone transitions and not-yet-started (pending) animations are left
     // alone, and a pending batch is retried on the next frame.
-    let predictedAt: CSSNumberish | null = null;
+    let predictedAt: CSSNumberish | null = null, predictGeneration = 0;
     function predict() {
       if (predictedAt !== null && predictedAt === document.timeline.currentTime) return;
       predictedAt = document.timeline.currentTime;
@@ -342,11 +346,18 @@ export function PreviewStage({
       try {
         running.forEach(animation => { animation.currentTime = Number(animation.effect!.getComputedTiming().endTime) - 1; });
         const unit = spacingUnit(element);
-        setPredicted(Object.fromEntries(measureCallouts(element, localizer(), leavesOf(element))
+        // Fresh content nodes at the end state: fades are complete there.
+        setPredicted(Object.fromEntries(measureCallouts(element, localizer(), collectLeaves(element))
           .map(c => [c.id, { status: statusOf(c, unit), lane: c.lane }])));
       } finally {
         running.forEach((animation, index) => { animation.currentTime = saved[index]; });
       }
+      // The destination stops applying once the animations it describes end, even
+      // if other motion keeps this tracking session alive.
+      const generation = ++predictGeneration;
+      void Promise.allSettled(running.map(animation => animation.finished)).then(() => {
+        if (generation === predictGeneration) setPredicted(null);
+      });
     }
     // Only the component's own transitions matter; overlay tone/entrance and
     // marker hover transitions must not trigger prediction or tracking.
@@ -358,7 +369,10 @@ export function PreviewStage({
       track();
     };
     const onMotionEvent = (event: Event) => {
-      if (fromContent(event)) track();
+      if (!fromContent(event)) return;
+      // Ends can change which nodes are visible content (fade in/out).
+      if (event.type !== "animationstart") leaves = null;
+      track();
     };
     selectElement.current = (clicked) => {
       // Prefer the deepest named part; a container must not swallow its label/icon.
@@ -413,6 +427,7 @@ export function PreviewStage({
       selectElement.current = () => {};
       host.removeEventListener("transitionrun", onTransition);
       motionEvents.forEach(type => host.removeEventListener(type, onMotionEvent));
+      predictGeneration++;
       setPredicted(null);
       host.removeEventListener("scroll", track);
       window.removeEventListener("resize", track);

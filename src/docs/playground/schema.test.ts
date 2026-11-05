@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { normalizeNumber, number, updateValues, resolveControl } from "./schema.ts";
+import { morph, normalizeNumber, number, select, updateValues, resolveControl } from "./schema.ts";
 
 test("numeric controls reject incomplete and non-finite input", () => {
   const control = number(.4, 0, 1, .05);
@@ -21,4 +21,12 @@ test("linked bounds keep inspector values and preview values in sync", () => {
   const effective = resolveControl(controls.current, { current: 1, total: 3 });
   assert.equal(effective.kind === "number" && effective.max, 3);
   assert.deepEqual(updateValues(controls, { current: 1, total: 3 }, "current", 99), { current: 3, total: 3 });
+});
+
+test("morph marks a control without changing its schema", () => {
+  const size = morph(select(["sm", "md"], "md"));
+  assert.equal(size.morph, true);
+  assert.equal(size.kind, "select");
+  assert.equal(size.defaultValue, "md");
+  assert.equal(select(["sm"], "sm").hasOwnProperty("morph"), false);
 });

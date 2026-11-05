@@ -48,12 +48,17 @@ masks so they inherit semantic icon colors. Hairline separators use
   then transition toward it instead of flickering or jumping. Position is never
   CSS-transitioned. A new selection fades in fresh redlines. Reduced motion jumps
   directly.
-- Discrete option edits (`select` controls: type, size, side…) morph the preview
-  with the shared Style transition (`createScopedTransition` in
-  `src/lib/theme/transition.ts`), scoped to `.pg-preview` through
-  `data-style-transition`. Booleans (often presence that Motion already
-  animates), text and numbers (continuous) apply directly, as do direct preview
-  interaction, demos, Random/Reset (which remount) and body-portaled popups.
+- Controls marked with `morph(...)` in their adapter morph the preview when
+  edited in the inspector, using the shared Style transition
+  (`createScopedTransition` in `src/lib/theme/transition.ts`) scoped to
+  `.pg-preview` through `data-style-transition`. Mark only plain-CSS geometry or
+  appearance options (size, type, shape…); never state a component animates
+  itself with Motion — the scoped `transition: all` would ease Motion's
+  per-frame writes a second time. Before marking, flip the options with the
+  scope disabled and confirm no element's style/SVG attributes are rewritten on
+  consecutive frames. Unmarked controls, text and numbers apply directly, as do
+  direct preview interaction, demos, Random/Reset (which remount) and
+  body-portaled popups.
 - Device controls choose Desktop or a live iPhone-style Mobile mockup. The
   screen is 375 CSS pixels wide, with at least 16px content insets on both sides;
   the 391×804 outer shell fits the available area by scaling as a unit. Its
