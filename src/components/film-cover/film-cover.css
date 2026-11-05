@@ -1,0 +1,298 @@
+.film-upload,
+.film-tray,
+.film-transfer {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  min-width: 0;
+}
+.film-cover-label {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-x4);
+  margin-bottom: var(--space-x3);
+  color: var(--color-text-tertiary);
+  font-size: var(--text-sm);
+}
+.film-cover-label > span:last-child {
+  text-align: right;
+  color: var(--color-text-placeholder);
+}
+.film-drop {
+  --squircle-radius: var(--radius-card-small);
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 8/5;
+  background: var(--color-bg-elevated);
+  border: 1px solid transparent;
+}
+.film-drop[data-empty] {
+  border: 1px dashed var(--color-border-default);
+}
+.film-drop[data-over] {
+  border-color: var(--color-accent);
+}
+.film-empty {
+  width: 100%;
+  height: 100%;
+  padding: var(--space-x12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-x6);
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+}
+.film-empty > svg {
+  width: var(--space-x12);
+  height: var(--space-x12);
+}
+.film-empty strong {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+.film-empty span {
+  text-align: center;
+  font-size: var(--text-sm);
+}
+.film-empty u {
+  text-underline-offset: var(--space-x1);
+}
+.film-upload button:disabled,
+.film-tray button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.film-reveal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.film-reveal > img,
+.film-reveal > canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.film-silver {
+  filter: grayscale(1) contrast(1.25) brightness(1.1);
+}
+.film-status-tag {
+  position: absolute;
+  bottom: var(--space-x6);
+  left: var(--space-x6);
+  padding: var(--space-x3) var(--space-x6);
+  border-radius: var(--radius-capsule);
+  background: var(--color-bg-surface);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.film-cover-actions {
+  position: absolute;
+  top: var(--space-x4);
+  right: var(--space-x4);
+  display: flex;
+  gap: var(--space-x2);
+}
+.film-drop-hint {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: var(--color-overlay-strong);
+  color: var(--color-text-on-inverse);
+  pointer-events: none;
+}
+.film-transfer {
+  position: relative;
+  display: flex;
+  gap: var(--space-x6);
+  align-items: center;
+  padding-block: var(--space-x6) var(--space-x4);
+}
+.film-file-thumb {
+  width: var(--space-x18);
+  height: var(--space-x18);
+  object-fit: cover;
+  border-radius: var(--radius-control);
+  flex: none;
+}
+.film-transfer-copy {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-x1);
+}
+.film-transfer-copy strong {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.film-transfer-copy > span,
+.film-percent {
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+}
+.film-percent {
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+.film-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--space-x1);
+  background: var(--color-bg-subtle);
+  overflow: hidden;
+  border-radius: var(--radius-capsule);
+}
+.film-progress > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--color-text-secondary);
+  transform-origin: left;
+}
+.film-error {
+  color: var(--color-status-error);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  margin-top: var(--space-x4);
+}
+.film-transfer:has(.film-error) {
+  flex-wrap: wrap;
+}
+.film-transfer .film-error {
+  flex-basis: 100%;
+}
+.film-recovery {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-x4);
+  margin-top: var(--space-x4);
+}
+.film-recovery:empty {
+  display: none;
+}
+.film-tray {
+  background: var(--color-bg-elevated);
+  padding: var(--space-x6);
+}
+.film-tray-title {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-x3);
+  margin-bottom: var(--space-x6);
+}
+.film-tray-title > svg {
+  margin-top: var(--space-x1);
+  color: var(--color-text-tertiary);
+  flex: none;
+}
+.film-tray-title strong {
+  display: block;
+  font-weight: 500;
+}
+.film-tray-title span {
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+}
+.film-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-x4);
+}
+.film-thumb {
+  --squircle-radius: var(--radius-control);
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 150ms var(--ease-out);
+}
+.film-thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.film-thumb[aria-pressed="true"] {
+  border-color: var(--color-border-focus);
+}
+.film-thumb > span {
+  position: absolute;
+  bottom: var(--space-x2);
+  right: var(--space-x2);
+  display: grid;
+  place-items: center;
+  width: var(--space-x8);
+  height: var(--space-x8);
+  border-radius: var(--radius-capsule);
+  background: var(--color-bg-surface);
+}
+@media (hover: hover) and (pointer: fine) {
+  .film-thumb:active:not(:disabled):not(:focus-visible) {
+    transform: scale(0.97);
+    transition-duration: 75ms;
+  }
+}
+.film-muted {
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+}
+@media (prefers-reduced-motion: reduce) {
+  .film-thumb {
+    transition: none;
+  }
+  .film-thumb:active:not(:disabled):not(:focus-visible) {
+    transform: none;
+  }
+}
+@media (max-width: 480px) {
+  .film-cover-label {
+    flex-direction: column;
+  }
+  .film-cover-label > span:last-child {
+    text-align: left;
+  }
+  .film-empty {
+    padding: var(--space-x6);
+    gap: var(--space-x4);
+  }
+}
+
+.film-upload-details {
+  min-height: var(--space-x32);
+}
+
+.film-file-thumb {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--color-bg-elevated);
+  color: var(--color-text-tertiary);
+}
+.film-file-thumb > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.film-unavailable {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-x4);
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-size: var(--text-sm);
+}

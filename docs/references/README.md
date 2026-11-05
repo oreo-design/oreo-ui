@@ -73,6 +73,12 @@
 | --- | --- | --- |
 | 2026-11-05 | [linci：Parameter Controller](records/2026-11-05-linci-parameter-controller.md) | 四张参考先还原再映射 Oreo tokens：六类受控输入、完整 Tuner 与独立示例。 |
 
+### 媒体上传交互
+
+| 日期 | 参考 | 重点 |
+| --- | --- | --- |
+| 2026-11-05 | [dev_ya：胶片显影封面](records/2026-11-05-devya-film-cover.md) | 显影预览、封面上传、固定图库与编辑到阅读的连续转换。 |
+
 ## 使用与维护
 
 1. 收到新参考先查来源 URL，已有条目则追加带日期的补充，不重复建立竞争记录。
