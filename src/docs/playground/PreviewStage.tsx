@@ -174,17 +174,24 @@ export function PreviewStage({
     };
     // Content nodes are found from computed styles once, then only their rects are
     // read per frame. DOM changes other than inline-style animation invalidate it.
-    let leaves: LeafRef[] | null = null, leavesFor: Element | null = null;
+    // Motion fades (WAAPI or inline writes) emit no events, so skipped
+    // transparent nodes are re-checked each frame and refresh the cache once seen.
+    let leaves: LeafRef[] | null = null, leavesFor: Element | null = null, transparentNodes: Element[] = [];
     const leavesOf = (element: Element) => {
+      if (leaves && transparentNodes.some(node => node.isConnected && getComputedStyle(node).opacity !== "0")) leaves = null;
       if (!leaves || leavesFor !== element) {
-        leaves = collectLeaves(element);
+        transparentNodes = [];
+        leaves = collectLeaves(element, transparentNodes);
         leavesFor = element;
       }
       return leaves;
     };
     const subjectOf = (element: Element) => selected >= 0 ? `part-${selected}` : `node-${idOf(element)}`;
     // Geometry runs every frame while anything moves; it only reads layout.
-    let signature = "";
+    // Intermediate values are rarely on the scale, so while moving without a known
+    // destination each callout keeps its last settled status instead of flashing.
+    let signature = "", holding = false;
+    const settled = new Map<string, SpecStatus>();
     const measureGeometry = (sync: boolean) => {
       // From a frame callback, commit synchronously so the overlay paints in the
       // same frame as the geometry it was measured from, never one frame behind.
@@ -215,9 +222,11 @@ export function PreviewStage({
         const reach = 10 + c.lane * 36 + 7 + badgeSize(c.value);
         const side = c.axis === "x" || c.band.right + reach <= visibleRight ? "end"
           : c.band.left - reach >= host.scrollLeft ? "start" : "inside";
-        return { ...c, status: statusOf(c, unit), side };
+        const live = statusOf(c, unit);
+        if (!holding) settled.set(c.id, live);
+        return { ...c, status: holding ? settled.get(c.id) ?? live : live, side };
       });
-      const next = `${subject}#${rect.left.toFixed(1)},${rect.top.toFixed(1)},${rect.right.toFixed(1)},${rect.bottom.toFixed(1)}#${calloutSignature(callouts)}#${callouts.map(c => c.side).join("")}#${callouts.map(c => c.value.toFixed(2)).join(",")}`;
+      const next = `${subject}#${rect.left.toFixed(1)},${rect.top.toFixed(1)},${rect.right.toFixed(1)},${rect.bottom.toFixed(1)}#${calloutSignature(callouts)}#${callouts.map(c => c.side + c.status).join("")}#${callouts.map(c => c.value.toFixed(2)).join(",")}`;
       if (next !== signature) commit(() => setGeometry({ subject, rect, callouts }));
       signature = next;
       return signature;
@@ -308,6 +317,7 @@ export function PreviewStage({
         // so the redlines and the inspector agree on the final layout.
         predictPending = false;
         predictGeneration++;
+        holding = false;
         leaves = null;
         setPredicted(null);
         measureGeometry(true);
@@ -317,6 +327,7 @@ export function PreviewStage({
     const track = () => {
       const now = performance.now();
       if (!raf) {
+        holding = true;
         cap = now + 5000;
         reported = now;
         raf = requestAnimationFrame(tick);
@@ -339,12 +350,14 @@ export function PreviewStage({
         const end = animation.effect?.getComputedTiming().endTime;
         return animation.playState === "running" && typeof end === "number" && Number.isFinite(end);
       });
+      // Seeking only part of a batch would measure a mixed state; wait until every
+      // animation has started (retried on the next frame).
       predictPending = animations.some(animation => animation.pending);
-      const running = animations.filter(animation => !animation.pending);
-      if (!running.length) return;
+      if (predictPending || !animations.length) return;
+      const running = animations;
       const saved = running.map(animation => animation.currentTime);
       try {
-        running.forEach(animation => { animation.currentTime = Number(animation.effect!.getComputedTiming().endTime) - 1; });
+        running.forEach(animation => { animation.currentTime = Number(animation.effect!.getComputedTiming().endTime) - 0.01; });
         const unit = spacingUnit(element);
         // Fresh content nodes at the end state: fades are complete there.
         setPredicted(Object.fromEntries(measureCallouts(element, localizer(), collectLeaves(element))
@@ -352,12 +365,17 @@ export function PreviewStage({
       } finally {
         running.forEach((animation, index) => { animation.currentTime = saved[index]; });
       }
-      // The destination stops applying once the animations it describes end, even
-      // if other motion keeps this tracking session alive.
+      // The destination stops applying once the animations it describes finish,
+      // even if other motion keeps this tracking session alive. A cancellation
+      // (retarget) keeps it: the replacement is predicted next, or settle clears it.
       const generation = ++predictGeneration;
-      void Promise.allSettled(running.map(animation => animation.finished)).then(() => {
-        if (generation === predictGeneration) setPredicted(null);
-      });
+      Promise.all(running.map(animation => animation.finished)).then(() => {
+        if (generation !== predictGeneration) return;
+        // Finished: live values are the destination now.
+        holding = false;
+        setPredicted(null);
+        track();
+      }, () => {});
     }
     // Only the component's own transitions matter; overlay tone/entrance and
     // marker hover transitions must not trigger prediction or tracking.
@@ -375,6 +393,8 @@ export function PreviewStage({
       track();
     };
     selectElement.current = (clicked) => {
+      holding = false;
+      settled.clear();
       // Prefer the deepest named part; a container must not swallow its label/icon.
       let element: Element | null = clicked;
       while (element && element !== root) {

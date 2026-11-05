@@ -79,9 +79,10 @@ export const idOf = (node: Node) => {
 
 /**
  * Painted or replaced descendants count as content; everything else is walked for
- * text. This reads computed styles, so callers cache it while only geometry moves.
+ * text. This reads computed styles, so callers cache it while only geometry moves;
+ * `transparentNodes` collects skipped opacity-0 elements for that cache to watch.
  */
-export function collectLeaves(element: Element): LeafRef[] {
+export function collectLeaves(element: Element, transparentNodes?: Element[]): LeafRef[] {
   const leaves: LeafRef[] = [];
   const rootBox = element.getBoundingClientRect();
   const visit = (node: Node, child: number) => {
@@ -91,7 +92,13 @@ export function collectLeaves(element: Element): LeafRef[] {
     }
     if (!(node instanceof Element)) return;
     const style = getComputedStyle(node);
-    if (style.display === "none" || style.visibility === "hidden" || style.opacity === "0") return;
+    if (style.display === "none" || style.visibility === "hidden") return;
+    if (style.opacity === "0") {
+      // Fully transparent content is not visible yet, but a fade may be starting:
+      // report it so callers can re-collect once it becomes visible.
+      transparentNodes?.push(node);
+      return;
+    }
     // `display: contents` wrappers have no box of their own; their children do.
     if (style.display === "contents") {
       node.childNodes.forEach(next => visit(next, child));

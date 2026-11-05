@@ -45,9 +45,13 @@ masks so they inherit semantic icon colors. Hairline separators use
   component. When one of the component's transitions starts, its running (not
   pending) animations are briefly sought to their end and restored in the same
   task to learn each distance's destination status and badge lane; tone and lane
-  then transition toward it instead of flickering or jumping. Position is never
-  CSS-transitioned. A new selection fades in fresh redlines. Reduced motion jumps
-  directly.
+  then transition toward it instead of flickering or jumping. Until a destination
+  is known (animations still pending, or motion that cannot be sought, such as
+  JS springs) each redline keeps its last settled status; the prediction expires
+  when its animations finish, and a retarget replaces it. Content nodes are
+  cached between frames; transparent nodes are watched so Motion fade-ins join as
+  soon as they become visible. Position is never CSS-transitioned. A new
+  selection fades in fresh redlines. Reduced motion jumps directly.
 - Controls marked with `morph(...)` in their adapter morph the preview when
   edited in the inspector, using the shared Style transition
   (`createScopedTransition` in `src/lib/theme/transition.ts`) scoped to
