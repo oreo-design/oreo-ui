@@ -6,6 +6,12 @@ export type Control = {
   description?: string;
   minFrom?: string;
   maxFrom?: string;
+  /**
+   * Opt-in: editing this control in the inspector morphs the preview with the
+   * shared Style transition. Only for geometry/appearance options whose change is
+   * plain CSS; never for state that a component animates itself (Motion).
+   */
+  morph?: boolean;
 } & (
   | { kind: "boolean"; defaultValue: boolean }
   | { kind: "text"; defaultValue: string; multiline?: boolean }
@@ -38,6 +44,8 @@ export const text = (defaultValue: string, multiline = false) => ({ kind: "text"
 export const toggle = (defaultValue = false) => ({ kind: "boolean" as const, defaultValue });
 export const number = (defaultValue: number, min: number, max: number, step = 1) => ({ kind: "number" as const, defaultValue, min, max, step });
 export const select = <const T extends readonly string[]>(options: T, defaultValue: T[number]) => ({ kind: "select" as const, defaultValue, options });
+/** Marks a control whose inspector edits morph the preview (see `Control.morph`). */
+export const morph = <const C extends Control>(control: C) => ({ ...control, morph: true as const });
 export const defaultsFor = (spec: PlaygroundSpec): Values => Object.fromEntries(Object.entries(spec.controls).map(([key, control]) => [key, control.defaultValue]));
 
 export function normalizeNumber(raw: string, control: Extract<Control, { kind: "number" }>): number | null {

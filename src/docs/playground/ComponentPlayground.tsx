@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState, useCallback, useRef, useId, type CSSProperties } from "react";
 import { Tooltip } from "@base-ui-components/react/tooltip";
+import { flushSync } from "react-dom";
+import { createScopedTransition } from "@/lib/theme/transition";
 import type { DocsNav } from "@/docs/DocsPage";
 import { ThemeChips } from "./ThemeChips";
 import { VariationPanel } from "./VariationPanel";
@@ -191,6 +193,19 @@ export function ComponentPlayground({
     demo.player?.stop();
     setValues((current) => updateValues(spec.controls, current, key, value));
   };
+  // Controls marked `morph` (plain-CSS geometry/appearance options such as size
+  // or type) morph the preview with the shared Style transition, scoped to the
+  // preview. Everything else applies directly: state a component animates itself
+  // (Motion) would be eased twice, and text/number edits are continuous.
+  const stageHost = useRef<HTMLDivElement>(null);
+  const [propertyTransition] = useState(() => createScopedTransition({
+    scope: () => stageHost.current?.querySelector<HTMLElement>(".pg-preview") ?? null,
+    attribute: "data-style-transition",
+    flush: update => flushSync(update),
+  }));
+  useEffect(() => () => propertyTransition.dispose(), [propertyTransition]);
+  const editProperty = (key: string, value: Values[string]) =>
+    propertyTransition.run(() => set(key, value), Boolean(spec.controls[key]?.morph));
   const apply = (next: Values) => {
     demo.player?.stop();
     setValues(next);
@@ -265,7 +280,7 @@ export function ComponentPlayground({
     const controls = entries.filter(([, c]) => (c.group ?? spec.title) === group);
     const renderField = ([key, control]: typeof entries[number]) => <PropertyControl
       key={`${revision}-${key}`} name={key} control={resolveControl(control, values)}
-      value={values[key]} onChange={value => set(key, value)} />;
+      value={values[key]} onChange={value => editProperty(key, value)} />;
     const switches = controls.filter(([, c]) => c.kind === "boolean");
     return <div className="pg-fields">
       {controls.filter(([, c]) => c.kind !== "boolean").map(renderField)}
@@ -299,6 +314,17 @@ export function ComponentPlayground({
               }).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
             </dl>
           ) : <p className="pg-fine">This part is not currently visible.</p>}
+          {measurement && measurement.spacing.length > 0 && (
+            <div className="pg-spec-list">
+              <p className="pg-caption">Spacing</p>
+              <dl className="pg-part-metrics" aria-label="Measured spacing">
+                {measurement.spacing.map(item => <div key={item.id} data-scale={item.status}>
+                  <dt>{item.label}</dt>
+                  <dd><span className="pg-spec-dot" aria-hidden="true" />{item.value}px · {item.token ?? (item.status === "text" ? "Text line box" : "Off scale")}</dd>
+                </div>)}
+              </dl>
+            </div>
+          )}
         </>
       ) : (
         <>
@@ -592,6 +618,7 @@ export function ComponentPlayground({
                 />
               ) : (
                 <div
+                  ref={stageHost}
                   className="pg-stage-host"
                   onPointerDownCapture={() => demo.player?.stop()}
                   onKeyDownCapture={() => demo.player?.stop()}

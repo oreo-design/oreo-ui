@@ -1,5 +1,8 @@
 import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode, type SyntheticEvent } from "react";
+import { flushSync } from "react-dom";
 import { PortalContainerContext } from "@/lib/portal-container";
+import { badgeSize, calloutSignature, collectLeaves, idOf, isTransparent, measureCallouts, spacingToken, statusOf, type Box, type Callout, type LeafRef, type SpacingValue, type SpecStatus } from "./spec";
+import { SpecLayer } from "./SpecLayer";
 
 export type PreviewDevice = "desktop" | "mobile";
 export type Part = { name: string; description: string; selector: string };
@@ -73,7 +76,19 @@ export type Measurement = {
   colorToken: string;
   font: string;
   tag: string;
+  spacing: SpacingValue[];
 };
+/** "pending": appeared mid-motion with no settled or predicted status yet (neutral). */
+export type ToneStatus = SpecStatus | "pending";
+type Tone = Callout & { status: ToneStatus; side: "start" | "end" | "inside" };
+/** `subject` keys callouts by what is measured, so a new selection fades in fresh ones. */
+type Geometry = { subject: string; rect: Box; callouts: Tone[] };
+export type Prediction = Record<string, { status: SpecStatus; lane: number }>;
+const sameMarkers = (a: Marker[], b: Marker[]) =>
+  a.length === b.length && a.every((m, i) => m.index === b[i].index && Math.abs(m.x - b[i].x) < 0.05 && Math.abs(m.y - b[i].y) < 0.05);
+type Marker = { x: number; y: number; index: number };
+const spacingUnit = (element: Element) => parseFloat(getComputedStyle(element).getPropertyValue("--spacing")) || 4;
+
 export function PreviewStage({
   children,
   themeStyle,
@@ -99,7 +114,10 @@ export function PreviewStage({
   const frame = useRef<HTMLDivElement>(null);
   const content = useRef<HTMLDivElement>(null);
   const target = useRef<Element | null>(null);
-  const [measurement, setMeasurement] = useState<Measurement | null>(null);
+  const [geometry, setGeometry] = useState<Geometry | null>(null);
+  // Scale status of each callout at the end of the running transition, so its
+  // tone moves toward the destination while the measured value is still counting.
+  const [predicted, setPredicted] = useState<Prediction | null>(null);
   const [deviceScale, setDeviceScale] = useState(1);
   const [portalHost, setPortalHost] = useState<HTMLDivElement | null>(null);
   useLayoutEffect(() => {
@@ -119,47 +137,112 @@ export function PreviewStage({
     return () => resize.disconnect();
   }, [viewport]);
   const selectElement = useRef<(element: Element) => void>(() => {});
-  const [markers, setMarkers] = useState<
-    { x: number; y: number; index: number }[]
-  >([]);
+  const [markers, setMarkers] = useState<Marker[]>([]);
   const parts = partsFor(slug);
   useLayoutEffect(() => {
     const host = frame.current,
       root = content.current;
     if (!host || !root || mode === "preview") {
-      setMeasurement(null);
+      setGeometry(null);
+      setPredicted(null);
       onMeasure(null);
       return;
     }
     if (selected >= 0) target.current = null;
-    const measure = () => {
+    // DOM rects include the mockup zoom; overlays and inspector values use the
+    // screen's own CSS pixels, including its independent scroll offset.
+    const scale = viewport === "mobile" ? deviceScale : 1;
+    const localizer = () => {
       const hostRect = host.getBoundingClientRect();
-      // DOM rects include the mockup zoom; overlays and inspector values use
-      // the screen's own CSS pixels, including its independent scroll offset.
-      const scale = viewport === "mobile" ? deviceScale : 1;
+      return (box: Box): Box => ({
+        left: (box.left - hostRect.left) / scale + host.scrollLeft,
+        right: (box.right - hostRect.left) / scale + host.scrollLeft,
+        top: (box.top - hostRect.top) / scale + host.scrollTop,
+        bottom: (box.bottom - hostRect.top) / scale + host.scrollTop,
+      });
+    };
+    const visible = (el: Element) => {
+      const rect = el.getBoundingClientRect();
+      return rect.width > 0 && rect.height > 0 && getComputedStyle(el).visibility !== "hidden";
+    };
+    const current = () => {
       const element =
         selected >= 0
           ? root.querySelector(parts[selected]?.selector ?? parts[0].selector)
           : target.current && root.contains(target.current)
             ? target.current
             : null;
-      const visible = (el: Element) => {
-        const rect = el.getBoundingClientRect();
-        return rect.width > 0 && rect.height > 0 && getComputedStyle(el).visibility !== "hidden";
-      };
-      setMarkers(parts.flatMap((part, index) => {
+      return element && visible(element) ? element : null;
+    };
+    // Content nodes are found from computed styles once, then only their rects are
+    // read per frame. DOM changes other than inline-style animation invalidate it.
+    // Motion fades (WAAPI or inline writes) emit no events, so skipped
+    // transparent nodes are re-checked each frame and refresh the cache once seen.
+    let leaves: LeafRef[] | null = null, leavesFor: Element | null = null, transparentNodes: Element[] = [];
+    const leavesOf = (element: Element) => {
+      if (leaves && transparentNodes.some(node => node.isConnected && !isTransparent(getComputedStyle(node)))) leaves = null;
+      if (!leaves || leavesFor !== element) {
+        transparentNodes = [];
+        leaves = collectLeaves(element, transparentNodes);
+        leavesFor = element;
+      }
+      return leaves;
+    };
+    const subjectOf = (element: Element) => selected >= 0 ? `part-${selected}` : `node-${idOf(element)}`;
+    // Geometry runs every frame while anything moves; it only reads layout.
+    // Intermediate values are rarely on the scale, so while animations run without
+    // a known destination each callout keeps its last settled status (neutral if it
+    // appeared mid-motion) instead of flashing. Plain resizes/mutations stay live.
+    let signature = "", holding = false;
+    const settled = new Map<string, SpecStatus>();
+    const measureGeometry = (sync: boolean) => {
+      // From a frame callback, commit synchronously so the overlay paints in the
+      // same frame as the geometry it was measured from, never one frame behind.
+      const commit = (update: () => void) => sync ? flushSync(update) : update();
+      const toLocal = localizer();
+      const nextMarkers = parts.flatMap((part, index) => {
         const el = root.querySelector(part.selector);
         if (!el || !visible(el)) return [];
-        const r = el.getBoundingClientRect();
-        return [{ index, x: (r.x - hostRect.x) / scale + host.scrollLeft,
-          y: (r.y - hostRect.y) / scale + host.scrollTop + (index ? r.height / scale + 8 : -12) }];
-      }));
-      if (!element || !visible(element)) {
-        setMeasurement(null);
+        const r = toLocal(el.getBoundingClientRect());
+        // The container's badge sits beside it, leaving the top edge to the spacing badges.
+        // Clamped so a full-width part inside the device screen keeps its badge visible.
+        return [index ? { index, x: r.left, y: r.bottom + 8 } : { index, x: Math.max(host.scrollLeft + 2, r.left - 26), y: (r.top + r.bottom) / 2 - 9 }];
+      });
+      commit(() => setMarkers(previous => sameMarkers(previous, nextMarkers) ? previous : nextMarkers));
+      const element = current();
+      if (!element) {
+        if (signature !== "none") commit(() => setGeometry(null));
+        signature = "none";
+        return signature;
+      }
+      const unit = spacingUnit(element);
+      const rect = toLocal(element.getBoundingClientRect());
+      const subject = subjectOf(element);
+      // Vertical distances put their badge beside the part; use the start side, or
+      // inside the part's edge, when the end side would leave the visible screen.
+      const visibleRight = host.scrollLeft + host.clientWidth;
+      const callouts: Tone[] = measureCallouts(element, toLocal, leavesOf(element)).map(c => {
+        const reach = 10 + c.lane * 36 + 7 + badgeSize(c.value);
+        const side = c.axis === "x" || c.band.right + reach <= visibleRight ? "end"
+          : c.band.left - reach >= host.scrollLeft ? "start" : "inside";
+        const live = statusOf(c, unit);
+        if (!holding) settled.set(c.id, live);
+        return { ...c, status: holding ? settled.get(c.id) ?? "pending" : live, side };
+      });
+      const next = `${subject}#${rect.left.toFixed(1)},${rect.top.toFixed(1)},${rect.right.toFixed(1)},${rect.bottom.toFixed(1)}#${calloutSignature(callouts)}#${callouts.map(c => c.side + c.status).join("")}#${callouts.map(c => c.value.toFixed(2)).join(",")}`;
+      if (next !== signature) commit(() => setGeometry({ subject, rect, callouts }));
+      signature = next;
+      return signature;
+    };
+    // Token names and the inspector report are resolved once the layout settles.
+    const report = () => {
+      const element = current();
+      if (!element) {
         onMeasure(null);
         return;
       }
-      const rect = element.getBoundingClientRect(),
+      const toLocal = localizer();
+      const rect = toLocal(element.getBoundingClientRect()),
         style = getComputedStyle(element);
       // Resolve known semantic colors in the same themed host; show raw values
       // when no matching token exists rather than claiming an inferred token.
@@ -189,11 +272,12 @@ export function PreviewStage({
         "status-error",
       ]);
       probe.remove();
-      const next: Measurement = {
-        x: (rect.x - hostRect.x) / scale + host.scrollLeft,
-        y: (rect.y - hostRect.y) / scale + host.scrollTop,
-        width: rect.width / scale,
-        height: rect.height / scale,
+      const unit = spacingUnit(element);
+      onMeasure({
+        x: rect.left,
+        y: rect.top,
+        width: rect.right - rect.left,
+        height: rect.bottom - rect.top,
         radius: style.borderRadius,
         padding: style.padding,
         gap: style.gap,
@@ -203,11 +287,121 @@ export function PreviewStage({
         colorToken,
         font: `${style.fontSize} / ${style.lineHeight}`,
         tag: element.tagName.toLowerCase(),
-      };
-      setMeasurement(next);
-      onMeasure(next);
+        spacing: measureCallouts(element, toLocal, leavesOf(element)).map(c => ({ id: c.id, label: c.label, value: Math.round(c.value * 10) / 10, token: c.basis === "space" ? spacingToken(c.value, unit) : null, status: statusOf(c, unit) })),
+      });
+    };
+    // Follow CSS transitions, Motion springs and resizes frame by frame until the
+    // geometry has been still for a few frames; a cap keeps loops from running on.
+    // Each session follows motion for 1.5s after the last trigger, longer while
+    // finite animations still run, never past a hard cap; the inspector is
+    // refreshed periodically during long motion and once it settles.
+    let raf = 0, still = 0, deadline = 0, cap = 0, reported = 0, previous = "", predictPending = false;
+    const tick = () => {
+      raf = 0;
+      if (predictPending) predict();
+      const next = measureGeometry(true);
+      still = next === previous ? still + 1 : 0;
+      previous = next;
+      const now = performance.now();
+      // Motion's WAAPI animations emit no DOM events; keep following finite ones.
+      const moving = root.getAnimations({ subtree: true }).some(animation => {
+        const end = animation.effect?.getComputedTiming().endTime;
+        return animation.playState === "running" && typeof end === "number" && Number.isFinite(end);
+      });
+      if (moving) {
+        holding = true;
+        deadline = Math.min(cap, Math.max(deadline, now + 100));
+      }
+      if ((still < 3 || moving) && now < deadline) {
+        raf = requestAnimationFrame(tick);
+        if (now - reported > 500) {
+          reported = now;
+          report();
+        }
+      } else {
+        // Settled: refresh content nodes (a fade may have started at opacity 0)
+        // so the redlines and the inspector agree on the final layout.
+        predictPending = false;
+        predictGeneration++;
+        holding = false;
+        leaves = null;
+        setPredicted(null);
+        measureGeometry(true);
+        report();
+      }
+    };
+    const track = () => {
+      const now = performance.now();
+      if (!raf) {
+        cap = now + 5000;
+        reported = now;
+        raf = requestAnimationFrame(tick);
+      }
+      deadline = Math.min(cap, now + 1500);
+      still = 0;
+    };
+    // Briefly seek the component's running transitions to their end (synchronously,
+    // never painted) to learn where each distance and badge lane lands, then restore
+    // their exact progress. Only the previewed component's animations are touched:
+    // overlay tone transitions and not-yet-started (pending) animations are left
+    // alone, and a pending batch is retried on the next frame.
+    let predictedAt: CSSNumberish | null = null, predictGeneration = 0;
+    function predict() {
+      if (predictedAt !== null && predictedAt === document.timeline.currentTime) return;
+      predictedAt = document.timeline.currentTime;
+      const element = current();
+      if (!element || !root) return;
+      const animations = [...root.getAnimations({ subtree: true }), ...(portalHost?.getAnimations({ subtree: true }) ?? [])].filter(animation => {
+        const end = animation.effect?.getComputedTiming().endTime;
+        return animation.playState === "running" && typeof end === "number" && Number.isFinite(end);
+      });
+      // Seeking only part of a batch would measure a mixed state; wait until every
+      // animation has started (retried on the next frame).
+      predictPending = animations.some(animation => animation.pending);
+      if (predictPending || !animations.length) return;
+      const running = animations;
+      const saved = running.map(animation => animation.currentTime);
+      try {
+        running.forEach(animation => { animation.currentTime = Number(animation.effect!.getComputedTiming().endTime) - 0.01; });
+        const unit = spacingUnit(element);
+        // Fresh content nodes at the end state; the opacity floor treats fade-outs
+        // sought to just before their end as gone.
+        setPredicted(Object.fromEntries(measureCallouts(element, localizer(), collectLeaves(element))
+          .map(c => [c.id, { status: statusOf(c, unit), lane: c.lane }])));
+      } finally {
+        running.forEach((animation, index) => { animation.currentTime = saved[index]; });
+      }
+      // The destination stops applying once the animations it describes finish,
+      // even if other motion keeps this tracking session alive. A cancellation
+      // (retarget) keeps it: the replacement is predicted next, or settle clears it.
+      const generation = ++predictGeneration;
+      Promise.all(running.map(animation => animation.finished)).then(() => {
+        if (generation !== predictGeneration) return;
+        // Finished: live values are the destination now.
+        holding = false;
+        setPredicted(null);
+        track();
+      }, () => {});
+    }
+    // Only the component's own transitions matter; overlay tone/entrance and
+    // marker hover transitions must not trigger prediction or tracking.
+    const fromContent = (event: Event) =>
+      event.target instanceof Node && (root.contains(event.target) || Boolean(portalHost?.contains(event.target)));
+    const onTransition = (event: Event) => {
+      if (!fromContent(event)) return;
+      holding = true;
+      predict();
+      track();
+    };
+    const onMotionEvent = (event: Event) => {
+      if (!fromContent(event)) return;
+      // Ends can change which nodes are visible content (fade in/out).
+      if (event.type !== "animationstart") leaves = null;
+      track();
     };
     selectElement.current = (clicked) => {
+      holding = false;
+      settled.clear();
       // Prefer the deepest named part; a container must not swallow its label/icon.
       let element: Element | null = clicked;
       while (element && element !== root) {
@@ -221,21 +415,23 @@ export function PreviewStage({
       }
       const picked = clicked.closest("svg") ?? clicked;
       target.current = picked;
+      setPredicted(null);
       onSelect(-1, {
         name: picked.getAttribute("aria-label") || picked.tagName.toLowerCase(),
         description: "Selected element. Dimensions and styles are measured from the rendered component.",
         selector: "",
       });
-      measure();
+      measureGeometry(false);
+      track();
     };
-    const resize = new ResizeObserver(measure);
+    const resize = new ResizeObserver(track);
     resize.observe(host);
     resize.observe(root);
-    // Coalesce DOM changes; measuring must not form a render/mutation microtask loop.
-    let pending = 0;
-    const mutations = new MutationObserver(() => {
-      cancelAnimationFrame(pending);
-      pending = requestAnimationFrame(measure);
+    // DOM changes only schedule the next frame; measuring never mutates the
+    // observed subtree, so there is no render/mutation loop.
+    const mutations = new MutationObserver(records => {
+      if (records.some(record => record.type !== "attributes" || record.attributeName !== "style")) leaves = null;
+      track();
     });
     mutations.observe(root, {
       childList: true,
@@ -243,16 +439,27 @@ export function PreviewStage({
       attributes: true,
       characterData: true,
     });
-    window.addEventListener("resize", measure);
-    measure();
+    host.addEventListener("transitionrun", onTransition);
+    const motionEvents = ["animationstart", "animationend", "transitionend", "transitioncancel"] as const;
+    motionEvents.forEach(type => host.addEventListener(type, onMotionEvent));
+    host.addEventListener("scroll", track, { passive: true });
+    window.addEventListener("resize", track);
+    measureGeometry(false);
+    report();
+    track();
     return () => {
       resize.disconnect();
       mutations.disconnect();
-      cancelAnimationFrame(pending);
+      cancelAnimationFrame(raf);
       selectElement.current = () => {};
-      window.removeEventListener("resize", measure);
+      host.removeEventListener("transitionrun", onTransition);
+      motionEvents.forEach(type => host.removeEventListener(type, onMotionEvent));
+      predictGeneration++;
+      setPredicted(null);
+      host.removeEventListener("scroll", track);
+      window.removeEventListener("resize", track);
     };
-  }, [mode, selected, slug, viewport, revision, deviceScale, onSelect, onMeasure]);
+  }, [mode, selected, slug, viewport, revision, deviceScale, portalHost, onSelect, onMeasure]);
 
   const select = (event: SyntheticEvent) => {
     if (mode !== "annotation" || !(event.target instanceof Element)) return;
@@ -297,19 +504,20 @@ export function PreviewStage({
           {mode === "preview" && (
             <p className="pg-hint">Click to try the interaction</p>
           )}
-          {mode !== "preview" && measurement && (
+          {mode !== "preview" && geometry && (
             <div
               className="pg-selection"
               data-mode={mode}
               style={{
-                left: measurement.x,
-                top: measurement.y,
-                width: measurement.width,
-                height: measurement.height,
+                left: geometry.rect.left,
+                top: geometry.rect.top,
+                width: geometry.rect.right - geometry.rect.left,
+                height: geometry.rect.bottom - geometry.rect.top,
               }}
               aria-hidden="true"
             />
           )}
+          {mode === "annotation" && geometry && <SpecLayer subject={geometry.subject} callouts={geometry.callouts} predicted={predicted} />}
           {mode === "annotation" &&
             markers.map((marker) => (
               <button

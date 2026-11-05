@@ -51,3 +51,41 @@ export function createThemeTransition(host: TransitionHost): ThemeTransition {
     },
   };
 }
+
+/**
+ * DOM host for one element scope: the document root for site Style changes, the
+ * playground preview for its property edits. `attribute` enables `transition.css`
+ * on that scope for one transition window.
+ */
+export function createScopedTransition({ scope, attribute, flush }: {
+  scope: () => HTMLElement | null;
+  attribute: string;
+  flush: (commit: () => void) => void;
+}): ThemeTransition {
+  let active: HTMLElement | null = null;
+  const finish = () => {
+    active?.removeAttribute(attribute);
+    active?.style.removeProperty("--theme-transition-duration");
+    active = null;
+  };
+  return createThemeTransition({
+    canAnimate: () => !document.hidden && !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    prepare: () => {
+      const next = scope();
+      if (active !== next) finish();
+      active = next;
+      if (!active) return;
+      active.style.setProperty("--theme-transition-duration", `${themeTransitionDuration}ms`);
+      active.setAttribute(attribute, "");
+      // Establish the before-change computed styles, including an interrupted transition.
+      void active.offsetWidth;
+    },
+    finish,
+    measure: () => { void active?.offsetWidth; },
+    schedule: (done, delay) => {
+      const timer = window.setTimeout(done, delay);
+      return () => window.clearTimeout(timer);
+    },
+    flush,
+  });
+}

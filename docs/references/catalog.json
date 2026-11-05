@@ -446,6 +446,29 @@
       "limits": "未取得原工具源码；没有复现多次光路、光谱追踪、焦散、蓝噪声或 AI 降噪。",
       "evidence": "../reviews/spectral-glass-20261021/REVIEW.md",
       "path": "records/2026-10-21-spectral-glass.md"
+    },
+    {
+      "id": "2026-11-05-spec-redlines",
+      "title": "Spacing redlines：标注随主题与配置一起动",
+      "date": "2026-11-05",
+      "category": "Playground",
+      "sources": [
+        "https://x.com/keviduk/status/2117975138541146303"
+      ],
+      "thread": null,
+      "summary": "下拉菜单右内边距的红线标注：斜纹带、导轨、括号、数字胶囊；切换配置时数字逐帧计数、颜色经紫色插值。",
+      "observations": [
+        "30fps 拆帧：过渡约 170–200ms ease-out，数字是实时测量值（24→23→21→18→17→16）。",
+        "红/蓝为作者对是否平衡的判断；首次出现约 100ms 淡入。"
+      ],
+      "lessons": [
+        "标注位置每帧测量而不是 CSS 过渡，避免落后于组件。",
+        "颜色语义改为可验证的事实：是否落在实时 --spacing 刻度。"
+      ],
+      "status": "已在 Playground Annotation 实施；交付见任务 REVIEW。",
+      "limits": "原作者实现未公开；未覆盖 body portal 弹出层的测量。",
+      "evidence": "/Users/ziye/Documents/Project/Research/output/playground-spec-motion-20261105/REVIEW.md",
+      "path": "records/2026-11-05-spec-redlines.md"
     }
   ],
   "implementationReviews": [

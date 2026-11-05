@@ -2,11 +2,11 @@
 import { Icon } from "@/components/icon";
 import { Tag } from "@/components/tag";
 import { PALETTE } from "@/lib/palette";
-import { definePlayground as define, text, toggle, select } from "../schema";
+import { definePlayground as define, text, toggle, select, morph } from "../schema";
 import type { PlaygroundSpec } from "../schema";
 const color = select(PALETTE, "default");
 const playgrounds: Record<string, PlaygroundSpec> = {
-tag: define("Tag", { children: { ...text("Design"), label: "Label" }, color, size: select(["sm", "md"], "sm"), hash: toggle(), icon: toggle() }, v =>
+tag: define("Tag", { children: { ...text("Design"), label: "Label" }, color, size: morph(select(["sm", "md"], "sm")), hash: toggle(), icon: toggle() }, v =>
     <Tag {...v} icon={v.icon ? <Icon name="sparkle" /> : undefined}>{v.children}</Tag>)
 };
 const exports = {

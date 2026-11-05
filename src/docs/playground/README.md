@@ -29,6 +29,43 @@ masks so they inherit semantic icon colors. Hairline separators use
 - Annotation selects parts directly in the preview and measures actual DOM bounds and computed styles in the right sidebar. Button and Prompt Box
   have named anatomy; other components expose their root and arbitrary elements
   through Annotation. Portaled content outside the preview is not measured.
+- Annotation draws spacing redlines on the selected part (`spec.ts`,
+  `SpecLayer.tsx`): visual insets from the part's padding edge (inside its
+  border) to its nearest painted, replaced or text content, and gaps between
+  consecutive children (`display: contents` wrappers are walked through). Each
+  shows a hatched band, edge guides, a bracket and its CSS-pixel value; the
+  strong hatch marks the content that defines the distance. Blue means a
+  half-step multiple of the live `--spacing` unit, red a raw value. Text is
+  measured by its line box, as design tools do; a vertical inset that ends at a
+  text line box is type metrics, shown neutral (“Text line box”) rather than
+  judged against the spacing scale. The inspector lists the same values.
+- Redlines follow the live layout every frame while anything moves (CSS
+  transitions, Motion, resize, DOM changes) and commit synchronously in that
+  frame, so values count through intermediate numbers without trailing the
+  component. When one of the component's transitions starts and its whole batch
+  of animations is running (none pending), they are briefly sought to their end
+  and restored in the same task to learn each distance's destination status and
+  badge lane; tone and lane
+  then transition toward it instead of flickering or jumping. Until a destination
+  is known (animations still pending, or motion that cannot be sought, such as
+  JS springs) each redline keeps its last settled status, and one that appears
+  mid-motion stays neutral until it settles; plain resizes and DOM changes
+  without animation stay live. The prediction expires
+  when its animations finish, and a retarget replaces it. Content nodes are
+  cached between frames; transparent nodes are watched so Motion fade-ins join as
+  soon as they become visible. Position is never CSS-transitioned. A new
+  selection fades in fresh redlines. Reduced motion jumps directly.
+- Controls marked with `morph(...)` in their adapter morph the preview when
+  edited in the inspector, using the shared Style transition
+  (`createScopedTransition` in `src/lib/theme/transition.ts`) scoped to
+  `.pg-preview` through `data-style-transition`. Mark only plain-CSS geometry or
+  appearance options (size, type, shape…); never state a component animates
+  itself with Motion — the scoped `transition: all` would ease Motion's
+  per-frame writes a second time. Before marking, flip the options with the
+  scope disabled and confirm no element's style/SVG attributes are rewritten on
+  consecutive frames. Unmarked controls, text and numbers apply directly, as do
+  direct preview interaction, demos, Random/Reset (which remount) and
+  body-portaled popups.
 - Device controls choose Desktop or a live iPhone-style Mobile mockup. The
   screen is 375 CSS pixels wide, with at least 16px content insets on both sides;
   the 391×804 outer shell fits the available area by scaling as a unit. Its
@@ -56,7 +93,7 @@ masks so they inherit semantic icon colors. Hairline separators use
   properties move into a keyboard-accessible dialog. Other site pages retain
   their existing navigation.
 
-Focused state tests: `node --test src/docs/playground/{schema,demo,configuration}.test.ts`.
+Focused state tests: `node --test src/docs/playground/{schema,demo,configuration,spec}.test.ts`.
 Visual implementation evidence continues in the existing task index at
 `/Users/ziye/Documents/Project/Research/output/playground-figma-20261019/REVIEW.md`.
 
