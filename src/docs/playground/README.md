@@ -29,6 +29,31 @@ masks so they inherit semantic icon colors. Hairline separators use
 - Annotation selects parts directly in the preview and measures actual DOM bounds and computed styles in the right sidebar. Button and Prompt Box
   have named anatomy; other components expose their root and arbitrary elements
   through Annotation. Portaled content outside the preview is not measured.
+- Annotation draws spacing redlines on the selected part (`spec.ts`,
+  `SpecLayer.tsx`): visual insets from the part's padding edge (inside its
+  border) to its nearest painted, replaced or text content, and gaps between
+  consecutive children (`display: contents` wrappers are walked through). Each
+  shows a hatched band, edge guides, a bracket and its CSS-pixel value; the
+  strong hatch marks the content that defines the distance. Blue means a
+  half-step multiple of the live `--spacing` unit, red a raw value. Text is
+  measured by its line box, as design tools do; a vertical inset that ends at a
+  text line box is type metrics, shown neutral (“Text line box”) rather than
+  judged against the spacing scale. The inspector lists the same values.
+- Redlines follow the live layout every frame while anything moves (CSS
+  transitions, Motion, resize, DOM changes) and commit synchronously in that
+  frame, so values count through intermediate numbers without trailing the
+  component. When one of the component's transitions starts, its running (not
+  pending) animations are briefly sought to their end and restored in the same
+  task to learn each distance's destination status and badge lane; tone and lane
+  then transition toward it instead of flickering or jumping. Position is never
+  CSS-transitioned. A new selection fades in fresh redlines. Reduced motion jumps
+  directly.
+- Discrete option edits (`select` controls: type, size, side…) morph the preview
+  with the shared Style transition (`createScopedTransition` in
+  `src/lib/theme/transition.ts`), scoped to `.pg-preview` through
+  `data-style-transition`. Booleans (often presence that Motion already
+  animates), text and numbers (continuous) apply directly, as do direct preview
+  interaction, demos, Random/Reset (which remount) and body-portaled popups.
 - Device controls choose Desktop or a live iPhone-style Mobile mockup. The
   screen is 375 CSS pixels wide, with at least 16px content insets on both sides;
   the 391×804 outer shell fits the available area by scaling as a unit. Its
@@ -56,7 +81,7 @@ masks so they inherit semantic icon colors. Hairline separators use
   properties move into a keyboard-accessible dialog. Other site pages retain
   their existing navigation.
 
-Focused state tests: `node --test src/docs/playground/{schema,demo,configuration}.test.ts`.
+Focused state tests: `node --test src/docs/playground/{schema,demo,configuration,spec}.test.ts`.
 Visual implementation evidence continues in the existing task index at
 `/Users/ziye/Documents/Project/Research/output/playground-figma-20261019/REVIEW.md`.
 

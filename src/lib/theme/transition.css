@@ -1,11 +1,17 @@
-/* Enabled only around a theme update, never permanently on component interactions.
+/* Enabled only around a theme update (document scope) or a playground property
+   edit (`data-style-transition` on the preview), never permanently on component
+   interactions.
    `all` is intentional here: Style changes include layout, typography, SVG paint,
    borders, shadows and smooth corners, not just colors/opacity. Descendants and
    pseudo-elements include body portals and the shared state/corner layers. */
 html[data-theme-transition],
 html[data-theme-transition] *,
 html[data-theme-transition] *::before,
-html[data-theme-transition] *::after {
+html[data-theme-transition] *::after,
+[data-style-transition],
+[data-style-transition] *,
+[data-style-transition] *::before,
+[data-style-transition] *::after {
   transition-property: all, --theme-hatch-color !important;
   transition-duration: var(--theme-transition-duration) !important;
   transition-timing-function: var(--ease-out) !important;
@@ -16,7 +22,11 @@ html[data-theme-transition] *::after {
   html[data-theme-transition],
   html[data-theme-transition] *,
   html[data-theme-transition] *::before,
-  html[data-theme-transition] *::after {
+  html[data-theme-transition] *::after,
+  [data-style-transition],
+  [data-style-transition] *,
+  [data-style-transition] *::before,
+  [data-style-transition] *::after {
     transition-property: none !important;
     transition-duration: 0s !important;
   }

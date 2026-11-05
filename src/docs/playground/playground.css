@@ -227,6 +227,8 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /* In-device popups stay above annotation redlines and markers. */
+  z-index: 5;
   /* Establish the screen as the containing block for fixed menu positioners. */
   transform: translateZ(0);
 }
@@ -526,7 +528,201 @@
   background: var(--color-palette-orange-text);
   color: var(--color-text-on-inverse);
   font-size: 10px;
-  z-index: 1;
+  z-index: 4;
+}
+/* Spacing redlines. Blue: the distance is a half-step multiple of the live
+   `--spacing` unit; red: a raw value or text metrics. Oreo has no annotation
+   palette, so these alias the existing status hues, which keep the same
+   meaning in light and dark (the soft palette swaps foreground/background).
+   Registered values interpolate; geometry never transitions, it is measured. */
+@property --pg-spec-tone {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@property --pg-spec-hatch {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+@property --lane {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+/* Above the component (including its own z-indexed layers), below part markers
+   and in-device popups. */
+.pg-spec-layer {
+  --pg-spec-on: var(--color-status-progress);
+  --pg-spec-off: var(--color-status-error);
+  --pg-spec-text: var(--color-text-tertiary);
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+.pg-spec-callout {
+  --pg-spec-tone: var(--pg-spec-on);
+  --offset: calc(10px + var(--lane) * 22px);
+  position: absolute;
+  color: var(--pg-spec-tone);
+  transition:
+    --pg-spec-tone 280ms var(--ease-out),
+    --lane 280ms var(--ease-out),
+    opacity 110ms var(--ease-out);
+}
+.pg-spec-callout[data-axis="y"] {
+  --offset: calc(10px + var(--lane) * 36px);
+}
+.pg-spec-callout[data-scale="off"] {
+  --pg-spec-tone: var(--pg-spec-off);
+}
+/* Type metrics, not spacing: shown neutrally rather than judged against the scale. */
+.pg-spec-callout[data-scale="text"] {
+  --pg-spec-tone: var(--pg-spec-text);
+}
+@starting-style {
+  .pg-spec-callout {
+    opacity: 0;
+  }
+}
+.pg-spec-callout > span {
+  position: absolute;
+}
+.pg-spec-fill,
+.pg-spec-focus {
+  inset: 0;
+  background: repeating-linear-gradient(-45deg, var(--hatch) 0 1px, transparent 1px 5px);
+}
+.pg-spec-fill {
+  --pg-spec-hatch: color-mix(in srgb, var(--color-text-tertiary) 40%, transparent);
+  --hatch: var(--pg-spec-hatch);
+  transition: --pg-spec-hatch 280ms var(--ease-out);
+}
+.pg-spec-focus {
+  --hatch: var(--pg-spec-tone);
+  background-color: color-mix(in srgb, var(--pg-spec-tone) 10%, transparent);
+}
+[data-axis="x"] > .pg-spec-focus {
+  top: var(--focus-start);
+  bottom: auto;
+  height: var(--focus-size);
+}
+[data-axis="y"] > .pg-spec-focus {
+  left: var(--focus-start);
+  right: auto;
+  width: var(--focus-size);
+}
+.pg-spec-guides {
+  border: 0 dashed currentColor;
+}
+[data-axis="x"] > .pg-spec-guides {
+  inset: calc(-1 * var(--offset)) 0 -6px;
+  border-inline-width: 1px;
+}
+/* Horizontal guides start at the component edge so they never strike through its copy. */
+[data-axis="y"] > .pg-spec-guides {
+  inset: 0 calc(-1 * var(--offset)) 0 100%;
+  border-block-width: 1px;
+}
+[data-axis="y"][data-side="start"] > .pg-spec-guides {
+  inset: 0 100% 0 calc(-1 * var(--offset));
+}
+[data-axis="y"][data-side="inside"] > .pg-spec-guides {
+  inset: 0 var(--offset) 0 auto;
+  width: 6px;
+}
+.pg-spec-bracket {
+  border: 0 solid currentColor;
+  background: linear-gradient(currentColor, currentColor) center / var(--bar) no-repeat;
+}
+[data-axis="x"] > .pg-spec-bracket {
+  --bar: 100% 1px;
+  left: 0;
+  right: 0;
+  top: calc(-1 * var(--offset) - 3.5px);
+  height: 7px;
+  border-inline-width: 1px;
+}
+[data-axis="y"] > .pg-spec-bracket {
+  --bar: 1px 100%;
+  top: 0;
+  bottom: 0;
+  left: calc(100% + var(--offset) - 3.5px);
+  width: 7px;
+  border-block-width: 1px;
+}
+[data-axis="y"][data-side="start"] > .pg-spec-bracket {
+  left: auto;
+  right: calc(100% + var(--offset) - 3.5px);
+}
+[data-axis="y"][data-side="inside"] > .pg-spec-bracket {
+  left: auto;
+  right: calc(var(--offset) - 3.5px);
+}
+/* Annotation chrome keeps its own size: it must not grow with the density it measures. */
+.pg-spec-badge {
+  --badge-height: 18px;
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  height: var(--badge-height);
+  padding-inline: 0.45em;
+  border-radius: calc(var(--badge-height) / 2);
+  background: var(--color-bg-base);
+  box-shadow: 0 0 0 0.5px var(--color-border-default), 0 1px 3px #0000001f;
+  font: 600 11px/1 "Geist Mono Variable", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  white-space: nowrap;
+}
+[data-axis="x"] > .pg-spec-badge {
+  left: 50%;
+  top: calc(-1 * var(--offset) - 7px);
+  transform: translate(-50%, -100%);
+}
+[data-axis="y"] > .pg-spec-badge {
+  top: 50%;
+  left: calc(100% + var(--offset) + 7px);
+  transform: translateY(-50%);
+}
+[data-axis="y"][data-side="start"] > .pg-spec-badge {
+  left: auto;
+  right: calc(100% + var(--offset) + 7px);
+}
+[data-axis="y"][data-side="inside"] > .pg-spec-badge {
+  left: auto;
+  right: calc(var(--offset) + 7px);
+}
+/* The device screen scrolls vertically; redlines must never make it pan sideways. */
+.pg-frame[data-device="mobile"] > .pg-spec-layer {
+  overflow-x: clip;
+}
+/* During a site Style change the overlay keeps its own transitions: position is
+   measured every frame (interpolating it would make it trail the component) and
+   children inherit the already-animated tone instead of easing it a second time. */
+html[data-theme-transition] :is(.pg-selection, .pg-marker) {
+  transition-property: border-color, background-color, color !important;
+}
+html[data-theme-transition] .pg-spec-layer *:not(.pg-spec-callout, .pg-spec-fill, .pg-spec-badge) {
+  transition-property: none !important;
+}
+html[data-theme-transition] .pg-spec-layer .pg-spec-callout {
+  transition-property: --pg-spec-tone, --lane, opacity !important;
+}
+html[data-theme-transition] .pg-spec-layer .pg-spec-fill {
+  transition-property: --pg-spec-hatch !important;
+}
+html[data-theme-transition] .pg-spec-layer .pg-spec-badge {
+  transition-property: background-color, box-shadow !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pg-spec-callout,
+  .pg-spec-fill,
+  html[data-theme-transition] :is(.pg-selection, .pg-marker),
+  html[data-theme-transition] .pg-spec-layer :is(.pg-spec-callout, .pg-spec-fill, .pg-spec-badge) {
+    transition: none !important;
+  }
 }
 .pg-stage-annotation .pg-preview,
 .pg-stage-annotation .pg-preview * {
@@ -965,3 +1161,26 @@ body:has(.pg-shell) .site-mobile-nav {
 .pg-theme-picker .pg-theme-error { margin-top: var(--space-x4); max-width: calc(var(--spacing) * 80); }
 .pg-theme-footer { display: flex; flex-direction: column; gap: var(--space-x4); padding: var(--space-x4) var(--space-x6); flex-shrink: 0; }
 .pg-playback { display: flex; justify-content: center; gap: var(--space-x2); }
+.pg-spec-list {
+  display: grid;
+  gap: var(--space-x4);
+  margin-top: var(--space-x8);
+}
+.pg-spec-list dd {
+  display: flex;
+  align-items: center;
+  gap: var(--space-x3);
+}
+.pg-spec-dot {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--color-status-progress);
+}
+.pg-spec-list [data-scale="off"] .pg-spec-dot {
+  background: var(--color-status-error);
+}
+.pg-spec-list [data-scale="text"] .pg-spec-dot {
+  background: var(--color-text-tertiary);
+}

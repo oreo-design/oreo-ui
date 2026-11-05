@@ -3,7 +3,7 @@ import { flushSync } from "react-dom";
 import { SiteThemeModeContext, type ThemeMode } from "./useThemeMode";
 import { siteThemeStore, themeStorageKey, useSiteTheme } from "./store";
 import { variationTokens } from "./tokens";
-import { createThemeTransition, themeTransitionDuration } from "./transition";
+import { createScopedTransition } from "./transition";
 import "./transition.css";
 
 /** The only website owner of document theme styles, including body portals. */
@@ -34,24 +34,9 @@ export function SiteThemeProvider({ children }: { children: ReactNode }) {
   }, []);
   useEffect(() => {
     // Install after initial saved/URL appearance has rendered; never animate hydration.
-    return siteThemeStore.installTransition(createThemeTransition({
-      prepare: () => {
-        const root = document.documentElement;
-        root.style.setProperty("--theme-transition-duration", `${themeTransitionDuration}ms`);
-        root.setAttribute("data-theme-transition", "");
-        // Establish the before-change computed styles, including an interrupted transition.
-        void root.offsetWidth;
-      },
-      finish: () => {
-        document.documentElement.removeAttribute("data-theme-transition");
-        document.documentElement.style.removeProperty("--theme-transition-duration");
-      },
-      measure: () => { void document.documentElement.offsetWidth; },
-      schedule: (finish, delay) => {
-        const timer = window.setTimeout(finish, delay);
-        return () => window.clearTimeout(timer);
-      },
-      canAnimate: () => !document.hidden && !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    return siteThemeStore.installTransition(createScopedTransition({
+      scope: () => document.documentElement,
+      attribute: "data-theme-transition",
       flush: update => flushSync(update),
     }));
   }, []);
