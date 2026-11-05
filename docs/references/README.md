@@ -67,6 +67,12 @@
 | 2026-10-13 | [mmeshy：颜色影响场、shader 与可调视觉工具](records/2026-10-13-mmeshy.md) | 核心画面由 WebGL / GLSL 逐像素计算颜色影响场；SVG 用于编辑手柄和辅助线。 |
 | 2026-10-15 | [Mamuso《Imperfection》：设计个性与制作过程](records/2026-10-15-imperfection.md) | 原请求为文章意译与个人网站信息介绍。 |
 
+### 参数控制组件
+
+| 日期 | 参考 | 重点 |
+| --- | --- | --- |
+| 2026-11-05 | [linci：Parameter Controller](records/2026-11-05-linci-parameter-controller.md) | 四张参考先还原再映射 Oreo tokens：六类受控输入、完整 Tuner 与独立示例。 |
+
 ## 使用与维护
 
 1. 收到新参考先查来源 URL，已有条目则追加带日期的补充，不重复建立竞争记录。

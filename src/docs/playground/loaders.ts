@@ -2,6 +2,11 @@ import type { PlaygroundSpec } from "./schema";
 
 /** Lazy runtime map; metadata must never import this module. */
 export const playgroundLoaders: Record<string, () => Promise<PlaygroundSpec>> = {
+  "parameter-controls": () => import("./adapters/parameter-controller").then(m=>m.default["parameter-controls"]),
+  "parameter-panel": () => import("./adapters/parameter-controller").then(m=>m.default["parameter-panel"]),
+  "xy-parameter": () => import("./adapters/parameter-controller").then(m=>m.default["xy-parameter"]),
+  "shadow-parameter": () => import("./adapters/parameter-controller").then(m=>m.default["shadow-parameter"]),
+
   "code-focus": () => import("./adapters/motion-code").then(module => module.default["code-focus"]),
   "sheet-timeline": () => import("./adapters/motion-code").then(module => module.default["sheet-timeline"]),
   "spectral-glass": () => import("./adapters/spectral-glass").then(module => module.default["spectral-glass"]),

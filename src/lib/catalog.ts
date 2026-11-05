@@ -22,6 +22,12 @@ export type CatalogEntry = {
 
 /** Keys and insertion order preserve existing routes and sitemap order. */
 export const CATALOG = {
+  "parameter-controller": {title:"Parameter Controller",description:"Reference-matched Tuner parameter controls with Oreo foundation tokens.",nav:{group:"Templates",order:-1},subject:"template",views:["template"],defaultView:"template"},
+  "parameter-controls": {title:"Parameter Controls",description:"Reference-matched Tuner parameter controls with Oreo foundation tokens.",nav:{group:"Components",order:-1},subject:"family",views:["playground", "docs"],defaultView:"playground"},
+  "parameter-panel": {title:"Parameter Panel",description:"Reference-matched Tuner parameter controls with Oreo foundation tokens.",nav:{group:"Components",order:-1},subject:"component",views:["playground", "docs"],defaultView:"playground"},
+  "xy-parameter": {title:"XY Parameter",description:"Reference-matched Tuner parameter controls with Oreo foundation tokens.",nav:{group:"Components",order:-1},subject:"component",views:["playground", "docs"],defaultView:"playground"},
+  "shadow-parameter": {title:"Shadow Parameter",description:"Reference-matched Tuner parameter controls with Oreo foundation tokens.",nav:{group:"Components",order:-1},subject:"component",views:["playground", "docs"],defaultView:"playground"},
+
   "motion-code-studio": {
     "title": "Motion Code Studio",
     "description": "Explore motion through a resolving code lens and a linked bottom sheet timeline.",

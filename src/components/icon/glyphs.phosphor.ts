@@ -1,4 +1,5 @@
 import {
+  Power, ArrowUUpLeft, ArrowUUpRight, ArrowsInLineVertical,
   File,
   Cpu,
   GitMerge,
@@ -97,6 +98,7 @@ import type { IconName } from "./names";
 
 /** Phosphor's answer for every name in the Oreo vocabulary. */
 export const phosphorGlyphs: Record<IconName, IconGlyph> = {
+  "power": Power, "undo":ArrowUUpLeft,"redo":ArrowUUpRight,"fold-vertical":ArrowsInLineVertical,
   file: File,
   "unlink": LinkBreak,
   "play": Play,

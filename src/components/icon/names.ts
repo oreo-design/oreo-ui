@@ -11,6 +11,7 @@
  * every library has an answer for the new name.
  */
 export const ICON_NAMES = [
+  "power", "undo", "redo", "fold-vertical",
 
   "hand",
   "columns",
