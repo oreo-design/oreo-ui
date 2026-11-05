@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
-import type { Callout, SpecStatus } from "./spec";
-import type { Prediction } from "./PreviewStage";
+import type { Callout } from "./spec";
+import type { Prediction, ToneStatus } from "./PreviewStage";
 
 /**
  * Spacing redlines drawn over the preview: a hatched band for each measured
@@ -9,7 +9,7 @@ import type { Prediction } from "./PreviewStage";
  */
 export function SpecLayer({ subject, callouts, predicted }: {
   subject: string;
-  callouts: (Callout & { status: SpecStatus; side: "start" | "end" | "inside" })[];
+  callouts: (Callout & { status: ToneStatus; side: "start" | "end" | "inside" })[];
   predicted: Prediction | null;
 }) {
   return <div className="pg-spec-layer" aria-hidden="true">

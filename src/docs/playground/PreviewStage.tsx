@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode, type SyntheticEvent } from "react";
 import { flushSync } from "react-dom";
 import { PortalContainerContext } from "@/lib/portal-container";
-import { badgeSize, calloutSignature, collectLeaves, idOf, measureCallouts, spacingToken, statusOf, type Box, type Callout, type LeafRef, type SpacingValue, type SpecStatus } from "./spec";
+import { badgeSize, calloutSignature, collectLeaves, idOf, isTransparent, measureCallouts, spacingToken, statusOf, type Box, type Callout, type LeafRef, type SpacingValue, type SpecStatus } from "./spec";
 import { SpecLayer } from "./SpecLayer";
 
 export type PreviewDevice = "desktop" | "mobile";
@@ -78,7 +78,9 @@ export type Measurement = {
   tag: string;
   spacing: SpacingValue[];
 };
-type Tone = Callout & { status: SpecStatus; side: "start" | "end" | "inside" };
+/** "pending": appeared mid-motion with no settled or predicted status yet (neutral). */
+export type ToneStatus = SpecStatus | "pending";
+type Tone = Callout & { status: ToneStatus; side: "start" | "end" | "inside" };
 /** `subject` keys callouts by what is measured, so a new selection fades in fresh ones. */
 type Geometry = { subject: string; rect: Box; callouts: Tone[] };
 export type Prediction = Record<string, { status: SpecStatus; lane: number }>;
@@ -178,7 +180,7 @@ export function PreviewStage({
     // transparent nodes are re-checked each frame and refresh the cache once seen.
     let leaves: LeafRef[] | null = null, leavesFor: Element | null = null, transparentNodes: Element[] = [];
     const leavesOf = (element: Element) => {
-      if (leaves && transparentNodes.some(node => node.isConnected && getComputedStyle(node).opacity !== "0")) leaves = null;
+      if (leaves && transparentNodes.some(node => node.isConnected && !isTransparent(getComputedStyle(node)))) leaves = null;
       if (!leaves || leavesFor !== element) {
         transparentNodes = [];
         leaves = collectLeaves(element, transparentNodes);
@@ -188,8 +190,9 @@ export function PreviewStage({
     };
     const subjectOf = (element: Element) => selected >= 0 ? `part-${selected}` : `node-${idOf(element)}`;
     // Geometry runs every frame while anything moves; it only reads layout.
-    // Intermediate values are rarely on the scale, so while moving without a known
-    // destination each callout keeps its last settled status instead of flashing.
+    // Intermediate values are rarely on the scale, so while animations run without
+    // a known destination each callout keeps its last settled status (neutral if it
+    // appeared mid-motion) instead of flashing. Plain resizes/mutations stay live.
     let signature = "", holding = false;
     const settled = new Map<string, SpecStatus>();
     const measureGeometry = (sync: boolean) => {
@@ -224,7 +227,7 @@ export function PreviewStage({
           : c.band.left - reach >= host.scrollLeft ? "start" : "inside";
         const live = statusOf(c, unit);
         if (!holding) settled.set(c.id, live);
-        return { ...c, status: holding ? settled.get(c.id) ?? live : live, side };
+        return { ...c, status: holding ? settled.get(c.id) ?? "pending" : live, side };
       });
       const next = `${subject}#${rect.left.toFixed(1)},${rect.top.toFixed(1)},${rect.right.toFixed(1)},${rect.bottom.toFixed(1)}#${calloutSignature(callouts)}#${callouts.map(c => c.side + c.status).join("")}#${callouts.map(c => c.value.toFixed(2)).join(",")}`;
       if (next !== signature) commit(() => setGeometry({ subject, rect, callouts }));
@@ -305,7 +308,10 @@ export function PreviewStage({
         const end = animation.effect?.getComputedTiming().endTime;
         return animation.playState === "running" && typeof end === "number" && Number.isFinite(end);
       });
-      if (moving) deadline = Math.min(cap, Math.max(deadline, now + 100));
+      if (moving) {
+        holding = true;
+        deadline = Math.min(cap, Math.max(deadline, now + 100));
+      }
       if ((still < 3 || moving) && now < deadline) {
         raf = requestAnimationFrame(tick);
         if (now - reported > 500) {
@@ -327,7 +333,6 @@ export function PreviewStage({
     const track = () => {
       const now = performance.now();
       if (!raf) {
-        holding = true;
         cap = now + 5000;
         reported = now;
         raf = requestAnimationFrame(tick);
@@ -359,7 +364,8 @@ export function PreviewStage({
       try {
         running.forEach(animation => { animation.currentTime = Number(animation.effect!.getComputedTiming().endTime) - 0.01; });
         const unit = spacingUnit(element);
-        // Fresh content nodes at the end state: fades are complete there.
+        // Fresh content nodes at the end state; the opacity floor treats fade-outs
+        // sought to just before their end as gone.
         setPredicted(Object.fromEntries(measureCallouts(element, localizer(), collectLeaves(element))
           .map(c => [c.id, { status: statusOf(c, unit), lane: c.lane }])));
       } finally {
@@ -383,6 +389,7 @@ export function PreviewStage({
       event.target instanceof Node && (root.contains(event.target) || Boolean(portalHost?.contains(event.target)));
     const onTransition = (event: Event) => {
       if (!fromContent(event)) return;
+      holding = true;
       predict();
       track();
     };

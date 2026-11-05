@@ -577,8 +577,9 @@
 .pg-spec-callout[data-scale="off"] {
   --pg-spec-tone: var(--pg-spec-off);
 }
-/* Type metrics, not spacing: shown neutrally rather than judged against the scale. */
-.pg-spec-callout[data-scale="text"] {
+/* Type metrics, not spacing, are shown neutrally rather than judged against the
+   scale; so is a distance that appeared mid-motion until it settles. */
+.pg-spec-callout:is([data-scale="text"], [data-scale="pending"]) {
   --pg-spec-tone: var(--pg-spec-text);
 }
 @starting-style {

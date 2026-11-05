@@ -67,6 +67,12 @@ const replaced = new Set(["svg", "img", "video", "canvas", "input", "textarea", 
 export type LeafRef = { node: Text | Element; child: number };
 type Leaf = { box: Box; child: number; text: boolean };
 
+/**
+ * Below 1% opacity content is not visible. A floor rather than exact zero also
+ * covers fades sought to just before their end (opacity ≈ 1e-15, not 0).
+ */
+export const isTransparent = (style: CSSStyleDeclaration) => parseFloat(style.opacity) < 0.01;
+
 // Stable child identities keep gap ids attached to the same pair of children
 // when siblings appear or disappear mid-morph.
 const nodeIds = new WeakMap<Node, number>();
@@ -93,7 +99,7 @@ export function collectLeaves(element: Element, transparentNodes?: Element[]): L
     if (!(node instanceof Element)) return;
     const style = getComputedStyle(node);
     if (style.display === "none" || style.visibility === "hidden") return;
-    if (style.opacity === "0") {
+    if (isTransparent(style)) {
       // Fully transparent content is not visible yet, but a fade may be starting:
       // report it so callers can re-collect once it becomes visible.
       transparentNodes?.push(node);

@@ -42,12 +42,15 @@ masks so they inherit semantic icon colors. Hairline separators use
 - Redlines follow the live layout every frame while anything moves (CSS
   transitions, Motion, resize, DOM changes) and commit synchronously in that
   frame, so values count through intermediate numbers without trailing the
-  component. When one of the component's transitions starts, its running (not
-  pending) animations are briefly sought to their end and restored in the same
-  task to learn each distance's destination status and badge lane; tone and lane
+  component. When one of the component's transitions starts and its whole batch
+  of animations is running (none pending), they are briefly sought to their end
+  and restored in the same task to learn each distance's destination status and
+  badge lane; tone and lane
   then transition toward it instead of flickering or jumping. Until a destination
   is known (animations still pending, or motion that cannot be sought, such as
-  JS springs) each redline keeps its last settled status; the prediction expires
+  JS springs) each redline keeps its last settled status, and one that appears
+  mid-motion stays neutral until it settles; plain resizes and DOM changes
+  without animation stay live. The prediction expires
   when its animations finish, and a retarget replaces it. Content nodes are
   cached between frames; transparent nodes are watched so Motion fade-ins join as
   soon as they become visible. Position is never CSS-transitioned. A new
