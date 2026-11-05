@@ -4,6 +4,12 @@ import type { PageSlug } from "@/lib/site";
 
 /** Browser runtime only. The pure catalog and sitemap never import loaders. */
 export const routeLoaders = {
+  "parameter-controller": () => import("@/patterns/parameter-controller").then(m=>m.ParameterControllerPage),
+  "parameter-controls": () => import("@/pages/ParameterControllerDocs").then(m=>m.ParameterControllerDocs),
+  "parameter-panel": () => import("@/pages/ParameterControllerDocs").then(m=>m.ParameterControllerDocs),
+  "xy-parameter": () => import("@/pages/ParameterControllerDocs").then(m=>m.ParameterControllerDocs),
+  "shadow-parameter": () => import("@/pages/ParameterControllerDocs").then(m=>m.ParameterControllerDocs),
+
   "motion-code-studio": () => import("@/patterns/motion-code-studio").then(module => module.MotionCodeStudio),
   "code-focus": () => import("@/pages/MotionCodeDocs").then(module => module.MotionCodeDocs),
   "sheet-timeline": () => import("@/pages/MotionCodeDocs").then(module => module.MotionCodeDocs),
