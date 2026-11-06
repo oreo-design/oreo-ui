@@ -473,12 +473,6 @@
 .pg-stage-annotation .pg-frame {
   min-height: calc(var(--spacing) * 50);
 }
-.pg-anatomy {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--spacing) * 2);
-}
 .pg-card {
   padding: calc(var(--spacing) * 5);
   border: 0.5px solid var(--color-border-default);
@@ -496,9 +490,6 @@
   color: var(--color-text-secondary);
   line-height: 18px;
   margin-top: calc(var(--spacing) * 2);
-}
-.pg-anatomy .pg-card[aria-pressed="true"] {
-  border-color: var(--color-text-tertiary);
 }
 .pg-selection {
   position: absolute;

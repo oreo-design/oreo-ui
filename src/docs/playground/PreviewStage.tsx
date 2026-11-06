@@ -536,26 +536,6 @@ export function PreviewStage({
           <div ref={setPortalHost} className="pg-device-portals" />
         </div>
       </div>
-      {mode === "annotation" && (
-        <div className="pg-anatomy">
-          {parts.map((part, index) => (
-            <button
-              key={part.name}
-              className="pg-card oreo-squircle oreo-state-layer"
-              aria-pressed={selected === index}
-              onClick={() => onSelect(index)}
-            >
-              <strong>
-                {String(index + 1).padStart(2, "0")} · {part.name}
-                {!markers.some((marker) => marker.index === index)
-                  ? " (hidden)"
-                  : ""}
-              </strong>
-              <p>{part.description}</p>
-            </button>
-          ))}
-        </div>
-      )}
 
     </div>
   );
