@@ -2,6 +2,7 @@ import type { PlaygroundSpec } from "./schema";
 
 /** Lazy runtime map; metadata must never import this module. */
 export const playgroundLoaders: Record<string, () => Promise<PlaygroundSpec>> = {
+  input: () => import("./adapters/input").then(m=>m.default.input),
   "film-cover-upload": () => import("./adapters/film-cover").then(m=>m.default["film-cover-upload"]),
   "film-reveal": () => import("./adapters/film-cover").then(m=>m.default["film-reveal"]),
   "media-tray": () => import("./adapters/film-cover").then(m=>m.default["media-tray"]),

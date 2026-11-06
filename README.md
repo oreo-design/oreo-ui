@@ -26,6 +26,7 @@ A small, copy-paste React component library that reproduces the **Oreo UI** desi
 
 - **Connection State + Calendar Sync** — a reusable integration stack, controlled empty/sync/success/error states, grouped meeting disclosures and a complete first-connection template. [Composition and source breakdown](src/patterns/calendar-sync/README.md).
 
+- **Input** — native text fields, password reveal/requirements, IME-safe tags, card formatting, segmented dates and counters. Oreo tokens throughout; React Aria powers date/counter/select and react-payment-inputs powers card behavior. [API and compositions](src/components/input/README.md).
 - **Button** — `primary` / `secondary` / `tertiary` variants, `danger` flag, leading/trailing icons, Material-style state-layer hover/press, and a tunable Motion spring on press.
 - **Icon Button** — square, icon-only action sharing Button's surface, with a `shape` switch (capsule / rounded square) and an optional `floating` elevation.
 - **Chip** — compact, tappable suggestion pill with leading icon, four states (default / hover / selected / disabled), a Motion press spring, and a scrollable `ChipGroup`.

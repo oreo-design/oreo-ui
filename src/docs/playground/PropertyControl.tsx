@@ -1,4 +1,5 @@
 import { useEffect, useId, useState } from "react";
+import { Input } from "@/components/input/input";
 import { Switch } from "@/components/switch";
 import { normalizeNumber, type Control } from "./schema";
 import { cn } from "@/lib/cn";
@@ -15,7 +16,7 @@ function NumericInput({ control, value, onChange, id, label }: { control: Extrac
   };
   return <div className="flex items-center gap-3">
     <input id={id} aria-label={label} type="range" className="slider min-w-0 flex-1" min={control.min} max={control.max} step={control.step} value={value} onChange={e => onChange(Number(e.target.value))} />
-    <input aria-label={`${label} value`} className={cn(inputClass, "w-20 shrink-0 px-2 text-right tabular-nums")} type="number" min={control.min} max={control.max} step={control.step} value={draft} onChange={e => { setDraft(e.target.value); const normalized = normalizeNumber(e.target.value, control); if (normalized !== null && normalized === Number(e.target.value)) onChange(normalized); }} onBlur={commit} onKeyDown={e => { if (e.key === "Enter") { commit(); e.currentTarget.blur(); } }} />
+    <Input size="md" aria-label={`${label} value`} className="w-20 shrink-0" inputClassName="text-right tabular-nums" type="number" min={control.min} max={control.max} step={control.step} value={draft} onChange={e => { setDraft(e.target.value); const normalized = normalizeNumber(e.target.value, control); if (normalized !== null && normalized === Number(e.target.value)) onChange(normalized); }} onBlur={commit} onKeyDown={e => { if (e.key === "Enter") { commit(); e.currentTarget.blur(); } }} />
   </div>;
 }
 
@@ -27,7 +28,7 @@ export function PropertyControl({ name, control, value, onChange, onReselect }: 
   </div>;
   return <div className="pg-field space-y-2">
     <label id={`${id}-label`} htmlFor={id} className="block text-xs text-[var(--color-text-secondary)]">{label}</label>
-    {control.kind === "text" && (control.multiline ? <textarea id={id} className={cn(inputClass, "min-h-20 resize-y leading-5")} value={String(value)} onChange={e => onChange(e.target.value)} /> : <input id={id} className={inputClass} value={String(value)} onChange={e => onChange(e.target.value)} />)}
+    {control.kind === "text" && (control.multiline ? <textarea id={id} className={cn(inputClass, "min-h-20 resize-y leading-5")} value={String(value)} onChange={e => onChange(e.target.value)} /> : <Input id={id} size="md" value={String(value)} onChange={e => onChange(e.target.value)} />)}
     {control.kind === "number" && <NumericInput id={id} label={label} control={control} value={Number(value)} onChange={onChange} />}
     {control.kind === "select" && (control.options.length <= 3 && control.options.join("").length < 26 ?
       <div role="radiogroup" aria-labelledby={`${id}-label`} className="pg-segment oreo-squircle flex">

@@ -1,0 +1,296 @@
+/* Establish Tailwind layer order even when a lazy consumer imports Input first. */
+@layer theme, base, components, utilities;
+
+@layer components {
+  .oreo-input-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-x4);
+    min-width: 0;
+    width: 100%;
+  }
+  .oreo-input-label {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+  .oreo-input {
+    --squircle-radius: var(--radius-control);
+    --input-height: calc(var(--spacing) * 8);
+    --input-padding: var(--space-x6);
+    --input-gap: var(--space-x4);
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--color-border-subtle);
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+    transition:
+      border-color 150ms var(--ease-out),
+      background-color 150ms var(--ease-out);
+  }
+  .oreo-input-sm {
+    --input-height: calc(var(--spacing) * 7);
+    --input-padding: var(--space-x5);
+    font-size: var(--text-xs);
+  }
+  .oreo-input-lg {
+    --input-height: calc(var(--spacing) * 10);
+    --input-padding: var(--space-x8);
+  }
+  .oreo-input-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    gap: var(--input-gap);
+    padding-inline: var(--input-padding);
+    cursor: text;
+    border-radius: inherit;
+  }
+  .oreo-input-control {
+    appearance: none;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+    height: calc(var(--input-height) - 2px);
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    font-size: inherit;
+    line-height: inherit;
+    caret-color: var(--color-text-primary);
+  }
+  .oreo-input-control::placeholder {
+    color: var(--color-text-placeholder);
+    transition: color 150ms var(--ease-out);
+  }
+  .oreo-input-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-text-secondary);
+    transition: color 150ms var(--ease-out);
+  }
+  .oreo-input-icon svg {
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 4);
+  }
+  .oreo-input-affix {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--input-gap);
+    padding-inline: var(--input-padding);
+    color: var(--color-text-secondary);
+    max-width: 50%;
+    overflow-wrap: anywhere;
+  }
+  .oreo-input-affix:first-child {
+    border-inline-end: 1px solid var(--color-border-subtle);
+  }
+  .oreo-input-affix:last-child {
+    border-inline-start: 1px solid var(--color-border-subtle);
+  }
+  .oreo-input-inline-affix {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--color-text-secondary);
+  }
+  .oreo-input:has(:placeholder-shown):not(:focus-within)
+    :is(.oreo-input-icon, .oreo-input-affix, .oreo-input-inline-affix) {
+    color: var(--color-text-placeholder);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .oreo-input:not(
+        [data-disabled],
+        :has(input:disabled),
+        [data-readonly],
+        :has([readonly])
+      ):hover:not(:focus-within) {
+      background-color: var(--color-bg-elevated);
+    }
+    .oreo-input:not([data-disabled], :has(input:disabled)):hover
+      .oreo-input-control::placeholder {
+      color: var(--color-text-secondary);
+    }
+    .oreo-input:not([data-disabled], :has(input:disabled)):hover
+      .oreo-input-icon {
+      color: var(--color-text-secondary);
+    }
+  }
+  .oreo-input:focus-within {
+    border-color: var(--color-border-default);
+  }
+  .oreo-input:focus-within .oreo-input-control::placeholder {
+    color: var(--color-text-secondary);
+  }
+  .oreo-input[data-invalid],
+  .oreo-input:has([aria-invalid="true"]) {
+    border-color: var(--color-status-error);
+  }
+  .oreo-input[data-disabled],
+  .oreo-input:has(input:disabled) {
+    color: var(--color-text-disabled);
+    background-color: var(--color-bg-elevated);
+    border-color: var(--color-border-subtle);
+  }
+  .oreo-input:is([data-disabled], :has(input:disabled))
+    :is(
+      .oreo-input-icon,
+      .oreo-input-affix,
+      .oreo-input-inline-affix,
+      .oreo-input-control
+    ),
+  .oreo-input-control:disabled::placeholder {
+    color: var(--color-text-disabled);
+  }
+  .oreo-input:is([data-disabled], :has(input:disabled)) .oreo-input-wrapper,
+  .oreo-input-control:disabled {
+    cursor: not-allowed;
+  }
+  .oreo-input-hint {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: var(--text-xs);
+    line-height: var(--text-xs--line-height);
+    overflow-wrap: anywhere;
+  }
+  .oreo-input-hint[data-error] {
+    color: var(--color-status-error);
+  }
+  .oreo-input .oreo-input-action {
+    width: calc(var(--input-height) - var(--space-x4));
+    height: calc(var(--input-height) - var(--space-x4));
+    flex-shrink: 0;
+  }
+  .oreo-input .oreo-input-action svg {
+    width: calc(var(--spacing) * 4);
+    height: calc(var(--spacing) * 4);
+  }
+  .oreo-input-strength {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-x4);
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+  }
+  .oreo-input-strength-bars {
+    display: flex;
+    gap: var(--space-x4);
+    color: var(--color-status-error);
+  }
+  .oreo-input-strength-bars[data-level="2"] {
+    color: var(--color-status-warning);
+  }
+  .oreo-input-strength-bars[data-level="3"] {
+    color: var(--color-status-success);
+  }
+  .oreo-input-strength-bars span {
+    height: var(--space-x2);
+    flex: 1;
+    border-radius: var(--radius-capsule);
+    background-color: var(--color-bg-subtle);
+  }
+  .oreo-input-strength-bars span[data-active] {
+    background-color: currentColor;
+  }
+  .oreo-input-criterion {
+    display: flex;
+    align-items: center;
+    gap: var(--space-x3);
+  }
+  .oreo-input-criterion[data-met] svg {
+    color: var(--color-status-success);
+  }
+  .oreo-input-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-x4);
+  }
+  .oreo-input-tags button:focus-visible {
+    outline: 1px solid var(--color-border-default);
+    outline-offset: 1px;
+  }
+  .oreo-input-date-segments {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    min-height: calc(var(--input-height) - 2px);
+    font-size: inherit;
+  }
+  .oreo-input-date-segment {
+    padding-inline: var(--space-x1);
+    border-radius: var(--radius-control-tiny);
+    outline: none;
+  }
+  .oreo-input-date-segment[data-placeholder] {
+    color: var(--color-text-placeholder);
+  }
+  .oreo-input-date-segment[data-focused] {
+    background-color: var(--color-state-hover);
+    color: var(--color-text-primary);
+  }
+  .oreo-input-select {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-x4);
+    height: calc(var(--input-height) - 2px);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+  .oreo-input-select {
+    color: var(--color-text-secondary);
+  }
+  .oreo-input-select:disabled {
+    color: var(--color-text-disabled);
+    cursor: not-allowed;
+  }
+  .oreo-input-select-item[data-focused] {
+    background-color: var(--color-state-hover);
+  }
+  .oreo-input-select-popover {
+    z-index: 60;
+  }
+  .oreo-input-card-brand {
+    font-size: var(--text-xs);
+    white-space: nowrap;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .oreo-input,
+    .oreo-input-icon,
+    .oreo-input-control::placeholder {
+      transition: none;
+    }
+  }
+  @media (forced-colors: active) {
+    .oreo-input:focus-within {
+      outline: 1px solid Highlight;
+      outline-offset: 1px;
+    }
+    .oreo-input[data-invalid] {
+      border-color: Mark;
+    }
+    .oreo-input[data-disabled] {
+      border-color: GrayText;
+    }
+    .oreo-input-date-segment[data-focused] {
+      outline: 1px solid Highlight;
+    }
+  }
+}

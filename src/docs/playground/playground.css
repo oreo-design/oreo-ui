@@ -375,14 +375,14 @@
 .pg-field > * {
   margin: 0;
 }
-.pg-field input:not([type="radio"], [type="range"]),
+.pg-field input:not([type="radio"], [type="range"], .oreo-input-control),
 .pg-field select {
   height: calc(var(--spacing) * 8);
   padding: 0 calc(var(--spacing) * 2.5);
   --squircle-radius: var(--radius-control-large);
   font-family: inherit;
 }
-.pg-field :is(input:not([type="range"]), textarea, select) {
+.pg-field :is(input:not([type="range"], .oreo-input-control), textarea, select) {
   background: var(--color-bg-elevated);
   border-color: var(--color-border-default);
 }
@@ -810,7 +810,7 @@ html[data-theme-transition] .pg-spec-layer .pg-spec-badge {
 .pg-properties-dialog > .pg-property-actions {
   padding: calc(var(--spacing) * 4) 0 0;
 }
-.pg-modal input:not([type="range"], [type="radio"]),
+.pg-modal input:not([type="range"], [type="radio"], .oreo-input-control),
 .pg-modal textarea {
   width: 100%;
   padding: calc(var(--spacing) * 2.5) calc(var(--spacing) * 3);
@@ -1087,7 +1087,7 @@ body:has(.pg-shell) .site-mobile-nav {
   .pg-more-popover { right: calc(-1 * var(--space-x8)); flex-wrap: wrap; max-width: 240px; }
 }
 /* PropertyControl must keep the same range/value split inside either inspector. */
-.pg-modal .pg-field input[type="number"] { width: calc(var(--spacing) * 20); }
+.pg-modal .pg-field input[type="number"]:not(.oreo-input-control) { width: calc(var(--spacing) * 20); }
 .pg-modal .pg-color-field input:not([type="color"]) { border: 0; padding: 0; background-color: transparent; }
 @media (max-width: 767px) {
   .pg-breadcrumb > span:not(.pg-glyph) { display: none; }
@@ -1131,7 +1131,7 @@ body:has(.pg-shell) .site-mobile-nav {
 }
 
 .pg-field textarea { --squircle-radius: var(--radius-control-large); }
-.pg-modal input:not([type="range"], [type="radio"], .oreo-squircle),
+.pg-modal input:not([type="range"], [type="radio"], .oreo-squircle, .oreo-input-control),
 .pg-modal textarea:not(.oreo-squircle) { border-radius: var(--radius-control); }
 
 /* Compact theme choices belong to the demo, outside its inspectable content. */

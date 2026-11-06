@@ -1,12 +1,14 @@
 import type { ComponentRule } from "../lib/component-rules";
 /** Metadata only. Neither catalog nor this resolver imports component runtimes. */
 export const componentRuleIds: Readonly<Record<string, string>> = {
+  input: "input",
   button: "button", "icon-button": "button",
   "tree-stepper": "tree-stepper",
   "budget-cap-control": "agent-budget", "budget-outcome": "agent-budget", "monthly-budget-card": "agent-budget",
   composer: "composer", "prompt-box": "composer",
 };
 const loaders: Record<string, () => Promise<ComponentRule>> = {
+  input: () => import("../components/input/rules.ts").then(m=>m.inputRules),
   button: () => import("../components/button/rules.ts").then(module => module.buttonRules),
   "tree-stepper": () => import("../components/tree-stepper/rules.ts").then(module => module.treeStepperRules),
   "agent-budget": () => import("../components/agent-budget/rules.ts").then(module => module.agentBudgetRules),
