@@ -22,7 +22,7 @@ export const message = tv({
   variants: {
     role: {
       user: { body: "ms-auto items-end", actions: "justify-end" },
-      assistant: { body: "w-full items-start" },
+      assistant: { body: "w-full items-start", content: "font-response" },
     },
     variant: { bubble: {}, flat: {} },
   },

@@ -1,4 +1,5 @@
 /** Shared site-theme tokens. Presets are Oreo interpretations, not vendor kits. */
+import { themeTypography } from "./typography.ts";
 export const themeNames = ["oreo", "claude", "openai", "ascii"] as const;
 export type ThemeName = (typeof themeNames)[number];
 export type Variation = { preset: ThemeName; density: number; accent: string | null };
@@ -51,13 +52,17 @@ export function accentForeground(hex: string) {
 export function variationTokens(a: ThemeAppearance): Record<string, string> {
   const v = a.variation ?? defaultVariation;
   const tokens: Record<string, string> = {
-    // Explicit role tokens also reset correctly in nested comparison/export scopes.
-    "--font-sans": v.preset === "oreo" ? '"Mona Sans Variable", system-ui, sans-serif' : '"Inter Variable", Inter, system-ui, sans-serif',
-    "--font-legacy": '"Inter Variable", Inter, system-ui, sans-serif',
-    "--font-mono": v.preset === "oreo" ? '"Fragment Mono", ui-monospace, monospace' : '"Geist Mono Variable", ui-monospace, monospace',
-    "--font-shell": v.preset === "ascii" ? '"Inter Variable", Inter, sans-serif' : '"Mona Sans Variable", sans-serif',
-    "--font-display": v.preset === "ascii" ? '"Source Serif 4 Variable", Georgia, serif' : "initial",
-    "--font-input": v.preset === "ascii" ? '"Geist Mono Variable", ui-monospace, monospace' : 'initial',
+    // Resolve each role at every boundary; nested previews/exports cannot inherit
+    // a different preset's family or Mona-specific stylistic set.
+    "--font-sans": themeTypography[v.preset].sans,
+    "--font-legacy": themeTypography[v.preset].legacy,
+    "--font-mono": themeTypography[v.preset].mono,
+    "--font-shell": themeTypography[v.preset].sans,
+    "--font-display": themeTypography[v.preset].display,
+    "--font-input": themeTypography[v.preset].input,
+    "--font-response": themeTypography[v.preset].response,
+    "--font-features": themeTypography[v.preset].features,
+    "--font-sans--font-feature-settings": themeTypography[v.preset].features,
     // Semantic exceptions from all three ASCII reference frames. Other presets
     // resolve these at their own boundary, including nested exports/comparisons.
     "--radius-keycap": `${v.preset === "ascii" ? 4 + a.radius / 2 : a.radius / 2}px`,

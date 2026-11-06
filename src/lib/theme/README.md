@@ -58,3 +58,37 @@ roles. Notice padding/gaps map to spacing 5/2/4; modal padding remains spacing 6
 All recipe switches reset at the token boundary, including nested exports under
 an ASCII root. Exported component code requires Oreo's shared theme recipes and
 surface CSS, just as the component requires its existing base tokens/utilities.
+
+
+### Typography (live-site check, 2026-11-06)
+
+`typography.ts` owns UI/shell, display, input, assistant-response, legacy-label,
+mono and OpenType-feature roles. `variationTokens` resolves all roles explicitly
+at root and nested preview/Compare/export boundaries. `fonts.css` supplies Claude
+font faces and the exported `oreo-theme-scope`; `MessageContent` uses the response
+role only for assistant turns, so message actions remain UI text.
+
+- Oreo: Mona Sans with `ss05` enabled (double-storey a); Fragment Mono for code.
+  Explicit legacy reference labels remain Inter in this preset.
+- Claude: current `anthropic-sans` for UI/input, `anthropic-serif` for display and
+  assistant response, `anthropic-mono` for code. This replaces the shared Inter
+  interpretation; it does not use the older Styrene/Tiempos names.
+- OpenAI/GPT: the system UI and system mono stacks observed on the current
+  ChatGPT account's home/sidebar/composer. OpenAI Sans is the marketing brand
+  font and was declared but unloaded on this observed product surface. This is
+  a dated product observation, not a claim about all accounts/rollouts.
+- ASCII: retains Inter UI/response, Source Serif 4 display and Geist Mono input/code.
+
+Claude's versioned HTTPS font resources are requested only when the corresponding
+face is used, with `font-display: swap` and system/serif/mono fallbacks. They are
+vendor-hosted assets, not redistributed font binaries or fonts licensed by this
+repository. Availability therefore depends on the vendor endpoint; for a fully
+self-hosted distribution replace these sources with appropriately licensed assets.
+No authentication, cookies or provider API is needed to load these public resources.
+
+Family changes are discrete; the existing theme transition remains the owner of
+other interpolable properties. The theme applies immediately, persists normally,
+and explicitly resets `ss05` for non-Oreo presets. Exported appearances include
+their font/recipe imports and establish a scope even for legacy default settings.
+
+Research and evidence: [font source record](../../../docs/references/records/2026-11-06-theme-fonts.md).

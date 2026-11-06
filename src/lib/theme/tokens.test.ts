@@ -28,3 +28,23 @@ test("custom theme controls preserve role distinctions without square markers on
     assert.equal(tokens["--radius-media-thumb"],tokens["--radius-control-tiny"]);
   }
 });
+
+
+test("every theme boundary resets typography roles and Mona alternates", () => {
+  const keys = ["--font-sans", "--font-shell", "--font-legacy", "--font-mono", "--font-display", "--font-input", "--font-response", "--font-features", "--font-sans--font-feature-settings"];
+  for (const from of themeNames) for (const to of themeNames) {
+    const parent = variationTokens(presetAppearance(from));
+    const child = variationTokens(presetAppearance(to));
+    for (const key of keys) {
+      assert.ok(child[key] && child[key] !== "initial", `${to} explicitly owns ${key}`);
+      assert.equal({...parent, ...child}[key], child[key]);
+    }
+    assert.equal(child["--font-shell"], child["--font-sans"]);
+    assert.equal(child["--font-features"], to === "oreo" ? '\"ss05\" 1' : "normal");
+  }
+  const claude = variationTokens(presetAppearance("claude"));
+  assert.match(claude["--font-response"], /anthropic-serif/);
+  assert.match(claude["--font-input"], /anthropic-sans/);
+  assert.notEqual(claude["--font-input"], claude["--font-response"]);
+  assert.match(variationTokens(presetAppearance("openai"))["--font-sans"], /ui-sans-serif/);
+});

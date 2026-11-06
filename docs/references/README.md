@@ -5,6 +5,8 @@
 
 ## 从这里找
 
+- [主题字体：Oreo / Claude / GPT](records/2026-11-06-theme-fonts.md)：现场字体角色、主题切换与验证范围。
+
 - [Composer：Figma token 与组件对齐](records/2026-10-22-composer-figma.md)：六组设计、可复用组件及完整模板；链接唯一任务 review。
 
 - [Emil：代码聚焦扫描与联动预览](records/2026-10-21-emil-motion-code.md)
