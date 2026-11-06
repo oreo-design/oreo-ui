@@ -22,6 +22,7 @@ export type CatalogEntry = {
 
 /** Keys and insertion order preserve existing routes and sitemap order. */
 export const CATALOG = {
+  input: {title:"Input", description:"Single-line fields with Oreo tokens, native form semantics and complete input compositions.",nav:{group:"Components",order:2},subject:"component",reuse:"primitive",views:["playground","docs"],defaultView:"playground"},
   "film-cover-studio": {title:"Film Cover Studio",description:"A local cover editor with film development, a persistent media tray and a continuous reading preview.",nav:{group:"Templates",order:-2},subject:"template",views:["template"],defaultView:"template",related:["film-cover-upload","film-reveal","media-tray"]},
   "film-cover-upload": {title:"Film Cover Upload",description:"A controlled cover drop zone with developing preview, file progress, cancellation and recovery.",nav:{group:"Components",order:-2},subject:"component",views:["playground","docs"],defaultView:"playground"},
   "film-reveal": {title:"Film Reveal",description:"Progress-controlled silver-grain to color image development, with reduced-motion and image fallbacks.",nav:{group:"Components",order:-2},subject:"component",views:["playground","docs"],defaultView:"playground"},

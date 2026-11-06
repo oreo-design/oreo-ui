@@ -1,4 +1,5 @@
 import {
+  Eye, EyeSlash, CreditCard,
   Power, ArrowUUpLeft, ArrowUUpRight, ArrowsInLineVertical,
   File,
   Cpu,
@@ -98,6 +99,7 @@ import type { IconName } from "./names";
 
 /** Phosphor's answer for every name in the Oreo vocabulary. */
 export const phosphorGlyphs: Record<IconName, IconGlyph> = {
+  "eye": Eye, "eye-off": EyeSlash, "credit-card": CreditCard,
   "power": Power, "undo":ArrowUUpLeft,"redo":ArrowUUpRight,"fold-vertical":ArrowsInLineVertical,
   file: File,
   "unlink": LinkBreak,

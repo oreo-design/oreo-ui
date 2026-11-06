@@ -4,6 +4,7 @@ import type { PageSlug } from "@/lib/site";
 
 /** Browser runtime only. The pure catalog and sitemap never import loaders. */
 export const routeLoaders = {
+  input: () => import("@/pages/InputDocs").then(m=>m.InputDocs),
   "film-cover-studio": () => import("@/patterns/film-cover-studio").then(m=>m.FilmCoverStudio),
   "film-cover-upload": () => import("@/pages/FilmCoverDocs").then(m=>m.FilmCoverDocs),
   "film-reveal": () => import("@/pages/FilmCoverDocs").then(m=>m.FilmCoverDocs),

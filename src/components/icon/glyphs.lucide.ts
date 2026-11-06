@@ -1,4 +1,5 @@
 import {
+  Eye, EyeOff, CreditCard,
   Power, Undo2, Redo2, FoldVertical,
   File,
   Cpu,
@@ -96,6 +97,7 @@ import type { IconName } from "./names";
 
 /** Lucide's answer for every name in the Oreo vocabulary. */
 export const lucideGlyphs: Record<IconName, IconGlyph> = {
+  "eye": Eye, "eye-off": EyeOff, "credit-card": CreditCard,
   "power": Power, "undo":Undo2,"redo":Redo2,"fold-vertical":FoldVertical,
   file: File,
   "unlink": Unlink,

@@ -6,6 +6,7 @@
 ## 从这里找
 
 - [主题字体：Oreo / Claude / GPT](records/2026-11-06-theme-fonts.md)：现场字体角色、主题切换与验证范围。
+- [Align UI Input：19 项输入交互](records/2026-11-06-align-input.md)：以 Oreo tokens 和组件重建输入、密码、标签、卡号、日期和步进器，并统一 Playground 属性输入。
 
 - [Composer：Figma token 与组件对齐](records/2026-10-22-composer-figma.md)：六组设计、可复用组件及完整模板；链接唯一任务 review。
 
