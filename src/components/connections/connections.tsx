@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { TriangleMark, Icon } from "@/components/icon";
 import { useEffect, useId, useRef, useState, type ReactNode, type Ref } from "react";
 import { Combobox } from "@base-ui-components/react/combobox";
@@ -81,12 +82,12 @@ export function InlineProjectPicker({ projects, label = "Search projects", onSel
         <Icon name="search" size="sm" className="shrink-0 text-text-tertiary" />
         <Combobox.Input autoFocus aria-label={label} placeholder="Search projects…" className="min-w-0 w-full bg-transparent py-1.5 text-sm outline-none placeholder:text-text-placeholder" onKeyDown={() => { keyboard.current = true; }} onPointerDown={() => { keyboard.current = false; }} />
       </span>
-      <Combobox.Portal><Combobox.Positioner anchor={anchorRef} sideOffset={8} align="start" className={cn("z-50", dark && "theme-dark")}>
+      <Combobox.Portal><ThemePortalTypography><Combobox.Positioner anchor={anchorRef} sideOffset={8} align="start" className={cn("z-50", dark && "theme-dark")}>
         <Combobox.Popup initialFocus={false} finalFocus={false} data-instant={instant || undefined} className="connection-picker w-72 max-w-[calc(100vw-2rem)] origin-[var(--transform-origin)] rounded-card-medium border border-border-default bg-bg-base p-1.5 text-text-primary shadow-[var(--shadow-overlay)]">
           <Combobox.Empty className="px-3 py-5 text-sm text-text-secondary empty:hidden">{projects.length ? `No projects match “${query}”. Try another name.` : "All available projects are connected."}</Combobox.Empty>
           <Combobox.List className="max-h-64 overflow-y-auto overscroll-contain outline-none">{(project: ConnectionProject) => <Combobox.Item key={project.id} value={project} onPointerDown={() => { keyboard.current = false; }} className="cursor-pointer rounded-control-large px-3 py-3 text-sm outline-none data-[highlighted]:bg-state-press"><ProjectIdentity project={project} /></Combobox.Item>}</Combobox.List>
         </Combobox.Popup>
-      </Combobox.Positioner></Combobox.Portal>
+      </Combobox.Positioner></ThemePortalTypography></Combobox.Portal>
       <Combobox.Trigger aria-label="Cancel new connection" render={<IconButton aria-label="Cancel new connection" type="tertiary" size="sm" tapScale={1} icon={<Icon name="x" size="sm" />} />} />
     </Combobox.Root>
   </div>;

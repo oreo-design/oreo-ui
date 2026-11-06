@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import {
   useEffect,
   useLayoutEffect,
@@ -137,7 +138,7 @@ export function CommandSearch({
             </button>
           )}
         </div>
-        <Combobox.Portal container={host}>
+        <Combobox.Portal container={host}><ThemePortalTypography>
           <Combobox.Positioner
             anchor={anchor}
             align="end"
@@ -200,7 +201,7 @@ export function CommandSearch({
               </footer>
             </Combobox.Popup>
           </Combobox.Positioner>
-        </Combobox.Portal>
+        </ThemePortalTypography></Combobox.Portal>
       </Combobox.Root>
     </div>
   );

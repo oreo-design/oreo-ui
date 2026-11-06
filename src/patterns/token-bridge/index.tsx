@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useReducer, useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -322,7 +323,7 @@ export function TokenBridgePage() {
           if (!v) setModal(null);
         }}
       >
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="bt-backdrop" />
           <Dialog.Popup
             className={`bt-dialog ${modal === "from" || modal === "to" ? "bt-dialog-picker" : ""}`}
@@ -543,7 +544,7 @@ export function TokenBridgePage() {
               </>
             )}
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

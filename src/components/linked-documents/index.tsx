@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useRef, useState, type ReactNode } from "react";
 import { Popover } from "@base-ui-components/react/popover";
 import { Tooltip } from "@base-ui-components/react/tooltip";
@@ -57,11 +58,11 @@ export function LinkedDocumentRow({
               />
             }
           />
-          <Tooltip.Portal>
+          <Tooltip.Portal><ThemePortalTypography>
             <Tooltip.Positioner side="top" sideOffset={6}>
               <Tooltip.Popup className="ldoc-tooltip">Unlink</Tooltip.Popup>
             </Tooltip.Positioner>
-          </Tooltip.Portal>
+          </ThemePortalTypography></Tooltip.Portal>
         </Tooltip.Root>
       </Tooltip.Provider>
       {onInfo && (
@@ -210,7 +211,7 @@ export function LinkedDocumentsSelector(
           </span>
           <Icon name={open ? "chevron-up" : "chevron-down"} size="sm" />
         </Popover.Trigger>
-        <Popover.Portal container={host}>
+        <Popover.Portal container={host}><ThemePortalTypography>
           <Popover.Positioner
             side="bottom"
             align="end"
@@ -258,7 +259,7 @@ export function LinkedDocumentsSelector(
               />
             </Popover.Popup>
           </Popover.Positioner>
-        </Popover.Portal>
+        </ThemePortalTypography></Popover.Portal>
       </Popover.Root>
     </div>
   );

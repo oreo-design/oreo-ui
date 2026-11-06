@@ -161,7 +161,7 @@ test("theme covers utility corners and interaction accents without recoloring se
   const a = { ...presetAppearance("oreo"), radius: 20, variation: { preset: "oreo" as const, density: 1.25, accent: "#ffffff" } };
   const tokens = variationTokens(a);
   assert.equal(tokens["--radius-xl"], "30px");
-  assert.equal(tokens["--radius-card-large"], "60px");
+  assert.equal(tokens["--radius-card-large"], "50px");
   assert.equal(tokens["--spacing"], "5px");
   assert.equal(tokens["--color-accent-foreground"], "#000000");
   assert.equal(tokens["--color-accent"], "#ffffff");

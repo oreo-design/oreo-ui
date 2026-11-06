@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import {
   TaskCalendar,
@@ -770,7 +771,7 @@ export function ProjectWorkspace() {
           if (!o) setDraft(null);
         }}
       >
-        <Dialog.Portal>
+        <Dialog.Portal><ThemePortalTypography>
           <Dialog.Backdrop className="pw-backdrop" />
           <Dialog.Popup
             className={`pw-drawer ${dark ? "theme-dark" : ""}`}
@@ -1030,7 +1031,7 @@ export function ProjectWorkspace() {
               </>
             )}
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

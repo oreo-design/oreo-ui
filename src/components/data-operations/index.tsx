@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useRef, useState, type ReactNode } from "react";
 import { Popover } from "@base-ui-components/react/popover";
 import { Button, IconButton } from "@/components/button";
@@ -72,7 +73,7 @@ export function DataFilterPopover({
           {label}
           {count > 0 ? ` · ${count}` : ""}
         </Popover.Trigger>
-        <Popover.Portal container={host}>
+        <Popover.Portal container={host}><ThemePortalTypography>
           <Popover.Positioner
             side="bottom"
             align="end"
@@ -178,7 +179,7 @@ export function DataFilterPopover({
               </footer>
             </Popover.Popup>
           </Popover.Positioner>
-        </Popover.Portal>
+        </ThemePortalTypography></Popover.Portal>
       </Popover.Root>
     </div>
   );

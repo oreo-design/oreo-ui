@@ -1,3 +1,4 @@
+import { ThemeScope } from "@/lib/theme/ThemeScope";
 import { variationTokens } from "./variation";
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { Button } from "@/components/button";
@@ -180,13 +181,13 @@ function Comparison({
   return (
     <section className="pg-card oreo-squircle">
       <strong>{label}</strong>
-      <div className="pg-compare-preview" style={themeStyle}>
+      <ThemeScope className="pg-compare-preview" style={themeStyle}>
         {spec.render(values, (key, value) =>
           setValues((current) =>
             updateValues(spec.controls, current, key, value),
           ),
         )}
-      </div>
+      </ThemeScope>
       <p>
         {String(
           (

@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { Combobox } from "@base-ui-components/react/combobox";
 import { Icon } from "@/components/icon";
@@ -99,7 +100,7 @@ export function InlineSearchSelect({
             style={{ display: open ? undefined : "none" }}
           />
         </div>
-        <Combobox.Portal container={host}>
+        <Combobox.Portal container={host}><ThemePortalTypography>
           <Combobox.Positioner
             anchor={anchor}
             positionMethod="fixed"
@@ -174,7 +175,7 @@ export function InlineSearchSelect({
               )}
             </Combobox.Popup>
           </Combobox.Positioner>
-        </Combobox.Portal>
+        </ThemePortalTypography></Combobox.Portal>
       </Combobox.Root>
     </div>
   );

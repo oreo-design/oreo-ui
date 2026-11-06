@@ -40,6 +40,7 @@ test("every theme boundary resets typography roles and Mona alternates", () => {
       assert.equal({...parent, ...child}[key], child[key]);
     }
     assert.equal(child["--font-shell"], child["--font-sans"]);
+    assert.equal(child["--font-legacy"], child["--font-sans"]);
     assert.equal(child["--font-features"], to === "oreo" ? '\"ss05\" 1' : "normal");
   }
   const claude = variationTokens(presetAppearance("claude"));

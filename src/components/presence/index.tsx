@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Popover } from "@base-ui-components/react/popover";
@@ -83,7 +84,7 @@ export function PresenceStack({ people, max = 4, selfId, label = "People here no
         </span>
         {expanded && current && <span className="oreo-presence-hover" aria-hidden="true">{labelFor(current)} · {presenceLabels[current.status]}</span>}
       </Popover.Trigger>
-      <Popover.Portal container={host}>
+      <Popover.Portal container={host}><ThemePortalTypography>
         <Popover.Positioner side="bottom" align="end" sideOffset={12} collisionPadding={16} positionMethod="fixed" className="z-50 outline-none">
           <Popover.Popup ref={popup} className="oreo-presence-popup" initialFocus={popup} finalFocus>
             <div className="flex shrink-0 items-center justify-between gap-4 border-b border-border-subtle px-4 py-3">
@@ -99,7 +100,7 @@ export function PresenceStack({ people, max = 4, selfId, label = "People here no
             </ul>
           </Popover.Popup>
         </Popover.Positioner>
-      </Popover.Portal>
+      </ThemePortalTypography></Popover.Portal>
     </Popover.Root>
     <span className="sr-only" role="status" aria-live="polite" aria-atomic="true">{announcement}</span>
   </div>;

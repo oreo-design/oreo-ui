@@ -23,3 +23,18 @@ exceptions; this task does not rewrite their compositions or change font sizes.
 Single task review (original before/after images, recordings, environment,
 validation and gaps):
 [REVIEW.md](/Users/ziye/Documents/Project/Research/oreo-theme-fonts-20261106/REVIEW.md).
+
+## Full-coverage follow-up
+
+The user requested the remaining work together. Bare mono/font shorthand
+declarations in component charts, operational templates and inspector chrome now
+use theme roles. Oreo legacy labels also use Mona Sans and ss05. Editorial remix
+and Neutomni live text follow display/response roles. Existing authored text-font
+choices and portable email output remain explicit content exceptions.
+
+A real-component nested fixture reproduced portal font leakage (outer Claude,
+inner Oreo). ThemeScope and ThemePortalTypography carry font roles across the
+portal boundary; all existing Base UI portals use the shared wrapper. Existing
+Base UI behavior and portal containers are retained. Compare and exported snippets
+use ThemeScope. Root and nested behavior, font-family/ss05, responsive screenshots
+and failure/recovery evidence live in the same local REVIEW linked above.

@@ -14,7 +14,7 @@
   /* Legacy permission instance colors have no matching foundation role. */
   --color-composer-permission-description: #8f8f94;
   --color-composer-permission-warning: #f0400a;
-  --font-legacy: "Inter Variable", Inter, system-ui, sans-serif;
+  --font-legacy: "Mona Sans Variable", system-ui, sans-serif;
   --font-mono: "Fragment Mono", ui-monospace, monospace;
   /* radius */
   --radius-control-tiny: 4px;
@@ -410,6 +410,6 @@ input:not([type="checkbox"]):not([type="radio"]), textarea, [contenteditable="tr
   font-family: var(--font-input, inherit);
 }
 
-/* Figma component instances retain explicit Inter labels alongside Mona body roles. */
-.oreo-legacy-label { font-family: var(--font-legacy); font-feature-settings: normal; }
+/* Compatibility role: old component labels follow the active UI typography. */
+.oreo-legacy-label { font-family: var(--font-legacy); font-feature-settings: var(--font-features, "ss05" 1); }
 .oreo-composer, .oreo-context-bar { font-feature-settings: var(--font-features, "ss05" 1); }

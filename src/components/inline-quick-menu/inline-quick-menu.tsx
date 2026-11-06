@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useRef, useState, type ReactNode } from "react";
 import { Menu } from "@base-ui-components/react/menu";
 import { Icon } from "@/components/icon";
@@ -59,7 +60,7 @@ export function InlineQuickMenu({
         <span aria-hidden className="oreo-quick-chevron shrink-0 text-text-tertiary"><Icon name="chevron-down" size="sm" weight="bold" /></span>
       </Menu.Trigger>
       {/* Keep the portal in the local theme scope, including standalone docs. */}
-      <Menu.Portal container={container}>
+      <Menu.Portal container={container}><ThemePortalTypography>
         <Menu.Positioner side="top" align="center" sideOffset={12} className="z-50 max-w-[calc(100vw-2rem)] outline-none">
           <Menu.Popup aria-label={label} className="oreo-quick-popup rounded-capsule border-4 border-bg-elevated bg-bg-base text-text-secondary outline-none">
             <Menu.Arrow className="oreo-quick-arrow" />
@@ -75,7 +76,7 @@ export function InlineQuickMenu({
             </Menu.RadioGroup>
           </Menu.Popup>
         </Menu.Positioner>
-      </Menu.Portal>
+      </ThemePortalTypography></Menu.Portal>
     </Menu.Root>
   </div>;
 }

@@ -36,7 +36,7 @@
   font-weight: 600;
 }
 .mr-demo-tag {
-  font: 0.5625rem monospace;
+  font: 0.5625rem var(--font-mono);
   letter-spacing: 0.1em;
   color: var(--color-text-tertiary);
 }
@@ -116,7 +116,7 @@
   gap: calc(var(--spacing) * 4);
 }
 .mr-eyebrow {
-  font: 0.625rem monospace;
+  font: 0.625rem var(--font-mono);
   letter-spacing: 0.04em;
   color: var(--color-text-secondary);
 }
@@ -142,7 +142,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: calc(var(--spacing) * 2);
-  font: 0.625rem monospace;
+  font: 0.625rem var(--font-mono);
   color: var(--color-text-secondary);
   margin: calc(var(--spacing) * 3) 0 calc(var(--spacing) * 5);
   line-height: 1.6;
@@ -225,7 +225,7 @@
   display: flex;
   align-items: center;
   gap: calc(var(--spacing) * 2);
-  font: 0.5625rem monospace;
+  font: 0.5625rem var(--font-mono);
   color: var(--color-text-tertiary);
   line-height: 1.6;
 }
@@ -265,7 +265,7 @@
   font-size: 0.875rem;
 }
 .mr-settings header > span {
-  font: 0.625rem monospace;
+  font: 0.625rem var(--font-mono);
   color: var(--color-text-tertiary);
 }
 .mr-settings p {
@@ -326,7 +326,7 @@
   border-radius: var(--radius-card-medium);
 }
 .mr-context > span {
-  font: 0.5625rem monospace;
+  font: 0.5625rem var(--font-mono);
   letter-spacing: 0.15em;
   color: var(--color-text-secondary);
 }

@@ -16,14 +16,14 @@
 }
 .vt-meta {
   margin-left: auto;
-  font-family: monospace;
+  font-family: var(--font-mono);
   text-transform: uppercase;
   color: var(--color-text-tertiary);
   font-size: 0.6875rem;
 }
 .vt-phase,
 .vt-budget-state {
-  font-family: monospace;
+  font-family: var(--font-mono);
   text-transform: uppercase;
   font-size: 0.6875rem;
   line-height: 1.5;
@@ -59,7 +59,7 @@
 }
 .vt-lane > span,
 .vt-transcript p > span:first-child {
-  font: 0.6875rem monospace;
+  font: 0.6875rem var(--font-mono);
   text-transform: uppercase;
   color: var(--color-text-secondary);
 }
@@ -148,7 +148,7 @@
   flex-wrap: wrap;
   gap: calc(var(--spacing) * 2);
   margin: calc(var(--spacing) * 1) 0 calc(var(--spacing) * 3);
-  font: 0.6875rem monospace;
+  font: 0.6875rem var(--font-mono);
   text-transform: uppercase;
   color: var(--color-text-secondary);
 }
@@ -185,7 +185,7 @@
   display: flex;
   align-items: center;
   gap: calc(var(--spacing) * 1);
-  font: 0.625rem monospace;
+  font: 0.625rem var(--font-mono);
   text-transform: uppercase;
   color: var(--color-text-secondary);
 }
@@ -197,7 +197,7 @@
   flex-shrink: 0;
 }
 .vt-stage-labels dd {
-  font: 0.8125rem monospace;
+  font: 0.8125rem var(--font-mono);
   margin-top: calc(var(--spacing) * 1.4);
 }
 .vt-stage-fill [data-tone="neutral"],
@@ -282,7 +282,7 @@
   gap: calc(var(--spacing) * 2);
   flex-wrap: wrap;
   margin-top: calc(var(--spacing) * 3);
-  font: 0.6875rem monospace;
+  font: 0.6875rem var(--font-mono);
   text-transform: uppercase;
   color: var(--color-text-secondary);
 }

@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import * as React from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { motion, useReducedMotion } from "motion/react";
@@ -90,7 +91,7 @@ export function SettingsShell({ appearance, groups, active, onNavigate, contentK
           </motion.div>
         </main>
 
-        <Dialog.Portal container={root}>
+        <Dialog.Portal container={root}><ThemePortalTypography>
           <Dialog.Backdrop className="absolute inset-0 z-20 bg-[var(--color-overlay-subtle)] transition-opacity duration-200 ease-out data-[starting-style]:opacity-0 data-[ending-style]:opacity-0" />
           <Dialog.Popup
             aria-label="Settings navigation"
@@ -98,7 +99,7 @@ export function SettingsShell({ appearance, groups, active, onNavigate, contentK
           >
             {nav}
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </div>
       </Dialog.Root>
     </SettingsAppearanceProvider>

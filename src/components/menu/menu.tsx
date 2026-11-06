@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import * as React from "react";
 import { Menu as BaseMenu } from "@base-ui-components/react/menu";
 import { cn } from "@/lib/cn";
@@ -59,11 +60,11 @@ export function MenuPopup({ container, collisionAvoidance, side = "bottom", alig
   const previewContainer = React.useContext(PortalContainerContext);
   const portalContainer = container === undefined ? previewContainer ?? undefined : container;
   return (
-    <BaseMenu.Portal container={portalContainer}>
+    <BaseMenu.Portal container={portalContainer}><ThemePortalTypography>
       <BaseMenu.Positioner collisionAvoidance={collisionAvoidance} positionMethod={portalContainer ? "fixed" : "absolute"} side={side} align={align} sideOffset={sideOffset} className="z-50 outline-none">
         <BaseMenu.Popup className={cn(slots.popup(), className)}>{children}</BaseMenu.Popup>
       </BaseMenu.Positioner>
-    </BaseMenu.Portal>
+    </ThemePortalTypography></BaseMenu.Portal>
   );
 }
 

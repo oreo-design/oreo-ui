@@ -69,7 +69,7 @@ font faces and the exported `oreo-theme-scope`; `Response`, `WebSearchAnswer` an
 role, so message actions remain UI text.
 
 - Oreo: Mona Sans with `ss05` enabled (double-storey a); Fragment Mono for code.
-  Explicit legacy reference labels remain Inter in this preset.
+  The legacy label alias follows Mona Sans too, including its ss05 feature.
 - Claude: current `anthropic-sans` for UI/input, `anthropic-serif` for display and
   assistant response, `anthropic-mono` for code. This replaces the shared Inter
   interpretation; it does not use the older Styrene/Tiempos names.
@@ -92,3 +92,23 @@ and explicitly resets `ss05` for non-Oreo presets. Exported appearances include
 their font/recipe imports and establish a scope even for legacy default settings.
 
 Research and evidence: [font source record](../../../docs/references/records/2026-11-06-theme-fonts.md).
+
+### Complete font coverage
+
+Components, operational charts, templates, remix editorial text and playground
+annotation/code chrome use the shared font roles. Generic mono declarations do
+not bypass the active theme. The Neutomni template preserves its SVG wordmark,
+color and choreography while its live text follows the chosen theme.
+
+Use `ThemeScope` with `variationTokens(appearance)` for independent nested
+appearances. Compare and generated exports use this boundary. React context
+carries only font role properties into `ThemePortalTypography` inside Base UI
+portals, retaining the existing portal host, positioning, focus and dismissal.
+Without a nested scope the wrapper renders no additional element; document-level
+portals continue to inherit the site theme. This is typography propagation, not
+a general solution for nested portal color/radius scoping.
+
+Intentional fixed-font content: the email-signature preview and HTML export both
+use Arial for email compatibility; the text editor's explicit Sans/Serif/Hand/Mono
+choices describe authored document content. A font specimen's selected font and
+SVG wordmark artwork are content, not interface typography.

@@ -87,7 +87,7 @@
   color: var(--color-text-tertiary);
 }
 .edge-map-tag b {
-  font-family: monospace;
+  font-family: var(--font-mono);
   color: var(--color-text-secondary);
   font-weight: 400;
 }
@@ -280,7 +280,7 @@
 }
 .edge-spotlight-code {
   margin-left: auto;
-  font-family: monospace;
+  font-family: var(--font-mono);
   font-size: 0.625rem;
   color: var(--color-text-tertiary);
 }
