@@ -192,6 +192,7 @@ test("default Oreo exports establish their own fonts even inside another theme",
   const code = { imports: [], setup: [], jsx: "<div>Sample</div>", notes: [] };
   const text = formatCode(withAppearance(code, {dark:false,radius:8,library:"phosphor"}));
   assert.match(text, /oreo-theme-scope/);
-  assert.match(text, /@fontsource-variable\/mona-sans/);
+  assert.doesNotMatch(text, /@fontsource-variable\/mona-sans/);
+  assert.match(text, /@\/lib\/theme\/fonts\.css/);
   assert.match(text, /--font-features/);
 });

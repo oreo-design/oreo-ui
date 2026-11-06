@@ -10,7 +10,7 @@ export function withAppearance(
   if (!appearance) return code;
   const preset = appearance.variation?.preset ?? "oreo";
   const fonts = preset === "oreo"
-    ? ['import "@fontsource-variable/mona-sans";', 'import "@fontsource/fragment-mono";']
+    ? ['import "@fontsource/fragment-mono";']
     : preset === "ascii"
       ? ['import "@fontsource-variable/inter";', 'import "@fontsource-variable/source-serif-4";', 'import "@fontsource-variable/geist-mono";']
       : preset === "claude" ? ['import "@fontsource-variable/geist-mono";'] : [];
