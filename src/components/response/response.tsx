@@ -87,7 +87,7 @@ const defaultComponents: Components = {
  */
 export function Response({ children, components, className }: ResponseProps) {
   return (
-    <div className={cn("text-[14px] leading-[1.7] text-[var(--color-text-primary)]", className)}>
+    <div className={cn("font-response text-[14px] leading-[1.7] text-[var(--color-text-primary)]", className)}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={components ? { ...defaultComponents, ...components } : defaultComponents}

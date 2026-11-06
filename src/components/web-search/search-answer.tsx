@@ -38,7 +38,7 @@ export function WebSearchAnswer({ parts, play = true, speed = 65, replayKey = 0,
     if (completion.current !== replayKey) { completion.current = replayKey; callback.current?.(); }
   }, [done, replayKey]);
   let remaining = visible;
-  return <div className={cn("text-sm leading-7 text-text-secondary", className)} aria-busy={play && !done}>
+  return <div className={cn("font-response text-sm leading-7 text-text-secondary", className)} aria-busy={play && !done}>
     {parts.map((part, index) => {
       const characters = Array.from(part.text);
       const shown = Math.max(0, Math.min(remaining, characters.length));

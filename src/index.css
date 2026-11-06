@@ -1,3 +1,4 @@
+@import "./lib/theme/fonts.css";
 @import "./lib/theme/recipes.css";
 @import "tailwindcss";
 @import "./lib/surfaces.css";
@@ -9,6 +10,7 @@
 @theme {
   /* Typography roles; theme presets can change roles without changing text sizes. */
   --font-sans: "Mona Sans Variable", system-ui, sans-serif;
+  --font-sans--font-feature-settings: "ss05" 1;
   /* Legacy permission instance colors have no matching foundation role. */
   --color-composer-permission-description: #8f8f94;
   --color-composer-permission-warning: #f0400a;
@@ -299,10 +301,9 @@
 
 body {
   margin: 0;
-  /* "Inter Variable" is the family name shipped by @fontsource-variable/inter
-     (self-hosted, imported in main.tsx); plain "Inter" catches a locally
-     installed copy before we fall back to the system UI face. */
+  /* Families and OpenType features follow the active theme, including portals. */
   font-family: var(--font-sans);
+  font-feature-settings: var(--font-features, "ss05" 1);
   background: var(--color-bg-elevated);
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
@@ -403,6 +404,7 @@ body {
 
 /* Display titles and editing surfaces inherit the same roles in pages and portals.
    Secondary headings, action labels and prose retain the normal UI face. */
+@utility font-response { font-family: var(--font-response, var(--font-sans)); }
 h1 { font-family: var(--font-display, inherit); }
 input:not([type="checkbox"]):not([type="radio"]), textarea, [contenteditable="true"] {
   font-family: var(--font-input, inherit);
@@ -410,4 +412,4 @@ input:not([type="checkbox"]):not([type="radio"]), textarea, [contenteditable="tr
 
 /* Figma component instances retain explicit Inter labels alongside Mona body roles. */
 .oreo-legacy-label { font-family: var(--font-legacy); font-feature-settings: normal; }
-.oreo-composer, .oreo-context-bar { font-feature-settings: "ss05" 1; }
+.oreo-composer, .oreo-context-bar { font-feature-settings: var(--font-features, "ss05" 1); }

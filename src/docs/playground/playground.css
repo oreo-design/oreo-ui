@@ -1,10 +1,11 @@
-/* Figma 48:6 uses Mona Sans for the shell; actual components retain Inter.
+/* Shell and previews consume the active theme typography roles.
    57px header, 328px inspector and 56px watermark are layout-specific sizes.
    All colors, radii and shadows reuse Oreo's semantic tokens. */
 .pg-shell,
 .pg-modal,
 .pg-tooltip {
   font-family: var(--font-shell, "Mona Sans Variable", sans-serif);
+  font-feature-settings: var(--font-features, "ss05" 1);
   font-size: var(--text-xs);
   font-weight: 400;
   line-height: 1.45;
@@ -252,6 +253,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-sans);
+  font-feature-settings: var(--font-features, "ss05" 1);
 }
 .pg-preview > * {
   max-width: 100%;
@@ -739,6 +741,7 @@ html[data-theme-transition] .pg-spec-layer .pg-spec-badge {
   align-items: center;
   justify-content: center;
   font-family: var(--font-sans);
+  font-feature-settings: var(--font-features, "ss05" 1);
 }
 .pg-compare-tools {
   display: flex;

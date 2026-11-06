@@ -121,7 +121,7 @@ test("appearance export keeps provider and radius only when requested", async ()
     library: "lucide",
   }));
   assert.match(decorated, /IconLibraryProvider library="lucide"/);
-  assert.match(decorated, /className="theme-dark"/);
+  assert.match(decorated, /className="oreo-theme-scope theme-dark"/);
   assert.match(decorated, /"--radius-control": "12px"/);
   assert.match(decorated, /<Button \/>/);
 });
@@ -183,5 +183,15 @@ test("legacy Material share links migrate identically to site preferences", asyn
   const tokens = variationTokens(presetAppearance("ascii"));
   assert.equal(tokens["--radius-control"],"0px");
   assert.equal(tokens["--color-bg-elevated"],"#f5f4f0");
-  assert.equal(variationTokens(presetAppearance("oreo"))["--font-input"],"initial");
+  assert.equal(variationTokens(presetAppearance("oreo"))["--font-input"],variationTokens(presetAppearance("oreo"))["--font-sans"]);
+});
+
+
+test("default Oreo exports establish their own fonts even inside another theme", async () => {
+  const { withAppearance } = await import("./exportAppearance.ts");
+  const code = { imports: [], setup: [], jsx: "<div>Sample</div>", notes: [] };
+  const text = formatCode(withAppearance(code, {dark:false,radius:8,library:"phosphor"}));
+  assert.match(text, /oreo-theme-scope/);
+  assert.match(text, /@fontsource-variable\/mona-sans/);
+  assert.match(text, /--font-features/);
 });
