@@ -11,3 +11,5 @@
 有意差异：Oreo 使用已有单边框焦点反馈，不带参考的外部光晕；复用 Oreo IconButton、Tag、Shortcut 和 Menu 表面。卡种显示为文字，没有复用支付品牌图像。强度反馈只是三个条件的检查表，不是安全评分；卡号示例不提交支付请求。
 
 唯一证据与审查索引：[REVIEW.md](/Users/ziye/Documents/Project/Research/oreo-input-align-20261106-evidence/REVIEW.md)。包含真实基线、桌面/窄屏/深色截图、录屏原帧、表单与输入法验证、版本及交付状态。此路径是本机证据位置，不是公共媒体 URL。正式组件规则只维护在 `src/components/input/rules.ts`，供 docs 与 Agent 导出共用。
+
+后续修正（2026-11-06）：Playground 属性编辑器迁移到 Input 时误把字号从 12px 带到 md 的默认 14px。已在共享 PropertyControl 的文字和数字编辑器显式使用 Oreo text-xs token，保留 md 的 32px 高度；不改变基础 Input 的默认字号。前后截图、浏览器计算样式与验证继续维护在同一 REVIEW.md。
