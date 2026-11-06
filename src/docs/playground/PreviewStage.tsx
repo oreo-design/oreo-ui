@@ -128,7 +128,7 @@ export function PreviewStage({
       const style = getComputedStyle(element);
       const width = host.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
       const height = host.clientHeight - parseFloat(style.paddingTop) - parseFloat(style.paddingBottom);
-      setDeviceScale(Math.max(0.1, Math.min(1, width / 391, height / 804)));
+      setDeviceScale(Math.max(0.1, Math.min(1, width / 450, height / 920)));
     };
     const resize = new ResizeObserver(fit);
     resize.observe(host);
@@ -476,7 +476,11 @@ export function PreviewStage({
   return (
     <div ref={stage} className={`pg-stage pg-stage-${mode}`} data-device={viewport}>
       <div className="pg-device" data-device={viewport} style={{ "--device-scale": deviceScale } as CSSProperties}>
-        {viewport === "mobile" && <div className="pg-device-hardware" aria-hidden="true" />}
+        {viewport === "mobile" && (
+          <div className="pg-device-hardware" aria-hidden="true">
+            <img src="/devices/iphone-18-pro-black.png" width="1350" height="2760" alt="" draggable={false} />
+          </div>
+        )}
         <div ref={frame} className="pg-frame" data-device={viewport}>
           <div
             ref={content}
@@ -501,7 +505,7 @@ export function PreviewStage({
               {children}
             </PortalContainerContext.Provider>
           </div>
-          {mode === "preview" && (
+          {mode === "preview" && viewport !== "mobile" && (
             <p className="pg-hint">Click to try the interaction</p>
           )}
           {mode !== "preview" && geometry && (

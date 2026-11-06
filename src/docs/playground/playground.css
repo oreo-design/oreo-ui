@@ -186,32 +186,26 @@
 .pg-stage[data-device="mobile"] {
   padding-block: calc(var(--spacing) * 6);
 }
-/* Physical mockup geometry is independent of the component theme/density.
-   375px screen + two 8px bezels; a 16px minimum content safe inset.
-   Inspired by Magic UI's iPhone mockup, rendered as live DOM instead of media. */
+/* Artwork coordinates, independent of theme/density: 1350 × 2760 at 3x.
+   Screen opening: (72, 69), 1206 × 2622. See public/devices/README.md. */
 .pg-device[data-device="mobile"] {
-  --device-bezel: 8px;
-  --device-radius: 56px;
-  --device-ink: #171717;
   position: relative;
   display: block;
   flex: none;
-  width: 391px;
-  aspect-ratio: 391 / 804;
+  width: 450px;
+  height: 920px;
   zoom: var(--device-scale, 1);
-  border: var(--device-bezel) solid var(--device-ink);
-  border-radius: var(--device-radius);
-  corner-shape: superellipse(1.5);
-  background: var(--color-bg-elevated);
-  box-shadow: 0 0 0 1px var(--color-border-default), var(--shadow-panel);
 }
 .pg-device[data-device="mobile"] .pg-frame {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  left: 24px;
+  top: 23px;
+  width: 402px;
+  height: 874px;
   min-height: 0;
   padding: 64px max(16px, calc(var(--spacing) * 4)) 40px;
-  border-radius: calc(var(--device-radius) - var(--device-bezel));
-  corner-shape: superellipse(1.5);
+  border-radius: 62px;
+  background: var(--color-bg-elevated);
   justify-content: safe center;
   overflow: auto;
   overscroll-behavior: contain;
@@ -220,8 +214,13 @@
 .pg-device-hardware {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 6;
   pointer-events: none;
+}
+.pg-device-hardware img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .pg-device-portals {
   position: absolute;
@@ -235,24 +234,13 @@
 .pg-device-portals > * {
   pointer-events: auto;
 }
-.pg-device-hardware::before {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  width: 104px;
-  height: 28px;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: var(--device-ink);
-}
 .pg-device-hardware::after {
   content: "";
   position: absolute;
-  bottom: 8px;
+  bottom: 33px;
   left: 50%;
-  width: 112px;
-  height: 4px;
+  width: 134px;
+  height: 5px;
   transform: translateX(-50%);
   border-radius: 999px;
   background: var(--color-text-primary);
@@ -1175,4 +1163,15 @@ body:has(.pg-shell) .site-mobile-nav {
 }
 .pg-spec-list [data-scale="text"] .pg-spec-dot {
   background: var(--color-text-tertiary);
+}
+
+/* A simulated touch screen has one pointer, including annotation markers,
+   editable fields and in-screen portals. Desktop chrome keeps native cursors. */
+@media (any-pointer: fine) {
+  .pg-frame[data-device="mobile"],
+  .pg-frame[data-device="mobile"] *,
+  .pg-frame[data-device="mobile"] *::before,
+  .pg-frame[data-device="mobile"] *::after {
+    cursor: url("/devices/touch-cursor.png") 11 11, crosshair !important;
+  }
 }
