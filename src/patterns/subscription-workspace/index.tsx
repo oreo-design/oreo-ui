@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -697,7 +698,7 @@ export function SubscriptionWorkspacePage() {
           if (!open) setMode(null);
         }}
       >
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="subw-backdrop" />
           <Dialog.Viewport className="subw-dialog-viewport">
             <Dialog.Popup
@@ -1040,7 +1041,7 @@ export function SubscriptionWorkspacePage() {
               )}
             </Dialog.Popup>
           </Dialog.Viewport>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -406,7 +407,7 @@ export function AnalyticsAssistant() {
           </footer>
         </main>
         <Dialog.Root open={sourceOpen} onOpenChange={setSourceOpen}>
-          <Dialog.Portal>
+          <Dialog.Portal><ThemePortalTypography>
             <div className={dark ? "theme-dark" : ""}>
               <Dialog.Backdrop className="analytics-dialog-backdrop" />
               <Dialog.Popup
@@ -442,7 +443,7 @@ export function AnalyticsAssistant() {
                 <p>Sample source · No live connection</p>
               </Dialog.Popup>
             </div>
-          </Dialog.Portal>
+          </ThemePortalTypography></Dialog.Portal>
         </Dialog.Root>
       </div>
     </div>

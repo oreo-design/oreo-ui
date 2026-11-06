@@ -111,7 +111,7 @@
   flex-wrap: wrap;
 }
 .va-console-footer > span {
-  font: 0.6875rem monospace;
+  font: 0.6875rem var(--font-mono);
   color: var(--color-text-secondary);
 }
 .va-transport {

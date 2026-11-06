@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type ChangeEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -691,7 +692,7 @@ export function ConsultingWorkspacePage() {
           if (!open) setModal(null);
         }}
       >
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="cs-backdrop" />
           <Dialog.Popup
             className="cs-dialog"
@@ -1017,7 +1018,7 @@ export function ConsultingWorkspacePage() {
               )}
             </footer>
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

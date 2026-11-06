@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -596,7 +597,7 @@ export function WorkflowDirectoryPage() {
           if (!open) setDialog(null);
         }}
       >
-        <Dialog.Portal container={root}>
+        <Dialog.Portal container={root}><ThemePortalTypography>
           <Dialog.Backdrop className="wdir-backdrop" />
           <Dialog.Popup
             className="wdir-dialog"
@@ -725,7 +726,7 @@ export function WorkflowDirectoryPage() {
               </div>
             )}
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -417,7 +418,7 @@ export function ExperimentWorkspacePage() {
           if (!v) setModal(null);
         }}
       >
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="ew-backdrop" />
           <Dialog.Popup
             className="ew-dialog"
@@ -552,7 +553,7 @@ export function ExperimentWorkspacePage() {
               </form>
             )}
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

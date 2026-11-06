@@ -169,7 +169,7 @@
   min-height: 8rem;
   margin: calc(var(--spacing) * 2) 0;
   background: var(--color-bg-base);
-  font: 0.75rem/1.5 monospace;
+  font: 0.75rem/1.5 var(--font-mono);
 }
 .bg-section {
   padding: 0 0 calc(var(--spacing) * 14);
@@ -178,7 +178,7 @@
   scroll-margin-top: 3rem;
 }
 .bg-eyebrow {
-  font: 0.625rem/1.6 monospace;
+  font: 0.625rem/1.6 var(--font-mono);
   letter-spacing: 0.08em;
   color: var(--color-text-tertiary);
   margin-bottom: calc(var(--spacing) * 4);
@@ -209,7 +209,7 @@
   min-height: 11rem;
 }
 .bg-rules article > span {
-  font: 0.625rem monospace;
+  font: 0.625rem var(--font-mono);
   color: var(--color-text-tertiary);
 }
 .bg-rules h3 {
@@ -290,7 +290,7 @@
   align-self: end;
 }
 .bg-logo-stage small {
-  font: 0.625rem monospace;
+  font: 0.625rem var(--font-mono);
   opacity: 0.65;
 }
 .bg-pair {
@@ -511,7 +511,7 @@
 }
 .bg-email-help li:before {
   content: counter(step);
-  font-family: monospace;
+  font-family: var(--font-mono);
   color: var(--color-text-tertiary);
 }
 .bg-downloads article {

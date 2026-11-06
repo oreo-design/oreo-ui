@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -367,7 +368,7 @@ export function GroupedTasksPage() {
           if (!value) setDraft(null);
         }}
       >
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="gt-backdrop" />
           <Dialog.Popup
             className="gt-dialog"
@@ -548,7 +549,7 @@ export function GroupedTasksPage() {
               </form>
             )}
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

@@ -24,7 +24,7 @@
 .cut-reveal__seam { position: absolute; inset-inline: 0; top: 60%; height: 1px; animation: cut-seam calc(var(--cut-second) * .1) linear calc(var(--cut-second) * 3.55) both; }
 .cut-reveal__dashes { position: absolute; inset: 0; border-top: 1px dashed currentColor; opacity: .65; }
 .cut-reveal__cut { height: 1px; background: currentColor; transform-origin: left; animation: cut-line calc(var(--cut-second) * 3) var(--cut-in-out-quad) calc(var(--cut-second) * .4) both; }
-.cut-reveal__counter, .cut-reveal__instruction { position: absolute; bottom: .8cqw; font-family: monospace; font-size: clamp(7px, .9cqw, 12px); text-transform: uppercase; }
+.cut-reveal__counter, .cut-reveal__instruction { position: absolute; bottom: .8cqw; font-family: var(--font-mono); font-size: clamp(7px, .9cqw, 12px); text-transform: uppercase; }
 .cut-reveal__counter { left: 1.5%; display: flex; font-variant-numeric: tabular-nums; }
 .cut-reveal__digit-window { display: block; height: 1em; width: .7em; line-height: 1; overflow: hidden; }
 .cut-reveal__digit-strip { display: block; animation: cut-count calc(var(--cut-second) * 3) var(--cut-in-out-cubic) both; }

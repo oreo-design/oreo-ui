@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -420,7 +421,7 @@ export function ProjectBoardPage() {
           if (!value) setMode(null);
         }}
       >
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="pbw-backdrop" />
           <Dialog.Popup
             className="pbw-dialog"
@@ -687,7 +688,7 @@ export function ProjectBoardPage() {
               </footer>
             </form>
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

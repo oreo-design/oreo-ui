@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useState, useRef } from "react";
 import { Tabs } from "@base-ui-components/react/tabs";
@@ -553,7 +554,7 @@ export function EdgeObservatory() {
           if (!open) setDetail(null);
         }}
       >
-        <Dialog.Portal>
+        <Dialog.Portal><ThemePortalTypography>
           <div className={dark ? "theme-dark" : ""}>
             <Dialog.Backdrop className="fixed inset-0 z-40 bg-black/50" />
             <Dialog.Popup className="edge-deployment-dialog">
@@ -617,10 +618,10 @@ export function EdgeObservatory() {
               )}
             </Dialog.Popup>
           </div>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
       <Dialog.Root open={routingOpen} onOpenChange={setRoutingOpen}>
-        <Dialog.Portal>
+        <Dialog.Portal><ThemePortalTypography>
           <div className={dark ? "theme-dark" : ""}>
             <Dialog.Backdrop className="fixed inset-0 z-40 bg-black/50" />
             <Dialog.Popup
@@ -712,7 +713,7 @@ export function EdgeObservatory() {
               </footer>
             </Dialog.Popup>
           </div>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

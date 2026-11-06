@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -456,7 +457,7 @@ export function WritingFoldersPage() {
           if (!v) setEditor(null);
         }}
       >
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="wf-backdrop" />
           <Dialog.Popup
             className="wf-dialog"
@@ -617,7 +618,7 @@ export function WritingFoldersPage() {
               </footer>
             </form>
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

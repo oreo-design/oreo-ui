@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -513,7 +514,7 @@ export function ModelCostsPage() {
           if (!v) setModal(null);
         }}
       >
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="mc-backdrop" />
           <Dialog.Popup
             className="mc-dialog"
@@ -648,7 +649,7 @@ export function ModelCostsPage() {
               )}
             </footer>
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useRef, useState, type ReactNode } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -50,7 +51,7 @@ export function SubscriptionDialog({ open, defaultOpen = false, onOpenChange, tr
     onOpenChange?.(next);
   }}>
     <Dialog.Trigger render={<Button size="lg" tapScale={1} />}>{triggerLabel}</Dialog.Trigger>
-    <Dialog.Portal><div className={dark ? "theme-dark" : undefined}>
+    <Dialog.Portal><ThemePortalTypography><div className={dark ? "theme-dark" : undefined}>
       <Dialog.Backdrop className="oreo-subscription-backdrop fixed inset-0 z-50 bg-overlay-subtle" data-instant={instant || undefined} />
       <Dialog.Viewport className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-4 sm:p-8">
         <Dialog.Popup initialFocus={titleRef} className="oreo-subscription-dialog relative max-h-full w-full max-w-3xl overflow-y-auto overscroll-contain rounded-card-medium border border-border-subtle bg-bg-base p-5 text-text-primary shadow-[var(--shadow-overlay)] outline-none sm:p-8" data-instant={instant || undefined}>
@@ -62,6 +63,6 @@ export function SubscriptionDialog({ open, defaultOpen = false, onOpenChange, tr
           <div className="mx-auto mt-6 max-w-md text-center"><Button size="lg" tapScale={1} className="w-full" onClick={onContinue} disabled={pending || products.length === 0} aria-busy={pending}>{pending ? "Getting things ready…" : error ? "Try again" : actionLabel}</Button><div role="status" className="sr-only">{pending ? "Getting things ready" : ""}</div>{error && <p role="alert" className="mt-3 text-sm leading-5 text-status-error">{error}</p>}<p className="mt-3 text-xs leading-5 text-text-tertiary">{finePrint}</p></div>
         </Dialog.Popup>
       </Dialog.Viewport>
-    </div></Dialog.Portal>
+    </div></ThemePortalTypography></Dialog.Portal>
   </Dialog.Root>;
 }

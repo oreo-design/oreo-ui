@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -277,7 +278,7 @@ export function FinanceOverviewPage() {
           if (!open) setSelection(null);
         }}
       >
-        <Dialog.Portal container={root}>
+        <Dialog.Portal container={root}><ThemePortalTypography>
           <Dialog.Backdrop className="fo-backdrop" />
           <Dialog.Popup
             className="fo-dialog"
@@ -458,7 +459,7 @@ export function FinanceOverviewPage() {
               )}
             </footer>
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

@@ -18,8 +18,7 @@
 }
 .ao-meter-number {
   font:
-    12px ui-monospace,
-    monospace;
+    12px var(--font-mono);
   color: var(--color-text-primary);
   min-width: 48px;
 }
@@ -34,8 +33,7 @@
 }
 .ao-axis {
   font:
-    10px ui-monospace,
-    monospace;
+    10px var(--font-mono);
   fill: var(--color-text-tertiary);
 }
 .ao-axis line {
@@ -53,8 +51,7 @@
   gap: calc(var(--spacing) * 3);
   margin-top: calc(var(--spacing) * 2);
   font:
-    12px ui-monospace,
-    monospace;
+    12px var(--font-mono);
 }
 .ao-chart-inspector select {
   padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
@@ -89,7 +86,7 @@
 }
 .ao-data td {
   text-align: right;
-  font-family: monospace;
+  font-family: var(--font-mono);
 }
 .ao-chart-skeleton {
   height: 280px;
@@ -164,8 +161,7 @@
   background: var(--color-bg-base);
   color: var(--color-text-secondary);
   font:
-    11px ui-monospace,
-    monospace;
+    11px var(--font-mono);
   cursor: pointer;
   min-width: 0;
 }
@@ -238,8 +234,7 @@
   display: block;
   margin-top: calc(var(--spacing) * 1);
   font:
-    10px ui-monospace,
-    monospace;
+    10px var(--font-mono);
   color: var(--color-text-tertiary);
 }
 .ao-agent-name {

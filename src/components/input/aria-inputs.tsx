@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import {
   DateField,
   DateInput as AriaDateInput,
@@ -190,19 +191,21 @@ export function InputSelect({
         UNSTABLE_portalContainer={container ?? undefined}
         className={cn(styles.popup(), "oreo-input-select-popover")}
       >
-        <ListBox items={options} className="outline-none">
-          {(option) => (
-            <ListBoxItem
-              id={option.value}
-              textValue={option.label}
-              aria-label={option.label}
-              className={cn(styles.item(), "oreo-input-select-item")}
-            >
-              <span className="flex-1">{option.label}</span>
-              {value === option.value && <Icon name="check" size="sm" />}
-            </ListBoxItem>
-          )}
-        </ListBox>
+        <ThemePortalTypography>
+          <ListBox items={options} className="outline-none">
+            {(option) => (
+              <ListBoxItem
+                id={option.value}
+                textValue={option.label}
+                aria-label={option.label}
+                className={cn(styles.item(), "oreo-input-select-item")}
+              >
+                <span className="flex-1">{option.label}</span>
+                {value === option.value && <Icon name="check" size="sm" />}
+              </ListBoxItem>
+            )}
+          </ListBox>
+        </ThemePortalTypography>
       </Popover>
     </Select>
   );

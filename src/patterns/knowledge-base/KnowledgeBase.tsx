@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Button, IconButton } from "@/components/button";
@@ -292,7 +293,7 @@ export function KnowledgeBase({
           if (!open) setPreview(null);
         }}
       >
-        <Dialog.Portal>
+        <Dialog.Portal><ThemePortalTypography>
           <Dialog.Backdrop className="fixed inset-0 z-50 bg-overlay-subtle" />
           <Dialog.Viewport className="fixed inset-0 z-50 flex items-center justify-center p-4">
             <Dialog.Popup className="w-full max-w-lg rounded-card-medium border border-border-subtle bg-bg-base p-6 text-text-primary shadow-xl outline-none">
@@ -335,7 +336,7 @@ export function KnowledgeBase({
               </p>
             </Dialog.Popup>
           </Dialog.Viewport>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

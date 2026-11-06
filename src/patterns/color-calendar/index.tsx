@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -384,7 +385,7 @@ export function ColorCalendarPage() {
             if (!open) close();
           }}
         >
-          <Dialog.Portal container={root}>
+          <Dialog.Portal container={root}><ThemePortalTypography>
             <Dialog.Backdrop className="cl-backdrop" />
             <Dialog.Popup
               className="cl-dialog"
@@ -636,7 +637,7 @@ export function ColorCalendarPage() {
                 </>
               )}
             </Dialog.Popup>
-          </Dialog.Portal>
+          </ThemePortalTypography></Dialog.Portal>
         </Dialog.Root>
       </div>
     </div>

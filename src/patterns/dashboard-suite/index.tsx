@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { formatCurrency } from "@/components/currency-finance/model";
 import { useEffect, useRef, useState, type FormEvent } from "react";
@@ -767,7 +768,7 @@ function DashboardWorkspace({ kind }: { kind: DashboardKind }) {
           if (!v) setSelection(null);
         }}
       >
-        <Dialog.Portal container={root}>
+        <Dialog.Portal container={root}><ThemePortalTypography>
           <Dialog.Backdrop className="ds-backdrop" />
           <Dialog.Popup
             className="ds-dialog"
@@ -905,7 +906,7 @@ function DashboardWorkspace({ kind }: { kind: DashboardKind }) {
               )}
             </footer>
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

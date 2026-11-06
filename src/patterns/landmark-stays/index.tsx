@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -451,7 +452,7 @@ export function LandmarkStaysPage() {
             if (!open) setDetails(null);
           }}
         >
-          <Dialog.Portal container={root}>
+          <Dialog.Portal container={root}><ThemePortalTypography>
             <Dialog.Backdrop className="ls-backdrop" />
             <Dialog.Popup
               className="ls-dialog"
@@ -520,7 +521,7 @@ export function LandmarkStaysPage() {
                 </>
               )}
             </Dialog.Popup>
-          </Dialog.Portal>
+          </ThemePortalTypography></Dialog.Portal>
         </Dialog.Root>
       </div>
     </div>

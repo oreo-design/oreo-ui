@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -419,7 +420,7 @@ export function CompanyDirectoryPage() {
         </main>
       </div>
       <Dialog.Root open={opened} onOpenChange={setOpened}>
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="cdir-backdrop" />
           <Dialog.Popup
             className="cdir-dialog"
@@ -560,7 +561,7 @@ export function CompanyDirectoryPage() {
               </footer>
             </form>
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

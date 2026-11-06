@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useReducer, useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -476,7 +477,7 @@ export function EngineeringHandoffPage() {
         </div>
       </div>
       <Dialog.Root open={opened} onOpenChange={setOpened}>
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="eh-backdrop" />
           <Dialog.Popup
             className="eh-dialog"
@@ -553,7 +554,7 @@ export function EngineeringHandoffPage() {
               )}
             </footer>
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

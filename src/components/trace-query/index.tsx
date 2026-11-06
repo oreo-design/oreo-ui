@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useId, useRef, useState } from "react";
 import { Popover } from "@base-ui-components/react/popover";
 import { Button, IconButton } from "@/components/button";
@@ -85,7 +86,7 @@ function FilterEditor({
             <span>Filter traces…</span>
           )}
         </Popover.Trigger>
-        <Popover.Portal container={host.current}>
+        <Popover.Portal container={host.current}><ThemePortalTypography>
           <Popover.Positioner
             sideOffset={6}
             align="start"
@@ -248,7 +249,7 @@ function FilterEditor({
               )}
             </Popover.Popup>
           </Popover.Positioner>
-        </Popover.Portal>
+        </ThemePortalTypography></Popover.Portal>
       </Popover.Root>
     </div>
   );

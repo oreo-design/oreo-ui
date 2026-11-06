@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -583,7 +584,7 @@ export function CallbackWorkspace() {
             if (!o) setDraft(null);
           }}
         >
-          <Dialog.Portal>
+          <Dialog.Portal><ThemePortalTypography>
             <Dialog.Backdrop className="cb-backdrop" />
             <Dialog.Popup
               className={`cb-dialog ${dark ? "theme-dark" : ""}`}
@@ -803,7 +804,7 @@ export function CallbackWorkspace() {
                 </form>
               )}
             </Dialog.Popup>
-          </Dialog.Portal>
+          </ThemePortalTypography></Dialog.Portal>
         </Dialog.Root>
       </div>
     </div>

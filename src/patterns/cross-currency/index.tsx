@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useEffect, useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -434,7 +435,7 @@ export function CrossCurrencyPage() {
             if (!v) close();
           }}
         >
-          <Dialog.Portal container={root}>
+          <Dialog.Portal container={root}><ThemePortalTypography>
             <Dialog.Backdrop className="cc-backdrop" />
             <Dialog.Popup
               className="cc-dialog"
@@ -691,7 +692,7 @@ export function CrossCurrencyPage() {
                 </>
               )}
             </Dialog.Popup>
-          </Dialog.Portal>
+          </ThemePortalTypography></Dialog.Portal>
         </Dialog.Root>
       </div>
     </div>

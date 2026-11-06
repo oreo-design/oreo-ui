@@ -147,7 +147,7 @@
   border-radius: var(--radius-control);
 }
 .qz-secret input {
-  font-family: monospace;
+  font-family: var(--font-mono);
   min-width: 0;
   width: 100%;
   font-size: 14px;

@@ -10,7 +10,7 @@ const claudeSerif = '"anthropic-serif", Georgia, "Times New Roman", "Songti SC",
 const gptSans = '-apple-system-body, ui-sans-serif, -apple-system, system-ui, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"';
 const gptMono = 'ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace';
 export const themeTypography = {
-  oreo: { sans: mona, legacy: inter, mono: '"Fragment Mono", ui-monospace, monospace', display: mona, input: mona, response: mona, features: '\"ss05\" 1' },
+  oreo: { sans: mona, legacy: mona, mono: '"Fragment Mono", ui-monospace, monospace', display: mona, input: mona, response: mona, features: '\"ss05\" 1' },
   claude: { sans: claudeSans, legacy: claudeSans, mono: '"anthropic-mono", ' + geist, display: claudeSerif, input: claudeSans, response: claudeSerif, features: 'normal' },
   openai: { sans: gptSans, legacy: gptSans, mono: gptMono, display: gptSans, input: gptSans, response: gptSans, features: 'normal' },
   ascii: { sans: inter, legacy: inter, mono: geist, display: serif, input: geist, response: inter, features: 'normal' },

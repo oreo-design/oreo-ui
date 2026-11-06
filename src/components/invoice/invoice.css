@@ -81,7 +81,7 @@
   font-weight: 400;
 }
 .invoice-id-link {
-  font-family: ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--color-text-tertiary);
   cursor: pointer;

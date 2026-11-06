@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -376,7 +377,7 @@ export function AgentObservatoryPage() {
           if (!v) setDetail(null);
         }}
       >
-        <Dialog.Portal container={root}>
+        <Dialog.Portal container={root}><ThemePortalTypography>
           <Dialog.Backdrop className="ao-backdrop" />
           <Dialog.Popup
             className="ao-dialog"
@@ -433,7 +434,7 @@ export function AgentObservatoryPage() {
               </>
             )}
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

@@ -9,7 +9,7 @@
 .hub-workspace { display:flex; align-items:center; gap:calc(var(--spacing) * 2); padding:0 var(--spacing); font-size:.75rem; color:var(--color-text-secondary); }
 .hub-workspace-avatar { display:grid; place-items:center; width:1.5rem; height:1.5rem; background:var(--color-bg-inverse); color:var(--color-text-on-inverse); border-radius:var(--radius-control-tiny); font-size:.625rem; }
 .hub-workspace-label { font-size:.625rem; margin-left:auto; color:var(--color-text-tertiary); }
-.hub-nav-label { display:flex; align-items:center; gap:calc(var(--spacing) * 2); margin:calc(var(--spacing) * 8) calc(var(--spacing) * 2) calc(var(--spacing) * 3); font-family:monospace; font-size:.625rem; letter-spacing:.08em; text-transform:uppercase; color:var(--color-text-tertiary); }
+.hub-nav-label { display:flex; align-items:center; gap:calc(var(--spacing) * 2); margin:calc(var(--spacing) * 8) calc(var(--spacing) * 2) calc(var(--spacing) * 3); font-family:var(--font-mono); font-size:.625rem; letter-spacing:.08em; text-transform:uppercase; color:var(--color-text-tertiary); }
 .hub-nav-label i { width:.25rem; height:.25rem; background:var(--hub-accent); }
 .hub-sidebar nav { display:grid; gap:var(--spacing); }
 .hub-sidebar nav button { display:flex; align-items:center; gap:calc(var(--spacing) * 2.5); padding:calc(var(--spacing) * 2.5) calc(var(--spacing) * 3); width:100%; border-radius:var(--radius-control-tiny); font-size:.8125rem; text-align:left; color:var(--color-text-secondary); cursor:pointer; }
@@ -24,7 +24,7 @@
 .hub-section-heading h2 { font-size:.9375rem; font-weight:500; letter-spacing:-.015em; }
 .hub-section-heading p { margin-top:calc(var(--spacing) * 1.5); color:var(--color-text-secondary); font-size:.75rem; }
 .hub-integration-group+.hub-integration-group { margin-top:calc(var(--spacing) * 6); }
-.hub-integration-group>h3 { margin-bottom:calc(var(--spacing) * 2); color:var(--color-text-tertiary); font-family:monospace; font-size:.625rem; text-transform:uppercase; letter-spacing:.06em; }
+.hub-integration-group>h3 { margin-bottom:calc(var(--spacing) * 2); color:var(--color-text-tertiary); font-family:var(--font-mono); font-size:.625rem; text-transform:uppercase; letter-spacing:.06em; }
 .hub-integration-group>h3 span { margin-left:calc(var(--spacing) * 2); font-variant-numeric:tabular-nums; }
 .hub-integration-grid,.hub-agent-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:calc(var(--spacing) * 3); }
 .hub-agent-card { display:flex; flex-direction:column; min-width:0; padding:calc(var(--spacing) * 5); border:1px solid var(--color-border-subtle); border-radius:var(--radius-card-small); text-align:left; background:var(--color-bg-elevated); cursor:pointer; }

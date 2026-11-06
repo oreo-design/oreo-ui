@@ -497,8 +497,7 @@
   transform: translateX(-50%);
   white-space: nowrap;
   font:
-    11px "Geist Mono Variable",
-    monospace;
+    11px var(--font-mono);
   color: var(--color-text-secondary);
 }
 .pg-marker {
@@ -653,7 +652,7 @@
   border-radius: calc(var(--badge-height) / 2);
   background: var(--color-bg-base);
   box-shadow: 0 0 0 0.5px var(--color-border-default), 0 1px 3px #0000001f;
-  font: 600 11px/1 "Geist Mono Variable", ui-monospace, monospace;
+  font: 600 11px/1 var(--font-mono);
   font-variant-numeric: tabular-nums;
   text-align: center;
   white-space: nowrap;
@@ -843,8 +842,7 @@ html[data-theme-transition] .pg-spec-layer .pg-spec-badge {
   min-height: calc(var(--spacing) * 65);
   resize: vertical;
   font:
-    11px/1.65 "Geist Mono Variable",
-    monospace;
+    11px/1.65 var(--font-mono);
 }
 .pg-picker {
   width: min(calc(var(--spacing) * 140), 100%);
@@ -1029,8 +1027,7 @@ body:has(.pg-shell) .site-mobile-nav {
 }
 .pg-prompt-preview :is(code, pre) {
   font:
-    11px/1.65 "Geist Mono Variable",
-    monospace;
+    11px/1.65 var(--font-mono);
 }
 .pg-prompt-preview pre {
   max-height: calc(var(--spacing) * 36);

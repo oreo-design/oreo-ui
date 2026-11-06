@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -502,7 +503,7 @@ export function TraceExplorerPage() {
           if (!value) setModal(null);
         }}
       >
-        <Dialog.Portal container={root.current}>
+        <Dialog.Portal container={root.current}><ThemePortalTypography>
           <Dialog.Backdrop className="te-backdrop" />
           <Dialog.Popup
             className={`te-dialog ${modal === "save" ? "te-dialog-small" : ""}`}
@@ -698,7 +699,7 @@ export function TraceExplorerPage() {
               ) : null}
             </div>
           </Dialog.Popup>
-        </Dialog.Portal>
+        </ThemePortalTypography></Dialog.Portal>
       </Dialog.Root>
     </div>
   );

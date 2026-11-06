@@ -17,7 +17,7 @@
 }
 .oreo-type-scale-row small {
   display: block;
-  font: 0.625rem/1.8 monospace;
+  font: 0.625rem/1.8 var(--font-mono);
   color: var(--color-text-tertiary);
 }
 .oreo-type-scale-row p {

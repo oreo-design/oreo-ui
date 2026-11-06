@@ -76,8 +76,7 @@
 }
 .ao-nav-label {
   font:
-    10px ui-monospace,
-    monospace;
+    10px var(--font-mono);
   letter-spacing: 0.08em;
   color: var(--color-text-tertiary);
   margin: calc(var(--spacing) * 7) calc(var(--spacing) * 2) calc(var(--spacing) * 3);
@@ -129,7 +128,7 @@
 .ao-budget p {
   margin: calc(var(--spacing) * 2) 0;
   color: var(--color-text-secondary);
-  font-family: monospace;
+  font-family: var(--font-mono);
 }
 .ao-budget small {
   color: var(--color-text-tertiary);
@@ -163,8 +162,7 @@
 }
 .ao-sample-label {
   font:
-    10px ui-monospace,
-    monospace;
+    10px var(--font-mono);
   color: var(--color-text-tertiary);
 }
 .ao-main {
@@ -181,8 +179,7 @@
 }
 .ao-eyebrow {
   font:
-    10px ui-monospace,
-    monospace;
+    10px var(--font-mono);
   letter-spacing: 0.12em;
   color: var(--color-status-success);
   margin: 0 0 calc(var(--spacing) * 3);
@@ -218,8 +215,7 @@
   margin-bottom: calc(var(--spacing) * 4);
   color: var(--color-text-secondary);
   font:
-    11px ui-monospace,
-    monospace;
+    11px var(--font-mono);
 }
 .ao-context label {
   display: flex;
@@ -237,7 +233,7 @@
   background: var(--color-bg-base);
 }
 .ao-metrics .workspace-metric strong {
-  font-family: ui-monospace, monospace;
+  font-family: var(--font-mono);
   font-size: 24px;
   font-weight: 500;
   letter-spacing: -0.04em;
@@ -274,7 +270,7 @@
 .ao-panel-heading h2 span {
   display: inline-block;
   margin-left: calc(var(--spacing) * 1.5);
-  font: 11px monospace;
+  font: 11px var(--font-mono);
   color: var(--color-text-tertiary);
 }
 .ao-panel-heading p {
@@ -337,8 +333,7 @@
   gap: calc(var(--spacing) * 5);
   justify-content: space-between;
   font:
-    10px ui-monospace,
-    monospace;
+    10px var(--font-mono);
   color: var(--color-text-tertiary);
 }
 .ao-backdrop {

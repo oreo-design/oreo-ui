@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import type { ButtonHTMLAttributes, ComponentProps, ReactNode } from "react";
 import { Tooltip } from "@base-ui-components/react/tooltip";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -29,7 +30,7 @@ export function Tool({
           </button>
         }
       />
-      <Tooltip.Portal>
+      <Tooltip.Portal><ThemePortalTypography>
         <Tooltip.Positioner
           className="pg-tooltip-positioner"
           side="bottom"
@@ -39,7 +40,7 @@ export function Tool({
             {label}
           </Tooltip.Popup>
         </Tooltip.Positioner>
-      </Tooltip.Portal>
+      </ThemePortalTypography></Tooltip.Portal>
     </Tooltip.Root>
   );
 }
@@ -67,7 +68,7 @@ export function Modal({
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       {trigger}
-      <Dialog.Portal>
+      <Dialog.Portal><ThemePortalTypography>
         <Dialog.Backdrop className="pg-backdrop" />
         <Dialog.Viewport className="pg-modal-viewport">
           <Dialog.Popup id={id} finalFocus={finalFocus} className={`pg-modal oreo-paper-card oreo-squircle ${className}`}>
@@ -85,7 +86,7 @@ export function Modal({
             {children}
           </Dialog.Popup>
         </Dialog.Viewport>
-      </Dialog.Portal>
+      </ThemePortalTypography></Dialog.Portal>
     </Dialog.Root>
   );
 }

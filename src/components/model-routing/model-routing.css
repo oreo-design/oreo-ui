@@ -62,7 +62,7 @@
   font-size: 10px;
   letter-spacing: 0.06em;
   fill: var(--color-text-tertiary);
-  font-family: monospace;
+  font-family: var(--font-mono);
 }
 .routing-line {
   color: var(--route-color);
@@ -128,7 +128,7 @@
 }
 .routing-endpoints small {
   color: var(--color-text-tertiary);
-  font: 0.625rem monospace;
+  font: 0.625rem var(--font-mono);
   white-space: nowrap;
 }
 .route-table-scroll {
@@ -159,7 +159,7 @@
   padding-right: 0;
 }
 .route-metrics thead th {
-  font: 0.625rem monospace;
+  font: 0.625rem var(--font-mono);
   text-transform: uppercase;
   color: var(--color-text-tertiary);
   padding-top: calc(var(--spacing) * 1);
@@ -188,7 +188,7 @@
 .route-metrics th small {
   display: inline-block;
   margin-left: calc(var(--spacing) * 2);
-  font: 0.5625rem monospace;
+  font: 0.5625rem var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 0.025em;
   color: var(--color-text-tertiary);
@@ -297,7 +297,7 @@
   position: absolute;
   left: 0.25rem;
   top: calc(50% - 1.5rem);
-  font: 0.5625rem monospace;
+  font: 0.5625rem var(--font-mono);
   letter-spacing: 0.04em;
   color: var(--color-text-tertiary);
 }

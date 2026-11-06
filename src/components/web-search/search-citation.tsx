@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useId, useState } from "react";
 import { PreviewCard } from "@base-ui-components/react/preview-card";
 import { cn } from "@/lib/cn";
@@ -19,7 +20,7 @@ export function WebSearchCitation({ source, index, className }: WebSearchCitatio
         <WebSearchFavicon source={source} small /><span className="max-w-32 truncate">{source.name ?? sourceHost(source.url)}</span>
         {index != null && <span className="text-text-tertiary tabular-nums">{index}</span>}
       </PreviewCard.Trigger>
-      <PreviewCard.Portal container={host}>
+      <PreviewCard.Portal container={host}><ThemePortalTypography>
         <PreviewCard.Positioner side="top" sideOffset={8} positionMethod="fixed" className="z-50">
           <PreviewCard.Popup id={id} className="oreo-search-preview whitespace-normal break-words w-72 max-w-[calc(100vw-2rem)] rounded-card-medium bg-bg-surface p-3 text-left text-text-primary shadow-[var(--shadow-overlay)]">
             <span className="flex items-center gap-1.5 text-xs text-text-secondary"><WebSearchFavicon source={source} /><span className="truncate">{sourceHost(source.url)}</span></span>
@@ -27,7 +28,7 @@ export function WebSearchCitation({ source, index, className }: WebSearchCitatio
             {source.snippet && <span className="mt-1 block text-xs leading-5 text-text-secondary">{source.snippet}</span>}
           </PreviewCard.Popup>
         </PreviewCard.Positioner>
-      </PreviewCard.Portal>
+      </ThemePortalTypography></PreviewCard.Portal>
     </PreviewCard.Root>
   </span>;
 }

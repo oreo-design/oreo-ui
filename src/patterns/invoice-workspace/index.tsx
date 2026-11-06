@@ -1,3 +1,4 @@
+import { ThemePortalTypography } from "@/lib/theme/ThemeScope";
 import { useThemeMode } from "@/lib/theme/useThemeMode";
 import { useRef, useState, type FormEvent } from "react";
 import { Dialog } from "@base-ui-components/react/dialog";
@@ -590,7 +591,7 @@ export function InvoiceWorkspace() {
           · No invoices or payments are sent
         </p>
         <Dialog.Root open={open} onOpenChange={setOpen}>
-          <Dialog.Portal>
+          <Dialog.Portal><ThemePortalTypography>
             <div className={dark ? "theme-dark" : ""}>
               <Dialog.Backdrop className="invoice-dialog-backdrop" />
               <Dialog.Popup
@@ -770,7 +771,7 @@ export function InvoiceWorkspace() {
                 )}
               </Dialog.Popup>
             </div>
-          </Dialog.Portal>
+          </ThemePortalTypography></Dialog.Portal>
         </Dialog.Root>
       </div>
     </div>
