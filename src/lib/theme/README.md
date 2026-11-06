@@ -65,8 +65,8 @@ surface CSS, just as the component requires its existing base tokens/utilities.
 `typography.ts` owns UI/shell, display, input, assistant-response, legacy-label,
 mono and OpenType-feature roles. `variationTokens` resolves all roles explicitly
 at root and nested preview/Compare/export boundaries. `fonts.css` supplies Claude
-font faces and the exported `oreo-theme-scope`; `MessageContent` uses the response
-role only for assistant turns, so message actions remain UI text.
+font faces and the exported `oreo-theme-scope`; `Response`, `WebSearchAnswer` and assistant `MessageContent` use the response
+role, so message actions remain UI text.
 
 - Oreo: Mona Sans with `ss05` enabled (double-storey a); Fragment Mono for code.
   Explicit legacy reference labels remain Inter in this preset.

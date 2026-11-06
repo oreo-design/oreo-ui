@@ -16,7 +16,7 @@ Chinese uses the platform fallback; Latin font confirmation does not prove every
 script. Font assets remain vendor-hosted, not bundled or relicensed by Oreo.
 
 Canonical implementation: src/lib/theme/typography.ts and fonts.css, consumed by
-variationTokens, root provider, previews, exports and assistant Message content.
+variationTokens, root provider, previews, exports, assistant Message content, Response and WebSearchAnswer.
 ASCII keeps its existing role choices. Existing explicit artistic specimens remain
 exceptions; this task does not rewrite their compositions or change font sizes.
 
