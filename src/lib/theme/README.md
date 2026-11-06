@@ -68,7 +68,7 @@ at root and nested preview/Compare/export boundaries. `fonts.css` supplies Claud
 font faces and the exported `oreo-theme-scope`; `Response`, `WebSearchAnswer` and assistant `MessageContent` use the response
 role, so message actions remain UI text.
 
-- Oreo: Mona Sans with `ss05` enabled (double-storey a); Fragment Mono for code.
+- Oreo: official bundled Mona Sans v2.0.27 with `ss05` enabled (double-storey a); Fragment Mono for code. The previous Fontsource subset omitted this feature; fonts.css now owns the full face, including copied exports.
   The legacy label alias follows Mona Sans too, including its ss05 feature.
 - Claude: current `anthropic-sans` for UI/input, `anthropic-serif` for display and
   assistant response, `anthropic-mono` for code. This replaces the shared Inter

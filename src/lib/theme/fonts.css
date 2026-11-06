@@ -1,3 +1,13 @@
+/* Full official Mona Sans preserves ss05; the Google/Fontsource subset omits it.
+ * Source and OFL license: assets/README.md and assets/MonaSans-OFL.txt. */
+@font-face {
+  font-family: "Mona Sans Variable";
+  src: url("./assets/mona-sans-v2.0.27.woff2") format("woff2");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Claude's public, versioned font endpoints, observed 2026-11-06.
  * Vendor assets are externally hosted; they are not bundled or relicensed.
  * Keep fallback families usable when offline. Source/coverage: theme README. */

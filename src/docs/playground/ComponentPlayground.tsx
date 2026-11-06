@@ -36,7 +36,6 @@ import {
   type Configuration,
   type Preset,
 } from "./configuration";
-import "@fontsource-variable/mona-sans";
 import "@fontsource-variable/geist-mono";
 import "./playground.css";
 
