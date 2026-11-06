@@ -112,3 +112,5 @@ Intentional fixed-font content: the email-signature preview and HTML export both
 use Arial for email compatibility; the text editor's explicit Sans/Serif/Hand/Mono
 choices describe authored document content. A font specimen's selected font and
 SVG wordmark artwork are content, not interface typography.
+
+The same portal typography boundary is used inside the React Aria InputSelect popover, so nested appearance exports retain their fonts there too.

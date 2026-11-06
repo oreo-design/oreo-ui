@@ -38,3 +38,5 @@ portal boundary; all existing Base UI portals use the shared wrapper. Existing
 Base UI behavior and portal containers are retained. Compare and exported snippets
 use ThemeScope. Root and nested behavior, font-family/ss05, responsive screenshots
 and failure/recovery evidence live in the same local REVIEW linked above.
+
+The final upstream refresh also added InputSelect (React Aria). Its Popover now uses the same ThemePortalTypography boundary; selection and Escape plus all four font presets were verified in a real-component fixture. The final source audit covers 159 CSS font declarations, 50 Base UI portal entries and one React Aria popover.
