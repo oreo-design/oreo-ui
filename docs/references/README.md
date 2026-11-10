@@ -34,6 +34,7 @@
 
 | 日期 | 参考 | 重点 |
 | --- | --- | --- |
+| 2026-11-09 | [Inspector：拖框直接看 spec](records/2026-11-09-marquee-inspector.md) | Preview 里从空白处拖框，框内实时显示尺寸、圆角、padding 与 gap，松手淡出；不用切到 Annotation。 |
 | 2026-11-05 | [Spacing redlines：标注随主题与配置一起动](records/2026-11-05-spec-redlines.md) | Annotation 在画布上画间距红线；切换主题/属性时组件形变，数字逐帧计数，蓝/红表示是否落在 `--spacing` 刻度。 |
 | 2026-10-21 | [Animate UI：全站主题过渡](records/2026-10-21-animate-ui-theme-transition.md) | 已按反馈改为真实属性过渡，覆盖侧栏、预览和弹层；连续切换与减少动态效果。 |
 | 2026-10-14 | [Fluid Functionalism：可分享配置与 AI 接入上下文](records/2026-10-14-fluid-playground.md) | 把 Playground 的当前状态变成可恢复、可安装、可解释的交付物。 |

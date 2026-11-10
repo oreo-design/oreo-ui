@@ -61,7 +61,55 @@ export const statusOf = (callout: Pick<Callout, "basis" | "value">, unit: number
 /** Alpha-zero computed colors only; `rgb(0, 0, 0)` is opaque black, not transparent. */
 export const transparent = (color: string) =>
   color === "transparent" || /^rgba\([^,]+,[^,]+,[^,]+,\s*0(\.0+)?\)$/.test(color) || /\/\s*0(\.0+)?\)$/.test(color);
-const replaced = new Set(["svg", "img", "video", "canvas", "input", "textarea", "select", "iframe", "picture"]);
+export const REPLACED = new Set(["svg", "img", "video", "canvas", "input", "textarea", "select", "iframe", "picture"]);
+
+/** A background image made only of transparent stops (e.g. an idle state layer) paints nothing. */
+const paintsImage = (image: string) => {
+  if (image === "none") return false;
+  if (/url\(/.test(image)) return true;
+  const colors = image.match(/(?:rgba?|hsla?|oklch|oklab|lab|lch|color)\([^()]*\)|transparent|#[0-9a-f]{3,8}\b/gi) ?? [];
+  return !colors.length || colors.some(color => !transparent(color));
+};
+/** Draws a surface of its own: fill, image, mask (mask-drawn glyphs) or a visible border. */
+export const isPainted = (style: CSSStyleDeclaration) =>
+  !transparent(style.backgroundColor) || paintsImage(style.backgroundImage) || style.maskImage !== "none"
+  || (parseFloat(style.borderTopWidth) > 0 && !transparent(style.borderTopColor));
+/**
+ * Rendered at all: not display:none, visibility:hidden, or skipped content such as a
+ * closed `<details>` (`content-visibility: hidden` keeps a real rect). Opacity is
+ * handled separately so fades can be watched.
+ */
+export const isRendered = (element: Element, style: CSSStyleDeclaration) =>
+  style.display !== "none" && style.visibility !== "hidden"
+  // `contents` has no box of its own, so checkVisibility() is always false.
+  // Traverse it and let each descendant's visibility determine its own content.
+  && (style.display === "contents" || typeof element.checkVisibility !== "function" || element.checkVisibility({ visibilityProperty: true }));
+
+export type Gap = { axis: Axis; a: number; b: number; value: number };
+/**
+ * Gaps between laid-out boxes by geometry, not DOM order: each box pairs with its
+ * nearest neighbour to the right (overlapping vertically) and below (overlapping
+ * horizontally). Grid rows, wrapped flex lines, reverse and RTL order all work.
+ */
+export function neighborGaps(boxes: Box[]): Gap[] {
+  const gaps: Gap[] = [];
+  boxes.forEach((a, i) => {
+    let right: Gap | null = null, below: Gap | null = null;
+    for (const [j, b] of boxes.entries()) {
+      if (i === j) continue;
+      const overlapY = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+      const overlapX = Math.min(a.right, b.right) - Math.max(a.left, b.left);
+      const dx = b.left - a.right, dy = b.top - a.bottom;
+      // Touching/overlapping neighbours (e.g. stacked avatars) still block
+      // farther siblings. Find the nearest forward box before filtering gaps.
+      if (overlapY > 0 && b.left >= a.left && b.right > a.right && (!right || dx < right.value)) right = { axis: "x", a: i, b: j, value: dx };
+      if (overlapX > 0 && b.top >= a.top && b.bottom > a.bottom && (!below || dy < below.value)) below = { axis: "y", a: i, b: j, value: dy };
+    }
+    if (right && right.value >= 0.5) gaps.push(right);
+    if (below && below.value >= 0.5) gaps.push(below);
+  });
+  return gaps;
+}
 
 /** A content node and the stable id of the selected element's child it belongs to. */
 export type LeafRef = { node: Text | Element; child: number };
@@ -98,7 +146,7 @@ export function collectLeaves(element: Element, transparentNodes?: Element[]): L
     }
     if (!(node instanceof Element)) return;
     const style = getComputedStyle(node);
-    if (style.display === "none" || style.visibility === "hidden") return;
+    if (!isRendered(node, style)) return;
     if (isTransparent(style)) {
       // Fully transparent content is not visible yet, but a fade may be starting:
       // report it so callers can re-collect once it becomes visible.
@@ -114,10 +162,8 @@ export function collectLeaves(element: Element, transparentNodes?: Element[]): L
     // Visually hidden helpers (sr-only, clipped) are not layout content.
     if (r.width <= 1 && r.height <= 1) return;
     if (style.clipPath !== "none" && style.clipPath.startsWith("inset(50%")) return;
-    // Mask-drawn glyphs paint their background color through the mask.
-    const painted = !transparent(style.backgroundColor) || style.backgroundImage !== "none" || style.maskImage !== "none"
-      || (parseFloat(style.borderTopWidth) > 0 && !transparent(style.borderTopColor));
-    const isReplaced = replaced.has(node.tagName.toLowerCase());
+    const painted = isPainted(style);
+    const isReplaced = REPLACED.has(node.tagName.toLowerCase());
     if (isReplaced || painted) {
       // Full-bleed state/background layers describe the container, not its content.
       const covers = r.width >= (rootBox.right - rootBox.left) - 1 && r.height >= (rootBox.bottom - rootBox.top) - 1;
@@ -206,24 +252,18 @@ export function measureCallouts(element: Element, toLocal: (box: Box) => Box, ca
       ? { id, label, axis, basis: "space", value: end - start, band: { left: start, right: end, top: root.top, bottom: root.bottom }, focus: [definer.top, definer.bottom] }
       : { id, label, axis, basis: text ? "text" : "space", value: end - start, band: { top: start, bottom: end, left: root.left, right: root.right }, focus: [definer.left, definer.right] });
   }
-  // Gaps between consecutive laid-out children, in DOM order.
+  // Gaps between neighbouring laid-out children (by position, so grids and
+  // reversed rows are covered), in DOM order of the earlier child.
   const children = [...new Set(local.map(l => l.child))].map(child => ({ child, ...union(local.filter(l => l.child === child).map(l => l.box)) }));
-  let gapIndex = 0;
-  for (let i = 1; i < children.length && gapIndex < limit; i++) {
-    const a = children[i - 1], b = children[i];
+  neighborGaps(children).sort((p, q) => p.a - q.a || p.b - q.b).slice(0, limit).forEach(({ axis, a: ai, b: bi, value }, gapIndex) => {
+    const a = children[ai], b = children[bi];
     const id = `gap-${a.child}-${b.child}`;
-    const overlapY = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
-    const overlapX = Math.min(a.right, b.right) - Math.max(a.left, b.left);
-    if (b.left - a.right >= 0.5 && overlapY > 0) {
-      callouts.push({ id, label: `Gap ${gapIndex + 1}`, axis: "x", basis: "space", value: b.left - a.right,
-        band: { left: a.right, right: b.left, top: root.top, bottom: root.bottom }, focus: [Math.max(a.top, b.top), Math.min(a.bottom, b.bottom)] });
-      gapIndex++;
-    } else if (b.top - a.bottom >= 0.5 && overlapX > 0) {
-      callouts.push({ id, label: `Gap ${gapIndex + 1}`, axis: "y", basis: "space", value: b.top - a.bottom,
+    callouts.push(axis === "x"
+      ? { id, label: `Gap ${gapIndex + 1}`, axis, basis: "space", value,
+        band: { left: a.right, right: b.left, top: root.top, bottom: root.bottom }, focus: [Math.max(a.top, b.top), Math.min(a.bottom, b.bottom)] }
+      : { id, label: `Gap ${gapIndex + 1}`, axis, basis: "space", value,
         band: { top: a.bottom, bottom: b.top, left: root.left, right: root.right }, focus: [Math.max(a.left, b.left), Math.min(a.right, b.right)] });
-      gapIndex++;
-    }
-  }
+  });
   const lanesFor = (axis: Axis) => {
     const items = callouts.filter(c => c.axis === axis);
     const lanes = assignLanes(items.map(c => ({

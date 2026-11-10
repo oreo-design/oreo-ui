@@ -469,6 +469,29 @@
       "limits": "原作者实现未公开；未覆盖 body portal 弹出层的测量。",
       "evidence": "/Users/ziye/Documents/Project/Research/output/playground-spec-motion-20261105/REVIEW.md",
       "path": "records/2026-11-05-spec-redlines.md"
+    },
+    {
+      "id": "2026-11-09-marquee-inspector",
+      "title": "Inspector：拖框直接看 spec",
+      "date": "2026-11-09",
+      "category": "Playground",
+      "sources": [
+        "https://x.com/cabralorenzo/status/2119070365653868727"
+      ],
+      "thread": null,
+      "summary": "在空白画布上拖框，框内元素实时露出尺寸、圆角、padding 与 gap，松手淡出；不需要切换模式。",
+      "observations": [
+        "20.5s 视频逐帧：框从卡片外空白处拖起，spec 只在框内显示（像透镜），框底显示框尺寸。",
+        "标注包括 32×32 / 40×24 元素尺寸、r 20 圆角、16 padding、12/8 gap 与虚线内容边。"
+      ],
+      "lessons": [
+        "框选测量声明的布局（padding、子元素盒子间距），不是对齐留白。",
+        "从空白处起拖与组件交互天然不冲突；Option/Alt 覆盖铺满画布的组件。"
+      ],
+      "status": "已在 Playground Preview 实施；交付见任务 REVIEW。",
+      "limits": "原作者实现未公开；触摸不支持框选（保留原生滚动）；body portal 弹出层不测量。",
+      "evidence": "/Users/ziye/Documents/Project/Research/output/playground-marquee-spec-20261109/REVIEW.md",
+      "path": "records/2026-11-09-marquee-inspector.md"
     }
   ],
   "implementationReviews": [

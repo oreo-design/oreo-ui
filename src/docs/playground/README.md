@@ -55,6 +55,20 @@ masks so they inherit semantic icon colors. Hairline separators use
   cached between frames; transparent nodes are watched so Motion fade-ins join as
   soon as they become visible. Position is never CSS-transitioned. A new
   selection fades in fresh redlines. Reduced motion jumps directly.
+- Preview has marquee inspection (`marquee.ts`, `useMarquee.ts`,
+  `MarqueeLayer.tsx`): drag across the empty canvas and everything the
+  rectangle touches shows its outline and size, corner radius, padding (with
+  the dashed content edge) and the gaps between child boxes, clipped to the
+  rectangle like a lens; release fades it out and Escape cancels. Unlike
+  Annotation's visual insets, these are declared layout: padding as computed,
+  gaps between child boxes, never `space-between`/`flex-1` slack or text line
+  boxes. Tones follow the redlines (blue on the `--spacing` scale, red raw).
+  A press on the component keeps its own interaction and cursor; Option/Alt
+  starts a marquee over the component too. Touch keeps native scrolling, so
+  marquee is pointer/pen only; Annotation remains the keyboard-accessible path.
+  Inspecting the canvas does not take over a playing demo; pressing the
+  component still does. Styles are read once per drag (again after DOM
+  changes), geometry every frame, so values follow motion while held.
 - Controls marked with `morph(...)` in their adapter morph the preview when
   edited in the inspector, using the shared Style transition
   (`createScopedTransition` in `src/lib/theme/transition.ts`) scoped to
@@ -93,7 +107,7 @@ masks so they inherit semantic icon colors. Hairline separators use
   properties move into a keyboard-accessible dialog. Other site pages retain
   their existing navigation.
 
-Focused state tests: `node --test src/docs/playground/{schema,demo,configuration,spec}.test.ts`.
+Focused state tests: `node --test src/docs/playground/{schema,demo,configuration,spec,marquee}.test.ts`.
 Visual implementation evidence continues in the existing task index at
 `/Users/ziye/Documents/Project/Research/output/playground-figma-20261019/REVIEW.md`.
 
