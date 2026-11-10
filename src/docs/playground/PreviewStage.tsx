@@ -3,6 +3,9 @@ import { flushSync } from "react-dom";
 import { PortalContainerContext } from "@/lib/portal-container";
 import { badgeSize, calloutSignature, collectLeaves, idOf, isTransparent, measureCallouts, spacingToken, statusOf, type Box, type Callout, type LeafRef, type SpacingValue, type SpecStatus } from "./spec";
 import { SpecLayer } from "./SpecLayer";
+import { MarqueeLayer } from "./MarqueeLayer";
+import { useMarquee } from "./useMarquee";
+import { localizer as frameLocalizer, structuralChange } from "./marquee";
 
 export type PreviewDevice = "desktop" | "mobile";
 export type Part = { name: string; description: string; selector: string };
@@ -99,6 +102,7 @@ export function PreviewStage({
   onSelect,
   revision,
   onMeasure,
+  onTakeover,
 }: {
   children: ReactNode;
   themeStyle?: CSSProperties;
@@ -109,6 +113,8 @@ export function PreviewStage({
   onSelect: (index: number, part?: Part) => void;
   onMeasure: (measurement: Measurement | null) => void;
   revision: number;
+  /** A press that belongs to the component (or its popups), as opposed to marquee inspection. */
+  onTakeover?: () => void;
 }) {
   const stage = useRef<HTMLDivElement>(null);
   const frame = useRef<HTMLDivElement>(null);
@@ -136,6 +142,7 @@ export function PreviewStage({
     fit();
     return () => resize.disconnect();
   }, [viewport]);
+  const marquee = useMarquee(mode === "preview", frame, content, viewport === "mobile" ? deviceScale : 1);
   const selectElement = useRef<(element: Element) => void>(() => {});
   const [markers, setMarkers] = useState<Marker[]>([]);
   const parts = partsFor(slug);
@@ -152,15 +159,7 @@ export function PreviewStage({
     // DOM rects include the mockup zoom; overlays and inspector values use the
     // screen's own CSS pixels, including its independent scroll offset.
     const scale = viewport === "mobile" ? deviceScale : 1;
-    const localizer = () => {
-      const hostRect = host.getBoundingClientRect();
-      return (box: Box): Box => ({
-        left: (box.left - hostRect.left) / scale + host.scrollLeft,
-        right: (box.right - hostRect.left) / scale + host.scrollLeft,
-        top: (box.top - hostRect.top) / scale + host.scrollTop,
-        bottom: (box.bottom - hostRect.top) / scale + host.scrollTop,
-      });
-    };
+    const localizer = () => frameLocalizer(host, scale);
     const visible = (el: Element) => {
       const rect = el.getBoundingClientRect();
       return rect.width > 0 && rect.height > 0 && getComputedStyle(el).visibility !== "hidden";
@@ -430,7 +429,7 @@ export function PreviewStage({
     // DOM changes only schedule the next frame; measuring never mutates the
     // observed subtree, so there is no render/mutation loop.
     const mutations = new MutationObserver(records => {
-      if (records.some(record => record.type !== "attributes" || record.attributeName !== "style")) leaves = null;
+      if (structuralChange(records)) leaves = null;
       track();
     });
     mutations.observe(root, {
@@ -474,17 +473,19 @@ export function PreviewStage({
   };
 
   return (
-    <div ref={stage} className={`pg-stage pg-stage-${mode}`} data-device={viewport}>
+    <div ref={stage} className={`pg-stage pg-stage-${mode}`} data-device={viewport}
+      // React bubbles body-portaled popups through here too; `claims` checks the DOM.
+      onPointerDownCapture={event => { if (!marquee.claims(event)) onTakeover?.(); }}>
       <div className="pg-device" data-device={viewport} style={{ "--device-scale": deviceScale } as CSSProperties}>
         {viewport === "mobile" && (
           <div className="pg-device-hardware" aria-hidden="true">
             <img src="/devices/iphone-18-pro-black.png" width="1350" height="2760" alt="" draggable={false} />
           </div>
         )}
-        <div ref={frame} className="pg-frame" data-device={viewport}>
+        <div ref={frame} className="pg-frame" data-device={viewport} onPointerDown={marquee.onFramePointerDown}>
           <div
             ref={content}
-            onPointerDownCapture={select}
+            onPointerDownCapture={event => { if (!marquee.onContentPointerDownCapture(event)) select(event); }}
             onClickCapture={select}
             onDoubleClickCapture={suppress}
             onFocusCapture={event => { if (mode === "annotation") event.stopPropagation(); }}
@@ -506,7 +507,7 @@ export function PreviewStage({
             </PortalContainerContext.Provider>
           </div>
           {mode === "preview" && viewport !== "mobile" && (
-            <p className="pg-hint">Click to try the interaction</p>
+            <p className="pg-hint">Click to try the interaction<span className="pg-hint-marquee"> · Drag across empty space to inspect</span></p>
           )}
           {mode !== "preview" && geometry && (
             <div
@@ -521,6 +522,7 @@ export function PreviewStage({
               aria-hidden="true"
             />
           )}
+          {marquee.view && <MarqueeLayer {...marquee.view} />}
           {mode === "annotation" && geometry && <SpecLayer subject={geometry.subject} callouts={geometry.callouts} predicted={predicted} />}
           {mode === "annotation" &&
             markers.map((marker) => (

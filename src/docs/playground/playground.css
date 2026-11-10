@@ -532,10 +532,14 @@
 }
 /* Above the component (including its own z-indexed layers), below part markers
    and in-device popups. */
-.pg-spec-layer {
+/* Shared by the Annotation redlines and the Preview marquee. */
+.pg-spec-layer,
+.pg-marquee {
   --pg-spec-on: var(--color-status-progress);
   --pg-spec-off: var(--color-status-error);
   --pg-spec-text: var(--color-text-tertiary);
+}
+.pg-spec-layer {
   position: absolute;
   inset: 0;
   z-index: 3;
@@ -688,6 +692,10 @@ html[data-theme-transition] :is(.pg-selection, .pg-marker) {
 html[data-theme-transition] .pg-spec-layer *:not(.pg-spec-callout, .pg-spec-fill, .pg-spec-badge) {
   transition-property: none !important;
 }
+/* The marquee is measured every frame; a Style change must not ease its geometry. */
+html[data-theme-transition] .pg-marquee * {
+  transition-property: background-color, box-shadow, color, outline-color !important;
+}
 html[data-theme-transition] .pg-spec-layer .pg-spec-callout {
   transition-property: --pg-spec-tone, --lane, opacity !important;
 }
@@ -703,6 +711,95 @@ html[data-theme-transition] .pg-spec-layer .pg-spec-badge {
   html[data-theme-transition] :is(.pg-selection, .pg-marker),
   html[data-theme-transition] .pg-spec-layer :is(.pg-spec-callout, .pg-spec-fill, .pg-spec-badge) {
     transition: none !important;
+  }
+}
+/* Marquee inspection in Preview. The canvas around the component is a measuring
+   surface (crosshair); the component keeps its own cursors and interactions.
+   Tones reuse the redline scale: blue on the spacing scale, red a raw value. */
+.pg-stage-preview .pg-frame {
+  cursor: crosshair;
+}
+.pg-stage-preview .pg-preview,
+.pg-device-portals {
+  cursor: auto;
+}
+/* While dragging, the pointer is captured by the canvas: keep one cursor, no selection. */
+.pg-frame[data-marquee],
+.pg-frame[data-marquee] * {
+  cursor: crosshair !important;
+  user-select: none;
+}
+/* Touch keeps native scrolling, so only mouse/pen users are told to drag. */
+@media not (any-pointer: fine) {
+  .pg-hint-marquee {
+    display: none;
+  }
+}
+.pg-marquee {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 160ms var(--ease-out);
+}
+.pg-marquee[data-leaving] {
+  opacity: 0;
+}
+.pg-frame[data-device="mobile"] > .pg-marquee {
+  overflow-x: clip;
+}
+/* An outline, not a border: children are placed from the rectangle's own edge. */
+.pg-marquee-lens {
+  position: absolute;
+  overflow: hidden;
+  outline: 1px solid var(--pg-spec-on);
+  outline-offset: -1px;
+  background: color-mix(in srgb, var(--pg-spec-on) 6%, transparent);
+}
+.pg-marquee-lens > span {
+  position: absolute;
+}
+.pg-marquee-box {
+  background: color-mix(in srgb, var(--pg-spec-on) 10%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pg-spec-on) 70%, transparent);
+}
+.pg-marquee-box[data-kind="text"] {
+  background: none;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pg-spec-on) 45%, transparent);
+}
+.pg-marquee-content {
+  border: 1px dashed color-mix(in srgb, var(--pg-spec-on) 70%, transparent);
+}
+.pg-marquee-band {
+  --pg-spec-tone: var(--pg-spec-on);
+  background:
+    repeating-linear-gradient(-45deg, color-mix(in srgb, var(--pg-spec-tone) 45%, transparent) 0 1px, transparent 1px 5px),
+    color-mix(in srgb, var(--pg-spec-tone) 10%, transparent);
+}
+.pg-marquee [data-scale="off"] {
+  --pg-spec-tone: var(--pg-spec-off);
+}
+/* Badges are smaller than Annotation's: many share the lens at once. */
+.pg-marquee .pg-spec-badge {
+  --badge-height: 16px;
+  min-width: 18px;
+  font-size: 10px;
+  z-index: 1;
+}
+/* Size and radius labels are positioned in script so they never stack. */
+.pg-marquee-label {
+  --pg-spec-tone: var(--pg-spec-on);
+  position: absolute;
+  color: var(--pg-spec-tone);
+}
+.pg-marquee-size {
+  position: absolute;
+  transform: translateX(-50%);
+  color: var(--pg-spec-on);
+}
+@media (prefers-reduced-motion: reduce) {
+  .pg-marquee {
+    transition: none;
   }
 }
 .pg-stage-annotation .pg-preview,

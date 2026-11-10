@@ -619,7 +619,6 @@ export function ComponentPlayground({
                 <div
                   ref={stageHost}
                   className="pg-stage-host"
-                  onPointerDownCapture={() => demo.player?.stop()}
                   onKeyDownCapture={() => demo.player?.stop()}
                 >
                   <PreviewStage
@@ -631,6 +630,8 @@ export function ComponentPlayground({
                     onSelect={selectPart}
                     onMeasure={reportMeasurement}
                     revision={revision}
+                    // Pressing the component takes over the demo; marquee inspection does not.
+                    onTakeover={() => demo.player?.stop()}
                   >
                     {preview}
                   </PreviewStage>
