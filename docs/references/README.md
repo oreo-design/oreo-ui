@@ -5,6 +5,8 @@
 
 ## 从这里找
 
+- [AI SDK UI：生成式界面的状态层，以及 AI 组件被收进通用设计系统](records/2026-11-16-ai-sdk-ui.md)：`UIMessage` part 协议与工具状态机、MCP Apps 的 `ui://` 出口、AI Elements 2026-11 底弃用并入 shadcn/ui；对 Oreo 的类型词汇对齐、步骤状态统一与差异化定位的影响。
+
 - [Pinterest：展开式任务胶囊](records/2026-11-16-pinterest-task-capsule.md)：分段进度、独立任务状态、紧凑清单与概览模板。
 
 - [主题字体：Oreo / Claude / GPT](records/2026-11-06-theme-fonts.md)：现场字体角色、主题切换与验证范围。
@@ -46,6 +48,7 @@
 
 | 日期 | 参考 | 重点 |
 | --- | --- | --- |
+| 2026-11-16 | [AI SDK UI：生成式界面的状态层](records/2026-11-16-ai-sdk-ui.md) | AI SDK UI 只做状态与协议、不带组件，正好是 Oreo agent 组件缺的那一层；最值得采用的是对齐 `UIMessage` part 与工具七态，而不是加运行时依赖。 |
 | 2026-10-15 | [Agent-Native：人和 Agent 操作同一份工作对象](records/2026-10-15-agent-native.md) | 人类直接编辑与 Agent 委托围绕同一数据、动作和上下文协作；Oreo 应区分构建时 AI 使用设计系统与运行时人机协作。 |
 
 ### 规则与评测
@@ -65,6 +68,7 @@
 | 2026-10-12 | [Hairline：清楚的发现、使用与扩展路径](records/2026-10-12-hairline.md) | Home 解释是什么，Figures 帮助浏览，Docs 负责接入，Skill 支持扩展，Inspo 展示创作过程。 |
 | 2026-10-15 | [PanelUI：API 事实生成、版本化 skill 与分发入口](records/2026-10-15-panelui.md) | 原帖视频是 Logo 几何构造动画；真正的组件与分发信息来自官网及源码文档。 |
 | 2026-10-16 | [GEO：可引用、可验证的内容与发现实验](records/2026-10-16-geo.md) | 原始输入为用户提供的《GEO_8个实用技巧与实验策略(1).pdf》。 |
+| 2026-11-16 | [AI SDK UI：AI 组件被收进通用设计系统](records/2026-11-16-ai-sdk-ui.md) | AI Elements（49 组件）2026-11 底弃用，并入 shadcn/ui 的 21 个 AI pattern；与 Oreo 清单重叠 ≥17 个，「有 agent 组件」不再是差异点。 |
 
 ### 邻近参考
 

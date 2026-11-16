@@ -492,6 +492,39 @@
       "limits": "原作者实现未公开；触摸不支持框选（保留原生滚动）；body portal 弹出层不测量。",
       "evidence": "/Users/ziye/Documents/Project/Research/output/playground-marquee-spec-20261109/REVIEW.md",
       "path": "records/2026-11-09-marquee-inspector.md"
+    },
+    {
+      "id": "2026-11-16-ai-sdk-ui",
+      "title": "AI SDK UI：生成式界面的状态层，以及 AI 组件被收进通用设计系统",
+      "date": "2026-11-16",
+      "category": "Agent 工作流 / 定位与分发",
+      "sources": [
+        "https://ai-sdk.dev/docs/ai-sdk-ui/overview",
+        "https://ai-sdk.dev/docs/ai-sdk-ui/generative-user-interfaces",
+        "https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol",
+        "https://ai-sdk.dev/docs/reference/ai-sdk-core/ui-message",
+        "https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-tool-usage",
+        "https://ai-sdk.dev/docs/ai-sdk-core/mcp-apps",
+        "https://elements.ai-sdk.dev",
+        "https://ui.shadcn.com/docs/ai-elements"
+      ],
+      "thread": null,
+      "summary": "AI SDK UI 是前端状态层不是组件库：三个 hook + 11 种 UIMessage part + 七态工具状态机 + 27 种流协议 part；它的「生成式 UI」只负责把 tool 结果送到位，组件要自己写。组件层另有其物且正在搬家——AI Elements（49 组件）2026-11 底弃用，并入 shadcn/ui 的 21 个 AI pattern，并抽出共用的 Trace 原语。",
+      "observations": [
+        "Oreo 全仓库对 ai-sdk/useChat/UIMessage/ToolUIPart 等零命中（src 与 README），与 AI SDK 无任何代码关系。",
+        "Oreo ToolCall.state 三态 vs AI SDK 七态：input-streaming / approval-requested / approval-responded / output-denied 现在表达不出来。",
+        "shadcn 21 个 AI pattern 与 Oreo 组件清单重叠 ≥17 个；Oreo 真正完全缺位的只有 Checkpoint，File Tree 有近似物 FolderTree（只渲染文件夹）。",
+        "MCP Apps 让 server 用 ui:// HTML 资源在沙箱 iframe 里出 UI，是一条不经过组件库的 UI 通路。"
+      ],
+      "lessons": [
+        "该采用的是类型词汇不是依赖：props 形状对齐 UIMessage part，类型走 import type / peerDependencies。",
+        "Oreo 缺的不是「共享展开行为」而是统一的步骤状态枚举——现有至少八套互不兼容的 union，现成 owner 是已被 15 个文件复用的 StatusIconState。",
+        "「有 agent 组件」不再是差异点；可守的是动效质量、token 系统、成套可跑 template 与中文设计语言。"
+      ],
+      "status": "建议（2026-11-16）。用户只要求研究，未表态采用；无代码改动。",
+      "limits": "仅读文档、npm registry 与本仓库源码；未安装 ai/@ai-sdk/react、未跑集成、未渲染任何 MCP App。AI Elements 弃用日期来自站顶横幅，只精确到「11 月底」，未见 changelog。组件对位为人工判断，未逐个视觉对比。本条无视觉证据（无 UI 改动）。全文经三轮独立只读子代理复核（AI SDK 侧、Oreo 侧，再加一轮全文复查）后修正，修正项记在记录末尾。",
+      "evidence": null,
+      "path": "records/2026-11-16-ai-sdk-ui.md"
     }
   ],
   "implementationReviews": [
