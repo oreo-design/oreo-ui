@@ -5,6 +5,8 @@
 
 ## 从这里找
 
+- [Pinterest：展开式任务胶囊](records/2026-11-16-pinterest-task-capsule.md)：分段进度、独立任务状态、紧凑清单与概览模板。
+
 - [主题字体：Oreo / Claude / GPT](records/2026-11-06-theme-fonts.md)：现场字体角色、主题切换与验证范围。
 - [Align UI Input：19 项输入交互](records/2026-11-06-align-input.md)：以 Oreo tokens 和组件重建输入、密码、标签、卡号、日期和步进器，并统一 Playground 属性输入。
 

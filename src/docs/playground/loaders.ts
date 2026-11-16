@@ -2,6 +2,11 @@ import type { PlaygroundSpec } from "./schema";
 
 /** Lazy runtime map; metadata must never import this module. */
 export const playgroundLoaders: Record<string, () => Promise<PlaygroundSpec>> = {
+  "task-capsule": () => import("./adapters/task-capsule").then(m=>m.default["task-capsule"]),
+  "segmented-task-progress": () => import("./adapters/task-capsule").then(m=>m.default["segmented-task-progress"]),
+  "compact-task-checklist": () => import("./adapters/task-capsule").then(m=>m.default["compact-task-checklist"]),
+  "task-status-choices": () => import("./adapters/task-capsule").then(m=>m.default["task-status-choices"]),
+
   input: () => import("./adapters/input").then(m=>m.default.input),
   "film-cover-upload": () => import("./adapters/film-cover").then(m=>m.default["film-cover-upload"]),
   "film-reveal": () => import("./adapters/film-cover").then(m=>m.default["film-reveal"]),

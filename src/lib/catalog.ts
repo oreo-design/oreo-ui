@@ -22,6 +22,12 @@ export type CatalogEntry = {
 
 /** Keys and insertion order preserve existing routes and sitemap order. */
 export const CATALOG = {
+  "task-capsule-workspace": {title:"Task Capsule Workspace",description:"A local project overview with expandable task summaries and shared detail editing.",nav:{group:"Templates",order:-4},subject:"template",views:["template"],defaultView:"template"},
+  "task-capsule": {title:"Task Capsule",description:"A compact task summary with independent status, checklist completion and a recessed action footer.",nav:{group:"Components",order:-4},subject:"component",views:["playground","docs"],defaultView:"playground"},
+  "segmented-task-progress": {title:"Segmented Task Progress",description:"An accessible segmented completion ring with finite bounded counts.",nav:{group:"Components",order:-4},subject:"component",views:["playground","docs"],defaultView:"playground"},
+  "compact-task-checklist": {title:"Compact Task Checklist",description:"A compact controlled checklist with optional member identities.",nav:{group:"Components",order:-4},subject:"component",views:["playground","docs"],defaultView:"playground"},
+  "task-status-choices": {title:"Task Status Choices",description:"Native radio choices using the existing task status vocabulary and palette.",nav:{group:"Components",order:-4},subject:"component",views:["playground","docs"],defaultView:"playground"},
+
   input: {title:"Input", description:"Single-line fields with Oreo tokens, native form semantics and complete input compositions.",nav:{group:"Components",order:2},subject:"component",reuse:"primitive",views:["playground","docs"],defaultView:"playground"},
   "film-cover-studio": {title:"Film Cover Studio",description:"A local cover editor with film development, a persistent media tray and a continuous reading preview.",nav:{group:"Templates",order:-2},subject:"template",views:["template"],defaultView:"template",related:["film-cover-upload","film-reveal","media-tray"]},
   "film-cover-upload": {title:"Film Cover Upload",description:"A controlled cover drop zone with developing preview, file progress, cancellation and recovery.",nav:{group:"Components",order:-2},subject:"component",views:["playground","docs"],defaultView:"playground"},
