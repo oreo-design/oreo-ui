@@ -1,0 +1,176 @@
+.tc-workspace {
+  min-height: 100dvh;
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+.tc-site-header,
+.tc-site-footer {
+  max-width: calc(var(--space-x64) * 9);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-x8);
+  padding: var(--space-x12);
+  font-size: var(--text-sm);
+}
+.tc-site-header > a {
+  font-weight: var(--font-weight-semibold);
+}
+.tc-site-header > a > span {
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-tertiary);
+}
+.tc-workspace-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-x24);
+  padding: var(--space-x32) var(--space-x12);
+  max-width: calc(var(--space-x64) * 9);
+  margin-inline: auto;
+}
+.tc-overview {
+  width: calc(var(--space-x64) * 3 + var(--space-x32));
+  min-width: 0;
+  max-width: 100%;
+  flex: none;
+}
+.tc-project-heading {
+  margin-bottom: var(--space-x18);
+}
+.tc-project-heading > p {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-x6);
+}
+.tc-project-heading h1 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-x6);
+}
+.tc-project-heading > span {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-tertiary);
+}
+.tc-toolbar {
+  display: flex;
+  gap: var(--space-x6);
+  margin-bottom: var(--space-x12);
+}
+.tc-toolbar > label {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  flex: 1;
+  gap: var(--space-x4);
+  color: var(--color-text-tertiary);
+}
+.tc-toolbar input {
+  width: 100%;
+  min-width: 0;
+  padding-block: var(--space-x4);
+  outline: none;
+  font-size: var(--text-sm);
+}
+.tc-toolbar label:focus-within {
+  box-shadow: 0 1px var(--color-border-default);
+}
+.tc-toolbar select {
+  background: var(--color-bg-base);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-control);
+  padding: var(--space-x4);
+  font-size: var(--text-xs);
+}
+.tc-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-x10);
+  min-height: calc(var(--space-x64) * 3);
+}
+.tc-project-list > .agent-workspace-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-x6);
+  text-align: center;
+}
+.tc-local-note {
+  margin-top: var(--space-x12);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+  text-align: center;
+}
+.tc-detail {
+  width: calc(var(--space-x64) * 3);
+  min-width: 0;
+  max-width: 100%;
+  height: min(calc(100dvh - var(--space-x24)), calc(var(--space-x64) * 6));
+  position: sticky;
+  top: var(--space-x12);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-large);
+  overflow: hidden;
+  background: var(--color-bg-base);
+  box-shadow: var(--shadow-default);
+}
+.tc-description {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-x12);
+}
+.tc-detail .tc-status-choices {
+  margin-bottom: var(--space-x18);
+}
+.tc-detail-note {
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+  margin-top: var(--space-x12);
+}
+.tc-site-footer {
+  color: var(--color-text-tertiary);
+  font-size: var(--text-xs);
+}
+.tc-site-footer > a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-x2);
+}
+@media (max-width: 900px) {
+  .tc-workspace-layout[data-detail] {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tc-detail {
+    position: relative;
+    top: auto;
+    width: 100%;
+    max-width: calc(var(--space-x64) * 3 + var(--space-x32));
+    height: calc(var(--space-x64) * 5);
+  }
+}
+@media (max-width: 480px) {
+  .tc-workspace-layout {
+    padding: var(--space-x18) var(--space-x8);
+  }
+  .tc-site-header,
+  .tc-site-footer {
+    padding: var(--space-x8);
+  }
+  .tc-project-heading h1 {
+    font-size: var(--text-xl);
+  }
+  .tc-project-heading {
+    margin-bottom: var(--space-x12);
+  }
+}

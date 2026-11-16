@@ -4,6 +4,12 @@ import type { PageSlug } from "@/lib/site";
 
 /** Browser runtime only. The pure catalog and sitemap never import loaders. */
 export const routeLoaders = {
+  "task-capsule-workspace": () => import("@/patterns/task-capsule-workspace").then(m=>m.TaskCapsuleWorkspace),
+  "task-capsule": () => import("@/pages/TaskCapsuleDocs").then(m=>m.TaskCapsuleDocs),
+  "segmented-task-progress": () => import("@/pages/TaskCapsuleDocs").then(m=>m.TaskCapsuleDocs),
+  "compact-task-checklist": () => import("@/pages/TaskCapsuleDocs").then(m=>m.TaskCapsuleDocs),
+  "task-status-choices": () => import("@/pages/TaskCapsuleDocs").then(m=>m.TaskCapsuleDocs),
+
   input: () => import("@/pages/InputDocs").then(m=>m.InputDocs),
   "film-cover-studio": () => import("@/patterns/film-cover-studio").then(m=>m.FilmCoverStudio),
   "film-cover-upload": () => import("@/pages/FilmCoverDocs").then(m=>m.FilmCoverDocs),
