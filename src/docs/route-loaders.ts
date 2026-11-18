@@ -4,6 +4,11 @@ import type { PageSlug } from "@/lib/site";
 
 /** Browser runtime only. The pure catalog and sitemap never import loaders. */
 export const routeLoaders = {
+  "income-flow-workspace": () => import("@/patterns/income-flow-workspace").then(m=>m.IncomeFlowWorkspace),
+  "income-flow-card": () => import("@/pages/IncomeFlowDocs").then(m=>m.IncomeFlowDocs),
+  "income-flow-chart": () => import("@/pages/IncomeFlowDocs").then(m=>m.IncomeFlowDocs),
+  "income-comparison": () => import("@/pages/IncomeFlowDocs").then(m=>m.IncomeFlowDocs),
+
   "folder-navigation-workspace": () => import("@/patterns/folder-navigation-workspace").then(m=>m.FolderNavigationWorkspace),
   "folder-navigator": () => import("@/pages/FolderNavigationDocs").then(m=>m.FolderNavigationDocs),
   "folder-navigation-row": () => import("@/pages/FolderNavigationDocs").then(m=>m.FolderNavigationDocs),
