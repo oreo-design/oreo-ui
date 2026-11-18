@@ -22,6 +22,11 @@ export type CatalogEntry = {
 
 /** Keys and insertion order preserve existing routes and sitemap order. */
 export const CATALOG = {
+  "folder-navigation-workspace": {"title": "Folder Navigation Workspace", "description": "Browse a local studio archive with continuous folder names, search and file details.", "nav": {"group": "Templates", "order": -5}, "subject": "template", "views": ["template"], "defaultView": "template", "related": ["folder-navigator", "folder-navigation-row", "folder-path-trail"]},
+  "folder-navigator": {"title": "Folder Navigator", "description": "Compact folder browsing with shared name motion and reversible path navigation.", "nav": {"group": "Components", "order": -5}, "subject": "component", "views": ["playground", "docs"], "defaultView": "playground", "related": ["folder-navigator", "folder-navigation-row", "folder-path-trail"]},
+  "folder-navigation-row": {"title": "Folder Navigation Row", "description": "A native folder/file action with derived size and readable identity.", "nav": {"group": "Components", "order": -5}, "subject": "component", "views": ["playground", "docs"], "defaultView": "playground", "related": ["folder-navigator", "folder-navigation-row", "folder-path-trail"]},
+  "folder-path-trail": {"title": "Folder Path Trail", "description": "A compact breadcrumb with shared ancestor menus and complete path access.", "nav": {"group": "Components", "order": -5}, "subject": "component", "views": ["playground", "docs"], "defaultView": "playground", "related": ["folder-navigator", "folder-navigation-row", "folder-path-trail"]},
+
   "task-capsule-workspace": {title:"Task Capsule Workspace",description:"A local project overview with expandable task summaries and shared detail editing.",nav:{group:"Templates",order:-4},subject:"template",views:["template"],defaultView:"template"},
   "task-capsule": {title:"Task Capsule",description:"A compact task summary with independent status, checklist completion and a recessed action footer.",nav:{group:"Components",order:-4},subject:"component",views:["playground","docs"],defaultView:"playground"},
   "segmented-task-progress": {title:"Segmented Task Progress",description:"An accessible segmented completion ring with finite bounded counts.",nav:{group:"Components",order:-4},subject:"component",views:["playground","docs"],defaultView:"playground"},

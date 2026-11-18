@@ -4,6 +4,11 @@ import type { PageSlug } from "@/lib/site";
 
 /** Browser runtime only. The pure catalog and sitemap never import loaders. */
 export const routeLoaders = {
+  "folder-navigation-workspace": () => import("@/patterns/folder-navigation-workspace").then(m=>m.FolderNavigationWorkspace),
+  "folder-navigator": () => import("@/pages/FolderNavigationDocs").then(m=>m.FolderNavigationDocs),
+  "folder-navigation-row": () => import("@/pages/FolderNavigationDocs").then(m=>m.FolderNavigationDocs),
+  "folder-path-trail": () => import("@/pages/FolderNavigationDocs").then(m=>m.FolderNavigationDocs),
+
   "task-capsule-workspace": () => import("@/patterns/task-capsule-workspace").then(m=>m.TaskCapsuleWorkspace),
   "task-capsule": () => import("@/pages/TaskCapsuleDocs").then(m=>m.TaskCapsuleDocs),
   "segmented-task-progress": () => import("@/pages/TaskCapsuleDocs").then(m=>m.TaskCapsuleDocs),

@@ -1,0 +1,188 @@
+/* Compact browser composition. Existing tokens own all foundational values. */
+.fn-browser {
+  --squircle-radius: var(--radius-container);
+  width: 100%;
+  max-width: calc(var(--space-x64) * 4 + var(--space-x8));
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-default);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  padding: var(--space-x6);
+}
+.fn-header {
+  padding: var(--space-x6) var(--space-x6) var(--space-x8);
+}
+.fn-trail ol {
+  display: flex;
+  align-items: center;
+  gap: var(--space-x2);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.fn-trail li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-x2);
+  min-width: 0;
+  max-width: 100%;
+}
+.fn-crumb,
+.fn-current {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-x4);
+  min-width: 0;
+  max-width: 100%;
+  padding: var(--space-x3);
+  border-radius: var(--radius-control);
+  text-align: left;
+  line-height: var(--leading-tight);
+}
+.fn-crumb {
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+}
+.fn-current {
+  color: var(--color-text-primary);
+  outline: none;
+}
+.fn-workspace-mark {
+  width: var(--space-x10);
+  height: var(--space-x10);
+  display: grid;
+  place-items: center;
+  flex: none;
+  border-radius: var(--radius-control-tiny);
+  background: var(--color-bg-inverse);
+  color: var(--color-text-on-inverse);
+  font-size: var(--text-xs);
+}
+.fn-name {
+  display: inline-block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  position: relative;
+  z-index: 1;
+}
+.fn-separator,
+.fn-chevron {
+  color: var(--color-text-tertiary);
+  flex: none;
+}
+.fn-overflow {
+  display: grid;
+  place-items: center;
+  width: var(--space-x18);
+  height: var(--space-x18);
+  border-radius: var(--radius-control);
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+}
+.fn-body {
+  min-height: calc(var(--space-x32) * 3);
+  max-height: calc(var(--space-x64) * 3);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+.fn-body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fn-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: var(--space-x8);
+  min-height: var(--space-x32);
+  padding: var(--space-x6);
+  border-radius: var(--radius-card-medium);
+  font-size: var(--text-lg);
+  text-align: left;
+  cursor: pointer;
+}
+.fn-row > .fn-name {
+  flex: 1;
+  line-height: var(--leading-snug);
+}
+.fn-row:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.fn-glyph {
+  width: calc(var(--space-x10) * 2);
+  height: calc(var(--space-x10) * 2);
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-card-small);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-tertiary);
+}
+.fn-glyph[data-tone="olive"] {
+  background: var(--color-palette-mint-bg);
+}
+.fn-glyph[data-tone="sand"] {
+  background: var(--color-palette-orange-bg);
+}
+.fn-glyph[data-tone="stone"] {
+  background: var(--color-palette-blue-bg);
+}
+.fn-size {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+  flex: none;
+  font-variant-numeric: tabular-nums;
+}
+.fn-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-x6);
+  padding: var(--space-x8) var(--space-x6) var(--space-x6);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+.fn-body > .agent-workspace-state {
+  min-height: calc(var(--space-x32) * 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: var(--space-x4);
+  padding: var(--space-x8);
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .fn-browser {
+    padding: var(--space-x4);
+  }
+  .fn-header {
+    padding: var(--space-x4) var(--space-x2) var(--space-x6);
+  }
+  .fn-trail {
+    font-size: var(--text-sm);
+  }
+  .fn-row {
+    gap: var(--space-x6);
+    padding: var(--space-x4);
+    font-size: var(--text-base);
+  }
+  .fn-size {
+    font-size: var(--text-xs);
+  }
+  .fn-glyph {
+    width: var(--space-x18);
+    height: var(--space-x18);
+  }
+  .fn-footer {
+    padding-inline: var(--space-x4);
+  }
+}
