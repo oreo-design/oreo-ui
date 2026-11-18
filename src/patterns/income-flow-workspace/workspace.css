@@ -1,0 +1,253 @@
+.if-workspace {
+  min-height: 100dvh;
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+}
+.if-site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-x8);
+  padding: var(--space-x12);
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-base);
+  font-size: var(--text-sm);
+}
+.if-site-header a {
+  font-weight: var(--font-weight-medium);
+}
+.if-site-header a span {
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-tertiary);
+}
+.if-content {
+  max-width: calc(var(--space-x64) * 9);
+  padding: var(--space-x32) var(--space-x12) var(--space-x12);
+  margin: auto;
+}
+.if-page-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-x12);
+  align-items: flex-end;
+  margin-bottom: var(--space-x24);
+}
+.if-page-heading > div > p:first-child {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  margin-bottom: var(--space-x8);
+  color: var(--color-text-tertiary);
+}
+.if-page-heading h1 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+.if-page-heading > div > p:last-child {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-x6);
+}
+.if-controls {
+  display: flex;
+  gap: var(--space-x6);
+  flex-wrap: wrap;
+}
+.if-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-x3);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+.if-controls select {
+  min-height: var(--space-x18);
+  padding: var(--space-x4) var(--space-x6);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-control);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+.if-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-x32);
+  align-items: center;
+  margin-bottom: var(--space-x24);
+}
+.if-feature {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-x24) var(--space-x12);
+  border-radius: var(--radius-container);
+  background: var(--color-bg-subtle);
+}
+.if-feature > p {
+  max-width: calc(var(--space-x64) * 3);
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-tertiary);
+  text-align: center;
+  margin-top: var(--space-x12);
+  margin-bottom: var(--space-x6);
+}
+.if-summary {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-x12);
+}
+.if-summary > div:first-child > p:first-child {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-x4);
+}
+.if-summary h2 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-tight);
+}
+.if-summary > div:first-child > p:last-child {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-x6);
+  max-width: calc(var(--space-x64) * 3);
+}
+.if-facts {
+  font-size: var(--text-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-x6);
+}
+.if-facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-x8);
+  flex-wrap: wrap;
+}
+.if-facts span {
+  color: var(--color-text-secondary);
+}
+.if-facts strong {
+  font-weight: var(--font-weight-medium);
+  font-variant-numeric: tabular-nums;
+}
+.if-ledger {
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-card-large);
+  overflow: hidden;
+}
+.if-ledger > header {
+  padding: var(--space-x10) var(--space-x12);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-x8);
+  align-items: center;
+}
+.if-ledger h2 {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+}
+.if-ledger > header > span {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+.if-table-scroll {
+  max-height: calc(var(--space-x64) * 3);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.if-ledger table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+}
+.if-ledger thead {
+  position: sticky;
+  top: 0;
+  background: var(--color-bg-elevated);
+  z-index: 1;
+}
+.if-ledger th,
+.if-ledger td {
+  padding: var(--space-x6) var(--space-x12);
+  border-top: 1px solid var(--color-border-subtle);
+  font-weight: var(--font-weight-normal);
+}
+.if-ledger thead th {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+.if-ledger td:last-child {
+  text-align: right;
+}
+.if-ledger tr[data-selected] {
+  background: var(--color-bg-subtle);
+}
+.if-ledger .if-comparison {
+  padding: 0;
+}
+.if-page-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-x8);
+  flex-wrap: wrap;
+  margin-top: var(--space-x12);
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+.if-page-footer a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-x2);
+}
+@media (max-width: 800px) {
+  .if-content {
+    padding-top: var(--space-x18);
+  }
+  .if-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .if-overview {
+    gap: var(--space-x12);
+  }
+  .if-feature {
+    padding: var(--space-x12) var(--space-x8);
+  }
+}
+@media (max-width: 600px) {
+  .if-content {
+    padding-inline: var(--space-x8);
+  }
+  .if-site-header {
+    padding: var(--space-x8);
+  }
+  .if-page-heading h1 {
+    font-size: var(--text-2xl);
+  }
+  .if-overview {
+    grid-template-columns: 1fr;
+  }
+  .if-feature {
+    padding: var(--space-x12);
+  }
+  .if-ledger th,
+  .if-ledger td {
+    padding: var(--space-x6) var(--space-x8);
+  }
+  .if-ledger thead th:nth-child(3),
+  .if-ledger td:nth-child(3) {
+    display: none;
+  }
+}

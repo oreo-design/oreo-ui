@@ -5,6 +5,8 @@
 
 ## 从这里找
 
+- [Lorenzo Cabra：Income Flow](records/2026-11-18-cabral-income-flow.md)：对称收入色带、逐月查看、环比摘要与完整收入总览。
+
 - [Yanis Lebzar：文件夹连续导航](records/2026-11-18-devya-folder-navigation.md)：名称在列表与路径之间移动，深层祖先菜单与完整工作区。
 
 - [Pinterest：展开式任务胶囊](records/2026-11-16-pinterest-task-capsule.md)：分段进度、独立任务状态、紧凑清单与概览模板。

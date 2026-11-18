@@ -1,0 +1,156 @@
+/* Foundations inherit the existing Oreo theme. SVG coordinates describe chart geometry. */
+.if-card {
+  --squircle-radius: var(--radius-card-large);
+  width: 100%;
+  max-width: calc(var(--space-x64) * 3);
+  background: var(--color-bg-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+}
+.if-card > header {
+  padding: var(--space-x10) var(--space-x10) var(--space-x4);
+}
+.if-card h3 {
+  font-size: var(--text-base);
+  line-height: var(--leading-snug);
+  font-weight: var(--font-weight-normal);
+  overflow-wrap: anywhere;
+}
+.if-amount {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  font-weight: var(--font-weight-medium);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: var(--tracking-tight);
+  margin-top: var(--space-x4);
+  overflow-wrap: anywhere;
+}
+.if-chart {
+  --if-ink: var(--color-palette-orange-text);
+  color: var(--if-ink);
+  width: 100%;
+  min-width: 0;
+}
+.if-chart[data-tone="blue"] {
+  --if-ink: var(--color-accent);
+}
+.if-chart[data-tone="purple"] {
+  --if-ink: var(--color-palette-purple-text);
+}
+.if-plot {
+  cursor: crosshair;
+  touch-action: pan-y;
+  position: relative;
+  padding-top: var(--space-x6);
+}
+.if-plot svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.if-glow {
+  opacity: 0.16;
+  filter: blur(10px);
+}
+.if-marker {
+  transition: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .if-marker {
+    transition:
+      transform 120ms var(--ease-out),
+      opacity 120ms var(--ease-out);
+  }
+}
+.if-chart[data-keyboard="true"] .if-marker {
+  transition: none;
+}
+.if-chart[data-disabled] .if-plot {
+  cursor: default;
+}
+.if-months {
+  display: grid;
+  padding: 0 var(--space-x3);
+  gap: var(--space-x1);
+  color: var(--color-text-tertiary);
+}
+.if-months button {
+  min-width: 0;
+  padding: var(--space-x4) 0;
+  font-size: var(--text-xs);
+  border-radius: var(--radius-control-tiny);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.if-months button[aria-pressed="true"] {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+.if-months button:disabled {
+  cursor: default;
+  color: var(--color-text-disabled);
+}
+.if-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-x4);
+  padding: var(--space-x8) var(--space-x10) var(--space-x10);
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-tertiary);
+}
+.if-comparison p {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.if-comparison strong {
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-primary);
+}
+.if-change {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-x1);
+  flex: none;
+  background: var(--color-bg-subtle);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-capsule);
+  padding: var(--space-x1) var(--space-x3);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.if-change svg {
+  width: var(--space-x6);
+  height: var(--space-x6);
+}
+.if-card > .agent-workspace-state,
+.if-card .agent-workspace-state {
+  min-height: calc(var(--space-x64) * 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-x10);
+  gap: var(--space-x4);
+}
+@media (prefers-reduced-motion: reduce) {
+  .if-marker {
+    transition: none;
+  }
+}
+@media (max-width: 480px) {
+  .if-card > header {
+    padding: var(--space-x8);
+  }
+  .if-comparison {
+    padding: var(--space-x6) var(--space-x8) var(--space-x8);
+  }
+  .if-amount {
+    font-size: var(--text-2xl);
+  }
+}

@@ -2,6 +2,10 @@ import type { PlaygroundSpec } from "./schema";
 
 /** Lazy runtime map; metadata must never import this module. */
 export const playgroundLoaders: Record<string, () => Promise<PlaygroundSpec>> = {
+  "income-flow-card": () => import("./adapters/income-flow").then(m=>m.default["income-flow-card"]),
+  "income-flow-chart": () => import("./adapters/income-flow").then(m=>m.default["income-flow-chart"]),
+  "income-comparison": () => import("./adapters/income-flow").then(m=>m.default["income-comparison"]),
+
   "folder-navigator": () => import("./adapters/folder-navigation").then(m=>m.default["folder-navigator"]),
   "folder-navigation-row": () => import("./adapters/folder-navigation").then(m=>m.default["folder-navigation-row"]),
   "folder-path-trail": () => import("./adapters/folder-navigation").then(m=>m.default["folder-path-trail"]),
