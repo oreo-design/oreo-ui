@@ -2,6 +2,10 @@ import type { PlaygroundSpec } from "./schema";
 
 /** Lazy runtime map; metadata must never import this module. */
 export const playgroundLoaders: Record<string, () => Promise<PlaygroundSpec>> = {
+  "folder-navigator": () => import("./adapters/folder-navigation").then(m=>m.default["folder-navigator"]),
+  "folder-navigation-row": () => import("./adapters/folder-navigation").then(m=>m.default["folder-navigation-row"]),
+  "folder-path-trail": () => import("./adapters/folder-navigation").then(m=>m.default["folder-path-trail"]),
+
   "task-capsule": () => import("./adapters/task-capsule").then(m=>m.default["task-capsule"]),
   "segmented-task-progress": () => import("./adapters/task-capsule").then(m=>m.default["segmented-task-progress"]),
   "compact-task-checklist": () => import("./adapters/task-capsule").then(m=>m.default["compact-task-checklist"]),
