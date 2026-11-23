@@ -5,6 +5,8 @@
 
 ## 从这里找
 
+- [Juliette：引用与来源联动](records/2026-11-23-shedsgns-citation-reader.md)：行内摘录预览、原句高亮、来源反向定位与完整阅读模板。
+
 - [Lorenzo Cabra：Income Flow](records/2026-11-18-cabral-income-flow.md)：对称收入色带、逐月查看、环比摘要与完整收入总览。
 
 - [Yanis Lebzar：文件夹连续导航](records/2026-11-18-devya-folder-navigation.md)：名称在列表与路径之间移动，深层祖先菜单与完整工作区。
