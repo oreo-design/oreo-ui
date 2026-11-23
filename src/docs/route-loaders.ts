@@ -4,6 +4,11 @@ import type { PageSlug } from "@/lib/site";
 
 /** Browser runtime only. The pure catalog and sitemap never import loaders. */
 export const routeLoaders = {
+  "citation-reader-workspace": () => import("@/patterns/citation-reader-workspace").then(m=>m.CitationReaderWorkspace),
+  "citation-answer": () => import("@/pages/CitationReaderDocs").then(m=>m.CitationReaderDocs),
+  "citation-source-preview": () => import("@/pages/CitationReaderDocs").then(m=>m.CitationReaderDocs),
+  "citation-source-list": () => import("@/pages/CitationReaderDocs").then(m=>m.CitationReaderDocs),
+
   "income-flow-workspace": () => import("@/patterns/income-flow-workspace").then(m=>m.IncomeFlowWorkspace),
   "income-flow-card": () => import("@/pages/IncomeFlowDocs").then(m=>m.IncomeFlowDocs),
   "income-flow-chart": () => import("@/pages/IncomeFlowDocs").then(m=>m.IncomeFlowDocs),
